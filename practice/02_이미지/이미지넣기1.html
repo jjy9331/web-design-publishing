@@ -13,11 +13,16 @@
 <!-- <img src="이미지명" alt="이미지명">-->
 <!-- alt 설명 없을 시, 유효성 검사 에러나므로 꼭 써주기-->
 <!-- 폴더에 이미지들을 불러오려면 src="폴더명/이미지명"-->
+<!-- src="" alt="" 둘다 필수 속성-->
+<!-- width="" height="" 필수 속성은 아님. 해당 속성있으면 원본 이미지 사이즈 변형됨.-->
+<!-- width, height 값 한쪽만 넣으면 원본비율에 맞춰 입력한 값으로 이미지 사이즈 변형됨-->
 
 <h1>이미지</h1>
 <img src="cup.jpg" alt="cup">
 <img src="images/icon.gif" alt="search icon">
 <img src="images/pencil.jpg" alt="pencil">
+<img src="images/icon.gif" width="200" height="200" alt="search icon">
+<img src="images/icon.gif" width="" height="100" alt="search icon">
 
 
 </body>
