@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>셀합치기</title>
+</head>
+
+<body>
+
+<br>
+<br>
+
+<!-- <td colspan="가로로 합칠 셀의 갯수" rowspan="세로로 합칠 셀의 갯수"></td> -->
+<!-- <th colsapn="가로 병합 셀 갯수"    rowspan="행 병합 셀 갯수">제목테그 </th>-->
+열합치기(수평으로 합치기)<br>
+
+<table border="1" width="500">
+
+  <tr>    <td colspan="3">1</td>   </tr>
+  <tr>    <td colspan="2">4</td>   <td>6</td>    </tr>
+  <tr>    <td colspan="1">7</td>    <td>8</td>   <td>9</td>    </tr>
+  
+</table>
+
+<br>
+<br>
+<br>
+원본
+<table border="1" width="500">
+
+    <tr>    <td>1</td>   <td>2</td>   <td>3</td> </tr>
+    <tr>    <td>4</td>   <td>5</td>   <td>6</td> </tr>
+    <tr>    <td>7</td>   <td>8</td>   <td>9</td> </tr>
+    
+</table>
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+제목활용 셀병합
+<table border="1" width="500">
+
+    <tr>    <th colspan="3">제목</th>  </tr>
+    <tr>    <td>4</td>   <td>5</td>   <td>6</td> </tr>
+    <tr>    <td>7</td>   <td>8</td>   <td>9</td> </tr>
+    
+</table>
+
+<br>
+<br>
+<br>
+
+행합치기(수직으로 합치기)<br>
+
+<table border="1" width="500">
+
+    <tr>    <td rowspan="3">1</td>   <td>2</td>   <td>3</td> </tr>
+    <tr>                             <td>5</td>   <td>6</td> </tr>
+    <tr>                             <td>8</td>   <td>9</td> </tr>
+
+</table>
+
+
+</body>
+
+</html>
+
