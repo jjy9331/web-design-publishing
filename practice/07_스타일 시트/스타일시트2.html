@@ -12,11 +12,22 @@
   이를 상속이라고 한다.
 
   텍스트에 대한 설정만 가능
+
+  단, 자식(자손)에 이미 설정이 있는 경우는 자식(자손)요소의 설정이 더 우선시 된다.
+
 */
 
 body {
       font-family: '바탕';
+      font-size: 14px;
+      color: pink;
 }
+
+h1 {font-size: 70px; color: orange;}
+h2 {font-size: 35px; color: yellowgreen;}
+a {color: skyblue; font-size: 16px;text-decoration: none;}
+a:hover{ color: hotpink; text-decoration: none;}
+ul{list-style: none;}
 
 </style>
 </head>
