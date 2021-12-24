@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>스타일시트</title>
+
+
+<style>
+
+/* 
+  부모요소에게 설정한 "텍스트"에 대한 설정은 자식(자손)들에게도 설정된다.
+  이를 상속이라고 한다.
+
+  텍스트에 대한 설정만 가능
+
+  단, 자식(자손)에 이미 설정이 있는 경우는 자식(자손)요소의 설정이 더 우선시 된다.
+
+*/
+
+body {
+      font-family: '바탕';
+      font-size: 14px;
+      color: pink;
+}
+
+h1 {font-size: 70px; color: orange;}
+h2 {font-size: 35px; color: yellowgreen;}
+a {color: skyblue; font-size: 16px;text-decoration: none;}
+a:hover{ color: hotpink; text-decoration: none;}
+ul{list-style: none;} /*마커사용 안함*/
+
+/*
+span 문장 내의 텍스트 그룹화
+각 span 태그에 id 부여하고 
+css에서 span# 옆에 span 태그에 있는 
+id를 입력하면 해당 id만 제어 가능
+ex) span#s1 --> <span id="s1">에 대한 제어 
+*/
+
+
+span#s1{
+    color: red;
+    font-weight: bold;
+}
+
+span#s2{
+    color: green;
+    font-style: italic;
+}
+
+span#s3{
+    color: orange;
+    text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+  <!-- 링크 마땅하게 없으면 #으로 넣으면 좋다. -->
+<h1>PARIS</h1>
+<ul>
+  <li ><a href="#">home</a></li>
+  <li><a href="#">개요</a></li>
+  <li><a href="#">관광</a></li>
+  <li><a href="#">역사</a></li>
+</ul>
+
+
+<h2>관광</h2>
+<p>
+파리는 회화에서 <span id="s1">조각, 패션, 음악</span>에 이르기까지 다양한 예술의 세계적인 중심지로 이름을 떨치고 있다. 특히 최근에는 파리 컬렉션이나 요리경연대회 개최에서 볼 수 있듯이, 프랑스를 대표하는 의류 문화와 음식 문화의 분야에서 세계적인 정보 발신지가 되고 있다.
+<span id="s2">예술의 도시, 꽃의 도시</span>라고 불리는만큼 그 문화적 영향을 세계에 지속하고 있으며, 그 결과 세계 최고의 관광 도시로 부상했다. 이 때문에 1989년 유럽 문화 수도로 선정되었다. 매년 약 4,500만 명의 관광객을 유치하고, 그 60%는 외국에서 온 사람들이다.
+</p>
+<p>
+<span id="s3">주요 관광 자원</span>으로는 역사적인 건축물, 수많은 유명한 미술품, 명품으로 대표되는 패션과 음식 등이다. 건물은 중세 이전의 것들도 남아지만, 제3 공화국 시대의 파리 개조 및 벨 에포크 건물이나 프랑스 혁명 200 주년 그랑 프로젝터 건축물 등 각 시대의 세계의 최첨단 건축물들이 많다. 미술관에는 프랑스에서 활약한 저명한 예술가의 미술품 외에도 전쟁을 통해 얻은 전리품이나 구입에 의하여 수집된 세계적인 소장물들을 보유하고 있다.
+</p>
+
+
+
+
+
+
+<p>Copyright (c) 2021, Paris, All right reserved.</p>
+
+
+
+
+</body>
+
+<!-- 
+스타일시트를 다른 용어로 CSS라고 부릅니다. 
+CSS는 Cascading Style Sheet의 약자로 이 CSS는 
+기존의 html이 가지고 있는 단점을 보완하고자
+등장한 것이라고 할 수 있습니다. 
+-->
+
+</html>
+
