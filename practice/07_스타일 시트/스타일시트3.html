@@ -116,14 +116,16 @@ span.s2 {
                         상하   좌우
                         0 auto
                         수평 가운데 배치
+                        (마진 0 auto 가운데 배치 후 상하 마진 줄때는
+                        0 auto 밑에 margin-top,bottom 입력해야 제어됨)
     margin-left,right,top,bottom: 마진 사방으로 제어가능
 */
 
 #contents
 {
-    /* margin-top: 100px; */
-    /* margin-bottom: 100px; */
     margin: 0 auto;
+    margin-top: 100px; /*0 auto 밑에 입력해야 제어됨*/
+    margin-bottom: 100px; /*0 auto 밑에 입력해야 제어됨*/
     width: 995px;
     height: 200px;
     border: 5px dashed skyblue;
