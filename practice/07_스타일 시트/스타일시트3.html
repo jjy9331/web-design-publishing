@@ -7,287 +7,31 @@
 
 <style>
 
-/* 
-스타일 시트를 다른 용어로 CSS라구 부른다.
-CSS는 Cascading Style Sheet의 약자로 이 CSS는
-기존의 html이 가지고 있는 단점을 보완하고자 
-등장한 것이라고 할 수 있다.
 
-부모요소에게 설정한 "텍스트"에 대한 설정은 자식(자손)들에게도 설정된다.
-이를 상속이라고 한다.
-
-텍스트에 대한 설정만 가능
-
-단, 자식(자손)에 이미 설정이 있는 경우는 자식(자손)요소의 설정이 더 우선시 된다.
-
-*/
-
-/* 
-    body {
-        font-family: '바탕';
-        font-size: 14px;
-        color: pink;
-
-        background-color: #eeeeee; 
-        background-image: url(images/paris.png); 
-        background-image: url(images/pattern1.gif); 
-        background-repeat: repeat;                                 
-    }
-*/
-
-/*
-    background-color: #eeeeee; 바디 전체 -배경색 제어-
-    background-image: url(images/paris.png); -배경이미지(패턴반복)-
-    background-repeat: no-repeat;    
-
-repeat:배경이미지 반복(기본값) 
-no-repeat:배경이미지 반복안함
-repeat-x: 배경이미지 수평만복
-repeat-y: 배경이미지 수직반복
-*/
-
-h1 {font-size: 70px; color: orange;}
-h2 {font-size: 35px; color: yellowgreen;}
-a {color: skyblue; font-size: 16px;text-decoration: none;}
-a:hover{ color: hotpink; text-decoration: none;}
-ul{list-style: none;} 
-/*마커사용 안함*/
-
-/*
-span 문장 내의 텍스트 그룹화
-각 span 태그에 id 부여하고 
-css에서 span# 옆에 span 태그에 있는 
-id를 입력하면 해당 id만 제어 가능
-ex) span#s1 --> <span id="s1">에 대한 제어 
-*/
-
-
-/* span id 지정
-
-#s1{
-    color: red;
-    font-weight: bold;
-}
-
-#s2{
-    color: green;
-    font-style: italic;
-}
-
-#s3{
-    color: orange;
-    text-decoration: underline;
-}
-
-#copyright{
-    color: blue;
-
-}
-*/
-
-/* 
-아이디는 각각의 개별 태그를 구별하기위한 이름이며,
-한페이지에서 같은 이름을 중복 사용할 수 없다. 
-
-p태그 중에서 아이디가(#)가 copyright인 요소
-CSS # 앞에 태그명을 지우고 아이디만 css에 적어도 됨.
-span#1 = #1
-*/
-
-#m1 { color: orange;}
-/*id(100점)> class(10점) > tag(1점)*/
-/*css는 id가 class보다 제어 기능이 더 크다.*/
-
-span.z1 {
-    color:red;
-}
-/* span태그 중에서 클래스(.)명이 a1인 요소*/
-/* 클래스명은 한 페이지에서 캍은 이름을 중복할 수 있다.*/
-
-span.s2 {
-    color:green; 
-    font-style: italic;
-    font-size:16px;
-    text-decoration: underline;
-}
-
-#wrap
-{
-    margin: 0 auto;
-    width: 60%;
-    border: 7px solid red;
-}
-
-#header 
-{
-    /* margin: 0 auto; */
-    /* width: 1000px; */
-    /* width: 50%; */
-    border: 3px solid #ff9933 ;
-}
-/* 
-    div태그 중 아이디(#)가 header인 요소 
-    width 속성은 박스 가로 길이를 제어
-    height 속성은 박스 세로 길이 제어
-    overflow: 부모영역을 넘친 부분 처리 
-                visible-넘친부분을 보이게함
-                hidden-넘친부분을 안보이게함
-                scroll-영역에 스크롤이 생김
-                auto-필요할때만 스크롤이 자동으로 생김
-    margin: 바깥 여백
-                마치 테두리처럼 영역의 바깥에 채어져있다. 
-                (투명한 고체)
-                margin: 200px 50px 
-                        상하   좌우
-                        0 auto
-                        수평 가운데 배치
-                        (마진 0 auto 가운데 배치 후 상하 마진 줄때는
-                        0 auto 밑에 margin-top,bottom 입력해야 제어됨)
-    margin-left,right,top,bottom: 마진 사방으로 제어가능
-    padding: 안쪽 여백
-*/
-
-#contents
-{
-    margin: 0 auto;
-    /* margin-top: 100px; 0 auto 밑에 입력해야 제어됨 */
-    /* margin-bottom: 100px; 0 auto 밑에 입력해야 제어됨 */
-    /* padding: 50px; */
-    /* padding-top:30px ; */
-    /* padding-bottom: 10px; */
-    /* padding-left: 200px; */
-    /* padding-right: 200px; */
-    /* padding: 50px 200px; */
-    /* width: 995px; */
-    /* width: 50%; */
-    /* height: 200px; */
-    border: 5px dashed skyblue;
-    overflow: auto;
-}
-
-#contents p 
-{
-    line-height: 30px;
-}
-
-/*테두리 두께는 바깥쪽으로 두꺼워짐*/
-
-#footer
-{
-    /* margin: 0 auto; */
-    /* width: 1000px; */
-    /* width: 50%; */
-    border: 3px dotted orange
-}
-
-body #wrap #footer p{
-
-    color: blue;
-    font-style: italic;
-    text-align: center;
-}
-/* body안의 #warp안의 #footer영역 안의 p */
-
-/* 
-    #copyright 
-    {
-        color: blue;
-        font-style: italic;
-        text-align: center;
-
-    } 
-*/
-
-
-/*
-div = division 나누기의 약자
-    = 영역을 나누어 그룹화(다목적 상자)
-border: 굵기값 종류값 색상값
-boerder의 필수 인자값 테두리(값 순서 상관없음)
-
-div도 아이디 지정되면 CSS에서 div 태그명 삭제 가능
-*/
 
 </style>
 </head>
 
 <body>
 
-
-
-<!-- 링크 마땅하게 없으면 #으로 넣으면 좋다. -->
-<!-- 
-    warp은 구조물 전체를 감싸서 가로길이나 가운데 배치등을
-    한번에 설정할 때 사용
+<!--
+    인라인 요소: 텍스트를 감싸는 요소(텍스트와 동급요소)
+        span,b,strong,i,em,a
 -->
-<div id="wrap">
 
-    <div id="header"> <!-- 상단영역:로고, 주요메뉴(GNB) 등 배치 -->
-        <h1>PARIS</h1>
-        <ul>
-            <li ><a href="#">home</a></li>
-            <li><a href="#">개요</a></li>
-            <li><a href="#">관광</a></li>
-            <li><a href="#">역사</a></li>
-        </ul>
-    </div>
+스타일시트를 다른 용어로 CSS라고 부릅니다. 
+CSS는 Cascading Style Sheet의 약자로 이 CSS는 
+기존의 html이 가지고 있는 단점을 보완하고자
+등장한 것이라고 할 수 있습니다. 
 
+<br>
+<br>
+<br>
 
-
-
-    <!-- span id 지정
-
-    <h2>관광</h2>
-    <p>
-    파리는 회화에서 <span id="s1">조각, 패션, 음악</span>에 이르기까지 다양한 예술의 세계적인 중심지로 이름을 떨치고 있다. 특히 최근에는 파리 컬렉션이나 요리경연대회 개최에서 볼 수 있듯이, 프랑스를 대표하는 의류 문화와 음식 문화의 분야에서 세계적인 정보 발신지가 되고 있다.
-    <span id="s2">예술의 도시, 꽃의 도시</span>라고 불리는만큼 그 문화적 영향을 세계에 지속하고 있으며, 그 결과 세계 최고의 관광 도시로 부상했다. 이 때문에 1989년 유럽 문화 수도로 선정되었다. 매년 약 4,500만 명의 관광객을 유치하고, 그 60%는 외국에서 온 사람들이다.
-    </p>
-    <p>
-    <span id="s3">주요 관광 자원</span>으로는 역사적인 건축물, 수많은 유명한 미술품, 명품으로 대표되는 패션과 음식 등이다. 건물은 중세 이전의 것들도 남아지만, 제3 공화국 시대의 파리 개조 및 벨 에포크 건물이나 프랑스 혁명 200 주년 그랑 프로젝터 건축물 등 각 시대의 세계의 최첨단 건축물들이 많다. 미술관에는 프랑스에서 활약한 저명한 예술가의 미술품 외에도 전쟁을 통해 얻은 전리품이나 구입에 의하여 수집된 세계적인 소장물들을 보유하고 있다.
-    </p>
-
-
-
-
-
-
-    <p id="copyright">Copyright (c) 2021, Paris, All right reserved.</p>
-    -->
-
-
-    <!-- 
-        contents or container로 주로 씀  
-        개념 크기 container > contents 
-        내용물영역: 실적적인 정보
-    -->
-    <div id="contents"> 
-        <h2>관광</h2>
-        <p>
-        파리는 회화에서 <span id="m1" class="z1">조각, 패션, 음악</span>에 이르기까지 다양한 예술의 세계적인 중심지로 이름을 떨치고 있다. 특히 최근에는 파리 컬렉션이나 요리경연대회 개최에서 볼 수 있듯이, 프랑스를 대표하는 의류 문화와 음식 문화의 분야에서 세계적인 정보 발신지가 되고 있다.
-        <span>예술의 도시, 꽃의 도시</span>라고 불리는만큼 그 문화적 영향을 세계에 지속하고 있으며, 그 결과 세계 최고의 관광 도시로 부상했다. 이 때문에 1989년 유럽 문화 수도로 선정되었다. 매년 약 4,500만 명의 관광객을 유치하고, 그 60%는 외국에서 온 사람들이다.
-        </p>
-        <p>
-        <span class="s2">주요 관광 자원</span>으로는 역사적인 건축물, 수많은 유명한 미술품, 명품으로 대표되는 패션과 음식 등이다. 건물은 중세 이전의 것들도 남아지만, 제3 공화국 시대의 파리 개조 및 벨 에포크 건물이나 프랑스 혁명 200 주년 그랑 프로젝터 건축물 등 각 시대의 세계의 최첨단 건축물들이 많다. 미술관에는 프랑스에서 활약한 저명한 예술가의 미술품 외에도 전쟁을 통해 얻은 전리품이나 구입에 의하여 수집된 세계적인 소장물들을 보유하고 있다.
-        </p>
-    </div>
-
-
-
-
-    <div id="footer"> <!-- 하단영역: 저작권 정보 및 기타 부수적인 정보-->
-        <p id="copyright">Copyright (c) 2021, Paris, All right reserved.</p>
-    </div>
-
-</div>
-
-
-
-
-
-
-
-
-
+스타일시트를 다른 용어로 CSS라고 부릅니다. 
+CSS는 Cascading Style Sheet의 약자로 이 CSS는 
+기존의 html이 가지고 있는 단점을 보완하고자
+등장한 것이라고 할 수 있습니다. 
 
 </body>
 
