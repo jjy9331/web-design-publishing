@@ -5,7 +5,10 @@ body {
 }
 h1 { font-size:50px; color:#ff9933; }
 h2 { font-size:30px; color:#99cc99;}
-p { font-family:"바탕";}
+p { 
+    font-family:"바탕";
+    line-height: 30px; /*줄간격*/
+}
 ul { list-style:none;}
 
 a { color:#333333; text-decoration: none;}
