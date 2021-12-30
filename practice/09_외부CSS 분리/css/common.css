@@ -1,0 +1,14 @@
+/* base */
+body { font-family:"나눔고딕", "맑은 고딕"; color:#333; font-size:14px; line-height:21px; }
+p { font-family:"바탕";}
+ul { list-style:none;}
+a { color:#333; text-decoration: none;}
+a:hover { color:#f93; text-decoration:underline;}
+
+/* layout */
+#header { width:700px;}
+#contents{ width:700px;}
+#footer{ width:700px;}
+
+/* footer */
+#footer p { color:orange; font-weight:bold;}
