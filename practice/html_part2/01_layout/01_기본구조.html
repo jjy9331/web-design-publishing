@@ -6,11 +6,15 @@
 <style>
 body { font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
 
+#warp {
+    border: 5px dashed blue;
+}
+
 div#header { height: 100px; background-color: orange;}
 div#visual { height: 300px ; background-color: green;}
 div#contents {
     margin: 0 auto; /* 수평가운데 배치*/
-    width: 1200px;
+    width: 80%;
     height: 1500px;
     background-color: yellow;
 
@@ -27,11 +31,12 @@ div#footer {height: 100px; background-color: pink;}
     가로길이가 영역에 가득 채워지며,
     위에서 아래로 수직으로 쌓인다.
 -->
-
-<div id="header">헤더</div>
-<div id="visual">비주얼</div>
-<div id="contents">컨텐츠</div>
-<div id="footer">푸터</div>
+<div id="warp">
+    <div id="header">헤더</div>
+    <div id="visual">비주얼</div>
+    <div id="contents">컨텐츠</div>
+    <div id="footer">푸터</div>
+</div>
 
 
 
