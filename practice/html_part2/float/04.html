@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>float</title>
+<style>
+#wrap { width:500px; height:600px; border:3px dashed #ccc; }
+/* div같은 블록요소(상자)들은 위에서 아래로 수직으로 쌓인다.*/
+#box1 { float: left; width:100px; height:100px; background-color:#CCF; }
+/* 
+  float설정된 상자의 다음 상자는 
+  float설정된 상자 밑에 깔린다.
+*/
+#box2 { width:150px; height:150px; background-color:#C9F; }
+#box3 { width:200px; height:200px; background-color:#FC9; }
+</style>
+</head>
+
+<body>
+
+<div id="wrap">
+  <div id="box1">1</div>
+  <div id="box2">2</div>
+  <div id="box3">3</div>  
+</div>
+
+</body>
+</html>
