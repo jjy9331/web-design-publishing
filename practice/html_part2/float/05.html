@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>float</title>
 <style>
-#wrap { width:500px; height: 300px; border:3px dashed orange; }
+#wrap { overflow: hidden; width:500px; height: 300px; border:3px dashed orange; }
 /*
   부모는 자식들의 높이를 자동으로 인식하여 감싼다.
   하지만,
@@ -12,6 +12,9 @@
   부모요소에서, 자동으로 인식하지 못한다.
   따라서 자식들이 모두 float이 설정될 경우
   부모의 높이가 없어진다. 
+
+  이를 해결하려면, 
+  부모에게 overflow: hidden을 설정한다. 
 */
 
 #box1 { float: left; width:100px; height:100px; background-color:#CCF; }
