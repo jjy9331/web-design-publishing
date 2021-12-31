@@ -11,14 +11,14 @@
   float설정된 상자의 다음 상자는 
   float설정된 상자 밑에 깔린다.(텍스트는 깔리지 않는다.)
 */
-#box2 { float: left; width:150px; height:150px; background-color:#C9F; }
+#box2 { float: right; width:150px; height:150px; background-color:#C9F; }
 /*
   float설정된 상자들(box1,box2)끼리는 가로배열된다. 
   그 다음 박스(box3)는 밑에 깔린다.
   이를 해결하려면 밑에깔린 상자(box3)에게
   clear:both를 설정한다.
 */
-#box3 { clear: both; width:200px; height:200px; background-color:#FC9; }
+#box3 { clear: left; width:370px; height:200px; background-color:#FC9; }
 </style>
 </head>
 
