@@ -12,7 +12,22 @@ body { margin: 0; font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
 
 #visual {  height:350px; background-color:#fc9; }
 
-#contents { margin:0 auto; width:900px; height:200px; border:3px solid  #0cf; }
+#contents { /* overflow: hidden; */ margin:0 auto; width:80%; border:3px solid  #0cf; }
+#contents:after { content:""; display:block; clear:both; }
+.c1 {float: left; width: 33.33%; height: 200px; background-color: skyblue;}
+.c2 {float: left; width: 33.33%; height: 200px; background-color: yellow;}
+.c3 {float: left; width: 33.33%; height: 200px; background-color: orange;}
+/*
+  상자(블록요소)들은 가로길이 영역에 가득 차고 
+  위에서 아래로 수직으로 쌓인다.
+  float설정된 상자들끼리는 가로배열된다. 
+  float설정된 상자는 가로길이가 없어진다.
+  float설정된 자식들의 높이를 부모에서 자동으로 인식하여 감싸지 못한다.
+  이를 해결하려면 부모에게 overflow:hidden 설정한다.
+  또는 
+  부모요소:after { content:""; display:block; clear:both; }
+  (이러한 해결법을 clearfix라고 한다.)
+*/
 
 #footer { height:100px; background-color:#ddd; }
 #footer .inner { margin:0 auto; width:900px; height:94px;  border:3px dashed #f96; }
@@ -31,7 +46,11 @@ body { margin: 0; font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
   <div id="visual">visual</div>
 
   
-  <div id="contents">contents</div>
+  <div id="contents">
+    <div class="c1">01</div>
+    <div class="c2">02</div>
+    <div class="c3">03</div> 
+  </div>
 
   
   <div id="footer">
