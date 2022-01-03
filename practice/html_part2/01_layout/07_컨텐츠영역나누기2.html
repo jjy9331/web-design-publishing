@@ -13,12 +13,13 @@ body { font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
 
 
 
-#contents { margin:0 auto; width:900px; height:600px; border:3px solid  #0cf; }
+#contents { margin:0 auto; width:900px;  border:3px solid  #0cf; }
 
-#contents .group1 { height:200px; }
-#contents .group1 .section1 { float:left; width:300px; height:200px; background-color:pink; }
-#contents .group1 .section2 { float:left; width:300px; height:200px; background-color:yellow; }
-#contents .group1 .section3 { float:left; width:300px; height:200px; background-color:skyblue; }
+#contents .group1 { border: 10px solid blue;}
+#contents .group1:after { content: ""; display: block; clear: both;}
+#contents .group1 .c1 { float:left; width:300px; height:200px; background-color:pink; }
+#contents .group1 .c2 { float:left; width:300px; height:200px; background-color:yellow; }
+#contents .group1 .c3 { float:left; width:300px; height:200px; background-color:skyblue; }
 
 
 
@@ -46,9 +47,9 @@ body { font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
   <div id="contents">
   
       <div class="group1">
-           <div class="section1">section1</div>
-           <div class="section2">section2</div>
-           <div class="section3">section3</div>
+           <div class="c1">01</div>
+           <div class="c2">02</div>
+           <div class="c3">03</div>
       </div>
       
   </div>
