@@ -6,17 +6,21 @@
 <style>
 body { font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
 
-#wrap { margin:0 auto; width:1200px; border:5px solid #3CF; }
+#wrap { margin:0 auto;  width:1200px; border:5px solid #3CF; }
 
-#header { height: 100px; background-color:#ddd; }
+#header { margin-bottom: 30px; height: 100px; background-color:#ddd; }
 #sidebar { float: left; width: 200px; height: 500px; background-color:#fc9; }
-#contents { float: right; width: 900px; height: 500px; background-color:#ff9; }
+#contents { margin-bottom: 30px; float: right; width: 900px; height: 500px; background-color:#ff9; }
 /*
   float상자들끼리는 가로배열되며,
   그 다음 상자는 밑에 깔린다.
   이를 해결하려면 밑에깔린 상자에게 clear:both
 */
-#footer { clear: both; height: 100px; background-color:yellowgreen; }
+#footer { margin-top: 30px; clear: both; height: 100px; background-color:yellowgreen; }
+/*
+clear: both 설정되면 margin-top 적용 안됨
+*/
+
 </style>
 </head>
 
