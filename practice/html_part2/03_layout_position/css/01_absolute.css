@@ -44,3 +44,11 @@ body { font-family:"나눔고딕"; font-size: 12px; }
     width: 150px; height: 100px;
     background-color:lightskyblue; 
 }
+
+#box3 { 
+    position: absolute;
+    z-index: 3;
+    left: 500px; top: 130px;
+    width: 150px; height: 100px;
+    background-color:yellow; 
+}
