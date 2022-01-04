@@ -7,7 +7,7 @@ body { font-family:"나눔고딕"; font-size: 12px; }
 
 #box1 { 
     position: absolute;
-    z-index: 5;
+    /* z-index: 5; */
     left: 350px; top: 50px;
     width: 200px; height: 150px;
     background-color:orange; 
@@ -29,6 +29,12 @@ body { font-family:"나눔고딕"; font-size: 12px; }
 
     -z-index값이 설정된 요소들끼리 z-index가
     더 높을수록 위로 올라온다.
+
+    -z-index값이 동일한 경우는 나중에 만들어진
+    (마크업된) 요소가 더 위로 올라온다.
+
+    -z-index를 지정 안한 요소와 지정한 요소 중에는
+    지정한쪽이 위로 올라온다.
 */
 
 #box2 { 
