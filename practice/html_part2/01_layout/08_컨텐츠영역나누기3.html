@@ -11,10 +11,16 @@ body { margin: 0; font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
 
 
 
-#contents { margin:0 auto; width:900px;  overflow:hidden;  border:3px solid #0cf; }
-#contents:after {content:""; display:block; clear:both;}
-#contents .section1 { float:left; width:300px; height:500px; background-color:pink; }
-#contents .section2 { float:left; width:600px; height:500px; background-color:yellow; }
+#container { 
+      margin:0 auto; 
+      margin-top: 50px;
+      margin-bottom: 50px;
+      width:900px;  
+      border:3px solid #0cf; 
+}
+#container:after {content:""; display:block; clear:both;}
+#container .sidebar1 { float:left; width:270px; height:500px; background-color:pink; }
+#container .sidebar2 { float:right; width:600px; height:600px; background-color:yellow; }
 
 
 #footer { height:100px; background-color:#ddd; }
@@ -26,23 +32,23 @@ body { margin: 0; font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
 
 
 
-  <div id="header">
-        <div class="inner"></div>
-  </div>
-
-  
+      <div id="header">
+            <div class="inner"></div>
+      </div>
 
 
-  
-  <div id="contents">
-        <div class="section1">section1</div>
-        <div class="section2">section2</div>
-  </div>
 
-  
-  <div id="footer">
+
+
+      <div id="container">
+            <div class="sidebar1">사이드바</div>
+            <div class="sidebar2">컨텐츠</div>
+      </div>
+
+
+      <div id="footer">
       <div class="inner"></div>
-  </div>
+      </div>
 
 
 
