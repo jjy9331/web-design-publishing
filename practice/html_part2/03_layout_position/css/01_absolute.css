@@ -7,7 +7,8 @@ body { font-family:"나눔고딕"; font-size: 12px; }
 
 #box1 { 
     position: absolute;
-    left: 0px; top: 0px;
+    left: 100px; top: 70px;
+    width: 200px; height: 150px;
     background-color:orange; 
 }
 /*
@@ -16,4 +17,6 @@ body { font-family:"나눔고딕"; font-size: 12px; }
     - 일반요소들로 부터 "독립"하여 
         물과 기름처럼 분리되어 뜬다. 
     - 따로 지정하지않으면 가로세로길이가 없다.
+    -left와 top값은 기본적으로 body좌측상단을 기준으로 한다. 
+    (left: 좌측으로부터의 거리, top:상단으로부터의 거리)
 */
