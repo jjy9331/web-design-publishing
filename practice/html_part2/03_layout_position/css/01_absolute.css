@@ -5,4 +5,15 @@ body { font-family:"나눔고딕"; font-size: 12px; }
 #contents { height:350px; margin-bottom:15px; background-color:#eee; }
 #footer { height:100px; background-color:#eee; }
 
-#box1 { background-color:orange; }
+#box1 { 
+    position: absolute;
+    left: 0px; top: 0px;
+    background-color:orange; 
+}
+/*
+    position: absolute;
+    - 절대위치 값 
+    - 일반요소들로 부터 "독립"하여 
+        물과 기름처럼 분리되어 뜬다. 
+    - 따로 지정하지않으면 가로세로길이가 없다.
+*/
