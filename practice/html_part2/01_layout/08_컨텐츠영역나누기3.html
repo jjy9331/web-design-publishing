@@ -4,17 +4,18 @@
 <meta charset="utf-8">
 <title>Layout</title>
 <style>
-body { font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
+body { margin: 0; font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
 
 #header { height:100px; background-color:#ddd; }
 #header .inner { margin:0 auto; width:900px; height:94px;  border:3px dashed #f96; }
 
-#visual { height:350px; background-color:#fc9; }
+
 
 #contents { margin:0 auto; width:900px;  overflow:hidden;  border:3px solid #0cf; }
+#contents:after {content:""; display:block; clear:both;}
 #contents .section1 { float:left; width:300px; height:500px; background-color:pink; }
-#contents .section2 { float:left; width:300px; height:500px; background-color:yellow; }
-#contents .section3 { float:left; width:300px; height:500px; background-color:skyblue; }
+#contents .section2 { float:left; width:600px; height:500px; background-color:yellow; }
+
 
 #footer { height:100px; background-color:#ddd; }
 #footer .inner { margin:0 auto; width:900px; height:94px;  border:3px dashed #f96; }
@@ -30,18 +31,17 @@ body { font-family:"나눔고딕","맑은 고딕"; font-size:12px; }
   </div>
 
   
-  <div id="visual">visual</div>
+
 
   
   <div id="contents">
-         <div class="section1">section1</div>
-         <div class="section2">section2</div>
-         <div class="section3">section3</div>
+        <div class="section1">section1</div>
+        <div class="section2">section2</div>
   </div>
 
   
   <div id="footer">
-       <div class="inner"></div>
+      <div class="inner"></div>
   </div>
 
 
