@@ -1,0 +1,8 @@
+body { font-family:"나눔고딕"; font-size: 12px; }
+
+#wrap { width:900px; border: 3px dashed #ccc; }
+#header { height:100px; margin-bottom:15px; background-color:#eee; }
+#contents { height:350px; margin-bottom:15px; background-color:#eee; }
+#footer { height:100px; background-color:#eee; }
+
+#box1 { background-color:orange; }
