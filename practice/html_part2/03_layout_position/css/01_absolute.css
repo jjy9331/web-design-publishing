@@ -1,22 +1,40 @@
 body { font-family:"나눔고딕"; font-size: 12px; }
 
-#wrap { width:900px; border: 3px dashed #ccc; }
+#wrap { margin: 0 auto; width:900px; border: 3px dashed #ccc; }
 #header { height:100px; margin-bottom:15px; background-color:#eee; }
 #contents { height:350px; margin-bottom:15px; background-color:#eee; }
 #footer { height:100px; background-color:#eee; }
 
 #box1 { 
     position: absolute;
-    left: 100px; top: 70px;
+    z-index: 5;
+    left: 350px; top: 50px;
     width: 200px; height: 150px;
     background-color:orange; 
 }
 /*
     position: absolute;
     - 절대위치 값 
+    
     - 일반요소들로 부터 "독립"하여 
         물과 기름처럼 분리되어 뜬다. 
-    - 따로 지정하지않으면 가로세로길이가 없다.
-    -left와 top값은 기본적으로 body좌측상단을 기준으로 한다. 
+    
+        - 따로 지정하지않으면 가로세로길이가 없다.
+    -left와 top값은 기본적으로 body 좌측상단을 기준으로 한다. 
     (left: 좌측으로부터의 거리, top:상단으로부터의 거리)
+
+    -absolute요소들끼리 겹칠 수 있는데
+    겹친순서는 기본적으로 나중에 만들어진
+    (마크업된)요소가 더 위로 올라온다.
+
+    -z-index값이 설정된 요소들끼리 z-index가
+    더 높을수록 위로 올라온다.
 */
+
+#box2 { 
+    position: absolute;
+    z-index: 2;
+    left: 450px; top: 70px;
+    width: 150px; height: 100px;
+    background-color:lightskyblue; 
+}
