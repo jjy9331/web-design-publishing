@@ -21,6 +21,8 @@ body { font-family:"나눔고딕"; font-size: 12px; }
     
         - 따로 지정하지않으면 가로세로길이가 없다.
     -left와 top값은 기본적으로 body 좌측상단을 기준으로 한다. 
+    단, 부모도 position이 설정된 경우는 
+    부모요소의 좌측상단을 기준으로 한다.
     (left: 좌측으로부터의 거리, top:상단으로부터의 거리)
 
     -absolute요소들끼리 겹칠 수 있는데
@@ -40,7 +42,7 @@ body { font-family:"나눔고딕"; font-size: 12px; }
 #box2 { 
     position: absolute;
     z-index: 2;
-    left: 450px; top: 70px;
+    left: 0px; top: 0px;
     width: 150px; height: 100px;
     background-color:lightskyblue; 
 }
