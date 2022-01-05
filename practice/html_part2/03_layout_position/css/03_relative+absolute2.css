@@ -1,0 +1,38 @@
+body { font-family:"나눔고딕"; font-size:12px; }
+
+
+#header { 
+    position: relative;
+    height:100px; 
+    margin-bottom:15px; 
+    background-color:#eee; 
+    border:2px dashed #999; 
+}
+#header .inner { margin:0 auto; width:900px; height:96px; background-color:#ddd; }
+
+#visual { height:300px; margin-bottom:15px; background-color:#eee; }
+#contents {margin:0 auto;  width:900px; height: 100px; margin-bottom: 15px; background-color: #eee; border: 2px dashed #999; }
+
+#footer { height: 100px; margin-bottom: 15px; background-color: #eee; border: 2px dashed #999; }
+#footer .inner { margin:0 auto; width:900px; height: 96px; background-color: #ddd; }
+
+
+
+#logo {  
+    position: absolute; 
+    left: 0px; top: 0px;
+    width: 80px; 
+    height: 50px; 
+    background-color:yellow; 
+}
+#menu {  
+    position: absolute;
+    left: 600px; top: 0px;
+    width: 250px; 
+    height: 30px; 
+    background-color:yellowgreen; 
+}
+
+#section1 { float:left; width:300px; height:100px; background-color:pink; }
+#section2 { float:left; width:300px; height:100px; background-color:hotpink; }
+#section3 { float:left; width:300px; height:100px; background-color:pink; }
