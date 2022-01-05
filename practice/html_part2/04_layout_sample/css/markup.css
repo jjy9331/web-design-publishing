@@ -17,30 +17,43 @@ img {
     vertical-align: top; /* 크롬 등 일부 브러우저에서 이미지 배열시 생기는 공백오류를 방지*/
 }
 
-/**/
-
+/*layout*/
 
 #header {
-    background-color: lightgray;
-    background-image: url(../img/header.jpg);
-    background-repeat: repeat-x;
+    background-color: lightyellow;
 }
-.logo {
-    background-repeat: no-repeat;
-    width: 105px; 
-    height: 20px;
-    border: gray dashed 1px;
-    background-image: url(../img/logo.gif);
-
-}
-
-#visual {
+#header .inner {
     margin: 0 auto;
+    width: 1180px;
+    height: 95px;
     border: gray dashed 1px;
-    width: 1920px;
-    height: 300px;
-    background-image: url(../img/visual.jpg);
-    background-repeat: no-repeat;
-    width: 1920px;
-    height: 820px;
+
 }
+#visual {
+    background-color: hotpink;
+}
+#visual .inner{
+    margin: 0 auto;
+    width: 1180px;
+    height: 838px;
+    border: gray dashed 1px;
+}
+#contents {
+    margin: 0 auto;
+    background-color: yellowgreen;
+    width: 1180px;
+    height: 939px;
+    margin-top: 71px;
+    margin-bottom: 106px;
+
+}
+#footer {
+    background-color: orange;
+}
+#footer .inner{
+    margin: 0 auto;
+    width: 1180px;
+    height: 101px;
+    border: gray dashed 1px;
+}
+
