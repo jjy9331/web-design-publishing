@@ -43,7 +43,7 @@ body { font-family:"나눔고딕"; font-size: 12px; }
 
 #section2 { 
     position: absolute;
-    left: 10px; top: 10px;
+    left: 300px; top: 0px;
     float:left; 
     width:300px; 
     height:100px; 
@@ -52,7 +52,7 @@ body { font-family:"나눔고딕"; font-size: 12px; }
 
 #section3 { 
     position: absolute;
-    left: 20px; top: 20px;
+    left: 600px; top: 0px;
     float:left; 
     width:300px; 
     height:100px; 
