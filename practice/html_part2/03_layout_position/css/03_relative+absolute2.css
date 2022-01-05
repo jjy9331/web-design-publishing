@@ -20,6 +20,11 @@ body { font-family:"나눔고딕"; font-size:12px; }
     background-color: #eee; 
     border: 2px dashed #999; 
 }
+/*
+    position: absolute가 설정된 자식들의 높이를
+    부모요소에서 자동으로 인식하여 감싸지 못한다.
+    따라서 부모에게 높이값을 직접 지정해주어야한다. 
+*/
 
 #footer { height: 100px; margin-bottom: 15px; background-color: #eee; border: 2px dashed #999; }
 #footer .inner { margin:0 auto; width:900px; height: 96px; background-color: #ddd; }
