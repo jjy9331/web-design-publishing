@@ -2,15 +2,27 @@ body { font-family:"나눔고딕"; font-size: 12px; }
 
 #wrap { margin:0 auto; width:900px;  border: 3px dashed #ccc; }
 
-#header { height:100px; margin-bottom:15px; background-color: #eee; }
+#header { position:relative; height:100px; margin-bottom:15px; background-color: #eee; }
 #visual { height:300px; margin-bottom:15px; background-color:#eee; }
 #contents {  height:100px; margin-bottom:15px; background-color: #eee; }
 #footer { height:100px; background-color:#eee; }
 
 
 
-#logo { width:80px; height:50px; background-color:yellow; }
-#menu { width:250px; height:30px; background-color:yellowgreen; }
+#logo { 
+    position: absolute; 
+    left: 0px; top: 0px;
+    z-index: 11;
+    width:80px; 
+    height:50px; 
+    background-color:yellow; }
+#menu {
+    position: absolute; 
+    left: 0px; top: 0px;
+    z-index: 10; 
+    width:250px; 
+    height:30px; 
+    background-color:yellowgreen; }
 
 #section1 { float:left; width:300px; height:100px; background-color:skyblue; }
 #section2 { float:left; width:300px; height:100px; background-color:lightblue; }
