@@ -62,19 +62,30 @@ img {
 
 h1 {
     position: absolute;
-    left: 0px; top: 30px;
+    left: 0px; top: 36px;
     background-color: red;
     width: 103px;
     height: 18px;
+    background-image: url(../img/logo.gif);
 }
 .gnb {
     
     position: absolute;
-    right: 0px; top: 53px;
+    right: 0px; bottom: 34px;
     background-color: green;
     width: 317px;
     height: 18px;
 }
+.gnb li {
+    float: left;
+    /* border: lightgray solid 1px; */
+    width: 20%;
+}
+/* 
+    상자(블록요소)는 가로길이가 영역에 가득차며 위에서 아래로 수직으로 쌓인다
+    기본적으로 위에서 아래로 수직으로 쌓이지만, float설정된 
+    상자들끼리는 가로배열된다.
+*/
 .top_gnb {
     position: absolute;
     right: 0px; top: 21px;
@@ -82,3 +93,10 @@ h1 {
     width: 102px;
     height: 15px;
 }
+.top_gnb li {
+    float: left;
+    width: 25%;
+}
+
+/*visual*/
+
