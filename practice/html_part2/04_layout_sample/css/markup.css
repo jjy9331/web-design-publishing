@@ -23,6 +23,7 @@ img {
     background-color: lightyellow;
 }
 #header .inner {
+    position: relative;
     margin: 0 auto;
     width: 1180px;
     height: 95px;
@@ -57,3 +58,27 @@ img {
     border: gray dashed 1px;
 }
 
+/*header*/
+
+h1 {
+    position: absolute;
+    left: 0px; top: 30px;
+    background-color: red;
+    width: 103px;
+    height: 18px;
+}
+.gnb {
+    
+    position: absolute;
+    right: 0px; top: 53px;
+    background-color: green;
+    width: 317px;
+    height: 18px;
+}
+.top_gnb {
+    position: absolute;
+    right: 0px; top: 21px;
+    background-color: orange;
+    width: 102px;
+    height: 15px;
+}
