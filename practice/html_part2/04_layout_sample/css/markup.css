@@ -83,7 +83,7 @@ h1 {
     /* width: 20%; */
     margin-left: 22px;
 }
-.gnb .g1 {
+.gnb li:first-child {
     margin-left: 0;
 }
 /* 
@@ -107,7 +107,7 @@ h1 {
     margin-left: 20px;
 }
 
-.top_gnb .t1 {
+.top_gnb li:first-child {
     margin-left: 0px;
 }
 
