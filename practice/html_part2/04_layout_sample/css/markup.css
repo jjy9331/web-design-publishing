@@ -37,6 +37,7 @@ img {
     
 }
 #visual .inner{
+    position: relative;
     margin: 0 auto;
     width: 1180px;
     height: 838px;
@@ -133,12 +134,26 @@ h1 {
 /*visual*/
 
 p {
-    /* border: 2px solid yellow; */
+    position: absolute;
+    right: 58px; top: 208px;
+    border: 2px solid yellow;
 }
-/* a.bt1 { border: 2px solid yellow;} */
-/* a.bt2 { border: 2px solid yellow;} */
-
 a.bt1 {
-
-    
+    position: absolute;
+    right: 356px; bottom: 326px;
+    border: 2px solid yellow;
 }
+a.bt2 { 
+    position: absolute;
+    right: 0px; bottom: 326px;
+    border: 2px solid yellow;
+}
+
+/*
+    absolute요소는 일반요소로부터 독립하여
+    기본적으로 body 좌측상단을 기준으로 
+    left/top위치가 설정되지만 ,
+    부모에게 relative가 지정되면 부모의 좌측상단이
+    기준이 된다.
+*/
+
