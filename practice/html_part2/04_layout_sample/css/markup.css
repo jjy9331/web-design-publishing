@@ -53,7 +53,7 @@ img {
     margin: 0 auto;
     background-color: yellowgreen;
     width: 1180px;
-    height: 939px;
+    /* height: 939px; */
     margin-top: 71px;
     margin-bottom: 106px;
 
@@ -171,6 +171,13 @@ a.bt2 {
 
 .new{
     border: 3px solid orange;
+    margin-bottom: 90px;
+}
+.new h2 {
+    border: 2px solid red;
+}
+.new div {
+    border: 2px solid lightyellow;
 }
 .new1{
     float: left;
