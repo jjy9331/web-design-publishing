@@ -6,11 +6,18 @@
 
 <style type="text/css">
 #box1 { background-color:#0cc; width:300px; height:300px; margin:10px; }
-#box2 { background-color:#0cc; width:300px; height:300px; padding:10px; }
+#box2 { 
+    background-color:#0cc; 
+    width:300px; /* 300 -10 -10*/
+    height:300px; /* 300 -10 -10*/
+    padding:10px; 
+}
 /*
     width/height가 설정된 상태에서
     padding을 넣으면 padding넣은 만큼
     실제 사이즈가 커진다.
+
+        padding으로 인해 커진 만큼을 width/height에서 빼준다. 
 */
 </style>
 
