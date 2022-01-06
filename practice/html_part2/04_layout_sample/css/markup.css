@@ -20,14 +20,16 @@ img {
 /*layout*/
 
 #header {
+    margin: 0;
     background-color: lightyellow;
+    background-image: url(../img/header.jpg);
 }
 #header .inner {
     position: relative;
     margin: 0 auto;
     width: 1180px;
     height: 95px;
-    border: gray dashed 1px;
+    /* border: gray dashed 1px; */
 
 }
 #visual {
@@ -72,10 +74,10 @@ h1 {
 .gnb {
     
     position: absolute;
-    right: 0px; bottom: 34px;
+    right: 0px; bottom: 21px;
     /* background-color: green; */
     /* width: 317px; */
-    height: 18px;
+    /* height: 18px; */
 }
 .gnb li {
     float: left;
@@ -104,7 +106,7 @@ h1 {
         } 
 
     solution 2
-    
+
         .gnb li:first-child {
         margin-left: 0;
         }
@@ -118,7 +120,7 @@ h1 {
     right: 0px; top: 21px;
     /* background-color: orange; */
     /* width: 124px; */
-    /* height: 15px; */
+    height: 15px;
 }
 .top_gnb li {
     float: left;
