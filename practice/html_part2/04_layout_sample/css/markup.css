@@ -36,7 +36,7 @@ img {
     /* background-color: hotpink; */
     margin: 0 auto;
     
-    border: 3px dashed hotpink;
+    /* border: 3px dashed hotpink; */
     background-image: url(../img/visual.jpg);
     background-repeat: no-repeat;
     background-position: center top;
@@ -47,7 +47,7 @@ img {
     margin: 0 auto;
     width: 1180px;
     height: 838px;
-    border: gray dashed 1px;
+    /* border: gray dashed 1px; */
 }
 #contents {
     margin: 0 auto;
@@ -142,17 +142,17 @@ h1 {
 p {
     position: absolute;
     right: 58px; top: 208px;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
 }
 a.bt1 {
     position: absolute;
     right: 356px; bottom: 326px;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
 }
 a.bt2 { 
     position: absolute;
     right: 0px; bottom: 326px;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
 }
 
 /*
@@ -161,5 +161,11 @@ a.bt2 {
     left/top위치가 설정되지만 ,
     부모에게 relative가 지정되면 부모의 좌측상단이
     기준이 된다.
+
+    Margin: 0 auto; 는 div의 중앙 정렬
+	backgroud-image는 영향을 받지 않음.
+	background-image는 background-position: center top;으로 제어해야중앙 정렬 됨.
 */
+
+/* contents */
 
