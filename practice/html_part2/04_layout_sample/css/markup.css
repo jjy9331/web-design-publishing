@@ -170,7 +170,7 @@ a.bt2 {
 /* contents */
 
 .new{
-    border: 3px solid orange;
+    /* border: 3px solid orange; */
     margin-bottom: 90px;
 }
 /*
@@ -183,22 +183,26 @@ a.bt2 {
     clear: both;
 }
 .new h2 {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 39px;
     
 }
 .new div {
-    border: 2px solid lightyellow;
-    width: 350px;
+    /* border: 2px solid lightyellow; */
+    width: 380px;
     height: 479px;
+    margin-right: 20px;
+    background-color: lightyellow;
+}
+.new div.new3 {
+    margin-right: 0px;
+
 }
 .new1{
     float: left;
-    margin-right: 30px;
 }
 .new2{
     float: left;
-    margin-right: 30px;
 }
 .new3{
     float: left;
