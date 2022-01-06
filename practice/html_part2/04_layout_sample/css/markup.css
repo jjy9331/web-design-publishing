@@ -173,23 +173,45 @@ a.bt2 {
     border: 3px solid orange;
     margin-bottom: 90px;
 }
+/*
+    float설정된 자식들의 높잉를 부모에서
+    자동으로 인식하여 감싸지 못한다. 
+*/
+.new::after {
+    content: "";
+    display: block;
+    clear: both;
+}
 .new h2 {
     border: 2px solid red;
+    height: 39px;
+    
 }
 .new div {
     border: 2px solid lightyellow;
+    width: 350px;
+    height: 479px;
 }
 .new1{
     float: left;
+    margin-right: 30px;
 }
 .new2{
     float: left;
+    margin-right: 30px;
 }
-
+.new3{
+    float: left;
+}
 
 .insta {
     border: 3px solid orange;
 }
+.insta h2 { 
+    border: 2px solid red;
+    height: 39px;
+}
+
 .insta li {
     float: left;
 }
