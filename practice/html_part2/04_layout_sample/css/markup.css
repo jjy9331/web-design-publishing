@@ -51,7 +51,7 @@ img {
 }
 #contents {
     margin: 0 auto;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     width: 1180px;
     /* height: 939px; */
     margin-top: 71px;
@@ -194,15 +194,14 @@ a.bt2 {
     margin-right: 20px;
     background-color: lightyellow;
 }
-/*
-    .new div.new3 {
-        margin-right: 0px;
-
-    }
-*/
-.new div:last-child {
+.new div.new3 {
     margin-right: 0px;
 }
+/*
+    .new div:last-child {
+        margin-right: 0px;
+    }   
+*/
 .new1{
     float: left;
 }
@@ -214,13 +213,29 @@ a.bt2 {
 }
 
 .insta {
-    border: 3px solid orange;
+    /* border: 3px solid orange; */
 }
 .insta h2 { 
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 39px;
 }
 
 .insta li {
     float: left;
+    width: 285px;
+    height: 285px;
+    background-color: lightyellow;
+    margin-right: 13px;
+}
+.insta li:nth-child(4){
+    margin-right: 0px;
+}
+/*
+    부모:nth-child(n){}
+    .new안의 둘째이면서 div인 요소 
+*/
+.insta::after {
+    content: "";
+    display: block;
+    clear: both;
 }
