@@ -225,11 +225,22 @@ a.bt2 {
     width: 285px;
     height: 285px;
     background-color: lightyellow;
+    /* margin-right: 13px; */
+}
+.insta li.in1{
     margin-right: 13px;
 }
-.insta li:nth-child(4){
-    margin-right: 0px;
+.insta li.in2{
+    margin-right: 14px;
 }
+.insta li.in3{
+    margin-right: 13px;
+}
+/*
+    .insta li:nth-child(4){
+    margin-right: 0px;
+    }
+*/
 /*
     부모:nth-child(n){}
     .new안의 둘째이면서 div인 요소 
