@@ -74,7 +74,7 @@ h1 {
     position: absolute;
     right: 0px; bottom: 34px;
     background-color: green;
-    width: 339px;
+    width: 317px;
     height: 18px;
 }
 .gnb li {
@@ -83,10 +83,16 @@ h1 {
     /* width: 20%; */
     margin-left: 22px;
 }
+.gnb .g1 {
+    margin-left: 0;
+}
 /* 
     상자(블록요소)는 가로길이가 영역에 가득차며 위에서 아래로 수직으로 쌓인다
     기본적으로 위에서 아래로 수직으로 쌓이지만, float설정된 
     상자들끼리는 가로배열된다.
+
+    CSS 우선순위
+    id(100) > class(10) > tag(1)
 */
 .top_gnb {
     position: absolute;
@@ -97,7 +103,12 @@ h1 {
 }
 .top_gnb li {
     float: left;
-    width: 25%;
+    /* width: 25%; */
+    margin-left: 20px;
+}
+
+.top_gnb .t1 {
+    margin-left: 0px;
 }
 
 /*visual*/
