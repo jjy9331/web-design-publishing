@@ -73,8 +73,8 @@ h1 {
     
     position: absolute;
     right: 0px; bottom: 34px;
-    background-color: green;
-    width: 317px;
+    /* background-color: green; */
+    /* width: 317px; */
     height: 18px;
 }
 .gnb li {
@@ -83,9 +83,8 @@ h1 {
     /* width: 20%; */
     margin-left: 22px;
 }
-.gnb li:first-child {
-    margin-left: 0;
-}
+
+
 /* 
     상자(블록요소)는 가로길이가 영역에 가득차며 위에서 아래로 수직으로 쌓인다
     기본적으로 위에서 아래로 수직으로 쌓이지만, float설정된 
@@ -93,13 +92,33 @@ h1 {
 
     CSS 우선순위
     id(100) > class(10) > tag(1)
+
+    solution 1
+
+        .gnb li .g1 {
+        margin-left: 0;
+        }
+
+        .top_gnb li .t1 {
+        margin-left: 0px;
+        } 
+
+    solution 2
+    
+        .gnb li:first-child {
+        margin-left: 0;
+        }
+
+        .top_gnb li:first-child {
+        margin-left: 0px;
+        }
 */
 .top_gnb {
     position: absolute;
     right: 0px; top: 21px;
-    background-color: orange;
-    width: 124px;
-    height: 15px;
+    /* background-color: orange; */
+    /* width: 124px; */
+    /* height: 15px; */
 }
 .top_gnb li {
     float: left;
@@ -107,9 +126,7 @@ h1 {
     margin-left: 20px;
 }
 
-.top_gnb li:first-child {
-    margin-left: 0px;
-}
+
 
 /*visual*/
 
