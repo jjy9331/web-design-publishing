@@ -33,8 +33,14 @@ img {
 
 }
 #visual {
-    background-color: hotpink;
+    /* background-color: hotpink; */
+    margin: 0 auto;
     
+    border: 3px dashed hotpink;
+    background-image: url(../img/visual.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+
 }
 #visual .inner{
     position: relative;
