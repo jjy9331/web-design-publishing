@@ -194,9 +194,14 @@ a.bt2 {
     margin-right: 20px;
     background-color: lightyellow;
 }
-.new div.new3 {
-    margin-right: 0px;
+/*
+    .new div.new3 {
+        margin-right: 0px;
 
+    }
+*/
+.new div:last-child {
+    margin-right: 0px;
 }
 .new1{
     float: left;
