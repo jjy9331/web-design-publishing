@@ -25,7 +25,7 @@ body {
 }
 a {
     color: #333;
-    text-decoration: underline;
+    text-decoration: none;
 }
 a:hover{
     opacity: 0.3;
@@ -34,7 +34,8 @@ a:hover{
 
 /*
     opacity 투명도
-    
+    1 = 100%
+    0.5 = 50%
 */
 
 
@@ -202,7 +203,7 @@ a.bt2 {
     float설정된 자식들의 높잉를 부모에서
     자동으로 인식하여 감싸지 못한다. 
 */
-.new::after {
+.new:after {
     content: "";
     display: block;
     clear: both;
@@ -219,6 +220,11 @@ a.bt2 {
     margin-right: 20px;
     background-color: lightyellow;
 }
+
+.new div img:hover{
+    opacity: 0.5;
+}
+
 .new p {
     position: absolute;
     left: 0px top 0px;
