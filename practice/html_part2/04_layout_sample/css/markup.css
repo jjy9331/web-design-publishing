@@ -64,6 +64,7 @@ a:hover{
 }
 #visual {
     /* background-color: hotpink; */
+    position: relative;
     margin: 0 auto;
     
     /* border: 3px dashed hotpink; */
@@ -177,10 +178,18 @@ h1 {
 
 /*visual*/
 
-#visual p {
+#visual .slogan{
     position: absolute;
     right: 58px; top: 208px;
-    /* border: 2px solid yellow; */
+    border: 2px solid yellow;
+    background-color: orange;
+}
+#visual .slogan p {
+    /* position: absolute; */
+    /* right: 58px; top: 208px; */
+    border: 2px solid yellow;
+    /* padding-top: 208px; */
+    text-align: left;
 }
 a.bt1 {
     position: absolute;
@@ -302,7 +311,7 @@ a.bt2 {
 
 /* footer */
 p.copyright{
-    position: absolute;
+    /* position: absolute; */
     left: 0px; top: 0px;
     text-align: center;
     /* margin-top: 52px; */
