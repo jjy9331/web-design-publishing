@@ -111,10 +111,10 @@ a:hover{
 h1 {
     position: absolute;
     left: 0px; top: 36px;
-    background-color: red;
-    width: 103px;
+    /* background-color: red; */
+    width: 108px;
     height: 18px;
-    background-image: url(../img/logo.gif);
+    background-image: url(../img/logo.png);
 }
 .gnb {
     
