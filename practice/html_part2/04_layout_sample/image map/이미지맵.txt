@@ -1,0 +1,13 @@
+<img src="" alt="" usemap="#네임">
+
+
+<map name="네임">
+
+     <area shape="rect" coords="0,0,0,0" href="#" target="_blank" alt="" />
+
+     <area shape="circle" coords="0,0,0" href="#" target="_blank" alt="" />
+
+     <area shape="poly" coords="0,0,0,0,0,0,0" href="#" target="_blank" alt="" />
+
+</map>
+
