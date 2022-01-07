@@ -26,6 +26,7 @@ body {
     background-repeat: no-repeat;
     margin: 0 auto;
     background-position: center top;
+    background-attachment: fixed;
 }
 a {
     color: #333;
@@ -58,14 +59,14 @@ a:hover{
     margin: 0 auto;
     width: 1180px;
     height: 95px;
-    border: gray dashed 1px;
+    /* border: gray dashed 1px; */
 
 }
 #visual {
     /* background-color: hotpink; */
     margin: 0 auto;
     
-    border: 3px dashed hotpink;
+    /* border: 3px dashed hotpink; */
     /* background-image: url(../img/visual.jpg); */
     background-repeat: no-repeat;
     background-position: center top;
@@ -76,7 +77,10 @@ a:hover{
     margin: 0 auto;
     width: 1180px;
     height: 955px;
-    border: gray dashed 1px;
+    /* border: gray dashed 1px; */
+}
+#contents_wr{
+    background-color: white;
 }
 #contents {
     position: relative;
@@ -84,9 +88,10 @@ a:hover{
     /* background-color: yellowgreen; */
     width: 1180px;
     /* height: 939px; */
-    margin-top: 71px;
-    margin-bottom: 106px;
-
+    /* margin-top: 71px; */
+    /* margin-bottom: 106px; */
+    padding-top: 71px;
+    padding-bottom: 106px;
 }
 #footer {
     /* background-color: orange; */
