@@ -22,6 +22,10 @@ body {
     font-size: 15px;
     font-family: 'Noto Sans KR';
     color: #333;
+    background-image: url(../img/guess-10.jpg);
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    background-position: center top;
 }
 a {
     color: #333;
@@ -46,23 +50,23 @@ a:hover{
 
 #header {
     margin: 0;
-    background-color: lightyellow;
-    background-image: url(../img/header.jpg);
+    /* background-color: lightyellow; */
+    /* background-image: url(../img/header.jpg); */
 }
 #header .inner {
     position: relative;
     margin: 0 auto;
     width: 1180px;
     height: 95px;
-    /* border: gray dashed 1px; */
+    border: gray dashed 1px;
 
 }
 #visual {
     /* background-color: hotpink; */
     margin: 0 auto;
     
-    /* border: 3px dashed hotpink; */
-    background-image: url(../img/visual.jpg);
+    border: 3px dashed hotpink;
+    /* background-image: url(../img/visual.jpg); */
     background-repeat: no-repeat;
     background-position: center top;
 
@@ -71,8 +75,8 @@ a:hover{
     position: relative;
     margin: 0 auto;
     width: 1180px;
-    height: 838px;
-    /* border: gray dashed 1px; */
+    height: 955px;
+    border: gray dashed 1px;
 }
 #contents {
     position: relative;
