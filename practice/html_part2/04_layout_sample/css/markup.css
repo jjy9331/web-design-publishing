@@ -36,6 +36,9 @@ a:hover{
     opacity 투명도
     1 = 100%
     0.5 = 50%
+
+    a 모두 opacity 적용하면 
+    img onmouseover, onmouseout 적용 안됨
 */
 
 
