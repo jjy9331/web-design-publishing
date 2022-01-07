@@ -28,7 +28,7 @@ a {
     text-decoration: none;
 }
 a:hover{
-    opacity: 0.3;
+    /* opacity: 0.3; */
     color: orange;
 }
 
