@@ -17,6 +17,27 @@ img {
     vertical-align: top; /* 크롬 등 일부 브러우저에서 이미지 배열시 생기는 공백오류를 방지*/
 }
 
+/* base(기본설정) */
+body { 
+    font-size: 15px;
+    font-family: 'Noto Sans KR';
+    color: #333;
+}
+a {
+    color: #333;
+    text-decoration: underline;
+}
+a:hover{
+    opacity: 0.3;
+    color: orange;
+}
+
+/*
+    opacity 투명도
+    
+*/
+
+
 /*layout*/
 
 #header {
@@ -50,6 +71,7 @@ img {
     /* border: gray dashed 1px; */
 }
 #contents {
+    position: relative;
     margin: 0 auto;
     /* background-color: yellowgreen; */
     width: 1180px;
@@ -142,7 +164,7 @@ h1 {
 
 /*visual*/
 
-p {
+#visual p {
     position: absolute;
     right: 58px; top: 208px;
     /* border: 2px solid yellow; */
@@ -197,6 +219,10 @@ a.bt2 {
     margin-right: 20px;
     background-color: lightyellow;
 }
+.new p {
+    position: absolute;
+    left: 0px top 0px;
+}
 .new div.new3 {
     margin-right: 0px;
 }
@@ -214,6 +240,8 @@ a.bt2 {
 .new3{
     float: left;
 }
+
+
 
 .insta {
     /* border: 3px solid orange; */
