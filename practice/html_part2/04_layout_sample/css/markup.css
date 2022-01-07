@@ -18,9 +18,10 @@ img {
 }
 
 /* base(기본설정) */
+
 body { 
     font-size: 15px;
-    font-family: 'Noto Sans KR';
+    font-family: 'Roboto','Noto Sans KR';
     color: #333;
     background-image: url(../img/guess-10.jpg);
     background-repeat: no-repeat;
@@ -45,6 +46,9 @@ a:hover{
     a 모두 opacity 적용하면 
     img onmouseover, onmouseout 적용 안됨
 */
+
+
+
 
 
 /*layout*/
