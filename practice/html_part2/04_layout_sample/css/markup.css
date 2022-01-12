@@ -389,7 +389,29 @@ a.bt2 {
 
 .best {
     padding-top: 50px;
+    border: 1px dashed lightgray;
 }
+.best:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/*
+    float설정된 자식들의 높이를 부모에서
+    자동으로 인식하여 감싸지 못한다. 
+    이를 해결하려면 부모에게 overflow:hidden설정하거나
+    부모:after{ content:""; display: block; clear: both;} 
+*/
+.best h2 {
+    padding-bottom: 21px;
+}
+.best li {
+    float: left;
+    width: 33.33%;
+}
+/*
+    부모길이의 33.33% = 100나누기 3
+*/
 .best .b1 {
     background-color: lightblue;
 }
