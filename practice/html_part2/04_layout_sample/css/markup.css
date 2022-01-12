@@ -146,7 +146,13 @@ h1 {
 .gnb li a {
     color: black;
     font-size: 12px;
+    transition: 0.7s;
 }
+/*
+    css속성에 hover등으로 변화가 일어났을 때 
+    지정한 시간(1s = 1초)만큼 중간단계의 변화가 일어남
+    :수치와 색에 대한 속성만 가능
+*/
 .gnb li a:hover{
     color: #fff;
     padding: 3px 9px;
