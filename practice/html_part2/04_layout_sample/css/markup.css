@@ -138,6 +138,15 @@ h1 {
     /* width: 20%; */
     margin-left: 22px;
 }
+.gnb li a {
+    color: black;
+    font-size: 12px;
+}
+.gnb li a:hover{
+    color: #fff;
+    padding: 3px 9px;
+    background-color: #000;
+}
 
 
 /* 
@@ -188,15 +197,28 @@ h1 {
 #visual .slogan{
     position: absolute;
     right: 58px; top: 208px;
-    border: 2px solid yellow;
-    background-color: orange;
+    /* border: 2px solid yellow; */
+    /* background-color: orange; */
 }
 #visual .slogan p {
     /* position: absolute; */
     /* right: 58px; top: 208px; */
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     /* padding-top: 208px; */
     text-align: left;
+    color: #fff;
+}
+#visual .slogan .s1{
+    font-size: 100px;
+    font-weight: 900;
+}
+#visual .slogan .s1 span{
+    font-weight: 100;
+}
+
+#visual .slogan .s2{
+    font-size: 20px;
+    font-weight: 500;
 }
 a.bt1 {
     position: absolute;
