@@ -118,16 +118,35 @@ a:hover{
 }
 #footer {
     /* background-color: orange; */
-    /* border: 5px solid lightblue; */
-    background-image: url(../img/footer.jpg);
+    border: 5px solid lightblue;
+    /* background-image: url(../img/footer.jpg); */
 }
-#footer .inner{
-    position: relative;
+#footer .area1 {
+    background-color: orange;
+}
+#footer .area1 .inner{
+    margin: 0 auto;
+    width: 1180px;
+    height: 201px;
+    border: 3px dashed lightgreen;
+}
+#footer .area2 {
+    background-color: skyblue;
+}
+#footer .area2 .inner {
     margin: 0 auto;
     width: 1180px;
     height: 101px;
-    /* border: gray dashed 1px; */
+    border: 3px dashed lightgreen;
 }
+/*
+    #footer .inner{
+        position: relative;
+        margin: 0 auto;
+        width: 1180px;
+        height: 101px;
+        border: gray dashed 1px;
+    }*/
 
 /*header*/
 
@@ -428,7 +447,11 @@ a.bt2 {
 }
 
 /* footer */
-p.copyright{
+.area1 .inner div{
+    color: rgba(255, 255, 255, 1);
+}
+
+.area2 .inner p.copyright{
     /* position: absolute; */
     left: 0px; top: 0px;
     text-align: center;
@@ -436,6 +459,7 @@ p.copyright{
     padding-top: 52px; /* 마진오류 발생시 패딩으로 해결*/
     /* border: 2px solid red; */
     font-size: 15px;
+    color: rgba(255, 255, 255, 1);
 }
 
 
