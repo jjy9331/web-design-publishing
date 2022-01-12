@@ -322,9 +322,10 @@ a.bt2 {
     opacity: 0.5;
 }
 
-.new p {
+.new p a {
     position: absolute;
     left: 0px top 0px;
+    /* background-color: yellow; */
 }
 .new div.new3 {
     margin-right: 0px;
@@ -347,6 +348,7 @@ a.bt2 {
 
 
 .insta {
+    padding-top: 50px;
     /* border: 3px solid orange; */
 }
 .insta h2 { 
@@ -379,12 +381,24 @@ a.bt2 {
     부모:nth-child(n){}
     .new안의 둘째이면서 div인 요소 
 */
-.insta::after {
+.insta:after {
     content: "";
     display: block;
     clear: both;
 }
 
+.best {
+    padding-top: 50px;
+}
+.best .b1 {
+    background-color: lightblue;
+}
+.best .b2 {
+    background-color: lightyellow;
+}
+.best .b3 {
+    background-color: lightpink;
+}
 /* footer */
 p.copyright{
     /* position: absolute; */
