@@ -233,6 +233,9 @@ h1 {
     padding-bottom: 27px;
     border: 1px solid rgba(255, 255, 255, 0.7);
 }
+#visual a:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
 a.bt1 {
     position: absolute;
     right: 356px; bottom: 326px;
