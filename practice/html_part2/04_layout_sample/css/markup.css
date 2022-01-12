@@ -101,6 +101,11 @@ a:hover{
     padding-top: 71px;
     padding-bottom: 106px;
 }
+#contents h2 {
+    color: #000;
+    font-size: 14px;
+    font-family: 'Roboto','Noto Sans KR';
+}
 #footer {
     /* background-color: orange; */
     /* border: 5px solid lightblue; */
@@ -362,7 +367,9 @@ p.copyright{
     /* margin-top: 52px; */
     padding-top: 52px; /* 마진오류 발생시 패딩으로 해결*/
     /* border: 2px solid red; */
+    font-size: 15px;
 }
+
 
 /*
     마진오류는 부모자식관계에서 자식쪽의
