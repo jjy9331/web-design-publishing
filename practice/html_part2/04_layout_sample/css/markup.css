@@ -194,7 +194,13 @@ h1 {
     /* width: 25%; */
     margin-left: 20px;
 }
-
+.top_gnb li a i{
+    font-size: 20px;
+    columns: #333;
+}
+.top_gnb li a i:hover{
+    color: white;
+}
 
 
 /*visual*/
