@@ -1,0 +1,51 @@
+
+
+웹아이콘
+
+
+1. ionicons
+
+     http://ionicons.com/v2
+     연결할 CSS
+     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+     http://ionicons.com
+     연결할 JS
+     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
+
+
+
+
+2. google icon
+
+     https://design.google.com/icons
+
+     연결할 CSS
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+
+
+3.폰트어썸
+
+   https://fontawesome.com/icons
+
+   회원가입후 개인별 코드를 받아야하지만
+   아래는 어떤 블로그(https://blog.naver.com/leeqwe89/222286881322)에서 공유한 코드입니다
+
+   연결할JS
+   <script src="https://kit.fontawesome.com/6584921572.js" crossorigin="anonymous"></script>
+
+   아이콘 중 무료만 사용할 수 있습니다
+
+
+
+
+
+
+
+
