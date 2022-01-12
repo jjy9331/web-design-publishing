@@ -413,14 +413,20 @@ a.bt2 {
     부모길이의 33.33% = 100나누기 3
 */
 .best .b1 {
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 .best .b2 {
-    background-color: lightyellow;
+    /* background-color: lightyellow; */
 }
 .best .b3 {
-    background-color: lightpink;
+    /* background-color: lightpink; */
 }
+
+.best li img {
+    /* width: 393px; */
+    width: 100%;
+}
+
 /* footer */
 p.copyright{
     /* position: absolute; */
