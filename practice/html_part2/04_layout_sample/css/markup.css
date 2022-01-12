@@ -26,11 +26,11 @@ body {
     font-size: 15px;
     font-family: 'Roboto','Noto Sans KR';
     color: #333;
-    background-image: url(../img/guess-10.jpg);
+    /* background-image: url(../img/guess-10.jpg); */
     background-repeat: no-repeat;
     margin: 0 auto;
     background-position: center top;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
 }
 a {
     color: #333;
@@ -57,10 +57,18 @@ a:hover{
 /*layout*/
 
 #header {
+    position: absolute;
+    left: 0px; top: 0px;
+    width: 100%;
+    z-index: 1000;
     margin: 0;
-    /* background-color: lightyellow; */
+    background-color: rgba(255, 255, 255, 0.9);
     /* background-image: url(../img/header.jpg); */
 }
+/*
+    header와 visual inner의 position이 겹치므르
+    z-index로 겹침 순서를 정해줘야 hover가 작동한다.
+*/
 #header .inner {
     position: relative;
     margin: 0 auto;
@@ -71,20 +79,22 @@ a:hover{
 }
 #visual {
     /* background-color: hotpink; */
-    position: relative;
+    height: 1050px;
+    /* position: relative; */
     margin: 0 auto;
     
     /* border: 3px dashed hotpink; */
-    /* background-image: url(../img/visual.jpg); */
+    background-image: url(../img/guess-10.jpg);
     background-repeat: no-repeat;
     background-position: center top;
+    background-attachment: fixed;
 
 }
 #visual .inner{
     position: relative;
     margin: 0 auto;
     width: 1180px;
-    height: 955px;
+    height: 1050px;
     /* border: gray dashed 1px; */
 }
 #contents_wr{
@@ -125,9 +135,9 @@ h1 {
     position: absolute;
     left: 0px; top: 36px;
     /* background-color: red; */
-    width: 108px;
+    width: 103px;
     height: 18px;
-    background-image: url(../img/logo.png);
+    background-image: url(../img/logo.gif);
 }
 .gnb {
     
@@ -214,7 +224,7 @@ h1 {
 
 #visual .slogan{
     position: absolute;
-    right: 58px; top: 208px;
+    right: 0px; top: 408px;
     /* border: 2px solid yellow; */
     /* background-color: orange; */
 }
@@ -237,6 +247,7 @@ h1 {
 #visual .slogan .s2{
     font-size: 20px;
     font-weight: 500;
+    /* text-align: right; */
 }
 
 #visual a {
