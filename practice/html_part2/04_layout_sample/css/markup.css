@@ -222,15 +222,16 @@ h1 {
 }
 
 #visual a {
-    color: black;
+    color: rgba(255, 255, 255, 1);
     font-size: 20px;
     font-weight: 500;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
     width: 341px;
     /* height: 50px; */
     text-align: center;
     padding-top: 27px;
     padding-bottom: 27px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
 }
 a.bt1 {
     position: absolute;
