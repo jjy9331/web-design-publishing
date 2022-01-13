@@ -99,26 +99,7 @@ a:focus {
     border: gray dashed 1px;
 
 }
-#visual {
-    /* background-color: hotpink; */
-    height: 1050px;
-    position: relative;
-    margin: 0 auto;
-    
-    /* border: 3px dashed hotpink; */
-    background-image: url(../img/guess-10.jpg);
-    background-repeat: no-repeat;
-    background-position: center top;
-    /* background-attachment: fixed; */
 
-}
-#visual .inner{
-    position: relative;
-    margin: 0 auto;
-    width: 1180px;
-    height: 1050px;
-    /* border: gray dashed 1px; */
-}
 #contents_wr{
     background-color: rgba(255, 255, 255, 1);
 }
@@ -164,7 +145,7 @@ a:focus {
 }
 #footer .area2 .inner {
     margin: 0 auto;
-    width: 1180px;
+    width: 95%; /*부모길이의 95%*/
     height: 101px;
     border: 3px dashed lightgreen;
 }
@@ -270,60 +251,13 @@ h1 {
 
 /*visual*/
 
-#visual .slogan{
-    position: absolute;
-    right: 0px; top: 408px;
-    /* border: 2px solid yellow; */
-    /* background-color: orange; */
-}
-#visual .slogan p {
-    /* position: absolute; */
-    /* right: 58px; top: 208px; */
-    /* border: 2px solid yellow; */
-    /* padding-top: 208px; */
-    text-align: left;
-    color: #fff;
-}
-#visual .slogan .s1{
-    font-size: 100px;
-    font-weight: 900;
-}
-#visual .slogan .s1 span{
-    font-weight: 100;
+#visual img {
+    width: 100%;
 }
 
-#visual .slogan .s2{
-    font-size: 20px;
-    font-weight: 500;
-    /* text-align: right; */
-}
+/*
 
-#visual a {
-    color: rgba(255, 255, 255, 1);
-    font-size: 20px;
-    font-weight: 500;
-    background-color: rgba(255, 255, 255, 0.2);
-    width: 341px;
-    /* height: 50px; */
-    text-align: center;
-    padding-top: 27px;
-    padding-bottom: 27px;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-}
-#visual a:hover{
-    background-color: rgba(255, 255, 255, 0.5);
-}
-a.bt1 {
-    position: absolute;
-    right: 356px; bottom: 326px;
-    /* border: 2px solid yellow; */
-}
-a.bt2 { 
-    position: absolute;
-    right: 0px; bottom: 326px;
-    /* border: 2px solid yellow; */
-}
-
+*/
 /*
     absolute요소는 일반요소로부터 독립하여
     기본적으로 body 좌측상단을 기준으로 
