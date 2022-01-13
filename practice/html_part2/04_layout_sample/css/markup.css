@@ -357,14 +357,16 @@ a.bt2 {
     
 }
 .new div {
-    /* border: 2px solid lightyellow; */
-    width: 380px;
+    border: 2px solid lightyellow;
+    width: 33.33%;
     height: 479px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     background-color: lightyellow;
+    box-sizing: border-box;
 }
 .new div img{
     transition: 0.7s;
+    width: 50%;
 }
 .new div img:hover{
     opacity: 0.5;
