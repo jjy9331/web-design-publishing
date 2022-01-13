@@ -40,7 +40,9 @@ a:hover{
     /* opacity: 0.3; */
     color: orange;
 }
-
+a:focus {
+    opacity: 0.5;
+}
 /*
     opacity 투명도
     1 = 100%
@@ -56,6 +58,9 @@ a:hover{
     top: 0px;
 } */
 
+/*
+    focus(포커스): 링크(a태그)가 선택되어진 상태
+*/
 
 
 
