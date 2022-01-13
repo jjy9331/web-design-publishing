@@ -50,6 +50,10 @@ a:hover{
     img onmouseover, onmouseout 적용 안됨
 */
 
+.skip_navigation a {
+    position:absolute;
+    top: -9999px;
+}
 
 
 
@@ -62,7 +66,7 @@ a:hover{
     width: 100%;
     z-index: 1000;
     margin: 0;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.9);
     /* background-image: url(../img/header.jpg); */
 }
 /*
