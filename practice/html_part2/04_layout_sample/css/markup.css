@@ -121,17 +121,17 @@ a:focus {
 }
 #footer {
     /* background-color: orange; */
-    border: 5px solid lightblue;
+    /* border: 5px solid lightblue; */
     /* background-image: url(../img/footer.jpg); */
 }
 #footer .area1 {
-    background-color: orange;
+    background-color: rgba(171, 170, 170, 0.7);
 }
 #footer .area1 .inner{
     margin: 0 auto;
     width: 90%;
     /* height: 201px; */
-    border: 3px dashed lightgreen;
+    /* border: 3px dashed lightgreen; */
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -141,13 +141,14 @@ a:focus {
     clear: both;
 }
 #footer .area2 {
-    background-color: skyblue;
+    background-color: rgba(201, 201, 201,0.7);
 }
 #footer .area2 .inner {
+    position: relative;
     margin: 0 auto;
     width: 95%; /*부모길이의 95%*/
     height: 101px;
-    border: 3px dashed lightgreen;
+    /* border: 3px dashed lightgreen; */
 }
 /*
     #footer .inner{
@@ -429,9 +430,8 @@ h1 {
     float: left;
     color: rgba(255, 255, 255, 1);
     width: 20%;
-    border: 1px dashed skyblue;
+    /* border: 1px dashed skyblue; */
     box-sizing: border-box; /* 안쪽 테두리 */
-    background-color: rgba(255, 255, 0, 0.5);
 }
 .area1 .inner h3{
     font-size: 16px;
@@ -439,17 +439,37 @@ h1 {
     padding-bottom: 20px;
 }
 
-.area2 .inner p.copyright{
+.area2 .inner p {
     /* position: absolute; */
-    left: 0px; top: 0px;
-    text-align: center;
+    /* left: 0px; top: 0px; */
+    /* text-align: center; */
     /* margin-top: 52px; */
-    padding-top: 52px; /* 마진오류 발생시 패딩으로 해결*/
+    /* padding-top: 52px;  */
     /* border: 2px solid red; */
-    font-size: 15px;
+    /* font-size: 15px; */
     color: rgba(255, 255, 255, 1);
+    /* border: 1px dashed lightpink; */
 }
 
+.area2 .inner ul.sns {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    /* border: 1px dashed lightpink; */
+}
+.area2 .inner ul.sns li {
+    float: left;
+    padding-right: 10px;
+    /* border: 1px dashed lightpink; */
+}
+
+.area2 .inner .address {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.area2 .inner .sns i {
+    color: rgba(255, 255, 255, 1);
+}
 
 /*
     마진오류는 부모자식관계에서 자식쪽의
