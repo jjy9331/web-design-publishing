@@ -127,8 +127,13 @@ a:hover{
 #footer .area1 .inner{
     margin: 0 auto;
     width: 1180px;
-    height: 201px;
+    /* height: 201px; */
     border: 3px dashed lightgreen;
+}
+#footer .area1 .inner::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 #footer .area2 {
     background-color: skyblue;
@@ -448,7 +453,12 @@ a.bt2 {
 
 /* footer */
 .area1 .inner div{
+    float: left;
     color: rgba(255, 255, 255, 1);
+    width: 236px;
+    border: 1px dashed skyblue;
+    box-sizing: border-box; /* 안쪽 테두리 */
+    background-color: rgba(255, 255, 0, 0.5);
 }
 
 .area2 .inner p.copyright{
