@@ -129,6 +129,8 @@ a:hover{
     width: 1180px;
     /* height: 201px; */
     border: 3px dashed lightgreen;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 #footer .area1 .inner::after{
     content: "";
@@ -459,6 +461,11 @@ a.bt2 {
     border: 1px dashed skyblue;
     box-sizing: border-box; /* 안쪽 테두리 */
     background-color: rgba(255, 255, 0, 0.5);
+}
+.area1 .inner h3{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    padding-bottom: 20px;
 }
 
 .area2 .inner p.copyright{
