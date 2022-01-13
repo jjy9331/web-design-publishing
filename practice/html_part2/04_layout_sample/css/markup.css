@@ -252,13 +252,15 @@ h1 {
 
 /*visual*/
 
-#visual img {
+#visual video {
     width: 100%;
 }
 
 /*
-
+    가변이미지나 동영상의 부모쪽에는 
+	height를 넣으면 안됨
 */
+
 /*
     absolute요소는 일반요소로부터 독립하여
     기본적으로 body 좌측상단을 기준으로 
