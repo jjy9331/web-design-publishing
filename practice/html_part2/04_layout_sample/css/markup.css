@@ -52,11 +52,20 @@ a:focus {
     img onmouseover, onmouseout 적용 안됨
 */
 
-/* .skip_navigation a {
+.skip_navigation a {
     position:absolute;
     left: 0px;
-    top: 0px;
-} */
+    top: -9999px;
+}
+.skip_navigation a:focus {
+    left: 0px;
+    top:0px;
+    background-color:black;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
 
 /*
     focus(포커스): 링크(a태그)가 선택되어진 상태
