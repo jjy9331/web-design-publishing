@@ -79,7 +79,7 @@ a:focus {
 /*layout*/
 
 #header {
-    /* position: absolute; */
+    position: fixed;
     left: 0px; top: 0px;
     width: 100%;
     z-index: 1000;
@@ -88,6 +88,8 @@ a:focus {
     /* background-image: url(../img/header.jpg); */
 }
 /*
+    fixed 요소의 위치값은 브라우저 창만을 기준으로 한다. 
+    -스크롤시 고정됨
     header와 visual inner의 position이 겹치므르
     z-index로 겹침 순서를 정해줘야 hover가 작동한다.
 */
@@ -441,6 +443,7 @@ h1:hover {
 .best li {
     float: left;
     width: 33.33%;
+    overflow: hidden;
 }
 /*
     부모길이의 33.33% = 100나누기 3
@@ -458,6 +461,10 @@ h1:hover {
 .best li img {
     /* width: 393px; */
     width: 100%;
+    transition: 0.5s;
+}
+.best li img:hover {
+    transform:scale(1.2,1.2)
 }
 
 /* footer */
