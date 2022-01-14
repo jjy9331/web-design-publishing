@@ -239,6 +239,31 @@ h1:hover {
 }
 
 
+/*container*/
+#container {
+    width: 1180px;
+    margin: 0 auto;
+    border: 1px dashed blue;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+#container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+#container #sidebar{
+    float: left;
+    width: 380px;
+    background-color: orange;
+    border: 1px dashed blue;
+}
+#container #contents_sub{
+    float: right;
+    width: 780px;
+    background-color: skyblue;
+    border: 1px dashed blue;
+}
 
 
 
@@ -297,27 +322,3 @@ h1:hover {
     부모의 테두리를 빼면 오류가 생긴다.
 */
 
-#container {
-    width: 1180px;
-    margin: 0 auto;
-    border: 1px dashed blue;
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-#container::after{
-    content: "";
-    display: block;
-    clear: both;
-}
-#container #sidebar{
-    float: left;
-    width: 380px;
-    background-color: orange;
-    border: 1px dashed blue;
-}
-#container #contents_sub{
-    float: right;
-    width: 780px;
-    background-color: skyblue;
-    border: 1px dashed blue;
-}
