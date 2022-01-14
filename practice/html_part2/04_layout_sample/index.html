@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+
+<!-- 
+    구글 웹폰트(font.google.com) 
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+-->
+
+<!-- 
+    아이온 웹아이콘(http://ionicons.com/v2)
+
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+-->
+
+
+<!--google icon (https://design.google.com/icons)-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" href="../04_layout_sample/css/index.css">
+
+
+</head>
+<body>
+
+<div class="skip_navigation">
+    <a href="#contents">본문 바로가기</a>
+    <a href="#footer">하단 바로가기</a>
+    <!-- #아이디명으로 페이지내 이동 -->
+</div>
+
+<!--
+    div 다목적 상자
+    
+    시멘틱 요소
+        header 헤더를 묶는 상자
+        footer 푸터를 묶는 상자
+        nav 메뉴(navigation)을 묶는 상자
+        section/article 컨텐츠를 묶는 상자
+        aside 사이드바를 묶는 상자
+-->
+
+
+<header id="header">
+    <div class="inner">
+        <h1>
+            <a href="#"></a>
+        </h1>
+        
+        <h2 class="blind">주요 메뉴</h2>
+        <ul class="gnb">
+            <li class="g1">
+                <a href="sub1-1.html">
+                    ACCESSORIES
+                </a>
+            </li>
+            <li>
+                <a href="sub2-1.html">
+                    HANDBAG
+                </a>
+            </li>
+            <li>
+                <a href="sub3-1.html"> 
+                    WATCHES
+            </li>
+            <li>
+                <a href="sub4-1.html">
+                    JEWELRY
+            </li>
+            <li>
+                <a href="sub5-1.html">
+                    SALE
+            </li>
+        </ul>
+        <ul class="top_gnb">
+            <li class="t1">
+                <a href="#">
+                    <i class="material-icons">
+                        search
+                    </i>
+                    <!-- <i class="ion-ios-search-strong"></i> -->
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">
+                        person
+                    </i>
+                    <!-- <i class="ion-person"></i> -->
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">
+                        location_on
+                    </i>
+                    <!-- <i class="ion-location"></i> -->
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">
+                        work
+                    </i>
+                    <!-- <i class="ion-ios-briefcase"></i> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<div id="visual">
+    <div class="inner">
+        <div class="slogan">
+            <p class="s1">
+                Shop <span>The books</span>
+
+            </p>
+            <p class="s2">
+                How to outfit the Spring Collection
+            </p>
+        </div>
+
+        <a href="#" class="bt1">
+            Shop Now
+        </a>
+
+        <a href="#" class="bt2">
+            Shop Dress Guide
+        </a>
+
+    </div>
+<!--
+    control  : play/stop/ 볼륨 등
+    autoplay : 자동실행(크롬에서 무음 동영상만 재생됨) 
+    muted : 음소거
+    loop : 반복실행
+-->
+
+
+<div id="contents_wr">
+    <div id="contents">
+        <div class="new">
+            <h2>
+                New apprival
+            </h2>
+            <p class="blind">시각장애인을 위한 설명</p>
+            <div class="new1">
+                <img src="../04_layout_sample/img/new1.jpg" alt="new1" usemap="#m1">
+                <map name="m1" id="m1">
+                    <area shape="rect" coords="96,412,314,468" href="#" alt="handbag">
+                </map>
+                <a href="#">
+                    <p>
+                        핸드백 신상품 설명입니다
+                        핸드백 신상품 설명입니다
+                        핸드백 신상품 설명입니다
+                        핸드백 신상품 설명입니다
+                        핸드백 신상품 설명입니다
+                        핸드백 신상품 설명입니다
+                        핸드백 신상품 설명입니다
+                    </p>
+                </a>
+            </div>
+            <div class="new2">
+                <img src="../04_layout_sample/img/new2.jpg" alt="new2" usemap="#m2">
+                <map name="m2">
+                    <area shape="circle" coords="208,278,35" href="#" alt="Shoes">
+                </map>
+                <a href="#">
+                    <p>
+                        신발 신상품 설명입니다
+                        신발 신상품 설명입니다
+                        신발 신상품 설명입니다
+                        신발 신상품 설명입니다
+                        신발 신상품 설명입니다
+                        신발 신상품 설명입니다
+                        신발 신상품 설명입니다
+                    </p>
+                </a>
+            </div>
+            <div class="new3">
+                <img src="../04_layout_sample/img/new3.jpg" alt="new3" usemap="#m3">
+                <map name="m3">
+                    <area shape="poly" coords="109,93,143,45,200,130" href="#" alt="GUESS Originals">
+                </map>
+                <a href="#">
+                    <p>
+                        오리지널 신상품 설명입니다
+                        오리지널 신상품 설명입니다
+                        오리지널 신상품 설명입니다
+                        오리지널 신상품 설명입니다
+                        오리지널 신상품 설명입니다
+                        오리지널 신상품 설명입니다
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <div class="insta">
+            <h2>Show Our insta</h2>
+            <p class="blind">시각장애인을 위한 설명</p>
+            <ul>
+                <li class="in1">
+                    <img src="../04_layout_sample/img/insta1.jpg" alt="insta1">
+                </li>
+                <li class="in2">
+                    <img src="../04_layout_sample/img/insta2.jpg" alt="insta2">
+                </li>
+                <li class="in3">
+                    <img src="../04_layout_sample/img/insta3.jpg" alt="insta3">
+                </li>
+                <li class="in4"> 
+                    <img src="../04_layout_sample/img/insta4.jpg" alt="insta4">
+                </li>
+            </ul>
+        </div>
+
+        <div class="best">
+            <h2 style="font-weight: 500;">Best Products</h2>
+            <!--
+                태그 옆에 css설정: 인라인(inline) CSS
+                - w3c에서 권장하지 않는 방법
+                - 임시로 테스트할때만 사용
+            -->
+            <ul>
+                <li class="b1">
+                    <img src="../04_layout_sample/img/1585098921-34.jpg" alt="best1">
+                </li>
+                <li class="b2">
+                    <img src="../04_layout_sample/img/1585098997-15.jpg" alt="best2">
+                </li>
+                <li class="b3">
+                    <img src="../04_layout_sample/img/1585099211-88.jpg" alt="best3">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="footer">
+    <div class="area1">
+        <div class="inner">
+            <h2 class="blind">사이트맵(전체메뉴)</h2>
+            <div>
+                <h3>ACCESSORIES</h3>
+                <ul>
+                    <li>submenu1</li>
+                    <li>submenu2</li>
+                    <li>submenu3</li>
+                    <li>submenu4</li>
+                    <li>submenu5</li>
+                    <li>submenu6</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>HANDBAG</h3>
+                <ul>
+                    <li>submenu1</li>
+                    <li>submenu2</li>
+                    <li>submenu3</li>
+                    <li>submenu4</li>
+                    <li>submenu5</li>
+                    <li>submenu6</li>
+                </ul>
+            </div>
+            <div>
+                <h3>WATCHES</h3>
+                <ul>
+                    <li>submenu1</li>
+                    <li>submenu2</li>
+                    <li>submenu3</li>
+                    <li>submenu4</li>
+                    <li>submenu5</li>
+                    <li>submenu6</li>
+                </ul>
+            </div>
+            <div>
+                <h3>JEWELRY</h3>
+                <ul>
+                    <li>submenu1</li>
+                    <li>submenu2</li>
+                    <li>submenu3</li>
+                    <li>submenu4</li>
+                    <li>submenu5</li>
+                    <li>submenu6</li>
+                </ul>
+            </div>
+            <div>
+                <h3>SALE</h3>
+                <ul>
+                    <li>submenu1</li>
+                    <li>submenu2</li>
+                    <li>submenu3</li>
+                    <li>submenu4</li>
+                    <li>submenu5</li>
+                    <li>submenu6</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="area2">
+        <div class="inner">
+            <p class="address">GUESS회사 주소입니다</p>
+            <p class="copyright">
+                &copy; GUESS, All rights reserved.
+            </p>
+            <ul class="sns">
+                <li>
+                    <a href="#">
+                        <i class="material-icons">
+                            info
+                        </i>  
+                    </a> 
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">
+                            help_outline
+                        </i>
+                    </a> 
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">
+                            language
+                        </i>  
+                    </a> 
+                </li>
+            </ul>
+        </div>
+        <div class="box">
+            box
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
