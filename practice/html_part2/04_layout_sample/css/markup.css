@@ -519,3 +519,48 @@ h1:hover {
     부모쪽에 테두리가 있을때는 오류가 생기지 않고
     부모의 테두리를 빼면 오류가 생긴다.
 */
+.box {
+    animation: m1 2s;
+    position: fixed;
+    right: 20px;
+    top: 200px;
+    z-index: 999;
+    background-color: red;
+    color: white;
+    width: 200px;
+    height: 400px;
+
+}
+.box:hover {
+    animation: m1 2s;
+    position: fixed;
+    right: 20px;
+    top: 200px;
+    z-index: 999;
+    background-color: red;
+    color: white;
+    width: 200px;
+    height: 400px;
+}
+
+@keyframes m1 {
+    0% {
+        right:-200px;
+        height: 0px;
+        opacity: 0;
+        background-color: white;
+    } /* 시작 */
+    50% {
+        right:-200px;
+        height: 200px;
+        opacity: 0.5;
+        background-color: white;
+    }
+    100% {
+        right: 20px;
+        height: 400px;
+        opacity: 1;
+        background-color: red;
+    } 
+    /* 끝 */
+}
