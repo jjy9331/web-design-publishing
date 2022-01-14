@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/*Eric mayor reset */
+
+body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd { 
+    margin: 0; padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 12px;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    border: 0; /* ie(인터넷 익스플로러) 하위버전에서 이미지에 링크시 테두리가 생기는걸 방지*/
+    vertical-align: top; /* 크롬 등 일부 브러우저에서 이미지 배열시 생기는 공백오류를 방지*/
+}
+
+/* base(기본설정) */
+
+body { 
+    font-size: 15px;
+    font-family: 'Roboto','Noto Sans KR';
+    color: #333;
+    /* background-image: url(../img/guess-10.jpg); */
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    background-position: center top;
+    /* background-attachment: fixed; */
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+a:hover{
+    /* opacity: 0.3; */
+    color: orange;
+}
+a:focus {
+    opacity: 0.5;
+}
+/*
+    opacity 투명도
+    1 = 100%
+    0.5 = 50%
+
+    a 모두 opacity 적용하면 
+    img onmouseover, onmouseout 적용 안됨
+*/
+
+.skip_navigation a {
+    position:absolute;
+    left: 0px;
+    top: -9999px;
+}
+.skip_navigation a:focus {
+    left: 0px;
+    top:0px;
+    background-color:black;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+.blind {
+    position:absolute; top:-9999px;
+}
+
+
+/*
+    focus(포커스): 링크(a태그)가 선택되어진 상태
+*/
+
+
+
+/*layout*/
+
+#header {
+    /* position: fixed; */
+    left: 0px; top: 0px;
+    width: 100%;
+    z-index: 1000;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* background-image: url(../img/header.jpg); */
+}
+/*
+    fixed 요소의 위치값은 브라우저 창만을 기준으로 한다. 
+    -스크롤시 고정됨
+    header와 visual inner의 position이 겹치므르
+    z-index로 겹침 순서를 정해줘야 hover가 작동한다.
+*/
+#header .inner {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    height: 95px;
+    /* border: gray dashed 1px; */
+}
+
+#footer {
+    /* background-color: orange; */
+    /* border: 5px solid lightblue; */
+    /* background-image: url(../img/footer.jpg); */
+}
+#footer .area1 {
+    background-color: rgba(171, 170, 170, 0.7);
+}
+#footer .area1 .inner{
+    margin: 0 auto;
+    width: 90%;
+    height: 201px;
+    /* border: 3px dashed lightgreen; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#footer .area1 .inner::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+#footer .area2 {
+    background-color: rgba(201, 201, 201,0.7);
+}
+#footer .area2 .inner {
+    position: relative;
+    margin: 0 auto;
+    width: 90%; /*부모길이의 95%*/
+    height: 101px;
+    /* border: 3px dashed lightgreen; */
+}
+/*
+    #footer .inner{
+        position: relative;
+        margin: 0 auto;
+        width: 1180px;
+        height: 101px;
+        border: gray dashed 1px;
+    }*/
+
+/*header*/
+
+h1 {
+    position: absolute;
+    left: 0px; top: 0px;
+    /* background-color: red; */
+    width: 103px;
+    height: 18px;
+    background-image: url(../img/logo.gif);
+    background-repeat: no-repeat;
+    margin-top: 38px;
+    /* padding-bottom: 38px; */
+    transition: 1s;
+}
+h1:hover {
+    transform:rotate(360deg);
+}
+.gnb {
+    
+    position: absolute;
+    right: 0px; bottom: 21px;
+    /* background-color: green; */
+    /* width: 317px; */
+    /* height: 18px; */
+}
+.gnb li {
+    float: left;
+    /* border: lightgray solid 1px; */
+    /* width: 20%; */
+    margin-left: 22px;
+}
+.gnb li a {
+    color: black;
+    font-size: 12px;
+    transition: 0.7s;
+}
+/*
+    css속성에 hover등으로 변화가 일어났을 때 
+    지정한 시간(1s = 1초)만큼 중간단계의 변화가 일어남
+    :수치와 색에 대한 속성만 가능
+*/
+.gnb li a:hover{
+    color: #fff;
+    padding: 3px 9px;
+    background-color: #000;
+}
+
+
+/* 
+    상자(블록요소)는 가로길이가 영역에 가득차며 위에서 아래로 수직으로 쌓인다
+    기본적으로 위에서 아래로 수직으로 쌓이지만, float설정된 
+    상자들끼리는 가로배열된다.
+
+    CSS 우선순위
+    id(100) > class(10) > tag(1)
+
+    solution 1
+
+        .gnb li .g1 {
+        margin-left: 0;
+        }
+
+        .top_gnb li .t1 {
+        margin-left: 0px;
+        } 
+
+    solution 2
+
+        .gnb li:first-child {
+        margin-left: 0;
+        }
+
+        .top_gnb li:first-child {
+        margin-left: 0px;
+        }
+*/
+.top_gnb {
+    position: absolute;
+    right: 0px; top: 21px;
+    /* background-color: orange; */
+    /* width: 124px; */
+    height: 15px;
+}
+.top_gnb li {
+    float: left;
+    /* width: 25%; */
+    margin-left: 20px;
+}
+.top_gnb li a i{
+    font-size: 22px;
+    columns: #333;
+    transition: 0.7s;
+}
+.top_gnb li a i:hover{
+    color: white;
+}
+
+
+
+
+
+
+
+/* footer */
+.area1 .inner div{
+    float: left;
+    color: rgba(255, 255, 255, 1);
+    width: 20%;
+    /* border: 1px dashed skyblue; */
+    box-sizing: border-box; /* 안쪽 테두리 */
+}
+.area1 .inner h3{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    padding-bottom: 20px;
+}
+
+.area2 .inner p {
+    /* position: absolute; */
+    /* left: 0px; top: 0px; */
+    /* text-align: center; */
+    /* margin-top: 52px; */
+    /* padding-top: 52px;  */
+    /* border: 2px solid red; */
+    /* font-size: 15px; */
+    color: rgba(255, 255, 255, 1);
+    /* border: 1px dashed lightpink; */
+}
+
+.area2 .inner ul.sns {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    /* border: 1px dashed lightpink; */
+}
+.area2 .inner ul.sns li {
+    float: left;
+    padding-right: 10px;
+    /* border: 1px dashed lightpink; */
+}
+
+.area2 .inner .address {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.area2 .inner .sns i {
+    color: rgba(255, 255, 255, 1);
+}
+
+/*
+    마진오류는 부모자식관계에서 자식쪽의
+    margin-top/margin-bottom을 지정할때 생길 수 있으며,
+    부모쪽에 테두리가 있을때는 오류가 생기지 않고
+    부모의 테두리를 빼면 오류가 생긴다.
+*/
+
+#container {
+    width: 1180px;
+    margin: 0 auto;
+    border: 1px dashed blue;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+#container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+#container #sidebar{
+    float: left;
+    width: 380px;
+    background-color: orange;
+    border: 1px dashed blue;
+}
+#container #contents_sub{
+    float: right;
+    width: 780px;
+    background-color: skyblue;
+    border: 1px dashed blue;
+}
