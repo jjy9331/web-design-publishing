@@ -265,9 +265,60 @@ h1:hover {
     border: 1px dashed blue;
 }
 
+/* sidebar */
+#sidebar h2 {
+    font-size: 30px;
+    padding-bottom: 20px;
+}
 
+#sidebar .lnb {
+    border: 1px solid red;
+}
+#sidebar .lnb li {
+    border: 1px solid red;
+}
 
+#sidebar .lnb li a {
+    display: block;
+    padding: 20px;
+    border: 1px dashed white;
+}
+/* 
+    a태그 같은 인라인요소에게 display:block을 설정하면
+    블록요소의 성질을 갖게된다.(블록요소가 된다)
 
+    블록요소 - 가로가 영역에 가득차고 줄바꿈이 일어남
+    인가인요소 - 길이가 없고 텍스트를 감싸고 줄바꿈없음
+*/
+
+#sidebar .lnb li a:hover {
+    
+    color: white;
+    background-color: black;
+}
+
+#contents_sub .location {
+    border: 2px dashed black;
+    text-align: right;
+    padding-bottom: 50px;
+    font-size: 12px;
+}
+
+#contents_sub h3 {
+    border: 2px dashed black;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+#contents_sub .group {
+    border: 2px dashed hotpink;
+    padding-bottom: 30px;
+}
+
+#contents_sub .group h4 {
+    border: 2px dashed hotpink;
+    font-size: 25px;
+    padding-bottom: 30px;
+}
 
 /* footer */
 .area1 .inner div{
