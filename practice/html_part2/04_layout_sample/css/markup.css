@@ -163,11 +163,18 @@ a:focus {
 
 h1 {
     position: absolute;
-    left: 0px; top: 36px;
+    left: 0px; top: 0px;
     /* background-color: red; */
     width: 103px;
     height: 18px;
     background-image: url(../img/logo.gif);
+    background-repeat: no-repeat;
+    margin-top: 38px;
+    /* padding-bottom: 38px; */
+    transition: 1s;
+}
+h1:hover {
+    transform:rotate(360deg);
 }
 .gnb {
     
@@ -252,10 +259,32 @@ h1 {
 
 /*visual*/
 
+#visual {
+    position: relative;
+}
 #visual video {
     width: 100%;
 }
-
+#visual .typo {
+    position: absolute;
+    left: 50%; /* 부모길이의 50%위치 */
+    top: 40%;
+    margin-left: -356px;
+    color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+}
+/*
+    .typo영역의 가로길이가 712px(캡쳐해서 길이 잼) 
+    
+*/
+#visual .typo p:nth-child(1) {
+    font-size: 100px;
+    text-align: center;
+}
+#visual .typo p:nth-child(2) {
+    font-size: 30px;
+    text-align: center;
+}
 /*
     가변이미지나 동영상의 부모쪽에는 
 	height를 넣으면 안됨
@@ -307,6 +336,7 @@ h1 {
 .new div img{
     transition: 0.7s;
     width: 100%;
+    border-radius: 30px;
 }
 .new div img:hover{
     opacity: 0.5;
@@ -353,9 +383,12 @@ h1 {
     background-color: lightyellow;
     box-sizing: border-box;
     /* margin-right: 13px; */
+    
 }
 .insta li img {
     width: 100%;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 /*
     가변 이미지의 상위 무모들에게는
