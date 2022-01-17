@@ -238,6 +238,12 @@ h1:hover {
     color: white;
 }
 
+.gnb .act {
+    border-bottom: 5px solid black;
+}
+.lnb .act {
+    border-left: 10px solid black;
+}
 
 /*container*/
 #container {
@@ -321,7 +327,24 @@ h1:hover {
 }
 #contents_sub .group p {
     padding-bottom: 20px;
+    line-height: 26px;
 }
+#contents_sub .acc_img1 {
+    float: left;
+    padding-right: 15px;
+}
+#contents_sub .acc_img2 {
+    float: right;
+    padding-left: 15px;
+}
+#contents_sub .acc_img3 {
+    float: left;
+    padding-right: 15px;
+}
+/*
+    float요소의 다음 상자는 밑에 깔리지만 
+    텍스트는 깔리지않고 남는 공간에 밀려든다
+*/
 
 
 
