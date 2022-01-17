@@ -243,7 +243,7 @@ h1:hover {
 #container {
     width: 1180px;
     margin: 0 auto;
-    border: 1px dashed blue;
+    /* border: 1px dashed blue; */
     padding-top: 70px;
     padding-bottom: 70px;
 }
@@ -255,14 +255,14 @@ h1:hover {
 #container #sidebar{
     float: left;
     width: 380px;
-    background-color: orange;
-    border: 1px dashed blue;
+    /* background-color: orange; */
+    /* border: 1px dashed blue; */
 }
 #container #contents_sub{
     float: right;
     width: 780px;
-    background-color: skyblue;
-    border: 1px dashed blue;
+    /* background-color: skyblue; */
+    /* border: 1px dashed blue; */
 }
 
 /* sidebar */
@@ -272,16 +272,16 @@ h1:hover {
 }
 
 #sidebar .lnb {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 #sidebar .lnb li {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #sidebar .lnb li a {
     display: block;
     padding: 20px;
-    border: 1px dashed white;
+    /* border: 1px dashed white; */
 }
 /* 
     a태그 같은 인라인요소에게 display:block을 설정하면
@@ -298,24 +298,24 @@ h1:hover {
 }
 
 #contents_sub .location {
-    border: 2px dashed black;
+    /* border: 2px dashed black; */
     text-align: right;
     padding-bottom: 50px;
     font-size: 12px;
 }
 
 #contents_sub h3 {
-    border: 2px dashed black;
+    /* border: 2px dashed black; */
     font-size: 30px;
     padding-bottom: 20px;
 }
 #contents_sub .group {
-    border: 2px dashed hotpink;
+    /* border: 2px dashed hotpink; */
     padding-bottom: 30px;
 }
 
 #contents_sub .group h4 {
-    border: 2px dashed hotpink;
+    /* border: 2px dashed hotpink; */
     font-size: 25px;
     padding-bottom: 30px;
 }
