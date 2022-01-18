@@ -446,3 +446,13 @@ dl.acc_d1 {
     height: 400px;
     padding-bottom: 20px;
 }
+
+/* sub3-2 */
+
+.w-img2 {
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom-right-radius: 10%;
+    border-top-left-radius: 10%;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
