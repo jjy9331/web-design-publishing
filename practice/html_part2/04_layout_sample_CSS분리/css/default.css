@@ -1,0 +1,452 @@
+/* 구글 웹폰트(fonts.google.com) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+/* reset(CSS초기화) */
+html,body { height:100%; }
+body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd { margin:0; padding:0; }
+h1,h2,h3,h4,h5,h6 { font-size:12px; }
+ul { list-style:none; } /* 마커없앰 */
+img { 
+	border:0; /* ie(인터넷 익스플로러) 하위버전에서 이미지에 링크시 테두리가 생기는걸 방지 */
+	vertical-align:top; /* 크롬 등 일부 브라우져에서 이미지 배열시 생기는 공백오류를 방지 */
+}
+
+
+/* base(기본설정) */
+body { 
+	font-size:15px; 
+	font-family:'Roboto','Noto Sans KR';
+	color:#333;
+}
+
+a { color:#333; text-decoration:none; }
+a:hover { color:orange; }
+
+.blind { position:absolute; top:-9999px; }
+
+/*	focus(포커스) : 링크(a태그)나 폼요소가 선택되어진 상태 */
+.skip_navigation a { position:absolute; top:-9999px; } 
+.skip_navigation a:focus { left:0px; top:0px; background-color:black; color:white; width:100%; text-align:center; }
+
+
+
+
+/* layout(큰 골격) */
+#header { 
+	/* position:absolute; left:0px; top:0px; */
+
+	/* width:100%; */ /* absolute가 적용되면 가로길이가 없어지므로 width을 따로 설정해줘야함*/
+	/* z-index:1000; */ /* 포지션이 있는 요소들끼리는 겹친 순서가 생김 (헤더가 비주얼이너 보다 위로 올라가도록) */
+
+	/* height:95px; */
+	/* background-color:lightyellow; */ 
+	/* background-image:url(images/bg_header.jpg); */
+	/* background-repeat:no-repeat; */
+	border:5px dashed black;
+	background-color:rgba(0,0,0,0.3);
+}
+#header .inner { position:relative; margin:0 auto; width:1180px; height:95px; border:1px dashed #ddd; }
+
+#visual { 
+	/* height:1050px; */ 
+	/* background-color:#eee; */
+	background-image:url(../images/guess-10.jpg);
+	background-repeat:no-repeat;
+	background-position:center top;
+
+	border:3px dashed hotpink;
+}
+#visual .inner { position:relative; margin:0 auto; width:1180px; height:1050px; border:2px dashed yellow; }
+
+
+#contents_wr { 
+	
+	/* opacity:0.5; */
+
+	background-color:rgba(255,255,255,0.9); 
+
+	/* border:5px dashed #0cc; */ 
+}
+
+#contents { 
+	margin:0 auto; 
+	width:1180px; /* height:939px; */ 
+
+	/* margin-top:71px; margin-bottom:106px; */
+	padding-top:71px; padding-bottom:106px;
+	/*
+		마진오류는 부모자식관계에서 자식쪽의
+		margin-top/margin-bottom을 지정할때 생길 수있으며,
+		부모쪽에 테두리가 있을때는 오류가 생기지않고
+		부모의 테두리를 빼면 오류가 생긴다.
+	*/
+
+	/* background-color:yellowgreen; */ 
+	border:3px dashed yellowgreen;
+}
+
+#footer { 
+	border:10px dashed #0cc; 
+}
+
+#footer .area1 { background-color:#222; }
+#footer .area1 .inner { 
+	margin:0 auto;
+	padding-top:30px; padding-bottom:30px;
+	width:1180px; /* height:200px; */
+	border:3px dashed lightyellow; 
+}
+#footer .area1 .inner:after { content:""; display:block; clear:both; }
+
+#footer .area2 { background-color:#555; }
+
+#footer .area2 .inner { 
+	position:relative;
+	margin:0 auto;
+	width:1180px; height:101px;
+	border:3px dashed yellow; 
+}
+
+
+
+
+/* header */
+h1 { position:absolute; left:0px; top:36px; width:103px; height:18px; /* background-color:red; */ }
+
+.gnb { position:absolute; right:0px; bottom:34px;/* width:317px; */ height:8px; /* background-color:green; */ }
+.gnb li { float:left; margin-left:22px; /* border:1px dashed blue; */ }
+
+.gnb li a { 
+	transition:0.3s;
+		/* css속성에 hover등으로 변화가 일어났을때 
+		지정한 시간(1s=1초)만큼 중간과정이 일어남 
+		 : 수치와 색에 대한 속성만 가능 */
+	color:#000; 
+	padding:3px 9px;
+	font-size:12px;
+}
+.gnb li a:hover { color:#fff; background-color:#000; }
+
+
+
+.top_gnb { position:absolute; right:0px; top:21px; /*width:102px;*/ height:15px; /* background-color:orange; */ }
+.top_gnb li { float:left;/*가로배열*/ margin-left:15px; }		
+	
+	/* 웹아이콘 */
+	.top_gnb li a i { transition:0.3s; font-size:22px; color:#333; }
+	.top_gnb li a i:hover { color:white; }
+
+
+
+
+
+/* visual */
+.slogan { position:absolute; right:64px; top:208px; /* border:2px solid blue; */ }
+
+.slogan p { color:white; }
+.slogan .s1 { font-size:100px; font-weight:900; }
+.slogan .s1 span { font-weight:100; }
+.slogan .s2 { font-size:20px; font-weight:500; }
+
+#visual a {
+	transition:0.5s;
+	width:341px;
+	padding-top:25px; padding-bottom:25px;
+	color:white;
+	font-size:20px; font-weight:500;
+	text-align:center; /* 텍스트와 인라인요소(이미지포함) 수평정렬 */
+	background-color:rgba(255,255,255,0.2);
+	border:1px solid rgba(255,255,255,0.7);
+}
+
+#visual a:hover { background-color:rgba(255,255,255,0.5); }
+
+
+a.bt1 { position:absolute; right:356px; bottom:326px; /* border:2px dashed yellowgreen; */ }
+a.bt2 { position:absolute; right:0px; bottom:326px; /* border:2px dashed yellowgreen; */ }
+		/* absolute요소는 일반요소로 부터 독립하여
+			기본적으로 body좌측상단을 기준으로
+			left/top위치가 설정되지만,
+			부모에게 relative가 지정되면 부모의 좌측상단이
+			기준이 된다.
+		*/
+
+
+
+
+/* contents */
+#contents h2 { font-size:14px; color:#000; }
+
+.new { margin-bottom:95px; /* border:3px dashed yellow; */ }
+.new:after { content:""; display:block; clear:both; }
+	/* float설정된 자식들의 높이를 부모에서 
+	자동으로 인식하여 감싸지 못한다. 
+	이를 해결하려면 부모에게 overflow:hidden설정하거나
+	부모:after { content:""; display:block; clear:both; }
+	*/
+
+.new h2 { height:39px; /* border:2px solid blue; */ }
+.new div { 
+	float:left; 
+	margin-right:20px; 
+	width:380px; 
+	/* height:479px; */ 
+	background-color:lightyellow; 
+	/* border:2px solid red; */ 
+}
+.new div.b3 { margin-right:0; }
+	
+	/* 블록요소(상자)는 위에서 아래로 수직으로 쌓이지만
+		float설정된 상자들끼리는 가로배열된다.
+	*/
+
+.new div img { transition:0.5s; }
+.new div img:hover { opacity:0.5; }
+
+
+
+
+
+.insta { margin-bottom:95px; /* border:3px dashed white; */ }
+.insta:after { content:""; display:block; clear:both; }
+	/* float설정된 자식들의 높이를 부모에서 
+	자동으로 인식하여 감싸지 못한다. 
+	이를 해결하려면 부모에게 overflow:hidden설정하거나
+	부모:after { content:""; display:block; clear:both; }
+	*/
+.insta h2 { height:38px; /* border:3px dashed hotpink; */ }
+.insta li { float:left;/*가로배열*/ /* border:3px solid green; */ }
+.insta li:nth-child(1) { margin-right:13px; }
+.insta li:nth-child(2) { margin-right:14px; }
+.insta li:nth-child(3) { margin-right:13px; }
+
+
+.best { border:2px dashed blue; }
+.best:after { content:""; display:block; clear:both; }
+	/* float설정된 자식들의 높이를 부모에서 
+	자동으로 인식하여 감싸지 못한다. 
+	이를 해결하려면 부모에게 overflow:hidden설정하거나
+	부모:after { content:""; display:block; clear:both; }
+	*/
+.best h2 { height:38px; }
+
+.best li { 
+	float:left; /*가로배열*/ 
+	width:33.33%; /* 부모길이의 33.33% = 100나누기3 */
+}
+
+.best li img { width:100%; } /* 부모길이의 100% */
+
+
+
+
+
+/* footer */
+.area1 .inner div { 
+	float:left;
+	width:236px; /* 1180나누기5 */
+	border:1px dashed skyblue;
+	box-sizing:border-box; /* 안쪽 테두리 */
+	color:#999; 
+}
+.area1 .inner div h3 { font-size:16px; color:#ddd; margin-bottom:15px; }
+
+
+.area2 .inner p { color:#ccc; border:1px solid skyblue; }
+.area2 .inner p.address { padding-top:20px; padding-bottom:10px; }
+
+.area2 .inner ul.sns { 
+	position:absolute; 
+	right:10px; top:30px; 
+	border:3px solid pink; 
+}
+.area2 .inner ul.sns li { float:left; color:#ccc; border:1px solid yellow; }
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------- sub페이지 설정 ----------------- */
+
+.gnb .act { 
+	/* border-top:5px solid blue; */ 
+	/* border-left:5px solid black; */ 
+	 border-bottom:5px solid black; 
+	/* border-right:5px solid orange; */ 
+}
+.lnb .act { border-left:10px solid black; }
+
+
+#container { margin:0 auto; margin-top:70px; margin-bottom:70px; width:1180px; /* border:5px dashed blue; */ }
+#container:after { content:""; display:block; clear:both; }
+
+#container #sidebar { float:left; width:380px; /* background-color:orange; */ }
+#container #contents_sub { float:right; width:780px; /* background-color:yellowgreen; */ }
+
+
+/* sidebar */
+#sidebar h2 {
+	font-size:33px;
+	padding-bottom:50px;
+}
+
+#sidebar .lnb { /* border:1px solid red; */ }
+#sidebar .lnb li { /* border:1px solid blue; */ }
+
+#sidebar .lnb li a {
+	display:block;
+	/* a태그같은 인라인요소에게 display:block을 설정하면
+	블록요소의 성질을 갖게된다(블록요소가된다) 
+	
+		블록요소 - 가로가 영역에 가득차고 줄바꿈이 일어남
+		인라인요소 - 길이가 없고 텍스트를 감싸고 줄바꿈없음
+	*/
+	padding:20px;
+
+	/* border:2px dashed white; */
+}
+#sidebar .lnb li a:hover { color:white; background-color:black; }
+
+
+
+/* contents_sub */
+#contents_sub .location {
+	text-align:right;
+	padding-bottom:50px;
+	/* border:2px dashed black; */
+}
+
+#contents_sub h3 {
+	font-size:30px;
+	padding-bottom:30px;
+	/* border:2px dashed white; */
+}
+
+#contents_sub .group {
+	margin-bottom:30px;
+	/* border:2px dashed hotpink; */
+}
+
+#contents_sub .group h4 { font-size:21px; padding-bottom:20px; }
+
+#contents_sub .group p { /* border:15px solid red; */ line-height:26px; margin-bottom:20px; }
+
+
+	/* Accessories */
+
+
+		/* sub1-1 */
+		.a_img1 { float:left; margin-top:6px; margin-right:15px; }
+			 /* float요소의 다음 상자는 밑에 깔리지만 "텍스트는 깔리지않고" 남는 공간에 밀려든다	 */
+		.a_img2 { float:right; margin-top:5px; margin-left:15px; }
+
+
+		/* sub1-2 */
+		table.a_t1 { 
+			border-collapse:collapse;
+			/* 테이블과 각 칸의 겹쳐진 라인이 하나로 통합 */
+
+			width:100%;
+			font-size:50px;
+			margin-bottom:20px;
+			text-align:center;
+			border:10px solid blue; 
+		}
+		table.a_t1 td { border:1px solid orange; }
+
+
+		/* sub1-3 */
+		dl.a_d1 { 
+			margin-bottom:20px; 
+			border-top:20px solid black; 
+			border-bottom:20px solid black; 
+		}
+		dl.a_d1 dt { font-size:50px; font-style:italic; }
+		dl.a_d1 dd { font-size:20px; }
+
+
+
+
+	/* Handbags */
+
+
+		/* sub2-1 */
+		.h_img1 { 
+			width:100%; 
+			margin-bottom:20px; 
+			border-radius:100px;/* 라운딩 */
+		}
+
+		/* sub2-2 */
+		.h_img2 { 
+			width:50%; margin-bottom:20px;
+			border-radius:50%;
+		}
+
+
+
+	/* Watches */
+
+		/* sub3-1 */
+		iframe.w_i1 { 
+			width:100%; height:450px; 
+			margin-bottom:20px; 
+		}
+
+		/* sub3-2 */
+		.w_img2 { 
+			width:100%; 
+			margin-bottom:20px; 
+
+			border-bottom-right-radius:200px; /*라운딩*/
+			border-top-left-radius:200px;
+
+			box-shadow:10px 10px 30px rgba(0,0,0,0.2);
+			/* 그림자: x값 y값 blur 색상투명도 */
+		}
+
+
+	/* Jewelry */
+
+		/* sub4-1 */
+		table.j_t1 { border-collapse:collapse; width:100%; text-align:center; margin-bottom:20px;}
+		table.j_t1 td { border:7px dashed black; font-size:77px; font-weight:100; }
+
+		/* sub4-2 */
+		table.j_t2 { 
+			border-collapse:collapse; width:100%; text-align:center;
+			border-top:30px solid #ccc;
+			border-bottom:30px solid #ccc; margin-bottom:20px;
+		}
+		table.j_t2 td { border:1px dashed #ccc; font-size:33px; font-weight:100; }
+		table.j_t2 th { border:1px dashed #ccc; font-size:33px; font-weight:100; }
+
+
+
+	/* Sale */
+
+		/* sub5-1 */
+		.s_img1 { width:100%; border-bottom-left-radius:100%; margin-bottom:-90px; }
+		.s_img1_1 { width:100%; border-top-right-radius:100%; margin-bottom:20px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
