@@ -565,3 +565,28 @@ a.bt2 {
     부모의 테두리를 빼면 오류가 생긴다.
 */
 
+
+
+/* Accesories */
+
+table.acc_t1 {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-size: 33px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*
+    테이블과 각 칸의 겹쳐진 라인이 하나로 통합
+*/
+table.acc_t1 td {
+    border: 1px solid black;
+}
+
+/* sub1-3 */
+dl.acc_d1 {
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
