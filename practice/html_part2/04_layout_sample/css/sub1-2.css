@@ -417,3 +417,11 @@ table.acc_t1 {
 table.acc_t1 td {
     border: 1px solid black;
 }
+
+/* sub1-3 */
+dl.acc_d1 {
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
