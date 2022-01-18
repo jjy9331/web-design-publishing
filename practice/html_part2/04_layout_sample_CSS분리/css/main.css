@@ -1,0 +1,119 @@
+@import url(common.css);
+
+
+
+/* visual */
+.slogan { position:absolute; right:64px; top:208px; /* border:2px solid blue; */ }
+
+.slogan p { color:white; }
+.slogan .s1 { font-size:100px; font-weight:900; }
+.slogan .s1 span { font-weight:100; }
+.slogan .s2 { font-size:20px; font-weight:500; }
+
+#visual a {
+	transition:0.5s;
+	width:341px;
+	padding-top:25px; padding-bottom:25px;
+	color:white;
+	font-size:20px; font-weight:500;
+	text-align:center; /* 텍스트와 인라인요소(이미지포함) 수평정렬 */
+	background-color:rgba(255,255,255,0.2);
+	border:1px solid rgba(255,255,255,0.7);
+}
+
+#visual a:hover { background-color:rgba(255,255,255,0.5); }
+
+
+a.bt1 { position:absolute; right:356px; bottom:326px; /* border:2px dashed yellowgreen; */ }
+a.bt2 { position:absolute; right:0px; bottom:326px; /* border:2px dashed yellowgreen; */ }
+		/* absolute요소는 일반요소로 부터 독립하여
+			기본적으로 body좌측상단을 기준으로
+			left/top위치가 설정되지만,
+			부모에게 relative가 지정되면 부모의 좌측상단이
+			기준이 된다.
+		*/
+
+
+
+
+/* contents */
+#contents h2 { font-size:14px; color:#000; }
+
+.new { margin-bottom:95px; /* border:3px dashed yellow; */ }
+.new:after { content:""; display:block; clear:both; }
+	/* float설정된 자식들의 높이를 부모에서 
+	자동으로 인식하여 감싸지 못한다. 
+	이를 해결하려면 부모에게 overflow:hidden설정하거나
+	부모:after { content:""; display:block; clear:both; }
+	*/
+
+.new h2 { height:39px; /* border:2px solid blue; */ }
+.new div { 
+	float:left; 
+	margin-right:20px; 
+	width:380px; 
+	/* height:479px; */ 
+	background-color:lightyellow; 
+	/* border:2px solid red; */ 
+}
+.new div.b3 { margin-right:0; }
+	
+	/* 블록요소(상자)는 위에서 아래로 수직으로 쌓이지만
+		float설정된 상자들끼리는 가로배열된다.
+	*/
+
+.new div img { transition:0.5s; }
+.new div img:hover { opacity:0.5; }
+
+
+
+
+
+.insta { margin-bottom:95px; /* border:3px dashed white; */ }
+.insta:after { content:""; display:block; clear:both; }
+	/* float설정된 자식들의 높이를 부모에서 
+	자동으로 인식하여 감싸지 못한다. 
+	이를 해결하려면 부모에게 overflow:hidden설정하거나
+	부모:after { content:""; display:block; clear:both; }
+	*/
+.insta h2 { height:38px; /* border:3px dashed hotpink; */ }
+.insta li { float:left;/*가로배열*/ /* border:3px solid green; */ }
+.insta li:nth-child(1) { margin-right:13px; }
+.insta li:nth-child(2) { margin-right:14px; }
+.insta li:nth-child(3) { margin-right:13px; }
+
+
+.best { border:2px dashed blue; }
+.best:after { content:""; display:block; clear:both; }
+	/* float설정된 자식들의 높이를 부모에서 
+	자동으로 인식하여 감싸지 못한다. 
+	이를 해결하려면 부모에게 overflow:hidden설정하거나
+	부모:after { content:""; display:block; clear:both; }
+	*/
+.best h2 { height:38px; }
+
+.best li { 
+	float:left; /*가로배열*/ 
+	width:33.33%; /* 부모길이의 33.33% = 100나누기3 */
+}
+
+.best li img { width:100%; } /* 부모길이의 100% */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

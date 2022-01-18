@@ -274,7 +274,7 @@ a.bt2 { position:absolute; right:0px; bottom:326px; /* border:2px dashed yellowg
 
 
 
-/* ----------------- sub페이지 설정 ----------------- */
+/* ----------------- sub페이지 공통 설정 ----------------- */
 
 .gnb .act { 
 	/* border-top:5px solid blue; */ 
@@ -340,102 +340,6 @@ a.bt2 { position:absolute; right:0px; bottom:326px; /* border:2px dashed yellowg
 #contents_sub .group p { /* border:15px solid red; */ line-height:26px; margin-bottom:20px; }
 
 
-	/* Accessories */
-
-
-		/* sub1-1 */
-		.a_img1 { float:left; margin-top:6px; margin-right:15px; }
-			 /* float요소의 다음 상자는 밑에 깔리지만 "텍스트는 깔리지않고" 남는 공간에 밀려든다	 */
-		.a_img2 { float:right; margin-top:5px; margin-left:15px; }
-
-
-		/* sub1-2 */
-		table.a_t1 { 
-			border-collapse:collapse;
-			/* 테이블과 각 칸의 겹쳐진 라인이 하나로 통합 */
-
-			width:100%;
-			font-size:50px;
-			margin-bottom:20px;
-			text-align:center;
-			border:10px solid blue; 
-		}
-		table.a_t1 td { border:1px solid orange; }
-
-
-		/* sub1-3 */
-		dl.a_d1 { 
-			margin-bottom:20px; 
-			border-top:20px solid black; 
-			border-bottom:20px solid black; 
-		}
-		dl.a_d1 dt { font-size:50px; font-style:italic; }
-		dl.a_d1 dd { font-size:20px; }
-
-
-
-
-	/* Handbags */
-
-
-		/* sub2-1 */
-		.h_img1 { 
-			width:100%; 
-			margin-bottom:20px; 
-			border-radius:100px;/* 라운딩 */
-		}
-
-		/* sub2-2 */
-		.h_img2 { 
-			width:50%; margin-bottom:20px;
-			border-radius:50%;
-		}
-
-
-
-	/* Watches */
-
-		/* sub3-1 */
-		iframe.w_i1 { 
-			width:100%; height:450px; 
-			margin-bottom:20px; 
-		}
-
-		/* sub3-2 */
-		.w_img2 { 
-			width:100%; 
-			margin-bottom:20px; 
-
-			border-bottom-right-radius:200px; /*라운딩*/
-			border-top-left-radius:200px;
-
-			box-shadow:10px 10px 30px rgba(0,0,0,0.2);
-			/* 그림자: x값 y값 blur 색상투명도 */
-		}
-
-
-	/* Jewelry */
-
-		/* sub4-1 */
-		table.j_t1 { border-collapse:collapse; width:100%; text-align:center; margin-bottom:20px;}
-		table.j_t1 td { border:7px dashed black; font-size:77px; font-weight:100; }
-
-		/* sub4-2 */
-		table.j_t2 { 
-			border-collapse:collapse; width:100%; text-align:center;
-			border-top:30px solid #ccc;
-			border-bottom:30px solid #ccc; margin-bottom:20px;
-		}
-		table.j_t2 td { border:1px dashed #ccc; font-size:33px; font-weight:100; }
-		table.j_t2 th { border:1px dashed #ccc; font-size:33px; font-weight:100; }
-
-
-
-	/* Sale */
-
-		/* sub5-1 */
-		.s_img1 { width:100%; border-bottom-left-radius:100%; margin-bottom:-90px; }
-		.s_img1_1 { width:100%; border-top-right-radius:100%; margin-bottom:20px; }
 
 
 
