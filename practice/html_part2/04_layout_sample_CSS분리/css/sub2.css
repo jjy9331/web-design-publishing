@@ -1,0 +1,35 @@
+@import url(common.css);
+
+
+	/* Handbags */
+
+
+		/* sub2-1 */
+		.h_img1 { 
+			width:100%; 
+			margin-bottom:20px; 
+			border-radius:100px;/* 라운딩 */
+		}
+
+		/* sub2-2 */
+		.h_img2 { 
+			width:50%; margin-bottom:20px;
+			border-radius:50%;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

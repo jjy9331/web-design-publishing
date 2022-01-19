@@ -1,0 +1,33 @@
+@import url(common.css);
+
+
+	/* Jewelry */
+
+		/* sub4-1 */
+		table.j_t1 { border-collapse:collapse; width:100%; text-align:center; margin-bottom:20px;}
+		table.j_t1 td { border:7px dashed black; font-size:77px; font-weight:100; }
+
+		/* sub4-2 */
+		table.j_t2 { 
+			border-collapse:collapse; width:100%; text-align:center;
+			border-top:30px solid #ccc;
+			border-bottom:30px solid #ccc; margin-bottom:20px;
+		}
+		table.j_t2 td { border:1px dashed #ccc; font-size:33px; font-weight:100; }
+		table.j_t2 th { border:1px dashed #ccc; font-size:33px; font-weight:100; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
