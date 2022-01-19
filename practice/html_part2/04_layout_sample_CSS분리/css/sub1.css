@@ -35,3 +35,78 @@
 
 
 
+	/* Handbags */
+
+
+		/* sub2-1 */
+		.h_img1 { 
+			width:100%; 
+			margin-bottom:20px; 
+			border-radius:100px;/* 라운딩 */
+		}
+
+		/* sub2-2 */
+		.h_img2 { 
+			width:50%; margin-bottom:20px;
+			border-radius:50%;
+		}
+
+
+
+	/* Watches */
+
+		/* sub3-1 */
+		iframe.w_i1 { 
+			width:100%; height:450px; 
+			margin-bottom:20px; 
+		}
+
+		/* sub3-2 */
+		.w_img2 { 
+			width:100%; 
+			margin-bottom:20px; 
+
+			border-bottom-right-radius:200px; /*라운딩*/
+			border-top-left-radius:200px;
+
+			box-shadow:10px 10px 30px rgba(0,0,0,0.2);
+			/* 그림자: x값 y값 blur 색상투명도 */
+		}
+
+
+	/* Jewelry */
+
+		/* sub4-1 */
+		table.j_t1 { border-collapse:collapse; width:100%; text-align:center; margin-bottom:20px;}
+		table.j_t1 td { border:7px dashed black; font-size:77px; font-weight:100; }
+
+		/* sub4-2 */
+		table.j_t2 { 
+			border-collapse:collapse; width:100%; text-align:center;
+			border-top:30px solid #ccc;
+			border-bottom:30px solid #ccc; margin-bottom:20px;
+		}
+		table.j_t2 td { border:1px dashed #ccc; font-size:33px; font-weight:100; }
+		table.j_t2 th { border:1px dashed #ccc; font-size:33px; font-weight:100; }
+
+
+
+	/* Sale */
+
+		/* sub5-1 */
+		.s_img1 { width:100%; border-bottom-left-radius:100%; margin-bottom:-90px; }
+		.s_img1_1 { width:100%; border-top-right-radius:100%; margin-bottom:20px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

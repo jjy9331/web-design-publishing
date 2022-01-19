@@ -13,9 +13,27 @@ body { font-family:"나눔고딕"; font-size:14px; }
     padding: 100px;
     width: 600px;
     height: 300px;
+    font-size: 14px;
+    border: 0px solid white;
 }
 
 .city3 thead {
     height: 50px;
     background-color: lightgray;
 } 
+
+.city3 thead th {
+    border-left: 0;
+    border-right: 0;
+}
+
+.city3 th {
+    border: 5px solid gray;
+}
+
+.city3 td {
+    border: 5px solid gray;
+}
+
+.city3 .t1 {border-left: 0;}
+.city3 .t2 {border-right: 0;}
