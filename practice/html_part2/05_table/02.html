@@ -3,39 +3,44 @@
 <head>
 <meta charset="utf-8">
 <title>table</title>
-<style>
-body { font-family:"나눔고딕"; font-size:14px; }
 
-</style>
+<link rel="stylesheet" href="../05_table/css/table.css">
 </head>
 <body>
 
 
-<table width="300" border="1">
+<table class="city1" width="300" border="1">
 
   <caption>동북아시아 대표도시</caption> <!-- 테이블 제목 -->
 
-  <tr>
-    <th scope="row">한국</th>
-    <th scope="row">중국</th>
-    <th scope="row">일본</th>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="row">한국</th>
+      <th scope="row">중국</th>
+      <th scope="row">일본</th>
+    </tr>
+  </thead>
   
-  <tr>
-    <td>서울</td>
-    <td>북경</td>
-    <td>도쿄</td>
-  </tr>
+  <tbody>
+    <tr>
+      <td>서울</td>
+      <td>북경</td>
+      <td>도쿄</td>
+    </tr>
+    
+    <tr>
+      <td>부산</td>
+      <td>상하이</td>
+      <td>오사카</td>
+    </tr>
+  </tbody>
   
-  <tr>
-    <td>부산</td>
-    <td>상하이</td>
-    <td>오사카</td>
-  </tr>
-  
-  <tr>
-    <td colspan="3">도시합계: 6</td>
-  </tr>
+  <tfoot>
+    <tr>
+      <td colspan="3">도시합계: 6</td>
+    </tr>
+  </tfoot>
+
   
 </table>
 
@@ -50,7 +55,7 @@ body { font-family:"나눔고딕"; font-size:14px; }
 <br />
 <br />
 
-<table width="300" border="1">
+<table class="city2" width="300" border="1">
 
   <caption>동북아시아 대표도시</caption> <!-- 테이블 제목 -->
       <tr>
