@@ -33,8 +33,25 @@ fieldset {
 .search #t1 {
     width: 200px;
     height: 30px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-right: 0;
 }
+/*
+    인라인요소에게 
+    float 또는 position:absolute/fixed가
+    설정되면 블록요소가 된다.
+*/
+
+/* 안쪽테두리 */
 .search #t2 {
     width: 50px;
     height: 30px;
+    border: 0;
+    background-color: #0cc;
+    color: white;
+}
+
+.search input {
+    float: left;
 }
