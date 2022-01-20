@@ -1,0 +1,22 @@
+@import url(layout.css);
+
+/* * {border: 1px solid black;} */
+
+/* base */
+body { font-size:14px; line-height:21px; font-family:"맑은 고딕"; color:#767676; }
+
+
+/* header */
+h1{ color:#F93; font-size:36px; }
+ul{ list-style:none; }
+a{ color:#C96; text-decoration:none; }
+a:hover { color:#C63; text-decoration:underline; }
+
+/* contents */
+h2{ color:#9C9; }
+dt{ background-color:#ccc; width:250px; color:#fff; }
+.s1{ color:#69F;}
+.s2{ text-decoration:underline; }
+
+/* footer */
+#footer p, #footer address { text-align:center; }
