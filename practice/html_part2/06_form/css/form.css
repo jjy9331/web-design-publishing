@@ -55,3 +55,12 @@ fieldset {
 .search input {
     float: left;
 }
+
+.search2 input{
+    float: left;
+}
+.search2 #t1 {
+    background-image: url(../images/search.jpg);
+    border:0;
+    height: 37px;
+}
