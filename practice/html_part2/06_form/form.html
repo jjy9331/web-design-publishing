@@ -5,6 +5,13 @@
 <title>Form</title>
 <style>
 body { font-family:"맑은 고딕"; }
+.blind {
+   position:absolute;
+   top: -999999999999px;
+}
+fieldset {
+   border: 0;
+}
 
 </style>
 </head>
@@ -14,42 +21,80 @@ body { font-family:"맑은 고딕"; }
 
 <form>
 
+   <fieldset>
 
+      <legend>타이틀</legend>
 
-        <p>
-           이름 : 
-        </p>
-        
-        
-        <p>
-           비밀번호: 
-        </p>
-        
-        
-        <p>
-           사용프로그램:
-        </p>
-        
-        
-        <p>
-           이메일수신여부:
-        </p>
-        
-        
-        <p>
-           취미:
-        </p>
-        
-        
-        <p>
-           하고싶은말:
-        <p>
-        
-        
-        
-		확인버튼
+      <p>
+         <label id="f1">이름 :</label> <input type="text" id="f1">
+      </p>
+      
+      
+      <p>
+         <label id="f2">비밀번호:</label> <input type="password" id="f2">
+      </p>
+      
+      
+      <p>
+         <label id="f3">사용프로그램:</label> <select id="f3">
+            <option>서브라임텍스트</option>
+            <option>아톰</option>
+            <option>브라켓</option>
+            <option>비주얼 스튜디오 코드</option>
+            <option>에디트 플러스</option>
+         </select>
+      </p>
+      
+      
+      <p>
+         <label id="f4">이메일수신여부:</label>
+         <input type="radio" name="n1" id="f4">예
+         <input type="radio" name="n2" id="f5">아니오
+      </p>
+      
+      
+      <p>
+         <label id="f5">취미:</label>
+         <input type="checkbox" id="f6">운동
+         <input type="checkbox" id="f7">그림
+         <input type="checkbox" id="f8">음악
+         <input type="checkbox" id="f9">기타
+      </p>
+      
+      
+      <p>
+         <label id="f10">하고싶은말:</label> <br>
+         <textarea name="" id="f10" cols="30" rows="10"></textarea>
+      <p>
+      
+      <p>
+         <label id="f11">화일첨부:</label> <input type="file" id="f11">
+      </p>
+      
+      
+		<button>확인버튼</button> 
 
+      <br>
+      <br>
+      <input type="button" value="확인_다용도 버튼"><!--다용도 버튼-->
+      <br>
+      <br>
+      <input type="submit" value="확인_제출 버튼"><!--전송(제출 버튼)-->
+      <br>
+      <br>
+      <input type="image" src="images/join.gif" alt="이미지 버튼">
+      <br>
+      <br>
+      <input type="reset" value="초기화">
 
+   </fieldset>
+
+   <br><br><br>
+   <fieldset>
+      <legend class="blind">타이틀2</legend>
+      <label id="test">메모:</label id="test"> <br>
+      <textarea name="" id="test" cols="30" rows="10"></textarea>
+   </fieldset>
 
 </form>
 
