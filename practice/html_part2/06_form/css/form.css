@@ -9,11 +9,7 @@ fieldset {
 }
 
 .join #f1 {
-    width: 300px;
-    font-size: 30px;
-    color: gray;
-    background-color: lightgray;
-    border: 5px solid gray;
+
     outline: 0;
 }
 /* 포커스되었을때 생기는 테두리 */
@@ -21,4 +17,24 @@ fieldset {
 .join #f2 {
     border: 0;
     border-bottom: 2px solid lightgray;
+}
+.join #f2:focus {
+    border: 5px solid yellowgreen;
+    transition: 1s;
+    border-radius: 15px;
+    padding-left: 5px;
+}
+
+
+/* 
+    focus(포커스) : 링크(a태그)나 폼요소가 선택되어진 상태 
+*/
+
+.search #t1 {
+    width: 200px;
+    height: 30px;
+}
+.search #t2 {
+    width: 50px;
+    height: 30px;
 }
