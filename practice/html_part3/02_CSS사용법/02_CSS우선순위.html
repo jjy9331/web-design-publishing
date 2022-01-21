@@ -6,14 +6,38 @@
 <style>
 #a1 { color:blue; }
 .s1 { color:red; }
-div { color:yellow;}
+div { color:yellow !important;}
 /* #a1 { color:orange; } */
+
+
+/* !important; 인라인 CSS보다 더 강력한 우선순위*/
+/* HTML태그에 직접 넣은 css태그(인라인 CSS)가 가낭 우선순위가 높다*/
+/* CSS 우선순위: 인라인CSS > id(100)> class(10) > tag(1) */
+
+
+#header .gnb li {color: skyblue;}
+#header .gnb .m1 {
+    color: hotpink;
+}
+
 </style>
 </head>
 
 <body>
 
-<div id="a1" class="s1">안녕하세요</div>
+<div id="a1" class="s1" style="color: gray;">안녕하세요</div>
+
+<br>
+<br>
+<header id="header">
+    <nav class="gnb">
+        <ul>
+            <li class="m1">m1</li>
+            <li>m2</li>
+            <li>m3</li>
+        </ul>
+    </nav>
+</header>
 
 </body>
 </html>
