@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>웹표준</title>
+<style>
+ul { list-style:none; }
+body { font-size:20px; font-family:"맑은고딕"; color:#767676; }
+#container { width:800px; border:1px dashed #999; }
+
+
+h2+p { /* font-size:30px; */ }
+h2~p { /* text-decoration:line-through; */ }
+
+#human li:first-child { /* background:yellow; */ }
+#human li:last-child { /* background:pink; */}
+#human li:nth-child(3) { /* border:2px dashed skyblue; */ }
+
+#animal > li { /* border:1px solid red; */ }
+
+#container>.s1, #human .s1{ /* color:blue; */ }
+
+#container p:nth-child(2) { /* background:red; */ }
+#container p:nth-of-type(2) { /* background:yellowgreen; */ }
+
+#animal li:first-child { /* color:orange; */ }
+
+h2:hover { /* background:yellow; */ }
+
+input:focus  { /* background:yellow; */ }
+a:focus {  /* background:yellow; */ }
+
+#box { width:300px; border:10px solid #ccc; }
+#box:before { /* content:""; */ }
+#box:after { /* content:""; */  }
+</style>
+</head>
+
+<body>
+
+
+<div id="container">
+
+
+        <h2>제목</h2>
+        
+        <p>안녕하세요</p>
+        <p>반갑습니다</p>
+        <div>감사합니다</div>
+        <p class="s1">행복하세요</p>
+
+
+
+
+        
+        <ul id="human">
+            <li>철수</li>
+            <li>영희</li>
+            <li>메리</li>
+            <li class="s1">톰</li>
+            <li>하나코</li>
+        </ul>
+    
+    
+            
+        <ul id="animal">
+              <li>토끼</li>
+              <li>강아지
+                  <ul>
+                     <li>뽀삐</li>
+                     <li>복실이</li>
+                  </ul>
+              </li>
+              <li>고양이
+                  <ul>
+                     <li>키티</li>
+                     <li>야옹이</li>
+                  </ul>
+              </li>
+              <li class="s1">코끼리</li>
+        </ul>
+    
+
+
+        <p>고맙습니다</p>
+    
+
+
+
+       
+        <input type="text">
+       <br>
+       <br>
+       
+        <input type="text">
+       <br>
+       <br>
+       
+       <a href="#">링크</a>
+       <br>
+       <br>
+       
+       <a href="#">링크</a>
+       <br>
+       <br>
+       
+       <div id="box">
+       박스
+       </div>
+    
+</div>
+
+
+
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
