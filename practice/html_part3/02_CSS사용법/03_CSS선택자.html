@@ -6,24 +6,26 @@
 <style>
 ul { list-style:none; }
 body { font-size:20px; font-family:"맑은고딕"; color:#767676; }
-#container { width:800px; border:1px dashed #999; }
+/* #container { width:800px; border:1px dashed #999; } */
 
 
-h2+p { /* font-size:30px; */ }
-h2~p { /* text-decoration:line-through; */ }
+/* h2+p { font-size:30px; } */
+/* h2~p { text-decoration:line-through; } */
 
 #human li:first-child { /* background:yellow; */ }
 #human li:last-child { /* background:pink; */}
 #human li:nth-child(3) { /* border:2px dashed skyblue; */ }
+#human li:nth-child(even) { font-style: italic; font-size: 30px;}
+/* odd 홀수번째, even 짝수번째 */
 
 #animal > li { /* border:1px solid red; */ }
 
-#container>.s1, #human .s1{ /* color:blue; */ }
+/* #container>.s1, #human .s1{ color:blue; } */
 
-#container p:nth-child(2) { /* background:red; */ }
-#container p:nth-of-type(2) { /* background:yellowgreen; */ }
+/* #container p:nth-child(2) { background:red; } */
+#container p:nth-of-type(2) { background:yellowgreen; }
 
-#animal li:first-child { /* color:orange; */ }
+#animal li:first-child { color:orange; }
 
 h2:hover { /* background:yellow; */ }
 
@@ -31,8 +33,8 @@ input:focus  { /* background:yellow; */ }
 a:focus {  /* background:yellow; */ }
 
 #box { width:300px; border:10px solid #ccc; }
-#box:before { /* content:""; */ }
-#box:after { /* content:""; */  }
+/* #box:before { content:"123"; } */
+#box:after { content:"456";  }
 </style>
 </head>
 
