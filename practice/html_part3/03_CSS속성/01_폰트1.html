@@ -13,6 +13,8 @@
 #wrap .s4 {
   font-size: 100%;
 }
+/* 1em = 100% = .s4의 부모인 #warp에서 설정한 크기 */
+/* 2em = 200% = .s4의 부모인 #warp에서 설정한 크기의 두배 */
 
 body { font-size: 200%;}
   /* 100% = 브라우져 기본 글자크기(16x) = 1em */
@@ -29,9 +31,15 @@ body { font-size: 200%;}
 /* 기타 크기/줄간격 서체 */
 
 .s3 {
+  font-size: 2rem;
   letter-spacing: 10px;
 }
-/* 양측 정렬 */
+
+/*
+  1rem = 브라우저 기본 폰트 크기(16px)
+  2rem = 브라우저 기본 폰트 크기(16px)의 두배
+  양측 정렬 
+*/
 
 h1 { text-decoration: line-through;}
 
