@@ -6,11 +6,17 @@
 <style>
 #wrap { width:600px; height:400px; }
 #box1 { float:left; width:200px; height:200px; background-color:#CCF; }
-#box2 { position:relative; left:-10px; top:0px; float:left; width:200px; height:200px; background-color:#C9F; }
+#box2 { animation: m1 1s; position:relative; left:0px; top:0px; float:left; width:200px; height:200px; background-color:#C9F; }
 /*
 	relative요소의 left/top 기준은 
 	본래 자기 자신이 있던 위치이다.
 */
+
+@keyframes m1 {
+	0% {left: -500px;}
+	100% {left:0px;}
+}
+
 #box3 { float:left; width:200px; height:200px; background-color:#C6F; }
 #box4 { float:left; width:200px; height:200px; background-color:#C3F; }
 #box5 { float:left; width:200px; height:200px; background-color:#C0F; }
