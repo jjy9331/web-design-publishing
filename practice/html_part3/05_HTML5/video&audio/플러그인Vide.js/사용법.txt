@@ -1,0 +1,21 @@
+Vide.js
+ : 동영상 풀배경을 쉽게 넣을 수 있도록해주는 자바스크립트(제이쿼리) 플러그인
+
+
+
+ 1. js폴더안에 jquery.vide.min.js를 준비한다
+
+ 2. html의 <head></head>사이에 아래의 코드를 추가한다
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/jquery.vide.min.js"></script>
+
+
+ 3. 동영상 배경을 넣고자하는 태그에 아래와 같은 형식으로 적용한다
+
+  <태그 data-vide-bg="동영상경로와이름" data-vide-options="loop:true, muted:true">
+
+     * 동영상이름은 확장명을 적지않는다. 예를 들어 동영상명이 movie.mp4 라면 movie만 적는다.
+
+
+ 
