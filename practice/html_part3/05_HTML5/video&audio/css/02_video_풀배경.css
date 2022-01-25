@@ -18,7 +18,7 @@ body {
     border: 5px dashed yellow;
 }
 #visual {
-    height: 5000px;
+    height: 500px;
     border: 5px dashed yellow;
 }
 #contents {
@@ -56,4 +56,14 @@ h1 {
 #visual p {
     font-size: 20px;
     text-align: center;
+}
+#visual p:nth-child(1) {
+    font-family: 'Roboto';
+    padding-top: 100px;
+    font-size: 200px;
+    font-weight: 100;
+    letter-spacing: 10px;
+}
+#visual p:nth-child(1) span {
+    font-weight: 800;
 }
