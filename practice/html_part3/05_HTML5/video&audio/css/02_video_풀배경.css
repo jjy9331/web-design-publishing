@@ -54,6 +54,7 @@ h1 {
 /* visual */
 
 #visual p {
+    z-index: 100;
     font-size: 20px;
     text-align: center;
 }
@@ -64,6 +65,31 @@ h1 {
     font-weight: 100;
     letter-spacing: 10px;
 }
-#visual p:nth-child(1) span {
+#visual p:first-child span {
     font-weight: 800;
+}
+
+/* footer */
+
+#footer p {
+    text-align: center;
+}
+
+/* bg */
+.bg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: -10;
+}
+/*
+    position요소의 z-index값을 -로 설정하면
+    일반요소 밑에 깔린다.
+*/
+
+.bg video {
+    width: 100%;
 }
