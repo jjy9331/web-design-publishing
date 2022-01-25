@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>html5</title>
+<style>
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+h1,h2,h3,h4 { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/* base */
+body { font:15px "맑은 고딕"; color:#fff; }
+
+
+/* layout */
+header { background:#555; }
+header .inner { position:relative; margin:0 auto; width:1200px; height:70px; border:1px dashed #ccc; }
+
+#container { margin:0 auto; width:1200px; border:3px dashed #0099cc; }
+#container:after { content:""; display:block; clear:both; }
+
+#container aside {float:left; width:300px; height:800px;  background:#ff6b67;}
+#container section {float:right; width:880px; height:800px;  background:#f2df11;}
+
+footer { background:#333; }
+footer .inner { margin:0 auto; width:1200px; height:50px; border:1px dashed #ccc; }
+
+
+/* header */
+h1 { font-size:20px; }
+.gnb { position:absolute; right:10px; top:30px; width:500px; background:#777; }
+.gnb li { float:left; margin-right:30px; }
+
+
+/* container */
+article { margin:10px; padding:20px; background:#f0c011; }
+</style>
+</head>
+
+
+<body>
+
+
+
+
+
+<header>
+		<div class="inner">
+			
+				 <h1>로고</h1>
+
+				 <nav class="gnb">
+					  <ul>
+						<li>메뉴1</li>
+						<li>메뉴2</li>
+						<li>메뉴3</li>
+					  </ul>
+				 </nav>
+
+		</div>
+</header>
+
+
+
+
+
+<div id="container">
+
+		<aside>
+			 <nav class="lnb">
+				  <ul>
+					<li>메뉴1</li>
+					<li>메뉴2</li>
+					<li>메뉴3</li>
+				  </ul>
+			 </nav>
+		</aside>
+
+		<section>
+			본문내용
+			<article>내용1</article>
+			<article>내용2</article>
+		</section>
+
+</div>
+
+
+
+
+
+<footer>
+		<div class="inner">
+
+			   카피라이트 연락처 등
+
+		</div>
+</footer>
+
+
+
+
+
+</body>
+</html>
+
+
+
