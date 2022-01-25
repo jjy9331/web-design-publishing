@@ -1,7 +1,8 @@
 #box {
     position: absolute; 
-    left: 50%; top: 0px;
+    left: 50%; top: 50%;
     margin-left: -300px;
+    margin-top: -200px;
     /* margin:0 auto;  */
     width:600px; height:400px; 
     background-color:#0cc;
