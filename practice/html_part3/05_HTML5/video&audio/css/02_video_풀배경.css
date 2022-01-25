@@ -1,0 +1,59 @@
+/* reset */
+* { margin:0; padding:0; }
+html,body { height:100%; } 
+ul {
+	list-style: none;
+}
+
+/* base */
+body {
+    font: 14px;
+    background-color: turquoise;
+    color: white;
+}
+
+/* layout*/
+#header {
+    height: 70px;
+    border: 5px dashed yellow;
+}
+#visual {
+    height: 5000px;
+    border: 5px dashed yellow;
+}
+#contents {
+    margin: 0 auto;
+    width: 1200px;
+    height: 300px;
+    border: 5px dashed yellow;
+}
+#footer {
+    height: 50px;
+    border: 5px dashed yellow;
+}
+
+/*header */
+
+h1 {
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.gnb {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    padding: 20px;
+    background: #000;
+}
+.gnb li {
+    /* float: left; */
+    font-size:20px;
+}
+
+/* visual */
+
+#visual p {
+    font-size: 20px;
+    text-align: center;
+}
