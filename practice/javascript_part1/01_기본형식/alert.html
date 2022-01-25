@@ -11,21 +11,21 @@
 
 </head>
 
-<body>
+<body onload="alert('모두 로딩되었습니다.')">
 
 
 <div id="wrap">  
 
-  <h1>자바스크립트란</h1>
+  <h1 onclick="alert('안녕하세요');">자바스크립트란</h1>
   
-  <p>컴퓨터에서 작동하는 프로그램을 작성하거나 기술하기 위한 언어를
+  <p>컴퓨터에서 <a href="#" onclick="alert('클릭');">작동</a>하는 프로그램을 작성하거나 기술하기 위한 언어를
   '프로그래밍 언어'라고 합니다. JavaScript는 프로그래밍 언어의 한 종류입니다.</p>
   
-  <p>JavaScript는 주로 브라우저나 브라우저 안의 문서를 조작하기 위해 만들어진 언어입니다. 
+  <p>JavaScript는 주로 <a href="#" onmouseover="alert('반갑습니다.')">브라우저</a>나 브라우저 안의 문서를 조작하기 위해 만들어진 언어입니다. 
   JavaScript는 1995년 넷스케이프 커뮤니케이션즈가 LiveScript라는 이름으로 개발하여
   웹브라우저인 넷스케이프 네비게이터(Netscape Navigator) 2.0에 장착하면서 시작되었습니다.</p>
   
-  <p>그후 인터넷 익스플로러에도 JScript라는 동일한 기능이 탑재되어 빠른 속도로 퍼져갔습니다.
+  <p>그후 <a href="#" onmouseout="alert('안녕하가세요.')">인터넷 </a>익스플로러에도 JScript라는 동일한 기능이 탑재되어 빠른 속도로 퍼져갔습니다.
   1997년에는 정보통신의 표준화 단체인 ECMA(유럽 전자계산기공업회)가 JavaScript의 사양으로
   ECMAScript를 규정했습니다. 이 모든 것을 통틀어 넓은 의미에서 'JavaScript'라고 하는 경우도
   있습니다. 현재는 거의 모든 웹브라우저에 JavaScript가 탑재되어 있습니다.
@@ -34,6 +34,10 @@
 
 </div>
 
+<input type="text" onfocus="alert('포커스')">
+<br>
+<br>
+<input type="text" onblur="alert('블러')">
 
 </body>
 
