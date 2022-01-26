@@ -4,17 +4,32 @@
 <meta charset="utf-8">
 <title>css3</title>
 <style>
-body{ margin:0; font:12px "나눔고딕"; color:#f7f7f7; }
+body{ margin:0; font:40px "나눔고딕"; color:#f7f7f7; }
 
 #box1 { 
 	position:absolute; left:300px; top:100px; 
-	width:330px; height:60px; padding:35px; 
+	width:300px; height:300px;
+	line-height: 300px; 
 	text-align:center; background:#777;
 	border-radius:50px;	box-shadow:10px 10px 20px rgba(0,0,0,0.1);
 	opacity:0.9;
-	transform:rotate(30deg);
+	transform:rotate(45deg);
 }
 /* 회전 + 시계방향 -시계 반대 방향 */
+
+#box1 span {
+	display: block;
+	transform: rotate(-45deg);
+	transition: 0.5s;
+}
+#box1:hover {
+	transform: rotate(-45deg);
+	transition: 1s;
+}
+#text:hover  {
+	transform: rotate(45deg);
+	transform: 1s;
+}
 
 #box2 { 
 	position:absolute; left:600px; top:200px; 
@@ -39,7 +54,7 @@ body{ margin:0; font:12px "나눔고딕"; color:#f7f7f7; }
 </head>
 <body>
 
-<div id="box1">html5+css3 web design</div>
+<div id="box1"><span id="text">html5+css3</span></div>
 
 <div id="box2">html5+css3 web design</div>
 
