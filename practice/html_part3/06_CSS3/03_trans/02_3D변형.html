@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>css3</title>
+<style>
+body{ margin:0; font:12px "나눔고딕"; color:#f7f7f7; 
+	/* perspective:1000px; */
+}
+
+#wrap { 
+	position:relative;
+	margin:0 auto;
+	width:1000px; height:600px;  
+	border:7px dashed #ddd;
+
+	perspective:1000px; /* 원근감 설정 400px~2000px */
+	transform:rotateY(30deg);
+	transform-style:preserve-3d; /* 자손의 3차원 속성을 유지 */
+}
+
+
+#box1 { 
+	position:absolute; left:0px; top:100px; 
+	width:300px; height:200px; padding:35px; 
+	text-align:center; background:#777; border-radius:50px; 
+	box-shadow: 10px 10px 20px rgba(0,0,0,0.1);	opacity:0.9;
+	transform: rotateY(0deg); /* y축 회전 */
+}
+
+#box2 { 
+	position:absolute; left:315px; top:100px; 
+	width:300px; height:200px; padding:35px; 
+	text-align:center; background:#777; border-radius:50px; 
+	box-shadow: 10px 10px 20px rgba(0,0,0,0.1); opacity:0.9;
+	transform: rotateX(0deg)/* x축 회전 */  translate3d(0px,0px,0px)/* x,y,z축으로 이동 */;
+}
+
+#box3 { 
+	position:absolute; right:0px; top:100px; 
+	width:300px; height:200px; padding:35px; text-align:center;
+	background:#777; border-radius:50px; 
+	box-shadow:10px 10px 20px rgba(0,0,0,0.1); opacity:0.9;
+	transform: rotateY(0deg);  /* y축 회전 */
+}
+
+
+/* http://www.w3schools.com/cssref/css3_pr_transform.asp */
+</style>
+</head>
+
+<body>
+
+
+<div id="wrap">
+
+    <div id="box1">html5+css3 web design</div>
+    
+    <div id="box2">html5+css3 web design</div>
+    
+    <div id="box3">html5+css3 web design</div>
+
+</div>
+
+  
+</body>
+</html>
+
