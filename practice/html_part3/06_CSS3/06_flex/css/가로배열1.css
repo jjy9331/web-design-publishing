@@ -1,0 +1,16 @@
+
+#container { 
+    display: flex;
+    flex-wrap: wrap; 
+    border:2px dashed black; 
+}
+/* 부모요소에게 display:flex를 설정하면 자식요소들이 가로배열되고
+ 부모의 길이가 자식들의 길이보다 줄어들 경우 자식들의 가로길이도 줄어들지만
+ flex-wrap: wrap을 설정할 경우 자식들이 다음행으로 내려간다.
+*/
+.box1 { width:200px; height:200px; background:#ff6b67}
+.box2 { width:200px; height:200px; background:#f2df11; }
+.box3 { width:200px; height:200px; background:#555; }
+.box4 { width:200px; height:200px; background:#568b77}
+.box5 { width:200px; height:200px; background:#e0ba87; }
+.box6 { width:200px; height:200px; background:#587ab9; }
