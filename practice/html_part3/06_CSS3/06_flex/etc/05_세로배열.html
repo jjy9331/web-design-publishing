@@ -10,9 +10,9 @@
 /* flex-direction:row-reverse를 설정하면 역순으로 배열된다. */
 /* flex-direction:column를 설정하면 위에서부터 세로 배열된다. */
 /* flex-direction:column-reverse 설정하면 아래에서부터 세로 배열된다. */
-.box1 { flex:1; height:200px; background:#ff6b67}
-.box2 { flex:1; height:200px; background:#f2df11; }
-.box3 { flex:1; height:200px; background:#555; }
+.box1 { flex:1; order: 1; height:200px; background:#ff6b67}
+.box2 { flex:1; order: 3; height:200px; background:#f2df11; }
+.box3 { flex:1; order: 2; height:200px; background:#555; }
 /* 자식요소들에게 flex값을 설정하면 부모공간 안에서 가로길이가 채워지며, 각각의 비율을 설정할 수 있다 */
 /* order값을 사용하면 배열순서를 바꿀수 있다(값이 낮을 수록 앞에 배치됨) */
 </style>
