@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>플렉서블 박스</title>
+<style type="text/css">
+#container { 
+    display:flex; 
+    border:2px dashed black; 
+}
+
+.box1 { flex:1 2 500px; height:200px; background:#ff6b67}
+.box2 { flex:1 1 500px; height:200px; background:#f2df11; }
+
+
+/*
+	flex값은 원래 아래의 세가지의 값을 갖는다.
+		flex-grow:값;
+		flex-shrink:값;
+		flex-basis:값;
+
+	세가지의 값을 아래와 같이 합쳐적을 수 있다.(순서 지켜야함)
+		flex:grow값 shrink값 basis값;
+
+		  basis - 박스의 기본 크기(px,%)
+		  grow - basis보다 커질때 비율
+		  shrink - basis보다 작아질때 비율
+
+*/
+
+/* https://www.w3schools.com/cssref/css3_pr_flex.asp */
+</style>
+</head>
+
+<body>
+
+
+<div id="container">
+
+   <div class="box1">1</div>
+   <div class="box2">2</div>
+
+</div>
+
+
+
+</body>
+</html>
+
