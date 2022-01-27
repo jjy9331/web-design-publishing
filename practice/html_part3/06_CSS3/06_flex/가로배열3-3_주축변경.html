@@ -7,13 +7,14 @@
 <style type="text/css">
 #container { 
     height:700px;
-    display:flex; 
+    display:flex;
+
+	flex-direction:column; /* 주축변경(세로배열) */
+
     flex-wrap:wrap; 
     
     justify-content:center; 
         /* 
-            justify-content 수평정렬(주축)
-
             flex-start 시작을 기준으로 정렬
             flex-end 끝을 기준으로 정렬            
             center 가운데 정렬
@@ -22,11 +23,8 @@
             space-between 박스사이의 일정한 간격(양끝 간격을 두지않음)
         */
 
-    align-items:center;
-        /* 
-            align-items: 수직정렬(반대축)
-            반대축 정렬 (flex-start,flex-end,center) 
-        */
+    align-items:center; 
+        /* 반대축 정렬 (flex-start,flex-end,center) */
 
     border:2px dashed black; 
 }
