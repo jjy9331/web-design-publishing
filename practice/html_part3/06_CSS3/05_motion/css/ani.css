@@ -1,0 +1,18 @@
+
+
+#box{ 
+	position:absolute; left:900px; top:50px; 
+	width:300px; height:100px; background:#F9C; 
+
+	animation-name:motion1;
+	animation-iteration-count:1;/*반복할 횟수,infinite은 무한반복*/
+	animation-direction:normal;/*반복할 방향,alternate양방향 왕복하며 반복*/
+	animation-timing-function:ease-out;/*가속,감속*/
+	animation-duration:1s;/*재생시간*/
+}
+
+@keyframes motion1 {
+	0% { }/*초기값*/
+	100% { }/*종료값*/
+}
+
