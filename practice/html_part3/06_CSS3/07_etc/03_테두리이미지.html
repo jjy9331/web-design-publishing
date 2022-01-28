@@ -6,17 +6,19 @@
 body{ font:bold 20px "Arial"; color:#333; margin:20px; }
 
 #box {
-  width:500px; height:300px; 
-  
-  border:20px solid #ddd;
-  border-image:url(images/border.png) 15 15 round;
-            /* url(이미지소스) 입자의가로길이 입자의세로길이 이미지조정방법  */
-			
-			/* 이미지조정방법 
-			    stretch: 영역을 채우기위해 이미지를 늘린다
-				repeat: 영역을 채우기위해 이미지를 반복한다
-			    round: repeat와 같으나 입자의 크기가 맞지않을경우 코너를 자연스럽게 하기위해 크기를 조정한다
-			*/
+	width:500px; height:300px; 
+	
+	border:20px solid #ddd;
+	border-image:url(images/border.png) 20 20 stretch;
+				/* url(이미지소스) 입자의가로길이 입자의세로길이 이미지조정방법  */
+				
+				/* 이미지조정방법 
+					stretch: 영역을 채우기위해 이미지를 늘린다
+					repeat: 영역을 채우기위해 이미지를 반복한다
+					round: repeat와 같으나 입자의 크기가 맞지않을경우 코너를 자연스럽게 하기위해 크기를 조정한다
+				*/
+	background: url(../07_etc/images/border_center.png) no-repeat;
+	background-size: 100% 100%;
 }
 
 
