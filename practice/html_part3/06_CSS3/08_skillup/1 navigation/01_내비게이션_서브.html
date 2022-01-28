@@ -15,11 +15,26 @@ ul {list-style:none; padding:0; margin:0;}
     margin-right:1px; 
     background:skyblue; 
 }
-#gnb .sub { display:none; position:absolute; left:0px; top:30px; }
-#gnb .sub li { width:200px; height:40px; background:yellow; }
 
-#gnb .main:hover { background:red; }
-#gnb .main:hover .sub { display:block; }
+
+#gnb .sub { 
+    /* transition: 1s; */
+    overflow: hidden;
+    /* display:none;  */
+    position:absolute; 
+    left:0px; 
+    top:50px; 
+    height: 0px;
+    /* border: 2px dashed red; */
+}
+#gnb .sub li { 
+    width:200px; 
+    height:40px; 
+    background:yellow; 
+}
+
+#gnb .main:hover { background:red; height: 50px;    transition: 1s; }
+#gnb .main:hover .sub { display:block; transition: 0.5s; height: 70px;  transition: 1s; }
 
 #gnb .sub li:hover { background:orange; }
 </style>
