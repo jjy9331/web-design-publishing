@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>스타일변경</title>
+<style>
+
+#box {
+  width: 300px;
+  height: 300px;
+}
+</style>
+
+<script>
+
+  // document.getElementById('box').style.backgroundColor='hotpink'
+
+</script>
+</head>
+<body>
+
+  <h1>제목</h1>
+  
+  <p>안녕하세요</p>
+  <p>반갑습니다</p>
+  <p>행복하세요</p>
+
+  <ul>
+    <li class="s1">리스트1</li>
+    <li class="s1">리스트2</li>
+    <li class="s1">리스트3</li>
+  </ul>
+  
+
+  <div id="box">Hello, world!</div>
+  
+<script>
+
+  // document.getElementsByClassName('s1')[0].style.backgroundColor='hotpink';
+
+  let box = document.getElementById('box'); 
+  /*
+    아이디가 box인 요소를 a변수에 참조
+    a는 box를 가르키게 된다. 
+  */
+
+  box.style.backgroundColor='hotpink'
+  box.style.fontSize='33px';
+  box.style.fontFamily='바탕';
+  box.style.color='yellow';
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
