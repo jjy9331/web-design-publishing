@@ -36,9 +36,21 @@
   
 <script>
 
+  const p = document.getElementsByTagName('p');
+  p[0].style.color='hotpink';
+  p[0].style.fontSize='77px';
+
+  const s1 = document.getElementsByClassName('s1');
+  s1[0].style.textDecoration='overline'
+  s1[1].style.textDecoration='underline'
+  s1[2].style.textDecoration='line-through';
+
+
+
+
   // document.getElementsByClassName('s1')[0].style.backgroundColor='hotpink';
 
-  var box = document.getElementById('box'); //바뀌지 않는 변수는 상수로 처리(var)
+  const box = document.getElementById('box'); //바뀌지 않는 변수는 상수로 처리(var)
   /*
     아이디가 box인 요소를 a변수에 참조
     a는 box를 가르키게 된다. 
