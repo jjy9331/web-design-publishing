@@ -32,7 +32,12 @@
   </ul>
   
 
-  <div id="box">Hello, world!</div>
+  <div id="box">
+    Hello, world!
+    <button onclick="box.style.display='none'">close</button>
+  </div>
+
+  <button onclick="box.style.display='block'">팝업보이기</button>
   
 <script>
 
@@ -63,6 +68,10 @@
   box.style.border='5px dashed orange';
   box.style.width='300px';
   box.style.height='300px';
+
+  // let p =  document.getElementsByTagName("p");
+
+  // p[2].style.color="hotpink";
 
 </script>
 
