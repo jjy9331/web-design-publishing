@@ -1,0 +1,29 @@
+/*reset*/
+* {margin:0;padding:0;}
+ul {list-style:none;}
+
+#banner { width:635px; height:635px; border:5px dashed #0cc; margin:30px auto; }
+#banner li { 
+    overflow: hidden;
+    position:relative; 
+    float:left; 
+    width:200px; 
+    height:200px; 
+    margin-left:10px; 
+    margin-top:10px; 
+    /* border:2px dashed #ccc;  */
+}
+
+#banner li .box { 
+    position:absolute; 
+    left:0px; 
+    top:0px; 
+    width:200px; 
+    height:400px; 
+    transition: 1s;
+}
+
+#banner li:hover .box{
+    top: -200px;
+    /* transition: 1s; */
+}
