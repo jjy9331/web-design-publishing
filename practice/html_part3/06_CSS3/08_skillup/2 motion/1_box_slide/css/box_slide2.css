@@ -13,9 +13,12 @@ body{ font:12px "나눔고딕"; color:#f7f7f7;}
 }
 
 .wr {
-	/* border: 2px dashed lightgray; */
+	border: 2px dashed lightgray;
+    float: left;
 	width: 300px;
+    height: 300px;
 	perspective: 400px;
+    margin: 10px;
 }
 
 .wr:hover .box { transform:rotateY(360deg);}
@@ -36,15 +39,13 @@ body{ font:12px "나눔고딕"; color:#f7f7f7;}
     top: 0px;
     transform: rotateY(0deg);
 	background-color: hotpink;
-    z-index: 110;
+    z-index: 10;
 }
 .b2 {
     position: absolute;
     transform: rotateY(-180deg);
 	background-color: #0cc;
-    z-index: 100;
+    z-index: 1;
 }
 
-.b1 + .b2 {
 
-}
