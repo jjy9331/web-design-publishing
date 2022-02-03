@@ -1,0 +1,39 @@
+body{ font:12px "나눔고딕"; color:#f7f7f7;}
+
+.box { 
+	width:300px; 
+	line-height:300px;
+	text-align:center;
+	font-size:100px;
+	border-radius:300px;
+	box-shadow:10px 10px 30px rgba(0,0,0,0.2), inset 10px 10px 30px rgba(255,255,255,0.5);
+	opacity:0.7;
+	background:red;
+	transition:1s; 
+}
+
+.wr {
+	border: 2px dashed lightgray;
+	width: 300px;
+	perspective: 400px;
+}
+
+.wr:hover .box { transform:rotateY(360deg);}
+/* .wrap에 오버했을 때 .wrap안의 .box */
+
+.wr:hover .b1 {
+    transform: rotateY(180deg);
+}
+.wr:hover .b2 {
+    transform: rotateY(0deg);
+}
+
+.b1 {
+    transform: rotateY(0deg);
+	background-color: hotpink;
+}
+.b2 {
+    transform: rotateY(180deg);
+	background-color: #0cc;
+}
+
