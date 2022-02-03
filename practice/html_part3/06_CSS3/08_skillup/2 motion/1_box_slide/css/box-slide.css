@@ -21,9 +21,16 @@ ul {list-style:none;}
     width:200px; 
     height:400px; 
     transition: 1s;
+    animation: motion1 1s;
 }
 
 #banner li:hover .box{
     top: -200px;
     /* transition: 1s; */
+}
+
+@keyframes motion1 {
+    0% {top:0px;}
+    50% {top:-200px;}
+    0% {top:0px;}
 }
