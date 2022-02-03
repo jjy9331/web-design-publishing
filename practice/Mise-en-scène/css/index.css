@@ -89,6 +89,7 @@ img {
     border: 2px dashed lightgray;
     width: 1200px;
     height: 594px;
+    margin-bottom: 48px;
 }
 
 #contents #group1 {
@@ -104,6 +105,20 @@ img {
     background-color: lightgray;
     width: 1200px;
     height: 291px;
+    
 }
 
+#footer {
+    margin: 0 auto;
+    background-image: url(../images/footer.png);
+    height: 181px;
+    
+}
 
+#footer #inner {
+    margin: 0 auto;
+    border: 2px dashed lightgray;
+    width: 1200px;
+    height: 181px;
+    color: white;
+}
