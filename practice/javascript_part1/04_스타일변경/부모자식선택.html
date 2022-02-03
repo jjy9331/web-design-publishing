@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>부모자식선택</title>
+<style>
+#wrap { margin:0 auto; padding:50px; width:600px; background:beige; }
+#header { padding:30px; height:100px; margin-bottom:10px; background:darkcyan;  }
+#contents { padding:30px; height:100px; margin-bottom:10px; background:orange; }
+.box { float:left; width:70px; height:70px; margin:5px; background:white;  }
+#footer { padding:30px; height:100px; background:chocolate; }
+</style>
+
+<script>
+  window.onload=function(){//페이지의 내용물이 모두 로딩된후 마지막에 { }안의 내용을 실행
+	
+		let a = document.getElementById('contents');
+		
+		a.style.border='3px dashed blue'; 
+		a.parentNode.style.border='3px dashed red'; 
+		//a(contents)의 부모요소
+
+		let b = a.children;
+		//a(contents)의 자식들을 b에 참조
+		b[0].style.border='3px dashed green'; 
+		b[0].style.borderRadius='20px'; 
+		//b[0]의 부모(contents)
+		b[0].parentNode.parentNode.style.borderRadius='30px'
+		//b[0]의 부모(contents)의 부모(wrap)
+	
+		
+  }
+</script>
+
+</head>
+
+<body>
+
+
+
+<div id="wrap">
+
+
+	<div id="header"></div>
+
+
+	<div id="contents">
+
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+
+	</div>
+
+
+	<div id="footer"></div>
+
+
+</div>
+
+
+
+</body>
+</html>
+
+
