@@ -3,16 +3,25 @@ ul {list-style:none; padding:0; margin:0;}
 
 #gnb {
     margin: 0 auto; 
-    overflow:hidden; 
+    /* overflow:hidden;  */
     width:603px; 
     height:50px; 
-    border:2px 
-    dashed blue; 
+    /* border:2px dashed blue;  */
 }
-#gnb:hover {height: 170px; transition: 1s;}
+/* #gnb:hover {height: 170px; transition: 1s;} */
+#gnb:hover .sub {
+    height: 120px;
+}
 
 #gnb .main { position:relative; float:left; width:200px; height:50px; margin-right:1px; background:skyblue; }
-#gnb .sub { position:absolute; left:0px; top:50px; }
+#gnb .sub { 
+    overflow: hidden;
+    position:absolute;
+    height: 0px;
+    left:0px; top:50px; 
+    border: 2px dashed red;
+    transition: 1s;
+}
 #gnb .sub li { width:200px; height:40px; background:yellow; }
 
 #gnb .main:hover { background:red; }
