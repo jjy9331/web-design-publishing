@@ -7,13 +7,13 @@ body{ font:12px "나눔고딕"; color:#f7f7f7;}
 	font-size:100px;
 	border-radius:300px;
 	box-shadow:10px 10px 30px rgba(0,0,0,0.2), inset 10px 10px 30px rgba(255,255,255,0.5);
-	opacity:0.7;
+	/* opacity:0.7; */
 	background:red;
 	transition:1s; 
 }
 
 .wr {
-	border: 2px dashed lightgray;
+	/* border: 2px dashed lightgray; */
 	width: 300px;
 	perspective: 400px;
 }
@@ -23,17 +23,28 @@ body{ font:12px "나눔고딕"; color:#f7f7f7;}
 
 .wr:hover .b1 {
     transform: rotateY(180deg);
+    z-index: 1;
 }
 .wr:hover .b2 {
     transform: rotateY(0deg);
+    z-index: 10;
 }
 
 .b1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
     transform: rotateY(0deg);
 	background-color: hotpink;
+    z-index: 110;
 }
 .b2 {
-    transform: rotateY(180deg);
+    position: absolute;
+    transform: rotateY(-180deg);
 	background-color: #0cc;
+    z-index: 100;
 }
 
+.b1 + .b2 {
+
+}
