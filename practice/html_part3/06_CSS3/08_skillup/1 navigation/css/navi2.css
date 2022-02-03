@@ -3,7 +3,9 @@ ul {list-style:none; padding:0; margin:0;}
 
 #gnb {
     position: relative;
-    margin: 0 auto; 
+    margin: 0 auto;
+    left: 0px;
+    top: -10px; 
     /* overflow:hidden;  */
     width:603px; 
     height:50px; 
@@ -14,6 +16,13 @@ ul {list-style:none; padding:0; margin:0;}
 #gnb:hover .sub {
     height: 120px;
 }
+/* gnb에 오버했을 때 #gnb안의 .sub를 보이게함*/
+
+#gnb:hover + .bg_box {height: 120px;}
+/* 
+    #gnb에 오버했을 때 #gnb의 인접한 다음 형제인 
+    .bg_box를 보이게 함
+*/
 
 #gnb .main { 
     position:relative; 
@@ -40,9 +49,10 @@ ul {list-style:none; padding:0; margin:0;}
 .bg_box {
     position: absolute;
     left: 0px;
-    top: 0px;
+    top: 50px;
     width: 100%;
-    height: 100px;
+    height: 0px;
     background-color: black;
     z-index: 100;
+    transition: 1s;
 }
