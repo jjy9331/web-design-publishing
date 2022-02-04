@@ -17,6 +17,10 @@ img {
     vertical-align: top; /* 크롬 등 일부 브러우저에서 이미지 배열시 생기는 공백오류를 방지*/
 }
 
+/* basic */
+
+a { text-decoration:none; }
+
 /* header */
 #header {
     height: 193px;
@@ -59,6 +63,11 @@ img {
     font-weight: 700;
     text-align: center;
 }
+
+#tgnb .login a { 
+    color: rgba(255, 255, 255, 1);
+}
+
 
 #gnb {
     position: absolute;
