@@ -1,0 +1,19 @@
+
+* { margin:0; padding:0; }
+ul { list-style:none; }
+
+body { font-family:'Roboto'; font-size:11px; }
+h1 { padding-top:20px; padding-bottom:20px; }
+
+#container { perspective:1000px; border:2px dashed #ccc; }
+
+.cube { transform:rotateY(0deg); transform-style:preserve-3d; /* 자손의 3차원 속성을 유지 */
+margin:0 auto; width:300px; height:300px; border:5px dashed #000; color:white; font-size:70px; }
+
+
+.box {  width:200px; height:80px; opacity:0.8; }
+
+.b1 { background:#333; /* transform:translate3d(0,0,-150px) */  /* rotateX(0deg) rotateY(180deg); */ }
+.b2 { background:orange; /* transform:translate3d(150px,0,0px) */  /* rotateX(0deg) rotateY(90deg); */ }
+.b3 { background:red; /* transform:translate3d(-150px,0px,0px) */  /* rotateX(0deg) rotateY(-90deg); */ }
+.b4 { background:blue;  /* transform:translate3d(0px,0px,150px) */  /* rotateX(0deg) rotateY(0deg); */  }
