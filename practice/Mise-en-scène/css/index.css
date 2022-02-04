@@ -151,8 +151,15 @@ a:hover {opacity: 0.5;}
     height: 594px;
     margin-bottom: 48px;
 }
+#contents:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 
 #contents #group1 {
+
     margin-top: 12px;
     /* background-color: lightgray; */
     width: 1200px;
@@ -160,6 +167,7 @@ a:hover {opacity: 0.5;}
 }
 
 #contents #group1 .b1, .b2, .b3 {
+    float: left;
     padding-right: 12px;
 }
 
