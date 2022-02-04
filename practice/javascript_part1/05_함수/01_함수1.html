@@ -6,6 +6,7 @@
 
 <style>
 #box { width: 200px; height: 200px; background-color: #0cc;}
+#nemo { width: 500px; height: 100px; background-color: orange;}
 
 </style>
 <script>
@@ -17,11 +18,25 @@ function AA() { //AA라는 기능
 
 AA();//AA함수를 호출(AA기능을 실행)
 
-function BB() { //AA라는 기능 
-    document.getElementById("box").style.transition="1s"
-    document.getElementById("box").style.borderRadius="20px"
-    document.getElementById("box").style.transform="rotate(360deg) scale(0.5,0.5)";
-    document.getElementById("box").style.background="hotpink";
+function BB() { //BB라는 기능 
+
+    let target = document.getElementById("box")
+
+    target.style.transition="1s"
+    target.style.borderRadius="20px"
+    target.style.transform="rotate(360deg) scale(0.5,0.5)";
+    target.style.background="hotpink";
+}
+
+
+function CC() { //CC라는 기능 
+
+let target = document.getElementById("nemo")
+
+target.style.transition="1s"
+target.style.borderRadius="20px"
+target.style.transform="scale(0.5,0.5)";
+target.style.background="hotpink";
 }
 
 </script>
@@ -31,9 +46,14 @@ function BB() { //AA라는 기능
 <body>
 
     <button onclick="AA();">Hello 버튼</button>
-    <button onclick="BB();">Radius 버튼</button>
+    <button onclick="BB();">박스 버튼</button>
+    <button onclick="CC();">nemo 버튼</button>
 
     <div id="box">박스</div>
+
+    <div id="nemo">네모</div>
+
+
 
 </body>
 
