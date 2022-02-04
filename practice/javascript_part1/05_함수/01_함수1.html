@@ -40,6 +40,17 @@ target.style.transform="scale(0.5,0.5)";
 target.style.background="hotpink";
 }
 
+function roScale(a,b,c) { 
+
+let target = document.getElementById(a);
+
+target.style.transition="1s"
+target.style.borderRadius="20px"
+target.style.transform="scale(0.5,0.5)";
+target.style.backgroundColor=b;
+target.style.background=c;
+}
+
 </script>
 
 </head>
@@ -49,6 +60,8 @@ target.style.background="hotpink";
     <button onclick="AA();">Hello 버튼</button>
     <button onclick="BB('box','10px','green');">박스 버튼</button>
     <button onclick="BB('nemo','yellow');">nemo 버튼</button>
+
+    <button onclick="roScale('nemo','yellow','hotpink');">버튼</button>
 
     <div id="box">박스</div>
 
