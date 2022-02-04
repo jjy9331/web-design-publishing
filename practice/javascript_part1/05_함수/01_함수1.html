@@ -18,9 +18,9 @@ function AA() { //AA라는 기능
 
 AA();//AA함수를 호출(AA기능을 실행)
 
-function BB() { //BB라는 기능 
+function BB(b) { //BB라는 기능 
 
-    let target = document.getElementById("box")
+    let target = document.getElementById(b)
 
     target.style.transition="1s"
     target.style.borderRadius="20px"
@@ -46,8 +46,8 @@ target.style.background="hotpink";
 <body>
 
     <button onclick="AA();">Hello 버튼</button>
-    <button onclick="BB();">박스 버튼</button>
-    <button onclick="CC();">nemo 버튼</button>
+    <button onclick="BB('box');">박스 버튼</button>
+    <button onclick="BB('nemo');">nemo 버튼</button>
 
     <div id="box">박스</div>
 

@@ -19,7 +19,8 @@ img {
 
 /* basic */
 
-a { color:black; text-decoration:none; }
+a { color:black; text-decoration:none; transition: 1s;}
+a:hover {opacity: 0.5;}
 
 /* header */
 #header {
