@@ -1,0 +1,63 @@
+
+* { margin:0; padding:0; }
+ul { list-style:none; }
+
+body { font-family:'Roboto'; font-size:11px; }
+h1 { padding-top:20px; padding-bottom:20px; }
+
+#container { 
+    /* position: relative; */
+    margin: 0 auto;
+    perspective:1200px; 
+    width: 1200px;
+    /* height: 1200px; */
+    border:2px dashed #ccc; 
+}
+#container:after { 
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.cube { 
+    float: left;
+    transition: 1s;
+    transform:rotateY(0deg); 
+    transform-style:preserve-3d; /* 자손의 3차원 속성을 유지 */
+    /* margin:0 auto;  */
+    width:200px; 
+    height:200px; 
+    margin: 20px;
+    /* border:5px dashed #000;  */
+    color:white; 
+    font-size:70px; 
+}
+
+/* border 없애야 박스가 5개가 된다. */
+
+.cube.end { 
+    position:relative; 
+    z-index:-10;
+}
+
+
+.cube:hover {
+    transform: rotateY(180deg);
+}
+
+.box { 
+    margin: 0 auto;
+    position: absolute; 
+    width:200px; 
+    height:200px; 
+    opacity:0.8; 
+}
+
+.b1 { background:#333; transform:translate3d(0,0,-100px)  rotateX(0deg) rotateY(180deg); }
+.b2 { background:orange; transform:translate3d(100px,0,0px)  rotateX(0deg) rotateY(90deg); }
+.b3 { background:red; transform:translate3d(-100px,0px,0px)  rotateX(0deg) rotateY(-90deg); }
+
+.c1 { background:hotpink; transform:translate3d(0px,-100px,0px)  rotateX(90deg) rotateY(0deg); }
+.c2 { background:yellowgreen; transform:translate3d(0px,100px,0px)  rotateX(-90deg) rotateY(0deg); }
+
+.b4 { background:blue;  transform:translate3d(0px,0px,100px)  /* rotateX(0deg) rotateY(0deg); */  }

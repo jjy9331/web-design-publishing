@@ -1,0 +1,70 @@
+/*reset*/
+* {margin:0;padding:0;}
+ul {list-style:none;}
+
+#banner { width:635px; height:635px; border:5px dashed #0cc; margin:30px auto; }
+#banner li { 
+    overflow: hidden;
+    position:relative; 
+    float:left; 
+    width:200px; 
+    height:200px; 
+    margin-left:10px; 
+    margin-top:10px; 
+    /* border:2px dashed #ccc;  */
+}
+
+#banner li .box { 
+    position:absolute; 
+    left:0px; 
+    top:0px; 
+    width:200px; 
+    height:400px; 
+    transition: 1s;
+    /* animation: motion1 1s; */
+}
+
+#banner li:hover .box{
+    top: -200px;
+    /* transition: 1s; */
+}
+
+@keyframes motion1 {
+    0% {top:0px;}
+    50% {top:-200px;}
+    0% {top:0px;}
+}
+
+@keyframes motion2 {
+    0% {top:-200px;}
+    25% {top:0px;}
+    75% {top:-200px;}
+    100% {top:0px;}
+}
+
+@keyframes motion3 {
+    0% {top:200px;}
+    100% {top:0px;}
+}
+
+@keyframes motion4 {
+    0% {top:-400px;}
+    50% {top:-200px;}
+    100% {top:0px;}
+}
+
+.b1 {
+    animation: motion1 1s;
+}
+
+.b2 {
+    animation: motion2 1.4s;
+}
+
+.b3 {
+    animation: motion3 1.4s;
+}
+
+.b4 {
+    animation: motion4 1.4s;
+}

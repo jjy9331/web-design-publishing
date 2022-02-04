@@ -183,6 +183,18 @@ a:hover {opacity: 0.5;}
     height: 291px;
 }
 
+#group1 .b1 {
+    animation: ani1 1s;
+    width: 291px;
+    height: 291px;
+    /* background-color: lightgray; */
+}
+
+@keyframes ani1 {
+    0% {top: 0px;}
+    100% {top: 291px;}
+}
+
 #contents #group1 .b1, .b2, .b3 {
     float: left;
     padding-right: 12px;
