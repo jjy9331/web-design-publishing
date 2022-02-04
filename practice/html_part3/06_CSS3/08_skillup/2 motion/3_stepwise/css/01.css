@@ -3,24 +3,24 @@ body { font:12px "Roboto"; }
 
 
 .box { 
-   position:relative; 
-   margin:0 auto; 
-   width:960px; 
-   height:500px; 
-   /* border:1px dashed #777;  */
+    position:relative; 
+    margin:0 auto; 
+    width:960px; 
+    height:500px; 
+    /* border:1px dashed #777;  */
 }
 
 .line { 
-   position: absolute; 
-   width: 10px; 
-   height:10px; 
-   border:1px solid red; 
-   background-color: red;
+    position: absolute; 
+    width: 10px; 
+    height:10px; 
+    /* border:1px solid red;  */
+    background-color: red;
 }
 .n1{ animation: motion1 1s; left: 0px; top: 0px; width: 100%;}
-.n2{ animation: motion2 1s; right: 0px; top: 0px; height: 100%;}
-.n3{ animation: motion1 1s; right: 0px; bottom: 0px; width: 100%;}
-.n4{ animation: motion2 1s; left: 0px; bottom: 0px; height: 100%;}
+.n2{ animation: motion2 2s; right: 0px; top: 0px; height: 100%;}
+.n3{ animation: motion3 3s; right: 0px; bottom: 0px; width: 100%;}
+.n4{ animation: motion4 4s; left: 0px; bottom: 0px; height: 100%;}
 
 
 @keyframes motion1 {
@@ -30,5 +30,21 @@ body { font:12px "Roboto"; }
 
 @keyframes motion2 {
     0% {height: 0%;}
+    50% {height: 0%;}
+    100% {height: 100%;}
+}
+
+@keyframes motion3 {
+    0% {width: 0%;}
+    33.33% {width: 0%;}
+    66.66% {width: 0%;}
+    100% {width: 100%;}
+}
+
+@keyframes motion4 {
+    0% {height: 0%;}
+    25% {height: 0%;}
+    50% {height: 0%;}
+    75% {height: 0%;}
     100% {height: 100%;}
 }
