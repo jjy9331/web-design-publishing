@@ -182,6 +182,7 @@ a:hover {opacity: 0.5;}
 }
 
 #contents #group2 .b5, .b6{
+    float: left;
     padding-right: 12px;
 }
 
