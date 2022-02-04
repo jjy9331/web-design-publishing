@@ -1,0 +1,48 @@
+* {margin: 0 auto;}
+
+p {margin:0; padding:0; }
+body { font:100 12px "Roboto"; }
+
+
+.box { position:relative; margin:0 auto; width:1200px; height:500px; /* border:1px dashed #777; */ }
+
+.line { position:absolute; width:30px; height:30px; background:red; }
+.n1 { animation:motion1 1s; left:0px; top:0px; width:100%;}
+.n2 { animation:motion2 2s; right:0px; top:0px; height:100%; }
+.n3 { animation:motion3 3s; right:0px; bottom:0px; width:100%; }
+.n4 { animation:motion4 4s; left:0px; bottom:0px; height:100%; }
+
+@keyframes motion1 {
+  0% { width:0; }
+  100% { width:100%; }
+}
+@keyframes motion2 {
+  0% { height:0; }
+  50% { height:0; }
+  100% { height:100%; }
+}
+@keyframes motion3 {
+  0% { width:0; }
+  66.66% { width:0; }
+  100% { width:100%; }
+}
+@keyframes motion4 {
+  0% { height:0; }
+  75% { height:0; }
+  100% { height:100%; }
+}
+
+
+.box .typo1 { animation:t_motion1 6s; font-size:110px; line-height:1em; padding-top:150px; text-align:center; color:red; }
+.box .typo2 { animation:t_motion2 7s; font-size:30px; line-height:1em; padding-top:50px; text-align:center; color:red; }
+
+@keyframes t_motion1 {
+   0%{ opacity:0; letter-spacing:10px; }
+   70% { opacity:0; letter-spacing:10px;  }
+   100%{ opacity:1;letter-spacing:0px;  }
+}
+@keyframes t_motion2 {
+   0%{ opacity:0; letter-spacing:10px; }
+   70% { opacity:0; letter-spacing:10px;  }
+   100%{ opacity:1;letter-spacing:0px;  }
+}
