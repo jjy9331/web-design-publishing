@@ -25,15 +25,18 @@ body{ font:12px "나눔고딕"; color:#f7f7f7;}
 /* .wrap에 오버했을 때 .wrap안의 .box */
 
 .wr:hover .b1 {
+    opacity: 1;
     transform: rotateY(180deg);
     z-index: 1;
 }
 .wr:hover .b2 {
+    opacity: 1;
     transform: rotateY(0deg);
     z-index: 10;
 }
 
 .b1 {
+    opacity: 1;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -42,6 +45,7 @@ body{ font:12px "나눔고딕"; color:#f7f7f7;}
     z-index: 10;
 }
 .b2 {
+    opacity: 0;
     position: absolute;
     transform: rotateY(-180deg);
 	background-color: #0cc;
