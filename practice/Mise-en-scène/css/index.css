@@ -197,6 +197,7 @@ a:hover {opacity: 0.5;}
 /* contents */
 
 #contents {
+    position: relative;
     margin: 0 auto;
     /* border: 2px dashed lightgray; */
     width: 1200px;
@@ -211,6 +212,7 @@ a:hover {opacity: 0.5;}
 
 
 #contents #group1 {
+    position: absolute;
     margin-top: 12px;
     /* background-color: lightgray; */
     width: 1200px;
@@ -227,7 +229,12 @@ a:hover {opacity: 0.5;}
 
 
 
+
 #contents #group2 {
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    top: 304px;
     margin-top: 12px;
     margin-bottom: 48px;
     /* background-color: lightgray; */
