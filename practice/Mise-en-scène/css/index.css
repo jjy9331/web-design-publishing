@@ -231,7 +231,6 @@ a:hover {opacity: 0.5;}
 
 
 #contents #group2 {
-    overflow: hidden;
     position: absolute;
     left: 0px;
     top: 304px;
@@ -247,6 +246,14 @@ a:hover {opacity: 0.5;}
     padding-right: 12px;
 }
 
+#contents img {
+    overflow: hidden;
+}
+
+#contents img:hover {
+    transition: 1s;
+    transform: scale(1.1,1.1);
+}
 
 
 #footer {
