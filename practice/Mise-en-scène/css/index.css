@@ -117,6 +117,10 @@ a:hover {opacity: 0.5;}
     font-size: 33px;
 }
 
+#tgnb li:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+}
 
 #gnb {
     position: absolute;
@@ -127,9 +131,21 @@ a:hover {opacity: 0.5;}
 }
 
 #gnb ul li {
+    position: relative;
+    top: 0px;
+    overflow: hidden;
     float: left;
     padding-left: 100px;
+    /* background-color: lightgray; */
 }
+
+#gnb ul li:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+
+
 
 /* visual */
 
@@ -213,6 +229,7 @@ a:hover {opacity: 0.5;}
     100% {opacity: 100%; font-size: 26px;}
 }
 
+
 /* contents */
 
 #contents {
@@ -230,11 +247,6 @@ a:hover {opacity: 0.5;}
     100% {opacity: 1;}
 }
 
-/* #contents:after {
-    content: "";
-    display: block;
-    clear: both;
-} */
 
 #contents #group1 li{
     position: relative;
@@ -408,13 +420,6 @@ a:hover {opacity: 0.5;}
 }
 
 
-#contents #group1 .b1, .b2, .b3 {
-    float: left;
-    margin-right: 12px;
-}
-
-
-
 
 #contents #group2 {
     position: absolute;
@@ -430,21 +435,7 @@ a:hover {opacity: 0.5;}
 
 
 
-#contents #group2 .b5, .b6{
-    float: left;
-    padding-right: 12px;
-}
-
-/* #contents #inner #group1, #group2 img {
-    position: absolute;
-    left: 0px; top: 0px;
-    margin-right: 12px;
-    overflow: hidden;
-} */
-
-#contents #inner #group1 .b1 {
-    animation: b1 1s;
-}
+/* top button */
 
 
 #top {
@@ -472,6 +463,9 @@ a:hover {opacity: 0.5;}
     color: rgba(255, 255, 255, 1);
     transition: 0.5s;
 }
+
+
+/* footer */
 
 #footer {
     /* position: relative; */
