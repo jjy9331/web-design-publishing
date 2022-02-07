@@ -54,9 +54,27 @@ a:hover {opacity: 0.5;}
     /* border-bottom: 3px solid rgba(0, 0, 0, 1); */
 }
 
+#header #inner .logo_wrap {
+    position: absolute;
+    left: 0px; top: 20px;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    /* border: 1px dashed red; */
+}
+
 #logo {
-    padding-top: 20px;
+    position: absolute;
+    left: 0px; top: 0px;
+    /* padding-top: 20px; */
     padding-bottom: 20px;
+    animation: logo 1s;
+    /* border: 1px dashed red; */
+}
+
+@keyframes logo {
+    0% { top: 100px;}
+    100% { top: 0px;}
 }
 
 
