@@ -259,10 +259,7 @@ a:hover {opacity: 0.5;}
     /* border: 2px dashed lightgray; */
 }
 
-#contents #group1 li:hover {
-    overflow: hidden;
-    transform: scale(1.1,1.1);
-}
+
 
 #contents #group1 li:nth-child(1) {
     margin-right: 11px;
