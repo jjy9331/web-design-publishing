@@ -253,7 +253,7 @@ a:hover {opacity: 0.5;}
 
 #contents img:hover {
     transition: 1s;
-    transform: scale(1.1,1.1);
+    /* transform: scale(1.1,1.1); */
 }
 
 

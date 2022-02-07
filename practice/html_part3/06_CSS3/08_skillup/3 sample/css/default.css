@@ -25,10 +25,10 @@ a { text-decoration:none; color:#767676; }
 
 /* layout */
 #header {
-	/* position:fixed; */ /*fixed의 let/top기준은 브라우져창이다 */
-	/*position:absolute; */ /*absolute의 let/top기준은 body이다 */
-	/* left:0; top:0; z-index:1000; */
-	/* width:100%; */	
+	position:fixed; /*fixed의 let/top기준은 브라우져창이다 */
+	position:absolute; /*absolute의 let/top기준은 body이다 */
+	left:0; top:0; z-index:1000;
+	width:100%;	
 	background-color:rgba(255,255,255,0.9);
 }
 #header .inner { position:relative; margin:0 auto; width:1180px; height:95px; /* border:1px dashed skyblue; */ }
@@ -46,7 +46,7 @@ a { text-decoration:none; color:#767676; }
 h1 { position:absolute; left:0px; top:38px; width:103px; height:18px; }
 .gnb {  position:absolute; right:0px; bottom:34px; /*width:317px;*/ height:8px; }
 .gnb li { float:left; margin-left:22px; }
-.gnb li a { color:#000; padding-left:5px; padding-right:5px; font-size:11px; }
+.gnb li a { transition: 1s; color:#000; padding-left:5px; padding-right:5px; font-size:11px; }
 .gnb li a:hover { color:#fff; background-color:black; }
 
 .top_gnb { position:absolute; right:0px; top:21px;  /*width:102px;*/ height:15px; }
@@ -57,9 +57,20 @@ h1 { position:absolute; left:0px; top:38px; width:103px; height:18px; }
 /* visual */
 .slogan { position:absolute; right:64px; top:208px; /* border:2px solid blue; */ }
 .slogan p { font-size:30px; font-weight:900; color:black; }
-.slogan p:first-child { font-size:100px; }
+.slogan p:first-child { animation: p1 2s; font-size:100px; }
 .slogan p:first-child span { font-weight:100; }
-.slogan p:last-child { font-weight:500; font-size:20px; }
+.slogan p:last-child { animation: p2 3s; font-weight:500; font-size:20px; }
+
+@keyframes p1 {
+	0% { opacity: 0;}
+	100% { opacity: 1;}
+}
+
+@keyframes p2 {
+	0% { opacity: 0;}
+	20% { opacity: 0;}
+	100% { opacity: 1;}
+}
 
 #visual a { position:absolute; 
 	right:356px; bottom:326px; 
@@ -67,6 +78,7 @@ h1 { position:absolute; left:0px; top:38px; width:103px; height:18px; }
 	padding-top:20px; padding-bottom:20px;
 	background-color:white; text-align:center;
 	font-size:21px; font-weight:500; color:black;
+	transition: 1s;
 }
 #visual a.bt2 { right:0px; }
 
