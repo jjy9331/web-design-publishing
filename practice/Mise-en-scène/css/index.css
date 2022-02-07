@@ -260,6 +260,7 @@ a:hover {opacity: 0.5;}
 }
 
 #contents #group1 li:hover {
+    overflow: hidden;
     transform: scale(1.1,1.1);
 }
 
