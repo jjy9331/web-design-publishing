@@ -247,6 +247,10 @@ a:hover {opacity: 0.5;}
     100% {opacity: 1;}
 }
 
+.blind {
+    position: absolute;
+    top: -9999px;
+}
 
 #contents #group1 li{
     position: relative;
