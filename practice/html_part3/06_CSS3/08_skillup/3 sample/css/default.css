@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+/* fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+h1,h2,h3,h4 { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/* base */
+body { font-size:14px; font-family:'Roboto','Noto Sans KR'; color:#333; }
+a { text-decoration:none; color:#767676; }
+.skip_navigation a { position:absolute; top:-9999px; }
+.skip_navigation a:focus { top:0; padding:10px; color:white; text-decoration:none; font-size:14px; font-weight:bold; background:black; }
+.blind { position:absolute; top:-9999px; }
+
+
+/* layout */
+#header {
+	/* position:fixed; */ /*fixed의 let/top기준은 브라우져창이다 */
+	/*position:absolute; */ /*absolute의 let/top기준은 body이다 */
+	/* left:0; top:0; z-index:1000; */
+	/* width:100%; */	
+	background-color:rgba(255,255,255,0.9);
+}
+#header .inner { position:relative; margin:0 auto; width:1180px; height:95px; /* border:1px dashed skyblue; */ }
+
+#visual { background:url(../images/guess-01-01.jpg) no-repeat center top /* fixed */; }
+#visual .inner { position:relative; margin:0 auto; width:1180px; height:1050px; /* border:3px dashed hotpink; */ }
+
+#contents { margin:0 auto; width:1180px; /* height:940px; */ padding-top:70px; padding-bottom:106px; /* border:2px dashed pink; */  }
+
+#footer { /*height:101px;*/ background-color:rgba(0,0,0,0.9); }
+#footer .inner { margin:0 auto; width:1180px; height:101px; /* border:1px dashed skyblue; */  }
+
+
+/* header */
+h1 { position:absolute; left:0px; top:38px; width:103px; height:18px; }
+.gnb {  position:absolute; right:0px; bottom:34px; /*width:317px;*/ height:8px; }
+.gnb li { float:left; margin-left:22px; }
+.gnb li a { color:#000; padding-left:5px; padding-right:5px; font-size:11px; }
+.gnb li a:hover { color:#fff; background-color:black; }
+
+.top_gnb { position:absolute; right:0px; top:21px;  /*width:102px;*/ height:15px; }
+.top_gnb li { float:left; margin-left:15px; }
+.top_gnb li a:hover { opacity:0.5; }
+
+
+/* visual */
+.slogan { position:absolute; right:64px; top:208px; /* border:2px solid blue; */ }
+.slogan p { font-size:30px; font-weight:900; color:black; }
+.slogan p:first-child { font-size:100px; }
+.slogan p:first-child span { font-weight:100; }
+.slogan p:last-child { font-weight:500; font-size:20px; }
+
+#visual a { position:absolute; 
+	right:356px; bottom:326px; 
+	width:341px; /* height:77px; */
+	padding-top:20px; padding-bottom:20px;
+	background-color:white; text-align:center;
+	font-size:21px; font-weight:500; color:black;
+}
+#visual a.bt2 { right:0px; }
+
+#visual a:hover { color:white; background-color:black; }
+
+	/* a태그 같은 인라인요소는 width/height가 적용되지않는다 
+	하지만 position:absolute나 float이 설정되면 블록요소의
+	성질을 갖는다 */
+
+
+
+/* contents */
+#contents h2 { height:38px; font-size:14px; color:black; /* border:1px solid blue; */ }
+
+.new { margin-bottom:95px; /* border:2px solid red; */ }
+.new:after { content:""; display:block; clear:both; }
+.new div { float:left; width:380px; /* border:1px dashed blue; */ }
+.new div.banner1 { margin-right:20px; }
+.new div.banner2 { margin-right:20px; }
+	/* 
+		부모요소에서 float설정된 자식들의 높이를
+		자동으로 인식하지못한다 이를 해결하려면 부모에게 overflow:hidden을 지정하거나
+		부모:after { content:""; display:block; clear:both; }를 설정
+	*/
+.new p { padding-top:20px; /* border:1px dashed #999; */ }
+
+
+.insta { margin-bottom:95px; /* border:2px solid green; */ }
+.insta:after { content:""; display:block; clear:both; }
+.insta ul li { margin-right:13px; float:left; /* border:1px dashed blue; */ }
+.insta ul li.in3 { margin-right:14px; }
+.insta ul li.in4 { margin-right:0; }
+
+.best { /* border:2px dashed red; */ }
+.best:after { content:""; display:block; clear:both; }
+.best ul li { float:left; width:33.333%; /* border:1px solid blue; */ }
+.best ul li img { width:100%; }
+
+
+
+/* footer */
+p.copyright { font-size:11px; color:black; color:white;
+	/* margin-top:52px; */ 
+	padding-top:52px;/* 마진오류 발생시 패딩으로 해결 */ 
+	text-align:center; /* border:2px solid red; */ 
+}
+
+
+
+
+
+
+/* ------------------------  sub페이지  ------------------------ */
+
+body.sub #header { border-bottom:10px solid rgba(0,0,0,0.8); }
+
+.act_gnb { border-bottom:5px solid orange; } /*gnb활성화 메뉴*/
+.act_lnb { border-left:5px solid rgba(0,0,0,0.8); } /*lnb활성화 메뉴*/
+
+/* sub layout */
+#container { margin:0 auto; width:1180px; margin-top:200px; margin-bottom:106px; /* border:2px solid skyblue; */ }
+#container:after { content:""; display:block; clear:both; }
+
+#container aside { 
+	float:left; width:250px; padding-top:30px; padding-bottom:50px;  
+	border-top:10px solid rgba(0,0,0,0.8); 
+	border-bottom:10px solid rgba(0,0,0,0.8); 
+}
+#container #contents_sub { float:right; width:850px; /* height:1000px; */  /* border:2px dashed orange; */ }
+
+/* sidebar */
+aside h2 { font-size:35px; padding-top:30px; padding-bottom:50px; }
+aside .lnb { /* border:1px solid red; */ }
+aside .lnb li { /* height:30px; */ /* border:1px dashed skyblue; */ }
+aside .lnb li a { display:block; padding:15px; color:#333; font-size:15px; }
+aside .lnb li a:hover { color:white; background:black; }
+
+/* contents_sub */
+#contents_sub .location { padding-bottom:50px; text-align:right; /* border:1px dashed #999; */ }
+#contents_sub h3 { font-size:50px; padding-bottom:20px; }
+#contents_sub .slogan_info { font-size:30px; padding-bottom:50px; }
+#contents_sub .group { margin-bottom:30px; /* border:3px dashed hotpink; */ }
+#contents_sub h4 { padding-top:20px; padding-bottom:20px; font-size:25px; }
+#contents_sub p { /* border:3px solid blue; */ line-height:27px;/*줄간격*/ padding-bottom:30px; }
+#contents_sub img.left { float:left; width:300px; padding-top:10px; padding-bottom:10px; padding-right:10px; }
+#contents_sub img.right { float:right; width:300px; padding-top:10px; padding-bottom:10px; padding-left:10px; }
+
+
+	/* Accessories(sub1-) */
+
+	/* sub1-1 */
+	img.img_as { float:left; width:100%; margin-bottom:30px; }
+
+
+
+
