@@ -14,51 +14,97 @@ ul {
     list-style: none;
 }
 
+input:focus {
+    outline: none;
+}
+
 #lang {
     position: absolute;
     right: 10px;
+    background-color: transparent;
+
 }
 
 #logo{
     position: absolute;
-    left: 50%; top: 60px;
+    left: 50%; 
+    /* top: 60px; */
+    top: 50%;
+    margin-top: -140px;
     margin-left: -50px;
 }
 
 #data_in {
     position: absolute;
     left:50%; 
-    top: 170px;
+    top: 50%;
+    margin-top: -30px;
     margin-left: -80px;
 }
 
+#login_id {
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+#login_password {
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
 #login_bt {
-    background-color: white;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 58px;
     padding-right: 58px;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    
+    background-color: transparent;
+}
+
+#login_bt:hover {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 58px;
+    padding-right: 58px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    transition: 1s;
 }
 
 #id_fix {
     margin-left: -4px;
     font-size: 12px;
     color: black;
+    line-height: 10px;
+}
+
+#login_fix_t {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -57px;
+    margin-top: 63px;
+
+}
+
+#id_fix .login_fix {
+    background-color: transparent;
 }
 
 #client_m{
     position: absolute;
     left: 50%;
-    top: 330px;
-    margin-left: -120px;
+    top: 50%;
+    margin-top: 130px;
+    margin-left: -122px;
+    font-weight: 600;
 
 }
 
 #client_m ul li{
     /* position: absolute; */
-    font-size: 10px;
+    font-size: 9.8px;
     float: left;
     padding-right: 5px;
     border-right: 1px solid black;
@@ -75,6 +121,11 @@ ul {
     border-right: 0px solid black;
 }
 
+#client_m ul li:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
 /* bg */
 .bg {
     position: fixed;
@@ -85,7 +136,7 @@ ul {
     background-color: red;
     z-index: -10;
     /* filter: blur(20px); */
-    opacity: 0.3;
+    opacity: 0.4;
 }
 /*
     position요소의 z-index값을 -로 설정하면
@@ -114,19 +165,20 @@ ul {
 
 <div id="data_in">
     <form>
-        <p><input type="search"  placeholder="아이디"></p>
-        <p><input type="password" placeholder="비밀번호"></p>
+        <p><input type="search" autofocus required placeholder="               아이디" id="login_id"></p>
+        <p><input type="password" required placeholder="             비밀번호" id="login_password"></p>
+        <input type="submit" value="로그인" id="login_bt">
+        <br>
+        <br>
+        <div>
+            <div id="id_fix">
+                <div id="login_fix_t">아이디 저장</div>
+                <input type="checkbox">
+            </div>        
+        </div>
     </form>
     
     
-    <input type="button" value="로그인" id="login_bt">
-    <br>
-    <br>
-    <div>
-            <div id="id_fix">
-                <input type="checkbox"> 아이디 저장
-            </div>        
-    </div>
 </div>
 <div id="client_m">
     <ul>
