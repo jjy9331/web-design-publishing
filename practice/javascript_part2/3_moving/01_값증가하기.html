@@ -18,11 +18,13 @@ let a = 0;
 
 function AA(){	
 	a = a + 1; //a값을 1증가
-	alert(a); //a값을 알림창에 출력
-	//document.getElementById("box").style.left = a + "px";
+	// alert(a); //a값을 알림창에 출력
+	document.getElementById("box").style.left = a + "px";
 }
 
-document.getElementById("box").addEventListener("click",AA);//box를 클릭했을때 AA함수를 실행
+// document.getElementById("box").addEventListener("click",AA);//box를 클릭했을때 AA함수를 실행
+
+setInterval("AA(), 1000");
 
 </script>
 
