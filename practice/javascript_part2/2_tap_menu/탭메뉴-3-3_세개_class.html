@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>탭 메뉴</title>
+<style>
+* { margin:0; padding:0; }
+ul { list-style:none; }
+
+a { color:#333; text-decoration:none; }
+a:hover { color:orange; }
+
+
+/* 탭메뉴 */
+#tab_wrap { 
+  position: relative;
+	width:500px; 
+  height: 160px;
+  margin:50px; 
+	/* border:5px dashed #ddd; */ 
+}
+
+#tabmenu { overflow:hidden; /* border:3px solid orange; */ }
+#tabmenu li { float:left; margin-right:1px; }
+#tabmenu li a { 
+	display:block; 
+	padding:10px 30px; 
+	color:white; 
+	background:skyblue;
+	border-radius:16px 16px 0 0;
+}
+
+#con1, #con2 { 
+  transition: 1s;
+  position: absolute;
+  left: 0px; top: 41px;
+  width: 460px;
+	padding:20px; 
+	border:3px solid blue; 
+	border-radius:0 16px 16px 16px;
+}
+
+.date { float: right; }
+</style>
+</head>
+
+<body>
+
+
+<div id="tab_wrap">
+        <!-- 탭 메뉴 -->
+          <ul id="tabmenu">
+        	<li><a href="#" id="t1">notice</a></li>
+        	<li><a href="#" id="t2">news</a></li>
+          </ul>
+
+
+
+        <!-- 탭 내용물 -->
+          <ul id="con1" class="con">
+            <li><a href="#">투명한 기업 경영..<span class="date">2030-03-12</span></a></li>
+            <li><a href="#">영속적 기업을 만들기 위해 현대전자는..<span class="date">2030-02-17</span></a></li>
+            <li><a href="#">정도경영을 실천하겠습니다<span class="date">2030-02-12</span></a></li>
+          </ul>
+        
+          <ul id="con2" class="con">
+            <li><a href="#">봄처럼 따뜻한 브런치 레시피..<span class="date">2030-03-28</span></a></li>
+            <li><a href="#">이번 주말 봄나들이 때 남다른 요리실력을..<span class="date">2030-03-15</span></a></li>
+            <li><a href="#">현대의 이름으로 당신을 초대합니다<span class="date">2030-02-07</span></a></li>
+          </ul>          
+    
+</div>
+
+<!-- <div style="height: 500px; background-color: red;">테스트 박스</div> -->
+
+
+
+
+<script>
+
+  //초기설정
+  let t1 = document.getElementById("t1");
+  let t2 = document.getElementById("t2");
+
+  let con1 = document.getElementById("con1");
+  let con2 = document.getElementById("con2");
+
+
+  t1.style.background="blue";
+  // con1.style.display="block";
+  con1.style.zIndex="10"
+  con2.style.opacity="0";
+
+
+
+  //t1클릭했을때
+  t1.addEventListener("click",function(){
+	  t1.style.background="blue";
+	  t2.style.background="skyblue";
+
+	  con1.style.opacity="1";
+	  con2.style.opacity="0";	  
+  });
+
+
+  //t2클릭했을때
+  t2.addEventListener("click",function(){
+	  t1.style.background="skyblue";
+	  t2.style.background="blue";
+
+	  con1.style.opacity="0";
+	  con2.style.opacity="1";	  
+  });
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
