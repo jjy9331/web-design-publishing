@@ -23,21 +23,36 @@ ul {list-style: none;}
 	margin-left: -31px;
 	margin-top: -31px;
 }
-#wrap { /*visibility:hidden;*/ }
+#wrap { 
+	/* visibility:hidden;  */
+	height: 100%; 
+	border: 50px solid blue;
+	box-sizing: border-box;
+	}
 </style>
 
 <script>
 
+window.addEventListener("load",
+
+	function AA() { //페이지가 다 로딩된 후 실행
+			document.getElementById("loading").style.display="none";
+		}
+
+); //페이지의 내용물이 모두 로딩된 후 AA함수 실행
+
+
 </script>
 
 </head>
+<!-- <body onload="AA();"> body 안의 내용물이 모두 로딩된 후 AA함수를 실행 -->
 <body>
-
 <div id="loading">
 	<img src="images/loading.gif" alt="로딩중입니다">
 </div>
 
 <div id="wrap">
+	이미지가 많은 용량이 큰 내용물
 </div>
 
 </body>
