@@ -30,11 +30,7 @@ a:hover { color:orange; }
 
 .date { float: right; }
 </style>
-<script>
 
-
-
-</script>
 </head>
 
 <body>
@@ -63,9 +59,39 @@ a:hover { color:orange; }
           </ul>          
 </div>
 
+<script>
+
+  //초기 설정
+  
+  let t1 = document.getElementById("t1");
+  let t2 = document.getElementById("t2");
+  let con1 = document.getElementById("con1");
+  let con2 = document.getElementById("con2");
+
+  t1.style.background="blue"
+  con2.style.display="none";
+  
+  //t1를 클릭했을때
+  t1.addEventListener("click",function(){
+    t1.style.background="blue";
+    t2.style.background="skyblue";
+	  con1.style.display="block";
+	  con2.style.display="none";	  
+  });
+
+  //t2를 클릭했을때
+  t2.addEventListener("click",function(){
+    t1.style.background="skyblue";
+    t2.style.background="blue";
+	  con1.style.display="none";
+	  con2.style.display="block";	  
+  });
+
+  //con을 cont로 써서 안됨.(에러 로그)
 
 
 
+</script>
 
 </body>
 </html>
