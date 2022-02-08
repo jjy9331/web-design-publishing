@@ -38,11 +38,13 @@ input:focus {
 #login_id {
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid rgba(0, 0, 0, 0.8);
+    width: 153px;
 }
 
 #login_password {
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid rgba(0, 0, 0, 0.8);
+    width: 147px;
 }
 
 #login_bt {
