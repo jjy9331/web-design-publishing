@@ -15,16 +15,25 @@ a:hover { color:orange; }
 #tab_wrap { 
 	position:relative; 
 	width:500px; margin:50px; 
-	border:5px dashed #ddd; 
+	/* border:5px dashed #ddd;  */
 }
 
-#tabmenu { overflow:hidden; border:3px solid orange; }
+#tabmenu { overflow:hidden; 
+  /* border:3px solid orange;  */
+}
 #tabmenu li { float:left; margin-right:1px; }
-#tabmenu li a { display:block; padding:10px 30px; color:white; background:skyblue; }
+#tabmenu li a { 
+  display:block; 
+  padding:10px 30px; 
+  color:white; 
+  background:skyblue; 
+  border-radius: 20px 20px 0 0;
+}
 
-#con1,#con2 { 
+#con1,#con2,#con3 { 
 	padding:20px; 
 	border:3px solid blue; 
+  border-radius: 0 16px 16px 16px;
 }
 #con2 { /* display:none; */ }
 
@@ -41,6 +50,7 @@ a:hover { color:orange; }
           <ul id="tabmenu">
         	<li><a href="#" id="t1">notice</a></li>
         	<li><a href="#" id="t2">news</a></li>
+          <li><a href="#" id="t3">story</a></li> <!-- 복사해서 id t2로 되서 동작안했음. error log-->
           </ul>
 
 
@@ -56,7 +66,13 @@ a:hover { color:orange; }
             <li><a href="#">봄처럼 따뜻한 브런치 레시피..<span class="date">2030-03-28</span></a></li>
             <li><a href="#">이번 주말 봄나들이 때 남다른 요리실력을..<span class="date">2030-03-15</span></a></li>
             <li><a href="#">현대의 이름으로 당신을 초대합니다<span class="date">2030-02-07</span></a></li>
-          </ul>          
+          </ul>    
+                
+          <ul id="con3">
+            <li><a href="#">현대의 이름으로 당신을 초대합니다<span class="date">2030-03-28</span></a></li>
+            <li><a href="#">이번 주말 봄나들이 때 남다른 요리실력을..<span class="date">2030-03-15</span></a></li>
+            <li><a href="#">봄처럼 따뜻한 브런치 레시피..<span class="date">2030-02-07</span></a></li>
+          </ul>      
 </div>
 
 <script>
@@ -65,30 +81,46 @@ a:hover { color:orange; }
   
   let t1 = document.getElementById("t1");
   let t2 = document.getElementById("t2");
+  let t3 = document.getElementById("t3");
   let con1 = document.getElementById("con1");
   let con2 = document.getElementById("con2");
+  let con3 = document.getElementById("con3");
 
   t1.style.background="blue"
   con2.style.display="none";
+  con3.style.display="none";
   
   //t1를 클릭했을때
   t1.addEventListener("click",function(){
     t1.style.background="blue";
     t2.style.background="skyblue";
+    t3.style.background="skyblue";
 	  con1.style.display="block";
 	  con2.style.display="none";	  
+    con3.style.display="none";	  
   });
 
   //t2를 클릭했을때
   t2.addEventListener("click",function(){
     t1.style.background="skyblue";
     t2.style.background="blue";
+    t3.style.background="skyblue";
 	  con1.style.display="none";
-	  con2.style.display="block";	  
+	  con2.style.display="block";
+    con3.style.display="none";	  
   });
 
   //con을 cont로 써서 안됨.(에러 로그)
 
+    //t3를 클릭했을때
+    t3.addEventListener("click",function(){
+    t1.style.background="skyblue";
+    t2.style.background="skyblue";
+    t3.style.background="blue";
+	  con1.style.display="none";
+    con2.style.display="none";
+	  con3.style.display="block";	  
+  });
 
 
 </script>
