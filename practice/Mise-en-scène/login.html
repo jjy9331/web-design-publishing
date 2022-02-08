@@ -45,6 +45,7 @@ ul {
 #id_fix {
     margin-left: -4px;
     font-size: 12px;
+    color: black;
 }
 
 #client_m{
@@ -74,18 +75,30 @@ ul {
     border-right: 0px solid black;
 }
 
+/* bg */
 .bg {
-
-}
-
-.bg video {
+    position: fixed;
+    left: 0px;
+    top: 0px;
     width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: -10;
+    /* filter: blur(20px); */
+    opacity: 0.3;
 }
-
+/*
+    position요소의 z-index값을 -로 설정하면
+    일반요소 밑에 깔린다.
+*/
 
 
 
 </style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../Mise-en-scène/js/jquery.vide.min.js"></script>
+
 </head>
 <body>
 
@@ -106,7 +119,7 @@ ul {
     </form>
     
     
-    <input type="submit" value="로그인" id="login_bt">
+    <input type="button" value="로그인" id="login_bt">
     <br>
     <br>
     <div>
@@ -123,6 +136,7 @@ ul {
     </ul>
 </div>
 
+<div class="bg b1" data-vide-bg="video/4" data-vide-options="loop:true, muted:true"></div>
 
 </body>
 </html>
