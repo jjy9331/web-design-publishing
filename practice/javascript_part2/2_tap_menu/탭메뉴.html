@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>탭 메뉴</title>
+<style>
+* { margin:0; padding:0; }
+ul { list-style:none; }
+
+a { color:#333; text-decoration:none; }
+a:hover { color:orange; }
+
+
+/* 탭메뉴 */
+#tab_wrap { 
+	position:relative; 
+	width:500px; margin:50px; 
+	border:5px dashed #ddd; 
+}
+
+#tabmenu { overflow:hidden; border:3px solid orange; }
+#tabmenu li { float:left; margin-right:1px; }
+#tabmenu li a { display:block; padding:10px 30px; color:white; background:skyblue; }
+
+#con1,#con2 { 
+	padding:20px; 
+	border:3px solid blue; 
+}
+#con2 { /* display:none; */ }
+
+.date { float: right; }
+</style>
+<script>
+
+
+
+</script>
+</head>
+
+<body>
+
+
+<div id="tab_wrap">
+        <!-- 탭 메뉴 -->
+          <ul id="tabmenu">
+        	<li><a href="#" id="t1">notice</a></li>
+        	<li><a href="#" id="t2">news</a></li>
+          </ul>
+
+
+
+        <!-- 탭 내용물 -->
+          <ul id="con1">
+            <li><a href="#">투명한 기업 경영..<span class="date">2030-03-12</span></a></li>
+            <li><a href="#">영속적 기업을 만들기 위해 현대전자는..<span class="date">2030-02-17</span></a></li>
+            <li><a href="#">정도경영을 실천하겠습니다<span class="date">2030-02-12</span></a></li>
+          </ul>
+        
+          <ul id="con2">
+            <li><a href="#">봄처럼 따뜻한 브런치 레시피..<span class="date">2030-03-28</span></a></li>
+            <li><a href="#">이번 주말 봄나들이 때 남다른 요리실력을..<span class="date">2030-03-15</span></a></li>
+            <li><a href="#">현대의 이름으로 당신을 초대합니다<span class="date">2030-02-07</span></a></li>
+          </ul>          
+</div>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
