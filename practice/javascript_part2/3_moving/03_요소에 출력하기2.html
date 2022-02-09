@@ -5,23 +5,31 @@
 <title>기본움직임</title>
 <style>
 #box { 
-	/* position:absolute;  */
-left:0px; top:0px; width:100px; height:100px; background:#0cf; }
+	position:absolute; 
+	left:0px; top:200px; width:100px; height:100px; background:#0cf; 
+}
 
 #nemo {
-	border: 2px dashed orange;
+	/* border: 2px dashed orange; */
 }
 </style>
 <script>
 
-// let k;
 
 window.addEventListener("load",function(){
 
-	setInterval(AA,1000);
+	let a = 0;
+
+	function AA (){
+		a = a + 1;
+		document.getElementsByTagName("h1")[0].innerHTML = a;
+
+		document.getElementById("box").style.left = a + "px";
+	}
+
+	setInterval(AA,1000); //AA함수를 1초마다 실행
+
 });
-
-
 
 </script>
 </head>
