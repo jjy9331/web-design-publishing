@@ -11,43 +11,83 @@
 
 </head>
 <body>
+    <!-- <video src="video/1.mp4" id="video" loop muted autoplay></video> -->
 
-<select name="lang" id="lang">
-    <option value="">한국어</option>
-    <option value="">English</option>
-    <option value="">中國語</option>
-</select>
+    <select name="lang" id="lang">
+        <option value="">한국어</option>
+        <option value="">English</option>
+        <option value="">中國語</option>
+    </select>
 
-<div id="logo">
-    <img src="images/logo.png" alt="logo">
-</div>
+    <div id="logo">
+        <a href="#" onclick="nextVideo();">
+            <img src="images/logo.png" alt="logo">
+        </a>
+    </div>
 
-<div id="data_in">
-    <form>
-        <p><input type="search" autofocus required placeholder="               아이디" id="login_id"></p>
-        <p><input type="password" required placeholder="             비밀번호" id="login_password"></p>
-        <input type="submit" value="로그인" id="login_bt" >
-        <br>
-        <br>
-        <div>
-            <div id="id_fix">
-                <div id="login_fix_t">아이디 저장</div>
-                <input type="checkbox">
-            </div>        
-        </div>
-    </form>
-    
-    
-</div>
-<div id="client_m">
-    <ul>
-        <li><a href="#" onclick="alert('회원가입');">회원가입</a></li>
-        <li><a href="#" onclick="alert('아이디 찾기');">아이디 찾기</a></li>
-        <li><a href="#" onclick="alert('비밀번호 찾기');">비밀번호 찾기</a></li>
-    </ul>
-</div>
+    <div id="data_in">
+        <form>
+            <p><input type="search" autofocus required placeholder="               아이디" id="login_id"></p>
+            <p><input type="password" required placeholder="             비밀번호" id="login_password"></p>
+            <input type="submit" value="로그인" id="login_bt" >
+            <br>
+            <br>
+            <div>
+                <div id="id_fix">
+                    <div id="login_fix_t">아이디 저장</div>
+                    <input type="checkbox">
+                </div>        
+            </div>
+        </form>
+        
+        
+    </div>
+    <div id="client_m">
+        <ul>
+            <li><a href="#" onclick="alert('회원가입');">회원가입</a></li>
+            <li><a href="#" onclick="alert('아이디 찾기');">아이디 찾기</a></li>
+            <li><a href="#" onclick="alert('비밀번호 찾기');">비밀번호 찾기</a></li>
+        </ul>
+    </div>
 
-<div class="bg b1" data-vide-bg="video/4" data-vide-options="loop:true, muted:true"></div>
+    <div class="bg b1"  data-vide-bg="video/1" data-vide-options="loop:true, muted:true" id="video"></div>
+
+
+
+<script>
+
+    let a = "video/"
+    let i = 0;
+    let n = 1;
+
+    function nextVideo(){
+
+        i = i + n;
+        
+        // i = String(i)
+
+        // x = a + i;
+        
+        x = i;
+
+        // x = String(x)
+
+        console.log(x);
+        // console.log(typeof x)
+
+
+        if(i>3){
+            i = 1; 
+        }
+        document.getElementsByTagName("video")[0].src="video/"+i+".mp4";
+        // document.getElementsByTagName("video")[0].style.transition="all 0.5s ease-out";
+        // document.getElementsByTagName("video")[0].style.width="100%";
+        // document.getElementsByTagName("video")[0].style.height="100%";
+        document.getElementsByTagName("video")[0].style.backgroundColor="rgba(255,255,255,1)";
+    }
+
+
+</script>
 
 </body>
 </html>
