@@ -22,10 +22,22 @@ a:hover { color:#F93; }
 <script>
 
 	let i=1;
+	let n=1;
 	
 	function AA(){
+
+		i = i + n;
+
+		console.log(i)
+
+		if(i>=3){
+			n = n - 1 
+		}
+		if(i<2){
+			n = n + 1 
+		}
 		
-		document.getElementById("photo").src='images/img2.jpg'; 
+		document.getElementById("photo").src="images/img"+i+".jpg"; 
 		
 	}
 
