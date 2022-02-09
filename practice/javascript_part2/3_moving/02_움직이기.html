@@ -16,6 +16,7 @@ window.addEventListener("load",function(){
 
 	function motion(){	
 		a = a + 5; //a값을 1증가
+		console.log(a)
 		document.getElementById("box").style.top = a + "px";
 		k = setTimeout(motion,10); //motion함수를 10초에 한번씩 반복실행
 	}
