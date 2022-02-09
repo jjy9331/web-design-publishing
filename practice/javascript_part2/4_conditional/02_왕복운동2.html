@@ -12,39 +12,75 @@
 
 
 <div id="wrap">
-	<div id="box" onclick="s=3;"></div>
+	<div id="box" onclick="speedX =3;"></div>
 </div>
 
-<div onclick="s=-3;"></div>
-<div onclick="s=3;"></div>
-<button onclick="s=-3;">왼쪽 버튼</button>
-<button onclick="s=3;">오른쪽 버튼</button>
+<div onclick="speedX =-3;"></div>
+<div onclick="speedX =3;"></div>
+<button onclick="speedX =-3;">왼쪽 버튼</button>
+<button onclick="speedX =3;">오른쪽 버튼</button>
 
 
 
 <script>
 
-	let a = 0; 
-	let speedX = 3;
+
+	
+	let y = 0; 
+	let speedY = 3;
 
 	function motion(){
 		
-		a = a + speedX; 
+		// x = x + speedX; 
 
-		if(a>350){
-			speedX=-3 //방향을 왼쪽으로 바꿈
-			// a =750
-		}
-		if(a<0){
-			speedX = 3;
-		}
+		// if(x>350){
+		// 	speedX=-3 //방향을 왼쪽으로 바꿈
+		// 	// x =750
+		// }
+		// if(x<0){
+		// 	speedX = 3;
+		// }
 		
-		document.getElementById("box").style.left=a+"px";
-		document.getElementById("box").style.top=a+"px";
+		// document.getElementById("box").style.left=x+"px";
+		// document.getElementById("box").style.top=x+"px";
+
+
+		y = y + speedY; 
+
+		if(y>350){
+			speedY=-3 //방향을 왼쪽으로 바꿈
+			// y =750
+		}
+		if(y<0){
+			speedY = 3;
+		}
+
+		document.getElementById("box").style.top=y+"px";
 		
 	}
 		
 	setInterval("motion()",10); //motion함수를 10/1000에 한번씩 반복실행
+
+	let x = 0; 
+	let speedX = 3;
+
+	function motion2(){
+		
+		x = x + speedX; 
+
+		if(x>750){
+			speedX=-3 //방향을 왼쪽으로 바꿈
+			// x =750
+		}
+		if(x<0){
+			speedX = 3;
+		}
+		
+		document.getElementById("box").style.left=x+"px";
+		
+	}
+
+	setInterval("motion2()",10); //motion함수를 10/1000에 한번씩 반복실행
 
 </script>
 </body>
