@@ -8,7 +8,7 @@
 </style>
 <script>
 
-let k;
+// let k;
 
 window.addEventListener("load",function(){
 
@@ -23,6 +23,7 @@ window.addEventListener("load",function(){
 
 	k = setInterval(motion,10); //motion함수를 10초에 한번씩 반복실행
 										//"motion()"로 입력하니까 작동안함. motion으로하니까 작동함 에러 로그
+										//let 변수 선언 안해도 작동하는 이유는 let이 생략되있기 때문이다. 
 
 	// document.getElementById("bt").addEventListener("click",function(){//버튼을 클릭했을 때
 	// 	clearInterval(k); //k장치를 제거해라
