@@ -99,7 +99,7 @@ a:hover { color:orange; }
 
   //t1클릭했을때
   t1.addEventListener("click",function(){
-	  t1.style.background="blue";
+	  this.style.background="blue";
 	  t2.style.background="skyblue";
 
 	  con1.style.opacity="1";
@@ -113,7 +113,7 @@ a:hover { color:orange; }
   //t2클릭했을때
   t2.addEventListener("click",function(){
 	  t1.style.background="skyblue";
-	  t2.style.background="blue";
+	  this.style.background="blue";
 
 	  con1.style.opacity="0";
 	  con2.style.opacity="1";	  
