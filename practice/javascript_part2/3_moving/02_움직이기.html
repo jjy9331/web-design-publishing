@@ -7,6 +7,9 @@
 #box { position:absolute; left:0px; top:0px; width:100px; height:100px; background:#0cf; }
 </style>
 <script>
+
+let k;
+
 window.addEventListener("load",function(){
 
 	let a = 0; 
@@ -18,12 +21,12 @@ window.addEventListener("load",function(){
 
 	// document.getElementById("box").addEventListener("click",AA);//box를 클릭했을때 AA함수를 실행
 
-	let k = setInterval(motion,10); //motion함수를 10초에 한번씩 반복실행
+	k = setInterval(motion,10); //motion함수를 10초에 한번씩 반복실행
 										//"motion()"로 입력하니까 작동안함. motion으로하니까 작동함 에러 로그
 
-	document.getElementById("bt").addEventListener("click",function(){//버튼을 클릭했을 때
-		clearInterval(k); //k장치를 제거해라
-	});
+	// document.getElementById("bt").addEventListener("click",function(){//버튼을 클릭했을 때
+	// 	clearInterval(k); //k장치를 제거해라
+	// });
 
 });
 </script>
@@ -33,7 +36,7 @@ window.addEventListener("load",function(){
 <div id="box">box</div> 
 
 
-<button id="bt">멈추기</button>
+<button id="bt" onclick="clearInterval(k);">멈추기</button>
 
 
 </body>
