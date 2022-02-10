@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>gallery</title>
+<style>
+a { text-decoration:none; color:#333; }
+a:hover { color:#F93; }
+</style>
+</head>
+<body>
+  
+<a href="http://www.naver.com" target="_blank" id="link">
+  <img src="images/img1.jpg" id="photo">
+</a>
+
+
+<a href="#" onclick="nextGall()">next</a>
+
+
+
+
+<script>
+
+	//let url="http://www.daum.net"
+	
+	let i=1;
+	
+	
+	function nextGall(){
+		i++;
+		if ( i>3 ) { i=1 };
+		
+		document.getElementById("photo").src="images/img"+i+".jpg"; 
+		//document.getElementById("link").href="http://www.daum.net";
+	}
+
+</script>    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
