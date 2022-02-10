@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>gallery</title>
+<style>
+a { text-decoration:none; color:#333; }
+a:hover { color:#F93; }
+</style>
+</head>
+<body>
+  
+
+<a href="#" onclick="prevGall()">prev</a>
+<a href="http://www.naver.com" target="_blank" id="link">
+  <img src="images/photo1.jpg" id="photo">
+</a>
+
+
+<a href="#" onclick="nextGall()">next</a>
+
+
+
+
+<script>
+
+	let url=[];
+	url[0] = "http://www.naver.com";
+	url[1] = "http://www.daum.net";
+	url[2] = "https://www.google.com/";
+	url[3] = "https://www.nate.com/";
+	url[4] = "https://www.yahoo.com/";
+	
+	let i=1;
+	
+	
+	function nextGall(){
+		i++;
+		if ( i>5 ) { i=1 };
+		console.log(i)
+		
+		document.getElementById("photo").src="images/photo"+i+".jpg"; 
+		document.getElementById("link").href=url[i-1];
+	} 
+
+
+	function prevGall(){
+		i--;
+		if ( i<1 ) { i=5 };
+		console.log(i)
+		
+		document.getElementById("photo").src="images/photo"+i+".jpg"; 
+		document.getElementById("link").href=url[i-1];
+	} 
+</script>    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
