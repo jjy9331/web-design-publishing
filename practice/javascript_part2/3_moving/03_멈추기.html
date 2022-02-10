@@ -4,7 +4,15 @@
 <meta charset="utf-8">
 <title>기본움직임</title>
 <style>
-#box { position:absolute; left:0px; top:100px; width:100px; height:100px; background:#0cf; }
+#box { 
+	position:absolute; 
+	left:0px; 
+	top:100px; 
+	width:100px; 
+	height:100px; 
+	background:#0cf; 
+	transform: rotate(0deg);
+}
 </style>
 </head>
 <body>
@@ -25,6 +33,7 @@ function motion(){
 
 		a += 1;
 		document.getElementById("box").style.left= a + "px";
+		document.getElementById("box").style.transform="rotate("+ a +"deg)";
 
 	}
 	
