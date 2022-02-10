@@ -22,7 +22,7 @@ a:hover { color:#F93; }
 
 <script>
 
-	let url="http://www.daum.net"
+	let url=["http://www.naver.com","http://www.daum.net","https://www.google.com/"];
 	
 	let i=1;
 	
@@ -30,9 +30,10 @@ a:hover { color:#F93; }
 	function nextGall(){
 		i++;
 		if ( i>3 ) { i=1 };
+		console.log(i)
 		
 		document.getElementById("photo").src="images/img"+i+".jpg"; 
-		document.getElementById("link").href=url;
+		document.getElementById("link").href=url[i-1];
 	} 
 
 </script>    
