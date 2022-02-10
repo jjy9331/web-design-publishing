@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>반복문</title>
+</head>
+<style>
+#box1 {border: 5px dashed pink;}
+#box2 {border: 5px dashed skyblue;}
+#box3 {border: 5px dashed salmon;}
+</style>
+<body>
+
+
+	<div class="box">01</div>
+	<div class="box">02</div>
+	<div class="box">03</div>
+
+
+	
+<script>
+
+	for(i=1; i<=3; i=i+1){
+		document.getElementsByClassName("box")[i-1].innerHTML="<img src='images/img"+i+".jpg'>";
+	}
+
+	// document.getElementsByClassName("box")[0].innerHTML="<img src='images/img1.jpg'>";
+	// document.getElementsByClassName("box")[1].innerHTML="<img src='images/img2.jpg'>";
+	// document.getElementsByClassName("box")[2].innerHTML="<img src='images/img3.jpg'>";
+
+</script>   
+
+
+</body>
+</html>
+
+
+
+
+
+
