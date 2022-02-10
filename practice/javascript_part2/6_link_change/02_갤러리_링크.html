@@ -10,8 +10,10 @@ a:hover { color:#F93; }
 </head>
 <body>
   
+
+<a href="#" onclick="prevGall()">prev</a>
 <a href="http://www.naver.com" target="_blank" id="link">
-  <img src="images/img1.jpg" id="photo">
+  <img src="images/photo1.jpg" id="photo">
 </a>
 
 
@@ -22,20 +24,34 @@ a:hover { color:#F93; }
 
 <script>
 
-	let url=["http://www.naver.com","http://www.daum.net","https://www.google.com/"];
+	let url=[];
+	url[0] = "http://www.naver.com";
+	url[1] = "http://www.daum.net";
+	url[2] = "https://www.google.com/";
+	url[3] = "https://www.nate.com/";
+	url[4] = "https://www.yahoo.com/";
 	
 	let i=1;
 	
 	
 	function nextGall(){
 		i++;
-		if ( i>3 ) { i=1 };
+		if ( i>5 ) { i=1 };
 		console.log(i)
 		
-		document.getElementById("photo").src="images/img"+i+".jpg"; 
+		document.getElementById("photo").src="images/photo"+i+".jpg"; 
 		document.getElementById("link").href=url[i-1];
 	} 
 
+
+	function prevGall(){
+		i--;
+		if ( i<1 ) { i=5 };
+		console.log(i)
+		
+		document.getElementById("photo").src="images/photo"+i+".jpg"; 
+		document.getElementById("link").href=url[i-1];
+	} 
 </script>    
 
 </body>
