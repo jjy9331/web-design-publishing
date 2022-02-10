@@ -4,54 +4,31 @@
 <meta charset="utf-8">
 <title>gallery</title>
 <style>
+* {margin: 0; padding: 0;}
 a { text-decoration:none; color:#333; }
 a:hover { color:#F93; }
+ul {list-style: none;}
+img {
+	border: 0;
+	vertical-align: top; //ul, li 기본 공백 사라짐
+}
 </style>
 </head>
 <body>
-  
 
-<a href="#" onclick="prevGall()">prev</a>
-<a href="http://www.naver.com" target="_blank" id="link">
-  <img src="images/photo1.jpg" id="photo">
-</a>
-
-
-<a href="#" onclick="nextGall()">next</a>
-
+	<div id="gallery">
+		<ul>
+			<li><img src="../images/img1.jpg" alt="1"></li>
+			<li><img src="../images/img2.jpg" alt="2"></li>
+			<li><img src="../images/img3.jpg" alt="3"></li>
+		</ul>
+	</div>
 
 
 
 <script>
 
-	let url=[];
-	url[0] = "http://www.naver.com";
-	url[1] = "http://www.daum.net";
-	url[2] = "https://www.google.com/";
-	url[3] = "https://www.nate.com/";
-	url[4] = "https://www.yahoo.com/";
-	
-	let i=1;
-	
-	
-	function nextGall(){
-		i++;
-		if ( i>5 ) { i=1 };
-		console.log(i)
-		
-		document.getElementById("photo").src="images/photo"+i+".jpg"; 
-		document.getElementById("link").href=url[i-1];
-	} 
 
-
-	function prevGall(){
-		i--;
-		if ( i<1 ) { i=5 };
-		console.log(i)
-		
-		document.getElementById("photo").src="images/photo"+i+".jpg"; 
-		document.getElementById("link").href=url[i-1];
-	} 
 </script>    
 
 </body>
