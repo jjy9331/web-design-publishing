@@ -4,16 +4,16 @@ let main =  document.getElementsByClassName("main");
 
 // let sub =  document.getElementsByClassName("sub");
 
-for(i=0; i<5; i++){
-    main[i].children[0].style.display="none"; 
-}
+// for(i=0; i<5; i++){
+//     main[i].children[0].style.display="none"; 
+// }
 
 for(i=0; i<5; i++){
     main[i].addEventListener("mouseover",function(){
-        this.children[0].style.display="block";
+        this.children[0].style.height="120px";
     });
     main[i].addEventListener("mouseout",function(){
-        this.children[0].style.display="none";
+        this.children[0].style.height="0px";
     });
 }
 
