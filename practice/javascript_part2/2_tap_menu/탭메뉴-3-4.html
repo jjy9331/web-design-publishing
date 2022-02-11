@@ -38,7 +38,7 @@ a:hover { color:orange; }
 	padding:20px; 
 	border:3px solid blue; 
 	border-radius:0 16px 16px 16px;
-  opacity: 0;
+  opacity: 0; /* 안보이게 해야 처음에 깔끔하게 나옴. JS에서 제어하므로*/
 }
 
 #con2 {
@@ -50,9 +50,9 @@ a:hover { color:orange; }
 
 <script>
 
-  window.addEventListener("load",function(){
-  
-    let n = 1; // 변수 안넣어서 작동 안했음
+window.addEventListener("load",function(){
+
+  let n = 1; // 변수 안넣어서 작동 안했음
 
     //초기설정
     function tabCon(){
@@ -67,30 +67,25 @@ a:hover { color:orange; }
     }
     tabCon();
     
-    // for (i-1; i<=3; i++ ) {
-    //   document.getElementById("t"+i).addEventListener("click",function(){
-    //     n=1; tabCon();
-    //   });
-    // }
 
 
-        //t1클릭했을때
-        t1.addEventListener("click",function(){
-          n=1; tabCon();
-        });
-    
-    
-        //t2클릭했을때
-        t2.addEventListener("click",function(){
-          n=2; tabCon();
-        });
+    //t1클릭했을때
+    t1.addEventListener("click",function(){
+      n=1; tabCon();
+    });
 
-        //t3클릭했을때
-        t3.addEventListener("click",function(){
-          n=3; tabCon();
-        });
-  
-  });
+
+    //t2클릭했을때
+    t2.addEventListener("click",function(){
+      n=2; tabCon();
+    });
+
+    //t3클릭했을때
+    t3.addEventListener("click",function(){
+      n=3; tabCon();
+    });
+
+});
   
   </script>
 </head>
