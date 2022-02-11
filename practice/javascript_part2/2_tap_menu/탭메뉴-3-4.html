@@ -38,10 +38,10 @@ a:hover { color:orange; }
 	padding:20px; 
 	border:3px solid blue; 
 	border-radius:0 16px 16px 16px;
-  opacity: 0; /* 안보이게 해야 처음에 깔끔하게 나옴. JS에서 제어하므로*/
+  /* opacity: 0; 안보이게 해야 처음에 깔끔하게 나옴. JS에서 제어하므로 */
 }
 
-#con2 {
+#con2, #con3 {
   opacity: 0;
 }
 
@@ -57,13 +57,13 @@ window.addEventListener("load",function(){
     //초기설정
     function tabCon(){
       for ( i=1; i<=3; i++) {
-        document.getElementById("t"+i).style.background="skyblue";  
-        document.getElementById("con"+i).style.opacity="0"; 
-        document.getElementById("con"+i).style.zIndex="1"; //=표시 안했음
+        document.getElementById("t"+i).style.background="skyblue";  //모든 메뉴색 비활성화
+        document.getElementById("con"+i).style.opacity="0"; //내용 모두 안보이게함
+        document.getElementById("con"+i).style.zIndex="1"; //=표시 안했음 //내용 모두 z-index:1
       }
-      document.getElementById("t"+n).style.background="blue";  
-      document.getElementById("con"+n).style.opacity="1"; 
-      document.getElementById("con"+n).style.zIndex="10"; //style.zIndex"10";=표시 안했음
+      document.getElementById("t"+n).style.background="blue";  //해당 메뉴색 활성화
+      document.getElementById("con"+n).style.opacity="1"; //해당 내용만 보이게 함
+      document.getElementById("con"+n).style.zIndex="10"; //style.zIndex"10";=표시 안했음 //내용 모두 z-index:1
     }
     tabCon();
     
