@@ -30,7 +30,7 @@ a:hover { color:orange; }
 	border-radius:16px 16px 0 0;
 }
 
-#con1, #con2 { 
+#con1, #con2, #con3 { 
   transition: 1s;
   position: absolute;
   left: 0px; top: 41px;
@@ -38,6 +38,7 @@ a:hover { color:orange; }
 	padding:20px; 
 	border:3px solid blue; 
 	border-radius:0 16px 16px 16px;
+  opacity: 0;
 }
 
 #con2 {
@@ -46,6 +47,52 @@ a:hover { color:orange; }
 
 .date { float: right; }
 </style>
+
+<script>
+
+  window.addEventListener("load",function(){
+  
+    let n = 1; // 변수 안넣어서 작동 안했음
+
+    //초기설정
+    function tabCon(){
+      for ( i=1; i<=3; i++) {
+        document.getElementById("t"+i).style.background="skyblue";  
+        document.getElementById("con"+i).style.opacity="0"; 
+        document.getElementById("con"+i).style.zIndex="1"; //=표시 안했음
+      }
+      document.getElementById("t"+n).style.background="blue";  
+      document.getElementById("con"+n).style.opacity="1"; 
+      document.getElementById("con"+n).style.zIndex="10"; //style.zIndex"10";=표시 안했음
+    }
+    tabCon();
+    
+    // for (i-1; i<=3; i++ ) {
+    //   document.getElementById("t"+i).addEventListener("click",function(){
+    //     n=1; tabCon();
+    //   });
+    // }
+
+
+        //t1클릭했을때
+        t1.addEventListener("click",function(){
+          n=1; tabCon();
+        });
+    
+    
+        //t2클릭했을때
+        t2.addEventListener("click",function(){
+          n=2; tabCon();
+        });
+
+        //t3클릭했을때
+        t3.addEventListener("click",function(){
+          n=3; tabCon();
+        });
+  
+  });
+  
+  </script>
 </head>
 
 <body>
@@ -54,24 +101,31 @@ a:hover { color:orange; }
 <div id="tab_wrap">
         <!-- 탭 메뉴 -->
           <ul id="tabmenu">
-        	<li><a href="#" id="t1">notice</a></li>
-        	<li><a href="#" id="t2">news</a></li>
+            <li><a href="#" id="t1">notice</a></li>
+            <li><a href="#" id="t2">news</a></li>
+            <li><a href="#" id="t3">story</a></li>
           </ul>
 
 
 
         <!-- 탭 내용물 -->
-          <ul id="con1" class="con">
+          <ul id="con1">
             <li><a href="#">투명한 기업 경영..<span class="date">2030-03-12</span></a></li>
             <li><a href="#">영속적 기업을 만들기 위해 현대전자는..<span class="date">2030-02-17</span></a></li>
             <li><a href="#">정도경영을 실천하겠습니다<span class="date">2030-02-12</span></a></li>
           </ul>
         
-          <ul id="con2" class="con">
+          <ul id="con2">
             <li><a href="#">봄처럼 따뜻한 브런치 레시피..<span class="date">2030-03-28</span></a></li>
             <li><a href="#">이번 주말 봄나들이 때 남다른 요리실력을..<span class="date">2030-03-15</span></a></li>
             <li><a href="#">현대의 이름으로 당신을 초대합니다<span class="date">2030-02-07</span></a></li>
-          </ul>          
+          </ul>         
+          
+          <ul id="con3">
+            <li><a href="#">현대의 이름으로 당신을 초대합니다<span class="date">2030-02-07</span></a></li>
+            <li><a href="#">봄처럼 따뜻한 브런치 레시피..<span class="date">2030-03-28</span></a></li>
+            <li><a href="#">이번 주말 봄나들이 때 남다른 요리실력을..<span class="date">2030-03-15</span></a></li>
+          </ul>        
     
 </div>
 
@@ -80,56 +134,10 @@ a:hover { color:orange; }
 
 
 
-<script>
 
-  //초기설정
-  let t1 = document.getElementById("t1");
-  let t2 = document.getElementById("t2");
-
-  let con1 = document.getElementById("con1");
-  let con2 = document.getElementById("con2");
-
-
-  t1.style.background="blue";
-  // con1.style.display="block";
-  con1.style.zIndex="10"
-  con2.style.opacity="0";
-
-
-
-  //t1클릭했을때
-  t1.addEventListener("click",function(){
-	  this.style.background="blue";
-	  t2.style.background="skyblue";
-
-	  con1.style.opacity="1";
-	  con2.style.opacity="0";	  
-
-    con1.style.zIndex="10";
-	  con2.style.zIndex="1";	  
-  });
-
-
-  //t2클릭했을때
-  t2.addEventListener("click",function(){
-	  t1.style.background="skyblue";
-	  this.style.background="blue";
-
-	  con1.style.opacity="0";
-	  con2.style.opacity="1";	  
-
-    con1.style.zIndex="1";
-	  con2.style.zIndex="10";	  
-  });
-
-
-
-
-</script>
 
 </body>
 </html>
-
 
 
 
