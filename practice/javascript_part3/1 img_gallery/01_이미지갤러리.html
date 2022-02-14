@@ -23,6 +23,75 @@ a { text-decoration:none; color:#333; }
 #gallery .prev { position:absolute; left:20px; top:150px; }
 #gallery .next { position:absolute; right:20px; top:150px; }
 </style>
+
+<script>
+
+	window.addEventListener("load",function(){
+
+		//초기설정
+		let pic = document.getElementsByClassName("pic");
+
+		alert(pic.length); //요소.length :요소의 개수
+
+		let prev = document.getElementsByClassName("prev");
+		let next = document.getElementsByClassName("next");
+		let mn = document.getElementsByClassName("mn");
+	
+		let n = 0;
+		let img_num = 3 //이미지 개수
+	
+		function gall(){
+			for ( i=0; i<img_num; i++ ){
+				pic[i].style.display="none"; //이미지들을 모두 안보이게 설정
+				mn[i].style.color="#333";
+			}
+			pic[n].style.display="block"; //해당 이미지만 보이게함
+			mn[n].style.color="orange";
+		}
+		gall();
+	
+	
+		for(i=0; i<img_num; i++){
+			document.getElementsByClassName("mn")[i].addEventListener("click",function(){
+	
+				idx=this.getAttribute("data-idx");
+				console.log(idx);
+	
+				n =idx;
+	
+				gall();
+			});
+		}
+	
+		//next클릭했을때
+		next[0].addEventListener("click",function(){
+			
+			n++;
+			if ( n > (img_num-1) ) { 
+				n = 0; 
+			}
+			
+			gall();
+		});
+		
+		
+		
+		//prev클릭했을때
+		prev[0].addEventListener("click",function(){
+			
+			n--;
+			if ( n < 0 ) { 
+				n = (img_num-1); 
+			}
+			
+			gall();
+			
+		});
+	});
+
+	
+
+</script>   
 </head>
 <body>
   
@@ -46,94 +115,7 @@ a { text-decoration:none; color:#333; }
 </div>
 
 
-<script>
-
-	//초기설정
-	let pic = document.getElementsByClassName("pic");
-	let prev = document.getElementsByClassName("prev");
-	let next = document.getElementsByClassName("next");
-	let mn = document.getElementsByClassName("mn");
-
-	let n = 0;
-
-	function gall(){
-		for ( i=0; i<3; i++ ){
-			pic[i].style.display="none"; //이미지들을 모두 안보이게 설정
-			mn[i].style.color="#333";
-		}
-		pic[n].style.display="block"; //해당 이미지만 보이게함
-		mn[n].style.color="orange";
-	}
-	gall();
-
-
-	for(i=0; i<3; i++){
-		document.getElementsByClassName("mn")[i].addEventListener("click",function(){
-
-			idx=this.getAttribute("data-idx");
-			console.log(idx);
-
-			n =idx;
-
-			gall();
-		});
-	}
-
-	//next클릭했을때
-	next[0].addEventListener("click",function(){
-		
-		n++;
-		if ( n > (3-1) ) { 
-			n = 0; 
-		}
-		
-		gall();
-	});
-	
-	
-	
-	//prev클릭했을때
-	prev[0].addEventListener("click",function(){
-		
-		n--;
-		if ( n < 0 ) { 
-			n = (3-1); 
-		}
-		
-		gall();
-		
-	});
-	
-/*
-
-	메뉴를 클릭했을 때
-	mn[0].addEventListener("click",function(){
-
-		n=0;
-
-		gall();
-	});
-
-
-	mn[1].addEventListener("click",function(){
-
-		n=1;
-		
-		gall();
-	});
-
-	mn[2].addEventListener("click",function(){
-
-		n=2;
-
-		gall();
-	});
-
-*/ 
-
-
-
-</script>    
+ 
 
 </body>
 </html>
