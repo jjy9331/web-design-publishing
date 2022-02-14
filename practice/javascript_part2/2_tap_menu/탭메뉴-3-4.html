@@ -70,11 +70,13 @@ window.addEventListener("load",function(){
 
     for ( i=1; i<=3; i++ ){
       document.getElementById("t"+i).addEventListener("click",function(){
-        idx = this.getAttribute("data-idx");
+        idx = this.getAttribute("data-idx"); //this를 쓰면 "t"+i가 선택할 때의 값으로 지정된다. 
         console.log(idx);
-        n=idx; tabCon();
+        n=idx; tabCon(); //n=i는 반복문 값이 마지막값 밖에 남지 않는다. 
       });
     }
+
+
 
 
 /* 
