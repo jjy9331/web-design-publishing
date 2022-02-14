@@ -28,11 +28,7 @@ a { text-decoration:none; color:#333; }
 
 	window.addEventListener("load",function(){
 
-		//초기설정
 		let pic = document.getElementsByClassName("pic");
-
-		// alert(pic.length); //요소.length :요소의 개수
-
 		let prev = document.getElementsByClassName("prev");
 		let next = document.getElementsByClassName("next");
 		let mn = document.getElementsByClassName("mn");
@@ -42,11 +38,11 @@ a { text-decoration:none; color:#333; }
 	
 		function gall(){
 			for ( i=0; i<img_num; i++ ){
-				pic[i].style.display="none"; //이미지들을 모두 안보이게 설정
-				mn[i].style.color="#333";
+				pic[i].style.display="none"; 
+				mn[i].style.color="#333"; //메뉴색 비활성
 			}
-			pic[n].style.display="block"; //해당 이미지만 보이게함
-			mn[n].style.color="orange";
+			pic[n].style.display="block"; 
+			mn[n].style.color="orange"; //미뉴색 활성
 		}
 		gall();
 	
@@ -119,7 +115,6 @@ a { text-decoration:none; color:#333; }
 </div>
 
 
- 
 
 </body>
 </html>
