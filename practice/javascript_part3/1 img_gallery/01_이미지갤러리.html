@@ -35,9 +35,9 @@ a { text-decoration:none; color:#333; }
 	</ul>
 
 	<ul class="nav">
-		<li><a href="#" class="mn">01</a></li>
-		<li><a href="#" class="mn">02</a></li>
-		<li><a href="#" class="mn">03</a></li>
+		<li><a href="#" class="mn" data-idx="0">01</a></li>
+		<li><a href="#" class="mn" data-idx="1">02</a></li>
+		<li><a href="#" class="mn" data-idx="2">03</a></li>
 	</ul>
 
 	<a href="#" class="prev">이전</a>
@@ -67,41 +67,53 @@ a { text-decoration:none; color:#333; }
 	gall();
 
 
+	for(i=0; i<3; i++){
+		document.getElementsByClassName("mn")[i].addEventListener("click",function(){
+
+			idx=this.getAttribute("data-idx");
+			console.log(idx);
+
+			n =idx;
+
+			gall();
+		});
+	}
 
 	//next클릭했을때
 	next[0].addEventListener("click",function(){
-
+		
 		n++;
 		if ( n > (3-1) ) { 
 			n = 0; 
 		}
-
+		
 		gall();
 	});
-
-
-
+	
+	
+	
 	//prev클릭했을때
 	prev[0].addEventListener("click",function(){
-
+		
 		n--;
 		if ( n < 0 ) { 
 			n = (3-1); 
 		}
-
+		
 		gall();
-
+		
 	});
+	
+/*
 
-
-	/* 메뉴를 클릭했을 때 */ 
+	메뉴를 클릭했을 때
 	mn[0].addEventListener("click",function(){
 
 		n=0;
 
 		gall();
 	});
-	
+
 
 	mn[1].addEventListener("click",function(){
 
@@ -116,6 +128,9 @@ a { text-decoration:none; color:#333; }
 
 		gall();
 	});
+
+*/ 
+
 
 
 </script>    
