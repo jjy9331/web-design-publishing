@@ -26,7 +26,7 @@ ul {list-style:none;}
 #moving_gallery .gall {
 	position:absolute; 
 	left:0px; top:0px; width:1200px;
-	border:3px solid yellowgreen;
+	/* border:3px solid yellowgreen; */
 }
 
 #moving_gallery .gall ul { 
@@ -62,7 +62,7 @@ ul {list-style:none;}
 
 	<div class="gall">
 	
-				<ul id="set">
+				<ul id="set" onmouseover="moving(s=0);" onmouseout="moving(s=-1)">
 					<li>01</li>
 					<li>02</li>
 					<li>03</li>
@@ -73,8 +73,8 @@ ul {list-style:none;}
 
 
 	<div class="nav">
-			<button class="left">왼쪽</button>
-			<button class="right">오른쪽</button>
+			<button class="left" onclick="moving(s=-1)">왼쪽</button>
+			<button class="right" onclick="moving(s=1)">오른쪽</button>
 	</div>
 
 </div>
@@ -115,6 +115,13 @@ ul {list-style:none;}
 
 	setInterval(moving,10); //moving함수를 0.01초마다 반복실행
 
+	right[0].addEventListener("click",function(){
+		s=1;
+	});
+
+	left[0].addEventListener("click",function(){
+		s=-1;
+	});
 
 
 </script>
