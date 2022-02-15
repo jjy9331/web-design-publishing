@@ -21,9 +21,18 @@ a {
     text-decoration: none;
 }
 
+.blind {
+    position: absolute;
+    left: 0px;
+    top: -99999px;
+}
+
 /* layout */
 #header { 
-    /*height: 100px;*/ 
+    position: fixed;
+    left: 0px; 
+    top: 0px;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
 }
 #header .inner {
@@ -31,10 +40,12 @@ a {
     margin: 0 auto;
     width: 1280px;
     height: 100px;
-    border: 5px dashed orange;
+    border: 2px dashed white;
 }
 
-#visual { background-color: pink;}
+#visual { 
+    background-color: pink;
+}
 #container {border: 5px dashed black;}
 #container #trend {background-color: yellowgreen;}
 
@@ -133,6 +144,10 @@ h1 {
     /* border: 3px solid skyblue; */
 }
 
+.util li:nth-child(1){
+    padding-right: 13px;
+}
+
 .util li input{
     float: left; /* 폼요소간의 수직어긋남을 맞춤*/
 }
@@ -152,3 +167,12 @@ h1 {
 .util .icon {
     opacity: 0.7;
 }
+
+
+/* visual */
+
+#visual img {
+    width: 100%;
+    background-position: center;
+}
+/* 가변이미지에는 높이를 넣으면 안된다. */
