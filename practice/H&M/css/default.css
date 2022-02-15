@@ -53,6 +53,8 @@ a {
     margin: 0 auto;
     width: 1280px;
     border: 5px dashed orange;
+    padding-top: 116px;
+    padding-bottom: 140px;
 }
 
 
@@ -62,6 +64,8 @@ a {
     margin: 0 auto;
     width: 1280px;
     border: 5px dashed skyblue;
+    padding-top: 116px;
+    padding-bottom: 140px;
 }
 
 #container #social {background-color: yellowgreen;}
@@ -70,6 +74,8 @@ a {
     margin: 0 auto;
     width: 1280px;
     border: 5px dashed blue;
+    padding-top: 116px;
+    padding-bottom: 140px;
 }
 #footer { /*height: 659px;*/ background-color: gray;}
 #footer  .inner {
@@ -176,3 +182,43 @@ h1 {
     background-position: center;
 }
 /* 가변이미지에는 높이를 넣으면 안된다. */
+
+
+/* container > trend */
+#trend h2 {
+    border: 2px solid yellow;
+    height: 49px;
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1em; /* 줄간격을 폰트사이즈와 똑같이 할 것 = 1em */
+    letter-spacing: 3px; /* 자간 */
+}
+
+#trend ul {
+    display: flex;
+    justify-content: space-between;
+}
+/* 
+    flex-start 앞 기준 정렬
+    flex-end 끝 기준 정렬
+    center 가운데 정렬 
+    space-around 일정한 간격(양끝 간격이 반작음)  
+    space-evenly 일정한 간격(양끝도 간격있음)
+    space-between 간격일정
+*/
+
+#trend ul li {
+    width: 250px;
+    height: 288px;
+    background-color: pink;
+}
+
+#trend p {
+    text-align:  center;
+    padding-top: 15px;
+    font-weight: 400px;
+}
+
+/* container > magazine */
