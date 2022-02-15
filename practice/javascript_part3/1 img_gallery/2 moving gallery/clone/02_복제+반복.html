@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>복제</title>
+<style>
+body { font:12px "나눔고딕"; }
+#wrap { width:900px; height:600px; background:#ffc; }
+#box { float:left; width:98px; height:98px; margin:1px; background:#FC3 }
+</style>
+<script>
+
+window.onload=function(){//페이지 모두 로딩된후 실행
+	
+   let temp = document.getElementById("box").cloneNode(true);
+   document.getElementById("wrap").appendChild(temp);
+   
+}
+	  
+</script>
+</head>
+
+<body >
+
+<div id="wrap">
+   <div id="box">박스</div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

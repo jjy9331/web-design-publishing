@@ -68,42 +68,25 @@ window.addEventListener("load",function(){
     tabCon();
     
 
-    for ( i=1; i<=3; i++ ){
-      document.getElementById("t"+i).addEventListener("click",function(){
-        idx = this.getAttribute("data-idx"); //this를 쓰면 "t"+i가 선택할 때의 값으로 지정된다. 
-        console.log(idx);
-        n=idx; tabCon(); //n=i는 반복문 값이 마지막값 밖에 남지 않는다. 
-      });
-    }
-
-
-
-
-/* 
 
     //t1클릭했을때
-    document.getElementById("t1").addEventListener("click",function(){
+    t1.addEventListener("click",function(){
       n=1; tabCon();
     });
 
 
     //t2클릭했을때
-    document.getElementById("t2").addEventListener("click",function(){
+    t2.addEventListener("click",function(){
       n=2; tabCon();
     });
 
     //t3클릭했을때
-    document.getElementById("t3").addEventListener("click",function(){
+    t3.addEventListener("click",function(){
       n=3; tabCon();
     });
 
-    //웹접근성 측면에서 작성하면 id로 작성해야함
-    
-*/
-    
 });
   
-
   </script>
 </head>
 
@@ -113,12 +96,12 @@ window.addEventListener("load",function(){
 <div id="tab_wrap">
         <!-- 탭 메뉴 -->
           <ul id="tabmenu">
-            <li><a href="#con1" id="t1" data-idx="1">notice</a></li>
-            <li><a href="#con2" id="t2" data-idx="2">news</a></li>
-            <li><a href="#con3" id="t3" data-idx="3">story</a></li>
+            <li><a href="#" id="t1">notice</a></li>
+            <li><a href="#" id="t2">news</a></li>
+            <li><a href="#" id="t3">story</a></li>
           </ul>
 
-        <!-- 웹접근성 측면에서 작성하면 id로 작성해야함 -->
+
 
         <!-- 탭 내용물 -->
           <ul id="con1">

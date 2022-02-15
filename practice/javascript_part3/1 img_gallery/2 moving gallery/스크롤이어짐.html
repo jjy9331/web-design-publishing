@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이동 갤러리</title>
+<style>
+body,ul {margin:0;padding:0;}
+ul {list-style:none;}
+
+
+#moving_gallery { 
+	margin:50px auto; 
+	width:1000px; 
+	padding:50px 0 ; 
+	border:5px dashed orange; 
+}
+
+#moving_gallery .mas { 
+	/* overflow:hidden; */
+	position:relative; 
+	margin:0 auto; 
+	width:600px; height:200px; 
+	border:5px solid hotpink; 
+}
+
+#moving_gallery .gall {
+	position:absolute; 
+	left:20px; top:20px; width:1200px;
+	border:3px solid yellowgreen;
+}
+
+#moving_gallery .gall ul { 
+	float:left; 
+	width:600px; height:200px; 
+}
+
+#moving_gallery .gall ul li { 
+	float:left; 
+	width:200px; height:200px; 
+	background-color:rgba(255,255,0,0.8); 
+	border:3px dashed #0cf; 
+	box-sizing:border-box; 
+}
+
+#moving_gallery .nav { 
+	margin:0 auto; 
+	margin-top:30px; 
+	width:600px; 
+	border:2px dashed blue;
+	text-align:center;
+}
+</style>
+
+</head>
+<body>
+
+
+
+<div id="moving_gallery">
+
+	<div class="mas">
+
+		  <div class="gall">
+		  
+					  <ul>
+						<li>01</li>
+						<li>02</li>
+						<li>03</li>
+					  </ul>
+
+		  </div>
+	  
+	</div>
+
+
+	<div class="nav">
+			<button class="left">왼쪽</button>
+			<button class="right">오른쪽</button>
+	</div>
+
+</div>
+
+
+
+
+<script>
+
+	//let mas = document.getElementsByClassName("mas");
+	//let gall = document.getElementsByClassName("gall");
+	//let left = document.getElementsByClassName("left");
+	//let right = document.getElementsByClassName("right");
+
+	//let set = document.getElementById("set");
+
+	//let temp = set.cloneNode(true);
+	//gall[0].appendChild(temp);
+
+
+	let x=0;
+	let s= -1;
+
+	function moving() {
+
+			x = x + s;
+			//if ( x < -600 ) { 
+				//x=0; 
+			//} 
+			//if ( x > 0 ) { 
+				//x= -600; 
+			//} 
+
+			//gall[0].style.left=x+"px";
+	}
+
+	//setInterval(moving,10);
+
+
+
+</script>
+
+</body>
+</html>
+
