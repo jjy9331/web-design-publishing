@@ -16,7 +16,7 @@ ul {list-style:none;}
 }
 
 #moving_gallery .mas { 
-	/* overflow:hidden; */
+	overflow:hidden;
 	position:relative; 
 	margin:0 auto; 
 	width:600px; height:200px; 
@@ -25,7 +25,7 @@ ul {list-style:none;}
 
 #moving_gallery .gall {
 	position:absolute; 
-	left:20px; top:20px; width:1200px;
+	left:0px; top:0px; width:1200px;
 	border:3px solid yellowgreen;
 }
 
@@ -60,16 +60,15 @@ ul {list-style:none;}
 
 	<div class="mas">
 
-		  <div class="gall">
-		  
-					  <ul>
-						<li>01</li>
-						<li>02</li>
-						<li>03</li>
-					  </ul>
+	<div class="gall">
+	
+				<ul id="set">
+					<li>01</li>
+					<li>02</li>
+					<li>03</li>
+				</ul>
+	</div>
 
-		  </div>
-	  
 	</div>
 
 
@@ -85,15 +84,15 @@ ul {list-style:none;}
 
 <script>
 
-	//let mas = document.getElementsByClassName("mas");
-	//let gall = document.getElementsByClassName("gall");
-	//let left = document.getElementsByClassName("left");
-	//let right = document.getElementsByClassName("right");
+	let mas = document.getElementsByClassName("mas");
+	let gall = document.getElementsByClassName("gall");
+	let left = document.getElementsByClassName("left");
+	let right = document.getElementsByClassName("right");
 
-	//let set = document.getElementById("set");
+	let set = document.getElementById("set");
 
-	//let temp = set.cloneNode(true);
-	//gall[0].appendChild(temp);
+	let temp = set.cloneNode(true); //set를 복제하고 temp변수에 참조
+	gall[0].appendChild(temp); //gall안에 temp를 붙여넣기
 
 
 	let x=0;
@@ -102,17 +101,19 @@ ul {list-style:none;}
 	function moving() {
 
 			x = x + s;
-			//if ( x < -600 ) { 
-				//x=0; 
-			//} 
-			//if ( x > 0 ) { 
-				//x= -600; 
-			//} 
+			if ( x < -600 ) { 
+				x=0; 
+				console.log(x)
+			} 
+			if ( x > 0 ) { 
+				x= -600; 
+			} 
+			console.log(x)
 
-			//gall[0].style.left=x+"px";
+			gall[0].style.left=x+"px";
 	}
 
-	//setInterval(moving,10);
+	setInterval(moving,10); //moving함수를 0.01초마다 반복실행
 
 
 

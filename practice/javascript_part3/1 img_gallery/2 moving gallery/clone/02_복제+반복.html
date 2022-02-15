@@ -17,9 +17,11 @@ body { font:12px "나눔고딕"; }
 </div>
 <script>
 
-for ( i=1; i<=7; i++) {
+for ( i=1; i<=5; i++) {
    let temp = document.getElementById("box").cloneNode(true);
    document.getElementById("wrap").appendChild(temp);
+
+   temp.innerHTML="박스"+i;
 }
    
 </script>
