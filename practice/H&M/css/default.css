@@ -58,7 +58,7 @@ a {
 }
 
 
-#container #magazine {background-color: salmon;}
+#container #magazine {background-color: rgb(224, 224, 172);}
 
 #magazine  .inner {
     margin: 0 auto;
@@ -222,3 +222,50 @@ h1 {
 }
 
 /* container > magazine */
+
+#magazine h2 {
+    border: 2px solid yellow;
+    height: 49px;
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1em; /* 줄간격을 폰트사이즈와 똑같이 할 것 = 1em */
+    letter-spacing: 3px; /* 자간 */
+}
+#magazine h2 span{
+    display: block;
+    padding-top: 10px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0px;
+
+}
+
+#magazine ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#magazine ul li {
+    width: 380px;
+    height: 634px;
+    background-color: white;
+    text-align: center;
+}
+
+#magazine ul li h3 {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    font-size: 12px;
+    line-height: 1em;
+    border: 2px dashed blue;
+}
+
+#magazine ul li p {
+    border: 2px dashed skyblue;
+    line-height: 24px;
+    padding-left: 70px;
+    padding-right: 70px;
+
+}
