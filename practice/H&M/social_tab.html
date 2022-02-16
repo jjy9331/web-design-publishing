@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+
+* {margin: 0; padding: 0;}
+
+#con1,#con2 {width: 300px; height: 200px; border: 10px solid pink;}
+#con2 {display: none;}
+
+
+#m2:checked ~ #con1 {display: none;}
+#m2:checked ~ #con2 {display: block;}
+.blind {position:absolute; top: -999999px;}
+
+.la1 {background:pink;}
+#m2:checked ~ .la1 {background: none;}
+#m2:checked ~ .la2 {background: pink;}
+
+</style>
+</head>
+
+
+<body>
+<!--     
+    <a href="#con1" class="mn">메뉴1</a>
+    <a href="#con2" class="mn">메뉴2</a>
+-->
+    <input type="radio" name="mn" id="m1" class="blind">
+    <input type="radio" name="mn" id="m2" class="blind">
+    <label for="m1" class="la1">메뉴1</label>
+    <label for="m2" class="la2">메뉴2</label>   
+    <div id="con1">내용1</div>
+    <div id="con2">내용2</div>
+    
+
+</body>
+</html>
