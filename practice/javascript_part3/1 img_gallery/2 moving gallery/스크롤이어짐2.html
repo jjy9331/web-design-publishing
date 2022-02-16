@@ -25,13 +25,14 @@ ul {list-style:none;}
 
 #moving_gallery .gall {
 	position:absolute; 
-	left:0px; top:0px; width:1200px;
+	left:0px; top:0px; 
+	width:9999999px;
 	/* border:3px solid yellowgreen; */
 }
 
 #moving_gallery .gall ul { 
 	float:left; 
-	width:600px; height:200px; 
+	/* width:1000px; height:200px;  */
 }
 
 #moving_gallery .gall ul li { 
@@ -39,7 +40,7 @@ ul {list-style:none;}
 	width:200px; height:200px; 
 	background-color:rgba(255,255,0,0.8); 
 	border:3px dashed #0cf; 
-	box-sizing:border-box; 
+	box-sizing:border-box; 안쪽테두리
 }
 
 #moving_gallery .nav { 
@@ -63,9 +64,14 @@ ul {list-style:none;}
 	<div class="gall">
 		        <!-- <ul id="set" onmouseover="moving(s=0);" onmouseout="moving(s=-1)"> -->
 				<ul id="set">
-					<li>01</li>
-					<li>02</li>
-					<li>03</li>
+					<li class="item">01</li>
+					<li class="item">02</li>
+					<li class="item">03</li>
+					<li class="item">04</li>
+					<li class="item">05</li>
+					<li class="item">06</li>
+					<li class="item">07</li>
+					<!-- item만 추가하면 JS가 알아서 처리함  -->
 				</ul>
 	</div>
 
@@ -89,26 +95,46 @@ ul {list-style:none;}
 	let left = document.getElementsByClassName("left");
 	let right = document.getElementsByClassName("right");
 
+	let item = document.getElementsByClassName("item");
+	// alert(item.length);
 	let set = document.getElementById("set");
+
+	let n = item.length; //이미지 개수// alert(n);
+
+	alert(item[0].offsetWidth)
+	// 요소.clienWidth: 요소의 가로길이(테두리굵기 제외)
+	// 요소.clienHeight: 요소의 세로길이(테두리굵기 제외)
+	// 요소.clienLeft: 요소의 left값(테두리굵기 제외)
+	// 요소.clienTop: 요소의 top값(테두리굵기 제외)
+
+	// 요소.offsetWidth: 요소의 가로길이(테두리굵기 제외)
+	// 요소.offsetHeight: 요소의 세로길이(테두리굵기 제외)
+	// 요소.offsetLeft: 요소의 left값(테두리굵기 제외)
+	// 요소.offsetTop: 요소의 top값(테두리굵기 제외)
+
+	let w = item[0].offsetWidth; //이미지(li) 가로길이
+	alert(w);
 
 	let temp = set.cloneNode(true); //set를 복제하고 temp변수에 참조
 	gall[0].appendChild(temp); //gall안에 temp를 붙여넣기
 
+	alert(item.length)
 
 	let x=0;
 	let s= -1;
 
 	let m = true;
 
+
 	function moving() {
 		if(m){
 			x = x + s;
-			if ( x < -600 ) { 
+			if ( x < -w*n ) { 
 				x=0; 
 				console.log(x)
 			} 
 			if ( x > 0 ) { 
-				x= -600; 
+				x= -w*n; 
 			} 
 			console.log(x)
 
