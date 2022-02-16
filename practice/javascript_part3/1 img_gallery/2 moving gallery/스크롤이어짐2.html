@@ -94,7 +94,6 @@ ul {list-style:none;}
 	let gall = document.getElementsByClassName("gall");
 	let left = document.getElementsByClassName("left");
 	let right = document.getElementsByClassName("right");
-
 	let item = document.getElementsByClassName("item");
 	// alert(item.length);
 	let set = document.getElementById("set");
@@ -113,16 +112,16 @@ ul {list-style:none;}
 	// 요소.offsetTop: 요소의 top값(테두리굵기 제외)
 
 	let w = item[0].offsetWidth; //이미지(li) 가로길이
-	alert(w);
+	// alert(w);
 
 	let temp = set.cloneNode(true); //set를 복제하고 temp변수에 참조
 	gall[0].appendChild(temp); //gall안에 temp를 붙여넣기
 
-	alert(item.length)
+	// alert(item.length)
 
+	let speed = 1; //속도 
 	let x=0;
-	let s= -1;
-
+	let s= -speed;
 	let m = true;
 
 
@@ -137,7 +136,6 @@ ul {list-style:none;}
 				x= -w*n; 
 			} 
 			console.log(x)
-
 			gall[0].style.left=x+"px";
 		}
 	}
