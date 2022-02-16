@@ -293,9 +293,15 @@ h1 {
     letter-spacing: 0px;
 
 }
-#social ul {
+
+#social .inner > ul {
     display: flex;
     justify-content: space-between;
+}
+
+#social .inner > ul { 
+    display:flex; 
+    justify-content:space-between; 
 }
 
 #social ul li.youtube {
@@ -309,4 +315,22 @@ h1 {
     width: 450px;
     height: 437px;
     background-color: yellow;
+}
+
+#social .tabmenu .tab_mn {
+    display: flex; 
+    border: 2px dashed red;
+}
+#social .tabmenu .tab_mn li {border: 3px solid pink;}
+#social .tabmenu .tab_mn li a {
+    display: block; /* a태그같은 인라인요소는 width/height 적용안되므로 블록요소로 변경 */
+    width: 161px;
+    line-height: 60px;
+    margin-right: 1px;
+    text-align: center;
+    font-weight: 900;
+    border: 2px dashed blue;
+    border-top-left-radius: 47px;
+    border-top-right-radius: 47px;
+    background-color: white;
 }
