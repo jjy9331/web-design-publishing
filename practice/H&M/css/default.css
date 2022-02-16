@@ -68,7 +68,9 @@ a {
     padding-bottom: 140px;
 }
 
-#container #social {background-color: yellowgreen;}
+#container #social {
+    background-color: #bccab4;;
+}
 
 #social  .inner {
     margin: 0 auto;
@@ -314,14 +316,16 @@ h1 {
 #social ul li.tabmenu {
     width: 450px;
     height: 437px;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 #social .tabmenu .tab_mn {
     display: flex; 
-    border: 2px dashed red;
+    /* border: 2px dashed red; */
 }
-#social .tabmenu .tab_mn li {border: 3px solid pink;}
+#social .tabmenu .tab_mn li {
+    /* border: 3px solid pink; */
+}
 #social .tabmenu .tab_mn li a {
     display: block; /* a태그같은 인라인요소는 width/height 적용안되므로 블록요소로 변경 */
     width: 161px;
@@ -333,4 +337,44 @@ h1 {
     border-top-left-radius: 47px;
     border-top-right-radius: 47px;
     background-color: white;
+    color: #bccab4;
 }
+#social .tab_con > li {
+    width: 360px;
+    height: 331px;
+    background-color: white;
+    border: 2px dashed blue;
+    border-bottom-left-radius: 47px;
+    border-top-right-radius: 47px;
+    font-size: 14px;
+    padding-top: 46px;
+    padding-left: 43px;
+    padding-right: 47px;    
+    /* background-color: white;  제어가 안되는 이유는 아래 id로 세부 제어흘 하고 있음. background에 자체로 배경색 제어할 수 있는 변수가 있음. */
+}
+
+#social .tab_con > li#con1 {
+    background: url(../images/so_facebook.jpg) no-repeat right bottom white;
+}
+
+#social .tab_con > li#con2 {
+    background: url(../images/so_twitter.jpg) no-repeat right bottom white;
+}
+#social .tab_con > li ul li {
+    /* border: 1px dashed hotpink; */
+    margin-bottom: 25px;
+}
+
+#social .tab_con > li ul li a {
+    color: black;
+    background-color: white;
+    font-weight:300;
+    line-height: 24px;
+} 
+
+#social .tab_con > li ul li a span {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
