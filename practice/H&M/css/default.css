@@ -384,3 +384,63 @@ h1 {
     font-weight: bold;
 }
 
+/* footer */
+
+.sitemap {
+    display: flex;
+    padding-top: 83px;
+    padding-bottom: 34px;
+    border: 2px dashed ivory;
+}
+
+
+.sitemap div {
+    border: 1px dashed ivory;
+}
+
+.sm1,.sm2,.sm3 {
+    width: 356px;
+}
+
+.sitemap div h3 {
+    color: white;   
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1em;
+    border: 2px dashed orange;
+    height: 38px;
+}
+.sitemap div ul li {
+    border: 1px dashed ivory;
+    line-height: 1em;
+    height: 30px;
+    font-size: 14px;
+}
+
+
+.sitemap div a {
+    color: white;
+}
+
+
+.sitemap div.sm4 h3 {
+    height: 92px;
+}
+
+.sitemap div.sm4 h3 span {
+    display: block;
+    font-size: 14px;
+    padding-top: 14px;
+    font-weight: 300;;
+}
+
+
+/* info */
+
+.info ul {
+    border: 2px solid pink;
+}
+
+.info ul li {
+    border: 1px dashed #777
+}
