@@ -79,7 +79,7 @@ a {
     padding-top: 116px;
     padding-bottom: 140px;
 }
-#footer { /*height: 659px;*/ background-color: gray;}
+#footer { /*height: 659px;*/ background-color: black;}
 #footer  .inner {
     margin: 0 auto;
     width: 1280px;
@@ -419,7 +419,7 @@ h1 {
 
 
 .sitemap div a {
-    color: white;
+    color: #b4b4b4; ;
 }
 
 
@@ -439,8 +439,29 @@ h1 {
 
 .info ul {
     border: 2px solid pink;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
 .info ul li {
-    border: 1px dashed #777
+    /* margin-right: 63px; */
+    width: 90px;
+    border: 1px dashed salmon;
+    text-align: center;
+}
+
+.info p {
+    color: #b4b4b4; ;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: center;
+    border: 2px dashed skyblue;
+    padding-bottom: 22px;
+}
+
+.info .f_logo {
+    border: 3px solid orange;
+    text-align: center;
 }
