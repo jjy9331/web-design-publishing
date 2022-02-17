@@ -21,6 +21,8 @@ a {
     text-decoration: none;
 }
 
+a:hover {color: #0cc;}
+
 .blind {
     position: absolute;
     left: 0px;
@@ -34,20 +36,25 @@ a {
     top: 0px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
 }
 #header .inner {
     position: relative; 
     margin: 0 auto;
     width: 1280px;
     height: 100px;
-    border: 2px dashed white;
+    /* border: 2px dashed white; */
 }
 
 #visual { 
-    background-color: pink;
+    /* background-color: pink; */
 }
-#container {border: 5px dashed black;}
-#container #trend {background-color: yellowgreen;}
+#container {
+    /* border: 5px dashed black; */
+}
+#container #trend {
+    /* background-color: yellowgreen; */
+}
 
 #trend  .inner {
     margin: 0 auto;
@@ -58,12 +65,14 @@ a {
 }
 
 
-#container #magazine {background-color: rgb(224, 224, 172);}
+#container #magazine {
+    background-color: rgb(227, 218, 184);
+}
 
 #magazine  .inner {
     margin: 0 auto;
     width: 1280px;
-    border: 5px dashed skyblue;
+    /* border: 5px dashed skyblue; */
     padding-top: 116px;
     padding-bottom: 140px;
 }
@@ -188,7 +197,7 @@ h1 {
 
 /* container > trend */
 #trend h2 {
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     height: 49px;
     text-align: center;
     font-family: 'Noto Sans KR';
@@ -214,7 +223,31 @@ h1 {
 #trend ul li {
     width: 250px;
     height: 288px;
-    background-color: pink;
+    /* background-color: pink; */
+}
+
+#trend ul li img {
+    border-radius: 50%;
+    /* box-shadow: 3px 3px 20px rgba(0,0,0,0.3); */
+    /* border: 2px dashed orange; */ 
+    transition: 0.5s;
+}
+
+#trend ul li img:hover {
+    transform: scale(1.05,1.05);
+    /* box-shadow: 3px 3px 20px rgba(0,0,0,0.3); */
+    border-radius: 50%;
+    z-index: -1;
+}
+#trend ul li a{
+    transition: 0.5s;
+}
+#trend ul li a:hover img {
+    transform: scale(1.05,1.05);
+}
+
+#trend ul li a:hover {
+    color: orange;
 }
 
 #trend p {
@@ -226,7 +259,7 @@ h1 {
 /* container > magazine */
 
 #magazine h2 {
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     height: 49px;
     text-align: center;
     font-family: 'Noto Sans KR';
@@ -262,15 +295,31 @@ h1 {
     padding-bottom: 35px;
     font-size: 12px;
     line-height: 1em;
-    border: 2px dashed blue;
+    /* border: 2px dashed blue; */
 }
 
 #magazine ul li p {
-    border: 2px dashed skyblue;
+    /* border: 2px dashed skyblue; */
     line-height: 24px;
     padding-left: 70px;
     padding-right: 70px;
+    transition: 0.5s;
 
+}
+#magazine ul li a,h3{
+    transition: 0.5s;
+}
+#magazine ul li a:hover h3{
+    color: #111;
+    letter-spacing: 1px;
+    transform: scale(1.1,1.1);
+}
+
+#magazine ul li a:hover p {
+    color: orange;
+}
+#magazine ul li a:hover img {
+    filter: hue-rotate(-20deg);
 }
 
 /* container > social */
