@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이동 갤러리</title>
+<style>
+body,ul {margin:0;padding:0;}
+ul {list-style:none;}
+
+/* gallery1 */
+
+#moving_gallery1 { 
+	margin:50px auto; 
+	width:1000px; 
+	padding:50px 0 ; 
+	border:5px dashed orange; 
+}
+
+#moving_gallery1 .mas { 
+	overflow:hidden;
+	position:relative; 
+	margin:0 auto; 
+	width:600px; height:200px; 
+	border:5px solid hotpink; 
+}
+
+#moving_gallery1 .gall {
+	position:absolute; 
+	left:0px; top:0px; 
+	width:9999999px;
+	/* border:3px solid yellowgreen; */
+}
+
+#moving_gallery1 .gall ul { 
+	float:left; 
+	/* width:1000px; height:200px;  */
+}
+
+#moving_gallery1 .gall ul li { 
+	float:left; 
+	width:200px; height:200px; 
+	background-color:rgba(255,255,0,0.8); 
+	border:3px dashed #0cf; 
+	box-sizing:border-box; 안쪽테두리
+}
+
+#moving_gallery1 .nav { 
+	margin:0 auto; 
+	margin-top:30px; 
+	width:600px; 
+	border:2px dashed blue;
+	text-align:center;
+}
+
+/* gallery2 */
+
+
+#moving_gallery2 { 
+	margin:50px auto; 
+	width:1000px; 
+	padding:50px 0 ; 
+	border:5px dashed orange; 
+}
+
+#moving_gallery2 .mas { 
+	overflow:hidden;
+	position:relative; 
+	margin:0 auto; 
+	width:600px; height:200px; 
+	border:5px solid hotpink; 
+}
+
+#moving_gallery2 .gall {
+	position:absolute; 
+	left:0px; top:0px; 
+	width:9999999px;
+	/* border:3px solid yellowgreen; */
+}
+
+#moving_gallery2 .gall ul { 
+	float:left; 
+	/* width:1000px; height:200px;  */
+}
+
+#moving_gallery2 .gall ul li { 
+	float:left; 
+	width:200px; height:200px; 
+	background-color:rgba(255,255,0,0.8); 
+	border:3px dashed #0cf; 
+	box-sizing:border-box; 안쪽테두리
+}
+
+#moving_gallery2 .nav { 
+	margin:0 auto; 
+	margin-top:30px; 
+	width:600px; 
+	border:2px dashed blue;
+	text-align:center;
+}
+
+
+</style>
+
+</head>
+<body>
+
+
+
+<div id="moving_gallery1">
+
+	<div class="mas">
+
+		<div class="gall">
+					<!-- <ul id="set" onmouseover="moving(s=0);" onmouseout="moving(s=-1)"> -->
+					<ul>
+						<li class="item">01</li>
+						<li class="item">02</li>
+						<li class="item">03</li>
+						<li class="item">04</li>
+						<li class="item">05</li>
+						<li class="item">06</li>
+						<li class="item">07</li>
+						<!-- item만 추가하면 JS가 알아서 처리함  -->
+					</ul>
+		</div>
+
+	</div>
+
+
+	<div class="nav">
+			<button class="left" onclick="moving(s=-1)">왼쪽</button>
+			<button class="right" onclick="moving(s=1)">오른쪽</button>
+	</div>
+
+</div>
+
+
+
+<div id="moving_gallery2">
+
+	<div class="mas">
+
+		<div class="gall">
+					<!-- <ul id="set" onmouseover="moving(s=0);" onmouseout="moving(s=-1)"> -->
+					<ul>
+						<li class="item">01</li>
+						<li class="item">02</li>
+						<li class="item">03</li>
+						<li class="item">04</li>
+						<li class="item">05</li>
+						<li class="item">06</li>
+						<li class="item">07</li>
+						<!-- item만 추가하면 JS가 알아서 처리함  -->
+					</ul>
+		</div>
+
+	</div>
+
+
+	<div class="nav">
+			<button class="left" onclick="moving(s=-1)">왼쪽</button>
+			<button class="right" onclick="moving(s=1)">오른쪽</button>
+	</div>
+
+</div>
+
+
+<script>
+
+	let mas = document.querySelector("#moving_gallery1 .mas");
+	let gall = document.querySelector("#moving_gallery1 .gall");
+	let left = document.querySelector("#moving_gallery1 .left");
+	let right = document.querySelector("#moving_gallery1 .right");
+
+	let item = document.querySelectorAll("#moving_gallery1 .item");
+	alert(item.length);
+	let set = document.querySelector("#moving_gallery1 .gall ul ");
+
+	let n = item.length; //이미지 개수// alert(n);
+
+	alert(item[0].offsetWidth)
+	// 요소.clienWidth: 요소의 가로길이(테두리굵기 제외)
+	// 요소.clienHeight: 요소의 세로길이(테두리굵기 제외)
+	// 요소.clienLeft: 요소의 left값(테두리굵기 제외)
+	// 요소.clienTop: 요소의 top값(테두리굵기 제외)
+
+	// 요소.offsetWidth: 요소의 가로길이(테두리굵기 제외)
+	// 요소.offsetHeight: 요소의 세로길이(테두리굵기 제외)
+	// 요소.offsetLeft: 요소의 left값(테두리굵기 제외)
+	// 요소.offsetTop: 요소의 top값(테두리굵기 제외)
+
+	let w = item[0].offsetWidth; //이미지(li) 가로길이
+	// alert(w);
+
+	let temp = set.cloneNode(true); //set를 복제하고 temp변수에 참조
+	gall[0].appendChild(temp); //gall안에 temp를 붙여넣기
+
+	// alert(item.length)
+
+	let speed = 1; //속도 
+	let x=0;
+	let s= -speed;
+	let m = true;
+
+
+	function moving() {
+		if(m){
+			x = x + s;
+			if ( x < -w*n ) { 
+				x=0; 
+				console.log(x)
+			} 
+			if ( x > 0 ) { 
+				x= -w*n; 
+			} 
+			console.log(x)
+			gall[0].style.left=x+"px";
+		}
+	}
+
+	setInterval(moving,10); //moving함수를 0.01초마다 반복실행
+
+	right[0].addEventListener("click",function(){
+		s=1;
+	});
+
+	left[0].addEventListener("click",function(){
+		s=-1;
+	});
+
+	gall[0].addEventListener("mouseover",function(){m=false;});
+	gall[0].addEventListener("mouseout",function(){m=true;});
+
+
+</script>
+
+</body>
+</html>
+
