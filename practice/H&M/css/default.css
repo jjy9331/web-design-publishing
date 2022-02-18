@@ -29,6 +29,23 @@ a:hover {color: #0cc;}
     top: -99999px;
 }
 
+.skip_navigation a {
+    position: absolute;
+    left: 0px;
+    top: -9999px;
+    z-index: 1000;
+    background-color: black;
+}
+
+.skip_navigation a:focus {
+    top:0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    outline: none;
+}
+
+
 /* layout */
 #header { 
     position: fixed;
