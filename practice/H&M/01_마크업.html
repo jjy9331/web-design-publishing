@@ -5,6 +5,29 @@
 <title></title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../H&M/css/default.css">
+<script>
+    window.addEventListener("load",function(){
+        const mn = document.getElementsByClassName("mn");
+        const con1 = document.getElementById("con1");
+        const con2 = document.getElementById("con2");
+
+        mn[0].addEventListener("click",function(){
+            con1.style.display="none"; //con
+            con2.style.display="block";
+            mn[0].style.backgroundColor="rgba(255,255,255,0.5)";
+            mn[1].style.opacity="0.5";
+            return false;
+        });
+        mn[1].addEventListener("click",function(){
+            con1.style.display="none"; //con
+            con2.style.display="block";
+            mn[1].style.opacity="0.5";
+            mn[0].style.opacity="1";
+
+            return false;
+        });
+    });
+</script>
 </head>
 <body>
 
@@ -130,12 +153,12 @@
                 <li class="tabmenu">
                     <ul class="tab_mn">
                         <li>
-                            <a class="mn m1" href="#con1">
+                            <a class="mn m1" href="#con1" onclick="return false">
                                 facebook
                             </a>
                         </li>
                         <li>
-                            <a class="mn m2" href="#con2">
+                            <a class="mn m2" href="#con2" onclick="return false">
                                 twitter
                             </a>
                         </li>

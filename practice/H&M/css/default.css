@@ -342,7 +342,7 @@ h1 {
 /* container > social */
 
 #social h2 {
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     height: 49px;
     text-align: center;
     font-family: 'Noto Sans KR';
@@ -351,6 +351,7 @@ h1 {
     line-height: 1em; /* 줄간격을 폰트사이즈와 똑같이 할 것 = 1em */
     letter-spacing: 3px; /* 자간 */
     padding-bottom: 10px;
+    color: white;
 }
 #social h2 span{
     display: block;
