@@ -11,16 +11,20 @@
         const con1 = document.getElementById("con1");
         const con2 = document.getElementById("con2");
 
-        mn[0].addEventListener("click",function(){
+        
+
+        mn[0].addEventListener("click",function(e){
+            e.preventDefault();
+
             con1.style.display="none"; //con
             con2.style.display="block";
             mn[0].style.backgroundColor="rgba(255,255,255,0.5)";
             mn[1].style.opacity="0.5";
             return false;
         });
-        mn[1].addEventListener("click",function(){
-            con1.style.display="none"; //con
-            con2.style.display="block";
+        mn[1].addEventListener("click",function(e){
+            con1.style.display="block"; //con
+            con2.style.display="none";
             mn[1].style.opacity="0.5";
             mn[0].style.opacity="1";
 
@@ -39,12 +43,43 @@
 <header id="header">
     <div class="inner">
         <h1><a href="#"><img src="../H&M/images/logo.png" alt=""></a></h1>
+        <h2 class="blind">주요메뉴</h2>
+        
         <nav class="gnb">
             <ul>
-                <li><a href="#">여성</a></li>
-                <li><a href="#">남성</a></li>
-                <li><a href="#">아동</a></li>
-                <li><a href="#">Sale</a></li>
+                <li class="main">
+                    <a href="#">여성</a>
+                    <ul class="sub">
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                        <li><a href="#">submenu3</a></li>
+                    </ul>
+                </li>
+                <li class="main">
+                    <a href="#">남성</a>
+                    <ul class="sub">
+                        <li><a href="#">submenu1</a></li>
+                        <li><a href="#">submenu2</a></li>
+                        <li><a href="#">submenu3</a></li>
+                    </ul>
+                </li>
+                <li class="main">
+                    <a href="#">아동</a>
+                    <ul class="sub">
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu2</a></li>
+                            <li><a href="#">submenu3</a></li>
+                    </ul>
+                    
+                </li>
+                <li class="main">
+                    <a href="#">Sale</a>
+                        <ul class="sub">
+                            <li><a href="#">submenu1</a></li>
+                            <li><a href="#">submenu2</a></li>
+                            <li><a href="#">submenu3</a></li>
+                        </ul>
+                </li>
             </ul>
         </nav>
     
@@ -63,6 +98,7 @@
                 </a>
             </li>
         </ul>
+        <div class="gnb_bgbox"></div>
     </div>
 
 </header>

@@ -128,15 +128,16 @@ h1 {
 
 .gnb { 
     position: absolute;
-    left: 306px; 
+    left: 309px; 
     top: 45px;
-    width: 612px; 
-    height: 18px; 
+    width: 772px; /* 193 * 4(main메뉴개수)*/
+    /* height: 18px;  */
     /* background-color: orange; */
     /* padding-top: 17px; */ 
+    border: 3px dashed blue;
 }
 
-.gnb ul { 
+.gnb > ul { 
     display: flex;
     justify-content: space-between; /*양쪽 끝으로 맞추는 것*/
 } /* li의 부모에 flex하면 가로배열 됨*/
@@ -149,7 +150,7 @@ h1 {
 
 .gnb ul li { 
     line-height: 1em; /* 줄간격 초기화 1em=100% --> 폰트크기와 같아짐*/
-    /* border: 1px dashed blue;  */
+    border: 1px dashed yellow; 
 }
 
 .gnb ul li a {
@@ -161,6 +162,55 @@ h1 {
 .gnb ul li a:hover {
     color: yellow;
 }
+
+
+.gnb .main {
+    border: 2px solid hotpink;
+    width:193px
+}
+
+.gnb .main:hover > a {
+    color:yellow;
+}
+
+
+.gnb .sub {
+    display: none;
+    padding-top: 100px; 
+    border: 2px dashed orange;
+}
+
+.gnb .sub li {
+    height: 31px; 
+    border: 2px dashed skyblue;
+}
+
+.gnb .sub li a { 
+    font-weight: 300; 
+    font-size: 14px;
+    counter-reset: #fff;
+}
+
+
+.gnb:hover .sub {
+    display: block;
+}
+.gnb:hover ~ .gnb_bgbox {
+    display: block;
+}
+
+.gnb_bgbox {
+    display: none;
+    position: absolute;
+    z-index: -10;
+    /* left: -320px; */
+    top: 100px;
+    width: 100%;
+    height: 453px;
+    background-color: red;
+}
+
+
 
 .util {
     position: absolute;
