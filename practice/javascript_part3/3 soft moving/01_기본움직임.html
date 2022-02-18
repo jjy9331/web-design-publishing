@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>기본움직임</title>
+<style>
+body { font:20px "Roboto"; color:white; }
+#box { position:absolute; left:0px; top:100px; width:100px; height:100px; background:#0cf; }
+</style>
+</head>
+<body>
+
+
+<div id="box">box</div>
+
+
+
+
+<script>
+
+	let a=0; 
+
+	function motion(){
+		
+		a = a + 1; //a값을 1증가
+		
+		document.getElementById("box").style.left=a+"px";
+		
+	}
+
+	setInterval("motion()",10); //motion()함수를 0.01초에 한번씩 반복실행
+
+</script>
+
+</body>
+</html>
+

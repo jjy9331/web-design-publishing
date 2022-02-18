@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>부드러운 움직임</title>
+<style>
+body { font:20px "Roboto"; color:white; }
+#box { position:absolute; left:0px; top:100px; width:100px; height:100px; background:orange; }
+</style>
+</head>
+<body >
+
+
+
+
+<div id="box">box</div>
+
+
+
+
+<script>
+
+	let a=0; 
+
+	function smoothMove(){
+		
+		a = a + 0.1*(700- a); //부드러운 움직임 공식 a=a+속도*(목적지-a)
+							//속도:0~1
+		
+		document.getElementById("box").style.left = a + "px";
+		
+	}
+		
+	setInterval("smoothMove()",10); //smoothMove함수를 0.01초에 한번씩 반복실행
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
