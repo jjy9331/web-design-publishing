@@ -9,7 +9,7 @@ ul { list-style:none;}
 img { vertical-align:top; }
 a { text-decoration:none; color:#333; }
 
-#gallery { 
+#gallery1 { 
 	position:relative;
 	margin:0 auto;
 	margin-top:30px; 
@@ -18,20 +18,40 @@ a { text-decoration:none; color:#333; }
 	text-align:center;
 	border:5px dashed orange; 
 }
-#gallery .nav { display:flex; justify-content:center; margin:0 auto; width:600px; margin-top:30px; border:5px dashed skyblue; }
-#gallery .nav li { margin:0 20px; font-size:20px; }
-#gallery .prev { position:absolute; left:20px; top:150px; }
-#gallery .next { position:absolute; right:20px; top:150px; }
+#gallery1 .nav { display:flex; justify-content:center; margin:0 auto; width:600px; margin-top:30px; border:5px dashed skyblue; }
+#gallery1 .nav li { margin:0 20px; font-size:20px; }
+#gallery1 .prev { position:absolute; left:20px; top:150px; }
+#gallery1 .next { position:absolute; right:20px; top:150px; }
+
+
+
+
+#gallery2 { 
+	position:relative;
+	margin:0 auto;
+	margin-top:30px; 
+	margin-bottom:30px;
+	width:1200px;
+	text-align:center;
+	border:5px dashed orange; 
+}
+#gallery2 .nav { display:flex; justify-content:center; margin:0 auto; width:600px; margin-top:30px; border:5px dashed skyblue; }
+#gallery2 .nav li { margin:0 20px; font-size:20px; }
+#gallery2 .prev { position:absolute; left:20px; top:150px; }
+#gallery2 .next { position:absolute; right:20px; top:150px; }
 </style>
 
 <script>
 
 	window.addEventListener("load",function(){
 
-		const pic = document.querySelectorAll("#gallery .pic");
-		const mn = document.querySelectorAll("#gallery .mn");
-		const prev = document.querySelector("#gallery .prev");
-		const next = document.querySelector("#gallery .next");
+		
+		const gallery = "#gallery1"
+
+		const pic = document.querySelectorAll(gallery +" .pic");
+		const mn = document.querySelectorAll(gallery +" .mn");
+		const prev = document.querySelector(gallery +" .prev");
+		const next = document.querySelector(gallery +" .next");
 	
 		let n = 0;
 		let img_num = pic.length //이미지 개수
@@ -48,8 +68,8 @@ a { text-decoration:none; color:#333; }
 	
 	
 		for(i=0; i<img_num; i++){
-			document.getElementsByClassName("mn")[i].addEventListener("click",function(){
-	
+			mn[i].addEventListener("click",function(e){
+				e.preventDefault();
 				idx=this.getAttribute("data-idx");
 				console.log(idx);
 	
@@ -60,8 +80,8 @@ a { text-decoration:none; color:#333; }
 		}
 	
 		//next클릭했을때
-		next.addEventListener("click",function(){
-			
+		next.addEventListener("click",function(e){
+			e.preventDefault();
 			n++;
 			if ( n > (img_num-1) ) { 
 				n = 0; 
@@ -73,8 +93,8 @@ a { text-decoration:none; color:#333; }
 		
 		
 		//prev클릭했을때
-		prev.addEventListener("click",function(){
-			
+		prev.addEventListener("click",function(e){
+			e.preventDefault();
 			n--;
 			if ( n < 0 ) { 
 				n = (img_num-1); 
@@ -83,15 +103,81 @@ a { text-decoration:none; color:#333; }
 			gall();
 			
 		});
+
 	});
 
+
+
+	window.addEventListener("load",function(){
+
+		
+		const gallery = "#gallery2"
+
+		const pic = document.querySelectorAll(gallery +" .pic");
+		const mn = document.querySelectorAll(gallery +" .mn");
+		const prev = document.querySelector(gallery +" .prev");
+		const next = document.querySelector(gallery +" .next");
+
+		let n = 0;
+		let img_num = pic.length //이미지 개수
+
+		function gall(){
+			for ( i=0; i<img_num; i++ ){
+				pic[i].style.display="none"; 
+				mn[i].style.color="#333"; //메뉴색 비활성
+			}
+			pic[n].style.display="block"; 
+			mn[n].style.color="orange"; //미뉴색 활성
+		}
+		gall();
+
+
+		for(i=0; i<img_num; i++){
+			mn[i].addEventListener("click",function(e){
+				e.preventDefault();
+				idx=this.getAttribute("data-idx");
+				console.log(idx);
+
+				n =idx;
+
+				gall();
+			});
+		}
+
+		//next클릭했을때
+		next.addEventListener("click",function(e){
+			e.preventDefault();
+			n++;
+			if ( n > (img_num-1) ) { 
+				n = 0; 
+			}
+			
+			gall();
+		});
+
+
+
+		//prev클릭했을때
+		prev.addEventListener("click",function(e){
+			e.preventDefault();
+			n--;
+			if ( n < 0 ) { 
+				n = (img_num-1); 
+			}
+			
+			gall();
+			
+		});	
+
+	});
+	
 	
 
 </script>   
 </head>
 <body>
   
-<div id="gallery">
+<div id="gallery1">
 
 	<ul>
 		<li class="pic"><a href="http://www.naver.com" target="_blank"><img src="images/photo1.jpg" alt="1"></a></li>
@@ -114,6 +200,29 @@ a { text-decoration:none; color:#333; }
 
 </div>
 
+
+<div id="gallery2">
+
+	<ul>
+		<li class="pic"><a href="http://www.naver.com" target="_blank"><img src="images/photo1.jpg" alt="1"></a></li>
+		<li class="pic"><a href="http://www.daum.net" target="_blank"><img src="images/photo2.jpg" alt="2"></a></li>
+		<li class="pic"><a href="http://www.google.com" target="_blank"><img src="images/photo3.jpg" alt="3"></a></li>
+		<li class="pic"><a href="http://www.google.com" target="_blank"><img src="images/photo4.jpg" alt="4"></a></li>
+		<li class="pic"><a href="http://www.google.com" target="_blank"><img src="images/photo5.jpg" alt="5"></a></li>
+	</ul>
+
+	<ul class="nav">
+		<li><a href="#" class="mn" data-idx="0">01</a></li>
+		<li><a href="#" class="mn" data-idx="1">02</a></li>
+		<li><a href="#" class="mn" data-idx="2">03</a></li>
+		<li><a href="#" class="mn" data-idx="3">04</a></li>
+		<li><a href="#" class="mn" data-idx="4">05</a></li>
+	</ul>
+
+	<a href="#" class="prev">이전</a>
+	<a href="#" class="next">다음</a>
+
+</div>
 
 
 </body>
