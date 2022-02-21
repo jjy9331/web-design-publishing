@@ -21,17 +21,20 @@ body { font:20px "Roboto"; color:white; }
 <script>
 
 	let a=0; 
+	
+	let targetX=1500;
 
 	function smoothMove(){
 		
-		a = a + 0.1*(700- a); //부드러운 움직임 공식 a=a+속도*(목적지-a)
+		a = a + 0.1*(targetX- a); //부드러운 움직임 공식 a=a+속도*(목적값-a)
+							//a = a + 속도*(목적지-a);
 							//속도:0~1
 		
-		document.getElementById("box").style.left = a + "px";
+		document.getElementById("box").style.top = a + "px";
 		
 	}
 		
-	setInterval("smoothMove()",10); //smoothMove함수를 0.01초에 한번씩 반복실행
+	setInterval("smoothMove()",30); //smoothMove함수를 0.01초에 한번씩 반복실행
 
 </script>
 

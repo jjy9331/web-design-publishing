@@ -101,6 +101,7 @@ a:hover {color: #0cc;}
 #social  .inner {
     margin: 0 auto;
     width: 1280px;
+    /* height: 414px; */
     border: 5px dashed blue;
     padding-top: 116px;
     padding-bottom: 140px;
@@ -131,7 +132,7 @@ h1 {
     left: 309px; 
     top: 45px;
     width: 772px; /* 193 * 4(main메뉴개수)*/
-    /* height: 18px;  */
+    /* height: 414px;  */
     /* background-color: orange; */
     /* padding-top: 17px; */ 
     border: 3px dashed blue;
@@ -175,9 +176,15 @@ h1 {
 
 
 .gnb .sub {
-    display: none;
-    padding-top: 100px; 
+    /* display: none; */
+    position: relative;
+    top: 34px;
+    transition: 0.5s;
+    overflow: hidden;
+    padding-top: 0px; 
     border: 2px dashed orange;
+    height: 0px;
+    
 }
 
 .gnb .sub li {
@@ -194,20 +201,29 @@ h1 {
 
 .gnb:hover .sub {
     display: block;
+    height: 350px;
+    padding-top: 60px; 
 }
 .gnb:hover ~ .gnb_bgbox {
     display: block;
+    height: 414px;
 }
 
+/* .gnb_bgbox:hover {
+    display: block;
+    height: 453px;
+} */
+
 .gnb_bgbox {
-    display: none;
+    transition: 0.5s;
+    /* display: none; */
     position: absolute;
     z-index: -10;
     /* left: -320px; */
     top: 100px;
     width: 100%;
-    height: 453px;
-    background-color: red;
+    height: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 
@@ -215,7 +231,7 @@ h1 {
 .util {
     position: absolute;
     right: 0px; 
-    top: 40px;
+    top: 33px;
     width: 175px;
     height: 25px;
     /* background-color: yellowgreen; */

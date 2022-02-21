@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>부드러운 움직임</title>
+<style>
+body { font:20px "Roboto"; color:white; }
+#box { 
+	position: absolute; 
+	left:-500px; 
+	top:100px; 
+	width:500px; 
+	height:500px; 
+	background:hotpink; 
+}
+</style>
+</head>
+<body >
+
+
+
+
+<div id="box" onmouseover="targetX=-550;" onmouseout="targetX=-450;">box</div>
+
+<button onmouseover="targetX=100">100버튼</button>
+<button onmouseover="targetX=500">500버튼</button>
+<button onmouseover="targetX=1000">1000버튼</button>
+
+
+<script>
+
+	let x=-500; //초기x값
+	let targetX=-450; //목적지x값
+
+	function smoothMove(){
+		
+		x = x + 0.05*(targetX - x); //부드러운 움직임 x축 공식
+		
+		document.getElementById("box").style.left = x + "px";
+		
+	}
+		
+	setInterval("smoothMove()",10);
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
