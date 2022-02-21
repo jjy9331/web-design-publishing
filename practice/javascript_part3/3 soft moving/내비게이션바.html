@@ -21,32 +21,32 @@ ul {list-style:none;}
 
       <nav id="gnb">
       
-               <ul>
-	                <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
-               </ul>
-                
-               <div id="bar"></div>
-                
+            <ul>
+                  <li><a href="#" onmouseover="smoothMove(targetX=0);">Home</a></li>
+                  <li><a href="#" onmouseover="smoothMove(targetX=200);">About</a></li>
+                  <li><a href="#" onmouseover="smoothMove(targetX=400);">Portfolio</a></li>
+                  <li><a href="#" onmouseover="smoothMove(targetX=600);">Contact</a></li>
+            </ul>
+            
+            <div id="bar"></div>
+            
       </nav>
 
 
 
 <script>
 
-	//let x=0;
-	//let targetX=0;
+	let x=0;
+	let targetX=0;
 
 	function smoothMove(){
 		
-		//x = x + 0.1*(targetX-x);
-		//document.getElementById("bar").style.left=x+"px";
+		x = x + 0.1*(targetX-x);
+		document.getElementById("bar").style.left=x+"px";
 		
 	}
 
-	setInterval("smoothMove()",10);
+	setInterval("smoothMove()",10); //smoothMove함수 0.01초마다 반복실행
 
 </script>
 </body>
