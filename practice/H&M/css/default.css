@@ -76,7 +76,7 @@ a:hover {color: #0cc;}
 #trend  .inner {
     margin: 0 auto;
     width: 1280px;
-    border: 5px dashed orange;
+    /* border: 5px dashed orange; */
     padding-top: 116px;
     padding-bottom: 140px;
 }
@@ -102,7 +102,7 @@ a:hover {color: #0cc;}
     margin: 0 auto;
     width: 1280px;
     /* height: 414px; */
-    border: 5px dashed blue;
+    /* border: 5px dashed blue; */
     padding-top: 116px;
     padding-bottom: 140px;
 }
@@ -111,7 +111,7 @@ a:hover {color: #0cc;}
     margin: 0 auto;
     width: 1280px;
     height: 659px;
-    border: 5px dashed white;
+    /* border: 5px dashed white; */
 }
 
 /* header */
@@ -135,7 +135,7 @@ h1 {
     /* height: 414px;  */
     /* background-color: orange; */
     /* padding-top: 17px; */ 
-    border: 3px dashed blue;
+    /* border: 3px dashed blue; */
 }
 
 .gnb > ul { 
@@ -151,7 +151,7 @@ h1 {
 
 .gnb ul li { 
     line-height: 1em; /* 줄간격 초기화 1em=100% --> 폰트크기와 같아짐*/
-    border: 1px dashed yellow; 
+    /* border: 1px dashed yellow;  */
 }
 
 .gnb ul li a {
@@ -166,7 +166,7 @@ h1 {
 
 
 .gnb .main {
-    border: 2px solid hotpink;
+    /* border: 2px solid hotpink; */
     width:193px
 }
 
@@ -181,15 +181,19 @@ h1 {
     top: 34px;
     transition: 0.5s;
     overflow: hidden;
-    padding-top: 0px; 
-    border: 2px dashed orange;
+    /* padding-top: 60px;  */
+    /* border: 2px dashed orange; */
     height: 0px;
     
 }
 
 .gnb .sub li {
     height: 31px; 
-    border: 2px dashed skyblue;
+    /* border: 2px dashed skyblue; */
+}
+.gnb .sub li:first-child { 
+    padding-top:60px; 
+    /* border:2px dashed green;  */
 }
 
 .gnb .sub li a { 
@@ -198,6 +202,7 @@ h1 {
     counter-reset: #fff;
 }
 
+/* 
 
 .gnb:hover .sub {
     display: block;
@@ -208,6 +213,8 @@ h1 {
     display: block;
     height: 414px;
 }
+
+*/
 
 /* .gnb_bgbox:hover {
     display: block;
@@ -231,7 +238,7 @@ h1 {
 .util {
     position: absolute;
     right: 0px; 
-    top: 33px;
+    top: 40px;
     width: 175px;
     height: 25px;
     /* background-color: yellowgreen; */
@@ -523,12 +530,12 @@ h1 {
     display: flex;
     padding-top: 83px;
     padding-bottom: 34px;
-    border: 2px dashed ivory;
+    /* border: 2px dashed ivory; */
 }
 
 
 .sitemap div {
-    border: 1px dashed ivory;
+    /* border: 1px dashed ivory; */
 }
 
 .sm1,.sm2,.sm3 {
@@ -540,11 +547,11 @@ h1 {
     font-size: 16px;
     font-weight: 400;
     line-height: 1em;
-    border: 2px dashed orange;
+    /* border: 2px dashed orange; */
     height: 38px;
 }
 .sitemap div ul li {
-    border: 1px dashed ivory;
+    /* border: 1px dashed ivory; */
     line-height: 1em;
     height: 30px;
     font-size: 14px;
@@ -571,7 +578,7 @@ h1 {
 /* info */
 
 .info ul {
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
@@ -580,7 +587,7 @@ h1 {
 .info ul li {
     /* margin-right: 63px; */
     width: 90px;
-    border: 1px dashed salmon;
+    /* border: 1px dashed salmon; */
     text-align: center;
 }
 
@@ -590,11 +597,11 @@ h1 {
     font-weight: 500;
     line-height: 14px;
     text-align: center;
-    border: 2px dashed skyblue;
+    /* border: 2px dashed skyblue; */
     padding-bottom: 22px;
 }
 
 .info .f_logo {
-    border: 3px solid orange;
+    /* border: 3px solid orange; */
     text-align: center;
 }
