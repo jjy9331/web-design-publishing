@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>탄력이동</title>
+<style>
+body { font:15px "Roboto"; color:white; }
+#box { position:absolute; left:0px; top:100px; width:100px; height:100px; background:#0cf; }
+</style>
+</head>
+<body >
+
+
+
+<div id="box">box</div>
+
+<button onclick="targetX=100;">버튼</button>
+<button onclick="targetX=1200;">버튼</button>=
+
+<script>
+
+
+let x=0; //초기x값
+//let y=0; //초기y값
+let targetX=700; //목적지x값
+//let targetY=300; //목적지y값
+let tempX=0;
+//let tempY=0;
+let prevX=0;
+//let prevY=0;
+let s=0.7;
+let q=0.2;
+	 // s는 -2부터 2사이 중에 적는다
+ 	 // s가 -2에 가까울수록 속도가 빠름
+
+     //s값과 q값이 서로 궁합이 맞아야한다.
+     
+	 // q는 -1부터 0사이 중에 적는다
+	 // q가 -1에 가까울수록 진동폭이 큼
+    //1.5/0.7, 1.2/-0.6, 1/0.2, 1/0.5, 1.6/-0.8
+	
+function elasticMove(){
+	 
+     tempX = x;
+     //tempY = y;
+     x = s*(x - targetX) + q*(prevX - targetX) + targetX;
+     //y = s*(y - targetY) + q*(prevY - targetY) + targetY;
+     prevX = tempX;
+     //prevY = tempY;
+	
+	document.getElementById("box").style.left = x + "px";
+	//document.getElementById("box").style.top = y + "px";
+	
+}
+	
+setInterval("elasticMove()",10); //elasticMove함수를 10/1000초에 한번씩 반복실행
+
+</script>
+
+</body>
+</html>
+

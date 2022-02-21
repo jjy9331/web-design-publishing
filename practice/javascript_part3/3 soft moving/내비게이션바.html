@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>네비게이션바</title>
+<style>
+* {margin:0;padding:0;}
+ul {list-style:none;}
+
+
+#gnb { position:relative; margin:0 auto; width:800px; height:35px; margin-top:30px; }
+#gnb li { float:left; width:195px; line-height:30px; margin-right:5px; background:#333; text-align:center; }
+#gnb li a { color:#fff; text-decoration:none; }
+
+#gnb #bar { position:absolute; left:0px; top:30px; width:195px; height:5px; background:orange; }
+</style>
+</head>
+
+<body>
+
+
+      <nav id="gnb">
+      
+               <ul>
+	                <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+               </ul>
+                
+               <div id="bar"></div>
+                
+      </nav>
+
+
+
+<script>
+
+	//let x=0;
+	//let targetX=0;
+
+	function smoothMove(){
+		
+		//x = x + 0.1*(targetX-x);
+		//document.getElementById("bar").style.left=x+"px";
+		
+	}
+
+	setInterval("smoothMove()",10);
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

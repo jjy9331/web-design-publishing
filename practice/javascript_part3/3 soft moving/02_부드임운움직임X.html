@@ -20,7 +20,7 @@ body { font:20px "Roboto"; color:white; }
 
 
 
-<div id="box" onmouseover="targetX=-550;" onmouseout="targetX=-450;">box</div>
+<div id="box" onmouseover="targetX=0;" onmouseout="targetX=-450;">box</div>
 
 <button onmouseover="targetX=100">100버튼</button>
 <button onmouseover="targetX=500">500버튼</button>
@@ -28,19 +28,34 @@ body { font:20px "Roboto"; color:white; }
 
 
 <script>
+/*
+let x=0; //초기x값
+let targetX=20; //목적지x값
 
-	let x=-500; //초기x값
-	let targetX=-450; //목적지x값
+function smoothMove(){
+	
+	x = x + 0.05*(targetX - x); //부드러운 움직임 x축 공식
+	
+	document.getElementById("box").style.left = x + "px";
+	
+}
+setInterval("smoothMove()",10);
+*/ 
+		
+
+	let x = 0;
+	let y = 0;
+	let targeX = 700;
+	let targetY = 700;
 
 	function smoothMove(){
-		
-		x = x + 0.05*(targetX - x); //부드러운 움직임 x축 공식
-		
-		document.getElementById("box").style.left = x + "px";
-		
+		x = x + 0.05*(targetX - x);
+		y = y + 0.05*(targetY - y);
+
+		document.getElementById("box").style.left = x + "px"
+		document.getElementById("box").style.top = y + "px"
 	}
-		
-	setInterval("smoothMove()",10);
+	setInterval(smoothMove,10); //smootMove함수 0.01초마다 반복
 
 </script>
 
