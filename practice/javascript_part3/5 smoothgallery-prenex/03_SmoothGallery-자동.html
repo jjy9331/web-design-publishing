@@ -67,6 +67,12 @@ a { text-decoration:none; color:#777; }
 	<a href="#" class="prev">prev</a>
     <a href="#" class="next">next</a>
  
+
+	<div class="control">
+		<a href="#" class="play">play</a>
+		<a href="#" class="stop">stop</a>
+	</div>
+
 </div>
 
 
@@ -102,7 +108,7 @@ a { text-decoration:none; color:#777; }
 			last_mn.style.color="#777";
 			this.style.color="orange";
 			last_mn = this;	
-			//count=-5;
+			count=-5;
 		});
 	}
 
@@ -148,7 +154,7 @@ a { text-decoration:none; color:#777; }
 		last_mn.style.color="#777";
 		mn[idx].style.color="orange";
 		last_mn = mn[idx];	
-		//count= -5;
+		count= -5;
 	}
 
 	////////////////// 자동 ////////////////////////
@@ -156,18 +162,29 @@ a { text-decoration:none; color:#777; }
 	let count=0;
 
 	function timer(){
-		//count++;
-		//document.getElementsByTagName("h1")[0].innerText=count;
+		count++;
+		document.getElementsByTagName("h1")[0].innerText=count;
 
-		//if ( count== 3 ) {
+		if ( count== 3 ) {
 
-			//nextGall();
-			//count=0;
+			nextGall();
+			count=0;
 
-		//}
+		}
 
 	}
 	setInterval("timer()",1000); 
+
+	const play = document.getElementsByClassName("play");
+	const stop = document.getElementsByClassName("stop");
+
+	play[0].addEventListener("click",() => {
+		count=2;
+	});
+
+	stop[0].addEventListener("click",() => {
+		count=1000;
+	});
 
 
 

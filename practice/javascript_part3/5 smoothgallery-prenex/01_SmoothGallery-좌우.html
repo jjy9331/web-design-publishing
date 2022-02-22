@@ -13,7 +13,7 @@ a { text-decoration:none; color:#777; }
 /* 갤러리 */
 #sm_gallery { position:relative; width:900px; margin:0 auto; border:5px dashed skyblue; }
 #sm_gallery .mas { 
-	overflow:hidden;
+	/* overflow:hidden; */
 	position:relative; 
 	width:600px; height:327px; 
 	margin:30px auto; 
@@ -23,7 +23,7 @@ a { text-decoration:none; color:#777; }
 	position:absolute; left:0; top:0px; 
 	width:999999px;
 }
-#sm_gallery .gall ul { float:left; }
+#sm_gallery .gall ul {  }
 #sm_gallery .gall ul li { float:left; }
 
 #sm_gallery .nav { 
@@ -50,7 +50,7 @@ a { text-decoration:none; color:#777; }
   
     <div class="mas">
 		<div class="gall">
-			<ul>
+			<ul id="set">
 			  <li><a href="#"><img src="images/img1.jpg" alt="이미지1" ></a></li>
 			  <li><a href="#"><img src="images/img2.jpg" alt="이미지2" ></a></li>
 			  <li><a href="#"><img src="images/img3.jpg" alt="이미지3" ></a></li>
@@ -73,6 +73,9 @@ a { text-decoration:none; color:#777; }
 <script>
 
 	let gall = document.getElementsByClassName("gall");
+
+	let temp = document.getElementById("set").cloneNode(true);
+	gall[0].appendChild(temp);
 
 	let x = 0; //초기값
 	let targetX = 0; //초기 목적지값
@@ -114,31 +117,35 @@ a { text-decoration:none; color:#777; }
 	let next = document.getElementsByClassName("next");
 
 
-	prev[0].addEventListener("click",function(){ 
+	prev[0].addEventListener("click",function(){ // Prev 클릭했을 때
 
-		//targetX = targetX +600;
-		//if ( targetX > 0) { targetX=-600*2; }
+		targetX = targetX +600; //targetX값을 600증가
+		if ( targetX > 0) { //끊어지는 위치가 되면 
+			targetX=-600*2; //첫번째 이미지가 보이는 위치로 이동
+		}
 
-		//idx--;
-		//if (idx <0) { idx=2; };
+		idx--;
+		if (idx <0) { idx=2; };
 
-		//last_mn.style.color="#777";
-		//mn[idx].style.color="orange";
-		//last_mn = mn[idx];	
+		last_mn.style.color="#777";
+		mn[idx].style.color="orange";
+		last_mn = mn[idx];	
 	});
 
 
-	next[0].addEventListener("click",function(){ 
+	next[0].addEventListener("click",function(){ // Next 클릭했을 때
 
-		//targetX = targetX -600;
-		//if ( targetX < -600*2) { targetX=0; }
+		targetX = targetX -600; //targetX값을 600감소
+		if ( targetX < -600*2) { //끊어지는 위치가 되면 
+			targetX=0; //첫번째 이미지가 보이는 위치로 이동
+		} 
 
-		//idx++;
-		//if (idx >2) { idx=0; };
+		idx++;
+		if (idx >2) { idx=0; };
 
-		//last_mn.style.color="#777";
-		//mn[idx].style.color="orange";
-		//last_mn = mn[idx];	
+		last_mn.style.color="#777";
+		mn[idx].style.color="orange";
+		last_mn = mn[idx];	
 	});
 
 
