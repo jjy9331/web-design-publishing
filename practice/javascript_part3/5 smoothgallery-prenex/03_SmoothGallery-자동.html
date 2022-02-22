@@ -160,30 +160,34 @@ a { text-decoration:none; color:#777; }
 	////////////////// 자동 ////////////////////////
 
 	let count=0;
+	let auto=true;
 
 	function timer(){
-		count++;
-		document.getElementsByTagName("h1")[0].innerText=count;
 
-		if ( count== 3 ) {
-
-			nextGall();
-			count=0;
-
+		if (auto) {
+			
+			count++;
+			document.getElementsByTagName("h1")[0].innerText=count;
+	
+			if ( count== 3 ) {
+	
+				nextGall();
+				count=0;
+	
+			}
 		}
-
 	}
 	setInterval("timer()",1000); 
 
 	const play = document.getElementsByClassName("play");
 	const stop = document.getElementsByClassName("stop");
 
-	play[0].addEventListener("click",() => {
-		count=2;
+	play[0].addEventListener("click",() => {//play를 클릭했을 때
+		auto=true;
 	});
 
-	stop[0].addEventListener("click",() => {
-		count=1000;
+	stop[0].addEventListener("click",() => { //stop을 클릭했을 때
+		auto=false;
 	});
 
 
