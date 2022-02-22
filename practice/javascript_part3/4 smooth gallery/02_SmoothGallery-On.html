@@ -67,85 +67,40 @@ a { text-decoration:none; color:#777; }
 
 <script>
 
-	let gall = document.getElementsByClassName("gall");
-
-	let x = 0; //초기값
-	let targetX = 0; //초기 목적지값
-
-	function smoothMove(){
-		
-		x = x + 0.1*(targetX- x); //부드러운 움직임 공식
-		gall[0].style.left = x + "px";
-		
-	}
-
-	setInterval("smoothMove()",10); 
-
-
-
-	let mn = document.getElementsByClassName("mn");
+let on_color="white";//메뉴 활성화 글자색
+	let on_bg="orange";//메뉴 활성화 배경색
 	
-	mn[0].style.color="orange";
-	let last_mn = mn[0];
+	let off_color="#ccc";//메뉴 비활성화 글자색
+	let off_bg="#777";//메뉴 비활성화 배경색
 
+	let gall = document.getElementsByClassName("gall");
+	let x = 0; 
+	let targetX = 0; 
+	function smoothMove(){
+		x = x + 0.1*(targetX- x);
+		gall[0].style.left = x + "px";
+	}
+	setInterval(smoothMove,10); 
+	let mn = document.getElementsByClassName("mn");
+	let img_n = mn.length;
 	let img_w = document.getElementsByClassName("mas")[0].clientWidth;
-	let img_n = mn.length; //요소.length : 요소의 갯수
-	let idx = 0;
-	alert(img_w);
-	//clientWidth : 테두리를 제외한 가로길이
-	//offsetWidth : 테두리를 포함한 가로길이
-
-
-	for (i=0; i<img_n; i++) {
-
-			mn[i].addEventListener("click",function(){ 
-			idx = this.getAttribute("data-idx"); //요소.getAttribute("속성명");
-			// alert(idx);
-
+	let idx=0;
+	for ( i=0; i< img_n ; i++ ) {
+		mn[i].style.color=off_color;//모든 메뉴글자색 비활성화
+		mn[i].style.background=off_bg;//모든 메뉴배경색 비활성화
+		mn[i].addEventListener("click",function(){ 
+			idx = this.getAttribute("data-idx");
 			targetX=-img_w*idx; 
-			last_mn.style.color="#777"; //현재 불켜진 메뉴를 표시하기 위한 변수
-			this.style.color="orange"; //클릭하고 있는 이 메뉴 불켜기
-			last_mn = this;	//이제 이 메뉴가 불켜졌다는걸 표시
+			last_mn.style.color=off_color;
+			last_mn.style.background=off_bg;
+			this.style.color=on_color;
+			this.style.background=on_bg;
+			last_mn = this;	
 		});
 	}
-
-	/*
-	
-	mn[0].addEventListener("click",function(){ 
-		targetX=-img_w*0; 
-		last_mn.style.color="#777"; //현재 불켜진 메뉴를 표시하기 위한 변수
-		this.style.color="orange"; //클릭하고 있는 이 메뉴 불켜기
-		last_mn = this;	//이제 이 메뉴가 불켜졌다는걸 표시
-	});
-
-	mn[1].addEventListener("click",function(){ 
-		targetX=-img_w; 
-		last_mn.style.color="#777";
-		this.style.color="orange";
-		last_mn = this;	
-	});
-
-	mn[2].addEventListener("click",function(){ 
-		targetX=-img_w*2; 
-		last_mn.style.color="#777";
-		this.style.color="orange";
-		last_mn = this;	
-	});
-
-	mn[3].addEventListener("click",function(){ 
-		targetX=-img_w*3; 
-		last_mn.style.color="#777";
-		this.style.color="orange";
-		last_mn = this;	
-	});
-
-	mn[4].addEventListener("click",function(){ 
-		targetX=-img_w*4; 
-		last_mn.style.color="#777";
-		this.style.color="orange";
-		last_mn = this;	
-	});
-	*/ 
+	mn[0].style.color=on_color; 
+	mn[0].style.background=on_bg; 
+	let last_mn = mn[0];
 
 </script>
 
