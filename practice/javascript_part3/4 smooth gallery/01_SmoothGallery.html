@@ -53,9 +53,9 @@ a { text-decoration:none; color:#777; }
     </div>
 
     <ul class="nav">
-      <li><a href="#">01</a></li>
-      <li><a href="#">02</a></li>
-      <li><a href="#">03</a></li>
+      <li><a href="#" onclick="targetX=0;">01</a></li>
+      <li><a href="#" onclick="targetX=-600;">02</a></li>
+      <li><a href="#" onclick="targetX=-600*2;">03</a></li>
     </ul>
   
 </div>
@@ -66,13 +66,13 @@ a { text-decoration:none; color:#777; }
 	let gall = document.getElementsByClassName("gall");
 
 
-	//let x = 0; //초기값
-	//let targetX = 0; //초기 목적지값
+	let x = 0; //초기값
+	let targetX = 0; //초기 목적지값
 
 	function smoothMove(){
 		
-		//x = x + 0.1*(targetX- x); //부드러운 움직임 공식
-		//gall[0].style.left = x + "px";
+		x = x + 0.1*(targetX- x); //부드러운 움직임 공식
+		gall[0].style.left = x + "px";
 		
 	}
 
