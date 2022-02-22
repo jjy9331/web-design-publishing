@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Gallery</title>
+
+<style>
+ul { list-style:none; margin:0; padding:0; }
+body { text-align:center; color:#777; }
+a { text-decoration:none; color:#777; }
+
+
+/* 이미지갤러리 */
+#sm_gallery { position:relative; width:900px; margin:0 auto; border:5px dashed skyblue; }
+#sm_gallery .mas { 
+	overflow:hidden;
+	position:relative; 
+	width:600px; height:327px; 
+	margin:30px auto; 
+	border:5px dashed orange; 
+}
+#sm_gallery .gall { 
+	position:absolute; left:0; top:0px; 
+	width:999999px;
+}
+#sm_gallery .gall ul { float:left; }
+#sm_gallery .gall ul li { float:left; }
+
+#sm_gallery .nav { 
+	overflow:hidden;  
+	margin:0 auto; 
+	width:600px; 
+	font-size:20px;
+	border:5px dashed #ddd; 
+}
+#sm_gallery .nav li { float:left; margin-right:30px; }
+
+#sm_gallery .prev { position:absolute; left:10px; top:45%; }
+#sm_gallery .next { position:absolute; right:10px; top:45%; }
+
+</style>
+</head>
+<body>
+
+<h1>Smooth Gallery</h1>
+<p>design is what you make of it</p>
+
+
+<div id="sm_gallery">
+  
+    <div class="mas">
+		<div class="gall">
+			<ul id="set">
+			  <li><a href="#"><img src="images/img1.jpg" alt="이미지1" ></a></li>
+			  <li><a href="#"><img src="images/img2.jpg" alt="이미지2" ></a></li>
+			  <li><a href="#"><img src="images/img3.jpg" alt="이미지3" ></a></li>
+			</ul>
+		</div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="#" class="mn" data-idx="0">01</a></li>
+      <li><a href="#" class="mn" data-idx="1">02</a></li>
+      <li><a href="#" class="mn" data-idx="2">03</a></li>
+    </ul>
+
+	<a href="#" class="prev">prev</a>
+    <a href="#" class="next">next</a>
+ 
+</div>
+
+
+<script>
+
+	let gall = document.getElementsByClassName("gall");
+
+	let temp = document.getElementById("set").cloneNode(true);
+	gall[0].appendChild(temp);
+
+
+	let x = 0; //초기값
+	let targetX = 0; //초기 목적지값
+
+	function smoothMove(){		
+		x = x + 0.1*(targetX- x); //부드러운 움직임 공식
+		gall[0].style.left = x + "px";		
+	}
+	setInterval("smoothMove()",10); 
+
+
+
+	let mn = document.getElementsByClassName("mn");
+	
+	mn[0].style.color="orange";
+	let last_mn = mn[0];
+	let idx = 0;
+
+	for(i=0; i<3; i++){
+		mn[i].addEventListener("click",function(){ 
+			idx = this.getAttribute("data-idx");
+			targetX=-600*idx; 
+			last_mn.style.color="#777";
+			this.style.color="orange";
+			last_mn = this;	
+			//count=-5;
+		});
+	}
+
+
+
+	////////////////// 이전 다음 ////////////////////////
+
+	let prev = document.getElementsByClassName("prev");
+	let next = document.getElementsByClassName("next");
+
+
+	prev[0].addEventListener("click",prevGall);
+	function prevGall(){ 
+
+		targetX = targetX +600;
+		if ( targetX > 0) { //끊어지는 위치가 목적지가 되면
+			x= -600*3; // 끊어지지않는 위치로 보내고
+			targetX= -600*2; //한단계 오른쪽 위치를 목적지로 설정
+		}
+
+		idx--;
+		if (idx <0) { idx=2; };
+
+		last_mn.style.color="#777";
+		mn[idx].style.color="orange";
+		last_mn = mn[idx];
+		//count= -5;
+	}
+
+
+	next[0].addEventListener("click",nextGall);
+	function nextGall(){ 
+
+		targetX = targetX -600;
+		if ( targetX < -600*5) { //끊어지는 위치가 목적지가 되면
+			x= -600*2; // 끊어지지않는 위치로 보내고
+			targetX= -600*3; //한단계 왼쪽 위치를 목적지로 설정
+		}
+
+		idx++;
+		if (idx >2) { idx=0; };
+
+		last_mn.style.color="#777";
+		mn[idx].style.color="orange";
+		last_mn = mn[idx];	
+		//count= -5;
+	}
+
+	////////////////// 자동 ////////////////////////
+
+	let count=0;
+
+	function timer(){
+		//count++;
+		//document.getElementsByTagName("h1")[0].innerText=count;
+
+		//if ( count== 3 ) {
+
+			//nextGall();
+			//count=0;
+
+		//}
+
+	}
+	setInterval("timer()",1000); 
+
+
+
+</script>
+
+</body>
+</html>
+
+
