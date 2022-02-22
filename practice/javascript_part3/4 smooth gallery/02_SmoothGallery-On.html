@@ -11,17 +11,17 @@ a { text-decoration:none; color:#777; }
 
 
 /* 이미지갤러리 */
-#sm_gallery { position:relative; width:900px; margin:0 auto; border:5px dashed skyblue; }
+#sm_gallery { position:relative; width:1200px; margin:0 auto; border:5px dashed skyblue; }
 #sm_gallery .mas { 
 	overflow:hidden; 
 	position:relative; 
-	width:600px; height:327px; 
+	width:1032px; height:628px;  /* 하나의 이미지 가로 세로 길이 */
 	margin:30px auto; 
 	border:5px dashed orange; 
 }
 #sm_gallery .gall { 
 	position:absolute; left:0; top:0px; 
-	width:1800px; height:327px; 
+	width:999999px; 
 }
 #sm_gallery .gall li { float:left; }
 
@@ -46,16 +46,20 @@ a { text-decoration:none; color:#777; }
   
     <div class="mas">
         <ul class="gall">
-          <li><a href="#"><img src="images/img1.jpg" alt="이미지1" ></a></li>
-          <li><a href="#"><img src="images/img2.jpg" alt="이미지2" ></a></li>
-          <li><a href="#"><img src="images/img3.jpg" alt="이미지3" ></a></li>
+          <li><a href="#"><img src="images/photo1.jpg" alt="이미지1"></a></li>
+          <li><a href="#"><img src="images/photo2.jpg" alt="이미지2"></a></li>
+          <li><a href="#"><img src="images/photo3.jpg" alt="이미지3"></a></li>
+		  <li><a href="#"><img src="images/photo4.jpg" alt="이미지4"></a></li>
+		  <li><a href="#"><img src="images/photo5.jpg" alt="이미지5"></a></li>
         </ul>
     </div>
 
     <ul class="nav">
-      <li><a href="#" class="mn">01</a></li>
-      <li><a href="#" class="mn">02</a></li>
-      <li><a href="#" class="mn">03</a></li>
+      <li><a href="#" class="mn" data-idx="0" >01</a></li>
+      <li><a href="#" class="mn" data-idx="1" >02</a></li>
+      <li><a href="#" class="mn" data-idx="2" >03</a></li>
+	  <li><a href="#" class="mn" data-idx="3" >04</a></li>
+	  <li><a href="#" class="mn" data-idx="4" >05</a></li>
     </ul>
   
 </div>
@@ -81,30 +85,67 @@ a { text-decoration:none; color:#777; }
 
 	let mn = document.getElementsByClassName("mn");
 	
-	//mn[0].style.color="orange";
-	//let last_mn = mn[0];
+	mn[0].style.color="orange";
+	let last_mn = mn[0];
+
+	let img_w = document.getElementsByClassName("mas")[0].clientWidth;
+	let img_n = mn.length; //요소.length : 요소의 갯수
+	let idx = 0;
+	alert(img_w);
+	//clientWidth : 테두리를 제외한 가로길이
+	//offsetWidth : 테두리를 포함한 가로길이
 
 
+	for (i=0; i<img_n; i++) {
+
+			mn[i].addEventListener("click",function(){ 
+			idx = this.getAttribute("data-idx"); //요소.getAttribute("속성명");
+			// alert(idx);
+
+			targetX=-img_w*idx; 
+			last_mn.style.color="#777"; //현재 불켜진 메뉴를 표시하기 위한 변수
+			this.style.color="orange"; //클릭하고 있는 이 메뉴 불켜기
+			last_mn = this;	//이제 이 메뉴가 불켜졌다는걸 표시
+		});
+	}
+
+	/*
+	
 	mn[0].addEventListener("click",function(){ 
-		targetX=0; 
-		//last_mn.style.color="#777";
-		//this.style.color="orange";
-		//last_mn = this;	
+		targetX=-img_w*0; 
+		last_mn.style.color="#777"; //현재 불켜진 메뉴를 표시하기 위한 변수
+		this.style.color="orange"; //클릭하고 있는 이 메뉴 불켜기
+		last_mn = this;	//이제 이 메뉴가 불켜졌다는걸 표시
 	});
 
 	mn[1].addEventListener("click",function(){ 
-		targetX=-600; 
-		//last_mn.style.color="#777";
-		//this.style.color="orange";
-		//last_mn = this;	
+		targetX=-img_w; 
+		last_mn.style.color="#777";
+		this.style.color="orange";
+		last_mn = this;	
 	});
 
 	mn[2].addEventListener("click",function(){ 
-		targetX=-600*2; 
-		//last_mn.style.color="#777";
-		//this.style.color="orange";
-		//last_mn = this;	
+		targetX=-img_w*2; 
+		last_mn.style.color="#777";
+		this.style.color="orange";
+		last_mn = this;	
 	});
+
+	mn[3].addEventListener("click",function(){ 
+		targetX=-img_w*3; 
+		last_mn.style.color="#777";
+		this.style.color="orange";
+		last_mn = this;	
+	});
+
+	mn[4].addEventListener("click",function(){ 
+		targetX=-img_w*4; 
+		last_mn.style.color="#777";
+		this.style.color="orange";
+		last_mn = this;	
+	});
+	*/ 
 
 </script>
 
