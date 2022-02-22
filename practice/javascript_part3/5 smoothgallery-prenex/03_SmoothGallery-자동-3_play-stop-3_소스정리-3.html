@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Gallery</title>
+
+<style>
+ul { list-style:none; margin:0; padding:0; }
+body { text-align:center; color:#777; }
+a { text-decoration:none; color:#777; }
+
+
+/* 이미지갤러리 */
+#sm_gallery { position:relative; width:900px; margin:0 auto; border:5px dashed skyblue; text-align:center; }
+#sm_gallery .mas { 
+	overflow:hidden;
+	position:relative; 
+	width:600px; height:327px; 
+	margin:30px auto; 
+	border:5px dashed orange; 
+}
+#sm_gallery .gall { 
+	position:absolute; left:0; top:0px; 
+	width:999999px;
+}
+#sm_gallery .gall ul { float:left; }
+#sm_gallery .gall ul li { float:left; }
+
+#sm_gallery .nav { 
+	overflow:hidden;  
+	margin:0 auto; 
+	width:600px; 
+	font-size:20px;
+	border:5px dashed #ddd; 
+}
+#sm_gallery .nav li { float:left; margin-right:30px; }
+
+#sm_gallery .prev { position:absolute; left:10px; top:45%; }
+#sm_gallery .next { position:absolute; right:10px; top:45%; }
+
+</style>
+</head>
+<body>
+
+<h1>Smooth Gallery</h1>
+<p>design is what you make of it</p>
+
+
+<div id="sm_gallery">
+  
+    <div class="mas">
+		<div class="gall">
+			<ul id="set">
+			  <li><a href="#"><img src="images/img1.jpg" alt="이미지1" ></a></li>
+			  <li><a href="#"><img src="images/img2.jpg" alt="이미지2" ></a></li>
+			  <li><a href="#"><img src="images/img3.jpg" alt="이미지3" ></a></li>
+			  <li><a href="#"><img src="images/img4.jpg" alt="이미지4" ></a></li>
+			  <li><a href="#"><img src="images/img5.jpg" alt="이미지5" ></a></li>
+			</ul>
+		</div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="#" class="mn" data-idx="0">01</a></li>
+      <li><a href="#" class="mn" data-idx="1">02</a></li>
+      <li><a href="#" class="mn" data-idx="2">03</a></li>
+      <li><a href="#" class="mn" data-idx="3">04</a></li>
+      <li><a href="#" class="mn" data-idx="4">05</a></li>
+    </ul>
+
+	<a href="#" class="prev">prev</a>
+    <a href="#" class="next">next</a>
+
+	<div class="control">
+		<a href="#" class="play">play</a>
+		<a href="#" class="stop">stop</a>
+	</div>
+ 
+</div>
+
+
+<script>
+
+	let gall = document.getElementsByClassName("gall");
+
+	let temp = document.getElementById("set").cloneNode(true);
+	gall[0].appendChild(temp);
+
+
+	let auto_start = true; //자동기능 끄려면 false
+	let gap = 2; //슬라이드 간격
+
+	let on_color="yellow"; //메뉴글자 활성화색
+	let on_bg="hotpink"; //메뉴배경 활성화색
+
+	let off_color="#ccc";//메뉴글자 비활성화색
+	let off_bg="#333";//메뉴배경 비활성화색
+
+
+
+	let x = 0; 
+	let targetX = 0; 
+
+	function smoothMove(){		
+		x = x + 0.1*(targetX- x); 
+		gall[0].style.left = x + "px";		
+	}
+	setInterval("smoothMove()",10); 
+
+
+
+	let mn = document.getElementsByClassName("mn");
+
+	
+
+	let img_n = mn.length;
+
+	for(i=0; i<img_n; i++){
+		mn[i].style.color=off_color;
+		mn[i].style.background=off_bg;
+	}
+	mn[0].style.color=on_color;
+	mn[0].style.background=on_bg;
+
+	let last_mn = mn[0];
+	let idx = 0;
+
+
+	const mas = document.getElementsByClassName("mas");
+	let img_w = mas[0].clientWidth;
+
+		
+
+
+	for(i=0; i<img_n; i++){
+		mn[i].addEventListener("click",function(){ 
+			idx = this.getAttribute("data-idx");
+			targetX=-img_w*idx; 
+
+			last_mn.style.color=off_color; 
+			last_mn.style.background=off_bg;
+
+			this.style.color=on_color;
+			this.style.background=on_bg; 
+
+			last_mn = this;	
+			count=-5;
+		});
+	}
+
+
+	let prev = document.getElementsByClassName("prev");
+	let next = document.getElementsByClassName("next");
+
+
+	prev[0].addEventListener("click",prevGall);
+	function prevGall(){ 
+
+		targetX = targetX +img_w;
+		if ( targetX > 0) { 
+			x= -img_w*img_n; 
+			targetX= -img_w*(img_n-1); 
+		}
+
+		idx--;
+		if (idx <0) { idx=(img_n-1); };
+
+		last_mn.style.color=off_color;
+		last_mn.style.background=off_bg;
+
+		mn[idx].style.color=on_color;
+		mn[idx].style.background=on_bg; 
+
+		last_mn = mn[idx];
+		count= -5;
+	}
+
+
+	next[0].addEventListener("click",nextGall);
+	function nextGall(){ 
+
+		targetX = targetX -img_w;
+		if ( targetX < -img_w*(img_n*2-1)) { 
+			x= -img_w*(img_n-1); 
+			targetX= -img_w*img_n; 
+		}
+
+		idx++;
+		if (idx >(img_n-1)) { idx=0; };
+
+		last_mn.style.color=off_color; 
+		last_mn.style.background=off_bg;
+
+		mn[idx].style.color=on_color; 
+		mn[idx].style.background=on_bg; 
+
+		last_mn = mn[idx];	
+		count= -5;
+	}
+
+	
+
+	let count=0;
+	let auto=true;
+
+	function timer(){
+
+		if (auto){
+
+			count++;
+			document.getElementsByTagName("h1")[0].innerText=count;
+
+			if ( count == gap ) {
+				nextGall();
+				count=0;
+			}
+
+		}
+
+	}
+
+	if ( auto_start ) {
+		setInterval(timer,1000);
+	}
+
+	const play = document.getElementsByClassName("play");
+	const stop = document.getElementsByClassName("stop");
+
+	play[0].style.display="none";
+
+
+	stop[0].addEventListener("click",()=>{ 
+		auto=false; 
+
+		stop[0].style.display="none";
+		play[0].style.display="inline";
+	});
+
+
+	play[0].addEventListener("click",()=>{ 
+		auto=true; 
+
+		play[0].style.display="none";
+		stop[0].style.display="inline";
+	});
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
