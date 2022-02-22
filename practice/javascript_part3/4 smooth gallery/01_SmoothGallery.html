@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Gallery</title>
+
+<style>
+ul { list-style:none; margin:0; padding:0; }
+body { text-align:center; color:#777; }
+a { text-decoration:none; color:#777; }
+
+
+/* 이미지갤러리 */
+#sm_gallery { position:relative; width:900px; margin:0 auto; border:5px dashed skyblue; }
+#sm_gallery .mas { 
+	overflow:hidden; 
+	position:relative; 
+	width:600px; height:327px; 
+	margin:30px auto; 
+	border:5px dashed orange; 
+}
+#sm_gallery .gall { 
+	position:absolute; left:0; top:0px; 
+	width:1800px; height:327px; 
+}
+#sm_gallery .gall li { float:left; }
+
+#sm_gallery .nav { 
+	overflow:hidden;  
+	margin:0 auto; 
+	width:600px; 
+	font-size:20px;
+	border:5px dashed #ddd; 
+}
+#sm_gallery .nav li { float:left; margin-right:30px; }
+
+</style>
+</head>
+<body>
+
+<h1>Smooth Gallery</h1>
+<p>design is what you make of it</p>
+
+
+<div id="sm_gallery">
+  
+    <div class="mas">
+        <ul class="gall">
+          <li><a href="#"><img src="images/img1.jpg" alt="이미지1" ></a></li>
+          <li><a href="#"><img src="images/img2.jpg" alt="이미지2" ></a></li>
+          <li><a href="#"><img src="images/img3.jpg" alt="이미지3" ></a></li>
+        </ul>
+    </div>
+
+    <ul class="nav">
+      <li><a href="#">01</a></li>
+      <li><a href="#">02</a></li>
+      <li><a href="#">03</a></li>
+    </ul>
+  
+</div>
+
+
+<script>
+
+	let gall = document.getElementsByClassName("gall");
+
+
+	//let x = 0; //초기값
+	//let targetX = 0; //초기 목적지값
+
+	function smoothMove(){
+		
+		//x = x + 0.1*(targetX- x); //부드러운 움직임 공식
+		//gall[0].style.left = x + "px";
+		
+	}
+
+	setInterval("smoothMove()",10); 
+
+</script>
+
+</body>
+</html>
+
+
