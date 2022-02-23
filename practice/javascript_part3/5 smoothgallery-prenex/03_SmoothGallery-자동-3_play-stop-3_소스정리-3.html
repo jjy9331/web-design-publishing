@@ -27,13 +27,15 @@ a { text-decoration:none; color:#777; }
 #sm_gallery1 .gall ul li { float:left; }
 
 #sm_gallery1 .nav { 
-	overflow:hidden;  
+	display: flex;
+	justify-content: center;
 	margin:0 auto; 
 	width:600px; 
 	font-size:20px;
 	border:5px dashed #ddd; 
 }
-#sm_gallery1 .nav li { float:left; margin-right:30px; }
+#sm_gallery1 .nav li { margin-right:15px; margin-left:15px;}
+#sm_gallery1 .nav a { display: inline-block; border-radius: 50%; width: 20px; height: 20px;}
 
 #sm_gallery1 .prev { position:absolute; left:10px; top:45%; }
 #sm_gallery1 .next { position:absolute; right:10px; top:45%; }
@@ -43,7 +45,7 @@ a { text-decoration:none; color:#777; }
 /* 이미지갤러리2 */
 #sm_gallery2 { 
 	position:relative; 
-	width:1200px; 
+	width:1032px; 
 	margin:0 auto; 
 	border:5px dashed pink; 
 	text-align:center; 
@@ -72,10 +74,21 @@ a { text-decoration:none; color:#777; }
 	border:5px dashed #ddd; 
 }
 #sm_gallery2 .nav li { float:left; margin-right:30px; }
+#sm_gallery2 .nav a { display: inline-block; width: 40px; height: 20px;}
 
-#sm_gallery2 .prev { position:absolute; left:10px; top:45%; }
-#sm_gallery2 .next { position:absolute; right:10px; top:45%; }
 
+#sm_gallery2 .prev { position:absolute; left:10px; top:45%; background-color: white;}
+#sm_gallery2 .next { position:absolute; right:10px; top:45%; background-color: white; }
+
+#sm_gallery2 .prev:hover {
+	background: red;
+	color: white;
+}
+
+#sm_gallery2 .next:hover {
+	background: red;
+	color: white;
+}
 </style>
 </head>
 <body>
@@ -99,11 +112,11 @@ a { text-decoration:none; color:#777; }
     </div>
 
     <ul class="nav">
-      <li><a href="#" class="mn" data-idx="0">01</a></li>
-      <li><a href="#" class="mn" data-idx="1">02</a></li>
-      <li><a href="#" class="mn" data-idx="2">03</a></li>
-      <li><a href="#" class="mn" data-idx="3">04</a></li>
-      <li><a href="#" class="mn" data-idx="4">05</a></li>
+      <li><a href="#" class="mn" data-idx="0"></a></li>
+      <li><a href="#" class="mn" data-idx="1"></a></li>
+      <li><a href="#" class="mn" data-idx="2"></a></li>
+      <li><a href="#" class="mn" data-idx="3"></a></li>
+      <li><a href="#" class="mn" data-idx="4"></a></li>
     </ul>
 
 	<a href="#" class="prev">prev</a>
