@@ -10,33 +10,71 @@ body { text-align:center; color:#777; }
 a { text-decoration:none; color:#777; }
 
 
-/* 이미지갤러리 */
-#sm_gallery { position:relative; width:900px; margin:0 auto; border:5px dashed skyblue; text-align:center; }
-#sm_gallery .mas { 
+/* 이미지갤러리1 */
+#sm_gallery1 { position:relative; width:900px; margin:0 auto; border:5px dashed skyblue; text-align:center; }
+#sm_gallery1 .mas { 
 	overflow:hidden;
 	position:relative; 
 	width:600px; height:327px; 
 	margin:30px auto; 
 	border:5px dashed orange; 
 }
-#sm_gallery .gall { 
+#sm_gallery1 .gall { 
 	position:absolute; left:0; top:0px; 
 	width:999999px;
 }
-#sm_gallery .gall ul { float:left; }
-#sm_gallery .gall ul li { float:left; }
+#sm_gallery1 .gall ul { float:left; }
+#sm_gallery1 .gall ul li { float:left; }
 
-#sm_gallery .nav { 
+#sm_gallery1 .nav { 
 	overflow:hidden;  
 	margin:0 auto; 
 	width:600px; 
 	font-size:20px;
 	border:5px dashed #ddd; 
 }
-#sm_gallery .nav li { float:left; margin-right:30px; }
+#sm_gallery1 .nav li { float:left; margin-right:30px; }
 
-#sm_gallery .prev { position:absolute; left:10px; top:45%; }
-#sm_gallery .next { position:absolute; right:10px; top:45%; }
+#sm_gallery1 .prev { position:absolute; left:10px; top:45%; }
+#sm_gallery1 .next { position:absolute; right:10px; top:45%; }
+
+
+
+/* 이미지갤러리2 */
+#sm_gallery2 { 
+	position:relative; 
+	width:1200px; 
+	margin:0 auto; 
+	border:5px dashed pink; 
+	text-align:center; 
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+#sm_gallery2 .mas { 
+	overflow:hidden;
+	position:relative; 
+	width:1032px; height:630px; 
+	margin:30px auto; 
+	border:5px dashed orange; 
+}
+#sm_gallery2 .gall { 
+	position:absolute; left:0; top:0px; 
+	width:999999px;
+}
+#sm_gallery2 .gall ul { float:left; }
+#sm_gallery2 .gall ul li { float:left; }
+
+#sm_gallery2 .nav { 
+	overflow:hidden;  
+	margin:0 auto; 
+	width:600px; 
+	font-size:20px;
+	border:5px dashed #ddd; 
+}
+#sm_gallery2 .nav li { float:left; margin-right:30px; }
+
+#sm_gallery2 .prev { position:absolute; left:10px; top:45%; }
+#sm_gallery2 .next { position:absolute; right:10px; top:45%; }
 
 </style>
 </head>
@@ -46,7 +84,7 @@ a { text-decoration:none; color:#777; }
 <p>design is what you make of it</p>
 
 
-<div id="sm_gallery">
+<div id="sm_gallery1">
   
     <div class="mas">
 		<div class="gall">
@@ -79,16 +117,46 @@ a { text-decoration:none; color:#777; }
 </div>
 
 
+<div id="sm_gallery2">
+  
+    <div class="mas">
+		<div class="gall">
+			<ul>
+			  <li><a href="#"><img src="images/photo1.jpg" alt="이미지1" ></a></li>
+			  <li><a href="#"><img src="images/photo2.jpg" alt="이미지2" ></a></li>
+			  <li><a href="#"><img src="images/photo3.jpg" alt="이미지3" ></a></li>
+			</ul>
+		</div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="#" class="mn" data-idx="0">01</a></li>
+      <li><a href="#" class="mn" data-idx="1">02</a></li>
+      <li><a href="#" class="mn" data-idx="2">03</a></li>
+    </ul>
+
+	<a href="#" class="prev">prev</a>
+    <a href="#" class="next">next</a>
+
+	<div class="control">
+		<a href="#" class="play">play</a>
+		<a href="#" class="stop">stop</a>
+	</div>
+ 
+</div>
+
 <script>
 
-	let gallery = "#sm_gallery"; //갤러리 영역 아이디
+window.addEventListener("load",function(){
+
+	let gallery = "#sm_gallery1"; //갤러리 영역 아이디
 	let auto_start = true; //자동기능 끄려면 false
 	let gap = 2; //슬라이드 간격
 	let on_color="yellow"; //메뉴글자 활성화색
 	let on_bg="hotpink"; //메뉴배경 활성화색
 	let off_color="#ccc";//메뉴글자 비활성화색
 	let off_bg="#333";//메뉴배경 비활성화색
-
+	
 	const gall = document.querySelector(gallery+" .gall");
 	const temp = document.querySelector(gallery+" .gall ul").cloneNode(true);
 	gall.appendChild(temp);
@@ -106,7 +174,7 @@ a { text-decoration:none; color:#777; }
 		x = x + 0.1*(targetX- x); 
 		gall.style.left = x + "px";		
 	}
-	setInterval("smoothMove()",10); 
+	setInterval(smoothMove,10); //함수로 감쌀 때, "smoothMove()"로하면 작동이 안됨.
 	for(i=0; i<img_n; i++){
 		mn[i].style.color=off_color;
 		mn[i].style.background=off_bg;
@@ -200,6 +268,133 @@ a { text-decoration:none; color:#777; }
 		play.style.display="none";
 		stop.style.display="inline";
 	});
+
+});
+
+
+window.addEventListener("load",function(){
+
+let gallery = "#sm_gallery2"; //갤러리 영역 아이디
+let auto_start = true; //자동기능 끄려면 false
+let gap = 3; //슬라이드 간격
+let on_color="yellow"; //메뉴글자 활성화색
+let on_bg="#0cc"; //메뉴배경 활성화색
+let off_color="#eee";//메뉴글자 비활성화색
+let off_bg="#ccc";//메뉴배경 비활성화색
+
+const gall = document.querySelector(gallery+" .gall");
+const temp = document.querySelector(gallery+" .gall ul").cloneNode(true);
+gall.appendChild(temp);
+const mn = document.querySelectorAll(gallery+" .mn");
+const mas = document.querySelector(gallery+" .mas");
+const prev = document.querySelector(gallery+" .prev");
+const next = document.querySelector(gallery+" .next");
+const play = document.querySelector(gallery+" .play");
+const stop = document.querySelector(gallery+" .stop");	
+let img_n = mn.length;
+let img_w = mas.clientWidth;	
+let x = 0; 
+let targetX = 0; 
+function smoothMove(){		
+	x = x + 0.1*(targetX- x); 
+	gall.style.left = x + "px";		
+}
+setInterval(smoothMove,10); //함수로 감쌀 때, "smoothMove()"로하면 작동이 안됨.
+for(i=0; i<img_n; i++){
+	mn[i].style.color=off_color;
+	mn[i].style.background=off_bg;
+}
+mn[0].style.color=on_color;
+mn[0].style.background=on_bg;
+let last_mn = mn[0];
+let idx = 0;
+for(i=0; i<img_n; i++){
+	mn[i].addEventListener("click",function(e){ 
+		e.preventDefault();
+		idx = this.getAttribute("data-idx");
+		targetX=-img_w*idx; 
+		last_mn.style.color=off_color; 
+		last_mn.style.background=off_bg;
+		this.style.color=on_color;
+		this.style.background=on_bg; 
+		last_mn = this;	
+		count=-5;
+	});
+}
+prev.addEventListener("click",prevGall);
+function prevGall(e){ 
+	e.preventDefault();
+	targetX = targetX +img_w;
+	if ( targetX > 0) { 
+		x= -img_w*img_n; 
+		targetX= -img_w*(img_n-1); 
+	}
+	idx--;
+	if (idx <0) { idx=(img_n-1); };
+	last_mn.style.color=off_color;
+	last_mn.style.background=off_bg;
+	mn[idx].style.color=on_color;
+	mn[idx].style.background=on_bg; 
+	last_mn = mn[idx];
+	count= -5;
+}
+next.addEventListener("click",nextGall);
+function nextGall(e){ 
+	e.preventDefault();
+	targetX = targetX -img_w;
+	if ( targetX < -img_w*(img_n*2-1)) { 
+		x= -img_w*(img_n-1); 
+		targetX= -img_w*img_n; 
+	}
+	idx++;
+	if (idx >(img_n-1)) { idx=0; };
+	last_mn.style.color=off_color; 
+	last_mn.style.background=off_bg;
+	mn[idx].style.color=on_color; 
+	mn[idx].style.background=on_bg; 
+	last_mn = mn[idx];	
+	count= -5;
+}
+let count=0;
+let auto=true;
+function timer(){
+	if (auto){
+		count++;
+		if ( count == gap ) {
+			targetX = targetX -img_w;
+			if ( targetX < -img_w*(img_n*2-1)) { 
+				x= -img_w*(img_n-1); 
+				targetX= -img_w*img_n; 
+			}
+			idx++;
+			if (idx >(img_n-1)) { idx=0; };
+			last_mn.style.color=off_color; 
+			last_mn.style.background=off_bg;
+			mn[idx].style.color=on_color; 
+			mn[idx].style.background=on_bg; 
+			last_mn = mn[idx];
+			count=0;
+		}
+	}
+}
+if ( auto_start ) {
+	setInterval(timer,1000);
+}
+play.style.display="none";
+stop.addEventListener("click",(e)=>{ 
+	e.preventDefault();
+	auto=false; 
+	stop.style.display="none";
+	play.style.display="inline";
+});
+play.addEventListener("click",(e)=>{ 
+	e.preventDefault();
+	auto=true; 
+	play.style.display="none";
+	stop.style.display="inline";
+});
+
+});
 
 
 </script>
