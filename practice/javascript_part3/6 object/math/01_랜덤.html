@@ -3,19 +3,26 @@
 <head>
 <meta charset="utf-8">
 <title>랜덤</title>
-<script>
-
-
-	Math.random()*3; //0이상 3미만의 숫자 중 랜덤
-	   
-
-
-</script>
+<style>
+body { font-size:777px;}
+</style>
 </head>
 
 <body>
-    
+
 </body>
+<script>
+
+
+	let a =  Math.random()*3; //0이상 3미만의 숫자 중 랜덤
+	let b =  Math.floor(a);
+
+	// alert(b);
+
+	document.querySelector("body").innerText = b;
+
+
+</script>
 </html>
 
 
