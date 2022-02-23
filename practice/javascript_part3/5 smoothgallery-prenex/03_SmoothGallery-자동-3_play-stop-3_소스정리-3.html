@@ -50,7 +50,7 @@ a { text-decoration:none; color:#777; }
   
     <div class="mas">
 		<div class="gall">
-			<ul id="set">
+			<ul>
 			  <li><a href="#"><img src="images/img1.jpg" alt="이미지1" ></a></li>
 			  <li><a href="#"><img src="images/img2.jpg" alt="이미지2" ></a></li>
 			  <li><a href="#"><img src="images/img3.jpg" alt="이미지3" ></a></li>
@@ -81,170 +81,125 @@ a { text-decoration:none; color:#777; }
 
 <script>
 
-	let gall = document.getElementsByClassName("gall");
-
-	let temp = document.getElementById("set").cloneNode(true);
-	gall[0].appendChild(temp);
-
-
+	let gallery = "#sm_gallery"; //갤러리 영역 아이디
 	let auto_start = true; //자동기능 끄려면 false
 	let gap = 2; //슬라이드 간격
-
 	let on_color="yellow"; //메뉴글자 활성화색
 	let on_bg="hotpink"; //메뉴배경 활성화색
-
 	let off_color="#ccc";//메뉴글자 비활성화색
 	let off_bg="#333";//메뉴배경 비활성화색
 
-
-
+	const gall = document.querySelector(gallery+" .gall");
+	const temp = document.querySelector(gallery+" .gall ul").cloneNode(true);
+	gall.appendChild(temp);
+	const mn = document.querySelectorAll(gallery+" .mn");
+	const mas = document.querySelector(gallery+" .mas");
+	const prev = document.querySelector(gallery+" .prev");
+	const next = document.querySelector(gallery+" .next");
+	const play = document.querySelector(gallery+" .play");
+	const stop = document.querySelector(gallery+" .stop");	
+	let img_n = mn.length;
+	let img_w = mas.clientWidth;	
 	let x = 0; 
 	let targetX = 0; 
-
 	function smoothMove(){		
 		x = x + 0.1*(targetX- x); 
-		gall[0].style.left = x + "px";		
+		gall.style.left = x + "px";		
 	}
 	setInterval("smoothMove()",10); 
-
-
-
-	let mn = document.getElementsByClassName("mn");
-
-	
-
-	let img_n = mn.length;
-
 	for(i=0; i<img_n; i++){
 		mn[i].style.color=off_color;
 		mn[i].style.background=off_bg;
 	}
 	mn[0].style.color=on_color;
 	mn[0].style.background=on_bg;
-
 	let last_mn = mn[0];
 	let idx = 0;
-
-
-	const mas = document.getElementsByClassName("mas");
-	let img_w = mas[0].clientWidth;
-
-		
-
-
 	for(i=0; i<img_n; i++){
-		mn[i].addEventListener("click",function(){ 
+		mn[i].addEventListener("click",function(e){ 
+			e.preventDefault();
 			idx = this.getAttribute("data-idx");
 			targetX=-img_w*idx; 
-
 			last_mn.style.color=off_color; 
 			last_mn.style.background=off_bg;
-
 			this.style.color=on_color;
 			this.style.background=on_bg; 
-
 			last_mn = this;	
 			count=-5;
 		});
 	}
-
-
-	let prev = document.getElementsByClassName("prev");
-	let next = document.getElementsByClassName("next");
-
-
-	prev[0].addEventListener("click",prevGall);
-	function prevGall(){ 
-
+	prev.addEventListener("click",prevGall);
+	function prevGall(e){ 
+		e.preventDefault();
 		targetX = targetX +img_w;
 		if ( targetX > 0) { 
 			x= -img_w*img_n; 
 			targetX= -img_w*(img_n-1); 
 		}
-
 		idx--;
 		if (idx <0) { idx=(img_n-1); };
-
 		last_mn.style.color=off_color;
 		last_mn.style.background=off_bg;
-
 		mn[idx].style.color=on_color;
 		mn[idx].style.background=on_bg; 
-
 		last_mn = mn[idx];
 		count= -5;
 	}
-
-
-	next[0].addEventListener("click",nextGall);
-	function nextGall(){ 
-
+	next.addEventListener("click",nextGall);
+	function nextGall(e){ 
+		e.preventDefault();
 		targetX = targetX -img_w;
 		if ( targetX < -img_w*(img_n*2-1)) { 
 			x= -img_w*(img_n-1); 
 			targetX= -img_w*img_n; 
 		}
-
 		idx++;
 		if (idx >(img_n-1)) { idx=0; };
-
 		last_mn.style.color=off_color; 
 		last_mn.style.background=off_bg;
-
 		mn[idx].style.color=on_color; 
 		mn[idx].style.background=on_bg; 
-
 		last_mn = mn[idx];	
 		count= -5;
 	}
-
-	
-
 	let count=0;
 	let auto=true;
-
 	function timer(){
-
 		if (auto){
-
 			count++;
-			document.getElementsByTagName("h1")[0].innerText=count;
-
 			if ( count == gap ) {
-				nextGall();
+				targetX = targetX -img_w;
+				if ( targetX < -img_w*(img_n*2-1)) { 
+					x= -img_w*(img_n-1); 
+					targetX= -img_w*img_n; 
+				}
+				idx++;
+				if (idx >(img_n-1)) { idx=0; };
+				last_mn.style.color=off_color; 
+				last_mn.style.background=off_bg;
+				mn[idx].style.color=on_color; 
+				mn[idx].style.background=on_bg; 
+				last_mn = mn[idx];
 				count=0;
 			}
-
 		}
-
 	}
-
 	if ( auto_start ) {
 		setInterval(timer,1000);
 	}
-
-	const play = document.getElementsByClassName("play");
-	const stop = document.getElementsByClassName("stop");
-
-	play[0].style.display="none";
-
-
-	stop[0].addEventListener("click",()=>{ 
+	play.style.display="none";
+	stop.addEventListener("click",(e)=>{ 
+		e.preventDefault();
 		auto=false; 
-
-		stop[0].style.display="none";
-		play[0].style.display="inline";
+		stop.style.display="none";
+		play.style.display="inline";
 	});
-
-
-	play[0].addEventListener("click",()=>{ 
+	play.addEventListener("click",(e)=>{ 
+		e.preventDefault();
 		auto=true; 
-
-		play[0].style.display="none";
-		stop[0].style.display="inline";
+		play.style.display="none";
+		stop.style.display="inline";
 	});
-
-
 
 
 </script>
