@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>time</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700,900" rel="stylesheet">
+<style>
+* {margin:0; padding:0; }
+
+body { 
+	font-family:"Roboto","나눔고딕","맑은 고딕";  
+	/* background: no-repeat center top url(https://images.unsplash.com/photo-1436377734980-0ee004df570b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2010&q=80);
+	background-size:cover; */
+}
+
+#clock { font-size:20px; font-weight:100; /*color:white;*/ }
+#clock div { float:left; margin-right:20px; }
+#clock div span { font-size:60px; }
+#clock div span.ti { font-size:200px; }
+
+#b_box { position:fixed; z-index:-10; width:100%; height:100%; background-color:rgba(0,0,0,1); }
+</style>
+
+<script>
+
+function timeClock(){
+
+	let AA = new Date(); 
+	
+	document.getElementById("a0").innerHTML = AA.getFullYear(); //현재 년
+	document.getElementById("a1").innerHTML = AA.getMonth()+1; //현재 월(0~11) +1
+	document.getElementById("a2").innerHTML = AA.getDate(); //현재 일
+	
+	let yo = AA.getDay();
+	let day;
+	
+	if (yo==1) { day="월" }
+	else if (yo==2) { day="화" }
+	else if (yo==3) { day="수" }
+	else if (yo==4) { day="목" }
+	else if (yo==5) { day="금" }
+	else if (yo==6) { day="토" }
+	else if (yo==0) { day="일" }
+	
+	document.getElementById("a3").innerHTML = day; //현재 요일(0:일요일~6:토요일)
+	
+	let ho = AA.getHours();
+	let hour,hours;
+
+
+	if(ho>12){
+		hour = (ho-12);
+	} else{
+		hour = ho;
+	}	
+
+	//if(ho>=12){
+		//ap = "PM";
+	//} else{
+		//ap = "AM";
+	//}	
+
+	if(hour<10){
+		hours = "0"+hour;
+	} else{
+		hours = hour;
+	}	
+	document.getElementById("a4").innerHTML = hours; //현재 시간
+	//document.getElementById("ap").innerHTML = ap; //오전,오후 표시
+	
+	
+	let mi = AA.getMinutes();
+	let minute;
+	
+	if(mi<10){
+		minute = "0"+mi;
+	} else{
+		minute = mi;
+	}
+		
+	document.getElementById("a5").innerHTML = minute; //현재 분
+	
+	
+	let se = AA.getSeconds();
+	let second;
+	
+	if(se<10){
+		second = "0"+se;
+	} else{
+		second = se;
+	}	
+	
+	document.getElementById("a6").innerHTML = second; //현재 초
+	
+}
+
+setInterval("timeClock()",10);
+
+</script>
+</head>
+<body>
+
+
+<div id="clock">
+
+    <div><span id="a0">0</span>년</div>
+    
+    <div><span id="a1">0</span>월</div>
+    
+    <div><span id="a2">0</span>일</div>
+    
+    <div><span id="a3">0</span>요일</div>
+    
+    <div><span id="ap">오전오후표시</span><span id="a4" class="ti">0</span>시</div>
+    
+    <div><span id="a5" class="ti">0</span>분</div>
+    
+    <div><span id="a6" class="ti">0</span>초</div>
+
+</div>
+
+
+<!-- <div id="b_box"></div> -->
+
+</body>
+</html>
+
+
+
+

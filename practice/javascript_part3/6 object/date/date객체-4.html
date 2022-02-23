@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+* {margin:0; padding:0; }
+
+#clock { font-size:70px;  }
+</style>
+
+<script>
+
+function timeClock(){
+
+	let AA = new Date();
+	
+	document.getElementById("a0").innerHTML = AA.getFullYear(); //현재 년
+	document.getElementById("a1").innerHTML = AA.getMonth()+1; //현재 월(0~11) +1
+	document.getElementById("a2").innerHTML = AA.getDate(); //현재 일
+	
+	let yo = AA.getDay();
+	let day;
+	
+	if (yo==1) { day="월" }
+	else if (yo==2) { day="화" }
+	else if (yo==3) { day="수" }
+	else if (yo==4) { day="목" }
+	else if (yo==5) { day="금" }
+	else if (yo==6) { day="토" }
+	else if (yo==0) { day="일" }
+	
+	document.getElementById("a3").innerHTML = day; //현재 요일(0:일요일~6:토요일)
+	
+	document.getElementById("a4").innerHTML = AA.getHours(); //현재 시간
+	document.getElementById("a5").innerHTML = AA.getMinutes(); //현재 분
+	
+	let se = AA.getSeconds();
+	let second = se;
+	
+	//if(se<10){
+		//second = "0"+se;
+	//} else{
+		//second = se;
+	//}
+	
+	document.getElementById("a6").innerHTML = second; //현재 초
+	
+}
+
+setInterval("timeClock()",10);
+
+</script>
+</head>
+<body>
+
+
+<div id="clock">
+
+    <div><span id="a0">0</span>년</div>
+    
+    <div><span id="a1">0</span>월</div>
+    
+    <div><span id="a2">0</span>일</div>
+    
+    <div><span id="a3">0</span>요일</div>
+    
+    <div><span id="a4">0</span>시</div>
+    
+    <div><span id="a5">0</span>분</div>
+    
+    <div><span id="a6">0</span>초</div>
+
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

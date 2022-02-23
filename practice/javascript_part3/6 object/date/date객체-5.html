@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+* {margin:0; padding:0; }
+
+#clock { font-size:70px; }
+#clock div { float:left; }
+</style>
+
+<script>
+
+function timeClock(){
+
+	let AA = new Date();
+	
+	document.getElementById("a0").innerHTML = AA.getFullYear(); //현재 년
+	document.getElementById("a1").innerHTML = AA.getMonth()+1; //현재 월(0~11) +1
+	document.getElementById("a2").innerHTML = AA.getDate(); //현재 일
+	
+	let yo = AA.getDay();
+	let day;
+	
+	if (yo==1) { day="monday" }
+	else if (yo==2) { day="tuesday" }
+	else if (yo==3) { day="wednesday" }
+	else if (yo==4) { day="thursday" }
+	else if (yo==5) { day="friday" }
+	else if (yo==6) { day="saturday" }
+	else if (yo==0) { day="sunday" }
+	
+	document.getElementById("a3").innerHTML = day; //현재 요일(0:일요일~6:토요일)
+
+
+	let ho = AA.getHours();
+	let hour,hours;
+
+	if(ho>12){
+		hour = ho-12;
+	} else{
+		hour = ho;
+	}	
+
+	if(hour<10){
+		hours = "0"+hour;
+	} else{
+		hours = hour;
+	}	
+	document.getElementById("a4").innerHTML = hours; //현재 시간
+	
+	
+	let mi = AA.getMinutes();
+	let minute;
+	
+	if(mi<10){
+		minute = "0"+mi;
+	} else{
+		minute = mi;
+	}
+		
+	document.getElementById("a5").innerHTML = minute; //현재 분
+	
+	
+	let se = AA.getSeconds();
+	let second;
+	
+	if(se<10){
+		second = "0"+se;
+	} else{
+		second = se;
+	}	
+	
+	document.getElementById("a6").innerHTML = second; //현재 초
+	
+}
+
+setInterval("timeClock()",10);
+
+</script>
+</head>
+<body>
+
+
+<div id="clock">
+
+    <div><span id="a0">0</span>.</div>
+    
+    <div><span id="a1">0</span>.</div>
+    
+    <div><span id="a2">0</span>&nbsp;</div>
+    
+    <div><span id="a3">0</span>&nbsp;</div>
+    
+    <div><span id="a4">0</span>: </div>
+    
+    <div><span id="a5">0</span>:</div>
+    
+    <div><span id="a6">0</span> </div>
+
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
