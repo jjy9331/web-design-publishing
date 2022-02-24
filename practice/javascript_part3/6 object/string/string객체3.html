@@ -32,42 +32,44 @@ body { font-family:'Roboto'; font-weight:900; }
 
 const t = document.querySelectorAll(".typo1 span");
 const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
+/*
 let i0 = 0;
 let i1 = 0;
 let i2 = 0;
 let i3 = 0;
 let i4 = 0;
 let i5 = 0;
+*/
+let i = [0,0,0,0,0,0];
 
-function m0(){ t[0].innerText = abc.charAt(i0); i0++; if(i0>3){ clearInterval(s0) }}
-function m1(){ t[1].innerText = abc.charAt(i1); i1++; if(i1>4){ clearInterval(s1) }}
-function m2(){ t[2].innerText = abc.charAt(i2); i2++; if(i2>18){ clearInterval(s2) }}
-function m3(){ t[3].innerText = abc.charAt(i3); i3++; if(i3>8){ clearInterval(s3) }}
-function m4(){ t[4].innerText = abc.charAt(i4); i4++; if(i4>6){ clearInterval(s4) }}
-function m5(){ t[5].innerText = abc.charAt(i5); i5++; if(i5>13){ clearInterval(s5) }}
 
-//s0 = setInterval(m0,200);
-//s1 = setInterval(m1,200);
-//s2 = setInterval(m2,200);
-//s3 = setInterval(m3,200);
-//s4 = setInterval(m4,200);
-//s5 = setInterval(m5,200);
+function m0(){ t[0].innerText = abc.charAt(i[0]); i[0]++; if(i[0]>3){ clearInterval(s[0]) }}
+function m1(){ t[1].innerText = abc.charAt(i[1]); i[1]++; if(i[1]>4){ clearInterval(s[1]) }}
+function m2(){ t[2].innerText = abc.charAt(i[2]); i[2]++; if(i[2]>18){ clearInterval(s[2]) }}
+function m3(){ t[3].innerText = abc.charAt(i[3]); i[3]++; if(i[3]>8){ clearInterval(s[3]) }}
+function m4(){ t[4].innerText = abc.charAt(i[4]); i[4]++; if(i[4]>6){ clearInterval(s[4]) }}
+function m5(){ t[5].innerText = abc.charAt(i[5]); i[5]++; if(i[5]>13){ clearInterval(s[5]) }}
+
 
 /////////////
 let count=0;
 
-setInterval(function(){
+let s =[];
 
-	if ( count==0 ){ s0 = setInterval(m0,200);	}
-	if ( count==1 ){ s1 = setInterval(m1,200);	}
-	if ( count==2 ){ s2 = setInterval(m2,200);	}
+count_start = setInterval(function(){
+
+	if ( count==0 ){ s[0] = setInterval(m0,150); }
+	if ( count==5 ){ s[1] = setInterval(m1,250); }
+	if ( count==15 ){ s[2] = setInterval(m2,30); }
+	if ( count==20 ){ s[3] = setInterval(m3,80); }
+	if ( count==25 ){ s[4] = setInterval(m4,100); }
+	if ( count==30 ){ s[5] = setInterval(m5,50); }
 
 	count++;
 
 	document.querySelector("h1").innerText = count;
 
-},1000);//1초마다 실행
+},100);//0.1초마다 실행
 
 </script>
 
