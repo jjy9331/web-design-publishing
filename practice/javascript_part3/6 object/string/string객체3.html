@@ -32,24 +32,14 @@ body { font-family:'Roboto'; font-weight:900; }
 
 const t = document.querySelectorAll(".typo1 span");
 const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-/*
-let i0 = 0;
-let i1 = 0;
-let i2 = 0;
-let i3 = 0;
-let i4 = 0;
-let i5 = 0;
-*/
-let i = [0,0,0,0,0,0];
 
-
-function m0(){ t[0].innerText = abc.charAt(i[0]); i[0]++; if(i[0]>3){ clearInterval(s[0]) }}
-function m1(){ t[1].innerText = abc.charAt(i[1]); i[1]++; if(i[1]>4){ clearInterval(s[1]) }}
-function m2(){ t[2].innerText = abc.charAt(i[2]); i[2]++; if(i[2]>18){ clearInterval(s[2]) }}
-function m3(){ t[3].innerText = abc.charAt(i[3]); i[3]++; if(i[3]>8){ clearInterval(s[3]) }}
-function m4(){ t[4].innerText = abc.charAt(i[4]); i[4]++; if(i[4]>6){ clearInterval(s[4]) }}
-function m5(){ t[5].innerText = abc.charAt(i[5]); i[5]++; if(i[5]>13){ clearInterval(s[5]) }}
-
+let i = [];
+i.push(0);
+i.push(0);
+i.push(0);
+i.push(0);
+i.push(0);
+i.push(0);
 
 /////////////
 let count=0;
@@ -58,12 +48,12 @@ let s =[];
 
 count_start = setInterval(function(){
 
-	if ( count==0 ){ s[0] = setInterval(m0,150); }
-	if ( count==5 ){ s[1] = setInterval(m1,250); }
-	if ( count==15 ){ s[2] = setInterval(m2,30); }
-	if ( count==20 ){ s[3] = setInterval(m3,80); }
-	if ( count==25 ){ s[4] = setInterval(m4,100); }
-	if ( count==30 ){ s[5] = setInterval(m5,50); }
+	if ( count==0 ){ s[0] = setInterval(function(){ t[0].innerText = abc.charAt(i[0]); i[0]++; if(i[0]>3){ clearInterval(s[0]) }},150); }
+	if ( count==5 ){ s[1] = setInterval(function(){ t[1].innerText = abc.charAt(i[1]); i[1]++; if(i[1]>4){ clearInterval(s[1]) }},250); }
+	if ( count==15 ){ s[2] = setInterval(function(){ t[2].innerText = abc.charAt(i[2]); i[2]++; if(i[2]>18){ clearInterval(s[2]) }},30); }
+	if ( count==20 ){ s[3] = setInterval(function(){ t[3].innerText = abc.charAt(i[3]); i[3]++; if(i[3]>8){ clearInterval(s[3]) }},80); }
+	if ( count==25 ){ s[4] = setInterval(function(){ t[4].innerText = abc.charAt(i[4]); i[4]++; if(i[4]>6){ clearInterval(s[4]) }},100); }
+	if ( count==30 ){ s[5] = setInterval(function(){ t[5].innerText = abc.charAt(i[5]); i[5]++; if(i[5]>13){ clearInterval(s[5]) }},50); }
 
 	count++;
 
