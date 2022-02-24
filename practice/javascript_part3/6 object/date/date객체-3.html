@@ -22,13 +22,13 @@ function timeClock(){
 	let yo = AA.getDay();
 	let day = "무슨";
 	
-	//if (yo==1) { day="월" }
-	//else if (yo==2) { day="화" }
-	//else if (yo==3) { day="수" }
-	//else if (yo==4) { day="목" }
-	//else if (yo==5) { day="금" }
-	//else if (yo==6) { day="토" }
-	//else if (yo==0) { day="일" }
+	if (yo==1) { day="월" }
+	else if (yo==2) { day="화" }
+	else if (yo==3) { day="수" }
+	else if (yo==4) { day="목" }
+	else if (yo==5) { day="금" }
+	else if (yo==6) { day="토" }
+	else if (yo==0) { day="일" }
 	
 	document.getElementById("a3").innerHTML = day; //현재 요일(0:일요일~6:토요일)
 	

@@ -38,11 +38,11 @@ function timeClock(){
 	let se = AA.getSeconds();
 	let second = se;
 	
-	//if(se<10){
-		//second = "0"+se;
-	//} else{
-		//second = se;
-	//}
+	if(se<10){ //10보다 작으면 0을 붙여서 자릿수 맞추기 
+		second = "0"+se;
+	} else{
+		second = se;
+	}
 	
 	document.getElementById("a6").innerHTML = second; //현재 초
 	
