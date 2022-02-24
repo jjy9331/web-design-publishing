@@ -6,7 +6,7 @@
 <style>
 * {margin:0; padding:0; }
 
-body {font-size:77px; font-family: 'Roboto'; font-weight: 900; }
+p {font-size:77px; font-family: 'Roboto'; font-weight: 900; }
 .typo1 {text-align: center; font-size: 333px;}
 .typo2 {text-align: center; font-size: 33px;}
 
@@ -15,6 +15,7 @@ body {font-size:77px; font-family: 'Roboto'; font-weight: 900; }
 </head>
 <body>
 
+<h1>count 출력</h1>
 
 
 <p class="typo1">
@@ -50,12 +51,26 @@ function m4(){t[4].innerText = abc.charAt(i4); i4++; if (i4 > 6){ clearInterval(
 function m5(){t[5].innerText = abc.charAt(i5); i5++; if (i5 > 13){ clearInterval(s5) }}
 
 
-s0= setInterval(m0,80);
-s1= setInterval(m1,90);
-s2= setInterval(m2,100);
-s3= setInterval(m3,110);
-s4= setInterval(m4,120);
-s5= setInterval(m5,130);
+// s0= setInterval(m0,200);
+// s1= setInterval(m1,200);
+// s2= setInterval(m2,200);
+// s3= setInterval(m3,200);
+// s4= setInterval(m4,200);
+// s5= setInterval(m5,200);
+
+let count=0;
+
+
+setInterval(function(){
+	count++;
+	if( count==1 ){s0= setInterval(m0,80);}
+	if( count==2 ){s1= setInterval(m1,70);}
+	if( count==2 ){s2= setInterval(m2,80);}
+	if( count==3 ){s3= setInterval(m3,80);}
+	if( count==4 ){s4= setInterval(m4,80);}
+	if( count==5 ){s5= setInterval(m5,80);}
+	document.querySelector("h1").innerText = count;
+},100); //1초마다 실행
 
 // t[0].innerText = abc.charAt(3);
 // t[1].innerText = abc.charAt(4);
