@@ -23,8 +23,12 @@ body { font-family:'Roboto'; font-weight:900; }
 	--><span>&nbsp;</span>
 </p>
 
-<p class="typo2">design is what you make of it</p>
-
+<p class="typo2">
+	<span>&nbsp;</span><!--
+--><span>&nbsp;</span><!--
+--><span>&nbsp;</span><!--
+--><span>&nbsp;</span>
+</p>
 
 <script>
 
@@ -36,15 +40,15 @@ window.addEventListener("load",()=>{
 
 	
 	let i = [];
+	let s =[];
+	let count=0;
 	for (j=0; j<t.length; j++){
 		i.push(j);
 	}
 
-	let s =[];
-	let count=0;
 
 	count_start = setInterval(()=>{
-		//순차실행(0.1초단위)                                                                                      알파벳번호                       글자속도
+		//순차실행(0.1초단위)                                                                         알파벳번호                       글자속도
 		if ( count==0 ){ s[0] = setInterval(()=>{ t[0].innerText = abc.charAt(i[0]); i[0]++; if(i[0]>3){ clearInterval(s[0])}},150); }
 		if ( count==5 ){ s[1] = setInterval(()=>{ t[1].innerText = abc.charAt(i[1]); i[1]++; if(i[1]>4){ clearInterval(s[1])}},250); }
 		if ( count==15 ){ s[2] = setInterval(()=>{ t[2].innerText = abc.charAt(i[2]); i[2]++; if(i[2]>18){ clearInterval(s[2])}},30); }
@@ -55,6 +59,35 @@ window.addEventListener("load",()=>{
 		count++;
 
 	},100);
+
+})
+
+
+window.addEventListener("load",()=>{ 
+
+const t = document.querySelectorAll(".typo2 span");//글자 출력될 대상요소
+const abc = "ABCDEFGHIJ"+"KLMNOPQRST"+"UVWXYZ";
+		//   0123456789   0123456789   012345
+
+
+let i = [];
+for (j=0; j<t.length; j++){
+	i.push(j);
+}
+
+let s =[];
+let count=0;
+
+count_start = setInterval(()=>{
+	//순차실행(0.1초단위)                                                                          알파벳번호                       글자속도
+	if ( count==30 ){ s[0] = setInterval(()=>{ t[0].innerText = abc.charAt(i[0]); i[0]++; if(i[0]>13){ clearInterval(s[0])}},150); }
+	if ( count==35 ){ s[1] = setInterval(()=>{ t[1].innerText = abc.charAt(i[1]); i[1]++; if(i[1]>8){ clearInterval(s[1])}},250); }
+	if ( count==40 ){ s[2] = setInterval(()=>{ t[2].innerText = abc.charAt(i[2]); i[2]++; if(i[2]>2){ clearInterval(s[2])}},1000); }
+	if ( count==45 ){ s[3] = setInterval(()=>{ t[3].innerText = abc.charAt(i[3]); i[3]++; if(i[3]>4){ clearInterval(s[3])}},80); }
+
+	count++;
+
+},100);
 
 })
 
