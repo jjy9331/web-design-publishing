@@ -6,19 +6,26 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700,900" rel="stylesheet">
 <style>
 * {margin:0; padding:0; }
-
-body { 
+html,body {height: 100%;} /*리셋할때 넣어줘야한다.*/
+/* body { 
 	font-family:"Roboto","나눔고딕","맑은 고딕";  
-	/* background: no-repeat center top url(https://images.unsplash.com/photo-1436377734980-0ee004df570b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2010&q=80);
-	background-size:cover; */
-}
+} */
 
-#clock { font-size:20px; font-weight:100; /*color:white;*/ }
+#clock { font-size:3vw; font-weight:100; color:white; }
 #clock div { float:left; margin-right:20px; }
-#clock div span { font-size:60px; }
+#clock div span { font-size:6vw; }
 #clock div span.ti { font-size:200px; }
 
-#b_box { position:fixed; z-index:-10; width:100%; height:100%; background-color:rgba(0,0,0,1); }
+#b_box { 
+	position:fixed; 
+	z-index:-10; 
+	width:100%; 
+	height:100%; 
+	/* background-color:rgba(0,0,0,1); */
+	background: no-repeat center top url(https://images.unsplash.com/photo-1507561152-ed3719ac59f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80);
+	background-size:cover; /*공백이 없게 한다*/
+	filter: grayscale(100%) blur(3px);
+}
 </style>
 
 <script>
@@ -54,11 +61,11 @@ function timeClock(){
 		hour = ho;
 	}	
 
-	//if(ho>=12){
-		//ap = "PM";
-	//} else{
-		//ap = "AM";
-	//}	
+	if(ho>=12){
+		ap = "PM";
+	} else{
+		ap = "AM";
+	}	
 
 	if(hour<10){
 		hours = "0"+hour;
@@ -66,7 +73,7 @@ function timeClock(){
 		hours = hour;
 	}	
 	document.getElementById("a4").innerHTML = hours; //현재 시간
-	//document.getElementById("ap").innerHTML = ap; //오전,오후 표시
+	document.getElementById("ap").innerHTML = ap; //오전,오후 표시
 	
 	
 	let mi = AA.getMinutes();
@@ -120,7 +127,7 @@ setInterval("timeClock()",10);
 </div>
 
 
-<!-- <div id="b_box"></div> -->
+<div id="b_box"></div>
 
 </body>
 </html>
