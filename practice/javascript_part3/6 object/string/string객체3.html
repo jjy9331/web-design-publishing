@@ -30,36 +30,31 @@ body { font-family:'Roboto'; font-weight:900; }
 
 <script>
 
-const t = document.querySelectorAll(".typo1 span");
-const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	const t = document.querySelectorAll(".typo1 span");
+	const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-let i = [];
-i.push(0);
-i.push(0);
-i.push(0);
-i.push(0);
-i.push(0);
-i.push(0);
+	let i = [];
+	for (j=0; j<=5; j++){
+		i.push(j);
+	}
+	let count=0;
+	let s =[];
 
-/////////////
-let count=0;
+	count_start = setInterval(function(){
 
-let s =[];
+		if ( count==0 ){ s[0] = setInterval(function(){ t[0].innerText = abc.charAt(i[0]); i[0]++; if(i[0]>3){ clearInterval(s[0]) }},150); }
+		if ( count==5 ){ s[1] = setInterval(function(){ t[1].innerText = abc.charAt(i[1]); i[1]++; if(i[1]>4){ clearInterval(s[1]) }},250); }
+		if ( count==15 ){ s[2] = setInterval(function(){ t[2].innerText = abc.charAt(i[2]); i[2]++; if(i[2]>18){ clearInterval(s[2]) }},30); }
+		if ( count==20 ){ s[3] = setInterval(function(){ t[3].innerText = abc.charAt(i[3]); i[3]++; if(i[3]>8){ clearInterval(s[3]) }},80); }
+		if ( count==25 ){ s[4] = setInterval(function(){ t[4].innerText = abc.charAt(i[4]); i[4]++; if(i[4]>6){ clearInterval(s[4]) }},100); }
+		if ( count==30 ){ s[5] = setInterval(function(){ t[5].innerText = abc.charAt(i[5]); i[5]++; if(i[5]>13){ clearInterval(s[5]) }},50); }
 
-count_start = setInterval(function(){
+		count++;
 
-	if ( count==0 ){ s[0] = setInterval(function(){ t[0].innerText = abc.charAt(i[0]); i[0]++; if(i[0]>3){ clearInterval(s[0]) }},150); }
-	if ( count==5 ){ s[1] = setInterval(function(){ t[1].innerText = abc.charAt(i[1]); i[1]++; if(i[1]>4){ clearInterval(s[1]) }},250); }
-	if ( count==15 ){ s[2] = setInterval(function(){ t[2].innerText = abc.charAt(i[2]); i[2]++; if(i[2]>18){ clearInterval(s[2]) }},30); }
-	if ( count==20 ){ s[3] = setInterval(function(){ t[3].innerText = abc.charAt(i[3]); i[3]++; if(i[3]>8){ clearInterval(s[3]) }},80); }
-	if ( count==25 ){ s[4] = setInterval(function(){ t[4].innerText = abc.charAt(i[4]); i[4]++; if(i[4]>6){ clearInterval(s[4]) }},100); }
-	if ( count==30 ){ s[5] = setInterval(function(){ t[5].innerText = abc.charAt(i[5]); i[5]++; if(i[5]>13){ clearInterval(s[5]) }},50); }
+		document.querySelector("h1").innerText = count;
 
-	count++;
+	},100);//0.1초마다 실행
 
-	document.querySelector("h1").innerText = count;
-
-},100);//0.1초마다 실행
 
 </script>
 
