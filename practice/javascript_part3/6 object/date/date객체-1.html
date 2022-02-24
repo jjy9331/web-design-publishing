@@ -14,10 +14,12 @@
 window.addEventListener("load",()=>{//페이지가 다 로딩된후 실행
 	
 	
-	function (){
+	function time(){
 		let AA = new Date();//AA라는 이름의 새로운 Date객체를 생성 
 		document.querySelector("#clock").innerText = AA;
-	},10
+	}
+	
+	setInterval(time,10);
 });
 
 </script>
