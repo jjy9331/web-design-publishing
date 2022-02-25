@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>콜백함수</title>
+
+<script>
+
+	function AA(a,b,zz) {
+
+		var k = a+b;		
+
+		zz(k); //콜백함수
+
+	}
+
+
+</script>
+</head>
+<body>
+
+	<button onclick="AA(3,7,function(k){alert(k)});">버튼</button>
+
+
+	<!--
+		콜백함수 :
+		  자바스크립트에서 함수는 
+		  다른 함수의 매개변수로 쓰일 수 있고, 
+		  다른 함수가 실행될때 매개변수로 전달한 함수가 호출될 수 있다
+	-->
+
+
+</body>
+</html>
+
+
+
+

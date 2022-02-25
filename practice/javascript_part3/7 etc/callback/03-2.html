@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>콜백함수</title>
+
+<script>
+
+	function AA(a,b,zz) {
+
+		alert(a+b);
+
+		zz(); //콜백함수
+
+	}
+
+
+</script>
+</head>
+<body>
+
+	<button onclick="AA(3,7,function(){alert('안녕')});">버튼</button>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
