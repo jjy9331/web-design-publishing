@@ -18,6 +18,7 @@ body {background-color: #0cc; transition: 2s;}
 
 
 <div id="tt" style="position:fixed; left:30px; top:200px; z-index:2000; background:red; color:white; font-size:33px;">0</div>
+<div id="tta" style="position:fixed; left:30px; top:250px; z-index:2000; background:green; color:white; font-size:33px;">0</div>
 
 
 <div id="wrap">
@@ -201,7 +202,7 @@ body {background-color: #0cc; transition: 2s;}
 
 let p = document.querySelector('p');
 
-window.addEventListener('scroll', scrollMove);
+window.addEventListener('scroll', scrollMove); //스크롤할때마다(스크롤하는 동안) scrollMove함수를 실행
 
 function scrollMove (e) {
     
@@ -244,6 +245,7 @@ function scrollMove (e) {
 
 	a = sc;
 	document.querySelector('#tt').innerHTML=a;
+	document.querySelector('#tta').innerHTML=a;
 
 }
 
@@ -259,7 +261,7 @@ function sm(){
 		window.scrollTo(0,a);
 
 		document.querySelector('#tt').innerHTML=Math.round(a);
-
+		document.querySelector('#tta').innerHTML=a;
 
 		if ( Math.round(a)  == targetY ) {
 
@@ -269,7 +271,7 @@ function sm(){
 	}
 }
 
-setInterval("sm()",10)
+setInterval("sm()",10);
 
 
 let bt1 = document.querySelector('#bt1');

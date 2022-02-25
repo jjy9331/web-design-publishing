@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+#wrap { border:20px dashed black; height:7777px; }
+.done { color:orange; font-size:77px; }
+
+#bt1 { position:fixed; left:277px; top:200px; z-index:2000; }
+#bt2 { position:fixed; left:333px; top:200px; z-index:2000; }
+</style>
+
+
+</head>
+<body>
+
+
+<div id="tt" style="position:fixed; left:30px; top:200px; z-index:2000; background:red; color:white; font-size:33px;">0</div>
+
+
+<div id="wrap">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+	<p class="done">안녕하세요</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+
+
+
+<script>
+
+let p = document.querySelector('p');
+
+window.addEventListener('scroll', function(){
+
+    let sc = window.scrollY; //얼마만큼 스크롤했는지의 값
+    document.querySelector("#tt").innerText = sc;
+
+    if(window.scrollY > 300){
+        p.classList.add('done');
+		document.querySelector('body').style.background="green";
+
+    } else {
+        p.classList.remove('done');
+		document.querySelector('body').style.background="white";
+    }
+});
+
+    
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
