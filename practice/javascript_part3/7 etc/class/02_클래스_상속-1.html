@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>클래스</title>
+<style>
+</style>
+</head>
+<body>
+
+
+
+
+<script>
+ 
+class Person {
+	constructor(name,a,b){
+		this.name=name;
+		this.a=a;
+		this.b=b;
+	}
+
+	sum(){
+		return '총점:'+ (this.a + this.b);
+	}
+}
+
+class PersonPlus {
+	constructor(name,a,b){
+		this.name=name;
+		this.a=a;
+		this.b=b;
+	}
+
+	sum(){
+		return '총점:'+ (this.a + this.b);
+	}
+
+	avg(){
+		return '평균:'+ (this.a + this.b)/2;
+	}
+}
+
+
+
+let kim = new PersonPlus('철수',90,100);
+
+
+alert( kim.sum() );
+
+
+</script>
+</body>
+</html>
+
+

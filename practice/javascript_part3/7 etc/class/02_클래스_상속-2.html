@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>클래스</title>
+<style>
+</style>
+</head>
+<body>
+
+
+
+
+<script>
+ 
+class Person {
+	constructor(name,a,b){
+		this.name=name;
+		this.a=a;
+		this.b=b;
+	}
+
+	sum(){
+		return '총점:'+ (this.a + this.b);
+	}
+}
+
+class PersonPlus extends Person {
+	/*
+	constructor(name,a,b){//객체가 (생성될때) 만들어지기 직전에 실행되도록 약속된 함수(객체의 초기상태를 지정하기 위한 함수)
+		this.name=name;
+		this.a=a;
+		this.b=b;
+	}
+
+	sum(){
+		return '총점:'+ (this.a + this.b);
+	}
+	*/
+	avg(){
+		return '평균:'+ (this.a + this.b)/2;
+	}
+}
+
+
+
+let kim = new PersonPlus('철수',90,100);
+
+
+alert( kim.sum() );
+
+
+</script>
+</body>
+</html>
+
+

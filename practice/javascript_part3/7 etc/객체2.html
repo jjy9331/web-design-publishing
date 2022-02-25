@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+#box1 {
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+    background-color: lightgray;
+}
+
+#box2 {
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+    background-color: gray;
+}
+#box3 {
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+    background-color: black;
+}
+</style>
+<body>
+
+<div id="box1"></div>
+
+<div id="box2"></div>
+
+<div id="box3"></div>
+
+</body>
+<script>
+
+
+
+    let Box = {
+        box:document.querySelector("#box1"),
+
+        opaci:function(){ 
+            this.box.addEventListener("mouseover",()=>{
+                this.box.style.opacity="0.5";
+            });
+            this.box.addEventListener("mouseout",()=>{
+                this.box.style.opacity="1";
+            });
+        },
+    }
+    Box.opaci();
+
+    let Box2 = {
+        box:document.querySelector("#box2"),
+
+        opaci:function(){ 
+            this.box.addEventListener("mouseover",()=>{
+                this.box.style.opacity="0.5";
+            });
+            this.box.addEventListener("mouseout",()=>{
+                this.box.style.opacity="1";
+            });
+        },
+    }
+    Box2.opaci();
+
+    let Box3 = {
+        box:document.querySelector("#box3"),
+
+        opaci:function(){ 
+            this.box.addEventListener("mouseover",()=>{
+                this.box.style.opacity="0.5";
+            });
+            this.box.addEventListener("mouseout",()=>{
+                this.box.style.opacity="1";
+            });
+        },
+    }
+    Box3.opaci();
+
+</script>
+</head>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
