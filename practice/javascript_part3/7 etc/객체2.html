@@ -35,8 +35,30 @@
 </body>
 <script>
 
+    class Box_effect {//클래스명 첫글자는 대문자
+        //속성(변수)
+        //메서드(함수)
 
-
+        constructor(a){
+            this.a = a;
+            this.box = document.querySelector(this.a);
+        }
+        opaci(){
+            this.box.addEventListener("mouseover",()=>{
+                    this.box.style.opacity="0.5";
+            });
+            this.box.addEventListener("mouseout",()=>{
+                    this.box.style.opacity="1";
+            });
+        }
+    }
+    let AA = new Box_effect("#box1");
+    let BB = new Box_effect("#box2");
+    let CC = new Box_effect("#box3");
+    AA.opaci();
+    BB.opaci();
+    CC.opaci();
+/*
     let Box = {
         box:document.querySelector("#box1"),
 
@@ -78,6 +100,7 @@
         },
     }
     Box3.opaci();
+*/ 
 
 </script>
 </head>
