@@ -127,7 +127,7 @@ ul {list-style:none;}
 
 
 
-<!--
+
 <div id="moving_gallery2">
 
 	<div class="mas">
@@ -153,32 +153,28 @@ ul {list-style:none;}
 	</div>
 
 </div>
--->
+
 
 <script>
 
 class MovingGall {
-	constructor(gallery){//초기설정
+	constructor(gallery,speed){//초기설정
 		
 		this.gallery = gallery;
-		this.speed = 1; //속도
-
-		this.n = this.item.length; //alert(n);
-		this.w = this.item[0].offsetWidth; //alert(w);
-
-		this.temp = this.set.cloneNode(true); 
-		this.gall.appendChild(this.temp);	
-
-		
-		this.gall = document.querySelector(this.gallery+" .gall");
+		this.gall = document.querySelector(this.gallery+" .gall"); 
 		this.left = document.querySelector(this.gallery+" .left");
 		this.right = document.querySelector(this.gallery+" .right");
 		this.item = document.querySelectorAll(this.gallery+" .item");
 		this.set = document.querySelector(this.gallery+" .gall ul");
-		
+		this.speed = speed; //속도
+		this.n = this.item.length; //alert(n);
+		this.w = this.item[0].offsetWidth; //alert(w);
+		this.temp = this.set.cloneNode(true); 
+		this.gall.appendChild(this.temp);	
 		this.x = 0;
 		this.s= -this.speed;
 		this.m = true;
+		this.movGall();
 	}
 	movGall(){//함수
 		this.right.addEventListener("click",()=>{ this.s = this.speed; });
@@ -198,9 +194,10 @@ class MovingGall {
 		}
 }
 
-let m1 = new MovingGall("#moving_gallery1");//MovingGall클래스엣 m1객체 생성
+let m1 = new MovingGall("#moving_gallery1",1);//MovingGall클래스엣 m1객체 생성
+let m2 = new MovingGall("#moving_gallery2",1);//MovingGall클래스엣 m1객체 생성
 
-m1.movGall();
+
 
 /*
 	//쿼리셀렉터
