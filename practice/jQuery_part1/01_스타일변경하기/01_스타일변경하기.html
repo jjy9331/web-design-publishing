@@ -6,10 +6,22 @@
 <style>
 </style>
 <script src="../01_스타일변경하기/js/jquery-3.6.0.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
 <script>
 $(document).ready(function(){ //페이지의 요소들이 다 로딩된 후 실행
+  // document.getElementsByTagName("h1")[0].style.color="orange";
+  //$("h1").css("color","orange");
+  //$("h1").css("fontSize","70px");
+  $("h1").css({ color: "orange", fontSize: "70px", });
+  $("p").css({ color:"pink", fontSize:"30px", backgroundColor:"#0cc",});
+  $("#box").css({ width:"300px", height:"200px", border:"3px dashed pink",});
+});
+
+/*
+$(function(){//다른 형식
 
 });
+*/ 
 </script>
 
 </head>
