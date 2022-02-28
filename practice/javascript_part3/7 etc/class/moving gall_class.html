@@ -157,10 +157,10 @@ ul {list-style:none;}
 
 <script>
 
-class Gall {
-	constructor(){//초기설정
+class MovingGall {
+	constructor(gallery){//초기설정
 		
-		this.gallery = "#moving_gallery1"
+		this.gallery = gallery;
 		this.speed = 1; //속도
 
 		this.n = this.item.length; //alert(n);
@@ -170,19 +170,24 @@ class Gall {
 		this.gall.appendChild(this.temp);	
 
 		
-		this.gall = document.querySelector(this.gallery +" .gall");
-		this.left = document.querySelector(this.gallery +" .left");
-		this.right = document.querySelector(this.gallery +" .right");
-		this.item = document.querySelectorAll(this.gallery +" .item");
-		this.set = document.querySelector(this.gallery +" .gall ul");
+		this.gall = document.querySelector(this.gallery+" .gall");
+		this.left = document.querySelector(this.gallery+" .left");
+		this.right = document.querySelector(this.gallery+" .right");
+		this.item = document.querySelectorAll(this.gallery+" .item");
+		this.set = document.querySelector(this.gallery+" .gall ul");
 		
 		this.x = 0;
 		this.s= -this.speed;
 		this.m = true;
 	}
-	movingGall(){
+	movGall(){//함수
+		this.right.addEventListener("click",()=>{ this.s = this.speed; });
+		this.left.addEventListener("click",()=>{ this.s = -this.speed; });
+		this.gall.addEventListener("mouseover",()=>{ this.m=false; });
+		this.gall.addEventListener("mouseout",()=>{ this.m=true; });
 		
-		setInterval(()=>{
+		setInterval(()=>{//setInterval의 함수형식을 function()으로 하면 this는 window객체를 의미
+						//클래스 내에선 화살표함수()=> 형식을 써야함
 				if ( this.m ) {
 					this.x = this.x + this.s;
 					if ( this.x < -this.w*this.n ) { this.x=0; } 
@@ -192,6 +197,11 @@ class Gall {
 			},10); 
 		}
 }
+
+let m1 = new MovingGall("#moving_gallery1");//MovingGall클래스엣 m1객체 생성
+
+m1.movGall();
+
 /*
 	//쿼리셀렉터
 
