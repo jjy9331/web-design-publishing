@@ -14,7 +14,11 @@ $(document).ready(function(){ //페이지의 요소들이 다 로딩된 후 실�
   //$("h1").css("fontSize","70px");
   $("h1").css({ color: "orange", fontSize: "70px", });
   $("p").css({ color:"pink", fontSize:"30px", backgroundColor:"#0cc",});
-  $("#box").css({ width:"300px", height:"200px", border:"3px dashed pink",});
+  $("#box").css({ 
+    width:300, //숫자만 쓰면 px로 자동 인식한다.
+    height:200, 
+    border:"3px dashed pink",
+  });
 });
 
 /*
