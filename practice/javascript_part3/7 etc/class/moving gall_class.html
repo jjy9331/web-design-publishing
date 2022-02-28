@@ -163,15 +163,34 @@ class Gall {
 		this.gallery = "#moving_gallery1"
 		this.speed = 1; //속도
 
-		this.n = item.length; //alert(n);
-		this.w = item[0].offsetWidth; //alert(w);
+		this.n = this.item.length; //alert(n);
+		this.w = this.item[0].offsetWidth; //alert(w);
+
+		this.temp = this.set.cloneNode(true); 
+		this.gall.appendChild(this.temp);	
+
 		
 		this.gall = document.querySelector(this.gallery +" .gall");
 		this.left = document.querySelector(this.gallery +" .left");
 		this.right = document.querySelector(this.gallery +" .right");
 		this.item = document.querySelectorAll(this.gallery +" .item");
 		this.set = document.querySelector(this.gallery +" .gall ul");
+		
+		this.x = 0;
+		this.s= -this.speed;
+		this.m = true;
 	}
+	movingGall(){
+		
+		setInterval(()=>{
+				if ( this.m ) {
+					this.x = this.x + this.s;
+					if ( this.x < -this.w*this.n ) { this.x=0; } 
+					if ( this.x > 0 ) { this.x= -this.w*this.n; } 
+					this.gall.style.left=this.x+"px";
+				}
+			},10); 
+		}
 }
 /*
 	//쿼리셀렉터
