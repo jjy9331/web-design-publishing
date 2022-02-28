@@ -156,6 +156,23 @@ ul {list-style:none;}
 -->
 
 <script>
+
+class Gall {
+	constructor(){//초기설정
+		
+		this.gallery = "#moving_gallery1"
+		this.speed = 1; //속도
+
+		this.n = item.length; //alert(n);
+		this.w = item[0].offsetWidth; //alert(w);
+		
+		this.gall = document.querySelector(this.gallery +" .gall");
+		this.left = document.querySelector(this.gallery +" .left");
+		this.right = document.querySelector(this.gallery +" .right");
+		this.item = document.querySelectorAll(this.gallery +" .item");
+		this.set = document.querySelector(this.gallery +" .gall ul");
+	}
+}
 /*
 	//쿼리셀렉터
 
@@ -171,7 +188,7 @@ ul {list-style:none;}
 */
 
 
-	
+/*
 	const gall = document.querySelector("#moving_gallery1 .gall");
 	const left = document.querySelector("#moving_gallery1 .left");
 	const right = document.querySelector("#moving_gallery1 .right");
@@ -202,7 +219,7 @@ ul {list-style:none;}
 	left.addEventListener("click",function(){ s = -speed; });
 	gall.addEventListener("mouseover",function(){ m=false; });
 	gall.addEventListener("mouseout",function(){ m=true; });
-
+*/
 </script>
 
 </body>
