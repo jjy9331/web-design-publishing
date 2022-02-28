@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이동 갤러리</title>
+<style>
+body,ul {margin:0;padding:0;}
+ul {list-style:none;}
+
+/* 갤러리1 */
+#moving_gallery1 { 
+	margin:50px auto; 
+	width:1000px; 
+	padding:50px 0 ; 
+	border:5px dashed orange; 
+}
+
+#moving_gallery1 .mas { 
+	overflow:hidden;
+	position:relative; 
+	margin:0 auto; 
+	width:600px; height:200px; 
+	border:5px solid hotpink; 
+}
+
+#moving_gallery1 .gall {
+	position:absolute; 
+	left:0px; top:0px; width:99999px;
+	/* border:3px solid yellowgreen; */
+}
+
+#moving_gallery1 .gall ul { 
+	float:left;  
+}
+
+#moving_gallery1 .gall ul li { 
+	float:left; 
+	width:200px; height:200px; 
+	background-color:rgba(255,255,0,0.8); 
+	border:3px dashed #0cf; 
+	box-sizing:border-box/* 안쪽테두리 */; 
+}
+
+#moving_gallery1 .nav { 
+	margin:0 auto; 
+	margin-top:30px; 
+	width:600px; 
+	border:2px dashed blue;
+	text-align:center;
+}
+
+
+/* 갤러리2 */
+#moving_gallery2 { 
+	margin:50px auto; 
+	width:1200px; 
+	padding:50px 0 ; 
+	border:5px dashed yellowgreen; 
+}
+
+#moving_gallery2 .mas { 
+	overflow:hidden;
+	position:relative; 
+	margin:0 auto; 
+	width:800px; height:200px; 
+	border:5px solid hotpink; 
+}
+
+#moving_gallery2 .gall {
+	position:absolute; 
+	left:0px; top:0px; width:99999px;
+	/* border:3px solid yellowgreen; */
+}
+
+#moving_gallery2 .gall ul { 
+	float:left;  
+}
+
+#moving_gallery2 .gall ul li { 
+	float:left; 
+	width:200px; height:200px; 
+	background-color:rgba(255,255,0,0.8); 
+	border:3px dashed #0cf; 
+	box-sizing:border-box/* 안쪽테두리 */; 
+}
+
+#moving_gallery2 .nav { 
+	margin:0 auto; 
+	margin-top:30px; 
+	width:600px; 
+	border:2px dashed blue;
+	text-align:center;
+}
+
+</style>
+
+</head>
+<body>
+
+
+
+<div id="moving_gallery1">
+
+	<div class="mas">
+		
+		  <div class="gall">
+		  
+					  <ul>
+						<li class="item">01</li>
+						<li class="item">02</li>
+						<li class="item">03</li>
+						<li class="item">04</li>
+						<li class="item">05</li>
+					  </ul>
+
+		  </div>
+	  
+	</div>
+
+
+	<div class="nav">
+			<button class="left">왼쪽</button>
+			<button class="right">오른쪽</button>
+	</div>
+
+</div>
+
+
+
+<!--
+<div id="moving_gallery2">
+
+	<div class="mas">
+		
+		  <div class="gall">
+		  
+					  <ul>
+						<li class="item">01</li>
+						<li class="item">02</li>
+						<li class="item">03</li>
+						<li class="item">04</li>
+						<li class="item">05</li>
+					  </ul>
+
+		  </div>
+	  
+	</div>
+
+
+	<div class="nav">
+			<button class="left">왼쪽</button>
+			<button class="right">오른쪽</button>
+	</div>
+
+</div>
+-->
+
+<script>
+/*
+	//쿼리셀렉터
+
+	const  s1 = document.querySelector(".s1");  
+	s1.style.color="red"; //인덱스번호 붙이지 않는다(.s1첫번째요소)
+
+	-----------------------------------------------------------------
+
+	//쿼리셀렉터All
+
+	const  s1 = document.querySelectorAll(".s1");  
+	s1[0].style.color="red"; //인덱스번호를  붙여야한다
+*/
+
+
+	
+	const gall = document.querySelector("#moving_gallery1 .gall");
+	const left = document.querySelector("#moving_gallery1 .left");
+	const right = document.querySelector("#moving_gallery1 .right");
+	const item = document.querySelectorAll("#moving_gallery1 .item");
+	const set = document.querySelector("#moving_gallery1 .gall ul");
+
+	let speed = 1; //속도
+
+	let n = item.length; //alert(n);
+	let w = item[0].offsetWidth; //alert(w);
+
+	let temp = set.cloneNode(true); 
+	gall.appendChild(temp);
+
+	let x = 0;
+	let s= -speed;
+	let m = true;
+	function moving() {
+		if ( m ) {
+			x = x + s;
+			if ( x < -w*n ) { x=0; } 
+			if ( x > 0 ) { x= -w*n; } 
+			gall.style.left=x+"px";
+		}
+	}
+	setInterval(moving,10); 
+	right.addEventListener("click",function(){ s = speed; });
+	left.addEventListener("click",function(){ s = -speed; });
+	gall.addEventListener("mouseover",function(){ m=false; });
+	gall.addEventListener("mouseout",function(){ m=true; });
+
+</script>
+
+</body>
+</html>
+
