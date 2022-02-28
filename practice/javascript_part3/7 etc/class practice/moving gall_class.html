@@ -92,6 +92,49 @@ ul {list-style:none;}
 	text-align:center;
 }
 
+
+/* 갤러리3 */
+#moving_gallery3 { 
+	margin:50px auto; 
+	width:1200px; 
+	padding:50px 0 ; 
+	border:5px dashed yellowgreen; 
+}
+
+#moving_gallery3 .mas { 
+	overflow:hidden;
+	position:relative; 
+	margin:0 auto; 
+	width:200px; height:200px; 
+	border:5px solid hotpink; 
+}
+
+#moving_gallery3 .gall {
+	position:absolute; 
+	left:0px; top:0px; width:99999px;
+	/* border:3px solid yellowgreen; */
+}
+
+#moving_gallery3 .gall ul { 
+	float:left;  
+}
+
+#moving_gallery3 .gall ul li { 
+	float:left; 
+	width:200px; height:200px; 
+	background-color:rgba(255,255,0,0.8); 
+	border:3px dashed #0cf; 
+	box-sizing:border-box/* 안쪽테두리 */; 
+}
+
+#moving_gallery3 .nav { 
+	margin:0 auto; 
+	margin-top:30px; 
+	width:600px; 
+	border:2px dashed blue;
+	text-align:center;
+}
+
 </style>
 
 </head>
@@ -132,18 +175,43 @@ ul {list-style:none;}
 
 	<div class="mas">
 		
-		  <div class="gall">
-		  
-					  <ul>
-						<li class="item">01</li>
-						<li class="item">02</li>
-						<li class="item">03</li>
-						<li class="item">04</li>
-						<li class="item">05</li>
-					  </ul>
+		<div class="gall">
+		
+					<ul>
+					<li class="item">01</li>
+					<li class="item">02</li>
+					<li class="item">03</li>
+					<li class="item">04</li>
+					<li class="item">05</li>
+					</ul>
 
-		  </div>
-	  
+		</div>
+	</div>
+
+
+	<div class="nav">
+			<button class="left">왼쪽</button>
+			<button class="right">오른쪽</button>
+	</div>
+
+</div>
+
+
+<div id="moving_gallery3">
+
+	<div class="mas">
+		
+		<div class="gall">
+		
+					<ul>
+					<li class="item">01</li>
+					<li class="item">02</li>
+					<li class="item">03</li>
+					<li class="item">04</li>
+					<li class="item">05</li>
+					</ul>
+
+		</div>
 	</div>
 
 
@@ -158,6 +226,7 @@ ul {list-style:none;}
 <script>
 let m1 = new MovingGall("#moving_gallery1",1);//MovingGall클래스엣 m1객체 생성
 let m2 = new MovingGall("#moving_gallery2",1);//MovingGall클래스엣 m1객체 생성
+let m3 = new MovingGall("#moving_gallery3",2);//MovingGall클래스엣 m1객체 생성
 
 
 
