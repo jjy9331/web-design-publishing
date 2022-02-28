@@ -12,7 +12,7 @@
 
 
 <script>
- 
+
 class Person {
 
 	constructor(name,a,b){
@@ -21,18 +21,32 @@ class Person {
 		this.b=b;
 	}
 
-	sum(){ //메서드 정의
+	sum(){ //메서드 정의(class에서는 function 문자가 없다.)
 		return this.a + this.b
 	}
-
+	ag(){ 
+		return (this.a + this.b)/2
+	}
 }
 
-let kim = new Person('철수',90,100);
+// let kim = new Person('철수',90,100);
 
 
 //alert(kim.name);
 
-alert( kim.sum() );
+// alert( kim.sum() );
+
+let cheol = new Person("철수",90,70); //객체 생성
+
+alert(cheol.ag());
+alert(cheol.name);
+alert(cheol.name +" 평균: "+ cheol.ag());
+
+
+
+
+
+
 
 
 </script>
