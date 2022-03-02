@@ -27,12 +27,17 @@ a { text-decoration:none; color:#fff; }
 #header h1 { font-size:20px; color:#fff; padding:10px;}
 #header #gnb li { 
    float:left;
-   width:25%; /* 100/4*/
+   width:32.66%; /* 100/3*/
+   margin-right: 1%;
    background:#333; 
    border: 1px dashed white;
    box-sizing: border-box; /* 안쪽테두리 */
 }
 
+
+#header #gnb li:nth-child(3){
+    margin-right:0%;
+}
 /* contents */
 #contents h2 { font-size:20px; margin:20px 0; }
 #contents p { margin-bottom:20px; }
@@ -55,7 +60,6 @@ a { text-decoration:none; color:#fff; }
          <li><a href="#">home</a></li>
          <li><a href="#">about</a></li>
          <li><a href="#">works</a></li>
-         <li><a href="#">contact</a></li>
       </ul>
   </div>
   
