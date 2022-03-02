@@ -6,44 +6,16 @@
 <style>
 
 
-#box1 { 
-  position: absolute; 
-  left: 0px;
-  top: 100px;
-  width:100px; 
-  height:100px; 
-  background:hotpink; 
-}
-
-
-#box2 { 
-  position: absolute; 
-  left: 110px;
-  top: 100px;
-  width:100px; 
-  height:100px; 
-  background:yellow; 
-}
-
-#box3 { 
-  position: absolute; 
-  left: 220px;
-  top: 100px;
-  width:100px; 
-  height:100px; 
-  background:#0cc; 
-}
+#box { width:350px; height:100px; background:#F9C; }
 </style>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
 
 <script>
 $(function(){
   
-  $("#box1").animate({left:330,},1000,function(){
-    $(this).animate({height:"600px"});
-  }); //1000=1초
-          //animate는 수치에 대한 속성에만 적용된다.
+  $("box").animate({width:1200});
+          //animate는 수치에 대한 속성에만 적용된다.(컬러 안됨)
 })
 </script>
 
@@ -51,9 +23,7 @@ $(function(){
 
 <body>
 
-  <div id="box1">animate효과</div>  
-  <div id="box2">animate효과</div>  
-  <div id="box3">animate효과</div>  
+  <div id="box">animate효과</div>  
       
 </body>
 </html>
