@@ -6,7 +6,8 @@
 <style>
  
 
-#box { display: none; width:300px; height:300px; background:#0CC; }
+#box { display: none; position: absolute; width:300px; height:300px; background:#0CC; }
+#nemo {height: 100px; background: hotpink;}
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -14,7 +15,9 @@
 <script>
 $(function(){
   // $('#box').slideUp(1000);
-  $('#box').slideDown(500);
+  $('#box').slideDown(1000,function(){
+    $(this).slideUp();
+  });
 
     
 })
@@ -24,7 +27,8 @@ $(function(){
 
 <body>
 
-  <div id="box">slide효과</div>  
+  <div id="box">slide효과</div>
+  <div id="nemo">slide효과</div>  
   
 </body>
 </html>
