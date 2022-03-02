@@ -2,13 +2,21 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title></title>
 <style>
 * { margin:0; padding:0; }
 body { font:12px/17px "나눔고딕","맑은 고딕"; }
 
-#wrap { background-color:lightyellow; padding:3px; }
-#wrap #box { width:50%; background-color:lightblue; }
+#wrap { 
+  width: 50%; /* 부모길이(body)의 50%*/
+  background-color:lightyellow; 
+  padding:3px; 
+}
+#wrap #box { 
+  width:50%; /* 부모(#wrap)길이의 50% */
+  background-color:lightblue; 
+}
 </style>
 </head>
 
@@ -55,6 +63,5 @@ body { font:12px/17px "나눔고딕","맑은 고딕"; }
 
 </body>
 </html>
-
 
 
