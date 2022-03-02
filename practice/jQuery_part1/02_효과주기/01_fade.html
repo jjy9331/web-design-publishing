@@ -15,7 +15,9 @@
 $(function(){
 
   $("#box").fadeIn(2000,function(){
-    $(this).fadeOut();
+    $(this).fadeOut(2000,function(){
+      $(this).show(1000);
+    });
   });
     
 })
