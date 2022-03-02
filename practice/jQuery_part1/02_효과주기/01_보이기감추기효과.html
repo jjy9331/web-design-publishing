@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+ 
+
+#box { display:none; width:300px; height:300px; background:#6CF; }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+
+    // $("#box").css({display:"none"});
+    $("#box").show(1000,function(){alert("123")});//1000=1초
+    
+})
+</script>
+
+</head>
+
+<body>
+
+  <div id="box"></div>  
+  
+</body>
+</html>
+
+
+
+
+
+
