@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+
+
+#box {display: none; width:350px; height:500px; background:#F9C; }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+  let toggle = "0";
+  //박스가 보이면 "1" 안보이면 "0" 표시하기로 하자
+
+    $("button").click(function(){//버튼을 클릭했을 때
+        if(toggle=="0"){//현재 박스가 안보이면
+          $("#box").show(); //박스를 보여게하고
+          toggle = "1";
+        }
+        else{ //현재박스가 보인다면
+          $("#box").hide(); //박스를 안보여라
+          toggle = "0";
+        }
+    });
+
+})
+
+</script>
+
+</head>
+
+<body>
+  <button>버튼</button>
+  <div id="box">효과</div>  
+      
+</body>
+</html>
+
+
+
+
+
+
