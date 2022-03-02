@@ -7,8 +7,9 @@
 
 
 #box1 { 
+  opacity: 0;
   position: absolute; 
-  left: 0px;
+  left: 660px;
   top: 100px;
   width:100px; 
   height:100px; 
@@ -17,8 +18,9 @@
 
 
 #box2 { 
+  opacity: 0;
   position: absolute; 
-  left: 110px;
+  left: 550px;
   top: 100px;
   width:100px; 
   height:100px; 
@@ -26,8 +28,9 @@
 }
 
 #box3 { 
+  opacity: 0;
   position: absolute; 
-  left: 220px;
+  left: 440px;
   top: 100px;
   width:100px; 
   height:100px; 
@@ -39,12 +42,14 @@
 
 <script>
 $(function(){
+  $("#box1").animate({opacity:1, left:0,},700);
+  $("#box2").animate({opacity:1, left:110,},800);
+  $("#box3").animate({opacity:1, left:220,},900, function(){
+    $("#box3").animate({left:220},300,)
+  });
+});
   
-  $("#box1").animate({left:330,},1000,function(){
-    $(this).animate({height:"600px"});
-  }); //1000=1초
-          //animate는 수치에 대한 속성에만 적용된다.
-})
+
 </script>
 
 </head>
