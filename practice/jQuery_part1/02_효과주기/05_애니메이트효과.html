@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+
+
+#box { position: absolute; left: 0px; width:300px; height:100px; background:#F9C; }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+  
+  $("#box").animate({left:500, height:300},1000,function(){
+    $("body").css({background:"yellow"});
+    $(this).animate({height:"600px"});
+  }); //1000=1초
+          //animate는 수치에 대한 속성에만 적용된다.
+})
+</script>
+
+</head>
+
+<body>
+
+  <div id="box">animate효과</div>  
+      
+</body>
+</html>
+
+
+
+
+
+

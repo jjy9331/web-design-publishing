@@ -18,16 +18,16 @@ $(function(){
 
     $("button").click(function(){//버튼을 클릭했을 때
         if(toggle=="0"){//현재 박스가 안보이면
-          $("#box").show(); //박스를 보여게하고
+          $("#box").slideToggle(1000); //박스를 보여게하고
           toggle = "1";
         }
         else{ //현재박스가 보인다면
-          $("#box").hide(); //박스를 안보여라
+          $("#box").slideUp(300); //박스를 안보여라
           toggle = "0";
         }
     });
-
 })
+//속도 차별화하려면 toggle과 조건문을 추가하여야 한다. 
 
 </script>
 
