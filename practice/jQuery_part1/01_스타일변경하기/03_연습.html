@@ -17,21 +17,30 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script>
 $(function(){
-	//$("#contents").siblings().css({border:"5px dashed brown"});
-	//#contents의 형제들
-	// $("#contents").prev().css({border:"5px dashed brown"});
-	//#contents의 이전 형제
-	$("#contents").next().css({border:"5px dashed brown"});
-	//#contents의 다음 형제
-	//#contents의 형제들
-	$("#contents").children().css({border:"5px dashed brown"});
-	//#contents의 자식들
-	$("#contents").parent().css({border:"5px dashed brown"});
-	//#contents의 부모
+	$('h1').css({
+		color:'orange',
+		fontSize:'77px',
+		textAlign:'center',
+	});
+	$('.box').css({borderRadius:"10px",});
+	$(".box:first").css({backgroundColor:"yellow"});
+	$(".box:last").css({backgroundColor:"yellowgreen"});
+	$(".box:eq(1)").css({backgroundColor:"pink"});
+
+	$(".box").parent().css({
+		border:"5px dashed blue",
+	});
+	$(".box").parent().parent().css({
+		border:"5px dashed green",
+	});
+	$("#header").next().children().eq(0).css({border:"5px solid hotpink"});
+	
 });
 </script>
 <body>
 
+
+<h1>제목</h1>
 
 <div id="wrap">
 
