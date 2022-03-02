@@ -15,7 +15,14 @@
 $(function(){
 
     // $("#box").css({display:"none"});
-    $("#box").show(1000,function(){alert("123")});//1000=1초
+    $("#box").show(1000,function(){
+      // alert("123")
+      $('#box').css({background:"orange"});
+      // $("#box").hide(1000);
+      $(this).hide(1000,function(){
+        $(this).show(500);
+      });
+    });//1000=1초
     
 })
 </script>
