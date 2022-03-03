@@ -42,17 +42,15 @@
 
 <script>
 $(function(){
-  
-  // $("#box2").animate({opacity:1, left:110,},800);
-  $("#box3").animate({opacity:1, left:220,},900, function(){
-    $("#box2").animate({opacity:1, left:110,},800,function(){
-      $(this).animate({height:200},300, function(){
-        $("#box1").animate({opacity:1, left:0,},700,function(){
-          $(this).animate({height:300},300);
-        });
-      });
-    });
-  });
+  //초기설정
+  $("#box1").css({opacity:0, left:900});
+  $("#box2").css({opacity:0, left:900});
+  $("#box3").css({opacity:0, left:900});
+
+  //움직임 설정
+  $("#box1").animate({opacity:1, left:0},200);
+  $("#box2").delay(1000).animate({opacity:1, left:110},600);
+  $("#box3").delay(1000).animate({opacity:1, left:220},1000);
 });
   
 
