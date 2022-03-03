@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title></title>
 <style>
-.box { position:absolute; left:0px; top:200px; width:100px; height:100px; background:orange; }
+.box { display:none; position:absolute; left:0px; top:200px; width:100px; height:100px; background:orange; }
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -13,7 +13,8 @@
 <script>
 $(function(){
 	
-    $(".box").animate({left:100},1000,"easeOutElastic");
+    $(".box").slideDown(1000,"easeOutElastic");
+    $(".box").animate({left:300},500,"easeOutQuint");
 	/*
         이징
             easeIn - 효과를 움직임의 도입부에서 적용
@@ -22,8 +23,8 @@ $(function(){
 
         효과
             Elastic - 탄력(탄성,진동) 효과
-            Bounce - 
-            Back
+            Bounce - 통통 공튀는 효과
+            Back - 목적지를 살짝 지나쳤다가 되돌아옴
             ..
     */ 
 });
