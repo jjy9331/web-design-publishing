@@ -26,20 +26,22 @@ ul{list-style: none;}
 <script>
 $(function(){
   //초기설정
-  $(".typo span:eq(0)").css({left:0, top:100, opacity:0});//d
-  $(".typo span:eq(1)").css({left:0, top:100, opacity:0});//e
-  $(".typo span:eq(2)").css({left:0, top:100, opacity:0});//s
-  $(".typo span:eq(3)").css({left:0, top:100, opacity:0});//i
-  $(".typo span:eq(4)").css({left:0, top:100, opacity:0});//g
-  $(".typo span:eq(5)").css({left:0, top:100, opacity:0});//n
+  $(".typo").css({left:600, top:200,});//d
+  //$(".typo span:eq(0)").css({left:200, top:200,});//d
+  $(".typo span:eq(1)").css({left:0, top:-100,});//e
+  $(".typo span:eq(2)").css({left:0, top:100,});//s
+  $(".typo span:eq(3)").css({left:0, top:100,});//i
+  $(".typo span:eq(4)").css({left:0, top:100,});//g
+  $(".typo span:eq(5)").css({left:0, top:100,});//n
 
     //움직임설정
-  $(".typo span:eq(0)").delay(0).animate({left:0, top:0, opacity:1});//d
-  $(".typo span:eq(1)").delay(50).animate({left:0, top:0, opacity:1});//e
-  $(".typo span:eq(2)").delay(110).animate({left:0, top:0, opacity:1});//s
-  $(".typo span:eq(3)").delay(180).animate({left:0, top:0, opacity:1});//i
-  $(".typo span:eq(4)").delay(260).animate({left:0, top:0, opacity:1});//g
-  $(".typo span:eq(5)").delay(350).animate({left:0, top:0, opacity:1});//n
+  $(".typo").animate({left:200, top:200,});//d
+  //$(".typo span:eq(0)").delay(0).animate({left:0, top:-35,},600,function(){$(this).animate({top:0},200)});//d
+  $(".typo span:eq(1)").delay(50).animate({left:0, top:35,},300,function(){$(this).animate({top:0},400)});//e
+  $(".typo span:eq(2)").delay(110).animate({left:0, top:0,},600,function(){$(this).animate({top:0},200)});//s
+  $(".typo span:eq(3)").delay(180).animate({left:0, top:0,},600,function(){$(this).animate({top:0},200)});//i
+  $(".typo span:eq(4)").delay(260).animate({left:0, top:0,},600,function(){$(this).animate({top:0},200)});//g
+  $(".typo span:eq(5)").delay(350).animate({left:0, top:0,},600,function(){$(this).animate({top:0},200)});//n
 });
 
 </script>
