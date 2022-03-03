@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+.box { position:absolute; left:0px; top:200px; width:100px; height:100px; background:orange; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script><!-- 이징모션 플러그인-->
+
+<script>
+$(function(){
+	
+    $(".box").animate({left:100},1000,"easeOutElastic");
+	/*
+        이징
+            easeIn - 효과를 움직임의 도입부에서 적용
+            easeOut - 효과를 움직임의 끝부분에 적용
+            easeInOut - 효과를 움직임의 도입부와 끝부분에 적용
+
+        효과
+            Elastic - 탄력(탄성,진동) 효과
+            Bounce - 
+            Back
+            ..
+    */ 
+});
+</script>
+
+</head>
+
+<body>
+    
+    <div class="box">box</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
