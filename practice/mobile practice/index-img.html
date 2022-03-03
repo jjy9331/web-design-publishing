@@ -26,17 +26,29 @@ a { text-decoration:none; color:#fff; }
 /* header */
 #header h1 { font-size:20px; color:#fff; padding:10px;}
 #header #gnb li { 
-   float:left;
-   width: 33.333%;
-   text-align:center;
-   font-size:14px;    
-   background:#333; 
+    float:left;
+    width: 33.333%;
+    text-align:center;
+    font-size:14px;    
+    background:#333; 
 }
 
 /* contents */
 #contents h2 { font-size:20px; margin:20px 0; }
-#contents #photo { margin-bottom:20px;  border: 5px solid green; }
-#contents #photo img { width: 300px;}
+#contents #photo { margin-bottom:20px;  border: 5px dashed green; }
+#contents #photo:after{content:""; display: block; clear: both;} 
+
+#contents #photo li {  
+    box-sizing: border-box; 
+    border: 5px solid orange; 
+    float: left; 
+    width: 32.66%; /* (100-2/3 */
+} /*이미지를 감싼 부모에게 height를 넣지않는다*/
+#contents #photo li:nth-child(1){margin-right: 1%;}
+#contents #photo li:nth-child(2){margin-right: 1%;}
+#contents #photo li img {width: 100%;}
+
+
 #contents p { margin-bottom:20px; }
 
 /* footer */
@@ -64,7 +76,9 @@ a { text-decoration:none; color:#fff; }
       <h2>Design</h2>
       
       <div id="photo">
-       <img src="images/photo1.jpg" alt="">
+       <li><img src="images/photo1.jpg" alt=""></li>
+       <li><img src="images/photo2.jpg" alt=""></li>
+       <li><img src="images/photo3.jpg" alt=""></li>
       </div>
 
       <p>Design is what you make of it. 
