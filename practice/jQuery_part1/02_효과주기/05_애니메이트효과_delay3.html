@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+
+*{margin:0; padding:0;}
+ul{list-style: none;}
+
+.typo {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  font-family: 'Roboto'; 
+  font-size: 70px; 
+  font-weight: 800;
+}
+.typo span { position: relative;}
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+  //초기설정
+  $(".typo span:eq(0)").css({left:0, top:100, opacity:0});//d
+  $(".typo span:eq(1)").css({left:0, top:100, opacity:0});//e
+  $(".typo span:eq(2)").css({left:0, top:100, opacity:0});//s
+  $(".typo span:eq(3)").css({left:0, top:100, opacity:0});//i
+  $(".typo span:eq(4)").css({left:0, top:100, opacity:0});//g
+  $(".typo span:eq(5)").css({left:0, top:100, opacity:0});//n
+
+    //움직임설정
+  $(".typo span:eq(0)").delay(0).animate({left:0, top:0, opacity:1});//d
+  $(".typo span:eq(1)").delay(50).animate({left:0, top:0, opacity:1});//e
+  $(".typo span:eq(2)").delay(110).animate({left:0, top:0, opacity:1});//s
+  $(".typo span:eq(3)").delay(180).animate({left:0, top:0, opacity:1});//i
+  $(".typo span:eq(4)").delay(260).animate({left:0, top:0, opacity:1});//g
+  $(".typo span:eq(5)").delay(350).animate({left:0, top:0, opacity:1});//n
+});
+
+</script>
+
+</head>
+
+<body>
+
+<p class="typo">
+    <span>d</span><!--
+  --><span>e</span><!--
+  --><span>s</span><!--
+  --><span>i</span><!--
+  --><span>g</span><!--
+  --><span>n</span>
+</p>
+      
+</body>
+</html>
+
+
+
+
+
+
