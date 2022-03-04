@@ -16,7 +16,7 @@ ul{list-style: none;}
   font-size: 70px; 
   font-weight: 800;
 }
-.typo span { display:inline-block; opacity:0; transition:1s; } /* 인라인요소가 되어야 span transform 제어됨*/
+.typo span { display:inline-block; opacity:0; transition:1s;  } /* 인라인요소가 되어야 span transform 제어됨*/
 
 
 </style>
@@ -35,7 +35,7 @@ $(function(){
 	$(".typo span:eq(5)").animate({ opacity:0 },450,function(){ $(this).css({ opacity:1, transform:"rotate(360deg)" });})
 
 
-	//$(".typo span:eq(0)").css({ opacity:1, transform:"rotate(360deg)"  }); //d
+	$(".typo span:eq(0)").css({ opacity:1, transform:"rotate(360deg)"  }); //d
 	//$(".typo span:eq(1)").css({ opacity:1, transform:"rotate(360deg)"  }); //e
 	//$(".typo span:eq(2)").css({ opacity:1, transform:"rotate(360deg)"  }); //s
 	//$(".typo span:eq(3)").css({ opacity:1, transform:"rotate(360deg)"  }); //i

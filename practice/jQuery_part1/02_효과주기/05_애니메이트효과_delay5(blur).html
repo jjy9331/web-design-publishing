@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+
+*{margin:0; padding:0;}
+ul{list-style: none;}
+
+.typo {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  font-family: 'Roboto'; 
+  font-size: 70px; 
+  font-weight: 800;
+}
+.typo span { 
+	display:inline-block; 
+	opacity:0; 
+	transition:1s;  
+	filter: blur(5px);
+	transform: scale(15,15);
+} /* 인라인요소가 되어야 span transform 제어됨*/
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+	//움직임설정
+	$(".typo span").css({transition:"1s"});
+	$(".typo span:eq(0)").animate({ opacity:0 },0,function(){ $(this).css({ opacity:1, filter:"blur(0px)" ,transfrom:"scale(1,1)"});})
+	$(".typo span:eq(1)").animate({ opacity:0 },50,function(){ $(this).css({ opacity:1, filter:"blur(0px)" , transfrom:"scale(1,1)"});})
+	$(".typo span:eq(2)").animate({ opacity:0 },110,function(){ $(this).css({ opacity:1, filter:"blur(0px)" , transfrom:"scale(1,1)"});})
+	$(".typo span:eq(3)").animate({ opacity:0 },180,function(){ $(this).css({ opacity:1, filter:"blur(0px)" , transfrom:"scale(1,1)"});})
+	$(".typo span:eq(4)").animate({ opacity:0 },260,function(){ $(this).css({ opacity:1, filter:"blur(0px)" , transfrom:"scale(1,1)"});})
+	$(".typo span:eq(5)").animate({ opacity:0 },450,function(){ $(this).css({ opacity:1, filter:"blur(0px)" , transfrom:"scale(1,1)"});})
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<p class="typo">
+    <span>d</span><!--
+  --><span>e</span><!--
+  --><span>s</span><!--
+  --><span>i</span><!--
+  --><span>g</span><!--
+  --><span>n</span>
+</p>
+      
+</body>
+</html>
+
+
+
+
+
+
