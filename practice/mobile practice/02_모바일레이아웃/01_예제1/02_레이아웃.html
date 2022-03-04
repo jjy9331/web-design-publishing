@@ -23,9 +23,48 @@ a { text-decoration:none; color:#767676; }
 
 
 /* layout */
-header { height: 50px; background:#f2df11;}
-#container { border: 2px dashed hotpink; }
+header { position: relative; height: 50px; background:#f2df11;}
+#container {  }
 footer { height: 106px; background:#000	; }
+
+
+/* header */
+header h1 { 
+	padding:10px; 
+	font-size:24px; 
+	border: 2px dashed blue;
+	text-align: center;
+}
+
+header h1 a {
+	color: #fff;
+}
+
+header nav .gnb_btn {
+	position: absolute;
+	left: 15px;
+	top: 16px;
+	border: 2px solid orange;
+}
+
+/* container */
+
+.main_visual img { width:100%; }
+
+.quick_link { display: flex;  border: 3px dashed #0cc;}
+
+.quick_link:after { content:""; display:block; clear:both; }
+
+.quick_link li { flex: 1;  background:#ff6b66;}
+.quick_link li:nth-child(2) { background:#d95b57; } 
+
+.quick_link li a { 
+	display: block; 
+	line-height: 125px;
+	text-align: center;
+	color: #fff; 
+	border: 3px solid yellow;
+}
 
 
 </style>
@@ -42,17 +81,19 @@ footer { height: 106px; background:#000	; }
 
 <header>
 
-	<h1></h1>
+	<h1><a href="#">logo</a></h1>
 
 	<nav class="gnb">
-		<a href="#" class="gnb_btn"></a>
+		<a href="#" class="gnb_btn">
+			<img src="images/gnb_btn.png" alt="전체메뉴">
+		</a>
 
 		<ul class="gnb_list">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
 		</ul>
 	</nav>
 
@@ -64,12 +105,14 @@ footer { height: 106px; background:#000	; }
 
 
 <div id="container">    
-	<div class="main_visual">비주얼</div>
+	<div class="main_visual">
+		<img src="images/main_visual.jpg" alt="비주얼">
+	</div>
     
 	<ul class="quick_link">
-		<li>01</li>
-		<li>02</li>
-		<li>03</li>
+		<li><a href="#">link 01</a></li>
+		<li><a href="#">link 02</a></li>
+		<li><a href="#">link 03</a></li>
 	</ul>    
 </div>
 
