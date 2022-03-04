@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>플렉서블 박스</title>
+<style type="text/css">
+#container { 
+    height:700px;
+    display:flex;
+
+	flex-direction:column; /* 주축변경(세로배열) */
+
+    flex-wrap:wrap; 
+    
+    justify-content:center; 
+        /* 
+            flex-start 시작을 기준으로 정렬
+            flex-end 끝을 기준으로 정렬            
+            center 가운데 정렬
+            space-around 박스사이의 일정한 간격 (양끝 간격이 반)
+            space-evenly 박스사이의 일정한 간격 (양끝 간격도 모두 일정)
+            space-between 박스사이의 일정한 간격(양끝 간격을 두지않음)
+        */
+
+    align-items:center; 
+        /* 반대축 정렬 (flex-start,flex-end,center) */
+
+    border:2px dashed black; 
+}
+
+.box1 { width:100px; height:100px; background:#ff6b67}
+.box2 { width:100px; height:100px; background:#f2df11; }
+.box3 { width:100px; height:100px; background:#555; }
+.box4 { width:100px; height:100px; background:#568b77}
+.box5 { width:100px; height:100px; background:#e0ba87; }
+.box6 { width:100px; height:100px; background:#587ab9; }
+</style>
+</head>
+
+<body>
+
+
+<div id="container">
+
+   <div class="box1">1</div>
+   <div class="box2">2</div>
+   <div class="box3">3</div>
+   <div class="box4">4</div>
+   <div class="box5">5</div> 
+   <div class="box6">6</div>
+
+</div>
+
+
+
+</body>
+</html>
+

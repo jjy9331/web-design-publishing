@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>플렉서블 박스</title>
+<style>
+#container { display:flex; flex-direction:row-reverse; border:2px dashed black; }
+/* 부모요소에게 display:flex를 설정하면 자식요소들이 가로배열된다. */
+/* flex-direction:row-reverse를 설정하면 역순으로 배열된다. */
+.box1 { flex:1; height:200px; background:#ff6b67}
+.box2 { flex:1; height:200px; background:#f2df11; }
+.box3 { flex:1; height:200px; background:#555; }
+/* 자식요소들에게 flex값을 설정하면 부모공간 안에서 가로길이가 채워지며, 각각의 비율을 설정할 수 있다 */
+</style>
+</head>
+
+<body>
+
+
+<div id="container">
+
+   <div class="box1">1</div>
+   <div class="box2">2</div>
+   <div class="box3">3</div>
+
+</div>
+
+
+
+</body>
+</html>
+

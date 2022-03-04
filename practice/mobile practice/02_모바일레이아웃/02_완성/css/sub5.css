@@ -1,0 +1,10 @@
+@import url(common.css);
+
+
+/* sub5 */
+#container_sub #map { width:100%; height:350px; background:#ccc; }
+
+#container_sub dl { margin-top:30px; margin-bottom:70px; }
+#container_sub dl dt { float:left; width:80px; font-size:11px; text-align:center; color:#fff; background:#ff6b66; }
+#container_sub dl dd { /* background:yellow; */  margin-left:100px; margin-bottom:13px; }
+

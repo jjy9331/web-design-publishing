@@ -1,0 +1,22 @@
+@import url(common.css);
+
+
+/* sub4 */
+#container_sub .join { color:#aaa; }
+#container_sub .join div { margin-bottom:10px; line-height:50px; font-size:14px; border:1px solid #ddd; padding-left:15px; box-sizing:border-box; }
+#container_sub .join input { border:0; width:100%; vertical-align:middle; font-size:14px; outline:none; }
+#container_sub .join input[type=radio] { width:auto; }
+#container_sub .join .email_accept { padding:5px 0; font-size:11px; }
+#container_sub .join .hz { float:left; width:50%; text-align:center; }
+#container_sub .join .hz.left { border-right:0; } 
+#container_sub .join .end { margin-bottom:40px; } 
+
+#container_sub .join .join_btn { 
+   -webkit-appearance:none; /* appearance:폼요소의 브라우져 기반 스타일을 없앰, 여기서는 아이폰이나 아이패드에서 적용된 버튼의 기본 모양을 없애기 위함 */
+   appearance:none;
+
+   -webkit-border-radius:0; /* 아이폰이나 아이패드에서 적용된 버튼 기본 모양의 라운딩을 없애기 위함 */
+   border-radius:0; 
+   
+   background:#b7b7b7; color:white; font-weight:bold; padding:17px 0; margin-bottom:40px; }
+

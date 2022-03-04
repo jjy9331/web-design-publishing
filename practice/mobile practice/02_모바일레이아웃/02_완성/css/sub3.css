@@ -1,0 +1,11 @@
+@import url(common.css);
+
+
+/* sub3 */
+#container_sub .notice li:after { content:""; display:block; clear:both; }
+#container_sub .notice li { padding:17px 0; border-bottom:1px solid #c5c5c5; }
+#container_sub .notice li img { float:left; margin-right:17px; }
+#container_sub .notice li .date { text-align:right; font-size:11px; color:#999; }
+
+#container_sub .more {/*border:1px solid red;*/ display:block; margin-bottom:17px; text-align:center; line-height:50px; color:#333; font-weight:bold; }
+

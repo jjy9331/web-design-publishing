@@ -1,0 +1,63 @@
+
+구글 웹폰트 
+    http://fonts.google.com
+
+
+-------------------------------------------------------------------
+
+추천 구글웹폰트
+
+산세리프
+https://www.google.com/fonts/specimen/Open+Sans
+https://www.google.com/fonts/specimen/Roboto
+https://www.google.com/fonts/specimen/Lato
+https://www.google.com/fonts/specimen/Noto+Sans
+https://www.google.com/fonts/specimen/Titillium+Web
+https://www.google.com/fonts/specimen/Comfortaa
+
+
+세리프
+https://www.google.com/fonts/specimen/Noto+Serif
+https://www.google.com/fonts/specimen/Lora
+
+
+기타
+https://www.google.com/fonts/specimen/Exo
+https://www.google.com/fonts/specimen/Exo+2
+https://www.google.com/fonts/specimen/Monoton
+https://www.google.com/fonts/specimen/Dosis
+https://www.google.com/fonts/specimen/Sniglet
+https://www.google.com/fonts/specimen/Titan+One
+
+-------------------------------------------------------------------
+
+아이콘폰트(웹아이콘)
+
+
+1. ionicons v2
+  
+    http://ionicons.com/v2
+
+    연결할 CSS
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+
+2. google icon
+
+    https://design.google.com/icons
+
+    연결할 CSS
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+

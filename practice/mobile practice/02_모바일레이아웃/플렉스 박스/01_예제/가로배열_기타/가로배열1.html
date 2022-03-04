@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>플렉서블 박스</title>
+<style type="text/css">
+#container { display:flex; border:2px dashed black; }
+/* 부모요소에게 display:flex를 설정하면 자식요소들이 가로배열되고
+ 부모의 길이가 자식들의 길이보다 줄어들 경우 자식들의 가로길이도 줄어든다
+*/
+.box1 { width:200px; height:200px; background:#ff6b67}
+.box2 { width:200px; height:200px; background:#f2df11; }
+.box3 { width:200px; height:200px; background:#555; }
+.box4 { width:200px; height:200px; background:#568b77}
+.box5 { width:200px; height:200px; background:#e0ba87; }
+.box6 { width:200px; height:200px; background:#587ab9; }
+</style>
+</head>
+
+<body>
+
+
+<div id="container">
+
+   <div class="box1">1</div>
+   <div class="box2">2</div>
+   <div class="box3">3</div>
+   <div class="box4">4</div>
+   <div class="box5">5</div>
+   <div class="box6">6</div>
+
+</div>
+
+
+
+</body>
+</html>
+
