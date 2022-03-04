@@ -21,19 +21,20 @@ ul{list-style: none;}
 	opacity:0; 
 	transition:1s;  
 	filter: blur(5px);
-	transform: scale(15,15);
+	/* transform: scale(15,15); */
 } /* 인라인요소가 되어야 span transform 제어됨*/
 
 
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
 
 <script>
 $(function(){
 	//움직임설정
 	$(".typo span").css({transition:"1s"});
-	$(".typo span:eq(0)").animate({ opacity:0 },0,function(){ $(this).css({ opacity:1, filter:"blur(0px)" ,transfrom:"scale(1,1)"});})
+	$(".typo span:eq(0)").animate({ opacity:0 },0,function(){ $(this).css({ opacity:1, filter:"blur(0px)" , transfrom:"scale(3,3)"});})
 	$(".typo span:eq(1)").animate({ opacity:0 },50,function(){ $(this).css({ opacity:1, filter:"blur(0px)" , transfrom:"scale(1,1)"});})
 	$(".typo span:eq(2)").animate({ opacity:0 },110,function(){ $(this).css({ opacity:1, filter:"blur(0px)" , transfrom:"scale(1,1)"});})
 	$(".typo span:eq(3)").animate({ opacity:0 },180,function(){ $(this).css({ opacity:1, filter:"blur(0px)" , transfrom:"scale(1,1)"});})
