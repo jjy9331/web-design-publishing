@@ -26,7 +26,6 @@ body { font-size:15px; font-family:'맑은 고딕'; }
 
 
 /* 팝업 */
-
 .pop { 
 	position:absolute; 
 	left:500px; 
@@ -36,36 +35,30 @@ body { font-size:15px; font-family:'맑은 고딕'; }
 	height:600px;
 	background-color:hotpink;
 }
-
-
 .pop .close {
 	position:absolute; 
 	right:30px; 
 	top:30px; 
 }
-
 </style>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script>
-  $(function(){
-    //초기설정
-    $(".pop").hide();
-    
-    $(".m1").click({function(){
-      $(".pop").show();
-    });
 
-    $(".close").click(function(){
-		  $(".pop").hide();
-  	});
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+
+
+	$(".close").click(function(){
+		$(".pop").hide();
+	});
+
+	$(".bt").click(function(){
+		$(".pop").show();
+	});
 
 });
-
-
-
-
 </script>
-
 </head>
 
 <body>
@@ -82,9 +75,11 @@ body { font-size:15px; font-family:'맑은 고딕'; }
 
   <div id="contents">
          <div class="c1">
-           <p><a href="#" class="m1">레이어팝업 띄우기</a></p>
-         </div>
+			01 <a href="#" class="bt">팝업보이기</a>
+		 </div>
+
          <div class="c2">02</div>
+
          <div class="c3">03</div>
   </div>
   
