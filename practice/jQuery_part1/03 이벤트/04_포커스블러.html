@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+body { font: 30px "나눔고딕"; }
+
+input { border: 3px solid pink; outline:none; }
+a { text-decoration: none; color:#777; outline:none;}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+
+    $("input").focus(function(){ //선택되었을 때
+        $(this).css({ border:"3px dashed hotpink"});
+    });
+
+    $("input").blur(function(){ //해제되었을 때 jQ는 해제를 별도로 해줘야한다.
+        $(this).css({ border:"3px solid pink"});
+    });
+
+    $("a").blur(function(){ //해제되었을 때 jQ는 해제를 별도로 해줘야한다.
+        $(this).css({ color:"orange"});
+    });
+
+    $("a").focus(function(){ //선택되었을 때
+        $(this).css({ color:"#777"});
+    });
+
+});
+</script>
+
+</head>
+
+<body>
+
+ 
+
+<input type="text">
+
+<br>
+<br>
+
+<input type="text">
+
+<br>
+<br>
+
+<input type="text">
+
+<br>
+<br>
+
+
+<a href="#">링크</a>
+
+<br>
+<br>
+
+<a href="#">링크</a>
+
+<br>
+<br>
+
+<a href="#">링크</a>
+
+<br>
+<br>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

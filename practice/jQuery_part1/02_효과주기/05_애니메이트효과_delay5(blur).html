@@ -36,7 +36,7 @@ $(function(){
 	//움직임설정
 	$(".typo span").css({ transition:"1s" });
 
-	$(".typo span:eq(0)").animate({ opacity:0 },0,function(){ $(this).css({ opacity:1, filter:"blur(0px)", transform:"scale(1,1) rotate(360deg)", left:0, color:"orange" });})
+	$(".typo span:eq(0)").animate({ opacity:0 },0,function(){ $(this).css({ opacity:1, filter:"blur(0px)", transform:"scale(1,1) rotate(360deg)", left:0, color:"orange" });}) //transform을 transfrom으로 씀. 오타주의
 	$(".typo span:eq(1)").animate({ opacity:0 },50,function(){ $(this).css({ opacity:1, filter:"blur(0px)", transform:"scale(1,1) rotate(360deg)", left:0  });})
 	$(".typo span:eq(2)").animate({ opacity:0 },110,function(){ $(this).css({ opacity:1, filter:"blur(0px)", transform:"scale(1,1) rotate(360deg)", left:0  });})
 	$(".typo span:eq(3)").animate({ opacity:0 },180,function(){ $(this).css({ opacity:1, filter:"blur(0px)", transform:"scale(1,1) rotate(360deg)", left:0  });})
