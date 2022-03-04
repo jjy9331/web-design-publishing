@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+#box { position:absolute; left:0px; top:170px; width:200px; height:100px; background:#F9C; }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+	
+	
+  var i=0;
+  
+  $("#box").on("mouseenter mouseout click",function(){
+	      i++; 
+		  $("h1").text(i);
+		  $(this).css({left:i});
+  });
+  
+  
+});
+</script>
+
+</head>
+
+<body>
+
+
+  
+  <h1>텍스트</h1>
+  
+
+  <div id="box"></div>  
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

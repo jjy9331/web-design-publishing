@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>레이어 팝업</title>
+<style>
+* { margin:0; padding:0; }
+ul { list-style:none; }
+
+body { font-size:15px; font-family:'맑은 고딕'; }
+
+#header { height:100px; background-color:#eee; }
+#header .inner { margin:0 auto; width:1200px; height:94px;  border:3px dashed orange; }
+
+#visual { margin:0 auto; height:500px; background-color:yellowgreen; }
+
+#contents { margin:0 auto; width:1200px; border:3px dashed blue; }
+#contents:after { content:""; display:block; clear:both; }
+
+#contents .c1 { float:left; width:390px; margin-right:15px; height:300px; background-color:skyblue; }
+#contents .c2 { float:left; width:390px; margin-right:15px; height:300px; background-color:yellow; }
+#contents .c3 { float:left; width:390px; height:300px; background-color:pink; }
+
+#footer { height:100px; background-color:#eee; }
+#footer .inner { margin:0 auto; width:1200px; height:94px;  border:3px dashed orange; }
+
+
+/* 팝업 */
+
+.pop { 
+	position:absolute; 
+	left:500px; 
+	top:50px; 
+	z-index:2000;
+	width:600px; 
+	height:600px;
+	background-color:hotpink;
+}
+
+
+.pop .close {
+	position:absolute; 
+	right:30px; 
+	top:30px; 
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+  $(function(){
+    //초기설정
+    $(".pop").hide();
+    
+    $(".m1").click({function(){
+      $(".pop").show();
+    });
+
+    $(".close").click(function(){
+		  $(".pop").hide();
+  	});
+
+});
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+
+
+  <div id="header">
+        <div class="inner"></div>
+  </div>
+  
+
+  <div id="visual">visual</div>
+  
+
+  <div id="contents">
+         <div class="c1">
+           <p><a href="#" class="m1">레이어팝업 띄우기</a></p>
+         </div>
+         <div class="c2">02</div>
+         <div class="c3">03</div>
+  </div>
+  
+
+  <div id="footer">
+       <div class="inner"></div>
+  </div>
+
+
+  <div class="pop">
+	팝업창
+	<a href="#" class="close">close</a>
+  </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
