@@ -45,6 +45,26 @@ $(function(){
 	//초기설정
 	$(".nav li a").css({ backgroundColor:"#ddd", color:"#fff" });
 	$(".nav li:eq(0) a").css({ backgroundColor:"yellow", color:"#000" });
+
+	$(".tab li").hide();
+	$(".tab li:eq(0)").show();
+
+	//메뉴 클릭했을 때 설정
+	$(".nav li:eq(1)").click(function(){
+		$(".nav li a").css({ backgroundColor:"#ddd", color:"#fff" });
+		$(".nav li:eq(1) a").css({ backgroundColor:"yellow", color:"#000" });
+		
+		$(".tab li").hide();
+		$(".tab li:eq(1)").show();
+	});
+	
+	$(".nav li:eq(2)").click(function(){
+		$(".nav li a").css({ backgroundColor:"#ddd", color:"#fff" });
+		$(".nav li:eq(2) a").css({ backgroundColor:"yellow", color:"#000" });
+
+		$(".tab li").hide();
+		$(".tab li:eq(0)").show();
+	});
     
 });
 </script>
