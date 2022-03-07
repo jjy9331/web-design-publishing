@@ -9,8 +9,10 @@ ul,li { margin:0; padding:0; list-style:none; }
 #gall {  position:relative;width:600px; height:300px; border:5px dashed #ccc; }
 #gall li {  position:absolute; left:0px; top:0px; width:600px; height:300px; font-size:33px; }
 
-#apple { background:red; }
-#banana { background:yellow; }
+
+#gall li img{width:600px; height:300px;}
+#apple { background: rgba(255, 0, 0, 0.8); }
+#banana { background:rgba(255, 255, 0, 0.8) }
 #orange { background:orange; }
 </style>
 
@@ -41,12 +43,12 @@ $(function(){
 <body>
 
 <ul id="gall">
-      <li id="apple">01 사과</li>
-      <li id="banana">02 바나나</li>
-      <li id="orange">03 오렌지</li>
+      <li id="apple"><img src="images/img1.jpg" alt=""></li>
+      <li id="banana"><img src="images/img2.jpg" alt=""></li>
+      <li id="orange"><img src="images/img3.jpg" alt=""></li>
 </ul>
 
-<!-- <button id="next">next</button> -->
+<button id="next">next</button>
 
 
 

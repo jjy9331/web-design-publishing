@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+ul,li { margin:0; padding:0; }
+ul { list-style:none; }
+
+#gall {  overflow:hidden;  position:relative; width:600px; height:300px; border:5px dashed #ccc; }
+#gall li {  position:absolute; left:0px; top:0px;  width:600px; height:300px; font-size:33px; }
+
+#apple { background:red; }
+#banana { background:yellow; }
+#orange { background:orange; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+	//초기설정
+	$("#gall li").css({ left:600 }); //모두 안보이는 위치에 배치
+	$("#gall li:first").css({ left:0 }); //첫번째것만 보이는 위치에 배치
+
+
+	function slideGall(){
+
+		$("#gall li:eq(1)").animate({ left:0 },function(){//두번째것을 보이는 위치로 이동시키고난후,
+		
+			$("#gall li:eq(0)").appendTo("#gall").css({ left:600 });//첫번째것의 마크업순서를 끝으로하고, 안보이는 위치로 보내서 대기하게한다
+
+		});
+
+	};
+	setInterval(slideGall,3000);//3초(1000=1초)마다 반복실행
+
+});
+</script>
+
+</head>
+
+<body>
+
+
+<ul id="gall">
+      <li id="apple">01 사과</li>
+      <li id="banana">02 바나나</li>
+      <li id="orange">03 오렌지</li>
+</ul>
+
+<button id="next">next</button>
+
+
+
+</body>
+</html>
+
+
+
