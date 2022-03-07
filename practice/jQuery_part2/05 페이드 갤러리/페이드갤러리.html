@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+ul,li { margin:0; padding:0; list-style:none; }
+
+#gall {  position:relative;width:600px; height:300px; border:5px dashed #ccc; }
+#gall li {  position:absolute; left:0px; top:0px; width:600px; height:300px; font-size:33px; }
+
+#apple { background:red; }
+#banana { background:yellow; }
+#orange { background:orange; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+	//초기설정
+	$("#gall li").hide();//모두 안보이게하고
+	$("#gall li:first").show();//첫번째것만 보이게함
+
+	function fadeGall(){
+		$("#gall li:first").appendTo("#gall").fadeOut();
+			//첫번째것의 마크업순서를 젤 끝으로 보내면서 사라지게하고(fadeOut)
+			//(이제 첫번째가 아니라 끝번째가 되버림)
+
+		$("#gall li:first").fadeIn();
+			//첫번째것(아까전의 두번째것이 이제 첫번째것이 됨)을 나타나게함(fadeIn)
+	};
+  
+	setInterval(fadeGall,3000);//3초(1000=1초)마다 반복실행
+
+});
+</script>
+
+</head>
+<body>
+
+<ul id="gall">
+      <li id="apple">01 사과</li>
+      <li id="banana">02 바나나</li>
+      <li id="orange">03 오렌지</li>
+</ul>
+
+<!-- <button id="next">next</button> -->
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
