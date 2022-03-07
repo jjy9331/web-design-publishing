@@ -8,7 +8,7 @@ body { font-size:20px; font-family:"맑은 고딕"; }
 ul { list-style:none; padding:0; margin:0;}
 
 .gnb .main { position:relative; float:left; width:250px; height:50px; margin-left:1px; background:pink; }
-.gnb .sub {  display:none;  position:absolute; left:0px; top:30px; }
+.gnb .sub {  display:none;  position:absolute; left:0px; top:50px; }
 .gnb .sub li { width:250px; height:50px; background:yellow; }
 
 .gnb .main:hover { background:hotpink; }
@@ -21,11 +21,11 @@ ul { list-style:none; padding:0; margin:0;}
 $(function(){
 
 	$(".main").mouseenter(function(){ //오버
-		$(".sub",this).show();  //$("A",this) :  this의 하위요소 중 A 	
+		$(".sub",this).stop().slideDown(200);  //$("A",this) :  this의 하위요소 중 A 	
 	});
 	
 	$(".main").mouseleave(function(){ //아웃
-		$(".sub",this).hide(); 
+		$(".sub",this).stop().slideUp(200); 
 	});
 
 	
