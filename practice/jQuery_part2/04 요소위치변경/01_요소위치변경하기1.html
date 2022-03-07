@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+ul,li { margin:0; padding:0; }
+ul { list-style:none; }
+
+#box { width:300px; border:5px dashed #ccc; }
+
+#apple { background:red; }
+#banana { background:yellow; }
+#orange { background:orange; }
+#kiwi { background:yellowgreen; }
+#grape { background:violet; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+  
+  $("#orange").appendTo("#box");
+
+});
+</script>
+
+</head>
+<body>
+
+<ul id="box">
+  
+      <li id="apple">사과</li>
+      <li id="banana">바나나</li>
+      <li id="orange">오렌지</li>
+      <li id="kiwi">키위</li>
+      <li id="grape">포도</li>
+ 
+</ul>
+
+<button id="next">next</button>
+
+
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+ul,li { margin:0; padding:0; }
+ul { list-style:none; }
+
+#box { width:1000px; height:200px; border:5px dashed #ccc; }
+
+#box li { float:left; width:200px; height:200px; }
+
+#apple { background:red; }
+#banana { background:yellow; }
+#orange { background:orange; }
+#kiwi { background:yellowgreen; }
+#grape { background:violet; }
+
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+  
+  $("#next").click(function(){
+	 $("#box li:first").appendTo("#box"); 
+  }); 
+
+});
+</script>
+
+</head>
+<body>
+
+<ul id="box">
+      <li id="apple">01 사과</li>
+      <li id="banana">02 바나나</li>
+      <li id="orange">03 오렌지</li>
+      <li id="kiwi">04 키위</li>
+      <li id="grape">05 포도</li>
+</ul>
+
+
+<!-- <button id="prev">prev</button> -->
+<button id="next">next</button>
+
+
+
+
+</body>
+</html>
+
+
+
