@@ -23,7 +23,8 @@ $(function(){
   
   $("#next").click(function(){
 
-    $("#orange").appendTo("#box");
+    $("#box li:first").appendTo("#box");
+    //box안의 첫번째 li를 잘라내기해서 box안의 젤 끝에 붙여넣기
   });
   
 
@@ -40,7 +41,6 @@ $(function(){
       <li id="orange">오렌지</li>
       <li id="kiwi">키위</li>
       <li id="grape">포도</li>
- 
 </ul>
 
 <button id="next">next</button>

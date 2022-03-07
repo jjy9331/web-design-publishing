@@ -7,7 +7,7 @@
 ul,li { margin:0; padding:0; }
 ul { list-style:none; }
 
-#box { width:1000px; height:200px; border:5px dashed #ccc; }
+#box { width:900px; height:200px; border:5px dashed #ccc; }
 
 #box li { float:left; width:200px; height:200px; }
 
@@ -25,7 +25,13 @@ ul { list-style:none; }
 $(function(){
   
   $("#next").click(function(){
-	 $("#box li:first").appendTo("#box"); 
+	  $("#box li:first").appendTo("#box"); 
+    //box안의 첫번째 li를 잘라내서 젤 끝에 붙여넣기
+  }); 
+
+  $("#prev").click(function(){
+	  $("#box li:last").prependTo("#box"); 
+    //box안의 마지막 li를 잘라내서 젤 끝에 붙여넣기
   }); 
 
 });
@@ -44,6 +50,7 @@ $(function(){
 
 
 <!-- <button id="prev">prev</button> -->
+<button id="prev">prev</button>
 <button id="next">next</button>
 
 
