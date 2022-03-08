@@ -47,6 +47,7 @@ header nav .gnb_btn {
 	border: 2px solid orange;
 }
 header .gnb .gnb_list {
+	display: none;
 	position: absolute;
 	left: 0px;
 	top: 50px;
@@ -100,6 +101,34 @@ footer .copyright {
 
 
 </style>
+<script>
+	window.addEventListener("load",function(){
+
+		//초기설정
+		const gnb_list =  document.querySelector(".gnb_list");
+		const gnb_btn =  document.querySelector(".gnb_btn");
+		gnb_list.style.display = "none";
+		
+		let toggle = 0; // gnb_list 안보일때는 0, 보일 떼는 1
+
+
+		//햄버거버튼 눌렀을 때
+		gnb_btn.addEventListener("click",function(){
+
+			if(toggle == 0){//gnb_list안보인다면 보이게 하고
+				gnb_list.style.display="block";
+				toggle = 1;
+			}
+			else{//gnb_list보인다면 안보이게 해라
+				gnb_list.style.display="none";
+				toggle = 0;
+			}
+		});
+
+
+		
+	});
+</script>
 </head>
 
 
