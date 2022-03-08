@@ -20,17 +20,22 @@ a:hover { text-decoration:none; color:orange; }
    text-align: center;
 }
 
+#wrab {
+  height: 2000px;
+}
 
 #box { 
-  /* display:none; */
-	position:absolute; left:0px; top:0px; z-index:100;
-	width:350px; height:100%; 
+  display:flex;
+  justify-content: center;
+  align-items: center;
+	position:fixed; left:-100%; top:0px; z-index:100;
+	width:100%; height:100%; 
 	background:#fff; 
   box-shadow: 5px 5px 30px rgba(0,0,0,0.3);
 }
 
 #box .close { 
-   position:absolute; right:10px; top:10px; 
+   position:absolute; left:10px; top:10px; 
    
    width:50px; line-height:50px;
    text-align:center; 
@@ -39,7 +44,11 @@ a:hover { text-decoration:none; color:orange; }
    
 }
 
-#box ul { padding-top:150px; text-align:center; }
+#box ul { 
+  /* padding-top:150px;  */
+
+  text-align:center; 
+}
 #box ul li a { font-size:30px; line-height:50px; }
 </style>
 
@@ -56,7 +65,7 @@ $(function(){
   });
 
   $('.close').click(function(){//close눌렀을때
-	  $('#box').animate({left:-350},1000,"easeInOutQuint"); //.box 안보이게함
+	  $('#box').animate({left:"-100%"},1000,"easeInOutQuint"); //.box 안보이게함
   });
   
 
@@ -74,7 +83,7 @@ $(function(){
   
 
 
-
+<div id="wrab">
   <div id="box">     
       <ul>
         <li><a href="#">HOME</a></li>  
@@ -85,6 +94,7 @@ $(function(){
 
       <a href="#" class="close">close</a>      
   </div>  
+</div>
   
 
 
