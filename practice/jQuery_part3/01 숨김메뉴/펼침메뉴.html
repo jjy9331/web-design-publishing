@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>펼침메뉴</title>
+<style>
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+/* base */
+body { font:11px "나눔고딕","맑은 고딕"; color:#767676; }
+a { text-decoration:none; color:#767676; }
+a:hover { color:#f93; }
+ 
+/* layout */
+#header { background:#eee; }
+#header .inner { margin:0 auto; width:1200px; height:100px; border:2px dashed skyblue; }
+#container { margin:0 auto; width:1200px; height:500px; border:2px dashed #ccc; }
+#footer { background:#eee; }
+#footer .inner { position:relative; margin:0 auto; width:1200px; height:100px; border:2px dashed orange; }
+
+
+/* footer */
+.family { position:absolute; right:20px; top:20px; width:126px; height:20px; }
+
+.family .family_menu { 
+	display:none; 
+	position:absolute; left:10px; bottom:12px; 
+	width:114px; padding:5px; background:#f6f6f6;  
+	border:1px solid #ccc; opacity:0.8; 
+}
+.family .family_menu li { height:21px; }
+</style>
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+	
+
+  
+});
+</script>
+</head>
+
+<body>
+
+
+
+ <header id="header">
+     <div class="inner">
+
+		 <h1><a href="#">logo</a></h1>
+
+	 </div>
+ </header>
+
+
+
+
+
+ <div id="container"></div>
+
+
+
+
+
+ <footer id="footer">
+     <div class="inner">
+
+  
+    	    <div class="family">
+
+				  <a href="#" class="family_btn"><img src="images/family-site.gif"></a>
+				  
+				  <ul class="family_menu">
+					  <li><a href="#">현대자동차그룹</a></li>
+					  <li><a href="#">Worldwide</a></li>
+					  <li><a href="#">Q멤버스</a></li>
+					  <li><a href="#">K-DIC</a></li>
+					  <li><a href="#">펀키아</a></li>
+					  <li><a href="#">채용안내</a></li>
+					  <li><a href="#">IR</a></li>
+				  </ul>
+       
+            </div>
+
+  
+     </div>      
+ </footer>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

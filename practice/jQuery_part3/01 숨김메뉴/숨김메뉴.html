@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+body,ul{ list-style:none; margin:0;padding:0; }
+body { font:12px "나눔고딕"; background:#aaa; }
+a { text-decoration:none; color:#777; }
+a:hover { text-decoration:none; color:orange; }
+
+
+
+.menu { 
+   position:absolute; left:10px; top:10px; /*position: absolute 인라인 요소가 블록요소로 바뀜 */
+   width:50px; height:50px;
+   color:#fff;
+   border:1px solid #fff;
+   /* border-radius:50%; */ 
+}
+
+
+#box { 
+    display:none;
+	position:absolute; left:0px; top:0px; z-index:100;
+	width:350px; height:100%; 
+	background:#fff; 
+}
+
+#box .close { 
+   position:absolute; right:10px; top:10px; 
+   /*
+   width:50px; line-height:50px;
+   text-align:center; 
+   border:1px solid #ccc; 
+   border-radius:50%; 
+   */
+}
+
+#box ul { padding-top:150px; text-align:center; }
+#box ul li a { font-size:30px; line-height:50px; }
+</style>
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+	
+  $('.menu').click(function(){//menu 클릭했을때
+	  //$('#box').show();	  //box 보이게함
+  });
+
+  //$('.close').click(function(){//close눌렀을때
+	  //$('#box').hide(); //.box 안보이게함
+  //});
+  
+
+});
+</script>
+
+</head>
+
+<body>
+  
+  
+  
+ 
+  <a href="#" class="menu">menu</a>
+  
+
+
+
+  <div id="box">     
+      <ul>
+        <li><a href="#">HOME</a></li>  
+        <li><a href="#">ABOUT</a></li>  
+        <li><a href="#">PORTFOLIO</a></li>  
+        <li><a href="#">CONTACT</a></li>  
+      </ul>
+
+      <a href="#" class="close">close</a>      
+  </div>  
+  
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
