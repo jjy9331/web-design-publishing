@@ -47,12 +47,15 @@ header nav .gnb_btn {
 	border: 2px solid orange;
 }
 header .gnb .gnb_list {
-	display: none;
+	overflow: hidden;
+	/* display: none; */ /*이것 때문에 작동 안했음.*/
 	position: absolute;
 	left: 0px;
 	top: 50px;
 	width: 100%;
+	height: 10px;/* 210px */
 	background: black;
+	border: 2px dashed skyblue;
 	
 }
 
@@ -104,26 +107,39 @@ footer .copyright {
 <script>
 	window.addEventListener("load",function(){
 
-		//초기설정
-		const gnb_list =  document.querySelector(".gnb_list");
-		const gnb_btn =  document.querySelector(".gnb_btn");
-		gnb_list.style.display = "none";
-		
-		let toggle = 0; // gnb_list 안보일때는 0, 보일 떼는 1
+	//초기설정
+	const gnb_list = document.querySelector(".gnb_list");
+	const gnb_btn = document.querySelector(".gnb_btn");
 
 
-		//햄버거버튼 눌렀을 때
-		gnb_btn.addEventListener("click",function(){
+	//부드러운 움직임 공식
+	let h = 0;
+	let targetH = 0;
 
-			if(toggle == 0){//gnb_list안보인다면 보이게 하고
-				gnb_list.style.display="block";
-				toggle = 1;
-			}
-			else{//gnb_list보인다면 안보이게 해라
-				gnb_list.style.display="none";
-				toggle = 0;
-			}
-		});
+	function smoothMove() {
+		h = h + 0.1*(targetH - h);
+		gnb_list.style.height = h + "px";
+	}
+	setInterval(smoothMove,10);
+
+	
+
+	//햄버거버튼 눌렀을때
+
+	let toggle = 0; //gnb_list 안보일때는0, 보일때는1
+
+	gnb_btn.addEventListener("click",function(){
+
+		if( toggle == 0 ){ //gnb_list안보인다면
+			targetH = 210;//보이게하고
+			toggle = 1; //보이게한것을 표시
+		}
+		else{ //gnb_list보인다면
+			targetH = 0;//안보이게하고
+			toggle = 0; //안보이게한것을 표시			
+		}
+
+	});
 
 
 		
