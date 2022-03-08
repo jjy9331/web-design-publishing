@@ -22,7 +22,7 @@ a:hover { text-decoration:none; color:orange; }
 
 
 #box { 
-  display:none;
+  /* display:none; */
 	position:absolute; left:0px; top:0px; z-index:100;
 	width:350px; height:100%; 
 	background:#fff; 
@@ -50,11 +50,11 @@ $(function(){
 
 	
   $('.menu').click(function(){//menu 클릭했을때
-	  $('#box').slideDown(600);	  //box 보이게함
+	  $('#box').animate({left:0}); //box 보이게함
   });
 
   $('.close').click(function(){//close눌렀을때
-	  $('#box').slideUp(600); //.box 안보이게함
+	  $('#box').animate({left:-350}); //.box 안보이게함
   });
   
 
