@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+* { margin:0; padding:0; }
+ul { list-style:none; }
+img {border:0; vertical-align:top; }
+body { font: 12px "나눔고딕"; }
+
+.box { 
+	position:absolute; left:0px; top:50px;
+	width:600px; height:300px;
+	border: 1px dashed #ccc;
+	/*box-shadow:10px 10px 70px rgba(0,0,0,0.2);*/
+}
+
+.bt { position:absolute; right:20px; top:20px; width:40px; height:40px;/* border:1px dashed #ccc; */ }
+.line { transition:0.5s; position:absolute; left:0px; width:40px; height:4px; background:#ccc; }
+.n1 { top:0px; }
+.n2 { top:18px; }
+.n3 { top:36px; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+	var k=0;
+	  
+	$(".bt").click(function(){
+
+		if ( k==0 ) {
+			$(".n1").css({ transform:"rotate(45deg)", top:18 });
+			$(".n2").css({ opacity:0 });
+			$(".n3").css({ transform:"rotate(-45deg)", top:18 });
+			k=1;
+		}
+		else {
+			$(".n1").css({ transform:"rotate(0deg)", top:0 });
+			$(".n2").css({ opacity:1 });
+			$(".n3").css({ transform:"rotate(0deg)", top:36 });
+			k=0;
+		}
+
+	});
+
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<div class="box">
+
+		<div class="bt">
+			<div class="line n1"></div>
+			<div class="line n2"></div>
+			<div class="line n3"></div>
+		</div>
+
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
