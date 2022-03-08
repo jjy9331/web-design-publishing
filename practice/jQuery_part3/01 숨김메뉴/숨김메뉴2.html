@@ -44,17 +44,18 @@ a:hover { text-decoration:none; color:orange; }
 
 
 <script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
 
 <script>
 $(function(){
 
 	
   $('.menu').click(function(){//menu 클릭했을때
-	  $('#box').animate({left:0}); //box 보이게함
+	  $('#box').animate({left:0},1000,"easeInOutQuint"); //box 보이게함
   });
 
   $('.close').click(function(){//close눌렀을때
-	  $('#box').animate({left:-350}); //.box 안보이게함
+	  $('#box').animate({left:-350},1000,"easeInOutQuint"); //.box 안보이게함
   });
   
 
