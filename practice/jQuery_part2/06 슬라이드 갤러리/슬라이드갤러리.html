@@ -21,15 +21,15 @@ ul { list-style:none; }
 $(function(){
 
 	//초기설정
-	$("#gall li").css({ left:1200 }); //모두 안보이는 위치에 배치
-	$("#gall li:first").css({ left:0 }); //첫번째것만 보이는 위치에 배치
+	$("#gall li").css({ top:1200 }); //모두 안보이는 위치에 배치
+	$("#gall li:first").css({ top:0 }); //첫번째것만 보이는 위치에 배치
 
 
 	function slideGall(){
 
-		$("#gall li:eq(1)").animate({ left:0 },function(){//두번째것을 보이는 위치로 이동시키고난후,
+		$("#gall li:eq(1)").animate({ top:0 },function(){//두번째것을 보이는 위치로 이동시키고난후,
 		
-			$("#gall li:eq(0)").appendTo("#gall").css({ left:-1200 });//첫번째것의 마크업순서를 끝으로하고, 안보이는 위치로 보내서 대기하게한다
+			$("#gall li:eq(0)").appendTo("#gall").css({ top:1200 });//첫번째것의 마크업순서를 끝으로하고, 안보이는 위치로 보내서 대기하게한다
 
 		});
 
