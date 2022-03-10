@@ -7,6 +7,11 @@
 #bt { text-decoration:none; color:#09F; padding:5px; background:yellow; }
 #box { position:absolute; left:100px; top:150px; width:900px; height:300px;}
 
+/* 
+  css우선순위 
+  id(100) > class(10) > tag(1)
+*/
+
 .s1 { background:pink; }
 .s2 { background:skyblue; }
 </style>
@@ -18,8 +23,11 @@ $(function(){
    
 	$("#bt").click(function(){
 		
+		//$("#box").removeClass("s2");//s2해제
+    //$("#box").addClass("s1");//s2적용
 		
-		
+    $("#box").removeClass("s2").addClass("s1");
+
 	});    
 	
 });

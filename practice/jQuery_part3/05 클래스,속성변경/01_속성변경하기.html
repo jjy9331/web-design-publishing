@@ -11,7 +11,14 @@
 
 <script>
 $(function(){
-
+	$("#bt1").click(function(){
+		$("#box img").attr("src","images/naver.gif");
+		$("#box img").attr("href","http://www.naver.com");
+	});
+	$("#bt2").click(function(){
+		$("#box img").attr("src","images/daum.png");
+		$("#box img").attr("href","http://www.duam.net");
+	});
 });
 </script>
 
@@ -24,7 +31,7 @@ $(function(){
 	<button id="bt2">다음</button>
 
 	<div id="box">
-		<a href="http://www.daum.net"><img src="images/daum.png" alt="다음"></a>
+		<a href="http://www.daum.net" target="_blank"><img src="images/daum.png" alt="다음"></a>
 	</div>  
 
 
