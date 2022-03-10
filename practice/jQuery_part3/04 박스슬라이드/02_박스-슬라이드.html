@@ -15,23 +15,29 @@ ul {list-style:none;}
 	float:left; width:200px; height:200px; 
 	margin-left:10px; margin-top:10px; 
 	border:1px dashed skyblue; 
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 #banner li .box { 
-	position:absolute; left:50px; top:50px; 
+	position:absolute; left:0px; top:0px; 
 	width:200px; height:400px; 
 }
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
 
 <script>
 $(function(){
 	
 	
-	//$("#banner li").mouseenter(function(){
-           //$(".box").animate({top:0});
-	//});
+	$("#banner li").mouseenter(function(){
+           $(".box",this).stop().animate({top:-200},3000,"easeOutElastic");
+	});
+    $("#banner li").mouseout(function(){
+           $(".box",this).stop().animate({top:0},3000,"easeOutElastic");
+	});
 	
 });
 </script>
@@ -46,8 +52,31 @@ $(function(){
             <div class="box"><img src="images/im.gif" alt=""></div>
         </li>
         
-        <!--
+
+        <li>
+            <div class="box"><img src="images/im.gif" alt=""></div>
+        </li>
         
+        <li>
+            <div class="box"><img src="images/im.gif" alt=""></div>
+        </li>
+        <li>
+            <div class="box"><img src="images/im.gif" alt=""></div>
+        </li>
+        
+
+        <li>
+            <div class="box"><img src="images/im.gif" alt=""></div>
+        </li>
+        
+        <li>
+            <div class="box"><img src="images/im.gif" alt=""></div>
+        </li>
+        <li>
+            <div class="box"><img src="images/im.gif" alt=""></div>
+        </li>
+        
+
         <li>
             <div class="box"><img src="images/im.gif" alt=""></div>
         </li>
@@ -56,7 +85,8 @@ $(function(){
             <div class="box"><img src="images/im.gif" alt=""></div>
         </li>
         
-        -->
+        
+
         
     </ul>
 

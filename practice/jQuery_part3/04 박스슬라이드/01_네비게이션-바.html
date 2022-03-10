@@ -29,16 +29,16 @@ $(function(){
       $("#bar").css({transition:"0.5s"});
 	
 	$("#gnb li:eq(0)").mouseenter(function(){
-            $("#bar").css({left:0});
+            $("#bar").stop().animate({left:0});
       });
       $("#gnb li:eq(1)").mouseenter(function(){
-            $("#bar").css({left:200});
+            $("#bar").stop().animate({left:200});
       });
       $("#gnb li:eq(2)").mouseenter(function(){
-            $("#bar").css({left:400});
+            $("#bar").stop().animate({left:400});
       });
       $("#gnb li:eq(3)").mouseenter(function(){
-            $("#bar").css({left:600});
+            $("#bar").stop().animate({left:600});
       });
 	
 	
