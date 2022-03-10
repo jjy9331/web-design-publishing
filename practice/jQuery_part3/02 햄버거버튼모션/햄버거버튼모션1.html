@@ -21,15 +21,31 @@ body { font: 12px "나눔고딕"; }
 <script>
 $(function(){
 
+	let toggle = 0; // 세줄0 , 엑스1
+	$(".line").css({transition:"0.3s"})
+
 	$(".bt").click(function(){
+		
+		if (toggle == 0){//세줄일때는 
+			$(".n2").css({opacity:0});
+			$(".n1").css({top:18, transform:"rotate(45deg)"});
+			$(".n3").css({top:18, transform:"rotate(-45deg)"});
+			//엑스로 바꾸고
+			toggle=1;//엑스로 바뀌었음을 표시
+		}
+		else{//엑스일때는 
+			$(".n2").css({opacity:1});
+			$(".n1").css({top:0, transform:"rotate(0deg)"});
+			$(".n3").css({top:36, transform:"rotate(0deg)"});
+			//세줄로 바꾸고
+			toggle=0;//세줄로 바뀌었음을 표시
+		}
+	});
 
 		$(".line").css({transition:"0.3s"})
 		$(".n2").css({opacity:0});
 		$(".n1").css({top:18, transform:"rotate(45deg)"});
 		$(".n3").css({top:18, transform:"rotate(-45deg)"});
-		
-	});
-
 
 
 });
