@@ -9,11 +9,28 @@ ul { list-style:none; }
 img {border:0; vertical-align:top; }
 body { font: 12px "나눔고딕"; }
 
-.bt { position:absolute; left:30px; top:30px; width:40px; height:40px; border:1px dashed #ccc; }
+.bt { 
+	position:absolute; 
+	right:30px; 
+	top:30px; 
+	width:40px; 
+	height:40px; 
+	border:1px dashed #ccc; 
+	z-index: 1000;
+}
 .line { position: absolute; left: 0px; top: 0px; width:40px; height:4px; background:black; }
 .n1 { left: 0px; top: 0px; }
 .n2 { left: 0px; top: 18px; }
 .n3 { left: 0px; top: 36px; }
+
+.box { 
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 300px;
+	background-color: hotpink;
+}
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -27,6 +44,7 @@ $(function(){
 	$(".bt").click(function(){
 		
 		if (toggle == 0){//세줄일때는 
+			$(".box").show();
 			$(".n2").css({opacity:0});
 			$(".n1").css({top:18, transform:"rotate(45deg)"});
 			$(".n3").css({top:18, transform:"rotate(-45deg)"});
@@ -34,6 +52,7 @@ $(function(){
 			toggle=1;//엑스로 바뀌었음을 표시
 		}
 		else{//엑스일때는 
+			$(".box").hide();
 			$(".n2").css({opacity:1});
 			$(".n1").css({top:0, transform:"rotate(0deg)"});
 			$(".n3").css({top:36, transform:"rotate(0deg)"});
@@ -66,7 +85,7 @@ $(function(){
 
 	</div>
 
-
+<div class="box">박스</div>
 
 </body>
 </html>
