@@ -20,9 +20,16 @@ body { font: 12px "나눔고딕"; }
 
 <script>
 $(function(){
-	$(".n2").fadeOut();
-	$(".n1").animate({top:18});
-	$(".n3").animate({top:18});
+
+	$(".bt").click(function(){
+
+		$(".line").css({transition:"0.3s"})
+		$(".n2").css({opacity:0});
+		$(".n1").css({top:18, transform:"rotate(45deg)"});
+		$(".n3").css({top:18, transform:"rotate(-45deg)"});
+		
+	});
+
 
 
 });
