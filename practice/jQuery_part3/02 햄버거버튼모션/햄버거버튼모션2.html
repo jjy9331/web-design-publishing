@@ -10,10 +10,11 @@ img {border:0; vertical-align:top; }
 body { font: 12px "나눔고딕"; }
 
 .box { 
-	position:absolute; left:0px; top:50px;
+	position:absolute; left:-520px; top:50px;
 	width:600px; height:300px;
 	border: 1px dashed #ccc;
 	/*box-shadow:10px 10px 70px rgba(0,0,0,0.2);*/
+	transition: 0.6s;
 }
 
 .bt { position:absolute; right:20px; top:20px; width:40px; height:40px;/* border:1px dashed #ccc; */ }
@@ -33,12 +34,14 @@ $(function(){
 	$(".bt").click(function(){
 
 		if ( k==0 ) {
+			$(".box").css({left:0})
 			$(".n1").css({ transform:"rotate(45deg)", top:18 });
 			$(".n2").css({ opacity:0 });
 			$(".n3").css({ transform:"rotate(-45deg)", top:18 });
 			k=1;
 		}
 		else {
+			$(".box").css({left:-520})
 			$(".n1").css({ transform:"rotate(0deg)", top:0 });
 			$(".n2").css({ opacity:1 });
 			$(".n3").css({ transform:"rotate(0deg)", top:36 });
