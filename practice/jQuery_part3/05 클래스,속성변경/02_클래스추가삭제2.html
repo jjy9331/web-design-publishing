@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+#bt { text-decoration:none; color:#09F; padding:5px; background:yellow;  font-size: 50px;}
+#bt.on {color: white; background-color: red;}
+
+#box { width: 500px; height: 600px; background: yellow;}
+/* 
+  css우선순위 
+  id(100) > class(10) > tag(1)
+*/
+
+.s1 { background:pink; }
+.s2 { background:skyblue; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+   
+	$("#bt").click(function(){
+		
+    $(this).toggleClass("on"); //on클래스 적용
+
+    $("#box").slideToggle();
+	});    
+	
+});
+</script>
+</head>
+<body>
+
+
+  <a href="#" id="bt">버튼</a>
+  
+  <div id="box">내용</div>
+
+
+</body>
+</html>
