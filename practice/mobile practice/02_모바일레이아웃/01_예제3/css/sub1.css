@@ -3,4 +3,42 @@
 
 /* sub1 - about */
 
+.group {
+    border: 2px dashed #777
+}
+.group_s {
+    border: 5px dashed hotpink;
+    margin-bottom: 40px;
+    overflow: auto; /* 모바일에서는 스크롤이 안보인다.*/
+
+}
+
+.group_s .in {
+    width: 200%;
+    border: 5px solid yellow;
+}
+
+.group img { width: 100% ;}
+
+.group_s .in:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.group_s .in img {
+    float: left;
+    width: 33.33% ;
+}
+
+.group h3 {
+    font-size: 16px;
+    color: #555;
+    padding-top: 15px;
+    padding-bottom: 6px;
+}
+
+.group p {
+    padding-bottom: 40px;
+}
 

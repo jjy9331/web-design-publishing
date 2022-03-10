@@ -1,38 +1,6 @@
-@charset "utf-8";
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(common.css);
 
-/* reset */
-html,body { width:100%; height:100%; }
-body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
-body,h1,h2,h3,h4,input,button { font-size:12px; }
-ul,li,ol { list-style:none; }
-img,fieldset,iframe { border:0; }
-img { vertical-align:top; }
-table { border-collapse:collapse; }
-
-
-/* base */
-body { color:#767676; font:14px/21px "Nanum Gothic","나눔고딕";  -webkit-text-size-adjust:none;/* 아이폰이나 아이패드의 모바일 사파리 브라우져에서 뷰포트가 변할 때(가로 값이 변할 때) 텍스트의 크기를 자동으로 조절하는 것을 방지*/ }
-a { text-decoration:none; color:#767676; }
-.skip_nav, .blind { position:absolute; top:-9999px; font-size:0; }
-
-
-/* layout */
-header { height:50px; background:#f2df11; }
-#container {  }
-footer { height:105px; background:#000; }
-
-
-/* header */
-header h1 { padding:10px; font-size:24px; text-align:center; }
-header a { color:white; }
-header .gnb .gnb_btn { position:absolute; left:15px; top:16px; }
-
-header .gnb .gnb_list { display:none; position:absolute; left:0px; top:0px; z-index:100; width:70%; height:100%; background-color:rgba(0,0,0,0.9); }
-header .gnb .gnb_list li a { display:block; padding-left:25px; font-size:15px; line-height:41px; }
-header .gnb .gnb_list li.close { position:absolute; right:15px; top:15px; }
-header .gnb .gnb_list li.close a { padding:0; }
-header .gnb .gnb_list li:first-child { margin-top:50px; }
+/* 메인 페이지 */
 
 
 /* container */
@@ -43,6 +11,5 @@ header .gnb .gnb_list li:first-child { margin-top:50px; }
 #container .quick_link li:nth-child(2) { background:#d95b57; }
 #container .quick_link li a { display:block; font-size:30px; text-align:center; line-height:125px; color:white; }
 
-/* footer */
-footer .copyright { padding-top:48px; text-align:center; font-size:10px; color:white; }
+
 
