@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery</title>
+<style>
+* { margin:0; padding:0; list-style:none; }
+
+#gallery .gall_box { width:600px; height:327px; }
+#gallery .nav li {float:left; padding:5px; margin-right:30px; cursor:pointer;}
+
+.on {background:orange; color:#fff;}
+.off {background:#ccc; color:#fff;}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+  $('.nav li:eq(0)').click(function(){
+	  //$('.gall_box img').attr('src','images/img1.jpg');
+	  //$('.gall_box a').attr('href','http://www.naver.com');
+	  //$('.nav li').removeClass('on').addClass('off');
+	  //$(this).removeClass('off').addClass('on');
+  });
+  
+  $('.nav li:eq(1)').click(function(){
+	  //$('.gall_box img').attr('src','images/img2.jpg');
+	  //$('.gall_box a').attr('href','http://www.daum.net');
+	  //$('.nav li').removeClass('on').addClass('off');
+	  //$(this).removeClass('off').addClass('on');
+  });
+  
+  $('.nav li:eq(2)').click(function(){
+	  //$('.gall_box img').attr('src','images/img3.jpg');
+	  //$('.gall_box a').attr('href','http://www.google.co.kr');
+	  //$('.nav li').removeClass('on').addClass('off');
+	  //$(this).removeClass('off').addClass('on');
+  });
+    
+});
+</script>
+</head>
+<body>
+
+
+
+<div id="gallery">
+  
+	<div class="gall_box">
+		<a href="http://www.naver.com"><img src="images/img1.jpg"/></a>
+	</div>  
+
+	<ul class="nav">
+		<li class="on">Img1</li>
+		<li class="off">Img2</li>
+		<li class="off">Img3</li>
+	</ul>
+  
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
