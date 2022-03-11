@@ -3,4 +3,29 @@
 
 /* sub2 - gallery */
 
+.gallery {
+    margin-bottom: 40px;
+    border: 5px dashed #ccc;
+}
+.gallery:after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
+.gallery li {
+    float: left;
+    width: 48.5%; /* 100/2 한행당 2개 */
+    margin-bottom: 10px;
+    border: 2px dashed hotpink;
+    box-sizing: border-box;
+}
+
+.gallery li:nth-child(odd) {
+    /* odd 홀수, evne 짝수 */
+    margin-right: 3%;
+}
+.gallery li:nth-child(3n) {
+    /* 3의 배수 번째 */
+    border: 2px solid skyblue;
+}
