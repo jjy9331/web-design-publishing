@@ -11,7 +11,9 @@ a { text-decoration:none; color:#fc6; }
 #top { position:fixed; left:600px; bottom:100px; background:#333; }
 #tt { position:fixed; left:0; top:0; z-index:100; background:#f39; color:#FF0; padding:7px; }
 
-#box { position: fixed; right: 0px; top:200px; width: 300px; height: 300px; background: red;}
+#box1 { position: fixed; right: 0px; top:300px; width: 300px; height: 300px; background: red;}
+#box2 { position: fixed; right: 300px; top:300px; width: 300px; height: 300px; background: #0cc;}
+#box3 { position: fixed; right: 600px; top:300px; width: 300px; height: 300px; background: orange;}
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -31,20 +33,14 @@ $(function(){
       $(window).scroll(function(){ //스크롤할때(스크롤하는동안)
       
             var sc = $(document).scrollTop(); 
+            if( sc < 1542 ) { sc = 1542}
                   
             $('#tt').text(sc);	
-            // if ( sc > 3000) {
-            //       $("#wrap").css({background:"yellowgreen", color:"white"});
-            // }
-            // else{
-            //       $("#wrap").css({background:"#ffc", color:"#999"});
-            // }
-            if ( sc > 3000) {
-                  $("#box").animate({right:0});
-            }
-            else{
-                  $("#box").animate({right:1000});
-            }
+
+            $("#box1").css({top:0.5*sc + 300});
+            $("#box2").css({top:sc + 300});
+            $("#box3").css({top:0.3*sc + 300});
+
       });
       //scroll이벤트와 animate는 궁합이 맞지않다.
       //animate대신 transition을 사용한다.
@@ -56,7 +52,9 @@ $(function(){
 
 <body>
 
-<div id="box"></div>
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
 
 <div id="tt">텍스트</div>
 

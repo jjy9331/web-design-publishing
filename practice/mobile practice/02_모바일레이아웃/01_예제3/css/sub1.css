@@ -6,6 +6,28 @@
 .group {
     border: 2px dashed #777
 }
+
+.group_s1 {
+    border: 5px dashed #0cc;
+    margin-bottom: 40px;
+}
+.group_s1 .in {
+    border: 5px dashed yellow;
+}
+
+.group_s1 .in:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.group_s1 .in .box {
+    float: left;
+    background-color: pink;
+}
+.group_s1 .in .box:nth-child(2){
+    background-color: hotpink;
+}
+
 .group_s {
     border: 5px dashed hotpink;
     margin-bottom: 40px;
