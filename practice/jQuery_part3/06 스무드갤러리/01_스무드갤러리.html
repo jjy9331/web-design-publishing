@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Gallery</title>
+<style>
+* { margin:0; padding:0; }
+ul { list-style:none; }
+body { color:#767676; }
+
+/* 이미지갤러리 */
+#sm_gallery { position:relative; margin:0 auto; width:900px;  margin-top:30px; text-align:center;  border:1px dashed orange; }
+	
+#sm_gallery .mas { overflow:hidden; position:relative; width:600px; height:327px; margin:30px auto; border:2px dashed lightblue; }
+#sm_gallery #sm_gall { position:absolute; left:0; top:0px; width:1800px; height:327px; }
+#sm_gallery #sm_gall li { float:left; }/*이미지들을 가로배열*/
+
+#sm_gallery .nav { width:600px; margin:0 auto; background:lightblue; overflow:hidden; }
+#sm_gallery .nav li{ float:left; margin-left:3px;}
+#sm_gallery .nav a { color:#fff; text-decoration:none; } 
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+    $(".nav li:eq(0)").click(function(){
+	    $("#sm_gall").animate({left:-600*0});
+    });
+    $(".nav li:eq(1)").click(function(){
+	    $("#sm_gall").animate({left:-600*1});
+    });
+    $(".nav li:eq(2)").click(function(){
+	    $("#sm_gall").animate({left:-600*2});
+    });
+
+	
+});
+</script>
+</head>
+
+
+<body>
+
+
+
+<div id="sm_gallery">
+  
+    <div class="mas">
+        <ul id="sm_gall">
+          <li><a href="#"><img src="images/img1.jpg" alt="이미지1" ></a></li>
+          <li><a href="#"><img src="images/img2.jpg" alt="이미지2" ></a></li>
+          <li><a href="#"><img src="images/img3.jpg" alt="이미지3" ></a></li>
+        </ul>
+    </div>
+
+    <ul class="nav">
+        <li><a href="#">01</a></li>
+        <li><a href="#">02</a></li>
+        <li><a href="#">03</a></li>
+    </ul>
+  
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
