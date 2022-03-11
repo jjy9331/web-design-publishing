@@ -10,8 +10,10 @@
 .group_s1 {
     border: 5px dashed #0cc;
     margin-bottom: 40px;
+    overflow: auto;
 }
 .group_s1 .in {
+    width: 200%;
     border: 5px dashed yellow;
 }
 
@@ -22,10 +24,20 @@
 }
 .group_s1 .in .box {
     float: left;
+    width: 33.33%;
     background-color: pink;
 }
 .group_s1 .in .box:nth-child(2){
     background-color: hotpink;
+}
+
+.group_s1 .in .box img {
+    width: 95%;
+}
+.group_s1 .in .box p {
+    width: 95%;
+    margin-top: 10px;
+    border: 2px dashed blue;
 }
 
 .group_s {
