@@ -21,17 +21,17 @@ body { color:#767676; }
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
-
+<script src="js/jquery.easing.1.3.js"></script>
 <script>
 $(function(){
     $(".nav li:eq(0)").click(function(){
-	    $("#sm_gall").animate({left:-600*0});
+	    $("#sm_gall").animate({left:-600*0},1000,"easeOutQuint");
     });
     $(".nav li:eq(1)").click(function(){
-	    $("#sm_gall").animate({left:-600*1});
+	    $("#sm_gall").animate({left:-600*1},1000,"easeOutQuint");
     });
     $(".nav li:eq(2)").click(function(){
-	    $("#sm_gall").animate({left:-600*2});
+	    $("#sm_gall").animate({left:-600*2},1000,"easeOutQuint");
     });
 
 	

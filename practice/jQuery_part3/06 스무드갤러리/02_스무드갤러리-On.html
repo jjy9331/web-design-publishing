@@ -25,15 +25,30 @@ body { color:#767676; }
 <script>
 $(function(){
 	
-	//$(".nav li").css({background:"skyblue"}); //메뉴배경색을 모두 하늘색으로
-	//$(".nav li:eq(0)").css({background:"orange"});//첫번째메뉴배경색만 오렌지색으로
+	$(".nav li").css({background:"skyblue"}); //메뉴배경색을 모두 하늘색으로
+	$(".nav li:eq(0)").css({background:"orange"});//첫번째메뉴배경색만 오렌지색으로
 	
 	
-	$(".nav li:eq(0)").click(function(){
-           $("#sm_gall").animate({left:0});
-			//$(".nav li").css({background:"skyblue"}); //메뉴배경색을 모두 하늘색으로
-			//$(this).css({background:"orange"}); //이메뉴배경색만 오렌지색으로
+	$(".nav li").click(function(){
+            let n = $(this).index();
+            $("h1").text(n);
+            $("#sm_gall").animate({left:-600*n});
+			$(".nav li").css({background:"skyblue"}); //메뉴배경색을 모두 하늘색으로
+			$(this).css({background:"orange"}); //이메뉴배경색만 오렌지색으로
 	});
+
+/*
+    $(".nav li:eq(1)").click(function(){
+           $("#sm_gall").animate({left:-600});
+			$(".nav li").css({background:"skyblue"}); //메뉴배경색을 모두 하늘색으로
+			$(this).css({background:"orange"}); //이메뉴배경색만 오렌지색으로
+	});
+    $(".nav li:eq(2)").click(function(){
+           $("#sm_gall").animate({left:-600*2});
+			$(".nav li").css({background:"skyblue"}); //메뉴배경색을 모두 하늘색으로
+			$(this).css({background:"orange"}); //이메뉴배경색만 오렌지색으로
+	});
+*/
 	
 	
 });
@@ -44,6 +59,7 @@ $(function(){
 <body>
 
 
+ <h1></h1>
 
 <div id="sm_gallery">
   
