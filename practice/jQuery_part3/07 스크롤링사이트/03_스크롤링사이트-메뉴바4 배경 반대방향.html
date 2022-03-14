@@ -54,16 +54,16 @@ a { text-decoration:none; color:#767676; outline:none; }
 
 
 /*contents*/
-#contents #home { width:100%; height:1200px; }
+#contents #home { width:100%; height:1500px; }
 #contents #home .inner { margin:0 auto; width:1000px; }
 
-#contents #about { width:100%; height:1200px; }
+#contents #about { width:100%; height:1500px; }
 #contents #about .inner { margin:0 auto; width:1000px; }
 
-#contents #works { width:100%; height:1200px; }
+#contents #works { width:100%; height:1500px; }
 #contents #works .inner { margin:0 auto; width:1000px; }
 
-#contents #contact { width:100%; height:1200px; }
+#contents #contact { width:100%; height:1500px; }
 #contents #contact .inner { margin:0 auto; width:1000px; }
 
 #contents h2 { font-size:250px; padding-top:70px; font-weight:100; letter-spacing:-10px;  }
@@ -73,15 +73,20 @@ a { text-decoration:none; color:#767676; outline:none; }
     left: 0px;
     top: 0px;
     width: 100%; 
-    height: 100%; 
-    z-index: -1000;
+    z-index: -10;
     background: #0cc; 
+    color: rgba(255,255,255,0.3);
+    font-size: 150px;
     /* background-size: cover; */
     
 }
+.bg1 {background: orange;}
+.bg2 {background: black;}
+.bg3 {background: hotpink;}
+.bg4 {background: skyblue;}
 
 .bg video { 
-    width: 100%; 
+    /* width: 100%;  */
     /* background-size: cover; */
 }
 
@@ -90,8 +95,8 @@ a { text-decoration:none; color:#767676; outline:none; }
 
 <script src="js/jquery-3.6.0.min.js"></script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/jquery.vide.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<!-- <script src="js/jquery.vide.min.js"></script> -->
 
 <script>
 $(function(){
@@ -100,13 +105,13 @@ $(function(){
 			$('html,body').animate({ scrollTop:0},700); return false;	    
 	   })
 	  $("#gnb li:eq(1) a").click(function(){
-			$('html,body').animate({ scrollTop:1200},700); return false;
+			$('html,body').animate({ scrollTop:1500},700); return false;
 	   })
 	  $("#gnb li:eq(2) a").click(function(){
-			$('html,body').animate({ scrollTop:1200*2},700); return false;
+			$('html,body').animate({ scrollTop:1500*2},700); return false;
 	   })
 	  $("#gnb li:eq(3) a").click(function(){
-			$('html,body').animate({ scrollTop:1200*3},700); return false;
+			$('html,body').animate({ scrollTop:1500*3},700); return false;
 	   })
    
       //스크롤하기전 설정
@@ -118,19 +123,19 @@ $(function(){
 			  		  
               $("#tt").text(b);
 		  
-			  if((b >=0) && (b < 1200)) {	//스크롤한 높이가 0~1200일경우
+			  if((b >=0) && (b < 1500)) {	//스크롤한 높이가 0~1200일경우
 				  $('#bar').css({left:0});
 			  } 
 	
-			  if((b >= 1200) && (b < 1200*2)) {	//about
+			  if((b >= 1500) && (b < 1500*2)) {	//about
 				  $('#bar').css({left:60});
 			  } 
 							  
-			  if((b >= 1200*2) && (b < 1200*3)) { //works
+			  if((b >= 1500*2) && (b < 1500*3)) { //works
 				  $('#bar').css({left:60*2});
 			  } 
 			  
-			  if(b >= 1200*3) {	//contact
+			  if(b >= 1500*3) {	//contact
 				 $('#bar').css({left:60*3});
 			  } 						  
 							  
@@ -226,17 +231,16 @@ $(function(){
     
     
     
-    
-    
-    
     <div id="footer">
        <p>copyright &copy; 2020, my portfolio, all right reserved.</p>
     </div>
     
-    <!-- <div class="bg"> -->
-        <div class="bg" data-vide-bg="video/1" data-vide-options="loop:true, muted:true"></div>
-        <!-- <video src="video/Pexels Videos 2006729.mp4" autoplay muted loop ></video> -->
-    <!-- </div> -->
+    <div class="bg">
+        <div class="bg1">01</div>
+        <div class="bg2">02</div>
+        <div class="bg3">03</div>
+        <div class="bg4">04</div>
+    </div>
 
 
     
