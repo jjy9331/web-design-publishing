@@ -49,7 +49,7 @@ a { text-decoration:none; color:#767676; outline:none; }
 <script src="js/jquery-3.6.0.min.js"></script>
 
 <script>
-$(function(){
+$(function(){//스크롤했을 때
   
 	  $("#gnb li:eq(0) a, h1 a").click(function(){
 			$('html,body').animate({ scrollTop:0},700); return false;	    
@@ -64,28 +64,31 @@ $(function(){
 			$('html,body').animate({ scrollTop:1200*3},700); return false;
 	   })
    
+       //스크롤 전 설정
+       $('#header').css({ transition:"1s"});
    
-	  $(window).scroll(function(){ //스크롤했을때
+       //스크롤 시 설정
+	  $(window).scroll(function(){ //스크롤했을때(스크롤하는 동안)
 		  
 			  var b = $(document).scrollTop(); 
 			  $("#tt").text(b);
 
 		  
 		  
-			  if((b >=0) && (b < 1200)) {	//스크롤한 높이가 0~1200일경우
-				  //$('#header').css({background:"#fff"});
+			  if((b >=0) && (b < 1200)) {	//home구간: 스크롤한 높이가 0~1200일경우
+				  $('#header').css({background:"#fff"});
 			  } 
 	
-			  if((b >= 1200) && (b < 1200*2)) {	
-				  //$('#header').css({background:"red"});
+			  if((b >= 1200) && (b < 1200*2)) {	//about구간: 
+				  $('#header').css({background:"red"});
 			  } 
 							  
-			  if((b >= 1200*2) && (b < 1200*3)) {	
-				 // $('#header').css({background:"yellow"});
+			  if((b >= 1200*2) && (b < 1200*3)) { //works구간: 
+				 $('#header').css({background:"yellow"});
 			  } 
 			  
-			  if(b >= 1200*3) {	
-				  //$('#header').css({background:"green"});
+			  if(b >= 1200*3) {	//contacts구간: 
+				  $('#header').css({background:"green"});
 			  } 						  
 							  
 		  
