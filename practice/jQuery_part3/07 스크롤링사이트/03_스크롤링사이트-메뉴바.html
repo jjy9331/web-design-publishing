@@ -16,35 +16,59 @@ a { text-decoration:none; color:#767676; outline:none; }
 
 
 /*layout*/
-#header { position:fixed; width:100%; height: 70px; background:#fff; }
+#header { 
+    position:fixed; 
+    width:100%; 
+    height: 70px; 
+    background:rgba(255, 255, 255, 0); 
+}
 #contents { width:100%; color:#fff; }
 #footer { width:100%; height: 30px;  background:#fff; }
 
 
 /*header*/
-#header h1 { position:absolute; left:20px; top:12px; font-size: 30px;  }
-#header h1 a { text-decoration: none; }
+#header h1 { position:absolute; left:20px; top:12px; font-size: 30px;}
+#header h1 a { text-decoration: none; color:white;}
 #header #gnb { position:absolute; right:20px; top:30px;}
-#header #gnb li { float: left;  width:60px; text-align:center; }
-#header #bar { position:absolute; left:0px; top:16px; width:60px; height:5px; background:#ccc; }
+#header #gnb li { 
+    float: left; 
+    width:60px; 
+    text-align:center; 
+    /* border: 1px dashed #ccc; */
+}
+#header #gnb li a {
+    color: white;
+}
+#header #bar { 
+    position:absolute; 
+    left:0px; 
+    top:-7px; 
+    width:30px; 
+    height:30px; 
+    background:red; 
+    margin-left: 15px;
+    border-radius: 50px;
+    z-index: -10;
+    /* border-left: 23px solid rgba(255,255,255,1); */
+}
 
 
 /*contents*/
-#contents #home { width:100%; height:1200px; background:#f93; }
+#contents #home { width:100%; height:1200px; background:fixed url(images/sm_bg1.jpg)#f93;}
 #contents #home .inner { margin:0 auto; width:1000px; }
 
-#contents #about { width:100%; height:1200px; background:#333; }
+#contents #about { width:100%; height:1200px; background:fixed url(images/sm_bg2.jpg) #333; }
 #contents #about .inner { margin:0 auto; width:1000px; }
 
-#contents #works { width:100%; height:1200px; background:#f93; }
+#contents #works { width:100%; height:1200px; background:fixed url(images/sm_bg3.jpg)#f93; }
 #contents #works .inner { margin:0 auto; width:1000px; }
 
-#contents #contact { width:100%; height:1200px; background:#333; }
+#contents #contact { width:100%; height:1200px; background:fixed url(images/sm_bg4.jpg)#333; }
 #contents #contact .inner { margin:0 auto; width:1000px; }
 
 #contents h2 { font-size:250px; padding-top:70px; font-weight:100; letter-spacing:-10px;  }
 
-</style>
+</style>    
 
 <script src="js/jquery-3.6.0.min.js"></script>
 
@@ -64,26 +88,29 @@ $(function(){
 			$('html,body').animate({ scrollTop:1200*3},700); return false;
 	   })
    
+      //스크롤하기전 설정
+      $("#bar").css({transition:"0.5s"});
    
 	  $(window).scroll(function(){ //스크롤하는동안
 		  
-			  var b = $(document).scrollTop(); 
+			  var b = $(document).scrollTop(); //얼마만큼 스크롤했는지 값
 			  		  
+              $("#tt").text(b);
 		  
 			  if((b >=0) && (b < 1200)) {	//스크롤한 높이가 0~1200일경우
-				  //$('#bar').css({left:0});
+				  $('#bar').css({left:0});
 			  } 
 	
-			  if((b >= 1200) && (b < 1200*2)) {	
-				  //$('#bar').css({left:60});
+			  if((b >= 1200) && (b < 1200*2)) {	//about
+				  $('#bar').css({left:60});
 			  } 
 							  
-			  if((b >= 1200*2) && (b < 1200*3)) {	
-				  //$('#bar').css({left:60*2});
+			  if((b >= 1200*2) && (b < 1200*3)) { //works
+				  $('#bar').css({left:60*2});
 			  } 
 			  
-			  if(b >= 1200*3) {	
-				 // $('#bar').css({left:60*3});
+			  if(b >= 1200*3) {	//contact
+				 $('#bar').css({left:60*3});
 			  } 						  
 							  
 		  
@@ -96,8 +123,9 @@ $(function(){
 </head>
 
 <body>
+    <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px;">0</div>
 
-    <div id="header">
+    <header id="header">
         <h1><a href="#home">logo</a></h1>
         <div id="gnb">
               <ul>
@@ -106,9 +134,9 @@ $(function(){
                   <li><a href="#works">works</a></li>
                   <li><a href="#contact">contact</a></li>
               </ul>
-              <!-- <div id="bar"></div> -->
+              <div id="bar"></div>
         </div>
-    </div>
+    </header>
     
     
   
