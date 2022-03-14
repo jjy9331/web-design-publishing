@@ -16,7 +16,7 @@ a { text-decoration:none; color:#767676; outline:none; }
 
 
 /*layout*/
-#header { position:relative; width:100%; height: 70px; background:#fff; }
+#header { position:fixed; left:0px; top:0px; width:100%; height: 70px; z-index: 1000;  background:rgba(255, 255, 255, 0.5);} /*  width:100%; 꼭 넣을 것 */
 #contents { width:100%; color:#fff; }
 #footer { width:100%; height: 30px;  background:#fff; }
 
@@ -29,17 +29,17 @@ a { text-decoration:none; color:#767676; outline:none; }
 
 
 /*contents*/
-#contents #home { width:100%; height:1200px; background:#f93; }
-#contents #home .inner { width:1000px; border:1px dashed #fff; }
+#contents #home { height:1200px; background:#f93; }
+#contents #home .inner { margin: 0 auto; width:1000px; border:1px dashed #fff; }
 
-#contents #about { width:100%; height:1200px; background:#333; }
-#contents #about .inner { width:1000px; border:1px dashed #fff; }
+#contents #about { height:1200px; background:#333; }
+#contents #about .inner { margin: 0 auto; width:1000px; border:1px dashed #fff; }
 
-#contents #works { width:100%; height:1200px; background:#f93; }
-#contents #works .inner { width:1000px; border:1px dashed #fff; }
+#contents #works { height:1200px; background:#f93; }
+#contents #works .inner { margin: 0 auto; width:1000px; border:1px dashed #fff; }
 
-#contents #contact { width:100%; height:1200px; background:#333; }
-#contents #contact .inner { width:1000px; border:1px dashed #fff; }
+#contents #contact { height:1200px; background:#333; }
+#contents #contact .inner { margin: 0 auto; width:1000px; border:1px dashed #fff; }
 
 #contents h2 { font-size:250px; padding-top:70px; font-weight:normal; letter-spacing:-10px;  }
 
@@ -50,9 +50,21 @@ a { text-decoration:none; color:#767676; outline:none; }
 <script>
 $(function(){
   
-  //$("#gnb li:eq(0) a").click(function(){
+  $("#gnb li:eq(0) a").click(function(){
         $('html,body').animate({ scrollTop:0 });	    
-  //})
+  });
+
+  $("#gnb li:eq(1) a").click(function(){
+        $('html,body').animate({ scrollTop:1200 });	    
+  });
+
+  $("#gnb li:eq(2) a").click(function(){
+        $('html,body').animate({ scrollTop:1200*2 });	    
+  });
+
+  $("#gnb li:eq(3) a").click(function(){
+        $('html,body').animate({ scrollTop:1200*3 });	    
+  });
   
 })
 </script>
