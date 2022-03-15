@@ -5,54 +5,285 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <style>
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+h1,h2,h3,h4 { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+a {color: white; text-decoration: none;}
+
+/* base */
+body { 
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: 300;
+    color: #333;
+}
+
+/* header */
+
+header {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+}
+
+#header_inner {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    margin: 0 auto;
+    width: 1280px;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: black;
+    /* border: 2px dashed gray; */
+}
+.logo img {
+    position: absolute;
+    left: 0px; top: 23px;
+    display: block;
+    width: 62px;
+    height: 54px;
+}
+.gnb {
+    position: absolute;
+    left: 311px;
+    top: 43px;
+    width: 624px;
+    height: 20px;
+    /* border: 2px dashed yellow; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.gnb li {
+    /* border: 2px dashed yellow; */
+    box-sizing: border-box;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    
+}
+.sub_gnb {
+    position: absolute;
+    right: 0px;
+    top: 39px;
+    width: 176px;
+    height: 24px;
+    /* border: 2px dashed yellow; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.sub_gnb li {
+    /* border: 2px dashed yellow; */
+    box-sizing: border-box;
+}
+
+.sub_gnb li input:nth-child(1) {
+    width: 113px;
+    background: none;
+    border-top: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 2px solid #c7c7c7;
+    outline: none; /* focus시 생기는 라인 사용안함 */
+    color: white;
+}
+
+/* visual */
+
+#visual {
+    background-color: #ededed;
+}
+
+#visual_inner {
+    border:2px dashed yellow ;
+    margin: 0 auto;
+    background-position: center;
+    width: 1280px;
+}
+#visual_inner img {
+    width: 100%;
+}
+
+/* models */
+#models {
+    background-color: white;
+}
+#models_inner {
+    border:2px dashed yellow ;
+    margin: 0 auto;
+    background-position: center;
+    width: 1280px;
+}
+#models_inner h2 {
+    margin-top: 128px;
+}
+
+.models_H {
+    margin-top: 138px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.models_H li{
+    /* background-color: yellow; */
+}
+.models_H li p {
+    margin-top: 57px;
+    margin-bottom: 121px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* service */
+
+#service {
+    background-color: #ededed;
+}
+#service_inner {
+    margin: 0 auto;
+    border:2px dashed yellow ;
+    background-position: center;
+    background-color: #ededed;
+    width: 1280px;
+}
+
+#service_inner h2 {
+    margin-top: 147px;
+    margin-bottom: 130px;
+}
+.service_H {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service_H li div {
+    width: 380px;
+    height: 156px;
+    background-color: white;
+    margin-bottom: 140px;
+}
+
+.service_H li div h3 {
+    text-align: center;
+    padding-top: 33px;
+    padding-bottom: 35px;
+    font-size: 18px;
+}
+
+.service_H li div p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+}
 
 </style>
 </head>
 <body>
 
 <header>
-    <div id="inner">
-        <div>
-            <a>
+    <div id="header_inner">
+            <a class="logo" href="#">
                 <img src="images/logo.png" alt="main_logo">
             </a>
-        </div>
-        <ul>
-            <li>Ms</li>
-            <li>MG</li>
-            <li>BIKEs</li>
-            <li>MALL</li>
+        <ul class="gnb">
+            <li><a href="#">Ms</a></li>
+            <li><a href="#">MG</a></li>
+            <li><a href="#">BIKEs</a></li>
+            <li><a href="#">MALL</a></li>
         </ul>
-        <ul>
+        <ul class="sub_gnb">
             <li>
-                <form>
-                    <input type="text">
-                </form>
+                <input type="text">
             </li>
-            <li><img src="images/search.png" alt="search"></li>
-            <li><img src="images/cart.png" alt=""></li>
+            <li><a href="#"><img src="images/search.png" alt="search"></a></li>
+            <li><a href="#"><img src="images/cart.png" alt="cart"></a></li>
         </ul>
     </div>
 </header>
-<section>
-    <img src="images/visual.jpg" alt="visual">
-</section>
-<section id="models">
-<div id="models_inner">
-    <h2><img src="images/models-title.png" alt=""></h2>
-    <ul>
-        <li><img src="images/m1.png" alt="mohenic_G"></li>
-        <li><img src="images/m2.png" alt="mohenic_D"></li>
-        <li><img src="images/m3.png" alt="roadster"></li>
-        <li><img src="images/m4.png" alt="jimmy"></li>
-    </ul>
-</div>
 
+<section id="visual">
+    <div id="visual_inner">
+        <img src="images/visual.jpg" alt="visual">
+    </div>
 </section>
+
+<section id="models">
+    <div id="models_inner">
+        <h2><img src="images/models-title.png" alt="models_title"></h2>
+        <ul class="models_H">
+            <li>
+                <a href="#">
+                    <img src="images/m1.png" alt="mohenic_G">
+                </a>
+                <p>MOHENIC G</p>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/m2.png" alt="mohenic_D">
+                </a>
+                <p>MOHENIC D</p>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/m3.png" alt="roadster">
+                </a>
+                <p>Roadster</p>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/m4.png" alt="jimmy">
+                </a>
+                <p>Jimmy</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
 <section id="service">
-<div id="service_inner">
-    <h2><img src="images/service-title.png" alt=""></h2>
-</div>
+    <div id="service_inner">
+        <h2>
+            <img src="images/service-title.png" alt="service title">
+        </h2>
+        <ul class="service_H">
+            <li>
+                <a href="#"><img src="images/s1.jpg" alt="sale contract"></a>
+                
+                <div>
+                    <h3>계약안내</h3>
+                    <p>
+                        모델에 대한 자세한 사항과 견적 등을<br>
+                        안내해드립니다
+                    </p>
+                </div>
+                
+            </li>
+            <li>
+                <a href="#"><img src="images/s2.jpg" alt="mohenic alliance"></a>
+                <div>
+                    <h3>모헤닉 몰</h3>
+                    <p>모헤닉의 다양한 상품들을 만나보세요</p>
+                </div>
+            </li>
+            <li>
+                <a href="#"><img src="images/s3.jpg" alt="mohenic mall"></a>
+                <div>
+                    <h3>모헤닉 얼라이언스</h3>
+                    <p>구글플레이, 애플스토어에서 “모헤닉”을<br>
+                        검색하세요</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 </section>
 <footer>
 
