@@ -54,36 +54,38 @@ a { text-decoration:none; color:#767676; outline:none; }
 
 
 /*contents*/
-#contents #home { width:100%; height:1500px; }
+#contents #home { width:100%; height:1500px; border:15px dashed rgba(255,255,255,0.7); box-sizing: border-box;}
 #contents #home .inner { margin:0 auto; width:1000px; }
 
-#contents #about { width:100%; height:1500px; }
+#contents #about { width:100%; height:1500px; border:15px dashed rgba(0,0,0,0.7); box-sizing: border-box;}
 #contents #about .inner { margin:0 auto; width:1000px; }
 
-#contents #works { width:100%; height:1500px; }
+#contents #works { width:100%; height:1500px; border:15px dashed rgba(255,255,255,0.7); box-sizing: border-box; }
 #contents #works .inner { margin:0 auto; width:1000px; }
 
-#contents #contact { width:100%; height:1500px; }
+#contents #contact { width:100%; height:1500px; border:15px dashed rgba(0,0,0,0.7); box-sizing: border-box; }
 #contents #contact .inner { margin:0 auto; width:1000px; }
 
 #contents h2 { font-size:250px; padding-top:70px; font-weight:100; letter-spacing:-10px;  }
 
 /* bg */
-.bg { position: fixed; 
+.bg { 
+    position: fixed; 
     left: 0px;
     top: 0px;
+    margin-top: -4500px; /* margin-top을 줘야 스크롤하면서 겹쳐지는 효과 가능*/
     width: 100%; 
     z-index: -10;
     background: #0cc; 
     color: rgba(255,255,255,0.3);
-    font-size: 150px;
+    font-size: 800px;
     /* background-size: cover; */
     
 }
-.bg1 {background: orange;}
-.bg2 {background: black;}
-.bg3 {background: hotpink;}
-.bg4 {background: skyblue;}
+.bg1 {background: orange; height: 1500px;}
+.bg2 {background: black; height: 1500px;}
+.bg3 {background: hotpink; height: 1500px;}
+.bg4 {background: skyblue; height: 1500px;}
 
 .bg video { 
     /* width: 100%;  */
@@ -117,11 +119,14 @@ $(function(){
       //스크롤하기전 설정
       $("#bar").css({transition:"0.5s"});
    
+      //스크롤할때 설정  
 	  $(window).scroll(function(){ //스크롤하는동안
 		  
 			  var b = $(document).scrollTop(); //얼마만큼 스크롤했는지 값
-			  		  
               $("#tt").text(b);
+
+            if (b>=4500){b=4500;}
+			$(".bg").css({top:b});
 		  
 			  if((b >=0) && (b < 1500)) {	//스크롤한 높이가 0~1200일경우
 				  $('#bar').css({left:0});
@@ -235,11 +240,11 @@ $(function(){
        <p>copyright &copy; 2020, my portfolio, all right reserved.</p>
     </div>
     
-    <div class="bg">
-        <div class="bg1">01</div>
-        <div class="bg2">02</div>
-        <div class="bg3">03</div>
+    <div class="bg"> <!--박스 순서 바꿔야함-->
         <div class="bg4">04</div>
+        <div class="bg3">03</div>
+        <div class="bg2">02</div>
+        <div class="bg1">01</div>
     </div>
 
 
