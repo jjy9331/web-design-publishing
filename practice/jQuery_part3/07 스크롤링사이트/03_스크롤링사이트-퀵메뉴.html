@@ -231,6 +231,14 @@
           var b = $(document).scrollTop(); //얼마만큼 스크롤했는지 값
           $("#tt").text(b);
 
+          //퀵메뉴 설정
+          if(b>0 && b<1500){
+            $(".quick").css({right:30});
+          }
+          else{
+            $(".quick").css({right:-100});
+          }
+
           if (b >= 4500) {
             b = 4500;
           }
