@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>Scrolling Site</title>
+    <style>
+      /*reset*/
+      body,
+      ul,
+      ol,
+      li,
+      dl,
+      dt,
+      dd,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      input,
+      textarea {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      ol,
+      dl {
+        list-style: none;
+      }
+      img {
+        border: 0;
+        vertical-align: top;
+      }
+
+      /* base */
+      body {
+        font: 11px "Roboto", "나눔고딕";
+        color: #767676;
+        background: #ccc;
+      }
+      a {
+        text-decoration: none;
+        color: #767676;
+        outline: none;
+      }
+
+      /*layout*/
+      #header {
+        position: fixed;
+        width: 100%;
+        height: 70px;
+        background: rgba(255, 255, 255, 0);
+      }
+      #contents {
+        width: 100%;
+        color: #fff;
+      }
+      #footer {
+        width: 100%;
+        height: 30px;
+        background: #fff;
+      }
+
+      /*header*/
+      #header h1 {
+        position: absolute;
+        left: 20px;
+        top: 12px;
+        font-size: 30px;
+      }
+      #header h1 a {
+        text-decoration: none;
+        color: white;
+      }
+      #header #gnb {
+        position: absolute;
+        right: 20px;
+        top: 30px;
+      }
+      #header #gnb li {
+        float: left;
+        width: 60px;
+        text-align: center;
+        /* border: 1px dashed #ccc; */
+      }
+      #header #gnb li a {
+        color: white;
+      }
+      #header #bar {
+        position: absolute;
+        left: 0px;
+        top: -10px;
+        width: 14px;
+        height: 14px;
+        background: red;
+        margin-left: 23px;
+        border-radius: 50px;
+        z-index: -10;
+        /* border-left: 23px solid rgba(255,255,255,1); */
+      }
+
+      /*contents*/
+      #contents #home {
+        width: 100%;
+        height: 1500px;
+        border: 15px dashed rgba(255, 255, 255, 0.7);
+        box-sizing: border-box;
+      }
+      #contents #home .inner {
+        margin: 0 auto;
+        width: 1000px;
+      }
+
+      #contents #about {
+        width: 100%;
+        height: 1500px;
+        border: 15px dashed rgba(0, 0, 0, 0.7);
+        box-sizing: border-box;
+      }
+      #contents #about .inner {
+        margin: 0 auto;
+        width: 1000px;
+      }
+
+      #contents #works {
+        width: 100%;
+        height: 1500px;
+        border: 15px dashed rgba(255, 255, 255, 0.7);
+        box-sizing: border-box;
+      }
+      #contents #works .inner {
+        margin: 0 auto;
+        width: 1000px;
+      }
+
+      #contents #contact {
+        width: 100%;
+        height: 1500px;
+        border: 15px dashed rgba(0, 0, 0, 0.7);
+        box-sizing: border-box;
+      }
+      #contents #contact .inner {
+        margin: 0 auto;
+        width: 1000px;
+      }
+
+      #contents h2 {
+        font-size: 250px;
+        padding-top: 70px;
+        font-weight: 100;
+        letter-spacing: -10px;
+      }
+
+      /* bg */
+      .bg {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        /* margin-top: -6000px; margin-top을 줘야 스크롤하면서 겹쳐지는 효과 가능 */
+        width: 100%;
+        z-index: -10;
+        background: #0cc;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 800px;
+        /* background-size: cover; */
+      }
+      .bg1 {
+        background: orange;
+        height: 1500px;
+      }
+      .bg2 {
+        background: black;
+        height: 1500px;
+      }
+      .bg3 {
+        background: hotpink;
+        height: 1500px;
+      }
+      .bg4 {
+        background: skyblue;
+        height: 1500px;
+      }
+
+      .bg video {
+        /* width: 100%;  */
+        /* background-size: cover; */
+      }
+    </style>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <!-- <script src="js/jquery.vide.min.js"></script> -->
+
+    <script>
+      $(function () {
+        $("#gnb li:eq(0) a, h1 a").click(function () {
+          $("html,body").animate({ scrollTop: 0 }, 700);
+          return false;
+        });
+        $("#gnb li:eq(1) a").click(function () {
+          $("html,body").animate({ scrollTop: 1500 }, 700);
+          return false;
+        });
+        $("#gnb li:eq(2) a").click(function () {
+          $("html,body").animate({ scrollTop: 1500 * 2 }, 700);
+          return false;
+        });
+        $("#gnb li:eq(3) a").click(function () {
+          $("html,body").animate({ scrollTop: 1500 * 3 }, 700);
+          return false;
+        });
+
+        //스크롤하기전 설정
+        let areaH = 1500; //한 영역의 높이
+
+        $("#contents section").css({height:areaH});
+        $(".bg div").css({height:areaH});
+        
+        $(".bg").css({marginTop:-areaH*3});
+        
+        $("#bar").css({ transition: "0.5s" });
+        $(".bg").css({ transition: "0.5s top" });
+
+        //스크롤할때 설정
+        $(window).scroll(function () {
+          //스크롤하는동안
+
+          var b = $(document).scrollTop(); //얼마만큼 스크롤했는지 값
+          $("#tt").text(b);
+
+          if (b >= 4500) {
+            b = 4500;
+          }
+          $(".bg").css({ top: b });
+
+          if (b >= 0 && b < areaH) {
+            //스크롤한 높이가 0~1200일경우
+            $("#bar").css({ left: 0 });
+            $(".bg").css({top:0});
+          }
+
+          if (b >= areaH && b < areaH * 2) {
+            //about
+            $("#bar").css({ left: 60 });
+            $(".bg").css({top:areaH});
+          }
+
+          if (b >= areaH * 2 && b < areaH * 3) {
+            //works
+            $("#bar").css({ left: 60 * 2 });
+            $(".bg").css({top:areaH*2});
+          }
+
+          if (b >= areaH * 3) {
+            //contact
+            $("#bar").css({ left: 60 * 3 });
+            $(".bg").css({top:areaH*3});
+          }
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div
+      id="tt"
+      style="
+        position: fixed;
+        left: 30px;
+        top: 200px;
+        background: red;
+        color: white;
+        font-size: 30px;
+      "
+    >
+      0
+    </div>
+
+    <header id="header">
+      <h1><a href="#home">logo</a></h1>
+      <div id="gnb">
+        <ul>
+          <li><a href="#home">home</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#works">works</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+        <div id="bar"></div>
+      </div>
+    </header>
+
+    <div id="contents">
+      <section id="home">
+        <div class="inner">
+          <h2>home</h2>
+          <p>
+            Creative activities involve the inventing and making of new kinds of
+            things.<br />
+            Creativity refers to the invention or origination of any new thing
+            that has value.<br />
+          </p>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="inner">
+          <h2>about</h2>
+          <p>
+            Creative activities involve the inventing and making of new kinds of
+            things.<br />
+            Creativity refers to the invention or origination of any new thing
+            that has value.<br />
+          </p>
+        </div>
+      </section>
+
+      <section id="works">
+        <div class="inner">
+          <h2>works</h2>
+          <p>
+            Creative activities involve the inventing and making of new kinds of
+            things.<br />
+            Creativity refers to the invention or origination of any new thing
+            that has value.<br />
+          </p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="inner">
+          <h2>contact</h2>
+          <p>
+            Creative activities involve the inventing and making of new kinds of
+            things.<br />
+            Creativity refers to the invention or origination of any new thing
+            that has value.<br />
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <footer id="footer">
+      <p>copyright &copy; 2020, my portfolio, all right reserved.</p>
+    </footer>
+
+    <div class="bg">
+      <!--박스 순서 바꿔야함-->
+      <div class="bg4">04</div>
+      <div class="bg3">03</div>
+      <div class="bg2">02</div>
+      <div class="bg1">01</div>
+    </div>
+  </body>
+</html>
