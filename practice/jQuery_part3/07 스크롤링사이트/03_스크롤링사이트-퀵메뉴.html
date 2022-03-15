@@ -134,12 +134,6 @@
         margin: 0 auto;
         width: 1000px;
       }
-      #contents #works .inner .quick {
-        position:fixed;
-        right: -100px; top: 200px;
-        padding: 30px; color: white;
-        background: red;
-      }
 
       #contents #contact {
         width: 100%;
@@ -202,15 +196,6 @@
 
     <script>
       $(function () {
-
-        //초기설정
-        let areaH = 1500; //한 영역의 높이
-
-        $("#contents section").css({height:areaH});
-        $(".bg div").css({height:areaH});
-        $(".bg").css({marginTop:-areaH*3});
-
-
         $("#gnb li:eq(0) a, h1 a").click(function () {
           $("html,body").animate({ scrollTop: 0 }, 700);
           return false;
@@ -229,11 +214,15 @@
         });
 
         //스크롤하기전 설정
+        let areaH = 1500; //한 영역의 높이
+
+        $("#contents section").css({height:areaH});
+        $(".bg div").css({height:areaH});
         
+        $(".bg").css({marginTop:-areaH*3});
         
         $("#bar").css({ transition: "0.5s" });
         $(".bg").css({ transition: "0.5s top" });
-        $(".quick").css({ transition: "0.5s" });
 
         //스크롤할때 설정
         $(window).scroll(function () {
@@ -251,28 +240,24 @@
             //스크롤한 높이가 0~1200일경우
             $("#bar").css({ left: 0 });
             $(".bg").css({top:0});
-            $(".quick").css({right:-100});
           }
 
           if (b >= areaH && b < areaH * 2) {
             //about
             $("#bar").css({ left: 60 });
             $(".bg").css({top:areaH});
-            $(".quick").css({right:-100});
           }
 
           if (b >= areaH * 2 && b < areaH * 3) {
             //works
             $("#bar").css({ left: 60 * 2 });
             $(".bg").css({top:areaH*2});
-            $(".quick").css({right:30});
           }
 
           if (b >= areaH * 3) {
             //contact
             $("#bar").css({ left: 60 * 3 });
             $(".bg").css({top:areaH*3});
-            $(".quick").css({right:-100});
           }
         });
       });
@@ -341,11 +326,6 @@
             Creativity refers to the invention or origination of any new thing
             that has value.<br />
           </p>
-          <div class="quick">
-            design<br>
-            coding<br> 
-            etc
-          </div>
         </div>
       </section>
 
