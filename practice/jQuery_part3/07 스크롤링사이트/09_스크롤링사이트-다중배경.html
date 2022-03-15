@@ -124,10 +124,26 @@ $(function(){
 	  $("#bar").css({ transition:"0.5s" });
 	  $(".quick").css({ transition:"0.5s" });
 
-		
-		let temp = $("#circle").clone(); //circle복사
+		let bg = $(".bg").width(); 
+		//width():요소의 가로길이
+		//outerWidth():요소의 테투리포함 가로길이
 
-		$(".bg").append(temp); //.bg안에 붙여넣기
+		// alert(bg_w);
+
+		for(i=1; i<=10; i++){
+			
+			let temp = $("#circle").clone(); //circle복사하고 변수temp에 참조 
+			$(".bg").append(temp); //temp(복사본)를 .bg안에 붙여넣기
+	
+			let s = Math.random()*3 +0.5;//0~3 사이 랜덤 
+
+			temp.css({
+				left:Math.random()*bg, //0~1500사이 랜덤
+				top:Math.random()*4800,
+				opacity:Math.random()*0.5, //0~1사이 랜덤
+				transform:"scale("+s+","+s+")",
+			});
+		}
 
 
 
