@@ -89,9 +89,18 @@ a { text-decoration:none; color:white; }
 	box-sizing:border-box;
 }
 
-.bg #circle { 
+#circle1 { 
 	position:absolute; left:0px; top:0px;
 	width:100px; height:100px; 
+	background:black; 
+	border-radius:50%; 
+	opacity:0.3;
+	filter: blur(10px);
+}
+
+#circle2 { 
+	position:absolute; left:0px; top:0px;
+	width:150px; height:150px; 
 	background:black; 
 	border-radius:50%; 
 	opacity:0.5;
@@ -124,28 +133,43 @@ $(function(){
 	  $("#bar").css({ transition:"0.5s" });
 	  $(".quick").css({ transition:"0.5s" });
 
-		let bg = $(".bg").width(); 
+		// let bg = $(".bg").width(); 
 		//width():요소의 가로길이
 		//outerWidth():요소의 테투리포함 가로길이
 
 		// alert(bg_w);
 
-		for(i=1; i<=10; i++){
+		//.b1안에 #circle1 복제
+		for(i=1; i<=20; i++){
 			
-			let temp = $("#circle").clone(); //circle복사하고 변수temp에 참조 
-			$(".bg").append(temp); //temp(복사본)를 .bg안에 붙여넣기
+			let temp = $("#circle1").clone(); //circle복사하고 변수temp에 참조 
+			$(".b1").append(temp); //temp(복사본)를 .bg안에 붙여넣기
 	
 			let s = Math.random()*3 +0.5;//0~3 사이 랜덤 
 
 			temp.css({
-				left:Math.random()*bg, //0~1500사이 랜덤
+				left:Math.random()*$(".b1").width(), //0~1500사이 랜덤
 				top:Math.random()*4800,
 				opacity:Math.random()*0.5, //0~1사이 랜덤
 				transform:"scale("+s+","+s+")",
 			});
 		}
 
+		//.b2안에 #circle2 복제
+		for(i=1; i<=10; i++){
+			
+			let temp = $("#circle2").clone(); //circle복사하고 변수temp에 참조 
+			$(".b2").append(temp); //temp(복사본)를 .bg안에 붙여넣기
+	
+			let s = Math.random()*3 +0.5;//0~3 사이 랜덤 
 
+			temp.css({
+				left:Math.random()*$(".b2").width(), //0~1500사이 랜덤
+				top:Math.random()*4800,
+				opacity:Math.random()*0.5, //0~1사이 랜덤
+				transform:"scale("+s+","+s+")",
+			});
+		}
 
 
 	  //스크롤할때 설정   
@@ -155,7 +179,8 @@ $(function(){
 				$("#tt").text(b);
 
 
-			  $(".bg").css({ top:-b }); //bg에 스크롤값 연동
+			  $(".b1").css({ top:-b }); //bg에 스크롤값 연동
+			  $(".b2").css({ top:-b*0.2 }); //bg에 스크롤값 연동
 
 			  		  
 
@@ -301,8 +326,12 @@ $(function(){
     
 
 
-	<div class="bg">
-		<div id="circle"></div>
+	<div class="bg b1">
+		<div id="circle1"></div>
+	</div>
+
+	<div class="bg b2">
+		<div id="circle2"></div>
 	</div>
     
     
