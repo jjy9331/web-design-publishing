@@ -34,7 +34,7 @@ body {
 
 header {
     position: fixed;
-    background-color: black;
+    background-color: #222222;
     width: 100%;
 }
 
@@ -46,7 +46,7 @@ header {
     width: 1280px;
     height: 100px;
     box-sizing: border-box;
-    background-color: black;
+    background-color: #222222;
     /* border: 2px dashed gray; */
 }
 .logo img {
@@ -199,12 +199,12 @@ header {
 /* footer */
 
 footer {
-    background-color: black;
+    background-color: #222222;
 }
 
 #footer_inner {
     position: relative;
-    background-color: black;
+    background-color: #222222;
     border:2px dashed yellow ;
     margin: 0 auto;
     background-position: center;
@@ -214,6 +214,24 @@ footer {
 
 .sitemap div > h3,ul,p {
     color: white;
+}
+.sitemap div > h3 {
+    font-size: 16px;
+}
+.sitemap div ul > li {
+    line-height: 30px;
+    font-size: 14px;
+}
+.sitemap div ul > li:nth-child(1) {
+    padding-top: 24px;
+}
+.sitemap div p{
+    padding-top: 24px;
+    padding-bottom: 45px;
+    font-size: 14px;
+}
+.sitemap div a {
+    font-size: 14px;
 }
 
 .sm1 {
@@ -236,8 +254,19 @@ footer {
 
 .sm4 {
     position: absolute;
-    left: 1073px;
+    right: 0px;
     top: 83px;
+}
+
+.sm5 {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    border: 2px dashed yellow;
+    left: 455px;
+    top: 429px;
+    width: 372px;
+    height: 30px;
 }
 
 </style>
