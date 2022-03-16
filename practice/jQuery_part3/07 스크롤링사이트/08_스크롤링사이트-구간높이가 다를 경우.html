@@ -55,13 +55,13 @@ a { text-decoration:none; color:white; }
 
 
 /*contents*/
-#contents #home { height:1500px; /* background:#f93; */ }
+#contents #home { height:1500px; background:#f93; }
 #contents #home .inner { margin:0 auto; width:1000px; }
 
-#contents #about { height:1500px; background:#333; }
+#contents #about { height:1200px; background:#333; }
 #contents #about .inner { margin:0 auto; width:1000px; }
 
-#contents #works { height:1500px; background:#f93; }
+#contents #works { height:2000px; background:#f93; }
 #contents #works .inner { margin:0 auto; width:1000px; }
 #contents #works .inner .quick {
 	position:fixed;
@@ -71,25 +71,11 @@ a { text-decoration:none; color:white; }
 	background:red;
 }
 
-#contents #contact { height:1500px; background:#333; }
+#contents #contact { height:1200px; background:#333; }
 #contents #contact .inner { margin:0 auto; width:1000px; }
 
 #contents h2 { font-size:250px; padding-top:70px; font-weight:100; letter-spacing:-10px;  }
 
-
-
-/* bg */
-.bg {
-	position:fixed; left:0; top:0;
-	z-index:-1000;
-	width:100%;
-	height:1200px;
-
-	background:url(images/sm_bg1.jpg) center top; 
-	background-size:cover;
-
-	font-size:500px;
-}
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -100,19 +86,22 @@ $(function(){
 	  $("#gnb li:eq(0) a, h1 a").click(function(){
 			$('html,body').animate({ scrollTop:0},700); 
 			return false;	    
-	   });
+	  });
+
 	  $("#gnb li:eq(1) a").click(function(){
 			$('html,body').animate({ scrollTop:1500},700); 
 			return false;
-	   });
+	  });
+
 	  $("#gnb li:eq(2) a").click(function(){
-			$('html,body').animate({ scrollTop:1500+1200},700);
+			$('html,body').animate({ scrollTop:1500+1200},700); 
 			return false;
-	   });
+	  });
+
 	  $("#gnb li:eq(3) a").click(function(){
-			$('html,body').animate({ scrollTop:1500+1200*2},700); 
+			$('html,body').animate({ scrollTop:1500+1200+2000},700); 
 			return false;
-	   });
+	  });
    
 
 
@@ -126,11 +115,8 @@ $(function(){
 	  $(window).scroll(function(){ //스크롤하는동안
 		  
 			  var b = $(document).scrollTop();//얼마만큼 스크롤했는지의 값
-				$("#tt").text(b);
 
-
-			  $(".bg").css({ top:-b*0.2 });
-
+			  $("#tt").text(b);
 			  		  
 
 			//// 퀵메뉴 설정 /////////
@@ -144,7 +130,7 @@ $(function(){
 
 		  
 			//// 구간별 설정 ////////
-			  if((b >=0) && (b < 1500)) {	//home : 스크롤한 높이가 0~1200일경우
+			  if((b >=0) && (b < 1500)) {	//home 
 				  $('#bar').css({left:0});
 			  } 
 	
@@ -152,11 +138,11 @@ $(function(){
 				  $('#bar').css({left:60});
 			  } 
 							  
-			  if((b >= 1500+1200) && (b < 1500+1200*2)) { //works
+			  if((b >= 1500+1200) && (b < 1500+1200+2000)) { //works
 				  $('#bar').css({left:60*2});
 			  } 
 			  
-			  if(b >= 1500+1200*2) {	//contact
+			  if(b >= 1500+1200+2000) {	//contact
 				  $('#bar').css({left:60*3});
 			  } 						  
 							  
@@ -275,9 +261,7 @@ $(function(){
     
 
 
-	<div class="bg">
-		
-	</div>
+
     
     
 </body>
