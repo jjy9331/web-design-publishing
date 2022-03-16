@@ -57,6 +57,17 @@ a { text-decoration:none; color:white; }
 /*contents*/
 #contents #home { height:1500px; /* background:#f93;*/ }
 #contents #home .inner { margin:0 auto; width:1000px; }
+#contents #home .inner:after { content: ""; display: block; clear: both;}
+
+#contents #home .inner p {
+	position: relative;
+	width: 45%;
+	height: 500px;
+	float: left;
+	border: 10px dashed #999;
+}
+#contents #home .inner .t1 {float: left;}
+#contents #home .inner .t1 {float: right;}
 
 #contents #about { height:1200px; /* background:#333; */ }
 #contents #about .inner { margin:0 auto; width:1000px; }
@@ -124,6 +135,9 @@ $(function(){
 
 			// about h2 설정
 			$("#about h2").css({transform:"scale("+b*0.001+","+b*0.001+")"});
+
+			// .t1 .t2 위치 
+			$(".t1").css({top:b});
 
 			//// 퀵메뉴 설정 /////////
 			  if( b>2200 && b<4100 ) { //스크롤범위가 1900~3200이라면
@@ -196,10 +210,14 @@ $(function(){
               <div class="inner">
               
                       <h2>home</h2>
-                      <p>
+                      <p class="t1">
                        Creative activities involve the inventing and making of new kinds of things.<br>
                        Creativity refers to the invention or origination of any new thing that has value.<br> 
                        </p>
+					   <p class="t2">
+						Creative activities involve the inventing and making of new kinds of things.<br>
+						Creativity refers to the invention or origination of any new thing that has value.<br> 
+						</p>
                        
               </div>
           </section>
