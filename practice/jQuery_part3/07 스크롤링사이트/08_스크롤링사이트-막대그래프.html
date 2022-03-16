@@ -149,7 +149,21 @@ $(function(){
 	  $(".n2").css({ transition:"0.8s" });
 	  $(".n3").css({ transition:"0.8s" });
 
+	  
+	  setInterval(function(){
+		  let w1 = Math.round($(".n1").width()/$(".box").width()*100);
+		  let w2 = Math.round($(".n2").width()/$(".box").width()*100);
+		  let w3 = Math.round($(".n3").width()/$(".box").width()*100);
 
+		/*
+				.n1의 가로길이
+		반올림 (------------ x 100 )
+				.box의 가로길이
+		*/   
+		  $(".n1 span").text(w1);
+		  $(".n2 span").text(w2);
+		  $(".n3 span").text(w3);
+	  },10);
 
 	  //스크롤할때 설정   
 	  $(window).scroll(function(){ //스크롤하는동안
