@@ -119,6 +119,11 @@ $(function(){
 
 			  $("#tt").text(b);
 			  		  
+			/// h1설정
+			$("h1").css({ transform:"rotate("+b+"deg)"});
+
+			// about h2 설정
+			$("#about h2").css({transform:"scale("+b*0.001+","+b*0.001+")"});
 
 			//// 퀵메뉴 설정 /////////
 			  if( b>2200 && b<4100 ) { //스크롤범위가 1900~3200이라면
