@@ -72,8 +72,25 @@ a { text-decoration:none; color:white; }
 #contents #about { height:1200px; /* background:#333; */ }
 #contents #about .inner { margin:0 auto; width:1000px; }
 .skill { border: 3px dashed #bbb;}
-.skill .box { height: 33px; margin-bottom: 50px; background-color: white;}
-.skill .box .in { width: 30%; height: 100%; background: #444;}
+.skill .box { 
+	line-height: 33px; 
+	margin-bottom: 50px; 
+	background-color: white; 
+	font-size: 20px; 
+	border-top-left-radius: 20px; 
+	border-bottom-left-radius: 20px;
+	border-top-right-radius: 20px; 
+	border-bottom-right-radius: 20px;
+}
+.skill .box .in { 
+	width: 30%; 
+	height: 100%; 
+	background: #444;
+	border-top-left-radius: 20px; 
+	border-bottom-left-radius: 20px;
+	border-top-right-radius: 20px; 
+	border-bottom-right-radius: 20px;
+}
 .skill .box .n1 {width: 0%;}
 .skill .box .n2 {width: 0%;}
 .skill .box .n3 {width: 0%;}
@@ -128,9 +145,9 @@ $(function(){
 	  $("#gnb li:eq(3) a").css({transition:"0.1s"});
 	  $(".quick").css({ transition:"0.5s" });
 
-	  $(".n1").css({ transition:"0.5s" });
-	  $(".n2").css({ transition:"0.5s" });
-	  $(".n3").css({ transition:"0.5s" });
+	  $(".n1").css({ transition:"0.8s" });
+	  $(".n2").css({ transition:"0.8s" });
+	  $(".n3").css({ transition:"0.8s" });
 
 
 
@@ -261,17 +278,17 @@ $(function(){
 					   <div class="skill">
 						   <div class="box">
 							   <div class="in n1">
-								 
+								 <span>0</span>%
 							   </div>
 						   </div>
 						   <div class="box">
 							   <div class="in n2">
-								 
+								 <span>0</span>%
 							   </div>
 						   </div>
 						   <div class="box">
 							   <div class="in n3">
-								 
+								 <span>0</span>%
 							   </div>
 						   </div>
 					   </div>
