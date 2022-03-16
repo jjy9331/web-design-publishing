@@ -3,4 +3,21 @@
 
 /* sub4 - join */
 
+.join div {
+    margin-bottom:10px;
+    border: 1px solid red;;
+}
+
+.join .end {
+    margin-bottom: 40px;
+}
+
+.join div input {
+    display: block;
+    width: calc(100% - 30px);
+    /* text-align: center; */
+    padding: 15px;
+    border: 0;
+
+}
 
