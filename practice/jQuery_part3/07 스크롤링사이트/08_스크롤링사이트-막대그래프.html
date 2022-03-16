@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Scrolling Site</title>
+<style>
+/*reset*/
+body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, input, textarea { margin: 0; padding: 0 }
+ul, ol, dl { list-style: none }
+img { border: 0; vertical-align:top; }
+
+
+/* base */
+body {  font: 11px "Roboto","나눔고딕"; color: #767676; background:#ccc; }
+a { text-decoration:none; color:white; }
+
+
+/*layout*/
+#header { 
+	position:fixed; 
+	width:100%; height:70px; 
+	/* background-color:rgba(255,255,255,0.1); */
+}
+#contents { width:100%; color:#fff; }
+#footer { width:100%; height: 30px;  background:#fff; }
+
+
+/*header*/
+#header h1 { position:absolute; left:20px; top:12px; font-size: 30px;  }
+#header h1 a { text-decoration: none; }
+
+#header #gnb { position:absolute; right:20px; top:30px;}
+
+#header #gnb li { 
+	float: left;  
+	width:60px; 
+	text-align:center; 
+	/* border:1px dashed #ccc; */
+	box-sizing:border-box;
+}
+
+#header #bar { 
+	position:absolute; 
+	left:0px; 
+	top:-14px; 
+	
+	z-index:-10;
+
+	width:42px; 
+	height:42px; 
+	background:black;
+	margin-left:10px;
+	border-radius:50%;
+}
+
+
+/*contents*/
+#contents #home { height:1500px; /* background:#f93;*/ }
+#contents #home .inner { margin:0 auto; width:1000px; }
+#contents #home .inner:after { content: ""; display: block; clear: both;}
+
+#contents #home .inner p {
+	position: relative;
+	width: 45%;
+	height: 500px;
+	float: left;
+	border: 10px dashed #999;
+}
+#contents #home .inner .t1 {float: left;}
+#contents #home .inner .t1 {float: right;}
+
+#contents #about { height:1200px; /* background:#333; */ }
+#contents #about .inner { margin:0 auto; width:1000px; }
+.skill { border: 3px dashed #bbb;}
+.skill .box { height: 33px; margin-bottom: 50px; background-color: white;}
+.skill .box .in { width: 30%; height: 100%; background: #444;}
+.skill .box .n1 {width: 0%;}
+.skill .box .n2 {width: 0%;}
+.skill .box .n3 {width: 0%;}
+
+
+#contents #works { height:2000px; /* background:#f93; 8*/ }
+#contents #works .inner { margin:0 auto; width:1000px; }
+#contents #works .inner .quick {
+	position:fixed;
+	right:-100px; top:200px;
+	padding:30px; 
+	color:white; line-height:20px;
+	background:black;
+}
+
+#contents #contact { height:1200px; background:#333; }
+#contents #contact .inner { margin:0 auto; width:1000px; }
+
+#contents h2 { font-size:250px; padding-top:70px; font-weight:100; letter-spacing:-10px;  }
+
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+  
+	  $("#gnb li:eq(0) a, h1 a").click(function(){
+			$('html,body').animate({ scrollTop:0},700); 
+			return false;	    
+	  });
+
+	  $("#gnb li:eq(1) a").click(function(){
+			$('html,body').animate({ scrollTop:1500},700); 
+			return false;
+	  });
+
+	  $("#gnb li:eq(2) a").click(function(){
+			$('html,body').animate({ scrollTop:1500+1200},700); 
+			return false;
+	  });
+
+	  $("#gnb li:eq(3) a").click(function(){
+			$('html,body').animate({ scrollTop:1500+1200+2000},700); 
+			return false;
+	  });
+   
+
+
+	  //스크롤하기전 설정
+	  $("#bar").css({ transition:"0.4s" });
+	  $("#gnb li:eq(3) a").css({transition:"0.1s"});
+	  $(".quick").css({ transition:"0.5s" });
+
+	  $(".n1").css({ transition:"0.5s" });
+	  $(".n2").css({ transition:"0.5s" });
+	  $(".n3").css({ transition:"0.5s" });
+
+
+
+	  //스크롤할때 설정   
+	  $(window).scroll(function(){ //스크롤하는동안
+		  
+			  var b = $(document).scrollTop();//얼마만큼 스크롤했는지의 값
+
+			  $("#tt").text(b);
+			  		  
+			/// h1설정
+			$("h1").css({ transform:"rotate("+b+"deg)"});
+
+			// about h2 설정
+			$("#about h2").css({transform:"scale("+b*0.0008+","+b*0.0008+")"});
+
+			// .t1 .t2 위치 
+			$(".t1").css({top:b-b*0.9});
+			$(".t2").css({top:b-b*1.1});
+
+			// 막대그래프 설정
+			if (b > 1300 && b<2300) {
+				$(".n1").css({width:"30%"});
+				$(".n2").css({width:"70%"});
+				$(".n3").css({width:"50%"});
+			}
+			else {
+				$(".n1").css({width:"0%"});
+				$(".n2").css({width:"0%"});
+				$(".n3").css({width:"0%"});
+			}
+
+			//// 퀵메뉴 설정 /////////
+			  if( b>2200 && b<4100 ) { //스크롤범위가 1900~3200이라면
+				$(".quick").css({ right:30 }); //퀵메뉴를 보이는 위치로
+			  }
+			  else {
+				$(".quick").css({ right:-100 }); //퀵메뉴를 안보이는 위치로
+			  }
+
+
+		  
+			//// 구간별 설정 ////////
+			  if((b >=0) && (b < 1500)) {	//home 
+				  $('#bar').css({left:0,background:"black"});
+				  $("#gnb li:eq(3) a").css({color:"white"});
+			  } 
+	
+			  if((b >= 1500) && (b < 1500+1200)) {	//about
+				  $('#bar').css({left:60,background:"black"});
+				  $("#gnb li:eq(3) a").css({color:"white"});
+			  } 
+							  
+			  if((b >= 1500+1200) && (b < 1500+1200+2000)) { //works
+				  $('#bar').css({left:60*2,background:"black"});
+				  $("#gnb li:eq(3) a").css({color:"white"});
+				} 
+				
+				if(b >= 1500+1200+2000) {	//contact
+					$('#bar').css({left:60*3,background:"white"});
+					$("#gnb li:eq(3) a").css({color:"black"});
+			  } 						  
+							  
+		  
+	  });
+   
+    
+})
+</script>
+
+</head>
+
+<body>
+
+	<div id="tt" style="position:fixed; left:30px; top:200px; background:red; color:white; font-size:30px;">0</div>
+
+
+    <header id="header">
+        <h1><a href="#home">logo</a></h1>
+
+        <nav id="gnb">
+              <ul>
+                  <li><a href="#home">home</a></li>        
+                  <li><a href="#about">about</a></li>
+                  <li><a href="#works">works</a></li>
+                  <li><a href="#contact">contact</a></li>
+              </ul>
+
+              <div id="bar"></div>
+        </nav>
+
+    </header>
+    
+    
+  
+  
+  
+    <div id="contents">
+    
+          <section id="home">
+              <div class="inner">
+              
+                      <h2>home</h2>
+                      <p class="t1">
+                       Creative activities involve the inventing and making of new kinds of things.<br>
+                       Creativity refers to the invention or origination of any new thing that has value.<br> 
+                       </p>
+					   <p class="t2">
+						Creative activities involve the inventing and making of new kinds of things.<br>
+						Creativity refers to the invention or origination of any new thing that has value.<br> 
+						</p>
+                       
+              </div>
+          </section>
+          
+          
+          
+          
+          <section id="about">
+              <div class="inner">
+              
+                      <h2>about</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br>
+                       Creativity refers to the invention or origination of any new thing that has value.<br> 
+                       </p>
+                       
+					   <div class="skill">
+						   <div class="box">
+							   <div class="in n1">
+								 
+							   </div>
+						   </div>
+						   <div class="box">
+							   <div class="in n2">
+								 
+							   </div>
+						   </div>
+						   <div class="box">
+							   <div class="in n3">
+								 
+							   </div>
+						   </div>
+					   </div>
+              </div>
+          </section>
+          
+          
+          
+          
+          <section id="works">
+              <div class="inner">
+              
+                      <h2>works</h2>
+
+					  <nav class="quick">
+						<ul>
+							<li>design</li>
+							<li>coding</li>
+							<li>etc</li>
+						</ul>
+					  </nav>
+
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br>
+                       Creativity refers to the invention or origination of any new thing that has value.<br> 
+                       </p>
+                       
+              </div>
+          </section>
+          
+          
+          
+          
+          <section id="contact">
+              <div class="inner">
+              
+                      <h2>contact</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br>
+                       Creativity refers to the invention or origination of any new thing that has value.<br> 
+                       </p>
+                       
+              </div>
+          </section>
+          
+    </div>
+    
+    
+    
+    
+    
+    
+    <footer id="footer">
+       <p>copyright &copy; 2020, my portfolio, all right reserved.</p>
+    </footer>
+    
+
+
+
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
