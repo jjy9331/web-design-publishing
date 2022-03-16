@@ -15,11 +15,13 @@
 
 .gallery li {
     float: left;
-    width: 48.5%; /* 100/2 한행당 2개 */
+    width: calc( (100% - 25px)/2 ); /* 100/2 한행당 2개 */
     margin-bottom: 10px;
     border: 2px dashed hotpink;
     box-sizing: border-box;
 }
+
+.gallery li img {width: 100%;}
 
 .gallery li:nth-child(odd) {
     /* odd 홀수, evne 짝수 */
