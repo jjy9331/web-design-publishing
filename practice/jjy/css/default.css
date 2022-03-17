@@ -28,6 +28,7 @@ body {
 header {
     position: fixed;
     background-color: #222222;
+    z-index: 1000;
     width: 100%;
 }
 
@@ -54,7 +55,8 @@ header {
     left: 311px;
     top: 43px;
     width: 624px;
-    height: 20px;
+    /* z-index: 10; */
+    /* height: 20px; */
     /* border: 2px dashed yellow; */
     box-sizing: border-box;
     display: flex;
@@ -63,7 +65,10 @@ header {
 }
 .gnb ul li { 
     line-height: 1em; /* 줄간격 초기화 1em=100% --> 폰트크기와 같아짐*/
-    border: 1px dashed pink; 
+    /* border: 1px dashed pink;  */
+}
+.gnb .main {
+    width: 156px;
 }
 
 .gnb .main a {
@@ -79,24 +84,27 @@ header {
 	overflow:hidden; 
 	position:relative; top:33px;
 	height:0px; 
-	border:3px solid yellow; 
+	border:3px solid hotpink; 
 }
 .gnb .sub li { 
     height:31px; 
     border:3px dashed skyblue; 
 }
 .gnb .sub li a {
-    font-weight: 300;
+    font-weight: 500;
+    font-size: 14px;
+    border:3px solid yellow;
+    color: black;
 }
 .gnb .sub li:first-child { 
-    padding-top:105px; 
+    padding-top:68px; 
     border:2px dashed green; 
 }
 
 .gnb li a {
     display: block;
     line-height: 1em;
-    /* border: 2px dashed yellow; */
+    border: 2px dashed yellow;
 }
 
 .sub_gnb {
@@ -126,17 +134,17 @@ header {
     border-right: 0px solid transparent;
     border-bottom: 2px solid #c7c7c7;
     outline: none; /* focus시 생기는 라인 사용안함 */
-    color: white;
 }
 
 .gnb_bgbox { 
 	position:absolute; 
 	z-index:-10;
-	left:-629px; top: 97px; 
+	left:-320px; top: 99px; 
 	width:1920px; 
 	height:0px; 
-	background:rgba(0,0,0,0.77);
-    border: 3px dashed orange;
+	background:rgba(167,167,167,1);
+    /* border: 3px dashed orange; */
+    border-bottom: 3px solid #222222;
 }
 
 

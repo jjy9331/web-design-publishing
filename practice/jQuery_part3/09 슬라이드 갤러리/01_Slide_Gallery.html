@@ -25,13 +25,13 @@ ul{ margin:0;padding:0;list-style:none;}
 $(function(){
 	
 	var gall = $("#gallery_n .gall"); //움직일 대상
-	//var targetX=0; //목적지x
+	var targetX=0; //목적지x
 	
 	
 	///////// 초기 설정 ///////////////////////////////////////////////////////////////////////////////
 	gall.animate({left:0});
-	//$("#m1").css({background:"orange"});
-	//var last_m = $("#m1");//마지막에 누른 메뉴를 표시하기위한 변수
+	$("#m1").css({background:"orange"});
+	var last_m = $("#m1");//마지막에 누른 메뉴를 표시하기위한 변수
 	
 
 	///////////// 메뉴 눌렀을때 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,9 +40,9 @@ $(function(){
 		targetX=0-600*0;
 		gall.animate({left:targetX});		
 				
-		//last_m.css({background:"#ccc"});
-		//$(this).css({background:"orange"});
-		//last_m=$(this);
+		last_m.css({background:"#ccc"});
+		$(this).css({background:"orange"});
+		last_m=$(this);
 	});
 	
 	
@@ -50,9 +50,9 @@ $(function(){
 		targetX=0-600*1;
 		gall.animate({left:targetX});
 		
-		//last_m.css({background:"#ccc"});
-		//$(this).css({background:"orange"});
-		//last_m=$(this);
+		last_m.css({background:"#ccc"});
+		$(this).css({background:"orange"});
+		last_m=$(this);
 	});
 	
 	
@@ -60,9 +60,9 @@ $(function(){
 		targetX=0-600*2;
 		gall.animate({left:targetX});
 		
-		//last_m.css({background:"#ccc"});
-		//$(this).css({background:"orange"});
-		//last_m=$(this);
+		last_m.css({background:"#ccc"});
+		$(this).css({background:"orange"});
+		last_m=$(this);
 	});	
 	
 	
@@ -74,17 +74,17 @@ $(function(){
 	$(".nex").click(function(){
 		
 		targetX -= 600;
-		//if(targetX < -600*2) { targetX=0;	}
+		if(targetX < -600*2) { targetX=0;	}
 		gall.animate({left:targetX});
 		
-		//last_m.css({background:"#ccc"});
-		//if ( targetX== -600*0 ) { $("#m1").css({background:"orange"}); last_m=$("#m1");}
-		//if ( targetX== -600*1 ) { $("#m2").css({background:"orange"}); last_m=$("#m2");}
-		//if ( targetX== -600*2 ) { $("#m3").css({background:"orange"}); last_m=$("#m3");}
+		last_m.css({background:"#ccc"});
+		if ( targetX== -600*0 ) { $("#m1").css({background:"orange"}); last_m=$("#m1");}
+		if ( targetX== -600*1 ) { $("#m2").css({background:"orange"}); last_m=$("#m2");}
+		if ( targetX== -600*2 ) { $("#m3").css({background:"orange"}); last_m=$("#m3");}
 		
-		//for ( i=1; i<=3; i++ )  {
-			//if ( targetX== -600*(i-1) ) { $("#m"+i).css({background:"orange"}); last_m=$("#m"+i);}
-		//}
+		for ( i=1; i<=3; i++ )  {
+			if ( targetX== -600*(i-1) ) { $("#m"+i).css({background:"orange"}); last_m=$("#m"+i);}
+		}
 		
 	});	
 	
@@ -92,13 +92,13 @@ $(function(){
 	$(".pre").click(function(){
 		
 		targetX += 600;
-		//if(targetX > 0) { targetX= -600*2; }
+		if(targetX > 0) { targetX= -600*2; }
 		gall.animate({left:targetX});
 		
-		//last_m.css({background:"#ccc"});
-		//for ( i=1; i<=3; i++ )  {
-			//if ( targetX== -600*(i-1) ) { $("#m"+i).css({background:"orange"}); last_m=$("#m"+i);}
-		//}
+		last_m.css({background:"#ccc"});
+		for ( i=1; i<=3; i++ )  {
+			if ( targetX== -600*(i-1) ) { $("#m"+i).css({background:"orange"}); last_m=$("#m"+i);}
+		}
 				
 	});	
 

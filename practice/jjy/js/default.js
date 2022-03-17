@@ -36,7 +36,7 @@ window.addEventListener("load",function(){//페이지의 요소들이 다 로딩
 
 
 	gnb.addEventListener("mouseover",function(){
-		target=453;
+		target=297;
 	});
 
  	gnb.addEventListener("mouseout",function(){
