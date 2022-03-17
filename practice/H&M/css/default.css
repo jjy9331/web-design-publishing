@@ -193,7 +193,7 @@ h1 {
 }
 .gnb .sub li:first-child { 
     padding-top:60px; 
-    /* border:2px dashed green;  */
+    border:2px dashed green; 
 }
 
 .gnb .sub li a { 
