@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>슬라이드 갤러리</title>
+<style>
+body{ font: 12px "나눔고딕"; color:#767676; text-align:center; }
+ul{ margin:0;padding:0;list-style:none;}
+
+#gallery_n { position:relative; width:900px; height:450px; margin:0 auto; border:dashed 1px skyblue; }
+#gallery_n .mas { /* overflow:hidden; */  position:relative; margin:30px auto; width:600px; height:327px; border:dashed 2px #f96; }
+#gallery_n .mas .gall { position:absolute; width:3000px;/*갤러리전체가로길이*/ height:327px; top:0px; left:0px; }
+#gallery_n .mas .gall li { float:left; width:600px;height:327px; }
+
+#gallery_n .g_nav { width:600px; height:30px; margin:0 auto; border:dashed 1px #f96;}
+#gallery_n .g_nav ul li { float:left; margin-left:50px; background:#ccc; color:#fff; cursor:pointer;}
+
+#gallery_n .pre { position:absolute; top:150px; left:10px; background:skyblue; color:#fff; cursor: pointer; }
+#gallery_n .nex { position:absolute; top:150px; right:10px; background:skyblue; color:#fff; cursor:pointer;}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+	
+	var gall = $("#gallery_n .gall"); //움직일 대상
+	//var targetX=0; //목적지x
+	
+	
+	///////// 초기 설정 ///////////////////////////////////////////////////////////////////////////////
+	gall.animate({left:0});
+	//$("#m1").css({background:"orange"});
+	//var last_m = $("#m1");//마지막에 누른 메뉴를 표시하기위한 변수
+	
+
+	///////////// 메뉴 눌렀을때 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	$("#m1").click(function(){
+		targetX=0-600*0;
+		gall.animate({left:targetX});		
+				
+		//last_m.css({background:"#ccc"});
+		//$(this).css({background:"orange"});
+		//last_m=$(this);
+	});
+	
+	
+	$("#m2").click(function(){
+		targetX=0-600*1;
+		gall.animate({left:targetX});
+		
+		//last_m.css({background:"#ccc"});
+		//$(this).css({background:"orange"});
+		//last_m=$(this);
+	});
+	
+	
+	$("#m3").click(function(){
+		targetX=0-600*2;
+		gall.animate({left:targetX});
+		
+		//last_m.css({background:"#ccc"});
+		//$(this).css({background:"orange"});
+		//last_m=$(this);
+	});	
+	
+	
+
+
+
+	/////////// 이전/다음 눌렀을때 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	$(".nex").click(function(){
+		
+		targetX -= 600;
+		//if(targetX < -600*2) { targetX=0;	}
+		gall.animate({left:targetX});
+		
+		//last_m.css({background:"#ccc"});
+		//if ( targetX== -600*0 ) { $("#m1").css({background:"orange"}); last_m=$("#m1");}
+		//if ( targetX== -600*1 ) { $("#m2").css({background:"orange"}); last_m=$("#m2");}
+		//if ( targetX== -600*2 ) { $("#m3").css({background:"orange"}); last_m=$("#m3");}
+		
+		//for ( i=1; i<=3; i++ )  {
+			//if ( targetX== -600*(i-1) ) { $("#m"+i).css({background:"orange"}); last_m=$("#m"+i);}
+		//}
+		
+	});	
+	
+
+	$(".pre").click(function(){
+		
+		targetX += 600;
+		//if(targetX > 0) { targetX= -600*2; }
+		gall.animate({left:targetX});
+		
+		//last_m.css({background:"#ccc"});
+		//for ( i=1; i<=3; i++ )  {
+			//if ( targetX== -600*(i-1) ) { $("#m"+i).css({background:"orange"}); last_m=$("#m"+i);}
+		//}
+				
+	});	
+
+});
+</script>
+</head>
+
+
+<body>
+
+	<h1>Slide Gallery</h1>
+    <p>design is what you make of it</p>
+
+    <div id="gallery_n">
+    
+            <div class="mas">
+               <div class="gall">
+                  <ul>
+                      <li><img src="images/img1.jpg" alt="image1"></li>
+                      <li><img src="images/img2.jpg" alt="image2"></li>
+                      <li><img src="images/img3.jpg" alt="image3"></li>
+                  </ul>
+               </div>
+            </div>
+        
+            <div class="g_nav">
+                <ul>
+                    <li id="m1">m1</li>
+                    <li id="m2">m2</li>
+                    <li id="m3">m3</li>
+                </ul>
+            </div>
+        
+            <div class="pre"> prev </div>
+            <div class="nex"> next </div>  
+          
+    </div>
+    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
