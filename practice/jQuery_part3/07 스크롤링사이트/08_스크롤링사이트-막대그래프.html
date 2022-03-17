@@ -128,14 +128,20 @@ a { text-decoration:none; color:white; }
 }
 
 .pf li .ov {
+	transition: 0.5s;
+	opacity: 0;
+
 	position: absolute;
 	left: 0px;
 	top: 0px;
 	width: 360px;
 	height: 500px;
-	background: red;
+	background: #888;
 }
 
+.pf li .ov:hover {
+	opacity: 1;
+}
 
 #contents #contact { height:1200px; background:#333; }
 #contents #contact .inner { margin:0 auto; width:1200px; }
