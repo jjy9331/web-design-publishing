@@ -56,7 +56,7 @@ a { text-decoration:none; color:white; }
 
 /*contents*/
 #contents #home { height:1500px; /* background:#f93;*/ }
-#contents #home .inner { margin:0 auto; width:1000px; }
+#contents #home .inner { margin:0 auto; width:1200px; }
 #contents #home .inner:after { content: ""; display: block; clear: both;}
 
 #contents #home .inner p {
@@ -70,7 +70,7 @@ a { text-decoration:none; color:white; }
 #contents #home .inner .t1 {float: right;}
 
 #contents #about { height:1200px; /* background:#333; */ }
-#contents #about .inner { margin:0 auto; width:1000px; }
+#contents #about .inner { margin:0 auto; width:1200px; }
 .skill { border: 3px dashed #bbb;}
 .skill .box { 
 	line-height: 33px; 
@@ -97,7 +97,7 @@ a { text-decoration:none; color:white; }
 
 
 #contents #works { height:2000px; /* background:#f93; 8*/ }
-#contents #works .inner { margin:0 auto; width:1000px; }
+#contents #works .inner { margin:0 auto; width:1200px; }
 #contents #works .inner .quick {
 	position:fixed;
 	right:-100px; top:200px;
@@ -106,8 +106,28 @@ a { text-decoration:none; color:white; }
 	background:black;
 }
 
+.pf {
+	border: 1px dashed white;
+	box-sizing: border-box;
+	display: flex; flex-wrap: wrap;
+}
+.pf:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.pf li {
+	/* float: left; */
+	border: 2px dashed yellow;
+	box-sizing: border-box;
+	width: 360px;
+	height: 500px;
+	margin: 20px;
+}
+
 #contents #contact { height:1200px; background:#333; }
-#contents #contact .inner { margin:0 auto; width:1000px; }
+#contents #contact .inner { margin:0 auto; width:1200px; }
 
 #contents h2 { font-size:250px; padding-top:70px; font-weight:100; letter-spacing:-10px;  }
 
@@ -315,20 +335,41 @@ $(function(){
           <section id="works">
               <div class="inner">
               
-                      <h2>works</h2>
+					<h2>works</h2>
 
-					  <nav class="quick">
-						<ul>
-							<li>design</li>
-							<li>coding</li>
-							<li>etc</li>
-						</ul>
-					  </nav>
+					<nav class="quick">
+					<ul>
+						<li>design</li>
+						<li>coding</li>
+						<li>etc</li>
+					</ul>
+					</nav>
 
-                      <p>
-                       Creative activities involve the inventing and making of new kinds of things.<br>
-                       Creativity refers to the invention or origination of any new thing that has value.<br> 
-                       </p>
+					<p>
+					Creative activities involve the inventing and making of new kinds of things.<br>
+					Creativity refers to the invention or origination of any new thing that has value.<br> 
+					</p>
+
+					<ul class="pf">
+						<li>
+							썸네일 이미지
+							<div class="ov">설명</div>
+						</li>
+						<li>
+							썸네일 이미지
+							<div class="ov">설명</div>
+						</li>
+						<li>
+							썸네일 이미지
+							<div class="ov">설명</div>
+						</li>
+						<li>
+							썸네일 이미지
+							<div class="ov">설명</div>
+						</li>
+					</ul>
+					
+
                        
               </div>
           </section>

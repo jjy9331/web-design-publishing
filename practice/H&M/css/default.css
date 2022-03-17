@@ -151,7 +151,7 @@ h1 {
 
 .gnb ul li { 
     line-height: 1em; /* 줄간격 초기화 1em=100% --> 폰트크기와 같아짐*/
-    /* border: 1px dashed yellow;  */
+    border: 1px dashed yellow; 
 }
 
 .gnb ul li a {

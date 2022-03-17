@@ -60,6 +60,11 @@ header {
     display: flex;
     justify-content: space-between;
 }
+.gnb ul li { 
+    line-height: 1em; /* 줄간격 초기화 1em=100% --> 폰트크기와 같아짐*/
+    border: 1px dashed yellow; 
+}
+
 .gnb li {
     /* border: 2px dashed yellow; */
     box-sizing: border-box;
