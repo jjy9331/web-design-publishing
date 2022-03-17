@@ -59,19 +59,34 @@ header {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    background-color: orange;
 }
 .gnb ul li { 
     line-height: 1em; /* 줄간격 초기화 1em=100% --> 폰트크기와 같아짐*/
-    border: 1px dashed yellow; 
+    border: 1px dashed pink; 
 }
 
-.gnb li {
-    /* border: 2px dashed yellow; */
+.gnb .main a {
+    border: 2px dashed yellow;
     box-sizing: border-box;
     color: white;
     font-size: 18px;
     font-weight: 900;
     
+}
+
+.gnb .sub { 
+	overflow:hidden; 
+	position:relative; top:33px;
+	height:0px; 
+	border:3px solid yellow; 
+}
+.gnb .sub li { 
+    height:31px; 
+    border:3px dashed skyblue; 
+}
+.gnb .sub li a {
+    font-weight: 300;
 }
 .gnb .sub li:first-child { 
     padding-top:105px; 
@@ -83,6 +98,7 @@ header {
     line-height: 1em;
     /* border: 2px dashed yellow; */
 }
+
 .sub_gnb {
     position: absolute;
     right: 0px;
@@ -99,6 +115,7 @@ header {
 .sub_gnb li {
     /* border: 2px dashed yellow; */
     box-sizing: border-box;
+
 }
 
 .sub_gnb li input:nth-child(1) {
@@ -115,10 +132,11 @@ header {
 .gnb_bgbox { 
 	position:absolute; 
 	z-index:-10;
-	left:-629px; top:55px; 
+	left:-629px; top: 97px; 
 	width:1920px; 
 	height:0px; 
-	background:rgba(0,0,0,1);
+	background:rgba(0,0,0,0.77);
+    border: 3px dashed orange;
 }
 
 
