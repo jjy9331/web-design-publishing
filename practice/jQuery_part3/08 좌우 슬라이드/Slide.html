@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>슬라이드 갤러리</title>
+<style>
+/*reset*/
+body,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6 {margin:0;padding:0;}
+ul,ol {list-style:none;}
+img {border:0;}
+body {font:12px "나눔고딕","돋움";}
+
+.gall_wrap { position:relative;width:800px;height:500px;margin:0 auto; margin-top:30px; text-align:center;border:1px dotted lightblue; }
+.gall_wrap h1 { margin-top:15px; color:#F93; }
+.gall_wrap p { color:#999;}
+.gall_wrap .mas { /* overflow:hidden; */ position:absolute;left:100px;top:100px; width:600px;height:327px;border:1px dashed #F93; }
+.gall_wrap .gall { position:absolute;left:0;top:0;width:1800px /*이미지하나의길이x3*/;}
+.gall li { float:left; }
+.gall_wrap .prev { position:absolute;top:200px;left:10px;cursor:pointer;background:lightblue;color:#fff; }
+.gall_wrap .next { position:absolute;top:200px;right:10px;cursor:pointer;background:lightblue;color:#fff; }
+</style>
+
+<script src="js/jquery-1.12.4.min.js"></script>
+
+<script>
+$(function(){
+	
+	//$(".gall li:last").prependTo(".gall");
+	//갤러리의 마지막 이미지를 갤러리 안의 가장 앞으로 배치
+	
+	//$(".gall").css({ left:"-600px"}); //갤러리를 하나의 이미지 가로길이 만큼 왼쪽으로 배치
+	
+	$(".prev").click(function(){//이전 이미지가 슬라이드된후 마지막 이미지를 갤러리안의 젤 앞으로 배치
+		$(".gall").animate({
+			//left:"+=600px"},500,function(){
+				//$(".gall li:last").prependTo(".gall");				
+				//$(".gall").css({ left:"-600px"});
+			});
+	});
+	
+	$(".next").click(function(){//다음 이미지가 슬라이드된후 젤앞의 이미지를 갤러리안의 젤 마지막으로 배치
+		$(".gall").animate({
+			//left:"-=600px"},500,function(){
+				//$(".gall li:first").appendTo(".gall");
+				//$(".gall").css({ left:"-600px"});
+			});
+	});
+
+})
+</script>
+
+</head>
+
+<body>
+
+
+<div class="gall_wrap">
+	<h1>Slide Gallery</h1>
+    <p>design is what you make of it</p>
+	<div class="mas">
+            <ul class="gall">
+                <li><img src="images/img1.jpg" /></li>
+                <li><img src="images/img2.jpg" /></li>
+                <li><img src="images/img3.jpg" /></li>
+            </ul>
+	</div>
+    
+    <div class="prev">prev</div>
+    <div class="next">next</div>    
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
