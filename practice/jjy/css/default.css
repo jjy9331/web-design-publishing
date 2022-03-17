@@ -22,6 +22,22 @@ body {
     top: -9999999px;
 }
 
+.skip_navigation a { 
+	position:absolute; 
+	left:0; top:-9999px; 
+	z-index:2000; 
+	color:white;
+    width: 100%; 
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+	/* padding:10px; */
+	background-color:white;
+    color: black;
+    font-weight: 500;
+}
+.skip_navigation a:focus { top:0;  }
+
 
 /* header */
 
@@ -30,6 +46,7 @@ header {
     background-color: #222222;
     z-index: 1000;
     width: 100%;
+    height: 100px;
 }
 
 #header_inner {
@@ -61,7 +78,7 @@ header {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    background-color: orange;
+    /* background-color: orange; */
 }
 .gnb ul li { 
     line-height: 1em; /* 줄간격 초기화 1em=100% --> 폰트크기와 같아짐*/
@@ -72,7 +89,7 @@ header {
 }
 
 .gnb .main a {
-    border: 2px dashed yellow;
+    /* border: 2px dashed yellow; */
     box-sizing: border-box;
     color: white;
     font-size: 18px;
@@ -80,31 +97,40 @@ header {
     
 }
 
+.gnb .main a:hover {
+    text-decoration: underline;
+}
+
 .gnb .sub { 
 	overflow:hidden; 
-	position:relative; top:33px;
+	position:relative; top:36px;
 	height:0px; 
-	border:3px solid hotpink; 
+	/* border:3px solid hotpink;  */
+    /* border-bottom: 3px solid #222222; */
 }
 .gnb .sub li { 
     height:31px; 
-    border:3px dashed skyblue; 
+    /* border:3px dashed skyblue;  */
 }
 .gnb .sub li a {
     font-weight: 500;
     font-size: 14px;
-    border:3px solid yellow;
+    /* border:3px solid yellow; */
     color: black;
 }
+
+.gnb .sub li a:hover {
+    text-decoration: underline;
+}
+
 .gnb .sub li:first-child { 
     padding-top:68px; 
-    border:2px dashed green; 
+    /* border:2px dashed green;  */
 }
 
 .gnb li a {
-    display: block;
     line-height: 1em;
-    border: 2px dashed yellow;
+    /* border: 2px dashed yellow; */
 }
 
 .sub_gnb {
@@ -139,12 +165,19 @@ header {
 .gnb_bgbox { 
 	position:absolute; 
 	z-index:-10;
-	left:-320px; top: 99px; 
+	left:-320px; top: 100px; 
 	width:1920px; 
 	height:0px; 
-	background:rgba(167,167,167,1);
+	background:rgba(237,237,237,1);
     /* border: 3px dashed orange; */
+    /* border-top: 3px solid #222222; */
     border-bottom: 3px solid #222222;
+    /* box-sizing: border-box; */
+}
+
+.gnb:hover ~ .gnb_bgbox {
+    display: block;
+    height: 297px;
 }
 
 
