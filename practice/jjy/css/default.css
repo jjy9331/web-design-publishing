@@ -166,8 +166,8 @@ header {
 .gnb_bgbox { 
 	position:absolute; 
 	z-index:-10;
-	left:-320px; top: 100px; 
-	width:1920px; 
+	left:-9999px; top: 57px; 
+	width:99999px; 
 	height:0px; 
 	background:rgba(237,237,237,1);
     /* border: 3px dashed orange; */
@@ -176,7 +176,8 @@ header {
     /* box-sizing: border-box; */
 }
 
-.gnb:hover ~ .gnb_bgbox {
+
+.gnb:hover  .gnb_bgbox {
     display: block;
     height: 297px;
 }
@@ -293,7 +294,7 @@ header {
 }
 
 .service_H li {
-    transition: 0.3s;
+    /* transition: 0.3s; */
     /* border: 2px dashed yellow; */
 }
 
@@ -308,7 +309,6 @@ header {
     font-size: 16px;
     font-weight: 300;
     color: black;
-    transition: 0.5s;
     /* background-color: yellow; */
 }
 
@@ -322,7 +322,7 @@ header {
 }
 
 .service_H li a{
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 
 
