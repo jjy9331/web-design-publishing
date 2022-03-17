@@ -3,21 +3,49 @@
 
 /* sub4 - join */
 
-.join div {
-    margin-bottom:10px;
-    border: 1px solid red;;
+.join div { 
+	margin-bottom:10px;
+	border:1px solid red; 
+}
+.join div.end { margin-bottom:40px; }
+
+
+.join div input { 
+	width:calc(100% - 15px - 15px); 
+	padding:15px;
+	border:0;
+	font-size:14px;
 }
 
-.join .end {
-    margin-bottom: 40px;
+.join div input[type=radio] { 
+	width:auto;
 }
 
-.join div input {
-    display: block;
-    width: calc(100% - 30px);
-    /* text-align: center; */
-    padding: 15px;
-    border: 0;
-
+.join div.ra {
+	float:left;
+	width:50%;
+	line-height:50px;
+	text-align:center;
+	box-sizing:border-box;
 }
+
+
+.join div.ra.end {
+	border-left:0;
+}
+
+.join p { font-size:11px; }
+
+
+
+label,input { vertical-align:middle;}
+
+
+
+
+
+
+
+
+
 
