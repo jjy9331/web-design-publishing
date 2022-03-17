@@ -278,6 +278,7 @@ header {
     background-position: center;
     background-color: #ededed;
     width: 1280px;
+    height: 971px;
 }
 
 #service_inner h2 {
@@ -290,12 +291,17 @@ header {
     justify-content: space-between;
 }
 
+.service_H li {
+    transition: 0.3s;
+    /* border: 2px dashed yellow; */
+}
+
 .service_H li div {
     width: 380px;
     height: 156px;
     background-color: white;
     padding-bottom: 36px;
-    margin-bottom: 140px;
+    /* margin-bottom: 140px; */
     /* border: 2px dashed yellow; */
     text-align: center;
     font-size: 16px;
@@ -319,13 +325,14 @@ header {
 }
 
 
-.service_H li a:hover {
-    opacity: 0.5;
+.service_H li:hover {
+    /* opacity: 0.5; */
+    box-shadow: 0 0 0 3px black;
 }
 
 .service_H li a:hover ~ div {
-    /* text-decoration: underline; */
-    opacity: 0.5;
+    text-decoration: underline;
+    /* opacity: 0.5; */
 }
 
 
