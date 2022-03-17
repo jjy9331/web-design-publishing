@@ -107,7 +107,7 @@ a { text-decoration:none; color:white; }
 }
 
 .pf {
-	border: 1px dashed white;
+	/* border: 1px dashed white; */
 	box-sizing: border-box;
 	display: flex; flex-wrap: wrap;
 }
@@ -119,12 +119,23 @@ a { text-decoration:none; color:white; }
 
 .pf li {
 	/* float: left; */
+	position: relative;
 	border: 2px dashed yellow;
 	box-sizing: border-box;
 	width: 360px;
 	height: 500px;
 	margin: 20px;
 }
+
+.pf li .ov {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 360px;
+	height: 500px;
+	background: red;
+}
+
 
 #contents #contact { height:1200px; background:#333; }
 #contents #contact .inner { margin:0 auto; width:1200px; }
