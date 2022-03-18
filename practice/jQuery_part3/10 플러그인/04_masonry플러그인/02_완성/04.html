@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<title>masonry</title>
+<style>
+body { margin:0; font:11px "맑은 고딕"; color:#fff; }
+
+#header { position:fixed; left:0px; top:0px; width:200px; height:100%; background:#000; color:#fff; z-index:1000; }
+
+#container {  padding-left:200px; border:3px dashed #f93; }
+#container .box { width:200px; height:200px; margin:5px; background:#ccc; }
+
+#footer { position:fixed; left:10px; bottom:10px; z-index:1001; }
+</style>  
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script >
+$(function(){
+
+   $("#container").masonry({
+      itemSelector:'.box',
+	  columnWidth:0
+   });
+
+});
+</script>
+
+
+
+
+</head>
+<body>
+
+<div id="header">
+      <h1>logo</h1>
+      <ul>
+         <li>menu</li>
+         <li>menu</li>
+         <li>menu</li>
+         <li>menu</li>
+         <li>menu</li>
+      </ul>
+</div>
+
+  
+<div id="container">
+  
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">10</div>
+      <div class="box">11</div>
+      <div class="box">12</div>
+      <div class="box">13</div>
+      <div class="box">14</div>
+      <div class="box">15</div>
+      <div class="box">16</div>
+      <div class="box">17</div>
+      <div class="box">18</div>
+      <div class="box">19</div>
+      <div class="box">20</div>
+      <div class="box">21</div>
+      <div class="box">22</div>
+      <div class="box">23</div>
+      <div class="box">24</div>
+      <div class="box">25</div>
+      <div class="box">26</div>
+      <div class="box">27</div>
+      <div class="box">28</div>
+      <div class="box">29</div>
+      <div class="box">30</div>
+      <div class="box">31</div>
+      <div class="box">32</div>
+      <div class="box">33</div>
+      <div class="box">34</div>
+      <div class="box">35</div>
+      <div class="box">36</div>
+      <div class="box">37</div>
+      <div class="box">38</div>
+      <div class="box">39</div>
+      <div class="box">40</div>
+      <div class="box">51</div>
+      <div class="box">52</div>
+      <div class="box">53</div>
+      <div class="box">54</div>
+      <div class="box">55</div>
+      <div class="box">56</div>
+      <div class="box">57</div>
+      <div class="box">58</div>
+      <div class="box">59</div>
+      <div class="box">60</div>
+      <div class="box">71</div>
+      <div class="box">72</div>
+      <div class="box">73</div>
+      <div class="box">74</div>
+      <div class="box">75</div>
+      <div class="box">76</div>
+  
+</div>
+
+
+
+<div id="footer">
+    <p>(c) 2030, abc</p>
+</div>
+  
+
+</body>
+</html>
+
+

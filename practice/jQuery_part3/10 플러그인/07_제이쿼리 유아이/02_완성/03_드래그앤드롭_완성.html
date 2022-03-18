@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>drag</title>
+<style>
+body { font: 12px "나눔고딕"; }
+
+#bounds { width:700px; height:300px; margin:30px; background:#FFC; border: 2px dashed orange; }
+#box1 { width: 100px; height: 100px; background: #FC0; }
+#box2 { width: 100px; height: 100px; background: #F9C; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<script>
+$(function(){
+	
+	$('#box1').draggable({
+		stack:"#box1",
+		cursor:"move",
+		containment:"parent",
+		opacity:"0.7"
+		}); 
+	
+	$('#box2').draggable({
+		stack:"#box2",
+		cursor:"move",
+		containment:"parent",
+		axis:"x",
+		opacity:"0.7"
+		}); 
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="bounds">
+
+    <div id="box1"></div>
+    
+    <div id="box2"></div>
+
+</div>
+    
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

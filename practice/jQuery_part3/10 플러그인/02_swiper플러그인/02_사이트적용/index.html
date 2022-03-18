@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>zara</title>
+
+<!-- 구글 웹아이콘 design.google.com/icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- 구글 웹폰트 fonts.google.com -->
+<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+h1,h2,h3,h4 { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/* base */
+body { font-family:'Spartan','맑은 고딕'; font-size:14px; }
+a { text-decoration:none; color:#000; }
+a:hover { color:yellow; }
+.skip_navigation a { position:absolute; top:-9999px; }
+.skip_navigation a:focus { top:0; z-index:2000; color:white; background:red; }
+
+
+/* layout */
+#header { 
+	position:fixed; left:0px; top:0px; z-index:1000;
+	width:100%; 
+	background-color:rgba(0,0,0,0.1);
+	/* border:7px dashed orange; */ 
+	/* box-sizing:border-box; */  
+}
+#header .inner { position:relative; margin:0 auto; width:1180px; height:100px; /* border:1px dashed white; */ }
+
+#visual { /* border:7px dashed hotpink; */ }
+
+#contents { margin:0 auto; width:1180px; /*height:927px;*/ margin-top:146px; margin-bottom:169px; /* background:yellowgreen; */ }
+
+#footer { /* height:218px; */ background:black; }
+#footer .inner { margin:0 auto; width:1180px; height:150px; /* border:1px dashed white; */ }
+
+
+
+/* header */
+h1 { position:absolute; left:0px; top:17px; width:101px; height:67px; / * background:blue; */ }
+.gnb { position:absolute; left:281px; top:46px; /* width:599px; */ height:18px; /* background:orange; */ }
+.gnb li { float:left;/*가로배열*/ width:145px; line-height:1em; /* border:1px dashed blue; */ }
+.gnb li a { transition:0.5s; color:white; }
+.gnb li a:hover { color:yellow; }
+
+.util { position:absolute; right:0px; top:42px; width:64px; height:21px; /*  background:green; */ }
+.util li { float:left; }
+.util li:first-child { margin-right:19px; }
+
+	/* 구글 웹아이콘 */	
+	.util li a span { transition:0.5s; color:white; font-size:20px; }
+	.util li:last-child a span { font-size:22px; }
+
+	.util li a span:hover { color:yellow; }
+
+
+
+/* visual */
+#visual img { width:100%; }
+
+
+
+/* contents */
+#contents h2 { margin-bottom:26px; font-size:14px; font-weight:500; line-height:1em; text-align:center; /* border:2px solid blue; */ }
+
+#contents  div img{ transition:0.6s; filter:saturate(0%); }
+#contents  div img:hover { 
+	transform:scale(1.02,1.02); 
+	box-shadow:5px 7px 30px rgba(0,0,0,0.3);
+	filter:saturate(100%);  
+}
+
+.new { /* border:3px solid green; */ margin-bottom:82px; }
+.new:after { content:""; display:block; clear:both; }
+.new div { float:left; margin-right:20px; /* border:1px dashed white; */ }
+.new div:last-child { margin-right:0; }
+
+.trend { /* border:3px solid red; */ }
+.trend:after { content:""; display:block; clear:both; }
+.trend div { transition:0.6s; float:left; margin-right:20px; /* border:1px dashed white; */ }
+.trend div:last-child { margin-right:0; }
+
+
+
+
+
+
+/* footer */
+.sns { display:flex; justify-content:center; padding-top:40px; /* border:3px solid red; */ text-align:center; }
+.sns li { margin-right:30px; /* border:1px dashed blue; */ }
+.sns li:last-child { margin-right:0; }
+
+.sns li a { transition:0.5s; opacity:0.5; }
+.sns li a:hover { opacity:1; }
+
+.copyright { padding-top:25px; font-size:10px; font-weight:500;  text-align:center; color:white; line-height:14px; /* border:3px solid blue; */ }
+
+.f_logo { padding-top:19px; text-align:center; /* border:3px solid green; */ }
+</style>
+</head>
+<body>
+
+
+<div class="skip_navigation">
+	<a href="#contents">본문 바로가기</a>
+</div>
+
+
+
+<header id="header">
+	<div class="inner">
+
+		<h1><a href="#"><img src="images/logo.png" alt="H&M"></a></h1>
+
+		<nav class="gnb">
+			<ul>
+				<li><a href="#">women</a></li>
+				<li><a href="#">men</a></li>
+				<li><a href="#">girls</a></li>
+				<li><a href="#">boys</a></li>
+				<li><a href="#">sale</a></li>
+			</ul>
+		</nav>
+
+		<nav class="util">
+			<ul>
+				<li>
+					<a href="#"><span class="material-icons">shopping_cart</span></a>
+				</li>
+
+				<li>
+					<a href="#"><span class="material-icons">search</span></a>
+				</li>
+			</ul>
+		</nav>
+
+	</div>
+</header>
+
+
+
+
+
+<div id="visual">
+	<img src="images/visual1.jpg" alt="비주얼1">
+</div>
+
+
+
+
+
+<div id="contents">
+
+	<div class="new">
+		<h2>new</h2>
+		<div><a href="#"><img src="images/new1.jpg" alt="신제품1"></a></div>
+		<div><a href="#"><img src="images/new2.jpg" alt="신제품2"></a></div>
+		<div><a href="#"><img src="images/new3.jpg" alt="신제품3"></a></div>
+	</div>
+
+	<div class="trend">
+		<h2>trend</h2>
+		<div><a href="#"><img src="images/trend1.jpg" alt="트랜드 제품1"></a></div>
+		<div><a href="#"><img src="images/trend2.jpg" alt="트랜드 제품2"></a></div>
+		<div><a href="#"><img src="images/trend3.jpg" alt="트랜드 제품3"></a></div>
+		<div><a href="#"><img src="images/trend4.jpg" alt="트랜드 제품4"></a></div>
+	</div>
+
+</div>
+
+
+
+
+
+<footer id="footer">
+	<div class="inner">
+
+		<ul class="sns">
+			<li><a href="#"><img src="images/sns1.gif" alt="페이스북"></a></li>
+			<li><a href="#"><img src="images/sns2.gif" alt="트위터"></a></li>
+			<li><a href="#"><img src="images/sns3.gif" alt="인스타그램"></a></li>
+			<li><a href="#"><img src="images/sns4.gif" alt="유튜브"></a></li>
+			<li><a href="#"><img src="images/sns5.gif" alt="핀테레스트"></a></li>
+		</ul>
+
+		<p class="copyright">
+			&copy; 2021, ZARA
+		</p>
+
+
+	</div>
+</footer>
+
+
+
+
+</body>
+</html>
+
+

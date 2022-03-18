@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>resizable</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/redmond/jquery-ui.min.css">
+<style>
+body { font: 12px "나눔고딕"; }
+
+#box { width: 100px; height: 100px; background: #fc0; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<script>
+$(function() {
+	
+  $('#box').resizable({
+    minHeight: 100, 
+	maxHeight: 500,
+    minWidth: 100, 
+	maxWidth: 500,
+    autoHide: true,
+    ghost: true
+  });
+  
+});
+</script>
+</head>
+
+<body>
+
+
+    <div id="box">박스</div>
+
+    
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

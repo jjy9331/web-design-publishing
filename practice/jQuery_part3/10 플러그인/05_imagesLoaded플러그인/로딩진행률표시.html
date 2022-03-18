@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>로딩진행률표시</title>
+<style>
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input,legend { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/* base */
+body {  }
+
+
+/* 이미지 */
+.container img { width:100%; }
+
+
+/* 로딩 */
+.loading { position:fixed; z-index:1000; width:100%; height:100%; background:black; }
+
+.bar_bg { 
+    position:absolute; left:50%; top:50%; margin-left:-300px; width:600px; height:5px;	
+    background-color:#333;
+}
+.bar_bg .bar { width:50%; height:100%; background-color:white; }
+
+.tt {
+    position:absolute; top:50%; width:100%; margin-top:10px;
+    font-size:30px; color:white; text-align:center;	
+}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+
+<script>
+$(function () {
+
+
+/////////////////////// 로딩진행률 표시 start ///////////////////////////////////////////////
+
+        var total = imagesLoaded("body").images.length; //body에 로딩될 이미지 전체갯수
+        var num = 0; //로딩된 이미지 갯수를 저장하게될 변수
+
+        imagesLoaded("body").on("progress", function () { //body의 이미지를 로딩할때 마다
+            num++;
+        });
+
+
+        var pg = 0; //진행율 초기값
+		var targetPG = 0; //진행율 목적지 초기값
+
+
+        function loadingMotion(){
+            
+				targetPG = (num / total) * 100; //로딩상황 백분률 계산
+
+				pg = pg + 0.1*(targetPG - pg); //목적지공식으로 부드럽게 모션 진행           
+				
+				var roundPG = Math.round(pg); //소수점 이하를 버리기위해 반올림
+
+				$(".bar").css({ width:roundPG + "%" }); //로딩바의 가로길이에 로딩값을 반영
+				$(".tt").text( roundPG + "%" ); //텍스트에 로딩값을 반영
+
+
+				if(roundPG >= 100){ //로딩이 완료되면
+						clearInterval(timer1); //setInterval종료					
+						$(".loading").fadeOut(1000); //로딩표시영역 사라짐
+				}
+            
+        }
+
+		var timer1 = setInterval( loadingMotion, 10 ); //loadingMotion함수를 0.01초마다 실행
+
+
+/////////////////////// 로딩진행률 표시 end ///////////////////////////////////////////////
+
+
+});
+</script>
+</head>
+<body>
+
+
+<div class="loading">
+
+		<div class="bar_bg">
+			<div class="bar"></div>
+		</div>
+
+		<div class="tt">0%</div>
+
+</div>
+
+
+<div class="container">
+    <img src="images/sky001.jpg" alt="">
+    <img src="images/sky002.jpg" alt="">
+    <img src="images/sky003.jpg" alt="">
+    <img src="images/sky004.jpg" alt="">
+    <img src="images/sky005.jpg" alt="">
+    <img src="images/sky006.jpg" alt="">
+    <img src="images/sky007.jpg" alt="">
+    <img src="images/sky008.jpg" alt="">
+    <img src="images/sky009.jpg" alt="">
+    <img src="images/sky010.jpg" alt="">
+    <img src="images/sky011.jpg" alt="">
+    <img src="images/sky012.jpg" alt="">
+    <img src="images/sky013.jpg" alt="">
+    <img src="images/sky014.jpg" alt="">
+    <img src="images/sky015.jpg" alt="">
+    <img src="images/sky016.jpg" alt="">
+    <img src="images/sky017.jpg" alt="">
+    <img src="images/sky018.jpg" alt="">
+    <img src="images/sky019.jpg" alt="">
+    <img src="images/sky020.jpg" alt="">
+    <img src="images/sky021.jpg" alt="">
+    <img src="images/sky022.jpg" alt="">
+    <img src="images/sky023.jpg" alt="">
+    <img src="images/sky024.jpg" alt="">
+    <img src="images/sky025.jpg" alt="">
+    <img src="images/sky026.jpg" alt="">
+    <img src="images/sky027.jpg" alt="">
+    <img src="images/sky028.jpg" alt="">
+    <img src="images/sky029.jpg" alt="">
+    <img src="images/sky030.jpg" alt="">
+    <img src="images/sky031.jpg" alt="">
+    <img src="images/sky032.jpg" alt="">
+    <img src="images/sky033.jpg" alt="">
+    <img src="images/sky034.jpg" alt="">
+    <img src="images/sky035.jpg" alt="">
+    <img src="images/sky036.jpg" alt="">
+    <img src="images/sky037.jpg" alt="">
+    <img src="images/sky038.jpg" alt="">
+    <img src="images/sky039.jpg" alt="">
+    <img src="images/sky040.jpg" alt="">
+    <img src="images/sky041.jpg" alt="">
+    <img src="images/sky042.jpg" alt="">
+    <img src="images/sky043.jpg" alt="">
+    <img src="images/sky044.jpg" alt="">
+    <img src="images/sky045.jpg" alt="">
+    <img src="images/sky046.jpg" alt="">
+    <img src="images/sky047.jpg" alt="">
+    <img src="images/sky048.jpg" alt="">
+    <img src="images/sky049.jpg" alt="">
+    <img src="images/sky050.jpg" alt="">
+    <img src="images/sky051.jpg" alt="">
+    <img src="images/sky052.jpg" alt="">
+    <img src="images/sky053.jpg" alt="">
+    <img src="images/sky054.jpg" alt="">
+    <img src="images/sky055.jpg" alt="">
+    <img src="images/sky056.jpg" alt="">
+    <img src="images/sky057.jpg" alt="">
+    <img src="images/sky058.jpg" alt="">
+    <img src="images/sky059.jpg" alt="">
+    <img src="images/sky060.jpg" alt="">
+    <img src="images/sky061.jpg" alt="">
+    <img src="images/sky062.jpg" alt="">
+    <img src="images/sky063.jpg" alt="">
+    <img src="images/sky064.jpg" alt="">
+    <img src="images/sky065.jpg" alt="">
+    <img src="images/sky066.jpg" alt="">
+    <img src="images/sky067.jpg" alt="">
+    <img src="images/sky068.jpg" alt="">
+    <img src="images/sky069.jpg" alt="">
+    <img src="images/sky070.jpg" alt="">
+    <img src="images/sky071.jpg" alt="">
+    <img src="images/sky072.jpg" alt="">
+    <img src="images/sky073.jpg" alt="">
+    <img src="images/sky074.jpg" alt="">
+    <img src="images/sky075.jpg" alt="">
+    <img src="images/sky076.jpg" alt="">
+    <img src="images/sky077.jpg" alt="">
+    <img src="images/sky078.jpg" alt="">
+    <img src="images/sky079.jpg" alt="">
+    <img src="images/sky080.jpg" alt="">
+    <img src="images/sky081.jpg" alt="">
+    <img src="images/sky082.jpg" alt="">
+    <img src="images/sky083.jpg" alt="">
+    <img src="images/sky084.jpg" alt="">
+    <img src="images/sky085.jpg" alt="">
+    <img src="images/sky086.jpg" alt="">
+    <img src="images/sky087.jpg" alt="">
+    <img src="images/sky088.jpg" alt="">
+    <img src="images/sky089.jpg" alt="">
+    <img src="images/sky090.jpg" alt="">
+    <img src="images/sky091.jpg" alt="">
+    <img src="images/sky092.jpg" alt="">
+    <img src="images/sky093.jpg" alt="">
+    <img src="images/sky094.jpg" alt="">
+    <img src="images/sky095.jpg" alt="">
+    <img src="images/sky096.jpg" alt="">
+    <img src="images/sky097.jpg" alt="">
+    <img src="images/sky098.jpg" alt="">
+    <img src="images/sky099.jpg" alt="">
+    <img src="images/sky100.jpg" alt="">
+    <img src="images/sky101.jpg" alt="">
+    <img src="images/sky102.jpg" alt="">
+    <img src="images/sky103.jpg" alt="">
+    <img src="images/sky104.jpg" alt="">
+    <img src="images/sky105.jpg" alt="">
+    <img src="images/sky106.jpg" alt="">
+    <img src="images/sky107.jpg" alt="">
+    <img src="images/sky108.jpg" alt="">
+    <img src="images/sky109.jpg" alt="">
+    <img src="images/sky110.jpg" alt="">
+    <img src="images/sky111.jpg" alt="">
+    <img src="images/sky112.jpg" alt="">
+    <img src="images/sky113.jpg" alt="">
+    <img src="images/sky114.jpg" alt="">
+    <img src="images/sky115.jpg" alt="">
+    <img src="images/sky116.jpg" alt="">
+    <img src="images/sky117.jpg" alt="">
+    <img src="images/sky118.jpg" alt="">
+    <img src="images/sky119.jpg" alt="">
+    <img src="images/sky120.jpg" alt="">
+    <img src="images/sky121.jpg" alt="">
+    <img src="images/sky122.jpg" alt="">
+    <img src="images/sky123.jpg" alt="">
+    <img src="images/sky124.jpg" alt="">
+    <img src="images/sky125.jpg" alt="">
+    <img src="images/sky126.jpg" alt="">
+    <img src="images/sky127.jpg" alt="">
+    <img src="images/sky128.jpg" alt="">
+    <img src="images/sky129.jpg" alt="">
+    <img src="images/sky130.jpg" alt="">
+    <img src="images/sky131.jpg" alt="">
+    <img src="images/sky132.jpg" alt="">
+    <img src="images/sky133.jpg" alt="">
+    <img src="images/sky134.jpg" alt="">
+    <img src="images/sky135.jpg" alt="">
+    <img src="images/sky136.jpg" alt="">
+    <img src="images/sky137.jpg" alt="">
+    <img src="images/sky138.jpg" alt="">
+    <img src="images/sky139.jpg" alt="">
+    <img src="images/sky140.jpg" alt="">
+    <img src="images/sky141.jpg" alt="">
+    <img src="images/sky142.jpg" alt="">
+    <img src="images/sky143.jpg" alt="">
+    <img src="images/sky144.jpg" alt="">
+    <img src="images/sky145.jpg" alt="">
+    <img src="images/sky146.jpg" alt="">
+    <img src="images/sky147.jpg" alt="">
+    <img src="images/sky148.jpg" alt="">
+    <img src="images/sky149.jpg" alt="">
+    <img src="images/sky150.jpg" alt="">
+    <img src="images/sky151.jpg" alt="">
+    <img src="images/sky152.jpg" alt="">
+    <img src="images/sky153.jpg" alt="">
+    <img src="images/sky154.jpg" alt="">
+    <img src="images/sky155.jpg" alt="">
+    <img src="images/sky156.jpg" alt="">
+    <img src="images/sky157.jpg" alt="">
+    <img src="images/sky158.jpg" alt="">
+    <img src="images/sky159.jpg" alt="">
+    <img src="images/sky160.jpg" alt="">
+    <img src="images/sky161.jpg" alt="">
+    <img src="images/sky162.jpg" alt="">
+    <img src="images/sky163.jpg" alt="">
+    <img src="images/sky164.jpg" alt="">
+    <img src="images/sky165.jpg" alt="">
+    <img src="images/sky166.jpg" alt="">
+    <img src="images/sky167.jpg" alt="">
+    <img src="images/sky168.jpg" alt="">
+    <img src="images/sky169.jpg" alt="">
+    <img src="images/sky170.jpg" alt="">
+    <img src="images/sky171.jpg" alt="">
+    <img src="images/sky172.jpg" alt="">
+    <img src="images/sky173.jpg" alt="">
+    <img src="images/sky174.jpg" alt="">
+    <img src="images/sky175.jpg" alt="">
+    <img src="images/sky176.jpg" alt="">
+    <img src="images/sky177.jpg" alt="">
+    <img src="images/sky178.jpg" alt="">
+    <img src="images/sky179.jpg" alt="">
+    <img src="images/sky180.jpg" alt="">
+    <img src="images/sky181.jpg" alt="">
+    <img src="images/sky182.jpg" alt="">
+    <img src="images/sky183.jpg" alt="">
+    <img src="images/sky184.jpg" alt="">
+    <img src="images/sky185.jpg" alt="">
+    <img src="images/sky186.jpg" alt="">
+    <img src="images/sky187.jpg" alt="">
+    <img src="images/sky188.jpg" alt="">
+    <img src="images/sky189.jpg" alt="">
+    <img src="images/sky190.jpg" alt="">
+    <img src="images/sky191.jpg" alt="">
+    <img src="images/sky192.jpg" alt="">
+</div>
+
+
+</body>
+</html>

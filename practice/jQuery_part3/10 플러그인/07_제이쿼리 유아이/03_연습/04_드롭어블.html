@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>drag</title>
+<style>
+body { font: 12px "나눔고딕"; }
+
+#ball1 { width: 50px; height: 50px; background: #fc0; border-radius:50%; }
+#ball2 { width: 50px; height: 50px; background:#0CC; border-radius:50%; }
+#box { position:absolute; z-index:-1; left:600px; top:200px; width: 200px; height: 150px; background: #F9C; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<script>
+$(function(){
+	
+	$('#ball1').draggable();
+	$('#ball2').draggable();
+	
+	$("#box").droppable({
+	    //accept:"#ball1",//드롭시킬 대상 한정
+		drop: function(){ alert('안녕') }, //드롭되었을때 할일 
+		//tolerance: "fit", //완전히 안으로 들어왔을때 드롭됨
+		//tolerance: "touch", //닿기만해도 드롭됨
+                    		//talerance미설정시 ball의 반이상이 들어와야 드롭됨
+	});
+
+
+});
+</script>
+</head>
+
+<body>
+
+
+    <div id="ball1"></div>
+    <div id="ball2"></div>
+    
+    <div id="box"></div>
+
+    
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
