@@ -9,6 +9,11 @@ body { margin:0; font:50px "맑은 고딕"; color:#fff; }
 
 #container { border:3px dashed #f93; }
 #container .box { width:200px; height:200px; margin:10px; background:#ccc; }
+#container .box:nth-child(3) {height: 800px;}
+#container .box:nth-child(11) {height: 200px;}
+#container .box:nth-child(15) {height: 500px;}
+#container .box:nth-child(30) {height: 300px;}
+
 </style>  
 
 
@@ -19,7 +24,7 @@ $(function(){
 
    $("#container").masonry({
       itemSelector:'.box',
-	  columnWidth:0
+	  columnWidth:300
    });
 
 });
