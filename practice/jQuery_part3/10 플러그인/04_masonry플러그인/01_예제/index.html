@@ -11,23 +11,46 @@ ul {list-style: none;}
 
 body { font:50px "맑은 고딕"; color:#fff; }
 
+header {
+   position: fixed;
+   left: 0px;
+   top: 0px;
+   width: 280px;
+   height: 100%;
+   background-color: #0cc;
+   z-index: 1000;
+   color: black;
+   font-size:33px;
+}
+footer {
+   position: fixed;
+   left: 20px;
+   bottom: 20px;
+   /* width: 280px; */
+   /* height: 100%; */
+   /* background-color: #0cc; */
+   z-index: 1000;
+   color: black;
+   font-size:33px;
+}
+
+
 #container { 
-   margin: 0 auto;
-   max-width:1200px; /* 최대길이를 정해놓으면 masonry margin,padding 수월해짐*/
+   font-size:33px;
+   /* margin: 0 auto; */
+   /* max-width:1200px; 최대길이를 정해놓으면 masonry margin,padding 수월해짐 */
    border:3px dashed #f93; 
-   padding-left: 5%;
+   padding-left: 320px;
    /* padding-right: 5%; */
 }
-#container .box { margin: 0 auto; width:180px; height:180px; margin:10px; background:#ccc; }
+#container .box { width:180px; height:180px; margin:15px; background:#ccc; }
 #container .box:nth-child(3) {height: 800px;}
 #container .box:nth-child(11) {height: 200px;}
 #container .box:nth-child(15) {height: 500px;}
 #container .box:nth-child(30) {height: 300px;}
 
-header,footer {
-   color: black;
-   font-size:33px;
-}
+
+
 
 </style>  
 
