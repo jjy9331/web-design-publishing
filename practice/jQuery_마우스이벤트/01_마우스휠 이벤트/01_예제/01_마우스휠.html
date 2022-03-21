@@ -28,12 +28,14 @@ $(function() {
 				a=a+5;
 				$("h1").text(a);
 				$(this).css({width:a});
+				$(this).css({transform:"rotate("+a+"deg)"});
 			} else { //휠을 위로 돌렸을때
 				// $("h1").text("아래로");
 				// $("#box").css({background:"blue"});
 				a=a-5;
 				$("h1").text(a);
 				$(this).css({width:a});
+				$(this).css({transform:"rotate("+a+"deg)"});
 			}
 						
 		});
