@@ -21,9 +21,12 @@ $(function(){
 	$('#ball2').draggable();
 	
 	$("#box").droppable({
-	    //accept:"#ball1",//드롭시킬 대상 한정
-		drop: function(){ alert('안녕') }, //드롭되었을때 할일 
-		//tolerance: "fit", //완전히 안으로 들어왔을때 드롭됨
+	    accept:"#ball1",//드롭시킬 대상 한정
+		drop: function(){ 
+			// alert('안녕')
+			$("#box").css({background:"skyblue"})
+		}, //드롭되었을때 할일 
+		tolerance: "fit", //완전히 안으로 들어왔을때 드롭됨
 		//tolerance: "touch", //닿기만해도 드롭됨
                     		//talerance미설정시 ball의 반이상이 들어와야 드롭됨
 	});
