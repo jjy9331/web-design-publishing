@@ -26,16 +26,16 @@ a { text-decoration:none; color:#767676; outline:none; }
 #header #gnb li { float: left;  padding-left:20px; }
 
 /*contents*/
-#contents #home { width:100%; height:1200px; background:#f93; }
+#contents #home { height:1200px; background:#f93; }
 #contents #home .inner { margin:0 auto; width:1000px; }
 
-#contents #about { width:100%; height:1200px; background:#777; }
+#contents #about { height:1600px; background:#777; }
 #contents #about .inner { margin:0 auto; width:1000px; }
 
-#contents #works { width:100%; height:1200px; background:#0cc; }
+#contents #works { height:1500px; background:#0cc; }
 #contents #works .inner { margin:0 auto; width:1000px; }
 
-#contents #contact { width:100%; height:1200px; background:#333; }
+#contents #contact { height:1700px; background:#333; }
 #contents #contact .inner { margin:0 auto; width:1000px; }
 
 #contents h2 { font-size:250px; padding-top:70px; font-weight:100; letter-spacing:-10px;  }
@@ -51,70 +51,86 @@ $(function(){
   
 	/// GNB //////////////////////////////////////////// 
 	  $("#gnb li:eq(0) a, h1 a").click(function(){
-			$('html,body').animate({ scrollTop:0},700); return false;	    
+			$('html,body').stop().animate({ scrollTop:0 },700); return false;	    
 	   })
 	  $("#gnb li:eq(1) a").click(function(){
-			$('html,body').animate({ scrollTop:1200+1200},700); return false;
+			$('html,body').stop().animate({ scrollTop:1200 },700); return false;
 	   })
 	  $("#gnb li:eq(2) a").click(function(){
-			$('html,body').animate({ scrollTop:1200+1600},700); return false;
+			$('html,body').stop().animate({ scrollTop:1200+1600},700); return false;
 	   })
 	  $("#gnb li:eq(3) a").click(function(){
-			$('html,body').animate({ scrollTop:1200+1600+1500},700); return false;
+			$('html,body').stop().animate({ scrollTop:1200+1600+1500 },700); return false;
 	   })
 
 
 
 	/// 마우스휠 //////////////////////////////////////////// 
 
-
-    let a = 0;
-    let area = [0, 1200, 1200+1600, 1200+1600+1500]
-
    	$("body").on("mousewheel",function(e,delta) {
 
 		if(delta < 0) { //휠을 아래로 돌렸을때
-            a++; //a값을 1증가
-            if(a >= 3){a = 3;}
-            $("#tt").text(a);
+
+			  if((b >=0) && (b < 1200)) {	//home
+				  $("#gnb li:eq(1) a").click();
+			  } 	
+
+			  if((b >= 1200) && (b < 1200+1600 )) {	//about
+				  $("#gnb li:eq(2) a").click();
+			  } 
+			  
+			  if((b >= 1200+1600 ) && (b < 1200+1600+1500)) {  //works
+				  $("#gnb li:eq(3) a").click();
+			  } 
+			  
+			  
 		} 
 		else { //휠을 위로 돌렸을때
-            a--; //a값을 1감소
-            if(a <= 0){a = 0;}
-            $("#tt").text(a);
-		}
 
-		$('html,body').stop().animate({ scrollTop:area[a]},700); 
+			  if((b >= 1200) && (b < 1200+1600 )) {	//about
+				  $("#gnb li:eq(0) a").click();
+			  } 
+			  
+			  if((b >= 1200+1600 ) && (b < 1200+1600+1500)) {  //works
+				  $("#gnb li:eq(1) a").click();
+			  } 	
+			  
+			  if(b >= 1200+1600+1500) {	//contact
+				  $("#gnb li:eq(2) a").click();
+			  } 
+			  
+		}
 					
 	});
 
 
 
 	/// 스크롤링 //////////////////////////////////////////// 
+	  let b=0;
 
 	  $(window).scroll(function(){ //스크롤했을때
 		  
-			  let b = $(document).scrollTop(); 
+			  b = $(document).scrollTop(); 
 			  
 		  
-			  if((b >=0) && (b < 1200)) {	//스크롤한 높이가 0~1200일경우
+			  if((b >=0) && (b < 1200)) {	//home
 				  
 			  } 
 	
-			  if((b >= 1200) && (b < 1200*2)) {	
+			  if((b >= 1200) && (b < 1200+1600 )) {	//about
 				  
 			  } 
 							  
-			  if((b >= 1200*2) && (b < 1200*3)) {	
+			  if((b >= 1200+1600 ) && (b < 1200+1600+1500)) {  //works
 				  
 			  } 
 			  
-			  if(b >= 1200*3) {	
+			  if(b >= 1200+1600+1500) {	//contact
 				  
 			  } 						  
 							  
 	  });
-
+ 
   
     
 })
@@ -123,9 +139,9 @@ $(function(){
 </head>
 
 <body>
-
+<!--
 	<div id="tt">0</div>
-
+-->
 
 
 
