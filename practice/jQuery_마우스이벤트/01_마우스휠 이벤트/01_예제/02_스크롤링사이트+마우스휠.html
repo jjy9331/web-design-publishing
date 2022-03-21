@@ -67,16 +67,21 @@ $(function(){
 
 	/// 마우스휠 //////////////////////////////////////////// 
 
+
+    let a =0;
+
    	$("body").on("mousewheel",function(e,delta) {
 
 		if(delta < 0) { //휠을 아래로 돌렸을때
-
+            a++;
+            $("#tt").text(a);
 		} 
 		else { //휠을 위로 돌렸을때
-
+            a--;
+            $("#tt").text(a);
 		}
 
-		//$('html,body').stop().animate({ scrollTop:0},700); 
+		// $('html,body').stop().animate({ scrollTop:0},700); 
 					
 	});
 
@@ -115,9 +120,9 @@ $(function(){
 </head>
 
 <body>
-<!--
+
 	<div id="tt">0</div>
--->
+
 
 
 
