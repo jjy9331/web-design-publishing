@@ -10,13 +10,13 @@ body { font: 12px "나눔고딕"; }
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
-<!-- <script src="js/jquery-ui-1.10.4.custom.min.js"></script> -->
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
 
 <script>
 $(function(){
 	
-	  $("#box").mouseenter(function(){
-			  
+	  $("#box").mouseenter(function(){//오버
+		$(this).animate({ backgroundColor:"#f93" },);
 	  });	  
     
 });
