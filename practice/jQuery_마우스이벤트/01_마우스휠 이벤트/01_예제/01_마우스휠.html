@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+#box { width:1000px; height:500px; background:#ffc; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<!-- <script src="js/jquery.mousewheel.min.js"></script> -->
+
+<script>
+$(function() {
+
+
+		$("#box").on("mousewheel",function(e,delta) {
+
+			$("h1").text(delta);
+		
+			//if(delta < 0) { //휠을 아래로 돌렸을때
+			
+			//} else { //휠을 위로 돌렸을때
+			
+			//}
+						
+		});
+	
+
+});
+</script>
+</head>
+
+<body>
+
+<h1>텍스트</h1>
+  
+<div id="box"></div>
+  
+  
+
+</body>
+</html>
+
+
+
+
+
+
+
+

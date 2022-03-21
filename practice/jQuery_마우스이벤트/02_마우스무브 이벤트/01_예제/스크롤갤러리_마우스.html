@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Gallery</title>
+<style>
+* { list-style:none; margin:0; padding:0; }
+
+
+body { background:#d6d6d6; }
+
+
+/* 이미지갤러리 */
+#sm_gallery { border:1px dashed orange; 
+position:relative; width:1000px; height:700px; margin:0 auto; padding-top:77px; 
+background:url(images/sg_bg.jpg) no-repeat center top;}
+	
+#sm_gallery .mas { /* overflow:hidden; */ position: absolute; left: 120px; top: 76px; width: 761px; height: 435px; }
+#sm_gallery #sm_gall { position:absolute; left:0; top:0px; width:9132px;}
+#sm_gallery #sm_gall ul { float:left; }
+#sm_gallery #sm_gall li { float:left; }/*이미지들을 가로배열*/
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){ 
+
+	let x=0;
+	let s= -5;
+	//let w=761*6
+	let center=$(document).width()/2;
+
+	let temp = $("#sm_gall ul").clone();
+	$("#sm_gall").append(temp);
+
+
+	function motion(){
+		x = x + s;
+		//if ( x < -w ) { x=0 };
+		//if ( x > 0 ) { x=-w };
+		
+		$("#sm_gall").css({left:x});		
+	}
+	
+	//setInterval(motion,10);
+  
+   //$(".mas").mousemove(function(e){
+	    //s= -0.03*(e.pageX - center)
+	//});
+
+});
+</script>
+</head>
+
+
+<body>
+
+
+<div id="sm_gallery">
+  
+    <div class="mas">
+    
+      <div id="sm_gall">
+      
+        <ul>
+          <li><a href="#"><img src="images/sg1.jpg" alt="이미지1"  /></a></li>
+          <li><a href="#"><img src="images/sg2.jpg" alt="이미지2"  /></a></li>
+          <li><a href="#"><img src="images/sg3.jpg" alt="이미지3"  /></a></li>
+          <li><a href="#"><img src="images/sg4.jpg" alt="이미지4"  /></a></li>
+          <li><a href="#"><img src="images/sg5.jpg" alt="이미지5"  /></a></li>
+          <li><a href="#"><img src="images/sg6.jpg" alt="이미지6"  /></a></li>          
+        </ul>
+
+      </div>
+      
+    </div>
+  
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

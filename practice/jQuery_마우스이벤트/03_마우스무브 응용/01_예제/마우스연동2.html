@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>마우스무브</title>
+<style>
+html,body { height:100%; }
+body,ul {margin:0;padding:0;}
+ul {list-style:none;}
+
+body { font: 30px "나눔고딕","돋움"; }
+.bg { position:fixed; width:100%; height:100%; z-index:-1000; }
+
+#container {margin:0 auto; width:100%;  background:#ccc;}
+#container .inner { position:relative; margin:0 auto; width:1000px; height:1500px; border:3px dashed yellow; }
+
+#tt1 { position:fixed; z-index:1000; left:20px; top:20px; background:red; color:white; }
+#tt2 { position:fixed; z-index:1000; left:20px; top:60px; background:red; color:white; }
+
+
+.in { position:absolute;}
+
+.ob1 { left: 204px; top: 17px; }
+.ob2 { left: 35px; top: 248px; }
+.ob3 { left: 327px; top: 25px; }
+.ob4 { left: 124px; top: 375px; }
+.ob5 { left: 542px; top: 265px; }
+.ob6 { left: 528px; top: 386px; }
+
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){ 
+
+	let centerX=$(window).width()/2;
+	let centerY=$(window).height()/2;
+
+
+   $("body").mousemove(function(e){
+	     $("#tt1 span").text(e.pageX);
+	     $("#tt2 span").text(e.pageY);
+		 
+		 //$(".ob1").css({ marginLeft: -0.02*(e.pageX - centerX) });
+		  
+
+	});
+
+});
+</script>
+
+
+</head>
+
+<body>
+
+<div id="tt1">x: <span>0</span></div>
+<div id="tt2">y: <span>0</span></div>
+
+
+
+<div id="container">
+
+	<div class="inner">
+			             
+						<div class="in ob1"><img src="images/ob1.png" alt=""></div>
+ 						<div class="in ob2"><img src="images/ob2.png" alt=""></div>
+						<div class="in ob3"><img src="images/ob3.png" alt=""></div>
+						<div class="in ob4"><img src="images/ob4.png" alt=""></div>
+						<div class="in ob5"><img src="images/ob5.png" alt=""></div>
+					    <div class="in ob6"><img src="images/ob6.png" alt=""></div>
+      
+    </div>
+
+</div>
+
+
+
+<div class="bg"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

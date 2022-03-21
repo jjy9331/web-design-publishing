@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Scrolling Site</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<style>
+/*reset*/
+body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, input, textarea { margin: 0; padding: 0 }
+ul, ol, dl { list-style: none }
+img { border: 0; vertical-align:top; }
+
+/* base */
+body { /* overflow:hidden; */  font:11px "Roboto","나눔고딕"; color: #767676; background:#ccc; }
+a { text-decoration:none; color:#767676; outline:none; }
+
+/*layout*/
+#header { position:fixed; width:100%; height: 70px; background:rgba(255,255,255,0.9); }
+#contents { width:100%; color:#fff; }
+#footer { width:100%; height: 30px;  background:#fff; }
+
+/*header*/
+#header h1 { position:absolute; left:20px; top:12px; font-size: 30px;  }
+#header h1 a { text-decoration: none; }
+#header #gnb { position:absolute; right:20px; top:30px; }
+#header #gnb li { float: left;  padding-left:20px; }
+
+/*contents*/
+#contents #home { width:100%; height:1200px; background:#f93; }
+#contents #home .inner { margin:0 auto; width:1000px; }
+
+#contents #about { width:100%; height:1600px; background:#777; }
+#contents #about .inner { margin:0 auto; width:1000px; }
+
+#contents #works { width:100%; height:1500px; background:#0cc; }
+#contents #works .inner { margin:0 auto; width:1000px; }
+
+#contents #contact { width:100%; height:1700px; background:#333; }
+#contents #contact .inner { margin:0 auto; width:1000px; }
+
+#contents h2 { font-size:250px; padding-top:70px; font-weight:100; letter-spacing:-10px;  }
+
+#tt { position:fixed; z-index:1000; left:0; top:200px; background:red; padding:5px; font-size:20px; color:white; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+
+<script>
+$(function(){
+  
+	/// GNB //////////////////////////////////////////// 
+	  $("#gnb li:eq(0) a, h1 a").click(function(){
+			$('html,body').stop().animate({ scrollTop:0},700); return false;	    
+	   })
+	  $("#gnb li:eq(1) a").click(function(){
+			$('html,body').stop().animate({ scrollTop:1200},700); return false;
+	   })
+	  $("#gnb li:eq(2) a").click(function(){
+			$('html,body').stop().animate({ scrollTop:1200+1600},700); return false;
+	   })
+	  $("#gnb li:eq(3) a").click(function(){
+			$('html,body').stop().animate({ scrollTop:1200+1600+1500},700); return false;
+	   })
+
+
+
+	/// 마우스휠 //////////////////////////////////////////// 
+	let i = 0;
+	let area = [ 0, 1200, 1200+1600, 1200+1600+1500 ]; //구간 설정
+
+   	$("body").on("mousewheel",function(e,delta) {
+
+		if(delta < 0) { //휠을 아래로 돌렸을때
+				i++;
+			if ( i >= 3 ) { i = 3; }
+			$("#tt").text(i);
+		} 
+		else { //휠을 위로 돌렸을때
+				i--;
+			if ( i <= 0 ) { i = 0; }
+			$("#tt").text(i);
+		}
+
+		$('html,body').stop().animate({ scrollTop:area[i] },700); 
+					
+	});
+
+
+
+	/// 스크롤링 //////////////////////////////////////////// 
+
+	  $(window).scroll(function(){ //스크롤했을때
+		  
+			  let b = $(document).scrollTop(); 
+			  
+		  
+			  if((b >=0) && (b < 1200)) {	//home구간
+				  i=0; $("#tt").text(i);
+			  } 
+	
+			  if((b >= 1200) && (b < 1200+1600)) {//about구간
+				  i=1; $("#tt").text(i);
+			  } 
+							  
+			  if((b >= 1200+1600) && (b < 1200+1600+1500)) {	//works구간
+				  i=2; $("#tt").text(i);
+			  } 
+			  
+			  if(b >= 1200+1600+1500) {	//contact구간
+				  i=3; $("#tt").text(i);
+			  } 						  
+							  
+	  });
+ 
+  
+    
+})
+</script>
+
+</head>
+
+<body>
+
+	<div id="tt">0</div>
+
+
+
+
+    <div id="header">
+        <h1><a href="#home">logo</a></h1>
+        <ul id="gnb">
+          <li><a href="#home">home</a></li>        
+          <li><a href="#about">about</a></li>
+          <li><a href="#works">works</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+    </div>
+    
+    
+  
+  
+  
+    <div id="contents">
+    
+          <div id="home">
+              <div class="inner">
+              
+                      <h2>home</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br />
+                       Creativity refers to the invention or origination of any new thing that has value.<br /> 
+                       </p>
+                       
+              </div>
+          </div>
+          
+          
+          
+          
+          <div id="about">
+              <div class="inner">
+              
+                      <h2>about</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br />
+                       Creativity refers to the invention or origination of any new thing that has value.<br /> 
+                       </p>
+                       
+              </div>
+          </div>
+          
+          
+          
+          
+          <div id="works">
+              <div class="inner">
+              
+                      <h2>works</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br />
+                       Creativity refers to the invention or origination of any new thing that has value.<br /> 
+                       </p>
+                       
+              </div>
+          </div>
+          
+          
+          
+          
+          <div id="contact">
+              <div class="inner">
+              
+                      <h2>contact</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br />
+                       Creativity refers to the invention or origination of any new thing that has value.<br /> 
+                       </p>
+                       
+              </div>
+          </div>
+          
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="footer">
+       <p>copyright &copy; 2020, my portfolio, all right reserved.</p>
+    </div>
+    
+
+
+
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

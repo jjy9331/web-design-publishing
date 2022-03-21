@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>스크롤 갤러리</title>
+<style>
+body,ul {margin:0;padding:0;}
+ul {list-style:none;}
+
+#mas { overflow:hidden;  position:relative; margin:0 auto; width:300px; height: 150px; border:solid 3px #f93;}
+#gall {position: absolute; left:0px; top:20px; width:99999px; }
+
+#gall ul { float:left; width:300px; height:100px; }
+#gall ul li { float:left; width:100px; height:100px; background:yellow; border:3px dashed #0cf; box-sizing:border-box; }
+
+.nav { margin:0 auto; width:300px; border:2px dashed blue;
+	text-align:center;
+}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){ 
+
+	let x=0;
+	let s= -1;
+	let m=true;
+
+	let temp = $("#gall ul").clone();
+	$("#gall").append(temp);
+
+
+	function motion(){
+
+		if ( m ) {
+				x = x + s; //x값 s씩 증가 또는 감소
+				if ( x < -300 ) { x=0 };
+				if ( x > 0 ) { x=-300 };
+				
+				$("#gall").css({left:x});		
+		}
+
+	}
+	
+	setInterval(motion,10);//motion함수 0.01초마다 실행
+
+	$(".right").click(function(){  s=1;   });
+
+	$(".left").click(function(){ s=-1;  });
+
+	$("#gall").mouseenter(function(){//오버
+			m = false;
+	});
+	$("#gall").mouseleave(function(){//아웃
+			m = true;
+	});
+  
+});
+</script>
+
+
+</head>
+
+<body>
+
+<div id="mas">
+
+	  <div id="gall">
+	  
+				  <ul>
+					<li>01</li>
+					<li>02</li>
+					<li>03</li>
+				  </ul>
+
+	  </div>
+  
+</div>
+
+
+<div class="nav">
+		<button class="left">왼쪽</button>
+		<button class="right">오른쪽</button>
+</div>
+
+
+</body>
+</html>
+

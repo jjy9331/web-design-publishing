@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>마우스무브</title>
+<style>
+html,body { height:100%; }
+body,ul {margin:0;padding:0;}
+ul {list-style:none;}
+
+body { font: 30px "나눔고딕","돋움"; }
+
+#container { background:lightyellow; }
+#container .inner { margin:0 auto; width:1000px; height:500px; border:3px dashed #ccc; }
+ .box { position:relative; width:300px; height:300px; background:orange; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){ 
+
+
+	$("#container").mousemove(function(e){//마우스를 해당요소 위에서 움직였을때
+
+			//$(".box").css({ background:"blue"});
+
+	});
+	
+
+});
+</script>
+
+
+</head>
+
+<body>
+
+
+
+
+<div id="container">
+
+	<div class="inner">
+		<div class="box">박스</div>
+    </div>
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
