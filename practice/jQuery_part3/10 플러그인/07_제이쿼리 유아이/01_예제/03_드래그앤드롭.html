@@ -19,11 +19,16 @@ $(function(){
 	
 	 $("#box1").draggable({
      cursor:"move",
-     opacity:"0.5",
-     axis:"x",
+    //  opacity:"0.5",
+     containment:"parent",
+     stack:"#box1",
+    //  axis:"x",
     });//요소를 드래그앤드롭(drag & drop) 가능하게 함
    $("#box2").draggable({
-     axis:"y",
+    cursor:"move",
+    containment:"parent",
+    axis:"y",
+    stack:"#box2",
    });//요소를 드래그앤드롭(drag & drop) 가능하게 함
 	
 });
