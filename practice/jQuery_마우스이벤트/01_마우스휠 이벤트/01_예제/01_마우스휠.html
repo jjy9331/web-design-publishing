@@ -8,21 +8,33 @@
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
-<!-- <script src="js/jquery.mousewheel.min.js"></script> -->
+<script src="js/jquery.mousewheel.min.js"></script>
 
 <script>
 $(function() {
 
+		let a = 1000;
 
 		$("#box").on("mousewheel",function(e,delta) {
 
-			$("h1").text(delta);
+			// $("h1").text(delta);
+			//휠을 위로 돌리면 delta값은 +
+			//휠을 아래로 돌리면 delta값은 -
 		
-			//if(delta < 0) { //휠을 아래로 돌렸을때
-			
-			//} else { //휠을 위로 돌렸을때
-			
-			//}
+			if(delta < 0) { //휠을 아래로 돌렸을때
+				// $("h1").text("위로");
+				// $("#box").css({background:"hotpink"});
+
+				a=a+5;
+				$("h1").text(a);
+				$(this).css({width:a});
+			} else { //휠을 위로 돌렸을때
+				// $("h1").text("아래로");
+				// $("#box").css({background:"blue"});
+				a=a-5;
+				$("h1").text(a);
+				$(this).css({width:a});
+			}
 						
 		});
 	
