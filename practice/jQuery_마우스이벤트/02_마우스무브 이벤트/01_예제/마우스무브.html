@@ -20,11 +20,21 @@ body { font: 30px "나눔고딕","돋움"; }
 <script>
 $(function(){ 
 
+	let a = 0;
 
 	$("#container").mousemove(function(e){//마우스를 해당요소 위에서 움직였을때
 
-			//$(".box").css({ background:"blue"});
+			// $(".box").css({ background:"blue"});
 
+			// a++;
+			// $(".box").text(a);
+
+			// $(".box").css({left:a});
+			// $(".box").css({transform:"rotate("+a+"deg)"});
+
+
+			e.pageX; //마우스 커서의 x위치값 
+			e.pageX; //마우스 커서의 y위치값 
 	});
 	
 
