@@ -15,8 +15,15 @@ body { background:#d6d6d6; }
 position:relative; width:1000px; height:700px; margin:0 auto; padding-top:77px; 
 background:url(images/sg_bg.jpg) no-repeat center top;}
 	
-#sm_gallery .mas { /* overflow:hidden; */ position: absolute; left: 120px; top: 76px; width: 761px; height: 435px; }
-#sm_gallery #sm_gall { position:absolute; left:0; top:0px; width:9132px;}
+#sm_gallery .mas { 
+	overflow:hidden; 
+	position: absolute; 
+	left: 120px; 
+	top: 76px; 
+	width: 761px; 
+	height: 435px; 
+}
+#sm_gallery #sm_gall { position:absolute; left:0; top:0px; width:999999px;}
 #sm_gallery #sm_gall ul { float:left; }
 #sm_gallery #sm_gall li { float:left; }/*이미지들을 가로배열*/
 </style>
@@ -28,7 +35,7 @@ $(function(){
 
 	let x=0;
 	let s= -5;
-	//let w=761*6
+	let w=761*6
 	let center=$(document).width()/2;
 
 	let temp = $("#sm_gall ul").clone();
@@ -37,17 +44,17 @@ $(function(){
 
 	function motion(){
 		x = x + s;
-		//if ( x < -w ) { x=0 };
-		//if ( x > 0 ) { x=-w };
+		if ( x < -w ) { x=0 };
+		if ( x > 0 ) { x=-w };
 		
 		$("#sm_gall").css({left:x});		
 	}
 	
-	//setInterval(motion,10);
+	setInterval(motion,10);
   
-   //$(".mas").mousemove(function(e){
-	    //s= -0.03*(e.pageX - center)
-	//});
+   $(".mas").mousemove(function(e){
+	    s= -0.03*(e.pageX - center)
+	});
 
 });
 </script>
