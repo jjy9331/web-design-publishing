@@ -9,19 +9,25 @@ body,ul {margin:0;padding:0;}
 ul {list-style:none;}
 
 body { font: 30px "나눔고딕","돋움"; }
-/*
+
 .bg { position:fixed; width:100%; height:100%; z-index:-1000; }
-*/
+
 
 
 #container { background:lightyellow; }
 #container .inner { margin:0 auto; width:1000px; height:500px; border:3px dashed #ccc; }
-#container .inner .box { position:relative; width:300px; height:300px; background:orange; }
+#container .inner .box { 
+	position:absolute; 
+	width:300px; 
+	height:300px; 
+	background:orange; 
+	opacity: 0.8;
+}
 
-/*
+
 #tt1 { position:fixed; z-index:1000; left:20px; top:20px; background:yellow; }
 #tt2 { position:fixed; z-index:1000; left:20px; top:60px; background:yellow; }
-*/
+
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -29,11 +35,17 @@ body { font: 30px "나눔고딕","돋움"; }
 <script>
 $(function(){ 
 
-	//let center=$(window).width()/2;
+	let center=$(window).width()/2;
 
 
    $("body").mousemove(function(e){
-	      //e.pageX //마우스커서의 x위치값
+	      $("#tt1 span").text(e.pageX) //마우스커서의 x위치값
+		  $("#tt2 span").text(e.pageY) //마우스커서의 x위치값
+
+		  $(".box").css({
+			  left:e.pageX,
+			  top:e.pageY,
+			});
 	});
 
 });
@@ -43,12 +55,14 @@ $(function(){
 </head>
 
 <body>
+	
+	
+<div id="tt1">x:<span>0</span></div>
+<div id="tt2">y:<span>0</span></div>
 
-<!--
-<div id="tt1">0</div>
-<div id="tt2">0</div>
--->
-
+<br>
+<br>
+<br>
 
 <div id="container">
 
@@ -60,9 +74,9 @@ $(function(){
 
 
 
-<!--
+
 <div class="bg"></div>
--->
+
 </body>
 </html>
 
