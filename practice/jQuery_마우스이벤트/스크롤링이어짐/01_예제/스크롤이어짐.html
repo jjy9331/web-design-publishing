@@ -49,7 +49,8 @@ $(function(){
 	function motion(){
 
 		if ( m ) {
-				x = x + 3; //x값 3씩 증가3
+				//x = x + 3; //x값 3씩 증가3
+				x = x + s; //x값 3씩 증가3
 				if ( x < -300 ) { x=0 };
 				if ( x > 0 ) { x=-300 };
 				
@@ -60,6 +61,11 @@ $(function(){
 	
 	setInterval(motion,30);//motion함수 0.01초마다 실행
 
+	$(".left").click(function(){s = -1});
+	$(".right").click(function(){s = +1});
+
+	$("#gall").mouseenter(function(){m = false});
+	$("#gall").mouseleave(function(){m = true});
 
   
 });
