@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>마우스무브</title>
+<style>
+html,body { height:100%; }
+body,ul {margin:0;padding:0;}
+ul {list-style:none;}
+
+body { font: 30px "나눔고딕","돋움"; overflow-x:hidden; }
+/*
+.bg { position:fixed; width:100%; height:100%; z-index:-1000; }
+*/
+
+
+#container { position:relative; background:pink; }
+
+#container .inner { 
+	position:relative; 
+	margin:0 auto; 
+	width:1000px; height:500px; 
+	border:5px dashed yellow; 
+}
+
+#container .inner .box { 
+	position:absolute; 
+	left:200px;
+	top:50px;
+	width:300px; 
+	height:300px; 
+	background:orange; 
+	opacity:0.8;
+}
+
+
+#tt1 { position:fixed; z-index:1000; left:20px; top:20px; background:yellow; }
+#tt2 { position:fixed; z-index:1000; left:20px; top:60px; background:yellow; }
+
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){ 
+
+	let centerX = $(window).width()/2;
+	let centerY = $(window).height()/2;
+
+
+   $("body").mousemove(function(e){
+	      $("#tt1 span").text( e.pageX ); //마우스커서의 x위치값
+	      $("#tt2 span").text( e.pageY ); //마우스커서의 y위치값
+
+		  $(".box").css({
+			  marginLeft: -0.06*(e.pageX - centerX),
+			  marginTop: -0.06*(e.pageY - centerY),
+		  });
+
+		  $(".inner").css({
+			  left: -0.04*(e.pageX - centerX),
+			  top: -0.04*(e.pageY - centerY),
+		  });
+
+		  $("#container").css({
+			  left: -0.02*(e.pageX - centerX),
+			  top: -0.02*(e.pageY - centerY),
+		  });
+	});
+
+});
+</script>
+
+
+</head>
+
+<body>
+
+
+<div id="tt1">마우스커서x: <span>0</span></div>
+<div id="tt2">마우스커서y: <span>0</span></div>
+
+
+
+<div id="container">
+
+	<div class="inner">
+		<div class="box"></div>
+    </div>
+
+</div>
+
+
+
+<!--
+<div class="bg"></div>
+-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

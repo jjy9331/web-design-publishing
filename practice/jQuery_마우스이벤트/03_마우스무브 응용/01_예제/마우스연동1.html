@@ -15,7 +15,9 @@ body { font: 30px "나눔고딕","돋움"; }
 
 
 #container { background:lightyellow; }
-#container .inner { margin:0 auto; width:1000px; height:500px; border:3px dashed #ccc; }
+#container .inner { 
+	position: relative;
+	margin:0 auto; width:1000px; height:500px; border:3px dashed #ccc; }
 #container .inner .box { 
 	position:relative;
 	left: 0px;
@@ -42,14 +44,24 @@ $(function(){
 
 
    $("body").mousemove(function(e){
-	      $("#tt1 span").text(e.pageX) //마우스커서의 x위치값
-		  $("#tt2 span").text(e.pageY) //마우스커서의 x위치값
+		$("#tt1 span").text(e.pageX) //마우스커서의 x위치값
+		$("#tt2 span").text(e.pageY) //마우스커서의 x위치값
 
-		  $(".box").css({
-			  left:0.5*(e.pageX - centerX),
-			  top:0.5*(e.pageY -centerY),
-			});
+		$(".box").css({
+			marginLeft:0.5*(e.pageX - centerX), //position: absolute 썼으면 marginLeft 쓰면 된다.
+			marginTop:0.5*(e.pageY -centerY),
+		});
+		$("#container").css({
+			left:0.5*(e.pageX - centerX),
+			top:0.5*(e.pageY -centerY),
+		});
+		$(".inner").css({
+			left:0.5*(e.pageX - centerX),
+			top:0.5*(e.pageY -centerY),
+		});
+		
 	});
+
 
 });
 </script>
