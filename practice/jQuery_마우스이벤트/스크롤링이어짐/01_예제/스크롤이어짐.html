@@ -8,7 +8,7 @@ body,ul {margin:0;padding:0;}
 ul {list-style:none;}
 
 #mas { 
-	/* overflow:hidden; */  
+	overflow:hidden;  
 	position:relative; 
 	margin:0 auto; width:300px; height: 150px; 
 	border:solid 3px #f93;
@@ -25,13 +25,13 @@ ul {list-style:none;}
 	box-sizing:border-box; 
 }
 
-/*
+
 .navi { 
 	margin:0 auto; width:300px; 
 	border:2px dashed blue;
 	text-align:center;
 }
-*/
+
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -39,26 +39,26 @@ ul {list-style:none;}
 $(function(){ 
 
 	let x = 0;
-	//let s = 1;
-	//let m = true;
+	let s = 1;
+	let m = true;
 
-	//let temp = $("#gall ul").clone();
-	//$("#gall").append(temp);
+	let temp = $("#gall ul").clone();
+	$("#gall").append(temp);
 
 
 	function motion(){
 
-		//if ( m ) {
+		if ( m ) {
 				x = x + 3; //x값 3씩 증가3
-				//if ( x < -300 ) { x=0 };
-				//if ( x > 0 ) { x=-300 };
+				if ( x < -300 ) { x=0 };
+				if ( x > 0 ) { x=-300 };
 				
 				$("#gall").css({ left:x });		
-		//}
+		}
 
 	}
 	
-	//setInterval(motion,10);//motion함수 0.01초마다 실행
+	setInterval(motion,30);//motion함수 0.01초마다 실행
 
 
   
@@ -84,12 +84,12 @@ $(function(){
   
 </div>
 
-<!--
+
 <div class="navi">
 		<button class="left">왼쪽</button>
 		<button class="right">오른쪽</button>
 </div>
--->
+
 
 </body>
 </html>
