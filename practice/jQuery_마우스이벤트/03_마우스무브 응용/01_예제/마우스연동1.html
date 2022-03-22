@@ -17,7 +17,9 @@ body { font: 30px "나눔고딕","돋움"; }
 #container { background:lightyellow; }
 #container .inner { margin:0 auto; width:1000px; height:500px; border:3px dashed #ccc; }
 #container .inner .box { 
-	position:absolute; 
+	position:relative;
+	left: 0px;
+	top: 0px; 
 	width:300px; 
 	height:300px; 
 	background:orange; 
@@ -35,7 +37,8 @@ body { font: 30px "나눔고딕","돋움"; }
 <script>
 $(function(){ 
 
-	let center=$(window).width()/2;
+	let centerX=$(window).width()/2;
+	let centerY=$(window).height()/2;
 
 
    $("body").mousemove(function(e){
@@ -43,8 +46,8 @@ $(function(){
 		  $("#tt2 span").text(e.pageY) //마우스커서의 x위치값
 
 		  $(".box").css({
-			  left:e.pageX,
-			  top:e.pageY,
+			  left:0.5*(e.pageX - centerX),
+			  top:0.5*(e.pageY -centerY),
 			});
 	});
 
@@ -59,10 +62,6 @@ $(function(){
 	
 <div id="tt1">x:<span>0</span></div>
 <div id="tt2">y:<span>0</span></div>
-
-<br>
-<br>
-<br>
 
 <div id="container">
 
