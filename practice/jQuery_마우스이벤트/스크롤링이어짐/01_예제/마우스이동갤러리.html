@@ -8,7 +8,7 @@ body,ul {margin:0;padding:0;}
 ul {list-style:none;}
 
 #mas { 
-	overflow:hidden;  
+	overflow:hidden;
 	position:relative; 
 	margin:0 auto; width:300px; height: 150px; 
 	border:solid 3px #f93;
@@ -24,52 +24,48 @@ ul {list-style:none;}
 	border:3px dashed #0cf; 
 	box-sizing:border-box; 
 }
-
-
-.navi { 
-	margin:0 auto; width:300px; 
-	border:2px dashed blue;
-	text-align:center;
-}
-
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
 $(function(){ 
 
+	let temp = $("#gall ul").clone(); //복사
+	$("#gall").append(temp); //붙여넣기
+
 	let x = 0;
 	let s = 1;
-	let center = $(window).width()/2; //브라우져창 가로길이의 반(수평 중앙)
-	// alert(center)
-
-	let temp = $("#gall ul").clone();
-	$("#gall").append(temp);
-
+	let center = $(window).width()/2; //브라우져창 가로길이의 반 (수평 중앙)
+	//alert(center);
 
 	function motion(){
-
-				x = x + s; 
+		
+				x = x + s; //x값 s씩 증가또는감소
 				if ( x < -300 ) { x=0 };
 				if ( x > 0 ) { x=-300 };
 				
 				$("#gall").css({ left:x });		
-
+		
 	}
-	
-	setInterval(motion,30);//motion함수 0.01초마다 실행
+	setInterval(motion,10);//motion함수 0.01초마다 실행
 
-	$("#mas").mousemove(function(e){//mas영역 위에서 마우스를 움직였을 때
-		//커서가 오늘쪽에 있으면 (e.pageX - center) 값이 +
-		//커서가 왼쪽에 있으면 (e.pageX - center) 값이 -
 
-		// s값이 +이면 갤러리가 오른쪽으로 움직인다. 
-		// s값이 -이면 갤러리가 왼쪽으로 움직인다.
 
-		s = (e.pageX-center)*0.05
+	$("#mas").mousemove(function(e){ //#mas영역 위에서 마우스를 움직였을때
+
+			//커서가 오른쪽에 있으면 ( e.pageX - center ) 값이 +
+			//커서가 왼쪽에 있으면 ( e.pageX - center ) 값이 - 
+
+				//s값이 +이면 갤러리가 오른쪽으로 움직인다
+				//s값이 -이면 갤러리가 왼쪽으로 움직인다
+
+			s = ( e.pageX - center )*0.05;
+
 	});
 
-  
+
+
+
 });
 </script>
 
@@ -91,7 +87,6 @@ $(function(){
 	  </div>
   
 </div>
-
 
 
 
