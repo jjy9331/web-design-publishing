@@ -29,7 +29,22 @@ header h1 { padding-top:10px; padding-bottom:16px; font-size:24px; text-align:ce
 header a { color:white; }
 header .gnb .gnb_btn { position:absolute; left:15px; top:16px; }
 
-header .gnb .gnb_list li a { display:block; padding-left:25px; font-size:15px; color:white; line-height:41px; background:black; border-bottom:1px solid #333; }
+header .gnb .gnb_list {
+    position: absolute;
+    left: 0px;
+    top: 48px;
+    width: 100%;
+}
+
+header .gnb .gnb_list li a { 
+    display:block; 
+    padding-left:25px; 
+    font-size:15px; 
+    color:white; 
+    line-height:41px; 
+    background:black; 
+    border-bottom:1px solid #333; 
+}
 
 
 /* footer */
