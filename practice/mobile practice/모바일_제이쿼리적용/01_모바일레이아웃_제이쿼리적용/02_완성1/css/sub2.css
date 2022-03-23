@@ -1,0 +1,14 @@
+@import url(common.css);
+
+
+/* sub2 */
+#container_sub .gallery { margin-bottom:40px; }
+#container_sub .gallery:after { content:""; display:block; clear:both; }
+
+#container_sub .gallery li { float:left; width:50%; /* border:1px solid red; box-sizing:border-box; */ }
+#container_sub .gallery li a { display:block; margin-right:5px; margin-bottom:10px; }
+#container_sub .gallery li:nth-child(even) a { margin-right:0; margin-left:5px; }
+
+#container_sub .gallery li img { width:100%; }
+
+

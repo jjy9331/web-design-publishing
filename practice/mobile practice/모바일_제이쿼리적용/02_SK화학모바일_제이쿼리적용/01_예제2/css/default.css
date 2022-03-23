@@ -1,0 +1,62 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/* base */
+body { color:#333; font:12px "Nanum Gothic"; -webkit-text-size-adjust:none;/*모바일 사파리브라우져에서  뷰포트가 변할 때(가로 값이 변할 때) 텍스트의 크기를 자동으로 조절하는 것을 방지*/ }
+a { text-decoration:none; color:#333; }
+#skip_navigation { position:absolute; top:-9999px; font-size:0; }
+.blind { text-indent:-9999px; font-size:0; }
+
+
+/* layout */
+#header { position:relative; height:51px; }
+#container { }
+#footer {height:75px; padding-top:25px; text-align:center; background:#e31836; color:#fff; }
+
+
+/* header */
+#header h1.logo {position:absolute; left:10px; top:5px;}
+
+
+/* container */
+#container #main_visual {  }
+#container #main_visual img {width:100%; }
+
+#container #menu_wrap { background:#333; }
+#container #menu_wrap span {display:block; padding-top:12px; padding-left:47px; height:30px; 
+background:url(../images/more_down.gif) no-repeat right center; background-size:20px 7px;
+font-size:14px; font-weight:bold; color:#fff; border-bottom:1px solid #fff;}
+#container #menu_wrap span.on { background-image:url(../images/more_up.gif); }
+
+#container #menu_wrap li#menu1 {background:url(../images/con1_bg.gif) no-repeat 10px 6px; background-size:31px 30px; }
+#container #menu_wrap li#menu2 {background:url(../images/con2_bg.gif) no-repeat 10px 6px; background-size:31px 30px; }
+#container #menu_wrap li#menu3 {background:url(../images/con3_bg.gif) no-repeat 10px 6px; background-size:31px 30px; }
+#container #menu_wrap li#menu4 {background:url(../images/con4_bg.gif) no-repeat 10px 6px; background-size:31px 30px; }
+#container #menu_wrap li#menu5 {background:url(../images/con5_bg.gif) no-repeat 10px 6px; background-size:31px 30px; }
+#container #menu_wrap li#menu6 {background:url(../images/con6_bg.gif) no-repeat 10px 6px; background-size:31px 30px; }
+
+#container #menu_wrap .sub li {background:#fff8b7; border-bottom:1px solid #ccc376;}
+#container #menu_wrap .sub li a {display:block; padding-left:20px; text-decoration:none; font-weight:bold; line-height:38px; }
+
+
+/* footer */
+#footer ul { height:30px; font-size:11px; }
+#footer ul li {display:inline; padding:0 12px; background:url(../images/f_line.gif) no-repeat center right; background-size:1px 12px; }
+#footer ul li.no_line {background:none;}
+#footer ul li a { color:#fff; }
+#footer p { font-family:Arial; font-size:11px; }
+
+
+
+
+
