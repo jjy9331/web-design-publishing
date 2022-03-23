@@ -1,0 +1,10 @@
+@import url(common.css);
+
+
+/* main */
+#container .main_visual img { width:100%; }
+#container .quick_link { background:#ff6b66; }
+#container .quick_link:after { content:""; display:block; clear:both; }
+#container .quick_link li { float:left; width:33.33%; background:#ff6b66; }
+#container .quick_link li:nth-child(2) { background:#d95b57; }
+#container .quick_link li a { display:block; font-size:30px; text-align:center; line-height:125px; color:white; }
