@@ -15,11 +15,20 @@ window.addEventListener("load",function(){ //페이지가 로딩된후 { }안의
     //직선 그리기 
     AA.strokeStyle="hotpink"; //라인의 색상 
     AA.lineWidth=5 //라인의 두께
+    AA.fillStyle="lightpink" //면의 색상
 
     AA.beginPath(); //패스 시작
     AA.moveTo(100,100); //라인의 시작점(x,y)
     AA.lineTo(200,200); //이전좌표에서 현재 지정한 좌표까지 라인을 그려라
+    AA.lineTo(300,100);
+    AA.closePath();//시작점과 끝점 연결
 
+    AA.moveTo(150,100); //라인의 시작점(x,y)
+    AA.lineTo(100,250);
+    AA.lineTo(200,250);
+    AA.closePath();//시작점과 끝점 연결
+
+    AA.fill(); //면의 색 채우기 
     AA.stroke(); //라인그리기 실행
 });
 </script>
