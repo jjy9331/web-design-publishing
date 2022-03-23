@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>html5</title>
+<style>
+#c1 { border: 1px dashed #ccc; }
+</style>
+
+<script>
+window.addEventListener("load",function(){ //페이지가 로딩된후 { }안의 내용을 실행
+	  
+	 let AA = document.getElementById("c1").getContext("2d"); //캔버스 영역에 컨텍스트(그림을 그리기 위한 종이)를 준비
+
+     //삼각형1 그리기
+	 //AA.strokeStyle="skyblue";//라인색상
+     //AA.lineWidth=2;//라인두께
+	 //AA.fillStyle="yellow";//면의 색상
+	 	 
+	 //AA.beginPath();//패스 시작
+	 //AA.moveTo(150,100);//라인의 시작점
+     //AA.lineTo(100,250); //이전좌표에서 지정된 좌표까지 라인을 그린다
+     //AA.lineTo(200,250);
+     //AA.closePath();//패스의 시작점과 끝점을 연결
+	 
+	 AA.stroke();//라인 그리기
+	 //AA.fill();//색 채우기
+	 
+	 
+     //삼각형2 그리기
+	 //AA.strokeStyle="pink";//라인색상
+     //AA.lineWidth=7;//라인두께
+	 //AA.lineCap="round"//라인끝을 둥글게
+	 //AA.lineJoin="round"//연결된 라인의 모서리를 둥글게
+	 //AA.fillStyle="yellow";//면의 색상
+	 	 
+	 //AA.beginPath();//패스 시작
+     //AA.moveTo(200,100); //라인의 시작점
+     //AA.lineTo(300,100);
+     //AA.lineTo(250,250);
+     //AA.closePath();//패스의 시작점과 끝점을 연결
+	 
+	 //AA.stroke();//라인 그리기
+	 //AA.fill();//색 채우기
+
+
+     //삼각형3 그리기
+	 //AA.fillStyle="pink";//면의 색상
+	 	 
+	 //AA.beginPath();//패스 시작
+     //AA.moveTo(350,100); //라인의 시작점
+     //AA.lineTo(300,250);
+     //AA.lineTo(400,250);
+     //AA.closePath();//패스의 시작점과 끝점을 연결
+	 
+	 //AA.fill();//색 채우기
+	 
+	 
+     //곡선 그리기
+	 //AA.strokeStyle="skyblue";//라인색상
+     //AA.lineWidth=3;//라인두께
+	 	 
+	 //AA.beginPath();//패스 시작
+     //AA.moveTo(150,100); //라인의 시작점
+     //AA.quadraticCurveTo(250,10,350,100);
+	 
+	 //AA.stroke();//라인 그리기
+	 
+});
+</script>
+</head>
+
+<body>
+
+
+<canvas id="c1" width="700" height="350"></canvas> <!-- 그리기 영역 준비 -->
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

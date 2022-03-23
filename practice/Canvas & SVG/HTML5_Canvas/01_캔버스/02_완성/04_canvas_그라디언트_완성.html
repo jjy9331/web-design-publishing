@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>html5</title>
+<style>
+#c1 { border: 1px dashed #ccc; }
+</style>
+
+<script>
+  window.onload=function(){
+	  
+	 let AA = document.getElementById("c1").getContext("2d"); //컨텍스트(그림을 그리기 위한 종이)를 변수에 저장
+	 
+
+     //직선형 그라데이션
+	 let gd1 =  AA.createLinearGradient(100,100,400,100); //그라데이션시작 x,y, 그라데이션끝 x,y
+	 gd1.addColorStop(0,"pink");
+	 gd1.addColorStop(1,"yellow");
+
+     //사각형그리기
+	 AA.fillStyle=gd1;//면의 색상
+	 AA.beginPath();//패스 시작
+     AA.fillRect(100,50,200,200);//사각형 면 그리기 (사각형의왼쪽상단x좌표,사각형의왼쪽상단y좌표,가로길이,세로길이)
+
+
+
+     //원형 그라데이션
+	 let gd2 =  AA.createRadialGradient(500,150,10,500,150,100);//그라데이션시작  중심x,y,반지름, 그라데이션끝 중심x,y,반지름
+	 gd2.addColorStop(0,"yellow");
+	 gd2.addColorStop(1,"skyblue");
+
+     //원 그리기
+	 AA.fillStyle=gd2;//면의 색상
+	 AA.beginPath();//패스 시작
+     AA.arc(500,150,100,Math.PI*2,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)
+	 AA.fill();//색 채우기
+	 
+  }
+</script>
+</head>
+
+<body>
+
+<canvas id="c1" width="700" height="350"></canvas> <!-- 그리기 영역 준비 -->
+
+</body>
+</html>
+
+
+
+

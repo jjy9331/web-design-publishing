@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Scrolling Site</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input,legend { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/* base */
+body { font:11px "Roboto"; color: #767676; background:#ccc; }
+a { text-decoration:none; color:#767676;  }
+
+
+/*layout*/
+#header { position:fixed; width:100%; height: 70px; background:#fff; }
+#contents { width:100%; color:#fff; }
+#footer { width:100%; height: 30px;  background:#fff; }
+
+
+/*header*/
+#header h1 { position:absolute; left:20px; top:12px; font-size: 30px;  }
+#header h1 a { text-decoration: none; }
+#header #gnb { position:absolute; right:20px; top:30px;}
+#header #gnb li { float:left; width:60px; text-align:center; /* border:1px dashed #ccc; */ box-sizing:border-box; }
+
+
+/*contents*/
+#contents #home { width:100%; height:1200px; background:#f93; }
+#contents #home .inner { margin:0 auto; width:1000px; }
+
+#contents #about { width:100%; height:1200px; background:#333; }
+#contents #about .inner { margin:0 auto; width:1000px; }
+
+#contents #works { width:100%; height:1200px; background:#f93; }
+#contents #works .inner { margin:0 auto; width:1000px; }
+
+#contents #contact { width:100%; height:1200px; background:#333; }
+#contents #contact .inner { margin:0 auto; width:1000px; }
+
+#contents h2 { font-size:250px; padding-top:70px; font-weight:100; letter-spacing:-10px;  }
+
+
+
+/* 원모션 */
+#container { position:relative; margin:0 auto; width:1000px; font-size:77px; font-family:'Roboto'; line-height:1em; border:3px dashed #fff; }
+#c1 { border: 1px dashed #yellow; }
+#t1 { position:absolute; left:130px; top:110px; color:white; }
+#t2 { position:absolute; left:430px; top:110px; color:white; }
+#t3 { position:absolute; left:730px; top:110px; color:white; }
+</style>
+
+<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+
+$(function(){
+ 
+   
+	  $(window).scroll(function(){ 
+		  
+			  let sc = $(document).scrollTop();
+			  $("#tt").text(sc);
+			  
+			  
+			  //////원모션 실행
+			  if( sc > 2200 ) {	
+				 //startGrap();
+			  } 
+		  
+	  });
+   
+    
+});
+
+
+///원모션 조건 함수
+let kk = true;
+
+function startGrap(){
+
+	if( kk ){
+		//startMotion();
+		//kk = false;
+	}
+
+}
+
+
+///////////////////////////////////////////////////// 원모션 ///////////////////////////////////////
+function startMotion(){
+	 
+		 let AA = document.getElementById("c1").getContext("2d"); 
+
+		 let r1 = -Math.PI/2; 
+		 let targetR1 = 330 *  Math.PI/180  -Math.PI/2; //목적값
+
+ 		 let r2 = -Math.PI/2; 
+		 let targetR2 =  270 *  Math.PI/180  -Math.PI/2; //목적값
+
+ 		 let r3 = -Math.PI/2; 
+		 let targetR3 = 190 *  Math.PI/180  -Math.PI/2; //목적값
+
+		 function motion(){
+
+			 r1 = r1 + 0.03*( targetR1 - r1); //부드러운 움직임
+			 r2 = r2 + 0.03*( targetR2 - r2); //부드러운 움직임
+			 r3 = r3 + 0.03*( targetR3 - r3); //부드러운 움직임
+
+             AA.clearRect(0,0,1000,350);//이전에 그려진 그림 영역을 삭제
+
+			 AA.strokeStyle="white";//라인색상
+			 AA.lineWidth=20;//라인두께
+			 AA.lineCap="round"; //라인의 끝을 둥글게
+			 AA.beginPath();//패스 시작
+			 AA.arc(200,150,100, -Math.PI/2, r1, false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)		 
+			 AA.stroke();//라인 그리기	 
+
+			 AA.strokeStyle="white";//라인색상
+			 AA.lineWidth=20;//라인두께
+			 AA.lineCap="round"; //라인의 끝을 둥글게
+			 AA.beginPath();//패스 시작
+			 AA.arc(500,150,100, -Math.PI/2, r2, false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)		 
+			 AA.stroke();//라인 그리기	 
+
+			 AA.strokeStyle="white";//라인색상
+			 AA.lineWidth=20;//라인두께
+			 AA.lineCap="round"; //라인의 끝을 둥글게
+			 AA.beginPath();//패스 시작
+			 AA.arc(800,150,100, -Math.PI/2, r3, false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)		 
+			 AA.stroke();//라인 그리기	 
+
+			 //출력
+			document.getElementById("t1").innerHTML = Math.round((r1*180/Math.PI+90)/360*100) + "%";
+			document.getElementById("t2").innerHTML = Math.round((r2*180/Math.PI+90)/360*100) + "%";
+			document.getElementById("t3").innerHTML = Math.round((r3*180/Math.PI+90)/360*100) + "%";
+
+		 }
+		 
+		//setInterval(motion,10);
+}
+
+</script>
+
+</head>
+
+<body>
+
+	<div id="tt" style="position:fixed; left:0px; top:200px; font-size:30px; color:white; background:red; z-index:2000;">0</div>
+
+
+    <header id="header">
+        <h1><a href="#home">logo</a></h1>
+        <nav id="gnb">
+              <ul>
+                  <li><a href="#home">home</a></li>        
+                  <li><a href="#about">about</a></li>
+                  <li><a href="#works">works</a></li>
+                  <li><a href="#contact">contact</a></li>
+              </ul>
+        </nav>
+    </header>
+    
+    
+  
+  
+  
+    <div id="contents">
+    
+          <section id="home">
+              <div class="inner">
+              
+                      <h2>home</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br />
+                       Creativity refers to the invention or origination of any new thing that has value.<br /> 
+                       </p>
+                       
+              </div>
+          </section>
+          
+          
+          
+          
+          <section id="about">
+              <div class="inner">
+              
+                      <h2>about</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br />
+                       Creativity refers to the invention or origination of any new thing that has value.<br /> 
+                       </p>
+                       
+              </div>
+          </section>
+          
+          
+          
+          
+          <section id="works">
+              <div class="inner">
+              
+                      <h2>works</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br />
+                       Creativity refers to the invention or origination of any new thing that has value.<br /> 
+                       </p>
+						
+						<!-- ///////////////// 원모션 ///////////////// -->
+						<div id="container">
+							<canvas id="c1" width="1000" height="350"></canvas> 
+							<div id="t1">0</div>
+							<div id="t2">0</div>
+							<div id="t3">0</div>
+						</div>
+					   
+              </div>
+          </section>
+          
+          
+          
+          
+          <section id="contact">
+              <div class="inner">
+              
+                      <h2>contact</h2>
+                      <p>
+                       Creative activities involve the inventing and making of new kinds of things.<br />
+                       Creativity refers to the invention or origination of any new thing that has value.<br /> 
+                       </p>
+                       
+              </div>
+          </section>
+          
+    </div>
+    
+    
+    
+    
+    
+    
+    <footer id="footer">
+       <p>copyright &copy; 2030, my portfolio, all right reserved.</p>
+    </footer>
+    
+
+
+
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

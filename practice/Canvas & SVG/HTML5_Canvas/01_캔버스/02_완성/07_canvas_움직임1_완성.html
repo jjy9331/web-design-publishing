@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>html5</title>
+<style>
+#c1 { border: 1px dashed #ccc; }
+</style>
+
+<script>
+  window.onload=function(){
+	 
+		 let AA = document.getElementById("c1").getContext("2d"); //컨텍스트(그림을 그리기 위한 종이)를 변수에 저장
+		 
+		 let x=0;
+		 
+		 function motion(){
+
+			 x = x + 1; //x값을 1씩증가
+		
+             AA.clearRect(0,0,1000,350);//이전에 그려진 그림 영역을 삭제
+			 AA.fillStyle="#f93";//면의 색상
+			 AA.beginPath();//패스 시작
+			 AA.fillRect(x,50,50,50);//사각형 면 그리기 (사각형의왼쪽상단x좌표,사각형의왼쪽상단y좌표,가로길이,세로길이)
+			 			 
+		 }
+		 
+		 setInterval(motion,10);
+	 
+  }
+</script>
+</head>
+
+<body>
+
+<canvas id="c1" width="1000" height="350"></canvas> <!-- 그리기 영역 준비 -->
+
+</body>
+</html>
+
+
+
+
