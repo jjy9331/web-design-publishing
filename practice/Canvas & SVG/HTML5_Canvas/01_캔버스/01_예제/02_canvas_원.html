@@ -13,27 +13,28 @@ window.addEventListener("load",function(){
 	 let AA = document.getElementById("c1").getContext("2d"); //캔버스 영역에 컨텍스트(그림을 그리기 위한 종이)를 준비
 
      //원 그리기
-	 //AA.strokeStyle="skyblue";//라인색상
-     //AA.lineWidth=2;//라인두께
-	 //AA.fillStyle="yellow";//면의 색상
+	 AA.strokeStyle="skyblue";//라인색상
+     AA.lineWidth=5;//라인두께
+	 AA.fillStyle="yellow";//면의 색상
 	 
-	 //AA.beginPath();//패스 시작
-     //AA.arc(200,150,100,0,Math.PI*2,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)
+	 AA.beginPath();//패스 시작
+    //  AA.arc(200,150,100,0,Math.PI/-2,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)
+	 AA.arc(200,150,100,0,Math.PI*2,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)
 	 
-	 //AA.stroke();//라인 그리기
-	 //AA.fill();//색 채우기
+	 AA.fill();//색 채우기
+	 AA.stroke();//라인 그리기
 	 
 
      //부채꼴 그리기
-	 //AA.strokeStyle="pink";//라인색상
-     //AA.lineWidth=5;//라인두께
+	 AA.strokeStyle="pink";//라인색상
+     AA.lineWidth=5;//라인두께
 	 
-	 //AA.beginPath();//패스 시작
-	 //AA.moveTo(500,150);//새로운 시작점
-     //AA.arc(500,150,100,Math.PI/3,Math.PI,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false);
-	 //AA.lineTo(500,150);//이전좌표에서 지정된 좌표까지 라인을 그린다
-	 
-	 //AA.stroke();//라인 그리기
+	 AA.beginPath();//패스 시작
+	 AA.moveTo(500,150);//새로운 시작점
+     AA.arc(500,150,100,Math.PI/3,Math.PI,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false);  0도 생략 가능
+	//  AA.lineTo(500,150);//이전좌표에서 지정된 좌표까지 라인을 그린다
+	AA.closePath();
+	 AA.stroke();//라인 그리기
 	 
 });
 </script>
