@@ -13,19 +13,28 @@ window.addEventListener("load",function(){
 		 let AA = document.getElementById("c1").getContext("2d"); //컨텍스트(그림을 그리기 위한 종이)를 변수에 저장
 		 
 		 let x=0;
+		 let y=0;
+		 
+		 let targetX=500;
+		 let targetY=200;
 		 
 		 function motion(){
 
-			 x = x + 1; //x값을 1씩증가
-		
+			 x = x + 0.01*(targetX - x); //x값을 1씩증가
+			 y = y + 0.01*(targetY - y); //x값을 1씩증가
              AA.clearRect(0,0,1000,350);//이전에 그려진 그림 영역을 삭제
 			AA.fillStyle="#f93";//면의 색상
 			AA.beginPath();//패스 시작
-			AA.fillRect(x,50,50,50);//사각형 면 그리기 (사각형의왼쪽상단x좌표,사각형의왼쪽상단y좌표,가로길이,세로길이)
-			AA.clearRect(0,50,100,70)	
+			AA.fillRect(x,y,50,50);//사각형 면 그리기 (사각형의왼쪽상단x좌표,사각형의왼쪽상단y좌표,가로길이,세로길이)
 		 }
 		 
 		 setInterval(motion,10);
+
+		 let bt = document.getElementsByTagName("button");
+		 bt[0].addEventListener("click",function(){
+			targetX=Math.random()*700;
+			targetY=Math.random()*700;
+		 });
 	 
 });
 </script>
@@ -33,9 +42,9 @@ window.addEventListener("load",function(){
 
 <body>
 
+	<button>버튼</button>
 
-<canvas id="c1" width="1000" height="350"></canvas> <!-- 그리기 영역 준비 -->
-
+<canvas id="c1" width="700" height="700"></canvas> <!-- 그리기 영역 준비 -->
 
 </body>
 </html>

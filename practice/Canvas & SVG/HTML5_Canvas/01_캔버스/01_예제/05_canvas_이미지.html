@@ -13,13 +13,13 @@ window.addEventListener("load",function(){
 	 let AA = document.getElementById("c1").getContext("2d"); //컨텍스트(그림을 그리기 위한 종이)를 변수에 저장
 	  
 	  
-	 //let img1 = document.createElement('img'); //이미지 요소를 생성하여 변수에 저장
+	 let img1 = document.createElement('img'); //이미지 요소를 생성하여 변수에 저장
 	 
-	 //img1.src = "images/pic.jpg"; //이미지 경로를 설정
+	 img1.src = "images/pic.jpg"; //이미지 경로를 설정
 	 
-	 //img1.onload = function(){ //페이지에 이미지가 로딩된후 
-		//AA.drawImage(this,0,0,150,120); //canvas에 이미지를 보여줌
-	 //}
+	 img1.onload = function(){ //페이지에 이미지가 로딩된후 
+		AA.drawImage(this,0,0,150,120); //canvas에 이미지를 보여줌
+	 }
 	 
 
 	 
