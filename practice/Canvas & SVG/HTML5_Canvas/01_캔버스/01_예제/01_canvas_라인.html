@@ -10,8 +10,17 @@
 <script>
 window.addEventListener("load",function(){ //페이지가 로딩된후 { }안의 내용을 실행
 	  
+    let AA = document.getElementById("c1").getContext("2d"); //컨텍스트(그림 그리기 위한 종이)를 준비 
+	
+    //직선 그리기 
+    AA.strokeStyle="hotpink"; //라인의 색상 
+    AA.lineWidth=5 //라인의 두께
 
-	 
+    AA.beginPath(); //패스 시작
+    AA.moveTo(100,100); //라인의 시작점(x,y)
+    AA.lineTo(200,200); //이전좌표에서 현재 지정한 좌표까지 라인을 그려라
+
+    AA.stroke(); //라인그리기 실행
 });
 </script>
 </head>
