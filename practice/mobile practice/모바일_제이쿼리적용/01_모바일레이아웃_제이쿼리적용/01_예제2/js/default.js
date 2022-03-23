@@ -5,12 +5,12 @@ $(function(){
 
 	//햄버거버튼 클릭했을 때
 	$(".gnb_btn").click(function(){
-		$(".gnb_list").animate({left:0},600);
+		$(".gnb_list").animate({left:0},600); //보이는 위치
 	});
 
 	//취소버튼 클릭했을 때
 	$(".close").click(function(){
-		$(".gnb_list").animate({left:"-70%"},300);
+		$(".gnb_list").animate({left:"-70%"},300); //안보이는 위치
 	});
 
 });
