@@ -4,7 +4,15 @@
 <meta charset="utf-8">
 <title>html5</title>
 <style>
-#c1 { border: 1px dashed #ccc; }
+
+#visual { height: 1000px; border: 10px dashed #ddd;}
+
+#container { position: relative; font-size: 33px; margin:0 auto; width:1200px; border:5px dashed #777;}
+#container #c1 { margin-left:120px; border: 1px dashed #ccc; }
+
+#t1 { position: absolute; left: 295px; top: 130px;} 
+#t2 { position: absolute; left: 595px; top: 130px;} 
+#t3 { position: absolute; left: 895px; top: 130px;} 
 </style>
 
 <script>
@@ -16,10 +24,10 @@ window.addEventListener("load",function(){
 		 let targetR1 = 330 *  Math.PI/180 - Math.PI/2
 
 		 let r2 = -Math.PI/2    
-		 let targetR2 = 330 *  Math.PI/180 - Math.PI/2
+		 let targetR2 = 270 *  Math.PI/180 - Math.PI/2
 
 		 let r3 = -Math.PI/2    
-		 let targetR3 = 330 *  Math.PI/180 - Math.PI/2
+		 let targetR3 = 190 *  Math.PI/180 - Math.PI/2
 		                                // -Math.PI/2; //시작값
 		 //let targetR = 라디안각도?        //-Math.PI/2; //목적값
 		 /*
@@ -57,8 +65,10 @@ window.addEventListener("load",function(){
 			AA.arc(800,150,110,0-Math.PI/2,r3,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)			 
 			AA.stroke();//라인 그리기	 
 
+			document.getElementById("t1").innerText=Math.round(((r1*180/Math.PI) +90)/360*100)+"%"; //일반각도 = (라디안*180/Math.PI) +90(오차)	}
+			document.getElementById("t2").innerText=Math.round(((r2*180/Math.PI) +90)/360*100)+"%"; //일반각도 = (라디안*180/Math.PI) +90(오차)		}
+			document.getElementById("t3").innerText=Math.round(((r3*180/Math.PI) +90)/360*100)+"%"; //일반각도 = (라디안*180/Math.PI) +90(오차)		}
 		}
-		 
 		setInterval(motion,10);
 	 
 });
@@ -67,7 +77,14 @@ window.addEventListener("load",function(){
 
 <body>
 
-<canvas id="c1" width="1000" height="350"></canvas> <!-- 그리기 영역 준비 -->
+	<div id="visual">비주얼</div>
+
+	<div id="container">
+		<canvas id="c1" width="1000" height="350"></canvas> <!-- 그리기 영역 준비 -->
+		<div id="t1">0</div>
+		<div id="t2">0</div>
+		<div id="t3">0</div>
+	</div>
 
 </body>
 </html>
