@@ -32,6 +32,20 @@ a { text-decoration:none; color:#333; }
 #container #main_visual {  }
 #container #main_visual img {width:100%; }
 
+
+/* swiper */
+.gallery1 { overflow:hidden; position:relative; margin:0 auto; width: 100%; /* 가변이미지의 부모에게는 height넣으면 안된다.*//* height: 500px;  */border:1px dashed skyblue; } /* 갤러리 전체영역 설정 */
+/* .gallery1  .swiper-slide img { width: 100%;} 부모길이의 100% */
+.gallery1 .nav1 { position: absolute; left:0px; bottom:0px; text-align: center;  z-index: 10; padding-bottom: 30px; } /* 메뉴영역 설정 */
+.gallery1 .nav1 .swiper-pagination-bullet { background-color:white; opacity:1; width:10px; height:10px; margin-left:5px; border-radius:8px; } /* 메뉴 설정 */
+.gallery1 .nav1 .swiper-pagination-bullet-active{ background-color:red; height: 10px;opacity:1; } /* 메뉴on 설정 */
+.gallery1 .swiper-button-prev, 
+.gallery1 .swiper-button-next { position:absolute; top:50%; width:27px; height:44px; margin-top:-22px; z-index:10; cursor:pointer; background-size:cover; }
+.gallery1 .swiper-button-prev { left:50px; /* background:url(); */ } /* 이전버튼 */
+.gallery1 .swiper-button-next { right:50px; /* background:url(); */ } /* 다음버튼 */
+
+
+
 #container #menu_wrap { background:#333; }
 #container #menu_wrap span {display:block; padding-top:12px; padding-left:47px; height:30px; 
 background:url(../images/more_down.gif) no-repeat right center; background-size:20px 7px;
@@ -55,6 +69,7 @@ font-size:14px; font-weight:bold; color:#fff; border-bottom:1px solid #fff;}
 #footer ul li.no_line {background:none;}
 #footer ul li a { color:#fff; }
 #footer p { font-family:Arial; font-size:11px; }
+
 
 
 

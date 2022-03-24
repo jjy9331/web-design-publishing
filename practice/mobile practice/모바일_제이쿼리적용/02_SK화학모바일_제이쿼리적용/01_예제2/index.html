@@ -4,8 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <title>SK화학</title>
+<link rel="stylesheet" href="css/swiper.css">
 <link href="css/default.css" rel="stylesheet">
 <script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/swiper.js"></script>
+<script>
+$(function () {
+
+   var mySwiper1 = new Swiper ('.gallery1', {
+     loop: true, //순환유무	 
+     pagination: '.nav1', //네비게이션class명
+	 grabCursor: true, //커서 손모양
+	 autoplay: 3000, //자동진행
+
+     //이전 다음 버튼
+     //nextButton: '.swiper-button-next',
+     //prevButton: '.swiper-button-prev',
+   })
+
+});
+</script>
 <script>
 $(function(){	
 
@@ -46,7 +64,20 @@ $(function(){
 <div id="container">
     
 	<div id="main_visual">
-        <p><img src="images/m_visual1.jpg" alt="Green Chemicals"></p>
+        <div class="gallery1">
+
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="images/m_visual1.jpg" alt=""></div>
+				<div class="swiper-slide"><img src="images/m_visual2.jpg" alt=""></div>
+				<div class="swiper-slide"><img src="images/m_visual3.jpg" alt=""></div>
+			</div>
+		
+			<div class="nav1"></div>
+		
+			<!-- <div class="swiper-button-prev swiper-button-white"></div> -->
+			<!-- <div class="swiper-button-next swiper-button-white"></div> -->
+		
+		</div>  
     </div>
     
     
