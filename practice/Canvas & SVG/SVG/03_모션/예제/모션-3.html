@@ -8,26 +8,10 @@
 svg { border:1px dashed #333; }
 text { font-size:50px; font-family:"Roboto","나눔고딕"; }
 
-.c1 { transition:1s; }
+.c1 { transition:0.5s; }
+
+.c1:hover { r:100px; }
 </style>
-
-<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
-
-<script>
-$(function(){ 
-
-	$(".c1").mouseenter(function(){
-		$(".c1").attr("r","100");
-		$(".c1").attr("fill","yellowgreen");
-	});
-  
-	$(".c1").mouseleave(function(){
-		$(this).attr("r","50");
-		$(".c1").attr("fill","orange");
-	});
-  
-});
-</script>
 <body> 
 
 
