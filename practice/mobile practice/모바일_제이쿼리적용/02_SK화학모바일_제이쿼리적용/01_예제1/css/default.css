@@ -36,7 +36,7 @@ a { text-decoration:none; color:#333; }
 #container #menu_wrap span {display:block; padding-top:12px; padding-left:47px; height:30px; 
 background:url(../images/more_down.gif) no-repeat right center; background-size:20px 7px;
 font-size:14px; font-weight:bold; color:#fff; border-bottom:1px solid #fff;}
-/* #container #menu_wrap span.on { background-image:url(../images/more_up.gif); } */
+#container #menu_wrap span.on { background-image:url(../images/more_up.gif); }
 
 #container #menu_wrap li#menu1 {background:url(../images/con1_bg.gif) no-repeat 10px 6px; background-size:31px 30px; }
 #container #menu_wrap li#menu2 {background:url(../images/con2_bg.gif) no-repeat 10px 6px; background-size:31px 30px; }
