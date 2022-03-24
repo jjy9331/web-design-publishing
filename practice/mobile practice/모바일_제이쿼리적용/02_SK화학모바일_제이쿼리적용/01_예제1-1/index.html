@@ -20,10 +20,16 @@ $(function(){
 	$("#menu_wrap span").click(function(){
 
 		if(toggle == 0) { //서브가 안보이면 
+			// $(this).addClass("on");
+			$(this).css({backgroundImage:"url(images/more_up.gif)"});
+
 			$(this).next().show(); //서브를 보이게 하고
 			toggle = 1; //이제 서브가 안보인다는 걸 표시
 		}
 		else {
+			// $(this).removeClass("on");
+			$(this).css({backgroundImage:"url(images/more_down.gif)"});
+
 			$(this).next().hide(); //서브를 dks보이게 하고
 			toggle = 0; //이제 서브가 안보인다는 걸 표시
 		}
