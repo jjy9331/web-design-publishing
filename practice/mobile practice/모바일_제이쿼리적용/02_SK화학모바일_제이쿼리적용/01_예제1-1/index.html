@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>SK화학</title>
+<link href="css/default.css" rel="stylesheet">
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){	
+
+	$("#menu_wrap .sub").hide();
+
+
+	let toggle = 0; //sub안보일 때, sub보일 때
+	
+	$("#menu_wrap span").click(function(){
+
+		if(toggle == 0) { //서브가 안보이면 
+			$(this).next().show(); //서브를 보이게 하고
+			toggle = 1; //이제 서브가 안보인다는 걸 표시
+		}
+		else {
+			$(this).next().hide(); //서브를 dks보이게 하고
+			toggle = 0; //이제 서브가 안보인다는 걸 표시
+		}
+
+	});
+
+
+});
+</script>
+</head>
+
+<body>
+ 
+
+<div id="skip_navigation">
+	<a href="#container">본문 바로가기</a>
+</div>
+
+
+
+<!-- header -->
+<header id="header">
+	<h1 class="logo"><a href="index.html"><img src="images/logo.gif" width="99" height="34" alt="SK Chem"></a></h1>
+</header>
+<!-- //header -->
+
+
+
+
+
+
+<!-- container -->
+<div id="container">
+    
+	<div id="main_visual">
+        <p><img src="images/m_visual1.jpg" alt="Green Chemicals"></p>
+    </div>
+    
+    
+	<h2 class="blind">메뉴</h2>
+    
+	<nav id="menu_wrap">
+	<ul>
+    
+		<li id="menu1"><span>기업소개</span>
+            <ul class="sub">
+                    <li><a href="#">개요</a></li>
+                    <li><a href="#">비전</a></li>
+                    <li><a href="#">약도</a></li>
+                    <li><a href="#">CEO인사말</a></li>
+                    <li><a href="#">글로벌네트워크</a></li>
+                    <li><a href="#">정도경영</a></li>
+            </ul>
+		</li>
+        
+		<li id="menu2"><span>지속가능경영</span>
+			<ul  class="sub">
+				<li><a href="#">지속가능경영 소개</a></li>
+				<li><a href="#">ESH 경영</a></li>
+				<li><a href="#">사회공헌</a></li>
+			</ul>
+		</li>
+        
+		<li id="menu3"><span>연구개발</span>
+			<ul class="sub">
+				<li><a href="#">기술연구원</a></li>
+				<li><a href="#">테크센터</a></li>
+			</ul>
+		</li>
+        
+		<li id="menu4"><span>석유화학</span>
+			<ul class="sub">
+				<li><a href="#">NCC/PO</a></li>
+				<li><a href="#">PVC</a></li>
+				<li><a href="#">ABS</a></li>
+				<li><a href="#">EP</a></li>
+				<li><a href="#">아크릴/가소제</a></li>
+				<li><a href="#">고무/특수수지</a></li>
+			</ul>
+		</li>
+        
+		<li id="menu5"><span>정보전자 소재</span>
+			<ul class="sub">
+				<li><a href="#">Display / LCD</a></li>
+				<li><a href="#">Display / OLED</a></li>
+				<li><a href="#">Display / Touch</a></li>
+				<li><a href="#">Green Energy / Batteries</a></li>
+				<li><a href="#">Green Energy / Lighting</a></li>
+				<li><a href="#">Others</a></li>
+			</ul>
+		</li>
+        
+		<li id="menu6"><span>전지</span>
+			<ul class="sub">
+				<li><a href="#">소형 전지</a></li>
+				<li><a href="#">자동차 전지</a></li>
+				<li><a href="#">전력저장 전지</a></li>
+			</ul>
+		</li>
+        
+	</ul>
+	</nav>
+    
+</div>
+<!-- //container -->
+ 
+
+
+
+ 
+<!-- footer -->
+<footer id="footer">
+    
+    <h2 class="blind">기타링크 및 저작권자 정보</h2>
+    <ul>
+	   <li><a href="#">PC버전</a></li>
+       <li><a href="#">ENGLISH</a></li>
+       <li><a href="#">개인정보처리방침</a></li>
+       <li class="no_line"><a href="#top">▲ TOP</a></li>
+    </ul>
+    
+	<p>Copyright (c) 2020 by SK Chem. All rights reserved.</p>
+    
+</footer>
+<!-- //footer -->
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
