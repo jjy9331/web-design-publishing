@@ -12,7 +12,15 @@ window.addEventListener("load",function(){
 	 
 		 let AA = document.getElementById("c1").getContext("2d"); //컨텍스트(그림을 그리기 위한 종이)를 변수에 저장
 		 
-		 //let r = 0                                   // -Math.PI/2; //시작값
+		 let r1 = -Math.PI/2 
+		 let targetR1 = 330 *  Math.PI/180 - Math.PI/2
+
+		 let r2 = -Math.PI/2    
+		 let targetR2 = 330 *  Math.PI/180 - Math.PI/2
+
+		 let r3 = -Math.PI/2    
+		 let targetR3 = 330 *  Math.PI/180 - Math.PI/2
+		                                // -Math.PI/2; //시작값
 		 //let targetR = 라디안각도?        //-Math.PI/2; //목적값
 		 /*
 			180 =  Math.PI
@@ -20,22 +28,38 @@ window.addEventListener("load",function(){
 			라디안 = 각도 *  Math.PI/180
 		 */
 		 
-		// function motion(){
+		function motion(){
 
-			 //r = r + 0.03*( targetR - r); //부드러운 움직임
-		
-             //AA.clearRect(0,0,1000,350);//이전에 그려진 그림 영역을 삭제
-					 
-			 AA.strokeStyle="orange";//라인색상
-			 AA.lineWidth=20;//라인두께
-		 	      //AA.lineCap="round"//라인끝을 둥글게			 
-			 //AA.beginPath();//패스 시작
-			 //AA.arc(200,150,100,0, Math.PI, false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)			 
-			 //AA.stroke();//라인 그리기	 
+			r1 = r1 + 0.03*( targetR1 - r1); //부드러운 움직임
+			r2 = r2 + 0.03*( targetR2 - r2);
+			r3 = r3 + 0.03*( targetR3 - r3);
 
-		// }
+			AA.clearRect(0,0,1000,350);//이전에 그려진 그림 영역을 삭제
+					
+			AA.strokeStyle="orange";//라인색상
+			AA.lineWidth=20;//라인두께
+			AA.lineCap="square";//라인끝을 둥글게			 
+			AA.beginPath();//패스 시작
+			AA.arc(200,150,100,0-Math.PI/2,r1,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)			 
+			AA.stroke();//라인 그리기	 
+
+			AA.strokeStyle="green";//라인색상
+			AA.lineWidth=30;//라인두께
+			AA.lineCap="round";//라인끝을 둥글게			 
+			AA.beginPath();//패스 시작
+			AA.arc(500,150,110,0-Math.PI/2,r2,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)			 
+			AA.stroke();//라인 그리기	 
+
+			AA.strokeStyle="yellowgreen";//라인색상
+			AA.lineWidth=10;//라인두께
+			AA.lineCap="round";//라인끝을 둥글게			 
+			AA.beginPath();//패스 시작
+			AA.arc(800,150,110,0-Math.PI/2,r3,false);//중심점x,중심점y,반지름,시작종료라디안각도(Math.PI가180도),방향(true/false)			 
+			AA.stroke();//라인 그리기	 
+
+		}
 		 
-		// setInterval(motion,10);
+		setInterval(motion,10);
 	 
 });
 </script>
