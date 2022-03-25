@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>미디어쿼리</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+<style>
+/* reset */
+body,h1,h2,h3,h4,h5,h6,ul,li,p { margin:0; padding:0; }
+ul { list-style:none; }
+img { border:0; vertical-align:top; }
+    
+/* base */
+body { font:15px Roboto; }
+a { text-decoration:none; color:#000; }
+
+/* layout */
+#header { padding:0.5%; overflow:hidden; background:#333; }
+#container { overflow:hidden; }
+#footer { background:#333; }
+
+/* header */
+h1 { color:#fff; padding:0.5%; font-weight: 100; }
+#header #gnb li { float:left; width:24%; margin:0.5%; font-size:20px; text-align:center;  }
+#header #gnb li a { color:#fff; transition:1s; }
+#header #gnb li a:hover { color:orange; }
+    
+/* container */
+#container h2 { padding:1%; }
+#container p { padding:1%; }
+#container li { float:left; width: 25%; background:#000; }    
+#container li img { width: 100%; opacity:0.5; transition:1s; } 
+#container li img:hover { opacity:1; }    
+
+/* footer */
+#footer p { font-size:10px; color:#fff; text-align:center; padding:1%; }
+
+
+@media all and (max-width:767px) {
+/* 브라우저 가로폭이 767px이하일때 적용될 css (스마트폰) */
+#header #gnb li { width:49%; background: #fff; }
+#header #gnb li a { color:#333; }
+#container li { width:100%; }
+}
+
+    
+@media all and (min-width:768px) and (max-width:1023px) {
+/* 브라우저 가로폭이 768~1023px일때 적용될 css (태블릿) */
+#container li { width:50%; }    
+}
+
+
+@media all and (min-width:1024px) {
+/* 브라우저 가로폭이 1024px이상일때 적용될 css (PC) */
+#container li { width:25%; }    
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+
+
+
+
+  <header id="header">
+     <h1>Portfolio</h1>
+	 <nav id="gnb">
+		 <ul>
+		   <li><a href="#">Home</a></li>
+		   <li><a href="#">About</a></li>
+		   <li><a href="#">Porfolio</a></li>
+		   <li><a href="#">Contact</a></li>
+		 </ul>
+	 </div>
+  </header>
+  
+  
+  
+  
+  <div id="container">
+      <h2>MediaQuery</h2>
+      <p>
+        Design is the process and art of planning and making detailed drawings of something. 
+        A creative person has the ability to invent and develop original ideas, especially in the arts.
+        Creative activities involve the inventing and making of new kinds of things.
+        If you use something in a creative way, you use it in a new way that produces interesting and unusual results.
+        Creativity refers to the invention or origination of any new thing that has value. 
+        "New" may refer to the individual creator or the society or domain within which novelty occurs. 
+        "Valuable", similarly, may be defined in a variety of ways.
+      </p>
+      
+      <ul>
+          <li><img src="images/z1.jpg" alt=""></li>
+          <li><img src="images/z2.jpg" alt=""></li>
+          <li><img src="images/z3.jpg" alt=""></li>
+          <li><img src="images/z4.jpg" alt=""></li>
+          <li><img src="images/z5.jpg" alt=""></li>
+          <li><img src="images/z6.jpg" alt=""></li>
+          <li><img src="images/z7.jpg" alt=""></li>
+          <li><img src="images/z8.jpg" alt=""></li>
+      </ul>
+  </div>
+    
+    
+    
+  <footer id="footer">
+    <p>Copyright (c) 2030, All rights reserved.</p>
+  </footer>
+  
+
+
+
+</body>
+</html>
+
+
+
+
+
+

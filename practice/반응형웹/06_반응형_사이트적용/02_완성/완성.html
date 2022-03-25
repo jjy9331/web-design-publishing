@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>반응형 패턴</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+/* base */
+body { font-size:14px; color:#767676; font-family: 'Spartan', 'Open Sans'; }
+a { text-decoration:none; color:#767676; }
+
+
+/* layout */
+#header { background:black; }
+#header .inner { 
+	position:relative; 
+	margin:0 auto; 
+	max-width:1200px; 
+	height:65px; 
+	border:2px dashed #aaa; 
+}
+
+#visual { 
+	height:800px;
+	background:center top url(images/visual.png) no-repeat;
+	background-size:cover;
+	margin-bottom:10px; 
+	color:white;
+	border:3px dashed orange;
+}
+#visual .inner { margin:0 auto; max-width:1200px; border:2px dashed yellow; }
+
+#container { margin:0 auto; max-width:1200px; border:2px dashed black; /* font-size:30px; */ }
+#container:after { content:""; display:block; clear:both; }
+
+#footer { height:50px; background:black; }
+
+
+/* header */
+h1 img { width:100px; }
+
+.gnb { position:absolute; right:0px; bottom:22px; width:800px; }
+.gnb:after { content:""; display:block; clear:both; }
+
+.gnb li { float:left; width:25%; text-align:center; }
+.gnb li a { transition:0.5s; /* display:block; */ color:white; padding:3px 15px; }
+.gnb li a:hover { color:black; background-color:white; }
+
+
+.gnb_btn { /* 햄버거 버튼 */
+	display:none; 
+	position:absolute; 
+	right:10px; top:15px; 
+	color:#000; 
+}
+
+
+/* visual*/
+#visual p:nth-child(1) { font-size:4.5vw; font-weight:700; padding-top:100px; padding-bottom:20px; }
+#visual p:nth-child(2) { font-size:0.8vw;  }
+		/*
+			폰트 사이즈 vw단위
+			1vw = 브라우져 가로폭의 1%
+			10vw = 브라우져 가로폭의 10%
+			100vw = 브라우져 가로폭의 100%
+		*/
+
+
+
+/* container */
+.box { 
+	float:left; width:24.25%; 
+	/* height:300px; */ /* 가변 이미지의 상위부모 요소는 height를 뺀다 */
+	margin-bottom:10px; 
+}
+
+.box img { width:100%; }
+.box p { padding:10px; border:1px dashed blue; color:white; }
+.box p strong { font-size:16px; display:block; }
+
+.b1 { margin-right:1%; background:#ff6b67}
+.b2 { margin-right:1%; background:#f2df11; }
+.b3 { margin-right:1%; background:#555; }
+.b4 { background:#ff6b67}
+
+
+
+
+
+
+
+/* mediaquery */
+
+@media all and (max-width:767px) { /* 스마트폰 */
+	#header .inner { height:50px; }
+	h1 img { width:80px; }
+
+   .gnb {  display:none;  position:absolute; top:50px; width:100%; height:330px; } 
+   .gnb li { 
+		width:100%; 		
+		font-size:16px;
+		background-color:rgba(0,0,0,0.7);
+	}
+	.gnb li a { 
+		display:block; 
+		padding-top:10px; padding-bottom:10px;
+		border:1px dashed white; 
+	}
+
+   .gnb_btn { display:block; } /* 햄버거버튼 보이게함 */
+
+   #visual {  height:300px; } 
+	#visual p:nth-child(1) { padding-left:10px; padding-top:30px; padding-bottom:10px; }
+	#visual p:nth-child(2) { padding-left:10px; }
+
+   .box { 
+		margin-right:0; 
+		width:100%; 
+		   /* height:200px; */  /* 가변 이미지의 상위부모 요소는 height를 뺀다 */
+	}
+	.box img { /*float:left; margin-right:10px;*/ width:50%; }
+		.box:nth-child(odd) img { float:left; margin-right:10px; } /* odd홀수 */
+		.box:nth-child(even) img { float:right; margin-left:10px; } /* even짝수 */
+}
+
+
+@media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
+	h1 { text-align:center; /* border:5px dashed skyblue; */ }
+	h1 img { width:80px; }
+	
+	.gnb { width:100%; bottom:10px; }
+	#visual {  height:400px; } 
+	#visual p:nth-child(1) { padding-left:10px; padding-top:50px; padding-bottom:10px; }
+	#visual p:nth-child(2) { padding-left:10px; }
+
+	.box { 
+		margin-right:0; 
+		width:49.5%; 
+		/* height:250px; */ 	 /* 가변 이미지의 상위부모 요소는 height를 뺀다 */
+	}
+	.box:nth-child(odd) { margin-right:1%; } /* odd:홀수, even:짝수 */
+}
+
+
+@media all and (min-width:1600px) { /* wide PC */
+	#header .inner { max-width:none; width:90%; }
+	#container { max-width:none; width:90%; }
+	#footer .inner { max-width:none; width:90%; }
+}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+		
+		$(".gnb_btn").click(function(){
+			 $(".gnb").slideToggle();
+			 //slideDown,sildeUp효과로 메뉴를
+			 //번갈아 보이거나 안보이게함
+			 //silde대상에 height가 없을 경우 정상실행 안될수있다 --> slide대상에게 height를 설정한다.		 
+		});
+
+
+		$(window).resize(function(){//브라우져창의 크기를 조절했을때
+			   
+				if (  $(this).width()  > 767  ) { //태블릿,PC
+						$(".gnb").show();
+				}
+				else { //스마트폰
+						$(".gnb").hide();
+				}
+
+		 });
+
+
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<header id="header">
+   <div class="inner">
+
+	   <h1><img src="images/logo2.jpg" alt="나이키"></h1>
+
+	   <a href="#" class="gnb_btn"><img src="images/gnb_btn2.png" alt="메뉴"></a><!-- 햄버거 버튼 -->
+	
+    	<nav class="gnb">
+           <ul>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">Girl</a></li>
+              <li><a href="#">Boy</a></li>
+           </ul>
+		</nav>
+        
+   </div>
+</header>
+
+
+<div id="visual">
+		<div class="inner">
+
+						<p>STRIKE A BALANCE</p>
+
+						<p>Nike Free TR Focus Flyknit hugs your foot<br>
+						for natural flexibility during your workout.</p>
+
+		</div>
+</div>
+
+
+
+<div id="container">
+
+	   <div class="box b1">
+		   <img src="images/b1.png" alt="">
+			<p><strong>나이키 프로</strong>
+			트레이닝을 위한 최상의 베이스 레이어</p>
+	   </div>
+
+	   <div class="box b2">
+		   <img src="images/b2.png" alt="">
+			<p><strong>나이키 에어 줌 페가수스</strong>
+			앞, 뒤 두 개의 줌 에어가 선사하는 놀라운 반응성</p>
+	   </div>
+
+	   <div class="box b3">
+		   <img src="images/b3.png" alt="">
+			<p><strong>여름 티셔츠</strong>
+			뛰어난 통기성과 쾌적함</p>
+	   </div>
+
+	   <div class="box b4">
+		   <img src="images/b4.png" alt="">
+			<p><strong>여름 숏팬츠</strong>
+			뛰어난 활동성과 편안한 착용감</p>
+	   </div>
+
+
+</div>
+
+
+
+
+<footer id="footer">
+footer
+</footer>
+
+
+
+</body>
+</html>
+

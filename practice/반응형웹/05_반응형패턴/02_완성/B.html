@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>반응형 패턴</title>
+<style>
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+/* base */
+body { color:#fff; }
+
+/* layout */
+#header { height:50px; background:black; }
+#visual { height:500px; background:#777; }
+#container { margin:0 auto; max-width:1200px; border:2px dashed black; font-size:30px; }
+#container:after { content:""; display:block; clear:both; }
+#footer { height:50px; background:black; }
+
+
+/* container */
+.box { float:left; width:25%; height:300px; }
+.b1 { background:#ff6b67}
+.b2 { background:#f2df11; }
+.b3 { background:#555; }
+.b4 { background:#ff6b67}
+
+
+
+
+
+
+
+/* mediaquery */
+@media all and (max-width:767px) { /* 스마트폰 */
+#visual { height:300px; }
+.box { width:100%; height:200px; }
+}
+
+@media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
+#visual { height:400px; }
+.box { width:50%; height:250px; }
+}
+
+@media all and (min-width:1024px) { /* PC */
+
+}
+</style>
+</head>
+
+<body>
+
+
+
+<header id="header">
+header
+</header>
+
+
+<div id="visual">
+visual
+</div>
+
+
+
+<div id="container">
+   <div class="box b1">1</div>
+   <div class="box b2">2</div>
+   <div class="box b3">3</div>
+   <div class="box b4">4</div>
+</div>
+
+
+
+
+<footer id="footer">
+footer
+</footer>
+
+
+
+</body>
+</html>

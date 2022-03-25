@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>반응형 패턴</title>
+<style>
+/* reset */
+html,body { width:100%; height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+/* base */
+body { color:#fff; }
+
+/* layout */
+#header { height:50px; background:black; }
+#container { font-size:30px; }
+#footer { height:50px; background:black; }
+
+
+/* container */
+#container { margin:0 auto; max-width:1200px;/* border:2px dashed black; */ }
+#container:after { content:""; display:block; clear:both; }
+
+.box { float:left; width:24%; margin:0.5%; height:300px; }
+.b1 { background:#ff6b67}
+.b2 { background:#f2df11; }
+.b3 { background:#555; }
+.b4 { background:#ff6b67}
+.b5 { background:#f2df11; }
+.b6 { background:#555; }
+.b7 { background:#ff6b67}
+.b8 { background:#f2df11; }
+.b9 { background:#555; }
+.b10 { background:#ff6b67}
+.b11 { background:#f2df11; }
+.b12 { background:#555; }
+
+
+
+
+
+
+/* mediaquery */
+@media all and (max-width:767px) { /* 스마트폰 */
+.box { width:100%; margin:0;  height:200px; }
+}
+
+@media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
+.box { width:49%; margin:0.5%; height:250px; }
+}
+
+@media all and (min-width:1024px) { /* PC */
+
+}
+</style>
+</head>
+
+<body>
+
+
+
+<header id="header">
+header
+</header>
+
+
+
+
+<div id="container">
+   <div class="box b1">1</div>
+   <div class="box b2">2</div>
+   <div class="box b3">3</div>
+   <div class="box b4">4</div>
+   <div class="box b5">5</div>
+   <div class="box b6">6</div>
+   <div class="box b7">7</div>
+   <div class="box b8">8</div>
+   <div class="box b9">9</div>
+   <div class="box b10">10</div>
+   <div class="box b11">11</div>
+   <div class="box b12">12</div>
+</div>
+
+
+
+
+<footer id="footer">
+footer
+</footer>
+
+
+
+</body>
+</html>
