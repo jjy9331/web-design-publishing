@@ -27,13 +27,13 @@ a { text-decoration: none; color: #555; }
 	width: 600px;
 	height: 300px;
 	background:yellow;
-	font-size:100px;
-	opacity: 1;
+	font-size:200px;
+	opacity: 0.6;
 }
 
-.box:nth-child(1) {transform:translateZ(200px);}
-.box:nth-child(2) {transform:translateZ(-200px);}
-.box:nth-child(3) {transform:translateZ(-600px);}
+.box:nth-child(1) {transform:translateZ(200px); z-index: 3;}
+.box:nth-child(2) {transform:translateZ(-200px); z-index: 2; }
+.box:nth-child(3) {transform:translateZ(-600px); z-index: 1;}
 </style>
 </script>
 </head>
