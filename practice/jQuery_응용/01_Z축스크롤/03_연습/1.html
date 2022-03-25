@@ -1,0 +1,80 @@
+﻿<!doctype html >
+<html lang="ko">
+<head>
+<title>Z축 페이지 이동</title>
+<style>
+/* reset */
+* { margin:0; padding:0; }
+ul { list-style:none; }
+img { border:0; }
+
+/* base */
+body { font-family: "Roboto", "맑은 고딕"; font-size: 12px; }
+a { text-decoration: none; color: #555; }
+
+
+
+section { 
+  position:absolute; width:1200px; height:700px;  
+  left:50%; top:50%; margin-left:-600px; margin-top:-350px;
+  perspective:2300px; border:3px dashed #333;
+}
+
+section article { 
+	/* position:absolute; top:0px; left:0px; z-index:1; */
+	width:300px; height:200px; 
+	opacity:0.3; background:orange; 
+	font-size:100px; color:#fff;
+	border:1px dashed blue;
+}
+
+/* section article.on { z-index:2;} */
+
+
+/* section article:nth-child(1) { transform:translateZ(0px);} */
+/* section article:nth-child(2) { transform:translateZ(-5000px);} */
+/* section article:nth-child(3) { transform:translateZ(-10000px);} */
+/* section article:nth-child(4) { transform:translateZ(-15000px);} */
+/* section article:nth-child(5) { transform:translateZ(-20000px);} */
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+
+
+
+});
+</script>
+</head>
+<body>
+
+
+
+
+<section>		
+	<!--
+		<article>box1</article>		
+
+		<article>box2</article>		
+
+		<article>box3</article>		
+
+		<article>box4</article>		
+
+		<article>box5</article>		
+	-->
+</section>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+

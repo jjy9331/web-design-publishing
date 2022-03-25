@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>where's wally?</title>
+<style>
+.movie { border:1px dashed #777; width:500px; height:500px; }
+.movie img { position:absolute; visibility:hidden; }
+</style>
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+    //이미지 불러오기
+	for (i=1; i<=8; i++){
+		$(".movie").append("<img src='images1/w_walking"+i+".png'>");
+	}
+
+
+
+    //애니메이션 시키기
+	let frameNum=0;
+
+	function aniNext(){
+
+		frameNum++;
+
+		if(frameNum> $(".movie img:last").index() ){
+			frameNum=0
+		};
+
+		$(".movie img").css({visibility:"hidden"});
+		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
+	}
+
+	setInterval(aniNext,100);
+
+
+});
+</script>
+
+</head>
+
+<body>
+
+
+    
+       <div class="movie">
+
+       </div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

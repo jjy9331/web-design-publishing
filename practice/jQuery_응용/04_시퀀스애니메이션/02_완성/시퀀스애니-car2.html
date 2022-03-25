@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>car</title>
+<style>
+.movie { border:1px dashed #777; width:1000px; height:700px; }
+.movie img { position:absolute; visibility:hidden; }
+</style>
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+
+<script>
+$(function(){
+
+    //이미지 불러오기
+	for (i=1; i<=36; i++){
+		$(".movie").append("<img src='images2/"+i+".jpg'>");
+	}
+	$(".movie img:first").css({visibility:"visible"});
+
+
+
+    //애니메이션 시키기
+	let frameNum=0;
+
+    //순방향
+	function aniNext(){
+		frameNum++;
+
+		if(frameNum> $(".movie img:last").index() ){
+			frameNum=0
+		};
+
+		$(".movie img").css({visibility:"hidden"});
+		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
+	}
+
+    //역방향
+	function aniPrev(){
+		frameNum--;
+
+		if(frameNum<0  ){
+			frameNum=$(".movie img:last").index()
+		};
+
+		$(".movie img").css({visibility:"hidden"});
+		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
+	}
+
+
+	//wheel
+	$(".movie").mousewheel(function(event, delta) {
+	  if(delta < 0) {
+		   aniNext();
+	  } else {
+		   aniPrev();
+	  }
+	});
+
+
+});
+</script>
+
+</head>
+
+<body>
+
+
+    
+       <div class="movie">
+
+       </div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

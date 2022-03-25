@@ -1,0 +1,51 @@
+﻿<!doctype html >
+<html lang="ko">
+<head>
+<title>Z축 페이지 이동</title>
+<style>
+/* reset */
+* { margin:0; padding:0; }
+ul { list-style:none; }
+img { border:0; }
+
+/* base */
+body { font-family: "Roboto", "맑은 고딕"; font-size:200px; }
+a { text-decoration: none; color: #555; }
+
+#container { 	 perspective:1000px;/*자손들의 원근감 설정*/
+	position:absolute; left:50%; top:50%;
+	width:600px; height:300px;
+	margin-left:-300px; margin-top:-150px;
+	border:5px dashed red;
+}
+
+.box { opacity:0.2;
+	position:absolute; left:0px; top:0px;
+	width:600px; height:300px;
+	border:2px solid blue; background:yellow; 
+}
+
+.box:nth-child(1) { transform:translateZ(200px); }
+.box:nth-child(2) { transform:translateZ(-200px); }
+.box:nth-child(3) { transform:translateZ(-600px); }
+</style>
+</script>
+</head>
+<body>
+
+<div id="container">
+		<div class="box">01</div>
+		<div class="box">02</div>
+		<div class="box">03</div>
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+

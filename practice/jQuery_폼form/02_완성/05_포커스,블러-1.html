@@ -7,23 +7,23 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 
 <script>
-$(function() {
+	$(function() {
 
-	$('#t1').val("아이디를 입력하세요.").css("color", "#777");
-	
-	$('#t1').focus( function() {
-		//if($('#t1').val()=="아이디를 입력하세요."){
-			$('#t1').val("").css("color", "#000");
-		//}
+		$('#t1').val("아이디를 입력하세요.").css("color", "#777");
+		
+		$('#t1').focus( function() {
+			if($('#t1').val()=="아이디를 입력하세요."){
+				$('#t1').val("").css("color", "#000");
+			}
+		});
+
+		$('#t1').blur(function() { //포커스해제되었을 때
+			if($('#t1').val()==""){
+				$('#t1').val("아이디를 입력하세요.").css("color", "#777");
+			}
+		}); 
+
 	});
-
-	$('#t1').blur(function() {
-		//if($('#t1').val()==""){
-			//$('#t1').val("아이디를 입력하세요.").css("color", "#777");
-		//}
-	}); 
-
-});
 </script>
 
 </head>

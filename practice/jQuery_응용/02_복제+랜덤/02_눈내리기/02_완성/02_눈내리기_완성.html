@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>복제</title>
+<style>
+body { font: bold 12px "나눔고딕"; color:#fff; }
+h1 { font-size:60px;}
+#wrap { position:relative; margin:0 auto; width:900px; height:600px; background:#0CC; }
+#snow { width:30px; height:30px; border-radius:50%; position: absolute; left: 30px; top: -1000px; background:#fff; }
+</style>
+</head>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+	
+let wrap = $("#wrap");
+let snow = $("#snow");
+
+let i =1;
+
+function motion(){
+	
+	if ( i<=100 ){
+			
+	  let temp = snow.clone();
+	  wrap.append(temp);
+	  
+	  temp.css({
+		  left:Math.floor(Math.random()*900)+"px",
+		  top:-100,
+		  width:Math.floor(Math.random()*50+20)+"px",
+		  opacity:Math.random(),
+	  });
+	  
+	  temp.css("height", temp.css("width") );
+  
+	  temp.animate({top:600,opacity:0},3000,function(){
+		  $(this).remove();
+	  });
+	  
+
+	} 
+
+	i++;
+	
+}
+	
+setInterval(motion,300); 
+	
+	
+});
+</script>
+<body >
+
+<div id="wrap">
+
+   <h1>Snow</h1>
+   <p>design is what you make of it</p>
+
+   <div id="snow"></div>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,165 @@
+﻿<!doctype html >
+<html lang="ko">
+<head>
+<title>Z축 페이지 이동</title>
+<style>
+/* reset */
+* { margin:0; padding:0; }
+ul { list-style:none; }
+img { border:0; }
+
+/* base */
+body { height:23000px; font-family: "Roboto", "맑은 고딕"; font-size: 12px; }
+a { text-decoration: none; color: #555; }
+
+
+h1 { position:fixed; top:10px; left:10px; z-index:2; font-size:50px; font-weight:100; background:red; color:white; opacity:0.7;}
+
+
+/*스크롤 네비게이션*/
+.scrollNavi { position:fixed; left:100px; top:300px; z-index:2;}
+.scrollNavi li { margin-bottom:20px; cursor:pointer;  }
+.scrollNavi li.on { color:white; font-size:20px; background:black; }
+
+
+/*박스 그룹 레이아웃*/
+section { 
+  position:fixed; width:1200px; height:700px;  
+  left:50%; top:50%; margin-left:-600px; margin-top:-350px;
+  perspective:2300px; z-index:1; border:3px dashed #333;
+}
+
+section article { width:1200px; height:700px; 
+position:absolute; top:0px; left:0px; z-index:1; 
+opacity:0.3; background:orange; font-size:100px; color:#fff;}
+
+section article.on { z-index:2;}
+
+section article:nth-child(1) { transform:translateZ(0px);}
+section article:nth-child(2) { transform:translateZ(-5000px);}
+section article:nth-child(3) { transform:translateZ(-10000px);}
+section article:nth-child(4) { transform:translateZ(-15000px);}
+section article:nth-child(5) { transform:translateZ(-20000px);}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+
+
+	$(window).scroll(function(){
+		
+		let sc = $(this).scrollTop();
+		   $("h1").text(sc);//스크롤한 값을 h1에 출력
+		
+		//5개 박스의 현재 z축 위치값에서 현재 스크롤한 거리만큼을 더하기
+		$("section article:eq(0)").css({"transform":"translateZ("   + (0+sc) +  "px)"});
+		$("section article:eq(1)").css({"transform":"translateZ("   + (-5000+sc)   +  "px)"});		
+		$("section article:eq(2)").css({"transform":"translateZ("   + (-10000+sc)   +  "px)"});
+		$("section article:eq(3)").css({"transform":"translateZ("   + (-15000+sc)   +  "px)"});
+		$("section article:eq(4)").css({"transform":"translateZ("   + (-20000+sc)   +  "px)"});		
+
+
+		//스크롤한 거리에 따라 스크롤 네비게이션과 해당 박스 활성화
+		if(sc>=0 && sc<5000){ 
+			$(".scrollNavi li").removeClass("on");
+			$(".scrollNavi li").eq(0).addClass("on");
+				$("article").removeClass("on");	
+				$("article").eq(0).addClass("on");	
+		}
+
+		if(sc>=5000 && sc<10000){ 
+			$(".scrollNavi li").removeClass("on");
+			$(".scrollNavi li").eq(1).addClass("on");
+				$("article").removeClass("on");	
+				$("article").eq(1).addClass("on");	
+		}
+
+		if(sc>=10000 && sc<15000){ 
+			$(".scrollNavi li").removeClass("on");
+			$(".scrollNavi li").eq(2).addClass("on");
+				$("article").removeClass("on");	
+				$("article").eq(2).addClass("on");	
+		}
+
+		if(sc>=15000 && sc<20000){ 
+			$(".scrollNavi li").removeClass("on");
+			$(".scrollNavi li").eq(3).addClass("on");
+				$("article").removeClass("on");	
+				$("article").eq(3).addClass("on");	
+		}
+
+		if(sc>=20000 && sc<25000){ 
+			$(".scrollNavi li").removeClass("on");
+			$(".scrollNavi li").eq(4).addClass("on");
+				$("article").removeClass("on");	
+				$("article").eq(4).addClass("on");	
+		}
+	
+	
+	});
+
+
+	//스크롤 네비게이션 클릭 시 스크롤 이동
+	$(".scrollNavi li:eq(0)").click(function(){
+		$("body,html").stop().animate({scrollTop:0},2000);
+	});
+	$(".scrollNavi li:eq(1)").click(function(){
+		$("body,html").stop().animate({scrollTop:5000},2000);
+	});
+	$(".scrollNavi li:eq(2)").click(function(){
+		$("body,html").stop().animate({scrollTop:5000*2},2000);
+	});
+	$(".scrollNavi li:eq(3)").click(function(){
+		$("body,html").stop().animate({scrollTop:5000*3},2000);
+	});
+	$(".scrollNavi li:eq(4)").click(function(){
+		$("body,html").stop().animate({scrollTop:5000*4},2000);
+	});
+
+
+});
+</script>
+</head>
+<body>
+
+
+	<h1>0</h1>
+
+
+
+	<ul class="scrollNavi">
+		<li class="on">box1</li>
+		<li>box2</li>
+		<li>box3</li>
+		<li>box4</li>
+		<li>box5</li>	
+	</ul>
+
+
+
+	<section>		
+		
+			<article>box1</article>		
+
+			<article>box2</article>		
+
+			<article>box3</article>		
+
+			<article>box4</article>		
+
+			<article>box5</article>		
+
+	</section>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+

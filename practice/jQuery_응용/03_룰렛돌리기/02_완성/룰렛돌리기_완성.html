@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<style>
+body { font: 12px "나눔고딕"; text-align:center; }
+
+#rullet_wrap { margin:0 auto; position:relative; width:800px; height:500px; border:1px dashed skyblue; }
+#rullet { transform:rotate(0deg); position:absolute; left:170px; top:20px; width:477px; height:477px; }
+#kk { position:absolute; left:402px; top:2px; width:12px; height:84px; z-index:10; background:#f93; border-radius:6px; }
+
+.start { position: absolute; left: 378px; top: 241px; z-index: 10; text-decoration: none; color: #f96; font-size: 30px; }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+
+<script>
+$(function(){
+  
+  
+   let r=0;
+   let s=3;
+   let z=0;
+   
+   
+   
+   function AA(){
+   
+		  r = r + s;
+		  if (r >= 360) { r =0 };  $("h1").text(r);
+		    
+	   
+		  $("#rullet").css({transform:"rotate("+r+"deg)"});
+		  
+			   
+			   
+			   s=s-0.001*z;
+			   
+			   if(s<=0){
+				    
+				   if ( (r>=0) && (r<=45) ) { $("h2").text("1점입니다"); }
+				   if ( (r>45) && (r<=90) ) { $("h2").text("2점입니다"); }
+				   if ( (r>90) && (r<=135) ) { $("h2").text("3점입니다"); }
+				   if ( (r>135) && (r<=180) ) { $("h2").text("4점입니다"); }
+				   if ( (r>180) && (r<=225) ) { $("h2").text("5점입니다"); }
+				   if ( (r>225) && (r<=270) ) { $("h2").text("6점입니다"); }
+				   if ( (r>270) && (r<=315) ) { $("h2").text("7점입니다"); }
+				   if ( (r>315) && (r<=360) ) { $("h2").text("8점입니다"); }
+				   
+				   clearInterval(k);
+				   $(".start").fadeIn();
+			   }
+			   
+		  
+	  
+   }
+   
+   
+   
+   
+   $(".start").click(function(){ 
+               s = 3;
+		       k = setInterval(AA,10);  
+			   z = Math.random()*10;
+			   $(this).fadeOut();		   
+   });
+   
+	
+  
+})
+</script>
+
+</head>
+
+<body>
+
+<h1>Rullet</h1>
+<h2>design is what you make of it</h2>
+
+
+<div id="rullet_wrap">
+
+     <div id="rullet"><img src="images/rullet.png" /></div>  
+
+     <div id="kk"></div>  
+
+     <a href="#" class="start">start</a> 
+
+</div>
+
+
+
+      
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>scrollbar</title>
+<style>
+body{font: 12px "나눔고딕"; color:#767676; }
+ul {list-style:none; margin:0; padding:0; }
+img { border:0; vertical-align:top; }
+
+/*scrollbar_gallery*/
+#sc_gallery { position:relative; width: 800px; height:400px; border:2px dashed orange; } /* 갤러리 영역 표시 */
+#sc_gallery .mas { overflow: hidden; position:absolute; left:0px; top:0px;
+width: 600px; height: 327px; /* 하나의 이미지 가로세로길이 */
+background: #CF0; }
+#sc_gallery .gall { position:absolute; left:0px; top:0px; 
+width: 1800px;/* 전체 이미지가로길이(이미지하나의가로길이x이미지갯수) */ 
+height: 327px; /* 하나의 이미지세로길이 */
+}
+#sc_gallery .gall li { float: left; }
+#sc_gallery .bar_bg {position:absolute; left:0px; bottom:0px; width: 600px; height: 15px; background: #333; } /* 바 배경 설정 */
+#sc_gallery .bar { width: 30px; height: 15px; background: #FC0; cursor:pointer; } /* 바 설정 */ 
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script> -->
+
+<script>
+$(function(){
+	
+	let gall = $("#sc_gallery .gall");
+	let bar = $("#sc_gallery .bar");
+	
+	let a;
+	let b;
+	let c=1800; //이미지 전체 가로길이
+	let d=600; //bar_bg 가로길이
+	let e=600; //이미지 하나의 가로길이
+	let f=30; //bar의 가로길이
+	
+	bar.draggable({ axis:"x", containment:"parent" });  //x축으로 부모(parent)요소의 영역만큼 드래그 할수있음
+	
+	bar.bind( "drag", function() { //드래그가 되는 동안 실행할 함수
+  
+		b = parseInt( bar.css("left") );//문자열을 숫자로 변환
+		
+		a = - (c-e) * ( b / (d-f) ); 
+		gall.css("left", a);	
+  
+	});
+  
+ 	
+});
+</script>
+</head>
+
+<body>
+
+      <h1>Scrollbar Gallery</h1>
+      <p>Design is what you make of it<br />
+      When someone designs a garment, building, machine, or other object, <br />
+      they plan it and make a detailed drawing of it from which it can be built or made. 
+      
+      <!-- 스크롤바 갤러리 시작 -->
+      <div id = "sc_gallery">
+      
+           <div class="mas">
+                  <ul class="gall">
+                    <li><img src="images/img1.jpg" alt="1" /></li>
+                    <li><img src="images/img2.jpg" alt="2" /></li>
+                    <li><img src="images/img3.jpg" alt="3" /></li>
+                  </ul>
+           </div>
+           
+          <div class="bar_bg">
+               <div class="bar"></div>
+          </div>
+        
+      </div>
+      <!-- 스크롤바 갤러리 끝 -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

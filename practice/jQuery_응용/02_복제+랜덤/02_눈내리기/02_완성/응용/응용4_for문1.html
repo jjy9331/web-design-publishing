@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>복제</title>
+<style>
+body { font: bold 12px "나눔고딕"; color:#fff; }
+h1 { font-size:60px;}
+#wrap { position:relative; margin:0 auto; width:900px; height:600px; background:#0CC; }
+#snow { width:30px; height:30px; border-radius:50%; position: absolute; left:0px; top:-9999px; background:#fff; }
+</style>
+</head>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+	
+	let wrap = $("#wrap");
+	let snow = $("#snow");
+
+
+	for ( i=1; i<=100; i++) {			
+			  let temp = snow.clone(); //눈송이를 복제
+			  wrap.append(temp); //눈송이 복제본을 wrap에 추가
+			  
+			  temp.css({
+				 left:Math.floor(Math.random()*900),
+				  top:-100,
+				  width:Math.floor(Math.random()*50+20),
+				  opacity:Math.random(),
+			  });
+			  
+			  temp.css({ height: temp.css("width") } );
+		  
+				
+
+			  temp.stop().animate({//눈송이 복제본을 애니메이트시킴
+				  top:Math.floor(Math.random()*600),
+				  left:Math.floor(Math.random()*900),
+				  opacity:0,
+			  },Math.floor(Math.random()*3000) //애니메이트 시간을 랜덤
+						  ,function(){ //애니메이션이 끝난후
+							  $(this).remove(); //눈송이 복제본을 삭제
+			  });
+	}
+
+	
+});
+</script>
+
+<body >
+
+<div id="wrap">
+
+   <h1>Snow</h1>
+   <p>design is what you make of it</p>
+
+   <div id="snow"></div>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

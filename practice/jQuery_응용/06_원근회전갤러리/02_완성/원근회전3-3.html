@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>원근회전</title>
+<link href='https://fonts.googleapis.com/css?family=Exo:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<style>
+/* reset */
+* { margin: 0; padding: 0; }
+ul { list-style: none; }
+img { border: 0; vertical-align: top; }
+body { font: 11px 'Exo'; color: #333; /*text-align: center;*/ }
+a { text-decoration:none; color:#333; padding:1px 10px; }
+a:hover { color:#fff; background:#555; }
+
+
+h1 { margin-top: 30px; font-size: 60px; font-weight: 100; }
+.wrap { margin: 0 auto; position: relative; width: 1200px; height: 700px; text-align: center; color: #fff; border:2px dashed  #ccc; }
+.ball { position: absolute; left: 100px; top: 150px; width: 100px; height: 65px; padding-top: 35px; border-radius: 50%; transform-origin: center; background: #777; cursor: pointer; box-shadow: 7px 7px 20px rgba(0,0,0,0.3); }
+.ball p { font-size:10px; font-weight:100; }
+.ball:hover { color: rgba(255,255,255,0.8); }
+
+.prev { position:absolute; left:0px; top:300px; }
+.next { position:absolute; right:0px; top:300px; }
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    let ball = $(".ball");
+    let wrap = $(".wrap");
+    let d = 0; //초기 각도
+	let targetX=45;
+
+	let x=[];
+	let psp=[];
+
+
+    function pspRolling() {
+
+		   d = d + 0.1*(targetX-d); //각도에 부드러운 움직임 공식 대입
+
+
+		   for ( i=0; i<=7; i++ ){
+			
+				x[i] = Math.cos( Math.PI / 180 * (d+45*i) )*300+600; //2씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
+				psp[i] = 1-Math.sin( Math.PI / 180 * (d+45*i) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+
+				ball.eq(i).css({
+					left: x[i],
+					transform: "scale(" + psp[i] + "," + psp[i] + ")",
+					opacity: psp[i],
+						zIndex: Math.floor(psp[i] * 100),
+					top: 100+i*50,
+				});
+
+		   }
+
+
+    }
+    setInterval(pspRolling, 10);
+
+
+
+    $(".next").click(function() { targetX += 45; });
+    $(".prev").click(function() { targetX -= 45; });
+
+
+    $(window).on('mousewheel', function(e, delta) {
+        if (delta < 0) {
+            targetX += 45;
+        } else {
+            targetX -= 45;
+        }
+    });
+
+
+});
+</script>
+</head>
+
+<body>
+
+
+
+<h1>Perspective Rolling</h1>
+<p>jQuery study</p>
+
+
+
+<div class="wrap">
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+
+
+	  <a href="#" class="next">next</a>
+	  <a href="#" class="prev">prev</a>
+
+</div>
+
+
+
+</body>
+</html>
