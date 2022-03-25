@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>폼</title>
+<style>
+#box { width: 100px; height: 100px; background-color: orange; transition: 1s;} 
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+	$('#t1').val("가로길이");
+	$('#t2').val("세로길이");
+
+  	$("#bt").click(function(){ 
+			
+			let t1 = $("#t1").val(); //#t1에 입력한 값을 가져와서 변수t1에 저장
+			let t2 = $("#t2").val(); //#t1에 입력한 값을 가져와서 변수t1에 저장
+			let t3 = $("#t3").val(); //#t1에 입력한 값을 가져와서 변수t1에 저장
+			// alert(t1);
+
+			$("#box").css({
+				width:t1,
+				height:t2,
+				backgroundColor:t3,
+			});
+
+
+    });
+
+	
+	
+});
+</script>
+</head>
+
+<body>
+
+
+
+
+
+
+
+	<input type="text" id="t1">
+	<br>
+	<input type="text" id="t2">
+	<br>
+	<select id="t3">
+		<option>컬러선택</option>
+		<option>#0cc</option>
+		<option>pink</option>
+	</select>
+	<br>
+	<br>
+	<button id="bt">적용</button>
+
+	<br>
+	<br>
+<div id="box">박스</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
