@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>폼</title>
+<style>
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+	
+  	$("#s1").change(function(){ //선택폼 요소의 내용(폼요소의 값)이 변경되었을때
+
+			// alert("안녕");
+			// if($(":selected").val() == "파랑"){
+			if($(this).val() == "파랑"){
+				$("body").css({background:"blue"});
+			}
+			else if($(this).val() == "핑크"){
+				$("body").css({background:"pink"});
+			}
+			else if($(this).val() == "초록"){
+				$("body").css({background:"green"});
+			}
+			else {
+				$("body").css({background:"white"});
+			}
+    });
+
+
+
+});
+</script>
+</head>
+
+<body>
+
+
+
+
+
+
+
+	<select id="s1">
+		<option>컬러선택</option>
+		<option>핑크</option>
+		<option>파랑</option>
+		<option>초록</option>
+	</select>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
