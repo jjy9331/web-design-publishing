@@ -13,16 +13,38 @@ body { font-family: "Roboto", "맑은 고딕"; font-size: 12px; }
 a { text-decoration: none; color: #555; }
 
 #container { 
-	position:absolute; left:0px; top:0px;
+	perspective: 1000px; /* 값이 작을수록 원금감이 작아진다.*/
+	position:absolute; left:50%; top:50%;
+	margin-left: -300px;
+	margin-top: -150px;
 	width:600px; height:300px;
 	border:5px dashed red;
 }
+
+.box {
+	position: absolute;
+	border: 2px solid blue;
+	width: 600px;
+	height: 300px;
+	background:yellow;
+	font-size:100px;
+	opacity: 1;
+}
+
+.box:nth-child(1) {transform:translateZ(200px);}
+.box:nth-child(2) {transform:translateZ(-200px);}
+.box:nth-child(3) {transform:translateZ(-600px);}
 </style>
 </script>
 </head>
 <body>
 
-<div id="container"></div>
+<div id="container">
+		<div class="box">01</div>
+		<div class="box">02</div>
+		<div class="box">03</div>
+	</div>
+</div>
 
 
 
