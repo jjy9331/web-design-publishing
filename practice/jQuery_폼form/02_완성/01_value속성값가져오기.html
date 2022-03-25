@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>폼</title>
+<style>
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+
+  	$("#a1").click(function(){ 
+			
+			let t1 = $("#t1").val(); //#t1에 입력한 값을 가져와서 변수t1에 저장
+			alert(t1);
+
+    });
+
+
+  	$("#a2").click(function(){ 
+			
+			let t2 = $("#t2").val(); //#t2에서 선택한 값을 가져와서 변수t2에 저장
+			alert(t2);
+
+    });
+
+	
+	
+});
+</script>
+</head>
+
+<body>
+
+
+
+
+<form>
+
+
+	<input type="text" id="t1">
+
+
+	<select id="t2">
+	  <option>photoshop</option>
+	  <option>illustrator</option>    
+	  <option>html</option>
+	  <option>css</option>    
+	  <option>jQuery</option>    
+	</select>
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+	
+	<a href="#" id="a1">입력한 값가져오기</a>
+
+	<br>
+
+	<a href="#" id="a2">선택한 값가져오기</a>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

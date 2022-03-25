@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>포커스를 받으면 글씨 지우고 포커스를 잃으면 글씨 나타내기</title>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function() {
+
+	$('#t1').val("아이디를 입력하세요.").css("color", "#777");
+	
+	$('#t1').focus( function() {
+		//if($('#t1').val()=="아이디를 입력하세요."){
+			$('#t1').val("").css("color", "#000");
+		//}
+	});
+
+	$('#t1').blur(function() {
+		//if($('#t1').val()==""){
+			//$('#t1').val("아이디를 입력하세요.").css("color", "#777");
+		//}
+	}); 
+
+});
+</script>
+
+</head>
+<body>
+
+
+
+
+
+	<input type="text" id="t1">
+
+
+
+
+
+
+
+
+</body>
+</html>
