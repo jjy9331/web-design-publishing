@@ -5,8 +5,17 @@
 <title>복제</title>
 <style>
 
-#wrap { margin:0 auto; width:900px; height:600px; border: 2px dashed #ccc; }
-#box { width:70px; height:70px; margin:1px; background:#FC6; }
+#wrap { 
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    position: relative; 
+    margin:0 auto; 
+    width:900px; 
+    height:600px; 
+    border: 2px dashed #ccc; 
+}
+#box { opacity: 0.7; position: absolute; left: 0px; top: 0px; width:70px; height:70px; margin:1px; background:#FC6; }
 </style>
 </head>
 
@@ -15,8 +24,16 @@
 <script>
 $(function(){
 	
-	  //let temp = $("#box").clone();
-	  //$("#wrap").append(temp);
+    for (i=1; i<=95; i++){
+        let temp = $("#box").clone(); //#box를 복사하고 복사본의 이름을 
+        $("#wrap").append(temp); //#wrap안에 temp를 붙여넣기
+
+        temp.css({
+            left:Math.random()*($("#wrap").width()-70), 
+            top:Math.random()*($("#wrap").height()-70),
+        });//복제본들의 위치지정
+
+    }
 	
 });
 </script>
