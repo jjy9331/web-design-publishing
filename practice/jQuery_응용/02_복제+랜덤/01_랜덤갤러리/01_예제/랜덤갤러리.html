@@ -16,12 +16,20 @@ a:hover { color:#F93; }
 $(function(){
 	
 
-	//let url=["http://www.naver.com",	"http://www.daum.net","http://www.google.com","http://www.nate.com","http://www.kbs.co.kr","http://www.imbc.com"]
+	// let url=["http://www.naver.com",	"http://www.daum.net","http://www.google.com","http://www.nate.com","http://www.kbs.co.kr","http://www.imbc.com"]
+	let url=[];
+	url[0]="http://www.naver.com";
+	url[1]="http://www.daum.net";
+	url[2]="http://www.google.com";
+	url[3]="http://www.nate.com";
+	url[4]="http://www.kbs.co.kr";
+	url[5]="http://www.imbc.com";
 
-	//let i= Math.floor(Math.random()*6)+1;
+	let i= Math.floor(Math.random()*6)+1;//1이상 6미만의 숫자중 랜덤 
+	console.log(i)
 
-	$("#banner img").attr("src","images/sg1.jpg");
-	//$("#banner a").attr("href",url[i-1]);
+	$("#banner img").attr("src","images/sg"+i+".jpg");
+	$("#banner a").attr("href",url[i-1]);
 
 
 });
