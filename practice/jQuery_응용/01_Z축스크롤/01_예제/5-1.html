@@ -19,13 +19,16 @@ body {
 a { text-decoration: none; color: #555; }
 
 
-h1 { position:fixed; top:10px; left:10px; z-index:2; font-size:50px; font-weight:100; background:red; color:white; opacity:0.7;}
+h1 a img { width: 100px; position:fixed; top:10px; left:10px; z-index:1000; }
 
+#tt { position:fixed; top:200px; left:10px; z-index:2; font-size:50px; font-weight:100; background:red; color:white; opacity:0.7;}
 
 /*스크롤 네비게이션*/
 .gnb { position:fixed; left:100px; top:300px; z-index:2;}
 .gnb li { margin-bottom:20px; cursor:pointer;  }
 .gnb li.on { color:white; font-size:20px; background:black; }
+
+.gnb li.on a { color:yellow; font-weight:bold; }
 
 
 /*박스 그룹 레이아웃*/
@@ -33,6 +36,7 @@ section {
   position:fixed; width:1200px; height:700px;  
   left:50%; top:50%; margin-left:-600px; margin-top:-350px;
   perspective:2300px; z-index:1; border:3px dashed yellow;
+  box-sizing: border-box;
 }
 
 section article { width:1200px; height:700px; 
@@ -77,12 +81,12 @@ opacity:0.8; background:transparent; font-size:100px; color:#fff;}
 <script>
 $(function(){
 
-	$("article.box1").css("opacity:1");		
+	$("article.box1").css({opacity:1}); //jQ {}안넣어서 작동 안했음. 주의	
 
 	$(window).scroll(function(){
 		
 		let sc = $(this).scrollTop();
-		   $("h1").text(sc);//스크롤한 값을 h1에 출력
+		   $("#tt").text(sc);//스크롤한 값을 h1에 출력
 		
 		//5개 박스의 현재 z축 위치값에서 현재 스크롤한 거리만큼을 더하기
 		$(".box1").css({"transform":"translateZ("   + (0+sc) +  "px)"});
@@ -96,36 +100,36 @@ $(function(){
 		if(sc>=0 && sc<5000){ 
 			$(".gnb li").removeClass("on");
 			$(".gnb li").eq(0).addClass("on");
-				$("article").css("opacity:0.3");		
-				$(".box1").css("opacity:1");
+			$("article").css({opacity:0.3});
+			$("article.box1").css({opacity:1});
 		}
 
 		if(sc>=5000 && sc<10000){ 
 			$(".gnb li").removeClass("on");
 			$(".gnb li").eq(1).addClass("on");
-			$("article").css("opacity:0.3");		
-				$(".box2").css("opacity:1");
+			$("article").css({opacity:0.3});
+			$("article.box2").css({opacity:1});
 		}
 
 		if(sc>=10000 && sc<15000){ 
 			$(".gnb li").removeClass("on");
 			$(".gnb li").eq(2).addClass("on");
-			$("article").css("opacity:0.3");		
-				$(".box3").css("opacity:1");
+			$("article").css({opacity:0.3});
+			$("article.box3").css({opacity:1});
 		}
 
 		if(sc>=15000 && sc<20000){ 
 			$(".gnb li").removeClass("on");
 			$(".gnb li").eq(3).addClass("on");
-			$("article").css("opacity:0.3");		
-				$(".box4").css("opacity:1");
+			$("article").css({opacity:0.3});
+			$("article.box4").css({opacity:1});
 		}
 
 		if(sc>=20000 && sc<25000){ 
 			$(".gnb li").removeClass("on");
 			$(".gnb li").eq(4).addClass("on");
-			$("article").css("opacity:0.3");		
-				$(".box5").css("opacity:1");
+			$("article").css({opacity:0.3});
+			$("article.box5").css({opacity:1});
 		}
 	
 	
@@ -133,7 +137,7 @@ $(function(){
 
 
 	//스크롤 네비게이션 클릭 시 스크롤 이동
-	$(".gnb li:eq(0)").click(function(){
+	$(".gnb li:eq(0), h1").click(function(){
 		$("body,html").stop().animate({scrollTop:0},2000);
 	});
 	$(".gnb li:eq(1)").click(function(){
@@ -155,17 +159,17 @@ $(function(){
 </head>
 <body>
 
-
-	<h1>0</h1>
+	<h1><a href="#box1"><img src="img/logo.png" alt=""></a></h1>
+	<div id="tt">0</div>
 
 
 	<nav class="gnb">
 		<ul>
-			<li class="on">box1</li>
-			<li>box2</li>
-			<li>box3</li>
-			<li>box4</li>
-			<li>box5</li>	
+			<li class="on"><a href="#box1">box1</a></li>
+			<li><a href="#box2">box2</a></li>
+			<li><a href="#box3">box3</a></li>
+			<li><a href="#box4">box4</a></li>
+			<li><a href="#box5">box5</a></li>	
 		</ul>
 	</nav>
 
@@ -173,7 +177,7 @@ $(function(){
 
 	<section>		
 		
-			<article class="box1">
+			<article class="box1" id="box1">
 				<div class="typo">
 					<h2>box1</h2>
 					<p>design is what you make of it</p>
@@ -182,7 +186,7 @@ $(function(){
 				<img class="img2" src="img/pic12.png" alt="">
 				<img class="img3" src="img/player1.png" alt="">
 			</article>		
-			<article class="box2">
+			<article class="box2" id="box2">
 				<div class="typo">
 					<h2>box2</h2>
 					<p>design is what you make of it</p>
@@ -190,7 +194,7 @@ $(function(){
 				<img class="img2" src="img/pic12.png" alt="">
 				<img class="img1" src="img/player2.png" alt="">
 			</article>		
-			<article class="box3">
+			<article class="box3" id="box3">
 				<div class="typo">
 					<h2>box3</h2>
 					<p>design is what you make of it</p>
@@ -198,7 +202,7 @@ $(function(){
 				<img class="img2" src="img/pic31.png" alt="">
 				<img class="img1" src="img/player3.png" alt="">
 			</article>		
-			<article class="box4">
+			<article class="box4" id="box4">
 				<div class="typo">
 					<h2>box4</h2>
 					<p>design is what you make of it</p>
@@ -207,7 +211,7 @@ $(function(){
 				<img class="img2" src="img/pic42.png" alt="">
 				<img class="img3" src="img/player4.png" alt="">
 			</article>		
-			<article class="box5">
+			<article class="box5" id="box5">
 				<div class="typo">
 					<h2>box5</h2>
 					<p>design is what you make of it</p>
