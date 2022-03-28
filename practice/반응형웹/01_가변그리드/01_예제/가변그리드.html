@@ -5,25 +5,30 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <title>가변그리드</title>
 <style>
+/* reset*/
+
 body,ul { margin:0; padding:0; }
 ul { list-style:none; }
 img { border:0; vertical-align:top; }
 
+/* base */
 body { margin:0; font:14px 'Roboto','맑은 고딕'; }
+
+*:after { content:""; display:block; clear:both; }
 
 
 #header { height:100px; background-color:#eee; }
 #header .inner { margin:0 auto; max-width:1350px; height:94px;  border:3px dashed #f96; }
 
 #header .inner .gnb {
-	float: right;
+	float: right; /* float넣으면 width 100%하고 max-width 넣어주기 */
 	width: 100%;
 	max-width: 1000px;
 	border: 2px solid blue;
 	box-sizing: border-box;
 }
 
-#header .inner .gnb:after { content:""; display:block; clear:both; }
+/* #header .inner .gnb:after { content:""; display:block; clear:both; } */
 
 #header .inner .gnb li { 
 	width:25%; 
@@ -37,12 +42,43 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 #visual { height:600px; background-color:#fc9; }
 
 
-#contents { margin:0 auto; max-width: 1350px; width:90%; border:3px solid  #0cf; }
+#contents { 
+	margin:0 auto; 
+	max-width: 1350px; 
+
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+	width:90%; 
+	border:3px solid  #0cf; 
+	
+}
+
+#contents h2 {
+	margin: 0;
+}
 #contents:after { content:""; display:block; clear:both; }
 
-#contents .c1 { float:left; width:33.33%; height:300px; background-color:pink; }
-#contents .c2 { float:left; width:33.33%; height:300px; background-color:yellow; }
-#contents .c3 { float:left; width:33.33%; height:300px; background-color:skyblue; }
+#contents .group1 {margin-bottom: 50px; border: 3px dashed blue;}
+#contents .group1 .c1 { float:left; width:33.33%; height:300px; background-color:pink; }
+#contents .group1 .c2 { float:left; width:33.33%; height:300px; background-color:yellow; }
+#contents .group1 .c3 { float:left; width:33.33%; height:300px; background-color:skyblue; }
+
+#contents .group2 {margin-bottom: 50px; border: 3px dashed blue;}
+#contents .group2 .c1 { float:left; width:50%; height:300px; background-color:pink; }
+#contents .group2 .c2 { float:left; width:50%; height:300px; background-color:yellow; }
+
+#contents .group3 {margin-bottom: 50px; border: 3px dashed blue;}
+#contents .group3 .c1 { float:left; width:25%; height:300px; background-color:pink; }
+#contents .group3 .c2 { float:left; width:25%; height:300px; background-color:yellow; }
+#contents .group3 .c3 { float:left; width:25%; height:300px; background-color:skyblue; }
+#contents .group3 .c4 { float:left; width:25%; height:300px; background-color:orange; }
+
+#contents .group4 {border: 3px dashed blue;}
+#contents .group4 .c1 { float:left; width:25%; height:100px; background-color:pink; }
+#contents .group4 .c2 { float:left; width:25%; height:100px; background-color:yellow; }
+#contents .group4 .c3 { float:left; width:25%; height:100px; background-color:skyblue; }
+#contents .group4 .c4 { float:left; width:25%; height:100px; background-color:orange; }
 
 
 #footer { height:100px; background-color:#eee; }
@@ -73,9 +109,31 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 
   
   <div id="contents">
-         <div class="c1">c1</div>
-         <div class="c2">c2</div>
-         <div class="c3">c3</div>
+         <div class="group1">
+			<h2>title</h2>
+         	<div class="c1">c1</div>
+	         <div class="c2">c2</div>
+	         <div class="c3">c3</div>
+         </div>
+		 <div class="group2">
+			<h2>title</h2>
+         	<div class="c1">c1</div>
+	         <div class="c2">c2</div>
+         </div>
+		 <div class="group3">
+			<h2>title</h2>
+         	<div class="c1">c1</div>
+	         <div class="c2">c2</div>
+	         <div class="c3">c3</div>
+			 <div class="c4">c3</div>
+         </div>
+		 <div class="group4">
+			<h2>title</h2>
+         	<div class="c1">c1</div>
+	         <div class="c2">c2</div>
+	         <div class="c3">c3</div>
+			 <div class="c4">c3</div>
+         </div>
   </div>
 
   

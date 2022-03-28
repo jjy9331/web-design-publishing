@@ -1,0 +1,232 @@
+﻿<!doctype html >
+<html lang="ko">
+<head>
+<title>Z축 페이지 이동</title>
+<style>
+/* reset */
+* { margin:0; padding:0; }
+ul { list-style:none; }
+img { border:0; }
+
+/* base */
+body { 
+	height:23000px; 
+	font-family: "Roboto", "맑은 고딕"; 
+	font-size: 12px; background-color: #333;
+	background: #000 fixed no-repeat center url(img/bg.jpg);
+	background-size:cover;
+}
+a { text-decoration: none; color: #555; }
+
+
+h1 { position:fixed; top:10px; left:10px; z-index:2; font-size:50px; font-weight:100; background:red; color:white; opacity:0.7;}
+
+
+/*스크롤 네비게이션*/
+.gnb { position:fixed; left:100px; top:300px; z-index:2;}
+.gnb li { margin-bottom:20px; cursor:pointer;  }
+.gnb li.on { color:white; font-size:20px; background:black; }
+
+
+/*박스 그룹 레이아웃*/
+section { 
+  position:fixed; width:1200px; height:700px;  
+  left:50%; top:50%; margin-left:-600px; margin-top:-350px;
+  perspective:2300px; z-index:1; border:3px dashed yellow;
+}
+
+section article { width:1200px; height:700px; 
+position:absolute; top:0px; left:0px; 
+opacity:0.8; background:transparent; font-size:100px; color:#fff;}
+
+.typo h2 {font-size: 70px;}
+.typo p {font-size: 14px;}
+
+.box1 img { position: absolute;}
+.box1 .img1 { left: 0px; top: -250px;}
+.box1 .img2 { left: 0px; top: -50px;}
+.box1 .img3 { left: -350px; top: 200px;}
+
+.box2 img { position: absolute;}
+.box2 .img1 { left: 600px; top: 0px;}
+.box2 .img2 { left: 50px; top: 320px;}
+
+.box3 img { position: absolute;}
+.box3 .img1 { left: 800px; top: 0px;}
+.box3 .img2 { left: 800px; top: 320px;}
+
+.box4 img { position: absolute;}
+.box4 .img1 { left: 900px; top: 0px;}
+.box4 .img2 { left: 150px; top: -250px;}
+.box4 .img3 { left: 800px; top: 0px;}
+
+
+.box5 img { position: absolute;}
+.box5 .img1 { left: 300px; top: -300px;}
+.box5 .img2 { left: 800px; top: -50px;}
+.box5 .img3 { left: 0px; top: 0px;}
+
+.box1 { z-index: 5; transform:translateZ(0px);}
+.box2 { z-index: 4; transform:translateZ(-5000px);}
+.box3 { z-index: 3; transform:translateZ(-10000px);}
+.box4 { z-index: 2; transform:translateZ(-15000px);}
+.box5 { z-index: 1; transform:translateZ(-20000px);}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+
+	$("article.box1").css("opacity:1");		
+
+	$(window).scroll(function(){
+		
+		let sc = $(this).scrollTop();
+		   $("h1").text(sc);//스크롤한 값을 h1에 출력
+		
+		//5개 박스의 현재 z축 위치값에서 현재 스크롤한 거리만큼을 더하기
+		$(".box1").css({"transform":"translateZ("   + (0+sc) +  "px)"});
+		$(".box2").css({"transform":"translateZ("   + (-5000+sc)   +  "px)"});		
+		$(".box3").css({"transform":"translateZ("   + (-10000+sc)   +  "px)"});
+		$(".box4").css({"transform":"translateZ("   + (-15000+sc)   +  "px)"});
+		$(".box5").css({"transform":"translateZ("   + (-20000+sc)   +  "px)"});		
+
+
+		//스크롤한 거리에 따라 스크롤 네비게이션과 해당 박스 활성화
+		if(sc>=0 && sc<5000){ 
+			$(".gnb li").removeClass("on");
+			$(".gnb li").eq(0).addClass("on");
+				$("article").css("opacity:0.3");		
+				$(".box1").css("opacity:1");
+		}
+
+		if(sc>=5000 && sc<10000){ 
+			$(".gnb li").removeClass("on");
+			$(".gnb li").eq(1).addClass("on");
+			$("article").css("opacity:0.3");		
+				$(".box2").css("opacity:1");
+		}
+
+		if(sc>=10000 && sc<15000){ 
+			$(".gnb li").removeClass("on");
+			$(".gnb li").eq(2).addClass("on");
+			$("article").css("opacity:0.3");		
+				$(".box3").css("opacity:1");
+		}
+
+		if(sc>=15000 && sc<20000){ 
+			$(".gnb li").removeClass("on");
+			$(".gnb li").eq(3).addClass("on");
+			$("article").css("opacity:0.3");		
+				$(".box4").css("opacity:1");
+		}
+
+		if(sc>=20000 && sc<25000){ 
+			$(".gnb li").removeClass("on");
+			$(".gnb li").eq(4).addClass("on");
+			$("article").css("opacity:0.3");		
+				$(".box5").css("opacity:1");
+		}
+	
+	
+	});
+
+
+	//스크롤 네비게이션 클릭 시 스크롤 이동
+	$(".gnb li:eq(0)").click(function(){
+		$("body,html").stop().animate({scrollTop:0},2000);
+	});
+	$(".gnb li:eq(1)").click(function(){
+		$("body,html").stop().animate({scrollTop:5000},2000);
+	});
+	$(".gnb li:eq(2)").click(function(){
+		$("body,html").stop().animate({scrollTop:5000*2},2000);
+	});
+	$(".gnb li:eq(3)").click(function(){
+		$("body,html").stop().animate({scrollTop:5000*3},2000);
+	});
+	$(".gnb li:eq(4)").click(function(){
+		$("body,html").stop().animate({scrollTop:5000*4},2000);
+	});
+
+
+});
+</script>
+</head>
+<body>
+
+
+	<h1>0</h1>
+
+
+	<nav class="gnb">
+		<ul>
+			<li class="on">box1</li>
+			<li>box2</li>
+			<li>box3</li>
+			<li>box4</li>
+			<li>box5</li>	
+		</ul>
+	</nav>
+
+
+
+	<section>		
+		
+			<article class="box1">
+				<div class="typo">
+					<h2>box1</h2>
+					<p>design is what you make of it</p>
+				</div>
+				<img class="img1" src="img/pic11.png" alt="">
+				<img class="img2" src="img/pic12.png" alt="">
+				<img class="img3" src="img/player1.png" alt="">
+			</article>		
+			<article class="box2">
+				<div class="typo">
+					<h2>box2</h2>
+					<p>design is what you make of it</p>
+				</div>
+				<img class="img2" src="img/pic12.png" alt="">
+				<img class="img1" src="img/player2.png" alt="">
+			</article>		
+			<article class="box3">
+				<div class="typo">
+					<h2>box3</h2>
+					<p>design is what you make of it</p>
+				</div>
+				<img class="img2" src="img/pic31.png" alt="">
+				<img class="img1" src="img/player3.png" alt="">
+			</article>		
+			<article class="box4">
+				<div class="typo">
+					<h2>box4</h2>
+					<p>design is what you make of it</p>
+				</div>
+				<img class="img1" src="img/pic41.png" alt="">
+				<img class="img2" src="img/pic42.png" alt="">
+				<img class="img3" src="img/player4.png" alt="">
+			</article>		
+			<article class="box5">
+				<div class="typo">
+					<h2>box5</h2>
+					<p>design is what you make of it</p>
+				</div>
+				<img class="img1" src="img/pic51.png" alt="">
+				<img class="img2" src="img/pic52.png" alt="">
+				<img class="img3" src="img/player5.png" alt="">
+			</article>		
+
+	</section>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
