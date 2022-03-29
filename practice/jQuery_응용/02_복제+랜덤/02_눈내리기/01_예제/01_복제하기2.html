@@ -65,32 +65,23 @@ $(function(){
             let s = Math.random()*1.5 + 0.5; //0 + 0.5 이상 1.5 + 0.5 미만
 
             temp.css({
-                // left:Math.random()*($("#wrap").width()-70), 
-                // top:Math.random()*($("#wrap").height()-70),
-                left: c1,
-                top: c2,
+                left:Math.random()*($("#wrap").width()-70), 
+                top:Math.random()*($("#wrap").height()-70),
                 backgroundColor:color[k], //Math.random은 소수도 나오므로 반올림(round) 해줘야한다.
                 opacity:Math.random()*0.8, //0이상 1미만
                 transform:"scale("+ s +","+ s +")"
             });//복제본들의 위치지정
             temp.animate({
                 opacity:0,
-                // left: c1,
-                // top: c2,
-                left:Math.random()*$("#wrap").width(),
-                top:Math.random()*$("#wrap").height(),
-            },2000,function(){});
+                left:event.pageX,
+                top:event.pageY,
+            },2000);
         // }
         // i++;
     }
     // setInterval(AA,50); //AA함수 0.1초마다 실행 
 
-    let c1;
-    let c2;
-
-    $("body ").mousemove(function(e){
-        c1 = e.pageX;
-        c2 = e.pageY;
+    $("body ").mousemove(function(){
         AA();
     });
 
@@ -100,7 +91,7 @@ $(function(){
 
     <div id="wrap">
     
-       <div id="box"></div>
+       <div id="box">box</div>
     
     </div>
 
