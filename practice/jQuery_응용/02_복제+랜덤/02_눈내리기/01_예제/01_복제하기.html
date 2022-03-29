@@ -24,7 +24,7 @@
     width:30px; 
     height:30px;
     margin:1px; 
-    background:#FC6; 
+    /* background:#FC6;  */
     border-radius: 35px;
 }
 </style>
@@ -35,7 +35,7 @@
 <script>
 $(function(){
 
-    let color = ["orange","hotpink","yellowgreen"]
+    let color = ["orange","hotpink","yellowgreen","yellow"]
 	/* 
     for (i=1; i<=55; i++){
         let temp = $("#box").clone(); //#box를 복사하고 복사본의 이름을 
@@ -61,7 +61,7 @@ $(function(){
             let temp = $("#box").clone(); //#box를 복사하고 복사본의 이름을 
             $("#wrap").append(temp); //#wrap안에 temp를 붙여넣기
 
-            let k = Math.floor(Math.random()*3);
+            let k = Math.floor(Math.random()*4);
             let s = Math.random()*1.5 + 0.5; //0 + 0.5 이상 1.5 + 0.5 미만
 
             temp.css({
@@ -69,7 +69,8 @@ $(function(){
                 // top:Math.random()*($("#wrap").height()-70),
                 left: c1,
                 top: c2,
-                backgroundColor:color[k], //Math.random은 소수도 나오므로 반올림(round) 해줘야한다.
+                // backgroundColor:color[k], //Math.random은 소수도 나오므로 반올림(round) 해줘야한다.
+                border:"3px solid "+color[k],
                 opacity:Math.random()*0.8, //0이상 1미만
                 transform:"scale("+ s +","+ s +")"
             });//복제본들의 위치지정
@@ -79,7 +80,9 @@ $(function(){
                 // top: c2,
                 left:Math.random()*$("#wrap").width(),
                 top:Math.random()*$("#wrap").height(),
-            },2000,function(){});
+            },2000,function(){
+                $(this).remove();
+            });
         // }
         // i++;
     }
