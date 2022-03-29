@@ -17,11 +17,21 @@ body { background:skyblue; }
 
 
 /* 미디어쿼리 */
-@media all and (max-width:1000px) {
-  /* 브라우저 가로폭이 1000px 이하일때 적용될 css  */
-  body {background:red;}
+@media all and (max-width:767px) {
+  /* 브라우저 가로폭이 767px 이하일때 적용될 css  */
+  /* body {background:red;} */
+
+  
+}
+@media all and (min-width:768px) and (max-width: 1023px) {
+  /* 브라우저 가로폭이 768~1023px일때 적용될 css(태블릿)  */
+
 }
 
+@media all and (min-width:1024px) {
+  /* 브라우저 가로폭이 1024px 이상일때 적용될 css(PC)  */
+
+}
 
 </style>
 
