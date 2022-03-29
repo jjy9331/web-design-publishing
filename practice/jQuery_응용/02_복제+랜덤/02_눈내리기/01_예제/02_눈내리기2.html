@@ -7,7 +7,13 @@
 body { font: bold 12px "나눔고딕"; color:#fff; }
 h1 { font-size:60px;}
 #wrap { position:relative; margin:0 auto; width:900px; height:600px; background:#0CC; }
-#snow { width:30px; height:30px; border-radius:50%; position: absolute; left:0px; top:-9999px; background:#fff; }
+#snow { 
+	width:30px; height:30px; 
+	border-radius:70% 0 70% 0; 
+	position:absolute; 
+	left:0px; top:-9999px; 
+	background:yellow; 
+}
 </style>
 </head>
 
@@ -23,34 +29,43 @@ let snow = $("#snow");
 //alert( wrap.css("width") );
 
 
-//let i =1;
+let i =1;
 
 function motion(){
 	
-	//if ( i<=100 ){
+	if ( i<=100 ){
 			
 		  let temp = snow.clone(); //눈송이를 복제
 		  wrap.append(temp); //눈송이 복제본을 wrap에 추가
 		  
+		  //복제본의 처음 모습 설정		
+		  let color = [ "orange","yellow","brown" ];
+		  let c = Math.floor(Math.random()*3);//0이상 3미만의 정수
+		  let r = Math.random()*360;//0이상 360
+
 		  temp.css({
 			  left:Math.random()*900,//0이상 900미만 중 랜덤
 			  top:-100,
-			  width:Math.random()*50 +20,//0이상 50미만
-			  //height:Math.random()*50,//0이상 50미만
-			  opacity:Math.random(),
-		  });
-		  
+			  width:Math.random()*50 +20, // 0+20 이상 50+20 미만
+			  opacity:Math.random()*1 +0.5,//0+0.5이상 1+0.5미만
+			  transform:"rotate("+r+"deg)",
+			  backgroundColor:color[c],
+		  });		  
 		  temp.css({ height:temp.width() });
-				//요소.width() --> 요소의 width값 가져오기
-				//요소.css("width") --> 요소의 width값 가져오기
+				
 	  
-		  temp.animate({ top:500,opacity:0.5 },3000,function(){ //눈송이 복제본을 애니메이트시킴
+	      //복제본의 움직임 설정
+		  temp.animate({ 
+			  top:600,
+			  left:Math.random()*300 -200,
+			  opacity:0,
+		  },5000,function(){ //눈송이 복제본을 애니메이트시킴
 			  $(this).remove(); //눈송이 복제본을 삭제
 		  });
 
-	//} 
+	} 
 
-	//i++;
+	i++;
 	
 }
 	
