@@ -15,7 +15,20 @@ body { font-family:Roboto; color:white; background:#707070; overflow-x:hidden; }
 #container { position:relative; margin:0 auto;  width:1200px; height:1200px; border:5px dashed yellow; } 
 
 
+.menu li {
+	animation:menu 20s linear infinite;
+}
+@keyframes menu {
+	0% { transform:rotate(-360deg);}
+	100% {transform:rotate(0deg);}
+}
+
+@keyframes circle {
+	0% { transform:rotate(360deg);}
+	100% {transform:rotate(0deg);}
+}
 .circle {
+	animation:circle 20s linear infinite;
 	transform:rotate(45deg);
 	position:absolute; left:100px; top:-30px; 
 	z-index:100;
