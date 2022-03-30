@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <title>JQuery</title>
 <style>
+html,body {height: 100%;}
+*{margin:0; padding: 0;}
+a { color: white; text-decoration: none;}
+
 body { font: 12px "나눔고딕"; text-align:center; }
 
 #rullet_wrap { margin:0 auto; position:relative; width:800px; height:500px; border:1px dashed skyblue; }
@@ -11,6 +15,45 @@ body { font: 12px "나눔고딕"; text-align:center; }
 #bar { position:absolute; left:402px; top:2px; width:12px; height:84px; z-index:10; background:#f93; border-radius:6px; }
 
 .start { position: absolute; left: 378px; top: 241px; z-index: 10; text-decoration: none; color: #f96; font-size: 30px; }
+
+.box {
+	position: absolute;
+	z-index: 10;
+	left: 250px; top: 100px;
+	width: 300px; height: 300px;
+	line-height: 300px;
+	background-color: #0cc;
+	font-size: 50px; color: wi;
+	transform: rotate(45deg);
+	border-radius: 30px;
+}
+
+.box:after {
+	content:"";
+	display: block;
+	position: absolute;
+	box-sizing: border-box;
+	left: 0px; top: 0px;
+	width: 300px; height: 300px;
+	/* border: 10px solid skyblue; */
+	transform: rotate(45deg);
+	background-color:#0cc; ;
+	border-radius: 30px;
+}
+
+.box p {
+	position: relative;
+	transform: rotate(-45deg); 
+	z-index: 100;
+}
+
+.b1 {
+	/* display: none;  */
+}
+.b2 {
+	display: none;
+	background-color: blue;
+	}
 </style>
 
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -37,15 +80,16 @@ $(function(){
 			   s=s-0.001*z; //속도 감속 
 			   
 			   if(s<=0){
-				    
-				   if ( (r>=0) && (r<=45) ) { $("h2").text("1점입니다"); }
-				   if ( (r>45) && (r<=90) ) { $("h2").text("2점입니다"); }
-				   if ( (r>90) && (r<=135) ) { $("h2").text("3점입니다"); }
-				   if ( (r>135) && (r<=180) ) { $("h2").text("4점입니다"); }
-				   if ( (r>180) && (r<=225) ) { $("h2").text("5점입니다"); }
-				   if ( (r>225) && (r<=270) ) { $("h2").text("6점입니다"); }
-				   if ( (r>270) && (r<=315) ) { $("h2").text("7점입니다"); }
-				   if ( (r>315) && (r<=360) ) { $("h2").text("8점입니다"); }
+				if ( (r>=0) && (r<=315) ) { $(".b1").slideDown(); }
+				if ( (r>=0) && (r<=45) ) { $(".b2").slideDown(); }
+				if ( (r>=0) && (r<=45) ) { $("h2").text("1점입니다"); }
+				if ( (r>45) && (r<=90) ) { $("h2").text("2점입니다"); }
+				if ( (r>90) && (r<=135) ) { $("h2").text("3점입니다"); }
+				if ( (r>135) && (r<=180) ) { $("h2").text("4점입니다"); }
+				if ( (r>180) && (r<=225) ) { $("h2").text("5점입니다"); }
+				if ( (r>225) && (r<=270) ) { $("h2").text("6점입니다"); }
+				if ( (r>270) && (r<=315) ) { $("h2").text("7점입니다"); }
+				if ( (r>315) && (r<=360) ) { $("h2").text("8점입니다"); }
 				   
 				  clearInterval(k);
 				   $(".start").fadeIn();
@@ -86,6 +130,10 @@ $(function(){
      <div id="bar"></div>  
 
      <a href="#" class="start">start</a> 
+
+	 <a href="#" class="box b1"><p>당첨</p></a> 
+
+	 <a href="#" class="box b2"><p>꽝</p></a> 
 
 </div>
 
