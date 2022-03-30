@@ -76,6 +76,8 @@ body { font-family:'Roboto'; }
 		<div class="swiper-slide">08</div>
 		<div class="swiper-slide">09</div>
 		<div class="swiper-slide">10</div>
+		<div class="swiper-slide">11</div>
+		<div class="swiper-slide">12</div>		
 	</div>
 
 	<div class="swiper-button-next b-next1"></div>
@@ -100,15 +102,15 @@ body { font-family:'Roboto'; }
 		loop:true, //순환유무
 		grabCursor:true, //커서 손모양
 
-		//autoplay:{ //자동실행
-			//delay:2000,//자동실행 간격 (1000=1초)
-			//disableOnInteraction:false, //true로 설정하면 메뉴를 누른후부터는 자동실행 안됨
-		//},
+		autoplay:{ //자동실행
+			delay:2000,//자동실행 간격 (1000=1초)
+			disableOnInteraction:true, //true로 설정하면 메뉴를 누른후부터는 자동실행 안됨
+		},
 
 		//effect:'slide', //slide fade cube coverflow flip cards creative
 
-		//slidesPerView:2, //보이는 영역에 표시될 슬라이드 개수 (effect사용시 사용불가)
-		//spaceBetween:30, //슬라이드 사이의 간격
+		// slidesPerView:2, //보이는 영역에 표시될 슬라이드 개수 (effect사용시 사용불가)
+		// spaceBetween:30, //슬라이드 사이의 간격
 
 		pagination: {
 			el:".nav1", //메뉴영역 클래스명
