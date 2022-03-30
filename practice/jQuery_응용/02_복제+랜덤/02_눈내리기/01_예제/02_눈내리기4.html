@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>복제</title>
+<style>
+body { font: bold 12px "나눔고딕"; color:#fff; }
+h1 { font-size:60px;}
+#wrap { position:relative; margin:0 auto; width:900px; height:600px; background:#0CC; }
+#snow {
+	animation:rotation 2s infinite; 
+	width:30px; height:30px; 
+	border-radius:70% 0 70% 0; 
+	position:absolute; 
+	left:0px; top:-9999px; 
+	background:yellow; 
+}
+@keyframes rotation {
+	0%{ transform:rotate(360deg);} /* 시작 */
+	100%{ transform: rotate(0deg);} /* 종료 */
+}
+
+</style>
+</head>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+	
+let wrap = $("#wrap");
+let snow = $("#snow");
+
+//alert( wrap.width() );
+//alert( wrap.css("width") );
+
+
+// let i =1;
+
+// function motion(){
+	
+	if ( i=1, i++, i<=100 ){
+			
+		  let temp = snow.clone(); //눈송이를 복제
+		  wrap.append(temp); //눈송이 복제본을 wrap에 추가
+		  
+		  //복제본의 처음 모습 설정		
+		  let color = [ "orange","yellow","brown" ];
+		  let c = Math.floor(Math.random()*3);//0이상 3미만의 정수
+		//   let r = Math.random()*360;//0이상 360
+
+		  temp.css({
+			  left:Math.random()*900,//0이상 900미만 중 랜덤
+			  top:-100,
+			  width:Math.random()*50 +20, // 0+20 이상 50+20 미만
+			  opacity:Math.random()*1 +0.5,//0+0.5이상 1+0.5미만
+			//   transform:"rotate("+r+"deg)",
+			  backgroundColor:color[c],
+		  });		  
+		  temp.css({ height:temp.width() });
+				
+	  
+	      //복제본의 움직임 설정
+		  temp.animate({ //각도는 별도로 설정할 수 없다. css keyframes animation으로 처리
+			  top:600,
+			  left:Math.random()*300 -200,
+			  opacity:0,
+		  },5000,function(){ //눈송이 복제본을 애니메이트시킴
+			  $(this).remove(); //눈송이 복제본을 삭제
+		  });
+
+	} 
+
+	// i++;
+	
+// }
+	
+// setInterval(motion,300); 
+	
+// });
+</script>
+
+<body >
+
+<div id="wrap">
+
+   <h1>Snow</h1>
+   <p>design is what you make of it</p>
+
+   <div id="snow"></div>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
