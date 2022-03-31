@@ -27,6 +27,10 @@ body { background:skyblue; }
 	/* 브라우져 가로폭이 767px 이하일때 적용될 css (스마트폰) */
 	body { background:pink; }
 	#wrap { width:100%; }
+	#container {flex-wrap: wrap; }
+	#sidebar {order:2; width: 100%; margin-bottom: 15px;}
+	#contents {order: 1; width: 100%;}
+	/* order 순서를 바꿔줌 */
 
 }
 
@@ -35,13 +39,17 @@ body { background:skyblue; }
 	/* 브라우져 가로폭이 768~1023px일때 적용될 css (태블릿) */
 	body { background:yellowgreen; }
 	#wrap { width:100%; }
-
+	#sidebar {width: 27%;}
+	#contents {width: 70%;}
 }
 
 
-@media all and (min-width:1024px) {
-	/* 브라우져 가로폭이 1024px이상일때 적용될 css (PC) */
-
+@media all and (min-width:1600px) {
+	/* 브라우져 가로폭이 1024px이상일때 적용될 css (와이드 PC) */
+	body { background: orange;}
+	#wrap { width: 1200px;}
+	#sidebsar { width:370px;}
+	#contents { width:800px; }
 }
 
 
