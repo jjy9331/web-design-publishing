@@ -25,6 +25,31 @@ $(function(){
 	$(".movie img:first").css({visibility:"visible"});
 
 
+	 //애니메이션 시키기
+	let frameNum=0;
+
+	function aniNext(){
+
+		frameNum++;
+
+		if(frameNum> $(".movie img:last").index() ){
+			frameNum=0
+		};
+
+
+		$(".movie img").css({visibility:"hidden"});
+		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
+	}
+
+	// setInterval(aniNext,100);//0.1초마다 aniNext함수 실행
+
+	$(".movie").mousewheel(function(e.delta){
+		if (delta < 0) {
+
+			aniNext();
+		}
+	});
+
 
 
 	//애니메이션 시키기
@@ -55,30 +80,7 @@ $(function(){
 	
 
 
-    //애니메이션 시키기
-	let frameNum=0;
-
-	function aniNext(){
-
-		frameNum++;
-
-		if(frameNum> $(".movie img:last").index() ){
-			frameNum=0
-		};
-
-
-		$(".movie img").css({visibility:"hidden"});
-		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
-	}
-
-	// setInterval(aniNext,100);//0.1초마다 aniNext함수 실행
-
-	$(".movie").mousewheel(function(e.delta){
-		if (delta < 0) {
-
-			aniNext();
-		}
-	});
+   
 
 
 });
