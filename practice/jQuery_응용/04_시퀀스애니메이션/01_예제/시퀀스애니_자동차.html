@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <title>where's wally?</title>
 <style>
-.movie { border:1px dashed #777; width:150px; height:300px; }
+.movie { margin:0 auto; border:5px dashed #ddd; width:964px; height:600px; }
 .movie img { 
-   position:absolute; 
-   visibility:hidden;
+    position:absolute;
+    visibility:hidden;
 }
 </style>
 
@@ -18,8 +18,8 @@
 $(function(){
 
     //이미지 불러오기
-	for (i=1; i<=8; i++){
-		$(".movie").append("<img src='images1/w_walking"+i+".png'>");
+	for (i=1; i<=36; i++){
+		$(".movie").append("<img src='images2/"+i+".jpg'>");
 	}
 	$(".movie img:first").css({visibility:"visible"});
 
@@ -32,23 +32,16 @@ $(function(){
 
 		frameNum++;
 
-		//if(frameNum> $(".movie img:last").index() ){
-			//frameNum=0
-		//};
+		if(frameNum> $(".movie img:last").index() ){
+			frameNum=0
+		};
 
-		if (frameNum > 7) {
-			frameNum=0;
-		}
 
 		$(".movie img").css({visibility:"hidden"});
 		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
 	}
 
-	let k = setInterval(aniNext,100); //0.1초마다 aniNext 함수 실행
-
-	$(".movie").animate({left:2000},10000,function(){
-		clearInterval(k);
-	});
+	setInterval(aniNext,100);//0.1초마다 aniNext함수 실행
 
 
 });
@@ -61,7 +54,8 @@ $(function(){
 
     
        <div class="movie">
-       </div>
+
+	   </div>
 
 
 
