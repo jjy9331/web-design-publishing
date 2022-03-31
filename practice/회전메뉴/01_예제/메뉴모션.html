@@ -12,7 +12,7 @@ body { font-family:Roboto; color:white; background:#707070; overflow-x:hidden; }
 
 
 
-#container { position:relative; margin:0 auto;  width:1200px; height:1200px; border:5px dashed yellow; } 
+#container { position:relative; margin:0 auto;  width:1400px; height:1400px; border:5px dashed yellow; } 
 
 
 .menu li {
@@ -30,7 +30,7 @@ body { font-family:Roboto; color:white; background:#707070; overflow-x:hidden; }
 .circle {
 	/* animation:circle 20s linear infinite; */
 	transform:rotate(45deg);
-	position:absolute; left:500px; top:-30px; 
+	position:absolute; left:700px; top:100px; 
 	z-index:100;
 	width:1000px; height:1000px; 
 
@@ -55,6 +55,16 @@ body { font-family:Roboto; color:white; background:#707070; overflow-x:hidden; }
 .c3 { position:absolute; left:0px; top:450px; transform:rotate(-45deg);}
 .c4 { position:absolute; left:50px; top:650px; transform:rotate(-45deg); }
 
+
+.info { 
+	display: none;
+	position: absolute;
+	left: 50px; top: 280px;
+	width: 600px; height: 750px; background: blue;
+
+	font-size: 80px;
+}
+
 </style>
 
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -63,6 +73,10 @@ body { font-family:Roboto; color:white; background:#707070; overflow-x:hidden; }
 <script>
 $(function(){
 
+	$(".info").hide();
+	
+
+
 	$(".circle").css({ transition:"1s" });
 	$(".menu li").css({ transition:"1s" });
 
@@ -70,24 +84,32 @@ $(function(){
 		$(".circle").css({transform:"rotate(-30deg)"});
 		$(".menu li").css({transform:"rotate(30deg)", fontSize:12});
 		$(this).css({fontSize:40})
+		$(".info").hide();
+		$(".i1").show();
 	});
 
 	$(".c2").click(function(){
 		$(".circle").css({transform:"rotate(-10deg)"});
 		$(".menu li").css({transform:"rotate(10deg)", fontSize:12});
 		$(this).css({fontSize:40})
+		$(".info").hide();
+		$(".i2").show();
 	});
 
 	$(".c3").click(function(){
 		$(".circle").css({transform:"rotate(-20deg)"});
 		$(".menu li").css({transform:"rotate(20deg)", fontSize:12});
 		$(this).css({fontSize:40})
+		$(".info").hide();
+		$(".i3").show();
 	});
 
 	$(".c4").click(function(){
 		$(".circle").css({transform:"rotate(-40deg)"});
 		$(".menu li").css({transform:"rotate(40deg)", fontSize:12});
 		$(this).css({fontSize:40})
+		$(".info").hide();
+		$(".i4").show();
 	});
 
 
@@ -111,12 +133,19 @@ $(function(){
 						<li class="c3">Webdeisgn</span></li>
 						<li class="c4">Illust</span></li>
 					</ul>
-		
+					
+					
 			</div>
-		
+				
 	</div>
-
-
+			
+			
+	<div>
+		<div class="info i1">01 Graphic</div>
+		<div class="info i2">02 Typography</div>
+		<div class="info i3">03 Webdeisgn</div>
+		<div class="info i4">04 Illust</div>
+	</div>
 </div>
 
 
