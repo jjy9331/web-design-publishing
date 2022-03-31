@@ -29,7 +29,7 @@ body { font-family:Roboto; color:white; background:#707070; overflow-x:hidden; }
 }
 .circle {
 	/* animation:circle 20s linear infinite; */
-	transform:rotate(45deg);
+	transform:rotate(-30deg);
 	position:absolute; left:700px; top:100px; 
 	z-index:100;
 	width:1000px; height:1000px; 
@@ -48,12 +48,12 @@ body { font-family:Roboto; color:white; background:#707070; overflow-x:hidden; }
 }
 
 
-.menu li { cursor:pointer; font-size:12px; }
+.menu li { cursor:pointer; font-size:12px; transform: rotate(30deg);}
 
-.c1 { position:absolute; left:150px; top:100px; transform:rotate(-45deg);}
-.c2 { position:absolute; left:40px; top:250px; transform:rotate(-45deg); }
-.c3 { position:absolute; left:0px; top:450px; transform:rotate(-45deg);}
-.c4 { position:absolute; left:50px; top:650px; transform:rotate(-45deg); }
+.c1 { position:absolute; left:150px; top:100px; }
+.c2 { position:absolute; left:40px; top:250px; }
+.c3 { position:absolute; left:0px; top:450px;}
+.c4 { position:absolute; left:50px; top:650px;}
 
 
 .info { 
@@ -84,32 +84,32 @@ $(function(){
 		$(".circle").css({transform:"rotate(-30deg)"});
 		$(".menu li").css({transform:"rotate(30deg)", fontSize:12});
 		$(this).css({fontSize:40})
-		$(".info").hide();
-		$(".i1").show();
+		$(".info").fadeOut();
+		$(".i1").fadeIn();
 	});
 
 	$(".c2").click(function(){
 		$(".circle").css({transform:"rotate(-10deg)"});
 		$(".menu li").css({transform:"rotate(10deg)", fontSize:12});
 		$(this).css({fontSize:40})
-		$(".info").hide();
-		$(".i2").show();
+		$(".info").fadeOut();
+		$(".i2").fadeIn();
 	});
 
 	$(".c3").click(function(){
 		$(".circle").css({transform:"rotate(-20deg)"});
 		$(".menu li").css({transform:"rotate(20deg)", fontSize:12});
 		$(this).css({fontSize:40})
-		$(".info").hide();
-		$(".i3").show();
+		$(".info").fadeOut();
+		$(".i3").fadeIn();
 	});
 
 	$(".c4").click(function(){
 		$(".circle").css({transform:"rotate(-40deg)"});
 		$(".menu li").css({transform:"rotate(40deg)", fontSize:12});
 		$(this).css({fontSize:40})
-		$(".info").hide();
-		$(".i4").show();
+		$(".info").fadeOut();
+		$(".i4").fadeIn();
 	});
 
 
