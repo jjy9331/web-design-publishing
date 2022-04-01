@@ -33,7 +33,7 @@ $(function() {
   let targetRY=0;
 
   function motion1(){
-	ry = ry + 0.05*(targetRY-ry); 
+	ry = ry + 0.05*(targetRY-ry); //부드러운 움직임
 	$(".cube").css({transform:"rotateY("+ry+"deg)"});
   }
 
@@ -42,28 +42,28 @@ $(function() {
 
 
 //버튼 클릭했을때
-   //$(".next").click(function(){ 
-		//targetRY-=45 
-	//});
+   $(".next").click(function(){  
+		targetRY-=45 
+	});
 
-   //$(".prev").click(function(){ 
-		//targetRY+=45 
-	//});
+   $(".prev").click(function(){ 
+		targetRY+=45 
+	});
 
 
 
 //마우스휠 사용
-  /*
+  
   $('#container').on('mousewheel', function(event, delta) {
 
-	  if(delta < 0) {
-		   //$(".next").click();
+	  if(delta < 0) { //휠을 아래로 돌렸을 때
+		   $(".next").click();
 	  } else {
-		   //$(".prev").click();
+		   $(".prev").click();
 	  }
 
   });
- */
+ 
 
 	
 
