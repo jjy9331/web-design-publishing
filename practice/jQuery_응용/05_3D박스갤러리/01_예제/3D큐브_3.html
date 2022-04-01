@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>JQuery</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<style>
+body { font-family:'Roboto'; font-weight:100; font-size:11px; }
+
+#container { perspective:1000px; border:2px dashed #ccc; }
+
+.cube {transform:rotateY(180deg);   transform-style:preserve-3d; /* 자손의 3차원 속성을 유지 */
+margin:0 auto; width:400px; height:400px; border:5px dashed #000; color:white; font-size:70px; }
+
+.box {  position:absolute; width:400px; height:400px; opacity:0.7; }
+
+.b1 { background:#333; transform:translate3d(0,0,-200px) rotateX(0deg) rotateY(180deg); }
+.b2 { background:orange; transform:translate3d(200px,0,0px) rotateX(0deg) rotateY(90deg); }
+.b3 { background:red; transform:translate3d(-200px,0px,0px) rotateX(0deg) rotateY(-90deg); }
+.b4 { background:yellow; transform:translate3d(0px,-200px,0px) rotateX(90deg) rotateY(0deg); }
+.b5 { background:yellowgreen;  transform:translate3d(0px,200px,0px) rotateX(-90deg) rotateY(0deg); }
+.b6 { background:blue;  transform:translate3d(0px,0px,200px) rotateX(0deg) rotateY(0deg);  }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+
+<script>
+$(function() {
+
+//초기설정
+  let ry=180;
+
+	$(".cube").css({ 
+		transition:"0.5s" });
+
+
+
+//버튼 클릭했을때
+   $(".next").click(function(){  
+		ry-=90;
+		$(".cube").css({ transform:"rotateY("+ ry +"deg)"});
+	});
+
+   $(".prev").click(function(){ 
+		ry+=90;
+		$(".cube").css({transform:"rotateY("+ ry +"deg)"});
+	});
+
+
+
+//마우스휠 사용
+  
+  $('#container').on('mousewheel', function(event, delta) {
+
+	  if(delta < 0) { //휠을 아래로 돌렸을 때
+		   $(".next").click();
+	  } else {
+		   $(".prev").click();
+	  }
+
+  });
+ 
+
+	
+
+});
+</script>
+</head>
+
+<body>
+
+<h1>0</h1>
+<p>design is what you make of it</p>
+
+
+
+
+
+<div id="container">  
+
+	 <div class="cube">
+		<div class="box b1">01</div>
+		<div class="box b2">04</div>
+		<div class="box b3">02</div>
+		<div class="box b4">04</div>
+		<div class="box b5">05</div>
+		<div class="box b6">03</div> 
+	 </div>
+
+</div>  
+  
+
+<button class="prev">prev</button>
+<button class="next">next</button>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
