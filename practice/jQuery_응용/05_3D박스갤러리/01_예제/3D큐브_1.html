@@ -35,14 +35,14 @@ $(function() {
 	$("#container").on("mousewheel",function(e,delta) {
 	
 		if(delta < 0) { //휠을 아래로 돌렸을때
-			//a = a + 5; 
-			  //$("h1").text(a);
-			//$(".cube").css({ transform:"rotateY("+a+"deg)" });
+			a = a + 5; 
+			  $("h1").text(a);
+			$(".cube").css({ transform:"rotateX("+a+"deg) rotateY("+a+"deg) rotateY("+a+"deg)" });
 
 		} else { //휠을 위로 돌렸을때
-			//a = a - 5; 
-			   //$("h1").text(a);
-			//$(".cube").css({ transform:"rotateY("+a+"deg)" });
+			a = a - 5; 
+			   $("h1").text(a);
+			$(".cube").css({ transform:"rotateX("+a+"deg) rotateY("+a+"deg) rotateY("+a+"deg)" });
 
 		}
 					
