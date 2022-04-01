@@ -55,13 +55,15 @@ $(function() {
 		 $(".cube").css({ transform:c[i] });
 	});
 
+	// 에러 function() 구조 잘못적어서 동작 안했음 
+   $(".m1").click(function(){ $(".cube").css({ transform:c[0] }); });
+   $(".m2").click(function(){ $(".cube").css({ transform:c[1] }); });
+   $(".m3").click(function(){ $(".cube").css({ transform:c[2] }); });
+   $(".m4").click(function(){ $(".cube").css({ transform:c[3] }); });
+   $(".m5").click(function(){ $(".cube").css({ transform:c[4] }); });
+   $(".m6").click(function(){ $(".cube").css({ transform:c[5] }); });
 
-$(".m1").click(function({$(".cube").css({transform:c[0]});}));
-$(".m2").click(function({$(".cube").css({transform:c[1]});}));
-$(".m3").click(function({$(".cube").css({transform:c[2]});}));
-$(".m4").click(function({$(".cube").css({transform:c[3]});}));
-$(".m5").click(function({$(".cube").css({transform:c[4]});}));
-$(".m6").click(function({$(".cube").css({transform:c[5]});}));
+
 
 
 //마우스휠 사용
@@ -112,15 +114,14 @@ $(".m6").click(function({$(".cube").css({transform:c[5]});}));
 
 <button class="prev">prev</button>
 <button class="next">next</button>
+<br>
 
-<button class="m1">1</button>
-<button class="m2">2</button>
-<button class="m3">3</button>
-<button class="m4">4</button>
-<button class="m5">5</button>
-<button class="m6">6</button>
-
-
+<button class="m1">01</button>
+<button class="m2">02</button>
+<button class="m3">03</button>
+<button class="m4">04</button>
+<button class="m5">05</button>
+<button class="m6">06</button>
 
 
 
