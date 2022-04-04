@@ -41,44 +41,48 @@ $(function() {
 	$(".cube").css({ transition:"0.5s" });
 
 	function nextCube() {
-		ry = ry + 2;
+		ry = ry + 1.5;
 		$(".cube").css({ transform:"rotateY("+ry+"deg)" });
 	}
 	
 	function prevCube() {
-		ry = ry - 2;
+		ry = ry - 1.5;
 		$(".cube").css({ transform:"rotateY("+ry+"deg)" });
 	}
 
-	let mx; //커서의 현재x값 
+
+
+	let mx; //커서의 현재x값
 	let mx_old; //커서의 이전x값
-
-	let k = false
-
+	let k = false;
 	
 	$(".drag_area").mousedown(function(){//마우스버튼 눌렀을때
-		//할일
 		k = true;
 		mx_old = mx;
 	});
 
 	$(".drag_area").mouseup(function(){//마우스버튼 뗏을때
-		//할일
 		k = false;
 	});
+
 
 	$(".drag_area").mousemove(function(e){//마우스 움직이는동안
 		mx = e.pageX;
 		$("h1").text(mx);
 		$("p").text(mx_old);
-		if(k){
-			if (mx_old < mx) {//커서 현재x값이 이전x값보다 크다면(오른쪽으로 마우스를 움직였다면 )
-				nextCube();
-			}
-			else{//왼쪽으로 마우스를 움직였다면
-				prevCube();
-			}
+
+		if ( k ) {
+				if ( mx_old < mx ){//오른쪽으로 마우스를 드래그했다면(커서 현재x값이 이전x값보다 크다면)
+					nextCube();
+					mx_old = mx;
+				}
+				else{ //왼쪽으로 마우스를 드래그했다면
+					prevCube();
+					mx_old = mx;
+				}
 		}
+
+
 	});
 
 
