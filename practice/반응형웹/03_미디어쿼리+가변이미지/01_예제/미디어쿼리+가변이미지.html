@@ -15,27 +15,40 @@ img { border:0; vertical-align:top; }
 body { font:15px Roboto; }
 a { text-decoration:none; color:#000; }
 
+/* header */
+
+#header { background: black; color: white;}
+#header a { color: white; }
     
 /* container */
 #container h2 { padding:1%; }
 #container p { padding:1%; }
-#container li { border:1px solid orange; /* -webkit-box-sizing:border-box; */ }
-#container li img { }    
+#container { border: 5px solid yellow;}
+#container:after { content: ""; display: block; clear: both;}
+#container li { 
+  float: left; 
+  width: calc(100%/8); /* 한행 당 8개*/
+  border:1px solid orange; 
+  -webkit-box-sizing:border-box; 
+  opacity: 0.3;
+}
+#container li img { width: 100%;}    
+
+#footer { text-align: center; background-color: red; color: white;}
 
 
-/*
-@media all and (max-width:767px) {
-
+@media all and (max-width:767px) { /* 스마트폰 */
+  #container li { width: calc(100%/1);}
 }
     
-@media all and (min-width:768px) and (max-width:1023px) {
+@media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
+   #container li { width: calc(100%/2);}
+}
+
+@media all and (min-width:1024px) { /* pc */
    
 }
 
-@media all and (min-width:1024px) {
-   
-}
-*/
 
 </style>
 
@@ -44,7 +57,17 @@ a { text-decoration:none; color:#000; }
 
 <body>
 
-
+<header id="header">
+  <h1>logo</h1>
+  <nav class="gnb">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Works</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
 
   
@@ -62,19 +85,22 @@ a { text-decoration:none; color:#000; }
       </p>
       
       <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
+          <li><img src="images/z1.jpg" alt=""></li>
+          <li><img src="images/z2.jpg" alt=""></li>
+          <li><img src="images/z3.jpg" alt=""></li>
+          <li><img src="images/z4.jpg" alt=""></li>
+          <li><img src="images/z5.jpg" alt=""></li>
+          <li><img src="images/z6.jpg" alt=""></li>
+          <li><img src="images/z7.jpg" alt=""></li>
+          <li><img src="images/z8.jpg" alt=""></li>
       </ul>
       
   </div>
     
-    
+  
+<footer id="footer">
+  Copyright &copy; 2022. All rights reserved
+</footer>
 
 
 
