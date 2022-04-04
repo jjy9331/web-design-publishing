@@ -16,6 +16,14 @@ body { background:skyblue; }
 }
 /* #container:after { content: ""; clear: both; display: block;} */
 #contents { float:left; width:700px; height:300px; margin-bottom:15px; background:#fff; }
+#banner { 
+	position: absolute; 
+	right: 20px; 
+	top: 100px; 
+	width: 150px;
+	height: 300px;
+	background: red;
+}
 #sidebar { float:left; width:270px; height:300px; background:yellow; }
 #footer { clear:both; height:100px; background:#fff; }
 
@@ -30,6 +38,7 @@ body { background:skyblue; }
 	#container {flex-wrap: wrap; }
 	#sidebar {order:2; width: 100%; margin-bottom: 15px;}
 	#contents {order: 1; width: 100%;}
+	#banner { order: 3; position: static; width: 100%; margin-bottom: 15px; }
 	/* order 순서를 바꿔줌 */
 
 }
@@ -40,7 +49,8 @@ body { background:skyblue; }
 	body { background:yellowgreen; }
 	#wrap { width:100%; }
 	#sidebar {width: 27%;}
-	#contents {width: 70%;}
+	#contents {width: 40%;}
+	#banner { position: static; width: 27%;}
 }
 
 
@@ -72,6 +82,7 @@ body { background:skyblue; }
 <div id="container">
 	  <aside id="sidebar">사이드바</aside>
 	  <section id="contents">컨텐츠</section>
+	  <div id="banner">배너</div>
 </div>
   
   
