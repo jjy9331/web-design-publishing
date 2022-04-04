@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body {
+    /* feel free to change height */
+    height: 10000px;
+    background: linear-gradient(
+        to bottom,
+        white,
+        black
+    );
+}
+
+h1 {
+  position: fixed;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 5px;
+  font-weight: 100;
+  padding: 25px 15px;
+  text-shadow: 1px 1px 1px #333;
+}
+
+#star-svg {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  margin-left: -300px;
+  width: 600px;
+  height: 600px;
+  margin: -75px 0 0 -75px;
+  border: 3px dashed wheat;
+}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+window.addEventListener("load",function(){
+    // Get a reference to the <path>
+    var path = document.querySelector('#star-path');
+
+    // Get length of path... ~577px in this case
+    var pathLength = path.getTotalLength();
+
+    // Make very long dashes (the length of the path itself)
+    path.style.strokeDasharray = pathLength + ' ' + pathLength;
+
+    // Offset the dashes so the it appears hidden entirely
+    path.style.strokeDashoffset = pathLength;
+
+    // Jake Archibald says so
+    // https://jakearchibald.com/2013/animated-line-drawing-svg/
+    path.getBoundingClientRect();
+
+    // When the page scrolls...
+    window.addEventListener("scroll", function(e) {
+
+      let sc = $(this).scrollTop();
+       $("h1").text(sc);//스크롤한 값을 h1에 출력
+        // What % down is it? 
+        // https://stackoverflow.com/questions/2387136/cross-browser-method-to-determine-vertical-scroll-percentage-in-javascript/2387222#2387222
+        // Had to try three or four differnet methods here. Kind of a cross-browser nightmare.
+        var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+        // Length to offset the dashes
+        var drawLength = pathLength * scrollPercentage;
+
+        // Draw in reverse
+        path.style.strokeDashoffset = pathLength - drawLength;
+
+        // When complete, remove the dash array, otherwise shape isn't quite sharp
+        // Accounts for fuzzy math
+        if (scrollPercentage >= 0.99) {
+        path.style.strokeDasharray = "none";
+
+        } else {
+        path.style.strokeDasharray = pathLength + ' ' + pathLength;
+        }
+
+    });
+});
+</script>
+<body>
+    <h1>Scroll-to-draw</h1>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="star-svg">
+  <path fill="none" stroke="black" stroke-width="0.2" id="star-path" 
+  d="M 0,0
+    L 25,25
+    M 100,0
+    L 75,25
+    M 0,100
+    L 25,75
+    M 100,100
+    L 75,75
+    M 0,50
+    L 30,50
+    M 100,50
+    L 70,50
+    M 50,0
+    L 50,30
+    M 50,100
+    L 50,70
+  "/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="star-svg">
+  <path fill="none" stroke="black" stroke-width="0.5" id="star-path2" 
+  d="
+
+  "/>
+</svg>
+</body>
+</html>
+
+
+<!-- https://css-tricks.com/scroll-drawing/ -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d -->
+<!-- https://jakearchibald.com/2013/animated-line-drawing-svg/ -->
+<!-- https://a11y.gitbook.io/graphics-aria/svg-graphics/svg-paths-shape -->
+
+<!-- 
+    d="M -3,0 
+  L 50,53.3 
+  M 105,0
+  L 50,53.3 
+  M -105,30
+  L 10,53.3 
+  "/>
+ -->
