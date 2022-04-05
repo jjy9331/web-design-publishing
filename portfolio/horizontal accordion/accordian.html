@@ -29,12 +29,21 @@
   </script>
 
   <style type="text/css">
-  body { font-family:'Roboto'; background-color:#fafafa;}
+  body {
+    margin: 0; 
+    margin-top: -30px; 
+    font-family:'Roboto'; background-color:#fafafa;
+  }
   #container {
     width: 100%;
     margin: 0px auto;
-    margin-left: -8px;
-    margin-right: 0px;
+    /* margin-left: -8px; */
+    /* margin-right: -8px; */
+  }
+  #box { 
+    width: 300px;
+    height: 300px;
+    background-color: red;
   }
   </style>
 </head>
@@ -42,28 +51,27 @@
   
   
 <body dir="ltr">   
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>
-<div class="jquery-script-clear"></div>
-</div>
-</div>   
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 <div id="container">
     <ul id="accordion">
-      <li data-required="true"  data-status="incomplete" data-selected="true" data-title="North">
-        Never
+      <li data-title="North">
+        <div>
+          <div id="box"></div>
+          <div id="box"></div>
+          <div id="box"></div>
+          <div id="box"></div>
+        </div>
       </li>
-      <li data-required="true"  data-status="complete" data-title="East">Eat</li>
-      <li data-required="true"  data-status="disabled" data-title="South">Shredded</li>
-      <li data-required="false"  data-status="optional" data-title="West">Wheat</li>
-      <li data-required="false"  data-status="optional">
+      <li data-title="East">Eat</li>
+      <li data-title="South">Shredded</li>
+      <li data-title="West">Wheat</li>
+      <!-- <li data-required="false"  data-status="optional">
         <h2>Content title</h2>
         <input type="text" placeholder="DOM test" />
-      </li>
+      </li> -->
     </ul>
 </div>
-    <script type="text/javascript">
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36251023-1']);
@@ -80,4 +88,4 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </body>
 </html>
 
-<!-- https://www.jqueryscript.net/accordion/Responsive-Horizontal-jQuery-Accordion-Plugin-AccordionJS.html#google_vignette -->
+<!-- https://www.jqueryscript.net/accordion/Responsive-Horizontal-jQuery-Accordion-Plugin-AccordionJS.html  -->

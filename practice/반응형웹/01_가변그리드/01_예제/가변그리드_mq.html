@@ -84,7 +84,14 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 
 
 #contents .group4 { border:3px dashed blue; }
-#contents .group4 > div { display:flex; }
+#contents .group4 > div { 
+	overflow: auto;
+	border: 5px solid orange 
+}
+#contents .group4 > div > div { 
+	display:flex; 
+	border: 5px dashed yellowgreen;
+}
 #contents .group4 .c1 { flex:1; /* height:100px; */ background-color:pink; }
 #contents .group4 .c2 { flex:1; /* height:100px; */ background-color:yellow; }
 #contents .group4 .c3 { flex:1; /* height:100px; */ background-color:skyblue; }
@@ -102,20 +109,20 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 /* 미디어쿼리 */
 @media all and (max-width:767px){ /*스마트폰*/
 
-  #visual { height:250px; }
-  #contents { margin-top:30px; margin-bottom:30px; }
+	#visual { height:250px; }
+	#contents { margin-top:30px; margin-bottom:30px; }
 
-  #contents .group1 > div { flex-wrap:wrap; }
-  #contents .group1 .c1 { flex:none; width:calc((100% - 10px)/2); margin-right:10px; }
-  #contents .group1 .c2 { flex:none; width:calc((100% - 10px)/2); margin-right:0; }
-  #contents .group1 .c3 { flex:none; width:100%; margin-top:10px; }
+	#contents .group1 > div { flex-wrap:wrap; }
+	#contents .group1 .c1 { flex:none; width:calc((100% - 10px)/2); margin-right:10px; }
+	#contents .group1 .c2 { flex:none; width:calc((100% - 10px)/2); margin-right:0; }
+	#contents .group1 .c3 { flex:none; width:100%; margin-top:10px; }
 
-  #contents .group3 .c1 { width:calc((100% - 10px)/2); }
-  #contents .group3 .c2 { width:calc((100% - 10px)/2); }
-  #contents .group3 .c3 { width:calc((100% - 10px)/2); }
-  #contents .group3 .c4 { width:calc((100% - 10px)/2); }
-  #contents .group3 .c5 { width:calc((100% - 10px)/2); }
-  #contents .group3 .c6 { width:calc((100% - 10px)/2); }
+	#contents .group3 .c1 { width:calc((100% - 10px)/2); }
+	#contents .group3 .c2 { width:calc((100% - 10px)/2); }
+	#contents .group3 .c3 { width:calc((100% - 10px)/2); }
+	#contents .group3 .c4 { width:calc((100% - 10px)/2); }
+	#contents .group3 .c5 { width:calc((100% - 10px)/2); }
+	#contents .group3 .c6 { width:calc((100% - 10px)/2); }
 
 	#contents .group3 > div > div:nth-child(even) { margin-right:0; }
 	#contents .group3 > div > div:nth-child(odd) { margin-right:10px; }
