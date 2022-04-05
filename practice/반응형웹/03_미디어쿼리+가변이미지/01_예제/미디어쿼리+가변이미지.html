@@ -19,14 +19,16 @@ a { text-decoration:none; color:#000; }
 
 #header { position: relative; background: black; color: white;}
 #header a { color: white; }
-#header h1 { padding-top: 10px; padding-left: 10px;}
+#header h1 { padding-top: 10px; padding-bottom: 10px; padding-left: 10px;}
 #header .gnb { 
   position: absolute; 
   right: 0px; 
   bottom: 0px; 
-  width: 800px;
+  max-width: 1000px;
+  width:100%;
   border: 2px dashed skyblue;
 }
+#header .gnb ul {display: flex; flex-wrap: wrap;} 
 #header .gnb li { 
   float: left; 
   width: calc(100%/4);
@@ -40,9 +42,10 @@ a { text-decoration:none; color:#000; }
 #container p { padding:1%; }
 #container { border: 5px solid yellow;}
 #container:after { content: ""; display: block; clear: both;}
-#container li { 
-  float: left; 
-  width: calc(100%/8); /* 한행 당 8개*/
+#container ul { display: flex; flex-wrap: wrap;}
+#container ul li { 
+  /* float: left;  */
+  width: calc(100%/4); /* 한행 당 8개*/
   border:1px solid orange; 
   -webkit-box-sizing:border-box; 
   opacity: 0.3;
@@ -53,11 +56,15 @@ a { text-decoration:none; color:#000; }
 #footer p { padding-top: 15px; padding-bottom: 15px;border: 1px dashed skyblue;}
 
 @media all and (max-width:767px) { /* 스마트폰 */
-  #container li { width: calc(100%/1);}
+  #header {height: 95px;}
+  #header h1 {font-size: 25px; text-align: center;}
+  #header .gnb ul li {width: 50%;}
+  #container ul li { width: calc(100%/1);}
 }
     
 @media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
-   #container li { width: calc(100%/2);}
+  #header h1 {font-size: 25px; text-align: center; padding-bottom: 30px;}
+   #container ul li { width: calc(100%/4);}
 }
 
 @media all and (min-width:1024px) { /* pc */
