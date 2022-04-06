@@ -44,6 +44,7 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 }
 
 
+
 #visual { height:600px; background-color:#fc9; }
 
 
@@ -128,11 +129,24 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 
   #header .inner .gnb ul li {
 	 width:100%; /* 100%나누기1 : 한행당 1개 */ 
-	 background-color:rgba(0,0,0,0.8);
-	 padding-top:10px;
-	 padding-bottom:10px;
-	 color:white;
-  }
+	}
+	
+#header .inner .gnb ul li a { 
+	transition: 0.5s;
+	display: block;
+	background-color:rgba(0,0,0,0.8);
+	padding-top:10px;
+	padding-bottom:10px;
+	color:white;
+	color: white; text-decoration: none;
+	border: 1px dashed yellow;
+}
+
+#header .inner .gnb ul li a:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+	color: black;
+}
+
 
   #visual { height:250px; }
   #contents { margin-top:30px; margin-bottom:30px; }
@@ -152,7 +166,9 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 	#contents .group3 > div > div:nth-child(even) { margin-right:0; }
 	#contents .group3 > div > div:nth-child(odd) { margin-right:10px; }
 
-}
+	#contents .group4 > div { overflow:auto; border:5px solid orange; }
+
+#contents .group4 > div > div { width:360%; display:flex; border:5px dashed yellowgreen;}
 
 
 
@@ -172,10 +188,10 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 
 			<nav class="gnb">
 				<ul>
-				   <li>m1</li>
-				   <li>m2</li>
-				   <li>m3</li>
-				   <li>m4</li>
+				   <li><a href="#">m1</a></li>
+				   <li><a href="#">m2</a></li>
+				   <li><a href="#">m3</a></li>
+				   <li><a href="#">m4</a></li>
 				</ul>
 			</nav>
 	    </div>
