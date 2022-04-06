@@ -5,179 +5,172 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <title>가변그리드</title>
 <style>
-	* { margin:0; padding:0; }
-	ul { list-style:none; }
-	img { border:0; vertical-align:top; }
+* { margin:0; padding:0; }
+ul { list-style:none; }
+img { border:0; vertical-align:top; }
 
-	body { margin:0; font:14px 'Roboto','맑은 고딕'; }
-
-
-	#header { background-color:#eee; }
-	#header .inner { position:relative; margin:0 auto; max-width:1350px; height:94px;  border:3px dashed #f96; }
+body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 
 
-	#header .inner .btn {/*햄버거버튼*/
-		display:none;
-		position:absolute;
-		right:0px; top:0px;
-		background:red;
-		color:white; text-decoration:none;
-	}
-	#header .inner .gnb {
-		position:absolute;
-		right:0px; top:50px;
-
-		width:100%;
-		max-width:1000px;
-
-		border:2px solid blue;
-		box-sizing:border-box;
-	}
-
-	#header .inner .gnb ul { display:flex; flex-wrap:wrap; }
-
-	#header .inner .gnb ul li { 
-		width:25%; /* 100%나누기4 : 한행당 4개 */ 
-		text-align:center; 
-		border:1px dashed skyblue; 
-		box-sizing:border-box; 
-	}
+#header { /* height:100px; */ background-color:#eee; }
+#header .inner { 
+	position:relative; margin:0 auto; max-width:1350px; 
+	height:94px;  border:3px dashed #f96; 
+}
 
 
+#header .inner .btn {/*햄버거버튼*/
+	display:none;
+	position:absolute;
+	right:0px; top:0px;
+	background:red;
+	color:white; text-decoration:none;
+}
+#header .inner .gnb {
+	position:absolute;
+	right:0px; top:50px;
 
-	#visual { height:600px; background-color:#fc9; }
+	width:100%;
+	max-width:1000px;
+
+	border:2px solid blue;
+	box-sizing:border-box;
+}
+
+#header .inner .gnb ul { display:flex; flex-wrap:wrap; }
+
+#header .inner .gnb ul li { 
+	width:25%; /* 100%나누기4 : 한행당 4개 */ 
+	text-align:center; 
+	border:1px dashed skyblue; 
+	box-sizing:border-box; 
+}
 
 
-	#contents { 
-		margin:0 auto; 
-		max-width:1350px;
-
-		margin-top:50px;
-		margin-bottom:50px;
-		
-		border:3px solid  #0cf; 
-	}
+#visual { height:600px; background-color:#fc9; }
 
 
-	#contents img { width:100%; /* 부모가로길이의 100% */ }
+#contents { 
+	margin:0 auto; 
+	max-width:1350px;
+
+	margin-top:50px;
+	margin-bottom:50px;
+	 
+	border:3px solid  #0cf; 
+}
 
 
-	#contents .group1 { margin-bottom:30px; border:3px dashed blue; }
-	#contents .group1 > div { display:flex; }
-	#contents .group1 .c1 { flex:1; /* height:300px; */ margin-right:10px; background-color:pink; }
-	#contents .group1 .c2 { flex:1; /* height:300px; */ margin-right:10px; background-color:yellow; }
-	#contents .group1 .c3 { flex:1; /* height:300px; */ background-color:skyblue; }
-								/* 가변이미지의 부모에게는 height를 넣지않는다 */
+#contents img { width:100%; /* 부모가로길이의 100% */ }
 
 
-
-	#contents .group2 { margin-bottom:30px; border:3px dashed blue; }
-	#contents .group2 > div { display:flex; }
-	#contents .group2 .c1 { flex:1; /* height:400px; */ margin-right:10px; background-color:pink; }
-	#contents .group2 .c2 { flex:1; /* height:400px; */ background-color:yellow; }
+#contents .group1 { margin-bottom:30px; border:3px dashed blue; }
+#contents .group1 > div { display:flex; }
+#contents .group1 .c1 { flex:1; /* height:300px; */ margin-right:10px; background-color:pink; }
+#contents .group1 .c2 { flex:1; /* height:300px; */ margin-right:10px; background-color:yellow; }
+#contents .group1 .c3 { flex:1; /* height:300px; */ background-color:skyblue; }
+							/* 가변이미지의 부모에게는 height를 넣지않는다 */
 
 
 
-	#contents .group3 { margin-bottom:30px; border:3px dashed blue; }
-	#contents .group3 > div { display:flex; flex-wrap:wrap; }
-	#contents .group3 .c1 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-right:10px; margin-bottom:10px; background-color:pink; }
-	#contents .group3 .c2 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-right:10px; margin-bottom:10px; background-color:yellow; }
-	#contents .group3 .c3 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-bottom:10px; background-color:skyblue; }
-	#contents .group3 .c4 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-right:10px; background-color:orange; }
-	#contents .group3 .c5 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-right:10px; background-color:yellowgreen; }
-	#contents .group3 .c6 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ background-color:lightblue; }
+#contents .group2 { margin-bottom:30px; border:3px dashed blue; }
+#contents .group2 > div { display:flex; }
+#contents .group2 .c1 { flex:1; /* height:400px; */ margin-right:10px; background-color:pink; }
+#contents .group2 .c2 { flex:1; /* height:400px; */ background-color:yellow; }
 
 
 
-
-	#contents .group4 { border:3px dashed blue; }
-
-	#contents .group4 > div { 
-		overflow:auto;
-		border:5px solid orange; 
-	}
-
-	#contents .group4 > div > div { 
-		width:360%;
-		display:flex; 
-		border:5px dashed yellowgreen;
-	}
-
-	#contents .group4 .c1 { flex:1; /* height:100px; */ background-color:pink; }
-	#contents .group4 .c2 { flex:1; /* height:100px; */ background-color:yellow; }
-	#contents .group4 .c3 { flex:1; /* height:100px; */ background-color:skyblue; }
-	#contents .group4 .c4 { flex:1; /* height:100px; */ background-color:orange; }
+#contents .group3 { margin-bottom:30px; border:3px dashed blue; }
+#contents .group3 > div { display:flex; flex-wrap:wrap; }
+#contents .group3 .c1 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-right:10px; margin-bottom:10px; background-color:pink; }
+#contents .group3 .c2 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-right:10px; margin-bottom:10px; background-color:yellow; }
+#contents .group3 .c3 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-bottom:10px; background-color:skyblue; }
+#contents .group3 .c4 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-right:10px; background-color:orange; }
+#contents .group3 .c5 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ margin-right:10px; background-color:yellowgreen; }
+#contents .group3 .c6 { width:calc( (100% - 10px - 10px)/3 ); /* height:300px; */ background-color:lightblue; }
 
 
 
 
-	#footer { height:100px; background-color:#eee; }
-	#footer .inner { margin:0 auto; max-width:1350px; height:94px;  border:3px dashed #f96; }
+#contents .group4 { border:3px dashed blue; }
+
+#contents .group4 > div { 
+	overflow:auto;
+	border:5px solid orange; 
+}
+
+#contents .group4 > div > div { 
+	display:flex; 
+	border:5px dashed yellowgreen;
+}
+
+#contents .group4 .c1 { flex:1; /* height:100px; */ background-color:pink; }
+#contents .group4 .c2 { flex:1; /* height:100px; */ background-color:yellow; }
+#contents .group4 .c3 { flex:1; /* height:100px; */ background-color:skyblue; }
+#contents .group4 .c4 { flex:1; /* height:100px; */ background-color:orange; }
 
 
 
 
-	/* 미디어쿼리 */
-	@media all and (max-width:767px){ /* 스마트폰 */
-
-	#header { height:50px; }
-
-	#header .inner { height:50px; }
-
-	#header .inner .btn {/*햄버거버튼*/
-		display:block;
-		top:15px; right:10px;
-	}
-	#header .inner .gnb {
-		display: none;
-	}
-	#header .inner .btn:checked ~ .gnb{
-		display: block;
-	}
+#footer { height:100px; background-color:#eee; }
+#footer .inner { margin:0 auto; max-width:1350px; height:94px;  border:3px dashed #f96; }
 
 
-	#header .inner .gnb ul li {
-		width:100%; /* 100%나누기1 : 한행당 1개 */ 
-		}
-		
-	#header .inner .gnb ul li a { 
-		transition: 0.5s;
-		display: block;
-		background-color:rgba(0,0,0,0.8);
-		padding-top:10px;
-		padding-bottom:10px;
-		color:white;
-		color: white; text-decoration: none;
-		border: 1px dashed yellow;
-	}
-
-	#header .inner .gnb ul li a:hover {
-		background-color: rgba(255, 255, 255, 0.8);
-		color: black;
-	}
 
 
-	#visual { height:250px; }
-	#contents { margin-top:30px; margin-bottom:30px; }
+/* 미디어쿼리 */
+@media all and (max-width:767px){ /* 스마트폰 */
 
-	#contents .group1 > div { flex-wrap:wrap; }
-	#contents .group1 .c1 { flex:none; width:calc((100% - 10px)/2); margin-right:10px; }
-	#contents .group1 .c2 { flex:none; width:calc((100% - 10px)/2); margin-right:0; }
-	#contents .group1 .c3 { flex:none; width:100%; margin-top:10px; }
+  #header .inner { height:50px; }
 
-	#contents .group3 .c1 { width:calc((100% - 10px)/2); }
-	#contents .group3 .c2 { width:calc((100% - 10px)/2); }
-	#contents .group3 .c3 { width:calc((100% - 10px)/2); }
-	#contents .group3 .c4 { width:calc((100% - 10px)/2); }
-	#contents .group3 .c5 { width:calc((100% - 10px)/2); }
-	#contents .group3 .c6 { width:calc((100% - 10px)/2); }
+  #header .inner .btn {/*햄버거버튼*/
+	display:block;
+	top:15px; right:10px;
+  }
+
+  #header .inner .gnb { display:none; }
+
+  #header .inner .btn:checked ~ .gnb { display:block; }
+
+
+  #header .inner .gnb ul li {
+	 width:100%; /* 100%나누기1 : 한행당 1개 */ 
+  }
+  #header .inner .gnb ul li a { 
+	 transition:0.5s;
+	 display:block;
+	 background-color:rgba(0,0,0,0.8);
+	 padding-top:10px;
+	 padding-bottom:10px;
+	 color:white; text-decoration:none;
+	 border:1px dashed yellow; 
+  }
+  #header .inner .gnb ul li a:hover {
+	 background-color:rgba(255,255,255,0.8);
+	 color:black;
+  }
+
+  #visual { height:250px; }
+  #contents { margin-top:30px; margin-bottom:30px; }
+
+  #contents .group1 > div { flex-wrap:wrap; }
+  #contents .group1 .c1 { flex:none; width:calc((100% - 10px)/2); margin-right:10px; }
+  #contents .group1 .c2 { flex:none; width:calc((100% - 10px)/2); margin-right:0; }
+  #contents .group1 .c3 { flex:none; width:100%; margin-top:10px; }
+
+  #contents .group3 .c1 { width:calc((100% - 10px)/2); }
+  #contents .group3 .c2 { width:calc((100% - 10px)/2); }
+  #contents .group3 .c3 { width:calc((100% - 10px)/2); }
+  #contents .group3 .c4 { width:calc((100% - 10px)/2); }
+  #contents .group3 .c5 { width:calc((100% - 10px)/2); }
+  #contents .group3 .c6 { width:calc((100% - 10px)/2); }
 
 	#contents .group3 > div > div:nth-child(even) { margin-right:0; }
 	#contents .group3 > div > div:nth-child(odd) { margin-right:10px; }
+   
+  #contents .group4 > div > div { width:360%; }
 
-	#contents .group4 > div { overflow:auto; border:5px solid orange; }
-
-	#contents .group4 > div > div { width:360%; display:flex; border:5px dashed yellowgreen;}
+}
 
 
 
@@ -193,7 +186,8 @@
         <div class="inner">
 		    <h1>logo</h1>
 
-			<input type="checkbox" href="#" class="btn"></input>
+			<!-- <a href="#" class="btn">햄버거</a>-->
+			<input type="checkbox" class="btn">
 
 			<nav class="gnb">
 				<ul>
