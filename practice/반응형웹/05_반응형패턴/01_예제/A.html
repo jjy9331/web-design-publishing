@@ -19,18 +19,27 @@ body { color:#fff; }
 
 /* layout */
 #header { height:50px; margin-bottom:10px; background:black; }
-#container { margin:0 auto; max-width:1350px; border:2px dashed black; font-size:30px; }
-#container:after { content:""; display:block; clear:both; }
+#container { display:flex; flex-wrap:wrap; margin:0 auto; max-width:1350px; border:2px dashed black; font-size:30px; }
 #footer { height:50px; background:black; }
 
 
 /* container */
 .box { 
-	float:left; 
-	width:25%/* 100나누기4 : 한행당4개 */; 
+	width:calc( (100% - 10px - 10px - 10px)/4 ); 
+	margin-right:10px;
+
 	height:350px; 
 	margin-bottom:10px;
 }
+.box:nth-child(4n) { margin-right:0; }
+	/*
+		nth-child(odd) :홀수번째
+		nth-child(even) :짝수번째
+		nth-child(3n) :3의 배수번째
+		nth-child(4n) :4의 배수번째
+	*/
+
+
 .b1 { background:#ff6b67}
 .b2 { background:#f2df11; }
 .b3 { background:#555; }
@@ -51,12 +60,31 @@ body { color:#fff; }
 
 /* mediaquery */
 @media all and (max-width:767px) { /* 스마트폰 */
-  .box { width:100%; /* 100%나누기1 : 한행당1개 */ height:200px; }
+
+	.box { 
+		margin-right:0; 
+		width:100%; /* 100%나누기1 : 한행당1개 */ 
+		height:200px; 
+	}
+
 }
 
+
+
+
+
 @media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
-  .box { width:50%; /* 100%나누기2 : 한행당2개 */ height:250px; }
+
+	.box { 
+		margin-right:0;
+		width:calc( (100% - 10px)/2 ); /* 100%나누기2 : 한행당2개 */ 
+		height:250px; 
+	}
+	.box:nth-child(odd) { margin-right:10px; }
+
 }
+
+
 
 @media all and (min-width:1024px) { /* PC */
 
