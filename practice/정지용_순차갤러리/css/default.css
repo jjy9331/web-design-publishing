@@ -1,0 +1,71 @@
+
+* { margin:0; padding:0;}
+html,body { height: 100%; }
+ul { list-style:none; }
+body { font-family:'Roboto'; }
+
+
+
+/* 갤러리1 */
+
+#title {
+    position: fixed;
+    margin:0 auto;
+    /* left: 50%; */
+    top: 80px;
+    width: 100%;
+    text-align: center;
+}
+#img_wrap {
+    position: fixed;
+    margin:0 auto;
+    /* margin-top: 218.75px; */
+    left: 0px;
+    top: 218.75px;
+    width: 100%;
+}
+
+
+.gallery1 {
+	max-width:1200px;
+    width: 50%;
+	/* height:50%; 이미지를 넣을때는 설정하지 않는다 */
+	border:3px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 70px 110px 0px rgba(0, 0, 0, 0.1);
+}
+
+.gallery1 .swiper-slide { 
+	font-size:77px; 
+	/* border:3px dashed #333;  */
+	box-sizing:border-box; 
+}
+.gallery1 .swiper-slide img { 
+	display: block;
+	width: 100%;
+}
+
+.gallery1 .swiper-button-prev { left:50px; color:black; }
+.gallery1 .swiper-button-next { right:50px; }
+
+.gallery1 .swiper-pagination { /* 메뉴영역 */
+	bottom:30px; 
+	/* border:2px dashed black;  */
+}
+
+.gallery1 .swiper-pagination .swiper-pagination-bullet { /* 메뉴 설정 */
+	background-color:#ccc; 
+	opacity:0.5; 
+	width:12px; height:12px;
+	margin-left:20px;
+	border-radius:6px;
+} 
+.gallery1 .swiper-pagination .swiper-pagination-bullet-active { /* 메뉴 활성화 설정 */
+	background-color:black; 
+	opacity:1; 
+}
+.gallery1 .swiper-pagination-progressbar { /* background:yellow; */ }
+.gallery1 .swiper-pagination-progressbar-fill { /* background:black; */ }
+
+.nav1 {
+	color: rgba(0, 0, 0, 0.1);
+}
