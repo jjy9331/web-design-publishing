@@ -7,8 +7,8 @@
 <style>
 body { margin:0; font:50px 'Roboto'; color:#fff; }
 
-#container { border:3px dashed #f93; }
-#container .box { width:200px; height:200px; margin:10px; background:#ccc; }
+#container { margin: 0 auto; max-width: 960px; border:3px dashed #f93; }
+#container .box { width:150px; height:150px; margin:5px; background:#ccc; }
 </style>  
 
 
@@ -17,8 +17,8 @@ body { margin:0; font:50px 'Roboto'; color:#fff; }
 <script>
 $(function(){
 
-   $("대상요소").masonry({
-      itemSelector:'.적용할클래스명',
+   $("#container").masonry({
+      itemSelector:'.box',
 	  columnWidth:0
    });
 
