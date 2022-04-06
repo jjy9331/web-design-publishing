@@ -8,25 +8,33 @@
 body { margin:0; font:50px 'Roboto'; color:#fff; }
 
 #container { margin: 0 auto; width: 960px; border:3px dashed #f93; }
-#container .box { width:150px; height:150px; margin:5px; background:#ccc; }
+#container .box { 
+   width:300px; 
+   height:500px; 
+   margin:5px 10px 5px 10px; 
+   background:#ccc; 
+}
+#container .box:nth-child(3) {height:300px;}
+#container .box:nth-child(8) {height:600px;}
+#container .box:nth-child(12) {height:400px;}
+#container .box:nth-child(25) {height:500px;}
+#container .box:nth-child(29) {height:400px;}
 
 /* 미디어쿼리 */
-@media all and (min-width:320px) and ( max-width: 479px)  {
+@media all and (min-width:320px) and ( max-width: 639px)  {
    #container { width: 320px;}
 
 }
-
-@media all and (min-width:480px) and ( max-width: 639px)  {
-   #container { width: 480px;}
-
-}
-
-@media all and (min-width:640px) and ( max-width: 799px)  {
+@media all and (min-width:640px) and ( max-width: 959px)  {
    #container { width: 640px;}
 
 }
-@media all and (min-width:800px) and ( max-width: 959px) {
-   #container { width: 800px;}
+@media all and (min-width:960px) and ( max-width: 1279px) {
+   #container { width: 960px;}
+
+}
+@media all and (min-width:1280px) and ( max-width: 1600px) {
+   #container { width: 1280px;}
 
 }
 </style>  
