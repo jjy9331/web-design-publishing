@@ -26,9 +26,6 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 	background:red;
 	color:white; text-decoration:none;
 }
-
-
-
 #header .inner .gnb {
 	position:absolute;
 	right:0px; top:50px;
@@ -130,11 +127,11 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
 	display:block;
 	top:15px; right:10px;
   }
+  #header .inner #bt { display:none; }
 
-  #header .inner #bt { display: none;}
-  #header .inner .gnb { display:none; }
+  #header .inner .gnb { transition:0.5s; overflow:hidden; height:0px; border:5px solid blue; }
 
-  #header .inner .btn:checked ~ .gnb { display:block; }
+  #header .inner .btn:checked ~ .gnb { height:170px; }
 
 
   #header .inner .gnb ul li {
@@ -190,9 +187,10 @@ body { margin:0; font:14px 'Roboto','맑은 고딕'; }
         <div class="inner">
 		    <h1>logo</h1>
 
-			<a href="#" class="btn">햄버거</a>
-			<input type="checkbox" class="btn" id ="bt">
+			<!-- <a href="#" class="btn">햄버거</a>-->
+			<input type="checkbox" class="btn" id="bt">
 			<label for="bt" class="btn">햄버거</label>
+
 			<nav class="gnb">
 				<ul>
 				   <li><a href="#">m1</a></li>
