@@ -28,7 +28,7 @@ a { text-decoration:none; color: #fff; }
 .gnb:after { content:""; display:block; clear:both; }
 .gnb li { float:left; width:25%; text-align:center; background:#ff6b67; border:1px dashed yellow; box-sizing:border-box; }
 .gnb li a { display:block; }
-.gnb_btn { /* display:none; */ position:absolute; right:0px; top:0px; color:#000; background:#f2df11; }
+.gnb_btn { display:none; position:absolute; right:0px; top:0px; color:#000; background:#f2df11; }
 
 
 
@@ -39,17 +39,17 @@ a { text-decoration:none; color: #fff; }
 
 /* mediaquery */
 @media all and (max-width:767px) { /* 스마트폰 */
-  /* .gnb { display:none; position:absolute; top:50px; width:100%; } */
-  /* .gnb li { width:100%; } */
-  /* .gnb_btn { display:block; } */
+  .gnb { display:none; position:absolute; top:50px; width:100%; } 
+  .gnb li { width:100%; } 
+  .gnb_btn { display:block; } 
 }
 
 @media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
-  /* .gnb { width:100%; } */
+   .gnb { width:100%; 
+	}
 }
-
 @media all and (min-width:1024px) { /* PC */
-
+	
 }
 </style>
 </head>
