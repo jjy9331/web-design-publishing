@@ -4,8 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <title>반응형 패턴</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
 <style>
 /* reset */
 html,body { width:100%; height:100%; }
@@ -17,11 +19,16 @@ img { vertical-align:top; }
 table { border-collapse:collapse; }
 
 /* base */
-@font-face {
-	font-family: 'futra';
-	src: url(font/futura-bold.woff);
+@font-face { 
+    font-family:'futura'; 
+	src: url('font/futura-bold.woff') format('woff');
 }
-body { font-family: 'futra','Spartan','Roboto','Noto Sans KR'; color:#fff; }
+
+body { 
+	font-size:14px; 
+	font-family:'futura','Spartan','Noto Sans KR'; 
+	color:#fff; 
+}
 a { text-decoration:none; color:#767676; }
 
 
@@ -31,19 +38,20 @@ a { text-decoration:none; color:#767676; }
 
 #visual { 
 	margin-bottom:10px; background:#777; 
-	background:url(images/visual.png) no-repeat center center;
-	background-size: 100% cover;
+	background:url(images/visual.png) no-repeat center;
+	background-size:cover;
 }
 #visual .inner { 
 	margin:0 auto; 
 	max-width:1350px; 
-	height:690px;
+	height:800px;
 	border:2px dashed yellow;
 }
 
 #container { margin:0 auto; max-width:1350px; border:2px dashed black; font-size:30px; }
 #container:after { content:""; display:block; clear:both; }
 #footer { height:50px; background:black; }
+
 
 /* header */
 .gnb { position:absolute; right:0px; bottom:0px; width:1000px; }
@@ -60,9 +68,12 @@ a { text-decoration:none; color:#767676; }
 	background:#f2df11; 
 }
 
+
 /* visual */
-.t1 { padding-top: 130px; padding-bottom: 30px; font-size: 77px; font-weight: 900;}
-.t2 { text-transform: uppercase;} /* uppercase 소문자가 대문자로 바뀜*/
+.t1 { padding-top:130px; padding-bottom:20px; font-size:77px; font-weight:900; }
+.t2 { text-transform:uppercase; }
+
+
 
 /* container */
 .box { float:left; width:24.25%; height:350px; margin-bottom:10px; }
@@ -80,15 +91,16 @@ a { text-decoration:none; color:#767676; }
 /* mediaquery */
 
 @media all and (max-width:767px) { /* 스마트폰 */
-	.gnb { display:none; position:absolute; top:50px; width:100%; } 
-	.gnb li { width:100%; }
-	.gnb_btn { display:block; } /* 햄버거버튼 보이게함 */
+   .gnb { display:none; position:absolute; top:50px; width:100%; } 
+   .gnb li { width:100%; }
+   .gnb_btn { display:block; } /* 햄버거버튼 보이게함 */
+   #visual .inner { height:300px; } 
 
-	#visual .inner { height:300px; } 
-	.box { margin-right:0; width:100%; height:200px; } 
+	.t1 { padding-left:10px; padding-top:45px; padding-bottom:10px; font-size:27px; }
+	.t2 { padding-left:10px; font-size:10px; }
+	.t2 span { display:block; }
 
-	.t1 { padding-left: 10px; padding-top: 50px; padding-bottom: 10px; font-size: 30px; font-weight: 900;}
-	.t2 { padding-left: 10px; text-transform: uppercase;} /* uppercase 소문자가 대문자로 바뀜*/
+   .box { margin-right:0; width:100%; height:200px; } 
 }
 
 
@@ -96,15 +108,15 @@ a { text-decoration:none; color:#767676; }
 	.gnb { width:100%; }
 	#visual .inner { height:400px; } 
 
+	.t1 { padding-left:10px; padding-top:50px; padding-bottom:10px; font-size:50px; }
+	.t2 { padding-left:10px; font-size:12px; }
+
 	.box { 
 		margin-right:0; 
 		width:49.5%; 
 		height:250px; 
 	}
 	.box:nth-child(odd) { margin-right:1%; } /* odd:홀수, even:짝수 */
-
-	.t1 { padding-top: 50px; padding-bottom: 10px; font-size: 50px; font-weight: 900;}
-	.t2 { text-transform: uppercase;} /* uppercase 소문자가 대문자로 바뀜*/
 }
 
 
@@ -140,9 +152,11 @@ a { text-decoration:none; color:#767676; }
 
 <div id="visual">
 	<div class="inner">
+
 		<p class="t1">STRIKE A BALANCE</p>
-		<p class="t2">Nike Free TR Focus Flyknit hugs your foot <br>
-			for natural flexibility during your workout.</p>
+		<p class="t2">Nike Free TR Focus Flyknit hugs your foot<br>
+		for natural flexibility during <span>your workout.</span></p>
+
 	</div>
 </div>
 
