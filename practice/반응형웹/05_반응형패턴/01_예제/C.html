@@ -19,16 +19,21 @@ body { color:#fff; }
 
 /* layout */
 #header { height:50px; background:black; }
-#visual { height:500px; background:#777; }
+#visual { height:500px; margin-bottom:10px; background:#777; }
 #container { margin:0 auto; max-width:1350px; border:2px dashed black; font-size:30px; }
 #container:after { content:""; display:block; clear:both; }
 #footer { height:50px; background:black; }
 
 
 /* container */
-.box { float:left; width:33.333%; height:350px; }
-.b1 { background:#ff6b67}
-.b2 { background:#f2df11; }
+.box { 
+	float:left; 
+	width:calc( (100% - 10px - 10px)/3 ); /* (100%-20px)나누기3 : 한행당 3개 */
+	margin-bottom:10px; 
+	height:350px; 
+}
+.b1 { margin-right:10px; background:#ff6b67}
+.b2 { margin-right:10px; background:#f2df11; }
 .b3 { background:#555; }
 
 
