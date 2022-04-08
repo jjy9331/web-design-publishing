@@ -15,7 +15,7 @@ img { vertical-align:top; }
 table { border-collapse:collapse; }
 
 /* base */
-body { font-size: 14px; font-family:'Roboto','Noto Sans KR'; color:#fff; }
+body { font-size:14px; font-family:'Roboto','Noto Sans KR'; color:#fff; }
 a { text-decoration:none; color:#767676; }
 .blind { position:absolute; top:-9999px; }
 
@@ -91,17 +91,19 @@ a { text-decoration:none; color:#767676; }
    .gnb_btn { display:block; } /* 햄버거버튼 보이게함 */
 
    #visual { /* height:300px; 가변이미지의 부모에게 height넣지않는다 */ } 
-   .box { 
-	   margin-right:0; 
-	   width:100%; 
-	   /* height:200px;  */
-	} 
-	.box img { float: left; width: 50%; margin-right: 10px; }
-	.box:nth-child(even) img { float: right; margin-right: 0; margin-left: 10px;} /* 지그재그 */
-	.box:nth-child(even) h3,
-	.box:nth-child(even) p, { text-align: right; } 
-	.box h3, .box p { border: 3px solid blue;}
+   
+   .box { margin-right:0; width:100%; /* height:200px;가변이미지 부모에게 height넣지않는다 */ } 
+	.box img { float:left; width:50%; margin-right:10px; }
+		
+	.box:nth-of-type(even) img { float:right; margin-right:0; margin-left:10px; }
+
+	.box:nth-of-type(even) h3,
+	.box:nth-of-type(even) p { text-align:right; }
+
+	.box h3, .box p { border:5px solid skyblue; }
 }
+
+
 
 
 @media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
@@ -111,10 +113,16 @@ a { text-decoration:none; color:#767676; }
 	.box { 
 		margin-right:0; 
 		width:49.5%; 
-		/* height:250px;  */
+		/* height:250px; 가변이미지 부모에게 height넣지않는다 */ 
 	}
-	.box:nth-child(even) { margin-right:1%; } /* odd:홀수, even:짝수 */
-	
+	.box:nth-of-type(odd) { margin-right:1%; } 
+	/*
+		요소:nth-child(n)	태그종류 상관없이 형제관계중  n번째 자식요소 선택
+		(n값을 odd로 하면 홀수번째, n값을 even로 하면 짝수번째)
+
+		요소:nth-of-type(n)	같은 태그이며 형제관계중 n번째 자식요소 선택
+		(n값을 odd로 하면 홀수번째, n값을 even로 하면 짝수번째)
+	*/
 }
 
 
@@ -179,16 +187,19 @@ a { text-decoration:none; color:#767676; }
 		<h3>나이키 에어 줌 페가수스</h3>
 		<p>앞, 뒤 두 개의 줌 에어가 선사하는 놀라운 반응성</p>
    </div>
+
    <div class="box b3">
 		<img src="images/b3.png" alt="">
 		<h3>여름 티셔츠</h3>
 		<p>뛰어난 통기성과 쾌적함</p>
    </div>
+
    <div class="box b4">
 		<img src="images/b4.png" alt="">
 		<h3>여름 숏팬츠</h3>
 		<p>뛰어난 활동성과 편안한 착용감</p>
    </div>
+
 
 </div>
 
