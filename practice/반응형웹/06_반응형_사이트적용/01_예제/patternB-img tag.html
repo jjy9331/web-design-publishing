@@ -22,27 +22,27 @@ a { text-decoration:none; color:#767676; }
 
 /* layout */
 #header { background:white; }
-#header .inner { position:relative; margin:0 auto; max-width:1350px; height:50px; border:2px dashed #aaa; }
+#header .inner { position:relative; margin:0 auto; max-width:1350px; height:60px; border:2px dashed #aaa; }
 #visual { position:relative; /* height:500px; 가변이미지의 부모에게 height넣지않는다 */ margin-bottom:10px; background:#777; }
 #container { margin:0 auto; max-width:1350px; border:2px dashed black; }
 #container:after { content:""; display:block; clear:both; }
 #footer { height:50px; background:black; }
 
 /* header */
-h1 {padding-top: 12px;}
-.gnb { position:absolute; right:0px; bottom:13px; width:1000px; }
+h1 { padding-top:12px; }
+.gnb { position:absolute; right:0px; bottom:19px; width:1000px; }
 .gnb:after { content:""; display:block; clear:both; }
 
-.gnb li { float:left; width:25%; text-align:right; /*background:#ff6b67;border:1px dashed yellow; */ box-sizing:border-box; }
-.gnb li a { transition: 0.5s; text-transform: uppercase; /*display:block;  border: 1px dashed black; */ color:black;}
-.gnb li a:hover { color: orange;}
+.gnb li { float:left; width:25%; text-align:right; /* background:#ff6b67; */ /* border:1px dashed yellow; */ box-sizing:border-box; }
+.gnb li a { transition:.5s; font-weight:700; text-transform:uppercase; /* display:block; */  color:black; /* border:1px dashed black; */ }
+.gnb li a:hover { color:orange; }
 
 .gnb_btn { /* 햄버거 버튼 */
 	display:none; /* 안보이게함 */
 	position:absolute; 
-	right:10px; top:18px; 
+	right:10px; top:15px; 
 	color:#000; 
-	/* background:#f2df11;  */
+	/* background:#f2df11; */ 
 }
 
 
@@ -83,54 +83,60 @@ h1 {padding-top: 12px;}
 
 
 
+
+
 /* mediaquery */
 
 @media all and (max-width:767px) { /* 스마트폰 */
-	#header { height: 50px; background: black;}
+	#header { height:50px; background:black; }
 
-	h1 {padding-left: 7px;} 
+	h1 { padding-left:7px; }
 
-	h1 img { width: 60px; filter:invert(100%)} /* 무채색은 filter:invert 반전시킬 것*/
+	h1 img { width:60px; filter:invert(100%); }
 
-	.gnb { 
+   .gnb { 
 		display:none; 
-		position:absolute; 
-		top:50px; 
+		position:absolute; z-index:1000; top:50px; 
 		width:100%; 
-		z-index: 1000;
-		height: 164px;
+		height:164px;
 	} 
-	.gnb li {  padding: 10px; width:100%; text-align: center; background: rgba(255, 255, 255, 0.9); }
-	.gng li a { display: block; padding: 10px; }
-	.gng li a:hover { 
-		position: relative;
-		display: block; 
-		box-shadow: 0px 0px 0px rgba(0,0,0,3); 
+
+   .gnb li { width:100%; text-align:center; }
+	.gnb li a { display:block; padding:12px; background-color:rgba(255,255,255,.9); }
+	.gnb li a:hover { 
+		color:white;
+		background-color:rgba(0,0,0,.9);
+		/*
+		position:relative; 
+		z-index:100; 
+		box-shadow:0px 0px 20px rgba(0,0,0,0.3); 
+		*/
 	}
-	.gnb_btn { display:block; } /* 햄버거버튼 보이게함 */
-	.gnb_btn img {filter:invert(100%)}
 
-	#visual { /* height:300px; 가변이미지의 부모에게 height넣지않는다 */ } 
-	
-	.box { margin-right:0; width:100%; /* height:200px;가변이미지 부모에게 height넣지않는다 */ } 
-		.box img { float:left; width:50%; margin-right:10px; }
-			
-		.box:nth-of-type(even) img { float:right; margin-right:0; margin-left:10px; }
+   .gnb_btn { display:block; } /* 햄버거버튼 보이게함 */
+   .gnb_btn img { filter:invert(100%); }
 
-		.box:nth-of-type(even) h3,
-		.box:nth-of-type(even) p { text-align:right; }
+   #visual { /* height:300px; 가변이미지의 부모에게 height넣지않는다 */ } 
+   
+   .box { margin-right:0; width:100%; /* height:200px;가변이미지 부모에게 height넣지않는다 */ } 
+	.box img { float:left; width:50%; margin-right:10px; }
+		
+	.box:nth-of-type(even) img { float:right; margin-right:0; margin-left:10px; }
 
-		.box h3, .box p { border:5px solid skyblue; }
+	.box:nth-of-type(even) h3,
+	.box:nth-of-type(even) p { text-align:right; }
+
+	.box h3, .box p { border:5px solid skyblue; }
 }
 
 
 
 
 @media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
-	h1 {padding-top: 5px; text-align: center;}
-	h1 img {width: 50px;}
-	.gnb { width:100%; bottom: 5px; }
-	.gnb li { text-align: center;}
+	h1 { padding-top:5px; text-align:center; }
+	h1 img { width:60px; }
+	.gnb { width:100%; bottom:5px; }
+	.gnb li { text-align:center; }
 	#visual { /* height:400px; 가변이미지의 부모에게 height넣지않는다 */ } 
 
 	.box { 
@@ -153,23 +159,41 @@ h1 {padding-top: 12px;}
 
 }
 </style>
-<script src="js/jquery-3.6.0.min.js"></script>
-<script>
-	$(function(){
-		$(".gnb_btn").click(function(){
-			$(".gnb").slideToggle();
-		});
 
-		$(window).resize(function(){//브라우져창 크기를 조절할을 때(할때마다)
-			if ( $(this).width() > 767) { //태블릿과 PC사이즈
-				$(".gnb").show();
-			}
-			else{//스마트폰
-				$(".gnb").hide();
-			}
-		});
+<script src="js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(function(){
+
+	$(".gnb_btn").click(function(){//햄버거버튼 클릭했을때
+
+		$(".gnb").slideToggle();
+		//toggle : 번갈아 보이거나 안보이게함
+		//slide효과는 대상에 height가 있어야한다
+
 	});
+
+
+	$(window).resize(function(){//브라우져창 크기를 조절했을때(할때마다)
+		
+		if ( $(this).width() > 767  ){ //태블릿과 PC
+		
+			$(".gnb").show();
+
+		}
+		else { //스마트폰
+
+			$(".gnb").hide();
+
+		}
+
+		
+	});
+
+
+});
 </script>
+
 </head>
 
 <body>
@@ -179,13 +203,9 @@ h1 {padding-top: 12px;}
 <header id="header">
 	<div class="inner">
 
-	<h1>
-		<img src="images/logo.png" alt="" width="90px">
-	</h1>
+	<h1><a href="#"><img src="images/logo.png" width="100" alt="나이키"></a></h1>
 
-	<a href="#" class="gnb_btn">
-		<img src="images/gnb_btn.png" alt="menu">
-	</a><!-- 햄버거 버튼 -->
+	<a href="#" class="gnb_btn"><img src="images/gnb_btn.png" alt="메뉴"></a><!-- 햄버거 버튼 -->
 
 	<nav class="gnb">
 		<ul>
