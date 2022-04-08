@@ -21,7 +21,7 @@ a { text-decoration:none; color:#767676; }
 
 
 /* layout */
-#header { background:black; }
+#header { background:white; }
 #header .inner { position:relative; margin:0 auto; max-width:1350px; height:50px; border:2px dashed #aaa; }
 #visual { position:relative; /* height:500px; 가변이미지의 부모에게 height넣지않는다 */ margin-bottom:10px; background:#777; }
 #container { margin:0 auto; max-width:1350px; border:2px dashed black; }
@@ -29,18 +29,20 @@ a { text-decoration:none; color:#767676; }
 #footer { height:50px; background:black; }
 
 /* header */
-.gnb { position:absolute; right:0px; bottom:0px; width:1000px; }
+h1 {padding-top: 12px;}
+.gnb { position:absolute; right:0px; bottom:13px; width:1000px; }
 .gnb:after { content:""; display:block; clear:both; }
 
-.gnb li { float:left; width:25%; text-align:center; background:#ff6b67; border:1px dashed yellow; box-sizing:border-box; }
-.gnb li a { display:block; color:white; }
+.gnb li { float:left; width:25%; text-align:right; /*background:#ff6b67;border:1px dashed yellow; */ box-sizing:border-box; }
+.gnb li a { transition: 0.5s; text-transform: uppercase; /*display:block;  border: 1px dashed black; */ color:black;}
+.gnb li a:hover { color: orange;}
 
 .gnb_btn { /* 햄버거 버튼 */
 	display:none; /* 안보이게함 */
 	position:absolute; 
-	right:0px; top:0px; 
+	right:10px; top:18px; 
 	color:#000; 
-	background:#f2df11; 
+	/* background:#f2df11;  */
 }
 
 
@@ -81,33 +83,41 @@ a { text-decoration:none; color:#767676; }
 
 
 
-
-
 /* mediaquery */
 
 @media all and (max-width:767px) { /* 스마트폰 */
-   .gnb { display:none; position:absolute; top:50px; width:100%; } 
-   .gnb li { width:100%; }
-   .gnb_btn { display:block; } /* 햄버거버튼 보이게함 */
+	#header { height: 50px; background: black;}
 
-   #visual { /* height:300px; 가변이미지의 부모에게 height넣지않는다 */ } 
-   
-   .box { margin-right:0; width:100%; /* height:200px;가변이미지 부모에게 height넣지않는다 */ } 
-	.box img { float:left; width:50%; margin-right:10px; }
-		
-	.box:nth-of-type(even) img { float:right; margin-right:0; margin-left:10px; }
+	h1 {padding-left: 7px;} 
 
-	.box:nth-of-type(even) h3,
-	.box:nth-of-type(even) p { text-align:right; }
+	h1 img { width: 60px; filter:invert(100%)} /* 무채색은 filter:invert 반전시킬 것*/
 
-	.box h3, .box p { border:5px solid skyblue; }
+	.gnb { display:none; position:absolute; top:50px; width:100%; } 
+	.gnb li { width:100%; }
+	.gnb_btn { display:block; } /* 햄버거버튼 보이게함 */
+	.gnb_btn img {filter:invert(100%)}
+
+	#visual { /* height:300px; 가변이미지의 부모에게 height넣지않는다 */ } 
+	
+	.box { margin-right:0; width:100%; /* height:200px;가변이미지 부모에게 height넣지않는다 */ } 
+		.box img { float:left; width:50%; margin-right:10px; }
+			
+		.box:nth-of-type(even) img { float:right; margin-right:0; margin-left:10px; }
+
+		.box:nth-of-type(even) h3,
+		.box:nth-of-type(even) p { text-align:right; }
+
+		.box h3, .box p { border:5px solid skyblue; }
 }
 
 
 
 
 @media all and (min-width:768px) and (max-width:1023px) { /* 태블릿 */
-	.gnb { width:100%; }
+	h1 {padding-top: 5px; text-align: center;}
+	h1 img {width: 50px;}
+	.gnb { width:100%; bottom: 5px; }
+	.gnb li { text-align: center;}
 	#visual { /* height:400px; 가변이미지의 부모에게 height넣지않는다 */ } 
 
 	.box { 
@@ -139,16 +149,20 @@ a { text-decoration:none; color:#767676; }
 <header id="header">
 	<div class="inner">
 
-	<h1>logo</h1>
+	<h1>
+		<img src="images/logo.png" alt="" width="90px">
+	</h1>
 
-	<a href="#" class="gnb_btn">menu</a><!-- 햄버거 버튼 -->
+	<a href="#" class="gnb_btn">
+		<img src="images/gnb_btn.png" alt="menu">
+	</a><!-- 햄버거 버튼 -->
 
 	<nav class="gnb">
 		<ul>
-		  <li><a href="#">menu1</a></li>
-		  <li><a href="#">menu2</a></li>
-		  <li><a href="#">menu3</a></li>
-		  <li><a href="#">menu4</a></li>
+		  <li><a href="#">Men</a></li>
+		  <li><a href="#">Women</a></li>
+		  <li><a href="#">Boys</a></li>
+		  <li><a href="#">Girls</a></li>
 		</ul>
 	</nav>
 
