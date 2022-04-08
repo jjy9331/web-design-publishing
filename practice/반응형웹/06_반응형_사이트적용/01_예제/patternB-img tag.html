@@ -15,15 +15,16 @@ img { vertical-align:top; }
 table { border-collapse:collapse; }
 
 /* base */
-body { font-family: 'Roboto'; color:#fff; }
+body { font-family:'Roboto','Noto Sans KR'; color:#fff; }
 a { text-decoration:none; color:#767676; }
+.blind { position:absolute; top:-9999px; }
 
 
 /* layout */
 #header { background:black; }
 #header .inner { position:relative; margin:0 auto; max-width:1350px; height:50px; border:2px dashed #aaa; }
 #visual { position:relative; /* height:500px; 가변이미지의 부모에게 height넣지않는다 */ margin-bottom:10px; background:#777; }
-#container { margin:0 auto; max-width:1350px; border:2px dashed black; font-size:30px; }
+#container { margin:0 auto; max-width:1350px; border:2px dashed black; }
 #container:after { content:""; display:block; clear:both; }
 #footer { height:50px; background:black; }
 
@@ -49,7 +50,7 @@ a { text-decoration:none; color:#767676; }
 	position:absolute;
 	left:0px; top:0px;
 	width:100%;
-	/* height:100%;  */ /* 안넣어도 상관없다. */
+	height:100%;
 	border:5px dashed orange; 
 	box-sizing:border-box;
 }
@@ -57,21 +58,24 @@ a { text-decoration:none; color:#767676; }
 	margin:0 auto; max-width:1350px; border:2px dashed yellow; 
 }
 
-#visual .typo .inner p:nth-child(1) {padding-top: 5vw; padding-left: 0.5vw; font-size: 4.5vw;}
-#visual .typo .inner p:nth-child(2) {padding-top: 1vw; padding-left: 0.5vw; font-size: 1.5vw;}
-
-/* 100vw = 브라우져창 가로폭 100% */
-/* 10vw = 브라우져창 가로폭 10% */
-/* 1vw = 브라우져창 가로폭 1% */
+#visual .typo .inner p:nth-child(1) { font-size:4.5vw; padding-top:5vw; padding-left:1vw; }
+#visual .typo .inner p:nth-child(2) { font-size:0.9vw; padding-top:1vw; padding-left:1vw; }
+  /* 100vw = 브라우져창 가로폭100% */
+  /* 10vw = 브라우져창 가로폭10% */
+  /* 1vw = 브라우져창 가로폭1% */
 
 
 
 /* container */
-.box { float:left; width:24.25%; height:350px; margin-bottom:10px; }
+.box { float:left; width:24.25%; /* height:350px; 가변이미지 부모에게 height넣지않는다 */ margin-bottom:10px; }
 .b1 { margin-right:1%; background:#ff6b67}
 .b2 { margin-right:1%; background:#f2df11; }
 .b3 { margin-right:1%; background:#555; }
 .b4 { background:#ff6b67}
+
+.box img { width:100%; }
+.box h3 { font-size:20px; }
+
 
 
 
@@ -151,10 +155,19 @@ a { text-decoration:none; color:#767676; }
 
 
 <div id="container">
-   <div class="box b1">1</div>
+
+   <h2 class="blind">신상품</h2>		
+
+   <div class="box b1">
+		<img src="images/b1.png" alt="">
+		<h3>나이키 프로</h3>
+		<p>트레이닝을 위한 최상의 베이스 레이어</p>
+   </div>
+
    <div class="box b2">2</div>
    <div class="box b3">3</div>
    <div class="box b4">4</div>
+
 </div>
 
 
