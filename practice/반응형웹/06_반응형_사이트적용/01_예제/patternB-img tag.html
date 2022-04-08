@@ -161,7 +161,12 @@ h1 {padding-top: 12px;}
 		});
 
 		$(window).resize(function(){//브라우져창 크기를 조절할을 때(할때마다)
-
+			if ( $(this).width() > 767) { //태블릿과 PC사이즈
+				$(".gnb").show();
+			}
+			else{//스마트폰
+				$(".gnb").hide();
+			}
 		});
 	});
 </script>
