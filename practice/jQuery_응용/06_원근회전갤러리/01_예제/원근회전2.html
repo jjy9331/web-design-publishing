@@ -24,79 +24,63 @@ h1 { margin-top: 30px; font-size: 60px; font-weight: 100; }
 .next { position:absolute; right:0px; top:300px; }
 </style>
 <script src="js/jquery-3.6.0.min.js"></script>
-<!-- <script src="js/jquery.mousewheel.min.js"></script> -->
+<script src="js/jquery.mousewheel.min.js"></script>
 <script>
 $(document).ready(function() {
 
     let ball = $(".ball");
     let wrap = $(".wrap");
-    let d = 0; //초기 각도
 
+	let d = 0; //초기 각도
+	let targetD = 270; //초기 목적 각도
+
+	let x = [];
+	let psp = [];
 
     function pspRolling() {
 
-		   d = d + 1; //각도를 1씩 증가
-			
-			let x0 = Math.cos( Math.PI / 180 * d ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
-			let psp0 = 1 -Math.sin( Math.PI / 180 * d )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+		   d = d + 0.1*( targetD - d); //부드러운 움직임 공식
 
-			let x1 = Math.cos( Math.PI / 180 * (d+45) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
-			let psp1 = 1 -Math.sin( Math.PI / 180 * (d+45) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+			for ( i=0; i<8; i++) {
+				x[i] = Math.cos( Math.PI / 180 * (d+45*i) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
+				psp[i] = 1 -Math.sin( Math.PI / 180 * (d+45*i) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
 
-			let x2 = Math.cos( Math.PI / 180 * (d+45+45) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
-			let psp2 = 1 -Math.sin( Math.PI / 180 * (d+45+45) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+				ball.eq(i).css({
+					left: x[i],
+					transform: "scale(" + psp[i] + "," + psp[i] + ")",
+					opacity: psp[i],
+					zIndex: Math.floor(psp[i]*100),
+					top:0 +70*i,
+				});
+			}
 
-			let x3 = Math.cos( Math.PI / 180 * (d+45+45+45) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
-			let psp3 = 1 -Math.sin( Math.PI / 180 * (d+45+45+45) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
-
-			let x4 = Math.cos( Math.PI / 180 * (d+45+45+45+45) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
-			let psp4 = 1 -Math.sin( Math.PI / 180 * (d+45+45+45+45) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
-
-
-            ball.eq(0).css({
-                left: x0,
-                transform: "scale(" + psp0 + "," + psp0 + ")",
-                opacity: psp0,
-                zIndex: Math.floor(psp0*100),
-                //top: 100,
-            });
-
-            ball.eq(1).css({
-                left: x1,
-                transform: "scale(" + psp1 + "," + psp1 + ")",
-                opacity: psp1,
-                zIndex: Math.floor(psp1*100),
-                //top: 100,
-            });
-
-            ball.eq(2).css({
-                left: x2,
-                transform: "scale(" + psp2 + "," + psp2 + ")",
-                opacity: psp2,
-                zIndex: Math.floor(psp2*100),
-                //top: 100,
-            });
-
-            ball.eq(3).css({
-                left: x3,
-                transform: "scale(" + psp3 + "," + psp3 + ")",
-                opacity: psp3,
-                zIndex: Math.floor(psp3*100),
-                //top: 100,
-            });
-
-            ball.eq(4).css({
-                left: x4,
-                transform: "scale(" + psp4 + "," + psp4 + ")",
-                opacity: psp4,
-                zIndex: Math.floor(psp4*100),
-                //top: 100,
-            });
 
     }
     setInterval(pspRolling, 10);
 
 
+	$(".next").click(function(){
+			targetD += 45;
+			return false;
+	});
+
+	$(".prev").click(function(){
+			targetD -= 45;	
+			return false;
+	});
+
+
+	$(window).on("mousewheel",function(e,delta){
+
+		if(delta<0){//휠을 아래로 돌렸을때
+			targetD += 45;
+		}
+		else{//휠을 위로 돌렸을때
+			targetD -= 45;
+		}
+		
+
+	});
 
 
 
@@ -140,13 +124,29 @@ $(document).ready(function() {
 		  Rolling Navigation</p>
 	  </div>
 
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
 
 
 
-<!--
+
+
+
 	  <a href="#" class="next">next</a>
 	  <a href="#" class="prev">prev</a>
--->
+
 </div>
 
 
