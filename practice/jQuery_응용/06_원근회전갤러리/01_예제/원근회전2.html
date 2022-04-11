@@ -37,16 +37,59 @@ $(document).ready(function() {
 
 		   d = d + 1; //각도를 1씩 증가
 			
-			let x = Math.cos( Math.PI / 180 * d ) *300 +550;          //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
-			  $("h1").text( x );      //증가하는 각도에 대입한 코사인값은1에서 -1 사이를 주기적으로 변한다.
+			let x0 = Math.cos( Math.PI / 180 * d ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
+			let psp0 = 1 -Math.sin( Math.PI / 180 * d )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
 
-			let psp = 1 -Math.sin( Math.PI / 180 * d ) ///2;        //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+			let x1 = Math.cos( Math.PI / 180 * (d+45) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
+			let psp1 = 1 -Math.sin( Math.PI / 180 * (d+45) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
 
-            ball.css({
-                left: x,
-                transform: "scale(" + psp + "," + psp + ")",
-                //opacity: psp,
-                //zIndex: Math.floor(psp * 100),
+			let x2 = Math.cos( Math.PI / 180 * (d+45+45) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
+			let psp2 = 1 -Math.sin( Math.PI / 180 * (d+45+45) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+
+			let x3 = Math.cos( Math.PI / 180 * (d+45+45+45) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
+			let psp3 = 1 -Math.sin( Math.PI / 180 * (d+45+45+45) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+
+			let x4 = Math.cos( Math.PI / 180 * (d+45+45+45+45) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
+			let psp4 = 1 -Math.sin( Math.PI / 180 * (d+45+45+45+45) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+
+
+            ball.eq(0).css({
+                left: x0,
+                transform: "scale(" + psp0 + "," + psp0 + ")",
+                opacity: psp0,
+                zIndex: Math.floor(psp0*100),
+                //top: 100,
+            });
+
+            ball.eq(1).css({
+                left: x1,
+                transform: "scale(" + psp1 + "," + psp1 + ")",
+                opacity: psp1,
+                zIndex: Math.floor(psp1*100),
+                //top: 100,
+            });
+
+            ball.eq(2).css({
+                left: x2,
+                transform: "scale(" + psp2 + "," + psp2 + ")",
+                opacity: psp2,
+                zIndex: Math.floor(psp2*100),
+                //top: 100,
+            });
+
+            ball.eq(3).css({
+                left: x3,
+                transform: "scale(" + psp3 + "," + psp3 + ")",
+                opacity: psp3,
+                zIndex: Math.floor(psp3*100),
+                //top: 100,
+            });
+
+            ball.eq(4).css({
+                left: x4,
+                transform: "scale(" + psp4 + "," + psp4 + ")",
+                opacity: psp4,
+                zIndex: Math.floor(psp4*100),
                 //top: 100,
             });
 
@@ -76,6 +119,28 @@ $(document).ready(function() {
 		<p>Perspective<br>
 		  Rolling Navigation</p>
 	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+	  <div class="ball">
+		<p>Perspective<br>
+		  Rolling Navigation</p>
+	  </div>
+
+
 
 
 <!--
