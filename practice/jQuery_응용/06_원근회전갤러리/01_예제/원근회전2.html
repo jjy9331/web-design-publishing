@@ -15,8 +15,8 @@ a:hover { color:#fff; background:#555; }
 
 
 h1 { margin-top: 30px; font-size: 60px; font-weight: 100; }
-.wrap { margin: 0 auto; position: relative; width: 1200px; height: 600px; text-align: center; color: #fff; border:2px dashed  #ccc; }
-.ball { position: absolute; left:100px; top:100px; width:100px; height:65px; padding-top:35px; border-radius: 50%; transform-origin: center; background: #777; cursor: pointer; box-shadow: 7px 7px 20px rgba(0,0,0,0.3); }
+.wrap { margin: 0 auto; position: relative; width:1200px; height: 600px; text-align: center; color: #fff; border:2px dashed  #ccc; }
+.ball { position: absolute; left:100px; top:100px; width:200px; height:150px; /* border-radius: 50%; */ /* transform-origin: center; */ background: #777; cursor: pointer; box-shadow: 7px 7px 20px rgba(0,0,0,0.3); }
 .ball p { font-size:10px; font-weight:100; }
 .ball:hover { color: rgba(255,255,255,0.8); }
 
@@ -31,6 +31,13 @@ $(document).ready(function() {
     let ball = $(".ball");
     let wrap = $(".wrap");
 
+	let wide = 500; //ball들 전체 폭(값이 클수록 더 넓게 퍼짐)
+
+	let centerX = wrap.width()/2 - ball.width()/2; 
+
+	let num = 8;//ball의 개수
+	let deg = 360/num; 
+
 	let d = 0; //초기 각도
 	let targetD = 270; //초기 목적 각도
 
@@ -41,16 +48,16 @@ $(document).ready(function() {
 
 		   d = d + 0.1*( targetD - d); //부드러운 움직임 공식
 
-			for ( i=0; i<8; i++) {
-				x[i] = Math.cos( Math.PI / 180 * (d+45*i) ) *300 +550; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
-				psp[i] = 1 -Math.sin( Math.PI / 180 * (d+45*i) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+			for ( i=0; i<num; i++) {
+				x[i] = Math.cos( Math.PI / 180 * (d+deg*i) ) *wide +centerX; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
+				psp[i] = 1 -Math.sin( Math.PI / 180 * (d+deg*i) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
 
 				ball.eq(i).css({
 					left: x[i],
 					transform: "scale(" + psp[i] + "," + psp[i] + ")",
 					opacity: psp[i],
 					zIndex: Math.floor(psp[i]*100),
-					top:0 +70*i,
+					top:150,
 				});
 			}
 
@@ -99,45 +106,15 @@ $(document).ready(function() {
 
 <div class="wrap">
 
-	  <div class="ball">
-		<p>Perspective<br>
-		  Rolling Navigation</p>
-	  </div>
+	  <div class="ball">01</div>
+	  <div class="ball">02</div>
+	  <div class="ball">03</div>
+	  <div class="ball">04</div>
+	  <div class="ball">05</div>
+	  <div class="ball">06</div>
+	  <div class="ball">07</div>
+	  <div class="ball">08</div>
 
-	  <div class="ball">
-		<p>Perspective<br>
-		  Rolling Navigation</p>
-	  </div>
-
-	  <div class="ball">
-		<p>Perspective<br>
-		  Rolling Navigation</p>
-	  </div>
-
-	  <div class="ball">
-		<p>Perspective<br>
-		  Rolling Navigation</p>
-	  </div>
-
-	  <div class="ball">
-		<p>Perspective<br>
-		  Rolling Navigation</p>
-	  </div>
-
-	  <div class="ball">
-		<p>Perspective<br>
-		  Rolling Navigation</p>
-	  </div>
-
-	  <div class="ball">
-		<p>Perspective<br>
-		  Rolling Navigation</p>
-	  </div>
-
-	  <div class="ball">
-		<p>Perspective<br>
-		  Rolling Navigation</p>
-	  </div>
 
 
 
