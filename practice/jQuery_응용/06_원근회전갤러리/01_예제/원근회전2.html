@@ -9,19 +9,34 @@
 * { margin: 0; padding: 0; }
 ul { list-style: none; }
 img { border: 0; vertical-align: top; }
-body { font: 11px 'Exo'; color: #333; /*text-align: center;*/ }
+body { font: 11px 'Exo'; color:#333; /*text-align: center;*/ }
 a { text-decoration:none; color:#333; padding:1px 10px; }
 a:hover { color:#fff; background:#555; }
 
 
 h1 { margin-top: 30px; font-size: 60px; font-weight: 100; }
-.wrap { margin: 0 auto; position: relative; width:1200px; height: 600px; text-align: center; color: #fff; border:2px dashed  #ccc; }
-.ball { position: absolute; left:100px; top:100px; width:200px; height:150px; /* border-radius: 50%; */ /* transform-origin: center; */ background: #777; cursor: pointer; box-shadow: 7px 7px 20px rgba(0,0,0,0.3); }
+.wrap { margin: 0 auto; position: relative; min-width:1200px; height:700px; text-align: center; border:2px dashed  #ccc; }
+.ball { 
+	position:absolute; 
+	left:100px; top:100px; 
+	width:350px; height:350px; 
+	/* border-radius: 50%; */ /* transform-origin: center; */ 
+	background:#777; cursor:pointer; 
+	box-shadow:7px 7px 20px rgba(0,0,0,0.3); 
+}
 .ball p { font-size:10px; font-weight:100; }
 .ball:hover { color: rgba(255,255,255,0.8); }
 
 .prev { position:absolute; left:0px; top:300px; }
 .next { position:absolute; right:0px; top:300px; }
+
+.g_nav { position:absolute; width:100%; left:0px; bottom:20px; border:3px dashed orange; }
+.g_nav li { 
+	display:inline-block; 
+	margin:20px; cursor:pointer; 
+	width:15px; height:15px;
+	background:#ccc;
+}
 </style>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/jquery.mousewheel.min.js"></script>
@@ -31,15 +46,23 @@ $(document).ready(function() {
     let ball = $(".ball");
     let wrap = $(".wrap");
 
+	let d = 0; //초기 각도
+	let targetD = 270; //초기 목적 각도
+
 	let wide = 500; //ball들 전체 폭(값이 클수록 더 넓게 퍼짐)
+	let num = 8;//ball의 개수
+	let ps = 2;//원근감(큰것과 작은것의 격차) : 값이 작을 수록 원근감 강해짐
+	let ball_top = 120; //ball들의 top값
+	let op = 0.4; //투명도 : 값이 클수록 더 투명
 
 	let centerX = wrap.width()/2 - ball.width()/2; 
 
-	let num = 8;//ball의 개수
+	$(window).resize(function(){
+		centerX = wrap.width()/2 - ball.width()/2;
+	});
+
 	let deg = 360/num; 
 
-	let d = 0; //초기 각도
-	let targetD = 270; //초기 목적 각도
 
 	let x = [];
 	let psp = [];
@@ -50,14 +73,14 @@ $(document).ready(function() {
 
 			for ( i=0; i<num; i++) {
 				x[i] = Math.cos( Math.PI / 180 * (d+deg*i) ) *wide +centerX; //1씩 증가시킨 일반각도를 라디안각도로 변환한후 코사인값을 구함
-				psp[i] = 1 -Math.sin( Math.PI / 180 * (d+deg*i) )/2; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
+				psp[i] = 1 -Math.sin( Math.PI / 180 * (d+deg*i) )/ps; //cos과 엇갈린 주기를 가진 sin을 활용한 원근감설정
 
 				ball.eq(i).css({
 					left: x[i],
 					transform: "scale(" + psp[i] + "," + psp[i] + ")",
-					opacity: psp[i],
+					opacity: psp[i] -op,
 					zIndex: Math.floor(psp[i]*100),
-					top:150,
+					top:ball_top,
 				});
 			}
 
@@ -67,12 +90,12 @@ $(document).ready(function() {
 
 
 	$(".next").click(function(){
-			targetD += 45;
+			targetD += deg;
 			return false;
 	});
 
 	$(".prev").click(function(){
-			targetD -= 45;	
+			targetD -= deg;	
 			return false;
 	});
 
@@ -80,14 +103,25 @@ $(document).ready(function() {
 	$(window).on("mousewheel",function(e,delta){
 
 		if(delta<0){//휠을 아래로 돌렸을때
-			targetD += 45;
+			targetD += deg;
 		}
 		else{//휠을 위로 돌렸을때
-			targetD -= 45;
+			targetD -= deg;
 		}
 		
 
 	});
+
+
+	
+	$(".g_nav li:eq(0)").click(function(){ targetD = 270; });
+	$(".g_nav li:eq(1)").click(function(){ targetD = 270-45; });
+	$(".g_nav li:eq(2)").click(function(){ targetD = 270-45*2; });
+	$(".g_nav li:eq(3)").click(function(){ targetD = 270-45*3; });
+	$(".g_nav li:eq(4)").click(function(){ targetD = 270-45*4; });
+	$(".g_nav li:eq(5)").click(function(){ targetD = 270-45*5; });
+	$(".g_nav li:eq(6)").click(function(){ targetD = 270-45*6; });
+	$(".g_nav li:eq(7)").click(function(){ targetD = 270-45*7; });
 
 
 
@@ -115,14 +149,19 @@ $(document).ready(function() {
 	  <div class="ball">07</div>
 	  <div class="ball">08</div>
 
-
-
-
-
-
-
 	  <a href="#" class="next">next</a>
 	  <a href="#" class="prev">prev</a>
+
+	  <ul class="g_nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	  </ul>
 
 </div>
 
