@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>원근회전</title>
+<link href='https://fonts.googleapis.com/css?family=Exo:400,100,300,500,700,900' rel='stylesheet'>
+<style>
+/* reset */
+* { margin: 0; padding: 0; }
+ul { list-style: none; }
+img { border: 0; vertical-align: top; }
+body { font: 11px 'Exo'; color:#333; /*text-align: center;*/ }
+a { text-decoration:none; color:#333; padding:1px 10px; }
+a:hover { color:#fff; background:#555; }
+
+
+h1 { margin-top: 30px; font-size: 60px; font-weight: 100; }
+.wrap { 
+	position: relative; 
+	margin: 0 auto; 
+	min-width:1200px; 
+	height:700px; text-align: center; 
+	border:2px dashed  #ccc; 
+	box-sizing:border-box;
+}
+.ball { 
+	position:absolute; 
+	left:100px; top:100px; 
+	width:350px; height:350px; 
+	/* border-radius: 50%; */ /* transform-origin: center; */ 
+	background:#777; cursor:pointer; 
+	box-shadow:7px 7px 20px rgba(0,0,0,0.3); 
+}
+.ball:hover { color: rgba(255,255,255,0.8); }
+
+.prev { position:absolute; left:0px; top:300px; }
+.next { position:absolute; right:0px; top:300px; }
+
+.g_nav { position:absolute; width:100%; left:0px; bottom:20px; border:3px dashed orange; box-sizing:border-box; }
+.g_nav li { 
+	display:inline-block; 
+	margin:20px; cursor:pointer; 
+	width:15px; height:15px;
+	border-radius:50%;
+	background:#ccc;
+}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    let ball = $(".ball");
+    let wrap = $(".wrap");
+
+	let d = 0; 
+	let targetD = 270; 
+	let num = ball.length;
+
+	let wide = 600; //ball들 전체 폭(값이 클수록 더 넓게 퍼짐)
+	let ps = 2;//원근감(큰것과 작은것의 격차) : 값이 작을 수록 원근감 강해짐
+	let ball_top = 120; //ball들의 top값
+	
+	let op = 0.3; //투명도 : 값이 클수록 더 투명
+	let bl = 0.1; //블러 강도 조절 (0은 블러사용안함)
+
+	let off ="yellow"; //메뉴 비활성화 색
+	let on ="blue"; //메뉴 활성화 색
+	
+
+	let centerX = wrap.width()/2 - ball.width()/2; 
+	$(window).resize(function(){ centerX = wrap.width()/2 - ball.width()/2;	});
+	let deg = 360/num; 
+	let x = [];
+	let psp = [];
+
+    function pspRolling() {
+		d = d + 0.1*( targetD - d);
+		for ( i=0; i<num; i++) {
+			x[i] = Math.cos( Math.PI / 180 * (d+deg*i) ) *wide +centerX; 
+			psp[i] = 1 -Math.sin( Math.PI / 180 * (d+deg*i) )/ps; 
+
+			ball.eq(i).css({
+				left: x[i],
+				transform: "scale(" + psp[i] + "," + psp[i] + ")",
+				opacity: psp[i] -op,
+				zIndex: Math.floor(psp[i]*100),
+				top:ball_top,
+
+				filter:"blur("+
+					(100*(Math.sin( Math.PI / 180 * ( d +deg*i) ))+100)*bl				
+				+"px)",
+			});
+
+		}
+
+    }
+    setInterval(pspRolling, 10);
+
+	let n = 0;
+
+	$(".next").click(function(){
+			n++;
+			if ( n >= num ){ n=0; }
+			targetD -= deg;
+			$(".g_nav li").css({ background:off });
+			$(".g_nav li:eq("+n+")").css({ background:on });
+			return false;
+	});
+
+	$(".prev").click(function(){
+			n--;
+			if ( n<0 ){	n = (num-1); }
+			targetD += deg;
+			$(".g_nav li").css({ background:off });
+			$(".g_nav li:eq("+n+")").css({ background:on });
+			return false;
+	});
+
+	$(window).on("mousewheel",function(e,delta){
+		if(delta<0){
+			$(".next").click();
+		}
+		else{
+			$(".prev").click();
+		}
+	});
+
+	$(".g_nav li").css({ background:off });
+	$(".g_nav li:eq(0)").css({ background:on });
+	
+	$(".g_nav li").click(function(){
+		n = $(this).index();
+		targetD = 270-deg*n;
+		$(".g_nav li").css({ background:off });
+		$(this).css({ background:on });	
+	});
+
+});
+</script>
+</head>
+
+<body>
+
+
+
+<h1>Perspective Rolling</h1>
+<p>jQuery study</p>
+
+
+
+<div class="wrap">
+
+	  <div class="ball"><img src="images/1.jpg" alt=""></div>
+	  <div class="ball"><img src="images/2.jpg" alt=""></div>
+	  <div class="ball"><img src="images/3.jpg" alt=""></div>
+	  <div class="ball"><img src="images/4.jpg" alt=""></div>
+	  <div class="ball"><img src="images/5.jpg" alt=""></div>
+	  <div class="ball"><img src="images/6.jpg" alt=""></div>
+	  <div class="ball"><img src="images/7.jpg" alt=""></div>
+	  <div class="ball"><img src="images/8.jpg" alt=""></div>
+
+	  <a href="#" class="next">next</a>
+	  <a href="#" class="prev">prev</a>
+
+	  <ul class="g_nav">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	  </ul>
+
+</div>
+
+
+
+</body>
+</html>
