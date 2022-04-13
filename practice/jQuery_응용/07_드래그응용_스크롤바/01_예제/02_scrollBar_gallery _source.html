@@ -15,18 +15,16 @@ ul { list-style:none; margin:0; padding:0; }
 } 
 
 #sc_gallery .mas { 
-	overflow: hidden; 
+	overflow: hidden;
 	position:absolute; left:0px; top:0px;
 	width: 600px; height: 327px; /* 하나의 이미지 가로세로길이 */
-	background: #CF0; 
-	border: 7px dashed skyblue;
+	background: #CF0; border:7px dashed hotpink;
 }
 
 #sc_gallery .gall { 
 	position:absolute; 
 	left:0px; top:0px; 
-	width: 1800px;/* 전체 이미지가로길이(이미지하나의가로길이x이미지갯수) */ 
-	height: 327px; /* 하나의 이미지세로길이 */
+	width:99999px; 
 }
 #sc_gallery .gall li { float: left; }
 
@@ -56,8 +54,7 @@ $(function(){
 	
 	let a; //스크롤되는 gall의 left값
 	let b; //드래그되는 bar의 left값
-	let c = gall.width() * $("li",gall).length; //이미지 전체 가로길이
-	// let c = parseInt(gall.css("width"));
+	let c = mas.width() * gall.find("li").length; //이미지 전체 가로길이
 	let d = bar_bg.width(); //bar_bg 가로길이
 	let e = mas.width(); //이미지 하나의 가로길이
 	let f = bar.width(); //bar의 가로길이
@@ -66,13 +63,17 @@ $(function(){
 	
 	bar.bind( "drag", function() { //드래그가 되는 동안 실행할 함수
   
-		b = parseInt( bar.css("left") );//문자열을 숫자로 변환
-		// parseInt(): 값에 포함된 문자를 제거하고 정수만 추출
+		b = parseInt(bar.css("left"));
+			//parseInt() : 값에 포함된 문자를 제거하고 정수만 추출
+
 			$("h1").text(b);
+
 		a = - (c-e) * ( b / (d-f) ); //비율공식
+
 			$("h2").text(a);
 
-		gall.css("left", a);	
+
+		gall.stop().animate({ left:a },1000,"easeOutElastic");	
   
 	});
   
