@@ -15,10 +15,11 @@ ul { list-style:none; margin:0; padding:0; }
 } 
 
 #sc_gallery .mas { 
-	/* overflow: hidden; */ 
+	/* overflow: hidden;  */
 	position:absolute; left:0px; top:0px;
 	width: 600px; height: 327px; /* 하나의 이미지 가로세로길이 */
 	background: #CF0; 
+	border: 7px dashed skyblue;
 }
 
 #sc_gallery .gall { 
@@ -51,23 +52,23 @@ $(function(){
 	let gall = $("#sc_gallery .gall");
 	let bar = $("#sc_gallery .bar");
 	
-	//let a; //스크롤되는 gall의 left값
-	//let b; //드래그되는 bar의 left값
-	//let c; //이미지 전체 가로길이
-	//let d; //bar_bg 가로길이
-	//let e; //이미지 하나의 가로길이
-	//let f; //bar의 가로길이
+	let a; //스크롤되는 gall의 left값
+	let b; //드래그되는 bar의 left값
+	let c = 1800; //이미지 전체 가로길이
+	let d = 600; //bar_bg 가로길이
+	let e = 600; //이미지 하나의 가로길이
+	let f = 30; //bar의 가로길이
 	
-	//bar.draggable({ axis:"x", containment:"parent" });  //x축으로 부모(parent)요소의 영역만큼 드래그 할수있음
+	bar.draggable({ axis:"x", containment:"parent" });  //x축으로 부모(parent)요소의 영역만큼 드래그 할수있음
 	
-	//bar.bind( "drag", function() { //드래그가 되는 동안 실행할 함수
+	bar.bind( "drag", function() { //드래그가 되는 동안 실행할 함수
   
-		//b = parseInt( bar.css("left") );//문자열을 숫자로 변환
-		
+		b = parseInt( bar.css("left") );//문자열을 숫자로 변환
+			$("h1").text(b);
 		//a = - (c-e) * ( b / (d-f) ); 
 		//gall.css("left", a);	
   
-	//});
+	});
   
  	
 });
