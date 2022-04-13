@@ -64,9 +64,12 @@ $(function(){
 	bar.bind( "drag", function() { //드래그가 되는 동안 실행할 함수
   
 		b = parseInt( bar.css("left") );//문자열을 숫자로 변환
+		// parseInt(): 값에 포함된 문자를 제거하고 정수만 추출
 			$("h1").text(b);
-		//a = - (c-e) * ( b / (d-f) ); 
-		//gall.css("left", a);	
+		a = - (c-e) * ( b / (d-f) ); //비율공식
+			$("h2").text(a);
+
+		gall.css("left", a);	
   
 	});
   
@@ -78,6 +81,7 @@ $(function(){
 <body>
 
       <h1>Scrollbar Gallery</h1>
+	  <h2>0</h2>
       <p>Design is what you make of it<br />
       When someone designs a garment, building, machine, or other object, <br />
       they plan it and make a detailed drawing of it from which it can be built or made. 
