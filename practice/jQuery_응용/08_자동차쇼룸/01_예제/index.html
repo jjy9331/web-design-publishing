@@ -14,7 +14,7 @@ h1 { font-size:50px; font-weight:100; font-family:Exo; }
 #sw_gallery .gall { position: relative; margin: 0 auto; 
 width: 1024px; height: 600px; /*하나의 이미지 크기*/
 background:#fafafa; border:3px dashed skyblue;}
-#sw_gallery .gall img { /* position:absolute; left:0; top:0; */  /*갤러리 이미지들을 한 위치에 포갬*/}
+#sw_gallery .gall img { position:absolute; left:0; top:0;  /*갤러리 이미지들을 한 위치에 포갬*/}
 
 #sw_gallery .gall .loader { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #fff; z-index:100; }
 #sw_gallery .gall .loader img { position: absolute; left: 50%; top: 50%; margin: -15px 0 0 -15px;   /*로딩이미지 위치 중앙으로 배치*/ }
@@ -33,22 +33,24 @@ window.onload = function() { //페이지가 (이미지 포함) 모두 로딩된�
 	
     $(".loader").hide();
 	
-   // let bar = $("#sw_gallery .bar");
-   // let bar_bg = $("#sw_gallery .bar_bg");
-   // let frame = $("#sw_gallery .gall>img");
+   let bar = $("#sw_gallery .bar");
+   let bar_bg = $("#sw_gallery .bar_bg");
+   let frame = $("#sw_gallery .gall>img");
     let a;
     let b;
-    let c = frame.length() - 1;
+    // let c = frame.length() - 1; ()있으면 작동 안함
+    let c = frame.length - 1;
     let d = parseInt(bar_bg.css("width"));
     let e = 0;
     let f = parseInt(bar.css("width"));
 
     bar.draggable({ axis: "x", containment: "parent" });
-    bar.bind("drag", function() {
+    bar.bind("drag", function() { //드래그하는 동안
         b = parseInt(bar.css("left"));
+        $("h1").text(Math.round(a));
         a = (c - e) * (b / (d - f));
-        //frame.css({ visibility: "hidden" });
-        //frame.eq(Math.round(a)).css({ visibility: "visible" });
+        frame.css({ visibility: "hidden" });//이미지를 다 안보이게함
+        frame.eq(Math.round(a)).css({ visibility: "visible" }); //해당 이미지만 보이게함
     });
 
 }
