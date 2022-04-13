@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>scrollbar</title>
+<style>
+body{ font:12px "나눔고딕"; color:#767676; }
+ul { list-style:none; margin:0; padding:0; }
+img {vertical-align: top;}
+
+
+/*scrollbar_gallery*/
+#sc_gallery { /* 갤러리 영역 */
+	position:relative; 
+	width: 800px; height:400px; 
+	border:2px dashed orange; 
+} 
+
+#sc_gallery .mas { 
+	overflow: hidden;
+	position:absolute; left:0px; top:0px;
+	width: 600px; height: 327px; /* 하나의 이미지 가로세로길이 */
+	background: #CF0; border:7px dashed hotpink;
+}
+
+#sc_gallery .gall { 
+	position:absolute; 
+	left:0px; top:0px; 
+	/* width:99999px;  */
+}
+/* #sc_gallery .gall li { float: left; } */
+
+#sc_gallery .bar_bg {/* 바 배경 설정 */
+	position:absolute; 
+	right:0px; top:0px; 
+	width: 5px; height: 327px; 
+	background: #333; 
+} 
+#sc_gallery .bar { /* 바 설정 */ 
+	margin-top: -10px;
+	margin-left: -9px;
+	width:23px; height:23px; 
+	background:#FC0; 
+	cursor:pointer;
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+} 
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<script>
+$(function(){
+	
+	const gall = $("#sc_gallery .gall");
+	const bar = $("#sc_gallery .bar");
+	const bar_bg = $("#sc_gallery .bar_bg");
+	const mas = $("#sc_gallery .mas");
+	
+	let a; //스크롤되는 gall의 left값
+	let b; //드래그되는 bar의 left값
+	let c = mas.height() * gall.find("li").length; //이미지 전체 가로길이
+	let d = bar_bg.height(); //bar_bg 가로길이
+	let e = mas.height(); //이미지 하나의 가로길이
+	let f = bar.height(); //bar의 가로길이
+	
+	bar.draggable({ axis:"y", containment:"parent" });  //x축으로 부모(parent)요소의 영역만큼 드래그 할수있음
+	
+	bar.bind( "drag", function() { //드래그가 되는 동안 실행할 함수
+  
+		b = parseInt(bar.css("top"));
+			//parseInt() : 값에 포함된 문자를 제거하고 정수만 추출
+
+			$("h1").text(b);
+
+		a = - (c-e) * ( b / (d-f) ); //비율공식
+
+			$("h2").text(a);
+
+
+		gall.stop().animate({ top:a },1000,"easeOutElastic");	
+  
+	});
+  
+ 	
+});
+</script>
+</head>
+
+<body>
+
+      <h1>Scrollbar Gallery</h1>
+	  <h2>0</h2>
+      <p>Design is what you make of it<br />
+      When someone designs a garment, building, machine, or other object, <br />
+      they plan it and make a detailed drawing of it from which it can be built or made. 
+      
+      <!-- 스크롤바 갤러리 시작 -->
+      <div id = "sc_gallery">
+      
+           <div class="mas">
+                  <ul class="gall">
+                    <li><img src="images/img1.jpg" alt="1" /></li>
+                    <li><img src="images/img2.jpg" alt="2" /></li>
+                    <li><img src="images/img3.jpg" alt="3" /></li>
+                  </ul>
+           </div>
+           
+          <div class="bar_bg">
+               <div class="bar"></div>
+          </div>
+        
+      </div>
+      <!-- 스크롤바 갤러리 끝 -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
