@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>portfolio</title>
+
+<!-- 구글 웹폰트(fonts.google.com) -->
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+
+/* base */
+body { font-size:14px; font-family:'Titillium Web'; font-weight:600; color:#fff; }
+a { text-decoration:none; color:#fff; }
+.blind { position:absolute; top:-9999px; }
+
+
+
+/* layout */
+#header { 
+	/* position:fixed; left:0px; top:0px; z-index:1000; width:100%; */ 
+	background-color: rgba(25,25,25,0.7); 
+	border:3px dashed yellow; 
+      position: absolute; left: 0px; top: 0px;
+      width: 100%;
+}
+#header .inner { 
+	position:relative; 
+	margin:0 auto; 
+	width:1314px; height:120px; 
+	border:1px dashed #777; 
+}
+
+#home { background:#191919; }
+#home .inner { margin:0 auto; width:1314px; border:1px dashed #777; }
+
+#about { background:#333; }
+#about .inner { margin:0 auto; width:1314px; padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
+
+#portfolio { /* background:#fff; */ color:#333; }
+#portfolio .inner { margin: 0 auto; width:1314px; padding-bottom:200px; border:1px dashed #777; }
+
+#contact { background:#333; }
+#contact .inner { margin: 0 auto; width:1314px;  padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
+
+#footer { background:#191919; }
+#footer .inner { margin:0 auto; width:1314px; height:123px; text-align:center; }
+
+
+
+/* header */
+h1 {padding-top: 65px; font-size: 40px; line-height: 1em;}
+.gnb { position: absolute; right: 0px; top: 68px; border: 5px solid orange;}
+.gnb li { float: left; margin-left: 30px;}
+
+/* home */
+.typo { padding-left: 300px; padding-top:370px; padding-bottom: 910px; border: 5px solid yellow;}
+.
+
+</style>
+
+
+<!-- <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script> -->
+
+<!--
+<script>
+$(function(){
+
+	//페이지내 링크 위치로 스크롤을 애니메이트 이동
+	$(".gnb a, h1 a").click(function(){ //페이지내 링크 대상
+		let target = $($(this).attr("href")).offset().top;
+		$("html,body").animate({scrollTop:target},
+			1000, //속도(1000=1초)
+			//"easeInOutQuint"//이징효과
+		);
+		return false;
+	});
+
+});
+</script>
+-->
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+<header id="header"> <!-- ///////// header /////////////////////////// -->
+  <div class="inner">
+  
+        <h1><a href="#home">my portfolio</a></h1>
+        
+        <nav class="gnb">
+              <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="#contact">contact</a></li>
+              </ul>
+        </nav>
+    
+  </div>
+</header>
+
+
+
+
+
+<div id="home"> <!-- ///////// home /////////////////////////// -->
+  <div class="inner">
+  
+        <div class="typo">
+              <p class="t1">Inspire with heart<br>Life's a deisgn<br>Everything idea</p>
+              <p class="t2">Let's do what we love<br>and do a lot of it</p>
+        </div>
+    
+  </div>
+</div>
+
+
+
+
+
+<section id="about"> <!-- ///////// about /////////////////////////// -->
+  <div class="inner">
+  
+        <h2>about</h2>
+        
+        <dl class="info">
+              <dt>Name</dt>
+              <dd>Hong Gill-Dong</dd>
+              <dt>Birth</dt>
+              <dd>2020.01.01</dd>
+              <dt>Residence</dt>
+              <dd>Seoul Korea</dd>
+              <dt>Major</dt>
+              <dd>WebDesign/Publishing</dd>
+              <dt>Skills</dt>
+              <dd>Photoshop,Ilustrator,Html5,CSS3,jQuery</dd>
+              <dt>Blood type</dt>
+              <dd>A</dd>
+              <dt>Hobby</dt>
+              <dd>Photography</dd>
+        </dl>
+    
+  </div>
+</section>
+
+
+
+
+
+<section id="portfolio"> <!-- ///////// portfolio /////////////////////////// -->
+  <div class="inner">
+  
+        <h2>portfolio</h2>
+        
+        <ul>
+		
+
+				<li>
+					<div class="thum">
+						<a href="URL링크" target="_blank">
+							작품이미지
+							<div class="ov">작품오버</div>
+						</a>
+					</div>
+					<p><strong>GUESS</strong><br>Publishing</p>
+				</li>
+
+						   
+
+				<li>
+					<div class="thum">
+						<a href="이미지링크" target="_blank">
+							작품이미지
+							<div class="ov">작품오버</div>
+						</a>
+					</div>
+					<p><strong>GUESS</strong><br>Design Renewal</p>
+				</li>           
+
+
+              
+                          
+        </ul>
+    
+  </div>
+</section>
+
+
+
+
+
+<section id="contact"> <!-- ///////// contact /////////////////////////// -->
+  <div class="inner">
+  
+        <h2>contact</h2>
+        
+        <dl class="info">
+              <dt>E-mail</dt>
+              <dd>my@naver.com</dd>
+              <dt>Blog</dt>
+              <dd>blog.naver.com/my</dd>
+              <dt>SNS</dt>
+              <dd>http://twitter.com/#!/my</dd>
+              <dt>H.P</dt>
+              <dd>010-1234-5678</dd>
+        </dl>
+    
+  </div>
+</section>
+
+
+
+
+
+<footer id="footer"> <!-- ///////// footer /////////////////////////// -->
+  <div class="inner">
+  
+        <p class="copyright">Copyright &copy; 2030, My Portfolio, All Right Reserved.</p>
+    
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
