@@ -48,7 +48,7 @@ a { text-decoration:none; color:#fff; }
 #about .inner { margin:0 auto; width:1314px; padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
 
 #portfolio { /* background:#fff; */ color:#333; }
-#portfolio .inner { margin: 0 auto; width:1314px; padding-bottom:200px; border:1px dashed #777; }
+#portfolio .inner { margin: 0 auto; width:1314px; padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
 
 #contact { background:#333; }
 #contact .inner { margin: 0 auto; width:1314px;  padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
@@ -65,7 +65,66 @@ h1 {padding-top: 65px; font-size: 40px; line-height: 1em;}
 
 /* home */
 .typo { padding-left: 300px; padding-top:370px; padding-bottom: 910px; border: 5px solid yellow;}
-.
+.typo .t1 { font-size: 103px; line-height: 86px; font-weight: 200;}
+.typo .t2 { padding-top: 70px; font-size: 30px; line-height: 26px; font-weight: 200;}
+
+/*  about */
+#about h2 {padding-bottom: 90px; font-size: 90px; font-weight: 100; text-align: center; border: 1px dashed orange;}
+#about dl {
+      margin: 0 auto;
+      font-size: 16px;
+      width: 450px;
+      font-weight: 600;
+      line-height: 27px;
+      border: 1px dahsed #0cc;
+}
+
+#about dl dt { float: left; width: 135px; border: 1px dashed yellowgreen;}
+#about dl dd { margin-left: 135px; height: 50px; border: 1px solid blue;}
+
+
+/* contact */
+#contact h2 {padding-bottom: 90px; font-size: 90px; font-weight: 100; text-align: center; border: 1px dashed orange;}
+#contact dl {
+      margin: 0 auto;
+      font-size: 16px;
+      width: 450px;
+      font-weight: 600;
+      line-height: 27px;
+      border: 1px dahsed #0cc;
+}
+#contact dl dt { float: left; width: 135px; border: 1px dashed yellowgreen;}
+#contact dl dd { margin-left: 135px; height: 50px; border: 1px solid blue;}
+
+/* portfolio */
+#portfolio h2 {padding-bottom: 95px; font-size: 90px; font-weight: 100; text-align: center; border: 1px dashed orange;}
+#portfolio ul:after {content: ""; display: block; clear: both;}
+#portfolio ul li {
+      float: left; 
+      width: 33.33%; 
+      margin-bottom: 115px; 
+      border: 1px dashed black; 
+      box-sizing: border-box;
+}
+
+
+#portfolio ul li .thum {
+      position: relative;
+      margin: 0 auto;
+      width: 414px; height: 523px;
+      background-color: #999;
+}
+
+#portfolio ul li .thum .ov {
+      opacity: 0;
+      position: absolute;
+      left: 0px; top: 0px;
+      width: 414px; height: 523px;
+      background-color: rgba(255, 0, 0, 0.3);
+}
+
+#portfolio ul li .thum:hover  .ov{opacity: 1;}
+
 
 </style>
 
@@ -182,7 +241,7 @@ $(function(){
 							<div class="ov">작품오버</div>
 						</a>
 					</div>
-					<p><strong>GUESS</strong><br>Publishing</p>
+					<!-- <p><strong>GUESS</strong><br>Publishing</p> -->
 				</li>
 
 						   
@@ -197,6 +256,16 @@ $(function(){
 					<p><strong>GUESS</strong><br>Design Renewal</p>
 				</li>           
 
+                        
+				<li>
+					<div class="thum">
+						<a href="이미지링크" target="_blank">
+							<img src="images/img.jpg" alt="">
+							<div class="ov">작품오버</div>
+						</a>
+					</div>
+					<p><strong>GUESS</strong><br>Design Renewal</p>
+				</li>       
 
               
                           
