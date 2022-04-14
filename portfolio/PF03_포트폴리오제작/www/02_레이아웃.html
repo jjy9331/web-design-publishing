@@ -28,11 +28,9 @@ a { text-decoration:none; color:#fff; }
 
 /* layout */
 #header { 
-	/* position:fixed; left:0px; top:0px; z-index:1000; width:100%; */ 
+	position:fixed; left:0px; top:0px; z-index:1000; width:100%; 
 	background-color: rgba(25,25,25,0.7); 
 	border:3px dashed yellow; 
-      position: absolute; left: 0px; top: 0px;
-      width: 100%;
 }
 #header .inner { 
 	position:relative; 
@@ -48,7 +46,7 @@ a { text-decoration:none; color:#fff; }
 #about .inner { margin:0 auto; width:1314px; padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
 
 #portfolio { /* background:#fff; */ color:#333; }
-#portfolio .inner { margin: 0 auto; width:1314px; padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
+#portfolio .inner { margin: 0 auto; width:1350px; padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
 
 #contact { background:#333; }
 #contact .inner { margin: 0 auto; width:1314px;  padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
@@ -57,103 +55,140 @@ a { text-decoration:none; color:#fff; }
 #footer .inner { margin:0 auto; width:1314px; height:123px; text-align:center; }
 
 
-
 /* header */
-h1 {padding-top: 65px; font-size: 40px; line-height: 1em;}
-.gnb { position: absolute; right: 0px; top: 68px; border: 5px solid orange;}
-.gnb li { float: left; margin-left: 30px;}
+h1 { padding-top:65px; font-size:40px; line-height:1em; }
+.gnb { position:absolute; right:0px; top:78px; border:5px solid orange; }
+.gnb li { float:left; margin-left:40px; }
+
 
 /* home */
-.typo { padding-left: 300px; padding-top:370px; padding-bottom: 910px; border: 5px solid yellow;}
-.typo .t1 { font-size: 103px; line-height: 86px; font-weight: 200;}
-.typo .t2 { padding-top: 70px; font-size: 30px; line-height: 26px; font-weight: 200;}
+.typo { padding-top:370px; padding-bottom:910px; padding-left:300px; border:5px solid #0cc; }
+.typo .t1 { font-size:103px; line-height:86px; font-weight:200; }
+.typo .t2 { padding-top:70px; font-size:30px; line-height:26px; font-weight:200;}
 
-/*  about */
-#about h2 {padding-bottom: 90px; font-size: 90px; font-weight: 100; text-align: center; border: 1px dashed orange;}
-#about dl {
-      margin: 0 auto;
-      font-size: 16px;
-      width: 450px;
-      font-weight: 600;
-      line-height: 27px;
-      border: 1px dahsed #0cc;
+
+/* about */
+#about h2 { padding-bottom:95px; font-size:90px; font-weight:200; text-align:center; border:1px dashed orange; }
+#about dl { 
+	margin:0 auto;
+	width:450px;
+	font-size:16px; font-weight:600;
+	line-height:27px;
+	border:5px solid #0cc; 
 }
+#about dl dt { float:left; width:135px; border:2px dashed yellow; }
+#about dl dd { margin-left:135px; height:28px; border:5px solid blue; }
 
-#about dl dt { float: left; width: 135px; border: 1px dashed yellowgreen;}
-#about dl dd { margin-left: 135px; height: 50px; border: 1px solid blue;}
 
-
-/* contact */
-#contact h2 {padding-bottom: 90px; font-size: 90px; font-weight: 100; text-align: center; border: 1px dashed orange;}
-#contact dl {
-      margin: 0 auto;
-      font-size: 16px;
-      width: 450px;
-      font-weight: 600;
-      line-height: 27px;
-      border: 1px dahsed #0cc;
-}
-#contact dl dt { float: left; width: 135px; border: 1px dashed yellowgreen;}
-#contact dl dd { margin-left: 135px; height: 50px; border: 1px solid blue;}
 
 /* portfolio */
-#portfolio h2 {padding-bottom: 95px; font-size: 90px; font-weight: 100; text-align: center; border: 1px dashed orange;}
-#portfolio ul:after {content: ""; display: block; clear: both;}
-#portfolio ul li {
-      float: left; 
-      width: 33.33%; 
-      margin-bottom: 115px; 
-      border: 1px dashed black; 
-      box-sizing: border-box;
+#portfolio h2 { padding-bottom:95px; font-size:90px; font-weight:200; text-align:center; border:1px dashed orange; }
+#portfolio ul:after { content:""; display:block; clear:both; }
+
+#portfolio ul li { 
+	float:left; width:33.33%; 
+	margin-bottom:115px; 
+	/* border:2px solid black; */ 
+	box-sizing:border-box; 
 }
 
-
-#portfolio ul li .thum {
-      position: relative;
-      margin: 0 auto;
-      width: 414px; height: 523px;
-      background-color: #999;
+#portfolio ul li .thum { 
+	position:relative;
+	margin:0 auto;
+	width:414px; height:523px;
+	background:#999;
 }
 
 #portfolio ul li .thum .ov {
-      opacity: 0;
-      position: absolute;
-      left: 0px; top: 0px;
-      width: 414px; height: 523px;
-      background-color: rgba(255, 0, 0, 0.3);
+	transition:0.5s;
+	opacity:0;
+	position:absolute; left:0px; top:0px;
+	width:414px; height:523px;
+	background-color:rgba(255,0,0,0.8);
 }
+#portfolio ul li .thum:hover .ov { opacity:1; }
 
-#portfolio ul li .thum:hover  .ov{opacity: 1;}
+#portfolio ul li p { text-align:center; }
 
 
+
+
+/* contact */
+#contact h2 { padding-bottom:95px; font-size:90px; font-weight:200; text-align:center; border:1px dashed orange; }
+#contact dl { 
+	margin:0 auto;
+	width:330px;
+	font-size:16px; font-weight:600;
+	line-height:27px;
+	border:5px solid #0cc; 
+}
+#contact dl dt { float:left; width:135px; border:2px dashed yellow; }
+#contact dl dd { margin-left:135px; height:28px; border:5px solid blue; }
+
+
+/* footer */
+.copyright { padding-top:53px; font-size:12px; }
 </style>
 
 
-<!-- <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script> -->
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
-<!--
+
 <script>
 $(function(){
+
+      // $("").offset().top; //상단으로부터 요요소소가  떨어져있는 거리
+      let t1 =  $("about").offset().top;
+      let t2 =  $("portfolio").offset().top;
+      let t3 =  $("contact").offset().top;
+
+	$(".gnb li:eq(0) a").click(function(){
+		$("html,body").animate({ scrollTop:0 });
+	});
+
+	$(".gnb li:eq(1) a").click(function(){
+		$("html,body").animate({ scrollTop:t1 }); //1672
+	});
+
+	$(".gnb li:eq(2) a").click(function(){
+		$("html,body").animate({ scrollTop:t2 }); //2904
+	});
+
+	$(".gnb li:eq(3) a").click(function(){
+		$("html,body").animate({ scrollTop:t3 }); //5220
+	});
+
+
+
 
 	//페이지내 링크 위치로 스크롤을 애니메이트 이동
 	$(".gnb a, h1 a").click(function(){ //페이지내 링크 대상
 		let target = $($(this).attr("href")).offset().top;
 		$("html,body").animate({scrollTop:target},
 			1000, //속도(1000=1초)
-			//"easeInOutQuint"//이징효과
+			"easeInOutQuint"//이징효과
 		);
 		return false;
 	});
 
+
+	$(window).scroll(function(){ //스크롤하는 동안(스크롤할때마다)
+
+		let sc = $(this).scrollTop();//얼마만큼 스크롤했는지의 값
+		$("#tt").text(sc);//#tt에 스크롤값 출력
+		
+	});
+
+
 });
 </script>
--->
+
 
 </head>
 <body>
 
-
+<div id="tt" style="position:fixed; left:30px; top:200px; background:red; color:white; font-size:33px;">0</div>
 
 
 
@@ -232,42 +267,52 @@ $(function(){
         <h2>portfolio</h2>
         
         <ul>
+
 		
-
 				<li>
 					<div class="thum">
-						<a href="URL링크" target="_blank">
-							작품이미지
-							<div class="ov">작품오버</div>
-						</a>
-					</div>
-					<!-- <p><strong>GUESS</strong><br>Publishing</p> -->
-				</li>
-
-						   
-
-				<li>
-					<div class="thum">
-						<a href="이미지링크" target="_blank">
-							작품이미지
-							<div class="ov">작품오버</div>
-						</a>
-					</div>
-					<p><strong>GUESS</strong><br>Design Renewal</p>
-				</li>           
-
-                        
-				<li>
-					<div class="thum">
-						<a href="이미지링크" target="_blank">
+						<a href="#" target="_blank">
 							<img src="images/img.jpg" alt="">
 							<div class="ov">작품오버</div>
 						</a>
 					</div>
 					<p><strong>GUESS</strong><br>Design Renewal</p>
-				</li>       
-
-              
+				</li>   
+				
+      
+				<li>
+					<div class="thum">
+						<a href="#" target="_blank">
+							<img src="images/img.jpg" alt="">
+							<div class="ov">작품오버</div>
+						</a>
+					</div>
+					<p><strong>GUESS</strong><br>Design Renewal</p>
+				</li>     
+				
+      
+				<li>
+					<div class="thum">
+						<a href="#" target="_blank">
+							<img src="images/img.jpg" alt="">
+							<div class="ov">작품오버</div>
+						</a>
+					</div>
+					<p><strong>GUESS</strong><br>Design Renewal</p>
+				</li>     
+				
+      
+				<li>
+					<div class="thum">
+						<a href="#" target="_blank">
+							<img src="images/img.jpg" alt="">
+							<div class="ov">작품오버</div>
+						</a>
+					</div>
+					<p><strong>GUESS</strong><br>Design Renewal</p>
+				</li>           
+      
+			  
                           
         </ul>
     
