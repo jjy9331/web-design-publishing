@@ -134,31 +134,32 @@ h1 { padding-top:65px; font-size:40px; line-height:1em; }
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
-
 <script>
 $(function(){
 
-      // $("").offset().top; //상단으로부터 요요소소가  떨어져있는 거리
-      let t1 =  $("about").offset().top;
-      let t2 =  $("portfolio").offset().top;
-      let t3 =  $("contact").offset().top;
+	//$("요소").offset().top; //상단으로부터 요소가 떨어져있는 거리
+	let t1 = $("#about").offset().top; //alert(t1);
+	let t2 = $("#portfolio").offset().top; //alert(t2);
+	let t3 = $("#contact").offset().top; //alert(t3);
+
+/*
 
 	$(".gnb li:eq(0) a").click(function(){
 		$("html,body").animate({ scrollTop:0 });
 	});
 
 	$(".gnb li:eq(1) a").click(function(){
-		$("html,body").animate({ scrollTop:t1 }); //1672
+		$("html,body").animate({ scrollTop:t1 });
 	});
 
 	$(".gnb li:eq(2) a").click(function(){
-		$("html,body").animate({ scrollTop:t2 }); //2904
+		$("html,body").animate({ scrollTop:t2 });
 	});
 
 	$(".gnb li:eq(3) a").click(function(){
-		$("html,body").animate({ scrollTop:t3 }); //5220
+		$("html,body").animate({ scrollTop:t3 });
 	});
-
+*/
 
 
 
@@ -173,10 +174,39 @@ $(function(){
 	});
 
 
-	$(window).scroll(function(){ //스크롤하는 동안(스크롤할때마다)
+
+	
+	$(".gnb li:eq(0) a").css({ color:"yellow"});//첫번째 메뉴 활성화
+
+
+	/////////// 스크롤하는 동안(스크롤할때마다) ////////////////////
+	$(window).scroll(function(){ 
 
 		let sc = $(this).scrollTop();//얼마만큼 스크롤했는지의 값
 		$("#tt").text(sc);//#tt에 스크롤값 출력
+
+		
+		//영역별 설정
+		if ( sc>=0  &&  sc<t1 ){ //home구간
+			$(".gnb li a").css({ color:"white"});//메뉴 모두 비활성화
+			$(".gnb li:eq(0) a").css({ color:"yellow"});//해당 메뉴 활성화
+		}
+
+		if ( sc>=t1  &&  sc<t2 ){ //about구간
+			$(".gnb li a").css({ color:"white"});//메뉴 모두 비활성화
+			$(".gnb li:eq(1) a").css({ color:"yellow"});//해당 메뉴 활성화
+		}
+
+		if ( sc>=t2  &&  sc<t3 ){ //portfolio구간
+			$(".gnb li a").css({ color:"white"});//메뉴 모두 비활성화
+			$(".gnb li:eq(2) a").css({ color:"yellow"});//해당 메뉴 활성화
+		}
+
+		if ( sc>=t3 ){ //contact구간
+			$(".gnb li a").css({ color:"white"});//메뉴 모두 비활성화
+			$(".gnb li:eq(3) a").css({ color:"yellow"});//해당 메뉴 활성화
+		}
+
 		
 	});
 
