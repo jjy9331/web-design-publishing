@@ -128,6 +128,14 @@ h1 { padding-top:65px; font-size:40px; line-height:1em; }
 .close { position: fixed; right: 30px; top: 30px; background-color: red;}
 
 
+.quick {
+	position: fixed;
+	right: -100px;
+	top: 300px;
+	background-color: red;
+	width: 100px;
+	height: 200px;
+}
 
 
 
@@ -198,7 +206,7 @@ $(function(){
 
 	
 	$(".gnb li:eq(0) a").css({ color:"yellow"});//첫번째 메뉴 활성화
-
+	$(".quick").css({transition:"0.5s"});
 
 	/////////// 스크롤하는 동안(스크롤할때마다) ////////////////////
 	$(window).scroll(function(){ 
@@ -228,6 +236,15 @@ $(function(){
 			$(".gnb li:eq(3) a").css({ color:"yellow"});//해당 메뉴 활성화
 		}
 
+		//quick menu
+		if( sc > 2600 ) {
+			$(".quick").css({right:120});
+		} else {
+
+		$(".quick").css({ right:-200 });//안보이는 위치
+
+		}
+
 		
 	});
 
@@ -243,6 +260,8 @@ $(function(){
 		$("body").css({overflow:"auto"});
 		return false;
 	});
+
+
 
 });
 </script>
@@ -395,6 +414,10 @@ $(function(){
 			  
                           
         </ul>
+
+		<div class="quick">
+			퀵메뉴
+		</div>
     
   </div>
 </section>
