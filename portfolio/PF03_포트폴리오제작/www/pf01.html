@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>작품</title>
+
+<!-- 구글 웹폰트(fonts.google.com) -->
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+
+/* base */
+body { font-size:14px; font-family:'Titillium Web'; font-weight:600; color:black; }
+a { text-decoration:none; color:#fff; }
+.blind { position:absolute; top:-9999px; }
+
+
+
+
+
+.top {border: 3px solid blue;}
+.top .inner {margin: 0 auto; width: 1314px; height: 300px; border: 3px dashed #888;}
+
+.info {
+    margin: 0 auto;
+    width: 1314px;
+    border: 5px solid orange;
+}
+
+.bottom { border: 5px solid blue; }
+
+.close { position: fixed; right: 30px; top: 50px; background: red;}
+
+</style>
+
+
+</head>
+<body>
+
+<div class="top">
+    <div class="inner">
+        <h2>타이틀</h2>
+    </div>
+</div>
+
+
+<div class="info">
+    작품설명1
+</div>
+
+<div class="bottom">
+    하단
+</div>
+
+<a href="#" class="close" onclick="window.close();">close</a>
+
+</body>
+</html>
