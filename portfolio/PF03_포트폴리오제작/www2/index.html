@@ -239,7 +239,7 @@ $(function(){
 	});
 
 	$(".close").click(function(){ //close를 클릭했을 때
-		$(this).next().hide(); //.pop을 안보이게함
+		$(".pop").hide(); //.pop을 안보이게함
 		$("body").css({overflow:"auto"});
 		return false;
 	});
@@ -333,7 +333,7 @@ $(function(){
 
 		
 				<li>
-					<div class="thum">
+					<div class="thum menu">
 						<a href="#">
 							<img src="images/img.jpg" alt="">
 							<div class="ov">오버</div>
