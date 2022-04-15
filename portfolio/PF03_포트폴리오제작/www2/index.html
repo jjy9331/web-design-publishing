@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>portfolio</title>
+
+<!-- 구글 웹폰트(fonts.google.com) -->
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+body,h1,h2,h3,h4,input,button { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+
+
+
+/* base */
+body { font-size:14px; font-family:'Titillium Web'; font-weight:600; color:#fff; }
+a { text-decoration:none; color:#fff; }
+.blind { position:absolute; top:-9999px; }
+
+
+
+/* layout */
+#header { 
+	position:fixed; left:0px; top:0px; z-index:1000; width:100%; 
+	background-color: rgba(25,25,25,0.7); 
+	border:3px dashed yellow; 
+}
+#header .inner { 
+	position:relative; 
+	margin:0 auto; 
+	width:1314px; height:120px; 
+	border:1px dashed #777; 
+}
+
+#home { background:#191919; }
+#home .inner { margin:0 auto; width:1314px; border:1px dashed #777; }
+
+#about { background:#333; }
+#about .inner { margin:0 auto; width:1314px; padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
+
+#portfolio { /* background:#fff; */ color:#333; }
+#portfolio .inner { margin: 0 auto; width:1350px; padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
+
+#contact { background:#333; }
+#contact .inner { margin: 0 auto; width:1314px;  padding-top:270px; padding-bottom:450px; border:1px dashed #777; }
+
+#footer { background:#191919; }
+#footer .inner { margin:0 auto; width:1314px; height:123px; text-align:center; }
+
+
+/* header */
+h1 { padding-top:65px; font-size:40px; line-height:1em; }
+.gnb { position:absolute; right:0px; top:78px; border:5px solid orange; }
+.gnb li { float:left; margin-left:40px; }
+
+
+/* home */
+.typo { padding-top:370px; padding-bottom:910px; padding-left:300px; border:5px solid #0cc; }
+.typo .t1 { font-size:103px; line-height:86px; font-weight:200; }
+.typo .t2 { padding-top:70px; font-size:30px; line-height:26px; font-weight:200;}
+
+
+/* about */
+#about h2 { padding-bottom:95px; font-size:90px; font-weight:200; text-align:center; border:1px dashed orange; }
+#about dl { 
+	margin:0 auto;
+	width:450px;
+	font-size:16px; font-weight:600;
+	line-height:27px;
+	border:5px solid #0cc; 
+}
+#about dl dt { float:left; width:135px; border:2px dashed yellow; }
+#about dl dd { margin-left:135px; height:28px; border:5px solid blue; }
+
+
+
+/* portfolio */
+#portfolio h2 { padding-bottom:95px; font-size:90px; font-weight:200; text-align:center; border:1px dashed orange; }
+#portfolio ul:after { content:""; display:block; clear:both; }
+
+#portfolio ul li { 
+	float:left; width:33.33%; 
+	margin-bottom:115px; 
+	/* border:2px solid black; */ 
+	box-sizing:border-box; 
+}
+
+#portfolio ul li .thum { 
+	position:relative;
+	margin:0 auto;
+	width:414px; height:523px;
+	background:#999;
+}
+
+#portfolio ul li .thum .ov {
+	transition:0.5s;
+	opacity:0;
+	position:absolute; left:0px; top:0px;
+	width:414px; height:523px;
+	background-color:rgba(255,0,0,0.8);
+}
+#portfolio ul li .thum:hover .ov { opacity:1; }
+
+#portfolio ul li p { text-align:center; }
+
+
+/* 레이어 팝업 */
+
+.pop {
+	display: none;
+	position: fixed;
+	left: 0px; top: 0px;
+	width: 100%; height: 100%;
+	background-color: rgba(204, 204, 204, 0.5);
+	z-index: 3000;
+	overflow: auto;
+}
+
+.pop .in { margin: 0 auto; width: 1312px; height: 2000px; border: 5px dashed #333;}
+
+.close { position: fixed; right: 30px; top: 30px; background-color: red;}
+
+
+
+
+
+
+/* contact */
+#contact h2 { padding-bottom:95px; font-size:90px; font-weight:200; text-align:center; border:1px dashed orange; }
+#contact dl { 
+	margin:0 auto;
+	width:330px;
+	font-size:16px; font-weight:600;
+	line-height:27px;
+	border:5px solid #0cc; 
+}
+#contact dl dt { float:left; width:135px; border:2px dashed yellow; }
+#contact dl dd { margin-left:135px; height:28px; border:5px solid blue; }
+
+
+/* footer */
+.copyright { padding-top:53px; font-size:12px; }
+</style>
+
+
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+<script>
+$(function(){
+
+	
+
+	//$("요소").offset().top; //상단으로부터 요소가 떨어져있는 거리
+	let t1 = $("#about").offset().top; //alert(t1);
+	let t2 = $("#portfolio").offset().top; //alert(t2);
+	let t3 = $("#contact").offset().top; //alert(t3);
+
+/*
+
+	$(".gnb li:eq(0) a").click(function(){
+		$("html,body").animate({ scrollTop:0 });
+	});
+
+	$(".gnb li:eq(1) a").click(function(){
+		$("html,body").animate({ scrollTop:t1 });
+	});
+
+	$(".gnb li:eq(2) a").click(function(){
+		$("html,body").animate({ scrollTop:t2 });
+	});
+
+	$(".gnb li:eq(3) a").click(function(){
+		$("html,body").animate({ scrollTop:t3 });
+	});
+*/
+
+
+
+	//페이지내 링크 위치로 스크롤을 애니메이트 이동
+	$(".gnb a, h1 a").click(function(){ //페이지내 링크 대상
+		let target = $($(this).attr("href")).offset().top;
+		$("html,body").animate({scrollTop:target},
+			1000, //속도(1000=1초)
+			"easeInOutQuint"//이징효과
+		);
+		return false;
+	});
+
+
+
+	
+	$(".gnb li:eq(0) a").css({ color:"yellow"});//첫번째 메뉴 활성화
+
+
+	/////////// 스크롤하는 동안(스크롤할때마다) ////////////////////
+	$(window).scroll(function(){ 
+
+		let sc = $(this).scrollTop();//얼마만큼 스크롤했는지의 값
+		$("#tt").text(sc);//#tt에 스크롤값 출력
+
+		
+		//영역별 설정
+		if ( sc>=0  &&  sc<t1 ){ //home구간
+			$(".gnb li a").css({ color:"white"});//메뉴 모두 비활성화
+			$(".gnb li:eq(0) a").css({ color:"yellow"});//해당 메뉴 활성화
+		}
+
+		if ( sc>=t1  &&  sc<t2 ){ //about구간
+			$(".gnb li a").css({ color:"white"});//메뉴 모두 비활성화
+			$(".gnb li:eq(1) a").css({ color:"yellow"});//해당 메뉴 활성화
+		}
+
+		if ( sc>=t2  &&  sc<t3 ){ //portfolio구간
+			$(".gnb li a").css({ color:"white"});//메뉴 모두 비활성화
+			$(".gnb li:eq(2) a").css({ color:"yellow"});//해당 메뉴 활성화
+		}
+
+		if ( sc>=t3 ){ //contact구간
+			$(".gnb li a").css({ color:"white"});//메뉴 모두 비활성화
+			$(".gnb li:eq(3) a").css({ color:"yellow"});//해당 메뉴 활성화
+		}
+
+		
+	});
+
+	//레이어팝업
+	$(".menu").click(function(){ //메뉴를 클릭했을 때
+		$(this).next().show(); //이 메뉴의 다음 형제인 .pop을 보이게 해라
+		$("body").css({overflow:"hidden"}); //body스크롤 없앰
+		return false;
+	});
+
+	$(".close").click(function(){ //close를 클릭했을 때
+		$(this).next().hide(); //.pop을 안보이게함
+		$("body").css({overflow:"auto"});
+		return false;
+	});
+
+});
+</script>
+
+
+</head>
+<body>
+
+<div id="tt" style="position:fixed; left:30px; top:200px; background:red; color:white; font-size:33px;">0</div>
+
+
+
+
+
+
+
+<header id="header"> <!-- ///////// header /////////////////////////// -->
+  <div class="inner">
+  
+        <h1><a href="#home">my portfolio</a></h1>
+        
+        <nav class="gnb">
+              <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#portfolio" >portfolio</a></li>
+                <li><a href="#contact">contact</a></li>
+              </ul>
+        </nav>
+    
+  </div>
+</header>
+
+
+
+
+
+<div id="home"> <!-- ///////// home /////////////////////////// -->
+  <div class="inner">
+  
+        <div class="typo">
+              <p class="t1">Inspire with heart<br>Life's a deisgn<br>Everything idea</p>
+              <p class="t2">Let's do what we love<br>and do a lot of it</p>
+        </div>
+    
+  </div>
+</div>
+
+
+
+
+
+<section id="about"> <!-- ///////// about /////////////////////////// -->
+  <div class="inner">
+  
+        <h2>about</h2>
+        
+        <dl class="info">
+              <dt>Name</dt>
+              <dd>Hong Gill-Dong</dd>
+              <dt>Birth</dt>
+              <dd>2020.01.01</dd>
+              <dt>Residence</dt>
+              <dd>Seoul Korea</dd>
+              <dt>Major</dt>
+              <dd>WebDesign/Publishing</dd>
+              <dt>Skills</dt>
+              <dd>Photoshop,Ilustrator,Html5,CSS3,jQuery</dd>
+              <dt>Blood type</dt>
+              <dd>A</dd>
+              <dt>Hobby</dt>
+              <dd>Photography</dd>
+        </dl>
+    
+  </div>
+</section>
+
+
+
+
+
+<section id="portfolio"> <!-- ///////// portfolio /////////////////////////// -->
+  <div class="inner">
+  
+        <h2>portfolio</h2>
+        
+        <ul>
+
+		
+				<li>
+					<div class="thum">
+						<a href="#">
+							<img src="images/img.jpg" alt="">
+							<div class="ov">오버</div>
+						</a>
+					</div>
+
+					<div class="pop">
+						<div class="in">팝업내용1</div>
+						<a href="#" class="close">close</a>
+					</div>
+
+
+					<p><strong>GUESS</strong><br>Design Renewal</p>
+				</li>   
+				
+				<li>
+					<div class="thum">
+						<a href="#">
+							<img src="images/img.jpg" alt="">
+							<div class="ov">작품오버</div>
+						</a>
+					</div>
+
+
+
+
+
+					<p><strong>GUESS</strong><br>Design Renewal</p>
+				</li>     
+				
+      
+				<li>
+					<div class="thum">
+						<a href="#">
+							<img src="images/img.jpg" alt="">
+							<div class="ov">작품오버</div>
+						</a>
+					</div>
+
+
+
+
+
+					<p><strong>GUESS</strong><br>Design Renewal</p>
+				</li>     
+				
+      
+				<li>
+					<div class="thum">
+						<a href="#">
+							<img src="images/img.jpg" alt="">
+							<div class="ov">작품오버</div>
+						</a>
+					</div>
+
+
+
+
+
+					<p><strong>GUESS</strong><br>Design Renewal</p>
+				</li>           
+      
+			  
+                          
+        </ul>
+    
+  </div>
+</section>
+
+
+
+
+
+<section id="contact"> <!-- ///////// contact /////////////////////////// -->
+  <div class="inner">
+  
+        <h2>contact</h2>
+        
+        <dl class="info">
+              <dt>E-mail</dt>
+              <dd>my@naver.com</dd>
+              <dt>Blog</dt>
+              <dd>blog.naver.com/my</dd>
+              <dt>SNS</dt>
+              <dd>http://twitter.com/#!/my</dd>
+              <dt>H.P</dt>
+              <dd>010-1234-5678</dd>
+        </dl>
+    
+  </div>
+</section>
+
+
+
+
+
+<footer id="footer"> <!-- ///////// footer /////////////////////////// -->
+  <div class="inner">
+  
+        <p class="copyright">Copyright &copy; 2030, My Portfolio, All Right Reserved.</p>
+    
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
