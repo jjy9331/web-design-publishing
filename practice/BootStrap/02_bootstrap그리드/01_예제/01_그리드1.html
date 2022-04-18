@@ -8,6 +8,7 @@
 <style>
 div { box-sizing:border-box; }
 
+.container {border:3px solid blue}
 .container .row { border:2px dashed lightblue; }
 .container .row>div { border:2px solid orange; }
 </style>
@@ -27,9 +28,16 @@ div { box-sizing:border-box; }
 
      
       <div class="row">
-	     <div>col</div>
+	     <div class="col-md-6 col-6">col</div>
+		 <div class="col-md-6 col-6">col</div>
 	  </div>
 
+	  <div class="row">
+		<div class="col-md-3 col-sm-3">col</div>
+		<div class="col-md-3 col-sm-3">col</div>
+		<div class="col-md-3 col-sm-3">col</div>
+		<div class="col-md-3 col-sm-3">col</div>
+	 </div>
       
 </div>
 
