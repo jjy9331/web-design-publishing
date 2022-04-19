@@ -10,6 +10,14 @@
 #visual { border:5px dashed orange; }
 #contents { border:5px dashed black; }
 #footer { border:5px dashed orange; }
+
+
+/* contents */
+#contents .row { border: 2px dashed orange;}
+#contents .row > div {border: 1px dashed blue;}
+#contents .row > div img { width: 100%;}
+
+#content .net {text-align: center;}
 </style>
 </head>
 <body>
@@ -110,7 +118,19 @@
 
 
 <div id="contents">
-컨텐츠
+<div id="contents" class="container">
+    <h2>신상품</h2>
+    <div class="row new">
+        <div class="col-md-4">
+            <img src="images/n1.jpg" alt="n1">
+            <h3>dress</h3>
+            <p>web design publishing study</p>
+            <a href="#">more</a>
+        </div>
+        <div class="col-md-4">02</div>
+        <div class="col-md-4">03</div>
+    </div>
+</div>
 </div>
 
 
