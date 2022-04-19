@@ -24,7 +24,41 @@
 5. 페이드인효과를 사용하려면 콘텐츠 각 항목에 fade 클래스를 추가하고 active클래스가 지정된 곳에 show 클래스를 추가 지정한다.
 -->
 
+<div class="nav nav-tabs">
+    <button class="nav-link active">01</button>
+    <button class="nav-link">02</button>
+    <button class="nav-link">03</button>
+</div>
 
+<div class="tab-content">
+    <div class="tab-pane active">01에 대대한  내용</div>
+    <div class="tab-pane">02에 대대한  내용</div>
+    <div class="tab-pane">03에 대대한  내용</div>
+</div>
+
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Messages</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
+    </li>
+  </ul>
+  
+  <div class="tab-content">
+    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
+    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+  </div>
 
 
 
