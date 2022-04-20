@@ -11,6 +11,7 @@
 
 
 <!-- 헤더 있던 자리  -->
+<? include("inc/header.php");?>
 
 
   
