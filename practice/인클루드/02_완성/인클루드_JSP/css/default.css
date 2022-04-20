@@ -1,0 +1,18 @@
+* { margin:0; padding:0; }
+ul { list-style:none; }
+body { font:15px "나눔고딕","돋움"; color:#333; }
+a { text-decoration:none; color:#333; }
+a:hover { text-decoration:underline; color:orange; }
+
+#header { height:100px; background-color:#eee; }
+#header .inner { margin:0 auto; width:900px; height:94px;  border:3px dashed orange; }
+#header .inner .gnb li { float:left; margin-left:100px; }
+
+#contents_main { margin:0 auto; width:900px; height:700px; background:lightyellow; border:3px solid yellowgreen; }
+
+#container { margin:0 auto; width:900px;  overflow:hidden; border:3px solid skyblue; }
+#container .sidebar { float:left; width:200px; height:700px; background-color:pink; }
+#container .contents { float:right; width:670px; height:700px; background-color:lightyellow; }
+
+#footer { height:100px; background-color:#eee; }
+#footer .inner { margin:0 auto; width:900px; height:94px;  border:3px dashed orange; }

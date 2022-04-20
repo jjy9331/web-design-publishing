@@ -1,0 +1,20 @@
+인클루드(include)
+
+반복적으로 넣어야할 코드 부분을 별도로 저장하고 
+PHP, ASP, JSP와 같은 프로그래밍 언어를 이용하여 
+문서의 원하는 위치에 그 코드를 불러오는 것을 말합니다. 
+include구문은 서버사이드(server side) 구문이기 때문에 
+PHP나 JSP 등의 서버 언어를 지원하는 웹 서버에서 작동합니다.
+
+
+JSP
+<%@include file="경로/불러올jsp화일명"%>
+
+
+PHP
+<? include("경로/불러올php화일명");?> 
+
+
+ASP
+<!-- #include file="경로/불러올asp화일명"-->
+
