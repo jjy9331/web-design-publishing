@@ -8,14 +8,14 @@
 </style>
 <script>
 
-	 //let a=0;
-	 //let b=0;
-	 //let c=0;
+	 let a=0;
+	 let b=0;
+	 let c=0;
 
 	 function BB(){
-		//a = document.getElementById('n1').value; 
-		//b = document.getElementById('n2').value; 
-		//c = document.getElementById('n3').value; 
+		a = document.getElementById('n1').value; 
+		b = document.getElementById('n2').value; 
+		c = document.getElementById('n3').value; 
 	 }
 
 	 function mySend() {
@@ -36,7 +36,7 @@
 				   }
 			}
 
-			//AA.open("GET", "data.php?a="+a+"&b="+b+"&c="+c+"&d=7", true); //get방식으로 요청을 준비한다. 
+			AA.open("GET", "data.php?a="+a+"&b="+b+"&c="+c+"&d=7", true); //get방식으로 요청을 준비한다. 
 																																//false:동기처리(전송 순서대로 처리)
 																																//true:비동기처리(전송 중 미리할수있는것은 미리함)
 
@@ -52,11 +52,11 @@
 </head>
 <body>
 
-<!--
+
 	<input type="text" id="n1">
 	<input type="text" id="n2">
 	<input type="text" id="n3">
--->
+
 	
 	<br>
 

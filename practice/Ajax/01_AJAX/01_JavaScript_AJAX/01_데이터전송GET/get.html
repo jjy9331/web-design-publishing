@@ -8,6 +8,19 @@
 </style>
 <script>
 
+	let v1;
+	let v2;
+	let v3;
+	let v4;
+
+	 function BB(){
+			v1 = document.getElementById("v1").value;
+			v2 = document.getElementById("v2").value;
+			v3 = document.getElementById("v3").value;
+			v4 = document.getElementById("v4").value;
+	 }
+
+
 	 function mySend() {
 			
 			let AA = new XMLHttpRequest(); //XMLHttpReques객체(데이터를 전송하거나 가져오는 기능제공)를 생성
@@ -19,14 +32,14 @@
 						   if(AA.status == 200 ){//HTTP상태가 정상처리(200) 되었다면				   
 																//200:정상처리, 401:인증필요, 403:액세스거부, 404: 페이지가 존재하지 않음, 500:서버에러, 503:서버사용불가
 
-									alert(AA.responseText); //서버응답값을 받아 알림창에 출력
-									//document.getElementById("tt").innerHTML = AA.responseText;  //서버응답값을 받아 #tt에 출력
+									//alert(AA.responseText); //서버응답값을 받아 알림창에 출력
+									document.getElementById("tt").innerHTML = AA.responseText;  //서버응답값을 받아 #tt에 출력
 
 						   }
 				   }
 			}
 
-			AA.open("GET", "data.php?a=안녕하세요&b=반갑습니다&c=5&d=7", true); //get방식으로 요청을 준비한다. 
+			AA.open("GET", "data.php?a="+v1+"&b="+v2+"&c="+v3+"&d="+v4, true); //get방식으로 요청을 준비한다. 
 																																//false:동기처리(전송 순서대로 처리)
 																																//true:비동기처리(전송 중 미리할수있는것은 미리함)
 
@@ -38,10 +51,14 @@
 </head>
 <body>
 
+	<input type="text" id="v1"> <br>
+	<input type="text" id="v2"> <br>
+	<input type="text" id="v3"> <br>
+	<input type="text" id="v4"> <br>
 	
 	<br>
 
-	<button onclick="mySend();">get</button>
+	<button onclick="BB(); mySend();">get</button>
 
 	<br>
 	<br>
