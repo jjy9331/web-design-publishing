@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax</title>
+<style>
+body { font-family:"맑은 고딕"; }
+#tt { font-size:30px; }
+#ee { font-size:12px; }
+</style>
+
+<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function() {                   
+
+    
+
+   $.ajax({
+   
+	   url: "data/data.xml", 
+	   type: "get",
+	   dataType: "xml",
+	   
+	   error: function(data){ // 문제가 있으면 오류를 표시한다
+		   $("#ee").text('데이터를 가져오지 못했습니다.');
+	   },
+	   
+	   success: function(data){   // 데이터를 가져왔으면
+		   
+		     let AA=$(data).find("price").text();
+ 			 //let BB=$(data).find("fruits:eq(2) name").text();
+		   
+		     $("#tt").text(AA);
+	   }	
+   
+   });
+
+
+});
+</script>
+
+</head>
+
+<body>
+
+
+	<div id="tt">가져온 데이터 출력될 자리</div>
+
+	<p id="ee"></p>
+
+  
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

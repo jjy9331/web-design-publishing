@@ -1,0 +1,128 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>Load</title>
+<style>
+/* reset */
+html, body, h1, h2, h3, h4, h5, h6, p, img, dl, dt, dd, ol, ul, li, input {margin:0;padding:0;}
+ul {list-style:none;}
+img {border:0; vertical-align:top;}
+
+body { font:11px "나눔고딕";}
+a { font-size:14px; text-decoration:none; color:#333; outline:none; }
+a:hover { color:#f93; }
+
+#wrap { width: 735px; margin: 0 auto; }
+#header { height:70px; color:#ccc; background:#333; }
+#footer { height:70px; color:#ccc; background:#333; }
+
+#contents li {float:left; margin: 0 1px 1px 0; }
+#contents ul {overflow:hidden;}
+#contents p { padding:30px; text-align:center; }
+#contents .con { text-align:center; }
+
+.num {display:none; }
+</style>
+
+<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+
+	
+	let num;
+	$(".num").load("data.html ul",function(){
+
+		num = $(".num ul").length - 1;
+		//alert(num);
+
+	});
+	
+
+	let i=1;
+	
+	$(".con").load("data.html ul:eq("+i+")"); //처음 시작했을때 .con안으로 로딩
+		
+		
+
+	$(window).scroll(function(){ 
+	        if  ($(window).scrollTop() >= $(document).height() - $(window).height()){ //스크롤이 끝까지 가면 자동 실행
+
+  						   i++;
+								
+							if (i<=num){		  
+								
+								$("#contents").append($(".con:last").clone());	//마지막에 있는 .con을 복사하여 #contents안의 끝에 붙여넣기
+								$(".con:last").html("<p><img src='images/loader.gif' /></p>"); //끝에 붙여넣기된 .con이 이제 마지막 .con이됨. 그 .con안에 로딩이미지 보이기
+								$(".con:last").load("data.html ul:eq("+i+")");	//그 .con안에 해당하는 data.html안의 ul로딩		
+
+							}
+						   
+			} 
+	}); 
+
+
+});
+</script>
+</head>
+
+
+<body>
+
+
+<div id="wrap">
+
+   <div id="header">header</div>
+   
+       
+   <div id="contents">
+
+		<div class="num"></div>
+
+		<div class="con">
+			<p><img src='images/loader.gif' />loading..</p>
+		</div>
+
+
+       
+       
+   </div>
+           
+       
+
+   <div id="footer">footer</div>
+   
+
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

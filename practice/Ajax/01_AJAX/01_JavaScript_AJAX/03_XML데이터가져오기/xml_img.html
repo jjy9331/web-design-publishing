@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax</title>
+<style>
+#tt { font-size:30px; }
+</style>
+<script>
+
+   let i = 0;
+
+   function mySend() {
+		
+		let AA = new XMLHttpRequest(); //XMLHttpReques객체(데이터를 전송하거나 가져오는 기능제공)를 생성
+		
+		AA.onreadystatechange=function(){//통신상태가 변화될때마다
+			   if(AA.readyState == 4 ){ //HTTP통신상태값이 모든 응답처리 완료(4)되면
+				   if(AA.status == 200 ){//HTTP상태가 정상처리(200) 되었다면
+
+							let BB = AA.responseXML; //서버응답값(xml형식)
+
+							//let num = BB.getElementsByTagName("n").length -1; //n요소의 갯수-1
+							i++;
+							if( i>2 ) { i=0; }
+
+							let CC = BB.getElementsByTagName("n")[i].firstChild.nodeValue;
+							document.getElementById("photo").src="images/"+CC;
+
+							//let DD = BB.getElementsByTagName("d")[i].firstChild.nodeValue;
+							//document.getElementById("tt").innerHTML = DD; 
+
+				   }
+			   }
+	    }
+
+		AA.open("GET", "data/img.xml", true);//요청을 준비한다
+		AA.send(null);//요청을 전송한다
+
+   }
+   
+</script>
+</head>
+<body>
+
+
+
+	<img src="images/a.jpg" alt="" id="photo">
+
+	<div id="tt">비누방울불기</div>
+
+	<br>
+
+	<button onclick="mySend();">next</button>
+
+
+
+</body>
+</html>
+
+

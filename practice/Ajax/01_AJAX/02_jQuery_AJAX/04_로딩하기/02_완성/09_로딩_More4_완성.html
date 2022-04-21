@@ -1,0 +1,143 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Load</title>
+<style>
+/* reset */
+html, body, h1, h2, h3, h4, h5, h6, p, img, dl, dt, dd, ol, ul, li, input {margin:0;padding:0;}
+ul {list-style:none;}
+img {border:0; vertical-align:top;}
+
+body { font:11px "나눔고딕";}
+a { font-size:14px; text-decoration:none; color:#333; outline:none; }
+a:hover { color:#f93; }
+
+#wrap { width: 735px; margin: 0 auto; }
+#header { height:70px; color:#ccc; background:#333; }
+#footer { height:70px; color:#ccc; background:#333; }
+
+#contents li {float:left; margin: 0 1px 1px 0; }
+#contents ul {overflow:hidden;}
+#contents .con { text-align:center; }
+
+
+#more { padding:30px; text-align:center; }
+.num, .con {display:none; }
+</style>
+
+<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+	
+
+	let num;
+	$(".num").load("data.html ul",function(){
+
+		num = $(".num ul").length - 1;
+		//alert(num);
+
+	});
+
+
+	let i=0;
+
+	$(".con").fadeIn(500,function(){
+		$(".con").load("data.html ul:eq("+i+")");      
+	})
+	
+		
+	$("#more").click(function(){
+		
+			i++;
+
+			if (i<=num){		  
+				
+				$("#contents").append($(".con:last").clone());	  
+				$(".con:last").html("<p><img src='images/loader.gif' /></p>");
+				//$(".con:last").load("data.html ul:eq("+i+")"); 
+				$(".con:last").hide(); 
+				
+			}
+
+					
+			$(".con:last").fadeIn(500,function(){
+				
+				$(".con:eq("+i+")").load("data.html ul:eq("+i+")");
+				
+				if (i<num){
+					$("#more").show();
+				}
+
+			})
+
+			$("#more").hide();
+
+	});
+
+	
+});
+</script>
+</head>
+
+
+<body>
+
+
+<div id="wrap">
+
+	<div id="header">header</div>
+
+	   
+	<div id="contents">
+
+		<div class="num"></div>
+		  
+		<div class="con">
+			<p><img src='images/loader.gif' /></p>
+		</div>
+
+
+
+
+	</div>
+
+	<p id="more"><a href="#" onclick="return false;">더보기</a></p>
+		   
+	   
+
+	<div id="footer">footer</div>
+   
+
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

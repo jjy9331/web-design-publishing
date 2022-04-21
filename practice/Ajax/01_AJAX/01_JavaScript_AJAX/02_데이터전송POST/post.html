@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax</title>
+<style>
+#tt { font-size:30px; }
+</style>
+<script>
+
+   function mySend() {
+		
+			let AA = new XMLHttpRequest(); //XMLHttpReques객체(데이터를 전송하거나 가져오는 기능제공)를 생성
+
+
+			AA.onreadystatechange=function(){//통신상태가 변화될때마다
+				   if(AA.readyState == 4 ){ //HTTP통신상태값이 모든 응답처리 완료(4)되면
+					   if(AA.status == 200 ){//HTTP상태가 정상처리(200) 되었다면				   
+
+							alert(AA.responseText);
+							document.getElementById("tt").innerHTML = AA.responseText; 
+
+					   }
+				   }
+			}
+
+			AA.open("POST", "data.php", true); //요청을 준비한다
+			AA.setRequestHeader("Content-Type","application/x-www-form-urlencoded");//post방식에서만 지정
+
+			AA.send("a=안녕하세요&b=반갑습니다&c=5&d=7"); //요청을 전송한다 post방식에서는 ( )안에 전송할 데이터 작성
+
+   }
+	
+</script>
+</head>
+<body>
+
+	
+	<br>
+
+	<button onclick="mySend();">post</button>
+
+	<br>
+	<br>
+
+	<div id="tt">서버에서 받은 데이터 출력될 자리</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

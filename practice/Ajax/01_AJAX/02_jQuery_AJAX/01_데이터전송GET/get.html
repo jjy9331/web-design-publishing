@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax</title>
+<style>
+</style>
+<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(function() {                   
+
+
+    //$.ajaxSetup({async:false});//동기설정 (제이쿼리는 비동기가 기본설정되어있음)
+
+	//제이쿼리 get방식에서는 데이터를 객체 형태로 작성한다
+	$.get("data.php", {a:"안녕하세요", b:"반갑습니다", c:"1", d:"2"}, function(data){
+	
+		alert(data);//서버응답값을 알림창에 출력
+		//$("h1").text(data);
+
+	});
+
+
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+	<h1>0</h1>
+
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

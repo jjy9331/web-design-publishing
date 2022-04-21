@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax</title>
+<style>
+#tt { font-size:30px; }
+</style>
+<script>
+
+   function mySend() {
+		
+		let AA = new XMLHttpRequest(); //XMLHttpReques객체(데이터를 전송하거나 가져오는 기능제공)를 생성
+
+		AA.onreadystatechange=function(){//통신상태가 변화될때마다
+			   if(AA.readyState == 4 ){ //HTTP통신상태값이 모든 응답처리 완료(4)되면
+				   if(AA.status == 200 ){//HTTP상태가 정상처리(200) 되었다면
+					   
+					   let BB = AA.responseText; //서버응답값(text형식)
+
+					   let CC = eval('('+BB+')');//JSON객체로 변환				   
+
+					   //alert( CC.photo1.n );
+					   //alert( CC.photo2.n );
+   					   document.getElementById("tt").innerHTML = CC.photo2.n; 
+
+				   }
+			   }
+	    }
+
+		AA.open("GET", "data/data.json", true); //요청을 준비한다
+		AA.send(null); //요청을 전송한다
+
+   }
+	
+</script>
+</head>
+<body>
+
+	<br>
+
+	<button onclick="mySend();">json</button>
+
+	<br>
+	<br>
+
+	<div id="tt">JSON 데이터 출력될 자리</div>
+
+
+
+
+
+</body>
+</html>
+
+
+

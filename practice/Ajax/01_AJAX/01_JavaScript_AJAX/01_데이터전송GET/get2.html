@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax</title>
+<style>
+#tt { font-size:30px; }
+</style>
+<script>
+
+	 //let a=0;
+	 //let b=0;
+	 //let c=0;
+
+	 function BB(){
+		//a = document.getElementById('n1').value; 
+		//b = document.getElementById('n2').value; 
+		//c = document.getElementById('n3').value; 
+	 }
+
+	 function mySend() {
+			
+			let AA = new XMLHttpRequest(); //XMLHttpReques객체(데이터를 전송하거나 가져오는 기능제공)를 생성
+
+
+			AA.onreadystatechange=function(){//통신상태가 변화될때마다
+				   if(AA.readyState == 4 ){ //HTTP통신상태값이 모든 응답처리 완료(4)되면
+															//0:아직open메서드가 호출되지않음, 1:로드중,  2:로드완료, 3:응답처리중, 4:모든응답처리완료
+						   if(AA.status == 200 ){//HTTP상태가 정상처리(200) 되었다면				   
+																//200:정상처리, 401:인증필요, 403:액세스거부, 404: 페이지가 존재하지 않음, 500:서버에러, 503:서버사용불가
+
+									//alert(AA.responseText); //서버응답값을 받아 알림창에 출력
+									document.getElementById("tt").innerHTML = AA.responseText;  //서버응답값을 받아 #tt에 출력
+
+						   }
+				   }
+			}
+
+			//AA.open("GET", "data.php?a="+a+"&b="+b+"&c="+c+"&d=7", true); //get방식으로 요청을 준비한다. 
+																																//false:동기처리(전송 순서대로 처리)
+																																//true:비동기처리(전송 중 미리할수있는것은 미리함)
+
+			AA.send(null); //요청을 전송한다(post방식에서는 null자리에 전송할데이터를 넣는다)
+
+	}
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<!--
+	<input type="text" id="n1">
+	<input type="text" id="n2">
+	<input type="text" id="n3">
+-->
+	
+	<br>
+
+	<button onclick="BB(); mySend();">get</button>
+
+	<br>
+	<br>
+
+	<div id="tt">서버에서 받은 데이터 출력될 자리</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

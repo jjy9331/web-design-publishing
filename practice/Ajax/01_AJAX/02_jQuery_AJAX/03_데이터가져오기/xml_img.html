@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax</title>
+<style>
+body { font-family:"맑은 고딕"; }
+#tt { font-size:30px; }
+#ee { font-size:12px; }
+</style>
+
+<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function() {                   
+
+	let i = 0;
+
+	$("#bt").click(function(){
+
+				   $.ajax({
+				   
+					   url: "data/data_img.xml", 
+					   type: "get",
+					   dataType: "xml",
+					   
+					   error: function(data){ // 문제가 있으면 오류를 표시한다
+						   $("#ee").text('데이터를 가져오지 못했습니다.');
+					   },
+					   
+					   success: function(data){   // 데이터를 가져왔으면						   
+
+							//let num = $(data).find("n").length -1
+					
+							i++;
+
+							if( i>2 ){ i=0 };
+								
+							let AA=$(data).find("n:eq("+i+")").text();
+							$("#photo").attr("src","images/"+AA);
+
+   							let BB=$(data).find("d:eq("+i+")").text();
+							$("#tt").text(BB);
+
+					   }	
+				   
+				   });
+
+	});    
+
+});
+</script>
+
+</head>
+
+<body>
+
+
+  
+	<img src="images/a.jpg" alt="" id="photo">
+
+	<div id="tt">비누방울불기</div>
+	<p id="ee"></p>
+
+	<br>
+
+	<button id="bt">next</button>
+
+
+
+
+</body>
+</html>
+
+
+

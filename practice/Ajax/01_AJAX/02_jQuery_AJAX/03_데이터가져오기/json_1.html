@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax</title>
+<style>
+body { font-family:"맑은 고딕"; }
+#tt { font-size:30px; }
+#ee { font-size:12px; }
+</style>
+
+<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function() {                   
+
+    
+   $.ajax({
+   
+	   url: "data/data_1.json", 
+	   type: "get",
+	   dataType: "json",
+	   
+	   error: function(){ // 문제가 있으면 오류를 표시한다
+		   $("#ee").text('데이터를 가져오지 못했습니다.');
+	   },
+	   
+	   success: function(data){   // 데이터를 가져왔으면
+		   
+		    let AA = data; //데이터를 변수에 참조시킴
+		    //$("#tt").text( AA.이름 );
+		    //$("#tt").text( AA["이름"] );
+
+		    //$("#tt").text( AA.취미[2] );	
+		    //$("#tt").text( AA["취미"][2] );	
+
+		    //$("#tt").text( AA.가족.아버지 );	
+		    //$("#tt").text( AA["가족"].아버지 );	
+
+			//$("#tt").text( AA.친구[2].b );	
+			//$("#tt").text( AA["친구"][2].b );	
+	   }	
+   
+   });
+
+	  
+});
+</script>
+
+</head>
+
+<body>
+
+
+	<div id="tt">가져온 데이터 출력될 자리</div>
+
+	<p id="ee"></p>
+
+  
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

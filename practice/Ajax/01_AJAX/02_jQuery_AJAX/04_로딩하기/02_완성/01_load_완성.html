@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Load</title>
+<style>
+/* reset */
+html, body, h1, h2, h3, h4, h5, h6, p, img, dl, dt, dd, ol, ul, li, input {margin:0;padding:0;}
+ul {list-style:none;}
+img {border:0; vertical-align:top;}
+
+body { font: 15px "나눔고딕"; color:#777;}
+
+#wrap { margin:0 auto; width:900px; border:2px dashed #777; }
+#header { background:pink; padding:20px; }
+#contents { background:yellow; padding:20px; }
+#footer li { background:skyblue; padding:20px; }
+</style>
+
+<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+	
+     $("#header").load("sample.html h1,h2");
+     $("#contents").load("sample.html p:eq(2)");
+     $("#footer").load("sample.html a");
+	
+});
+</script>
+</head>
+
+
+<body>
+
+
+<div id="wrap">
+
+   <div id="header">헤더</div>
+
+   <div id="contents">컨텐츠</div>
+      
+   <div id="footer">푸터</div>
+
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

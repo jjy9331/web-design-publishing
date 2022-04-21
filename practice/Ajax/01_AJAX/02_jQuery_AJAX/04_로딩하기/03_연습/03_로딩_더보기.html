@@ -1,0 +1,99 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Load</title>
+<style>
+/* reset */
+html, body, h1, h2, h3, h4, h5, h6, p, img, dl, dt, dd, ol, ul, li, input {margin:0;padding:0;}
+ul {list-style:none;}
+img {border:0; vertical-align:top;}
+
+body { font:11px "나눔고딕";}
+a { font-size:14px; text-decoration:none; color:#333; outline:none; }
+a:hover { color:#f93; }
+
+#wrap { width: 735px; margin: 0 auto; }
+#header { height:70px; color:#ccc; background:#333; }
+#footer { height:70px; color:#ccc; background:#333; }
+
+#contents li {float:left; margin: 0 1px 1px 0; }
+#contents ul {overflow:hidden;}
+#contents p { padding:30px; text-align:center; }
+
+#con1 {display:none; }
+</style>
+
+<script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+	
+	
+	
+     $("#con0").load("data.html ul:eq(0)");
+	 
+	 
+		
+	 $("#more").click(function(){
+		 
+		   //$("#con1").show();
+			
+		   //$("#con1").load("data.html ul:eq(1)");
+		   //$("#more").hide();
+
+	});
+
+
+	
+});
+</script>
+</head>
+
+
+<body>
+
+
+<div id="wrap">
+
+   <div id="header">header</div>
+   
+       
+   <div id="contents">
+          
+       <div id="con0">
+       </div>
+
+
+       <div id="con1">
+       </div>
+
+
+       <p id="more"><a href="#">더보기</a></p>
+       
+   </div>
+           
+       
+
+   <div id="footer">footer</div>
+   
+
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
