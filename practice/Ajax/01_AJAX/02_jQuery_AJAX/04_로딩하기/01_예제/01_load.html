@@ -21,7 +21,12 @@ body { font: 15px "나눔고딕"; color:#777;}
 
 <script>
 $(function(){
-	$("#contents").load("sample.html p")
+
+   $("#header").load("sample.html h1")
+
+	$("#contents").load("sample.html p:eq(2)")
+
+   $("#footer").load("sample.html a:eq(0)")
      
 	
 });
