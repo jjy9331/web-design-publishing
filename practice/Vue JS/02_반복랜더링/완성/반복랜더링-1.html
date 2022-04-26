@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+</head>
+<body>
+
+
+<div id="app">
+
+	<ul>
+		<li v-for="item in a">{{ item.n }} : {{ item.ad }}</li>
+	</ul>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ 
+
+		el: "#app", 
+
+		data: { 
+				a: [
+					{ n:"홍길동", ad:"서울" },
+					{ n:"김철수", ad:"부산" },
+					{ n:"이영희", ad:"제주도" },
+				],
+		},
+
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

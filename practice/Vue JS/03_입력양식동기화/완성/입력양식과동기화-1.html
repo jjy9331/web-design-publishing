@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+p { font-size:60px; color:#0c3; }
+</style>
+</head>
+<body>
+
+
+<div id="app">
+
+		<input v-model.number="a">
+		<input v-model.number="b">
+		<input v-model.number="c">
+
+		<p>{{ a + b + c }}</p>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ 
+
+		el: "#app", 
+
+		data: { 
+				a:7, b:5, c:9,
+		},
+
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

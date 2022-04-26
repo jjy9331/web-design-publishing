@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+#app1 { padding:10px; margin:10px; border:2px dashed hotpink; }
+#app2 { padding:10px; margin:10px; border:2px dashed blue; }
+</style>
+</head>
+<body>
+
+
+<div id="app1">
+	<comp1></comp1>
+</div>
+
+<div id="app2">
+	<comp1></comp1>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ 
+		el: "#app1", 
+		components: { //지역 컴포넌트는 해당 인스턴스에서만 사용할 수있다
+			"comp1": { template:"<div>컴포넌트1 내용입니다</div>" },
+		}
+	});
+
+	new Vue({ 
+		el: "#app2", 
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

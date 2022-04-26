@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+</head>
+<body>
+
+
+<div id="app">
+	<comp1></comp1>
+	<comp2></comp2>
+	<comp3></comp3>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ 
+		el: "#app", 
+		components: { //요소들을 담은 블록(그릇)
+			"comp1": { template:"<div>컴포넌트1 내용입니다</div>" },
+			"comp2": { template:"<div>컴포넌트2 내용입니다</div>" },
+			"comp3": { template:"<div>컴포넌트3 내용입니다</div>" },
+		}
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

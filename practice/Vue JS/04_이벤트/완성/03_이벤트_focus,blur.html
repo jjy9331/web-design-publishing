@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+</head>
+<body>
+
+
+<div id="app">
+	<button v-on:focus="AA" v-on:blur="BB">버튼</button>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ 
+		el: "#app", 
+		methods: {
+			AA: function(){
+				document.getElementById("app").style.background="yellow";
+			},
+			BB: function(){
+				document.getElementById("app").style.background="none";
+			},
+		},
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

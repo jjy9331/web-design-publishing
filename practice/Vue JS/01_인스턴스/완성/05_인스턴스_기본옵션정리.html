@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+</head>
+<body>
+
+
+<div id="app">
+	{{ b }}
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ 
+
+		el: "#app", //마운트할 요소(css선택자 형태로 지정)
+
+		data: { a:"안녕하세요", b:7,	c:3 }, //사용할 데이터(객체 또는 배열로 지정하는것이 일반적)
+
+		created: function(){ //인스턴스 생성 직후 실행되는 함수
+				alert( this.b + this.c );
+		},
+
+		methods: { //이벤트 발생시 실행할 함수
+			AA: function(){
+				alert("반갑습니다");
+			}
+		},
+
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

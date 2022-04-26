@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+</style>
+</head>
+<body>
+
+<div id="app">
+  
+	<router-link to="/main">Main</router-link>
+	<router-link to="/sub1">Sub1</router-link>
+	<router-link to="/sub2">Sub2</router-link>
+
+	<router-view></router-view>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+<script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script><!-- 뷰 라우터 -->
+
+
+<script>
+  
+	var router = new VueRouter({ //뷰 라우터 정의
+			routes : [   //각 url에 해당하는 컴포넌트 등록
+					{ path: '/main', component: { template: '<div>메인입니다</div>' } },
+					{ path: '/sub1', component: { template: '<div>서브1입니다</div>' } },
+					{ path: '/sub2', component: { template: '<div>서브2입니다</div>' } },
+			],
+	});
+
+
+	new Vue({
+		router
+	}).$mount('#app');//뷰 라우터를 인스턴스에 등록
+
+</script>
+
+</body>
+</html>
+
+

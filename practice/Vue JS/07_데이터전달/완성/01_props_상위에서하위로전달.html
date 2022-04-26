@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+</style>
+</head>
+<body>
+
+<div id="app">
+	{{ a }} {{ b }}
+	<comp1 v-bind:k1="a" v-bind:k2="b"></comp1>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	
+	new Vue({ //뷰 인스턴스 자체가 상위 컴포넌트가 된다
+		el: "#app", 
+		data: { a:"안녕하세요", b:"반갑습니다" },
+		components: { 			
+			"comp1": { props:["k1","k2"], //상위 컴포넌트에서 데이터를 전달받기위한 속성이름 지정
+			template:"<div>컴포넌트1 내용입니다{{ k1 }} {{ k2 }}</div>" },
+		}
+	});
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

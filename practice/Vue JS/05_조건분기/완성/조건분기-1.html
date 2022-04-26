@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+p { font-size:60px; color:#0c3; }
+</style>
+</head>
+<body>
+
+
+<div id="app">
+
+		<button v-on:click="a=false;">보이기</button>
+		<button v-on:click="a=true;">감추기</button>
+
+		<p v-if="a">안녕하세요</p>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ 
+
+		el: "#app", 
+
+		data: { 
+				a: true,
+		},
+
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
