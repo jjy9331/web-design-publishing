@@ -1,0 +1,122 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@font-face { font-family:'hana_pro'; src: url('../font/BMHANNAProOTF.woff') format('woff');}
+@font-face { font-family:'hana_air'; src: url('../font/BMHANNAAir_otf.woff') format('woff');}
+
+/*Eric mayor reset*/
+
+body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd { margin: 0; padding: 0;}
+h1,h2,h3,h4,h5,h6 {font-size: 12px;}
+ul {list-style: none;}
+img {border: 0; vertical-align: top; }
+
+/* base */
+body { font-size:14px; font-family:'Noto Sans KR'; font-weight:500; color:black; }
+a { text-decoration:none; color:black; }
+.blind { position:absolute; top:-9999px; }
+
+
+/* layout */
+header { 
+    position: fixed; 
+    left: 0px; top: 0px;background: rgba(255, 255, 255, 1); width: 100%;}
+header .inner { position: relative;  width: 1352px; height: 120px; margin: 0 auto; 
+    /* border: 2px dashed yellow; box-sizing: border-box;  */
+    border-bottom: 4px solid black;
+}
+
+#home { 
+    /* background: lightpink;  */
+    width: 100%;
+    padding-top: 467px; 
+    padding-bottom: 467px; 
+}
+#home .inner { width: 1268px; height: 720px; margin: 0 auto; 
+    /* border: 2px dashed yellow; box-sizing: border-box; */
+}
+
+#introduce {background: skyblue; width: 100%;
+            padding-top: 237px; 
+            padding-bottom: 237px; 
+}
+#introduce .inner {
+    width: 1272px; height: 720px; margin: 0 auto; 
+    border: 2px dashed yellow; box-sizing: border-box;
+}
+
+#portfolio { background: lightpink; width: 100%;
+            padding-top: 289px; 
+            padding-bottom: 381px; 
+}
+#portfolio .inner {
+    width: 1314px;
+    height: 2064px;
+    margin: 0 auto; 
+    border: 2px dashed yellow; box-sizing: border-box;
+}
+
+
+#contact {background: skyblue; width: 100%;
+            padding-top: 221px; 
+            padding-bottom: 221px; 
+}
+
+#contact .inner {
+    width: 1264px;
+    height: 720px;
+    margin: 0 auto; 
+    border: 2px dashed yellow; box-sizing: border-box;
+}
+
+footer { background: lightpink; width: 100%; }
+
+footer .inner {
+    width: 1272px;
+    height: 123px;
+    margin: 0 auto; 
+    border: 2px dashed yellow; box-sizing: border-box;
+}
+
+
+
+/* header */
+header ul {position: absolute; right: 18px; top: 43px;
+    /* border: 2px dashed yellow; box-sizing: border-box; */
+} 
+
+header a .logo {position: absolute; left: 18px; top: 30px;}
+
+header ul li {float: left;
+    font-family: 'Noto Sans KR';
+    font-size: 30px;
+    /* border: 2px dashed yellow; box-sizing: border-box; */
+    line-height: 1em;
+}
+
+header ul li:nth-child(1) { padding-right:100px}
+header ul li:nth-child(2) { padding-right:100px}
+header ul li:nth-child(3) { padding-right:100px}
+
+header ul li:hover {
+    text-decoration: underline;
+}
+
+/* home */
+#home .inner .visual img { margin: 0 auto; width: 100%;}
+
+#home .inner .typo { text-align: center;}
+#home .inner .typo h3 { 
+    font-family: 'hana_pro'; font-size: 72px; line-height: 1em;
+    margin-top: -14px;
+    /* border: 2px dashed yellow; box-sizing: border-box; */
+}
+#home .inner .typo p {
+    font-family: 'hana_air'; font-size: 48px; font-weight: 100;
+    line-height: 1em;
+    padding-top: 49px;
+    color: rgba(183, 183, 183, 0.5);
+    /* border: 2px dashed yellow; box-sizing: border-box; */
+}
+
+/* introduce */
