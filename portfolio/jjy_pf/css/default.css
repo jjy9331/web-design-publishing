@@ -58,7 +58,7 @@ header .inner { position: relative;  width: 1352px; height: 120px; margin: 0 aut
     width: 1314px;
     height: 2064px;
     margin: 0 auto; 
-    border: 2px dashed yellow; box-sizing: border-box;
+    /* border: 2px dashed yellow; box-sizing: border-box; */
 }
 
 
@@ -75,13 +75,13 @@ header .inner { position: relative;  width: 1352px; height: 120px; margin: 0 aut
     /* border: 2px dashed yellow; box-sizing: border-box; */
 }
 
-footer { background: lightpink; width: 100%; }
+footer { background: rgba(0, 0, 0, 0); width: 100%; }
 
 footer .inner {
     width: 1272px;
     height: 123px;
     margin: 0 auto; 
-    border: 2px dashed yellow; box-sizing: border-box;
+    /* border: 2px dashed yellow; box-sizing: border-box; */
 }
 
 
@@ -323,4 +323,14 @@ header ul li:hover {
 #contact .inner .visual img{
     position: absolute;
     left: 0px; top: 0px;
+}
+
+/* footer */
+
+footer .inner p {
+    padding-top: 50px;
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    font-size: 20px;
+    color: rgba(0, 0, 0, 1);
 }
