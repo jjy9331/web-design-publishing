@@ -12,23 +12,25 @@ p { font-size:60px; color:#0c3; }
 
 <div id="app">
 
-		<input v-model="a">
+		색상값 입력 : <input v-model.number="a">
 
-		<p>{{ a }}</p>
+		<button v-on:click="AA">적용</button>
 
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
 <script>
 
 	new Vue({ 
-
 		el: "#app", 
 
-		data: { 
-				a: "안녕하세요",
-		},
+		data: { a:"yellow" },
+
+		methods:{ 
+			AA:function(){
+				document.getElementsByTagName('body')[0].style.background=this.a;
+			}, 
+		}
 
 	});
 

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+#app { font-size:33px; border:10px dashed black; padding:50px; }
+</style>
+</head>
+<body>
+
+
+<div id="app">
+
+	<ul>
+		<li v-for="item in a">{{ item.n }} {{ item.d }}</li>
+	</ul>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ 
+		el: "#app", 
+
+		data: { 
+
+			a:[
+				{ n:"홍길동", d:"서울" },
+				{ n:"김철수", d:"부산" },
+				{ n:"이영희", d:"광주" },
+				{ n:"박영규", d:"제주도" },
+				{ n:"류기종", d:"강릉" },
+			], 
+
+		},
+
+	});
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Vue</title>
 <style>
-p { font-size:60px; color:#0c3; }
+#app { font-size:33px; border:10px dashed black; padding:50px; }
 </style>
 </head>
 <body>
@@ -12,25 +12,27 @@ p { font-size:60px; color:#0c3; }
 
 <div id="app">
 
-		<input v-model="a">
-
-		<p>{{ a }}</p>
+	<ul>
+		<li>{{ a[0] }}</li>
+		<li>{{ a[1] }}</li>
+		<li>{{ a[2] }}</li>
+		<li>{{ a[3] }}</li>
+		<li>{{ a[4] }}</li>
+		<li>{{ a[5] }}</li>
+	</ul>
 
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
 <script>
 
 	new Vue({ 
-
 		el: "#app", 
-
 		data: { 
-				a: "안녕하세요",
+			a:["사과","딸기","바나나","오렌지","포도","키위"], 
 		},
-
 	});
+
 
 </script>
 </body>

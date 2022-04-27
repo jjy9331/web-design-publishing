@@ -6,22 +6,27 @@
 <style>
 #app { font-size:33px; border:10px dashed black; padding:50px; }
 
-#app table {width: 800px; border-collapse:collapse;}
-#app th {border: 2px solid #0cc;}
+#app table { width:800px; border-collapse:collapse; }
+#app td, #app th { border:2px solid #0cc; }
 </style>
 </head>
 <body>
 
 
 <div id="app">
-
-	<!-- <ul>
-		<li v-for="item in a">{{ item.n }} : {{ item.d }}</li>
-	</ul> -->
+	<!--
+		<ul>
+			<li v-for="item in member">{{ item.name }} : {{ item.address }}</li>
+		</ul>
+	-->
 
 	<table>
-		<tr v-for="item in member"><th>{{ item.name }}</th> <td>{{ item.address }}</td></tr>
+
+		<tr v-for="item in member"> <th>{{ item.name }}</th>  <td>{{ item.address }}</td></tr>
+
 	</table>
+
+
 
 </div>
 

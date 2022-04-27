@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+#app { font-size:33px; border:10px dashed black; padding:50px; }
+
+#app table { width:800px; border-collapse:collapse; }
+#app td, #app th { border:2px solid #0cc; }
+</style>
+</head>
+<body>
+
+
+<div id="app">
+	<!--
+		<ul>
+			<li v-for="item in member">{{ item.name }} : {{ item.address }}</li>
+		</ul>
+	-->
+
+	<!--
+	<table>
+
+		<tr v-for="item in member"> <th>{{ item.name }}</th>  <td>{{ item.address }}</td></tr>
+
+	</table>
+	-->
+
+	<dl v-for="item in member">	
+		<dt>{{ item.name }}</dt> 
+		<dd>{{ item.address }}</dd> 
+		<dd>{{ item.tel }}</dd> 
+	</dl>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ 
+		el: "#app", 
+
+		data: { 
+
+			member:[
+				{ name:"홍길동", address:"서울", tel:"010-777-3333" },
+				{ name:"김철수", address:"부산", tel:"010-123-4567" },
+				{ name:"이영희", address:"광주", tel:"010-767-3333" },
+				{ name:"박영규", address:"제주도", tel:"010-999-3333" },
+				{ name:"류기종", address:"강릉", tel:"010-888-3333" },
+			], 
+
+		},
+
+	});
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

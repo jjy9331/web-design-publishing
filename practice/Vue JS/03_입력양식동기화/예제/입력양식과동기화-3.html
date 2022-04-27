@@ -13,11 +13,12 @@ p { font-size:60px; color:#0c3; }
 <div id="app">
 
 		<input v-model="a">
+		<input v-model="b">
+		<input v-model="c">
 
-		<p>{{ a }}</p>
+		<p>{{ a }} : {{ b }} : {{ c }}</p>
 
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
 <script>
@@ -27,7 +28,7 @@ p { font-size:60px; color:#0c3; }
 		el: "#app", 
 
 		data: { 
-				a: "안녕하세요",
+				a:7, b:5, c:8,
 		},
 
 	});

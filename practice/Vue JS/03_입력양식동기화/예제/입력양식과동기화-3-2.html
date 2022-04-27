@@ -11,24 +11,24 @@ p { font-size:60px; color:#0c3; }
 
 
 <div id="app">
-
-		<input v-model="a">
-
-		<p>{{ a }}</p>
+		<!-- <input v-model.number="a"> -->
+		<button v-on:click="AA">버튼</button>
 
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
 <script>
 
 	new Vue({ 
-
 		el: "#app", 
 
-		data: { 
-				a: "안녕하세요",
-		},
+		data: { a:"yellow" },
+
+		methods:{ 
+			AA:function(){
+				document.getElementsByTagName('body')[0].style.background=this.a;
+			}, 
+		}
 
 	});
 
