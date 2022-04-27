@@ -157,17 +157,13 @@
 
             $("button").click(function(){//버튼을 클릭했을 때
                 if(toggle=="0"){
-                $("header").css({ 
-                    position: "fixed", 
-                    top: "0px", 
-                    left:"0px",
-                });     
+                // $("header").css({position: "fixed"}); 
                 $("body").css({filter: "invert(100)"}); 
                 $("body #portfolio ul .pi").css({filter: "invert(100)"}); 
                 toggle = "1";
                 }
                 else{
-                
+                // $("header").css({position: "fixed"}); 
                 $("body").css({filter: "invert(0)"}); 
                 $("body #portfolio ul .pi").css({filter: "invert(0)"}); 
                 toggle = "0";

@@ -21,7 +21,7 @@ a { text-decoration:none; color:black; }
 /* layout */
 header { 
     position: fixed; 
-    left: 0px; top: 0px;background: rgba(255, 255, 255, 1); width: 100%;
+    left: 0px; top: 0px; background: rgba(255, 255, 255, 1); width: 100%;
     /* height: 120px;  */
     /* border-bottom: 4px solid black; */
     z-index: 1000;
