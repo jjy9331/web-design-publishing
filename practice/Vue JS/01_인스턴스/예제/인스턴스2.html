@@ -22,16 +22,16 @@
 
     new Vue({
         el: "#wrap", //마운트할 요소 (뷰로 화면을 구성할 대상 요소)
-        data: {n:5, k:3, e:"안녕"} //사용할 데이터(변수 역할)
-        created: function(){}, //바로 실행되는 함수 
-        methods: {
-            AA: function(){},
-            BB: function(){},
-        },
+        // data: {n:5, k:3, e:"안녕"} //사용할 데이터(변수 역할)
+        // created: function(){}, //바로 실행되는 함수 
+        // methods: {
+        //     AA: function(){},
+        //     BB: function(){},
+        // },
         components:{//부품
-            "C1": {template:"<div>템플릿1입니다.</div>"}
-            "C2": {template:"<div>템플릿2입니다.</div>"}
-            "C3": {template:"<div>템플릿3입니다.</div>"}
+            "C1": {template:"<div>템플릿1입니다.</div>"},
+            "C2": {template:"<div>템플릿2입니다.</div>"},
+            "C3": {template:"<div>템플릿3입니다.</div>"},
         }
 
     });
