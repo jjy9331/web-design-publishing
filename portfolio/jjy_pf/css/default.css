@@ -368,7 +368,7 @@ body #portfolio ul .pi {
     position: fixed;
     right: 100px;
     bottom: 100px;
-    background: white;
+    /* background: white; */
     width: 100px;
     height: 100px;
 }

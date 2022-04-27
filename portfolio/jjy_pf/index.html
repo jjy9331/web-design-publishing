@@ -153,23 +153,28 @@
     <button class="darkmode" >다크모드</button>
 <script>
     $(function(){
-  let toggle = "0";
-  //박스가 보이면 "1" 안보이면 "0" 표시하기로 하자
+        let toggle = "0";
 
-    $(".darkmode").click(function(){//버튼을 클릭했을 때
-        if(toggle=="0"){//현재 박스가 안보이면
-          $("body").css({filter: "invert(100%)"}); //박스를 보여게하고
-          $("body #portfolio ul .pi").css(filter: "invert(100%)"}); //박스를 보여게하고
-          toggle = "1";
-        }
-        else{ //현재박스가 보인다면
-          $("body").css({filter: "invert(100%)"}); //박스를 안보여라
-          $("body #portfolio ul .pi").css({filter: "invert(100%)"}); //박스를 보여게하고
-          toggle = "0";
-        }
+            $("button").click(function(){//버튼을 클릭했을 때
+                if(toggle=="0"){
+                $("header").css({ 
+                    position: "fixed", 
+                    top: "0px", 
+                    left:"0px",
+                });     
+                $("body").css({filter: "invert(100)"}); 
+                $("body #portfolio ul .pi").css({filter: "invert(100)"}); 
+                toggle = "1";
+                }
+                else{
+                
+                $("body").css({filter: "invert(0)"}); 
+                $("body #portfolio ul .pi").css({filter: "invert(0)"}); 
+                toggle = "0";
+                }
+            });
     });
-})
-//속도 차별화하려면 toggle과 조건문을 추가하여야 한다. 
+
 </script>
 </body>
 </html>

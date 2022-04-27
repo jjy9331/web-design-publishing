@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+</head>
+<style>
+    #app {width: 500px; padding: 50px; border: 10px dashed black;}
+</style>
+<body>
+
+
+<div id="wrap">
+    
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+    new Vue({
+        el: "#wrap", //마운트할 요소 (뷰로 화면을 구성할 대상 요소)
+        data: {n:5, k:3, e:"안녕"} //사용할 데이터(변수 역할)
+        created: function(){}, //바로 실행되는 함수 
+        method: {
+            AA: function(){},
+            BB: function(){},
+        },
+        components:{
+            "C1": {}
+            "C2": {}
+            "C3": {}
+        }
+
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
