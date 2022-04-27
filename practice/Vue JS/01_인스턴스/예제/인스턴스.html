@@ -4,11 +4,16 @@
 <meta charset="utf-8">
 <title>Vue</title>
 </head>
+<style>
+    #app {width: 500px; padding: 50px; border: 10px dashed black;}
+</style>
 <body>
 
 
 <div id="app">
     <button v-on:click="AA">버튼</button>
+    <button v-on:click="BB">버튼</button>
+    <button v-on:click="CC">버튼</button>
 </div>
 
 
@@ -31,15 +36,22 @@
         methods: {
             AA:function(){
                 alert("안녕하세요");
+                document.getElementById("app").style.background="hotpink"
             },
             BB:function(){
                 alert("반갑습니다");
+                document.getElementById("app").style.background="yellow"
             },
             CC:function(){
                 alert("행복하세요");
+                document.getElementById("app").style.background="#0cc"
             },
         },
         //바로실행되지않음(이벤트를 사용 
+
+        componets: {
+            
+        }
     });
 
     
