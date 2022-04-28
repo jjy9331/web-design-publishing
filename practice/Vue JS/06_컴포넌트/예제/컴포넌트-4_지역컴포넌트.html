@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+#app1 { margin:0 auto; width:1000px; border:10px dashed brown; padding:10px; }
+div { border:5px solid #ccc; margin:5px; }
+.s1 { width:100px; height:100px; background:yellow; }
+.s2 { width:50px; height:50px; background:orange; }
+
+#app2 { margin:0 auto; width:1000px; border:10px dashed #0cc; padding:10px; }
+</style>
+</head>
+<body>
+
+
+<div id="app1">
+	<Room></Room>
+	<Living></Living>
+	<Kitchen></Kitchen>
+	<Toilet></Toilet>
+	<Room></Room>
+</div>
+
+
+<div id="app2">
+	<Room></Room>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	Vue.component("Room",{ template:"<div><h2>방</h2><p class='s1'>침대</p></div>" });
+	//전역 컴포넌트: 모든 인스턴스에서 사용가능
+
+
+	new Vue({
+		el:"#app1",
+		components:{ 
+			"Living":{ template:"<div><h2>거실</h2><p class='s2'>TV</p></div>" }, 
+			"Kitchen":{ template:"<div>부엌입니다</div>" },
+			"Toilet":{ template:"<div>화장실입니다</div>" },
+		},	
+	});
+
+
+	new Vue({
+		el:"#app2",
+	});
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

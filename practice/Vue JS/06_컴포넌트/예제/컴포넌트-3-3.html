@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+#집 { margin:0 auto; width:1000px; border:10px dashed brown; padding:10px; }
+div { border:5px solid #ccc; margin:5px; }
+.s1 { width:100px; height:100px; background:yellow; }
+.s2 { width:50px; height:50px; background:orange; }
+</style>
+</head>
+<body>
+
+
+<div id="집">
+	<Room></Room>
+	<Living></Living>
+	<Kitchen></Kitchen>
+	<Toilet></Toilet>
+	<Room></Room>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({
+		el:"#집",
+		methods:{
+			AA:function(){ alert("TV") },
+		},
+		components:{ 
+			"Room":{ template:"<div><h2>방</h2><p class='s1'>침대</p></div>" }, 
+			"Living":{ template:"<div><h2>거실</h2><p class='s2' v-on:click='AA'>TV</p></div>" }, 
+			"Kitchen":{ template:"<div>부엌입니다</div>" },
+			"Toilet":{ template:"<div>화장실입니다</div>" },
+		},	
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
