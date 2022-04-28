@@ -11,8 +11,10 @@ p { font-size:60px; color:#0c3; }
 
 
 <div id="app">
-
-		<p>안녕하세요</p>
+		<button v-on:click="a=false">감추기</button>
+		<button v-on:click="a=true">보이기</button>
+		<p v-if="a">안녕하세요</p>
+		<!-- true: view/  -->
 
 </div>
 
