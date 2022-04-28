@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+#집 { border:10px dashed brown; padding:10px; }
+</style>
+</head>
+<body>
+
+
+<div id="집">
+
+	<room></room>
+	<living></living>
+	<kitchen></kitchen>
+	<toilet></toilet>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({
+
+		el:"#집",
+
+		components:{ 
+			"room":{ template:"<div>방입니다</div>" }, 
+
+			"living":{ template:"<div>거실입니다</div>" }, 
+
+			"kitchen":{ template:"<div>부엌입니다</div>" },
+
+			"toilet":{ template:"<div>화장실입니다</div>" },
+		},
+	
+	});
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
