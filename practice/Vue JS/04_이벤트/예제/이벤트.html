@@ -19,15 +19,15 @@
 	new Vue({ 
 		el: "#app", 
 
-		data : {a:"pink", b:"yellowgreen" }
+		data : {a:"pink", b:"yellowgreen" },
 		methods: {//클릭 등의 이벤트 발생시 실행되는 함수
 			AA:function(){
 				// alert("반갑습니다");
-				document.getElementById("app").style.backgroundColor="pink"
+				document.getElementById("app").style.backgroundColor=this.a;
 			},
 			BB:function(){
 				// alert("안녕하세요");
-				document.getElementById("app").style.backgroundColor="#0cc"
+				document.getElementById("app").style.backgroundColor=this.b;
 			},
 		},
 	});
