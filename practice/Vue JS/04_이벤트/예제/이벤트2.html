@@ -10,9 +10,7 @@
 <div id="app">
 
 	<input v-model="a">
-	<input v-model="b">
-	<button v-on:mouseenter="AA" v-on:mouseleave="BB">버튼</button>
-	<button v-on:click="BB">버튼</button>
+	<button v-on:click="AA">버튼</button>
 </div>
 
 
@@ -22,15 +20,11 @@
 	new Vue({ 
 		el: "#app", 
 
-		data : {a:"pink", b:"yellowgreen" },
+		data : {a:"pink" },
 		methods: {//클릭 등의 이벤트 발생시 실행되는 함수
 			AA:function(){
 				// alert("반갑습니다");
 				document.getElementById("app").style.backgroundColor=this.a;
-			},
-			BB:function(){
-				// alert("안녕하세요");
-				document.getElementById("app").style.backgroundColor=this.b;
 			},
 		},
 	});
