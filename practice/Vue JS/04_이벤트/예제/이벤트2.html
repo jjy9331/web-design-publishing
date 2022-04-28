@@ -3,14 +3,21 @@
 <head>
 <meta charset="utf-8">
 <title>Vue</title>
+<style>
+#app { margin:0 auto; border:7px dashed black; padding:30px; }
+</style>
 </head>
 <body>
 
 
 <div id="app">
 
-	<input v-model="a">
-	<button v-on:click="AA">버튼</button>
+	app배경색 : <input v-model="a"> 
+	<button v-on:click="AA">적용</button> <br><br>
+
+	app가로길이 : <input v-model="b"> 
+	<button v-on:click="BB">적용</button> <br><br>
+
 </div>
 
 
@@ -20,12 +27,18 @@
 	new Vue({ 
 		el: "#app", 
 
-		data : {a:"pink" },
+		data : { a:"pink", b:"100%" },
+
 		methods: {//클릭 등의 이벤트 발생시 실행되는 함수
+
 			AA:function(){
-				// alert("반갑습니다");
 				document.getElementById("app").style.backgroundColor=this.a;
 			},
+
+			BB:function(){
+				document.getElementById("app").style.width=this.b;
+			},
+
 		},
 	});
 
