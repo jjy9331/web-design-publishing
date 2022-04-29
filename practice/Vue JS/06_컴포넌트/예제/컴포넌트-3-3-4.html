@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+#집 { margin:0 auto; width:1000px; border:10px dashed brown; padding:10px; }
+div { border:5px solid #ccc; margin:5px; }
+.s1 { width:100px; height:100px; background:yellow; }
+.s2 { width:50px; height:50px; background:orange; }
+</style>
+</head>
+<body>
+
+
+<div id="app">
+
+	<h1>앱<button v-on:click="AA">버튼</button></h1>
+
+	<Room></Room>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ //뷰 인스턴스 생성
+		el:"#app",
+		data:{ a:1, b:2 },
+		methods:{ AA:function(){ alert("안녕"); } },
+		
+		components:{
+
+			"Room":{ 
+				data:{ r1:7, r2:3 },
+				methods:{ RR:function(){ alert("방가"); } },
+				template:"<div>룸<button v-on:click='RR'>버튼</button></div>",
+			},
+
+		}	
+	});
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

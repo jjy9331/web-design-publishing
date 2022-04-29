@@ -39,7 +39,7 @@ div { border:5px solid #ccc; margin:5px; }
 
 	new Vue({
 		el:"#app1",
-		components:{ 
+		components:{ //지역 컴포넌트: 해당 인스턴스에서만 사용가능
 			"Living":{ template:"<div><h2>거실</h2><p class='s2'>TV</p></div>" }, 
 			"Kitchen":{ template:"<div>부엌입니다</div>" },
 			"Toilet":{ template:"<div>화장실입니다</div>" },

@@ -4,13 +4,17 @@
 <meta charset="utf-8">
 <title>Vue</title>
 <style>
+div { border:5px solid #ccc; padding:50px; margin:20px; }
 </style>
 </head>
 <body>
 
-<div id="app">
-	<!-- {{ a }} {{ b }} -->
-	<comp1 v-bind:k1="a" v-bind:k2="b"></comp1>
+<div id="app">	
+	
+	{{ a }} {{ b }}
+
+	<comp1></comp1>
+
 </div>
 
 
@@ -19,14 +23,15 @@
 <script>
 
 	
-	new Vue({ //뷰 인스턴스 자체가 상위 컴포넌트가 된다
+	new Vue({
+
 		el: "#app", 
 		data: { a:"안녕하세요", b:"반갑습니다" },
+
 		components: { 			
-			"comp1": { 
-				props:["k1","k2"], //상위 컴포넌트에서 데이터를 전달받기위한 속성이름 지정
-				template:"<div>컴포넌트1 내용입니다{{ a }} {{ b }} </div>" },
+			"comp1": { template:"<div>컴포넌트1 내용입니다{{ a }} {{ b }}</div>" },
 		}
+			
 	});
 
 

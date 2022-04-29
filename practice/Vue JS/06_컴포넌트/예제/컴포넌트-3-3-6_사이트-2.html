@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+html,body { height:100%; }
+* { margin:0; padding:0; }
+ul { list-style:none; }
+
+#wrap {border:5px dashed #ccc; }
+#header { background:pink; }
+#contents { margin:0 auto; width:1200px; background:yellow; }
+#footer { background:yellowgreen; }
+
+#contents .box1 { height:300px; border:5px dashed orange; }
+#contents .box2 { height:300px; border:5px dashed skyblue; }
+
+</style>
+</head>
+<body>
+
+<div id="wrap">
+	<C_header></C_header>
+	<C_contents></C_contents>
+	<C_footer></C_footer>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+
+	new Vue({ //뷰 인스턴스 생성
+		el:"#wrap",
+
+		components:{
+
+			"C_header":{ template:"<div id='header'><h1>로고</h1><nav>GNB</nav></div>" },
+
+
+			"C_contents":{ 
+				template:"<div id='contents'>컨텐츠<Box1></Box1><Box2></Box2></div>",
+
+				components:{
+					"Box1":{ template:"<div class='box1'>박스1</div>" },
+					"Box2":{ template:"<div class='box2'>박스2</div>" },
+				},
+			},
+
+
+			"C_footer":{ template:"<div id='footer'><p>copyright</p></div>" },	
+		
+		},
+
+	});
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
