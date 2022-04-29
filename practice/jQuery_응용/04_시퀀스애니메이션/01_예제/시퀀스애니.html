@@ -46,7 +46,10 @@ $(function(){
 
 	let k = setInterval(aniNext,100); //0.1초마다 aniNext 함수 실행
 
-	$(".movie").animate({left:2000},10000,function(){
+	$(".movie").animate(
+		{left:2000},
+		10000,
+		function(){
 		clearInterval(k);
 	});
 

@@ -18,16 +18,16 @@
             </div>
             <ul>
                 <li>
-                    <a href="#">홈</a>
+                    <a href="#home">홈</a>
                 </li>
                 <li>
-                    <a href="#">자기소개</a>
+                    <a href="#introduce">자기소개</a>
                 </li>
                 <li>
-                    <a href="#">포트폴리오</a>
+                    <a href="#portfolio">포트폴리오</a>
                 </li>
                 <li>
-                    <a href="#">컨텍스트</a>
+                    <a href="#contact">컨텍스트</a>
                 </li>
             </ul>
         </div>
@@ -56,9 +56,9 @@
                         <dt>거주지</dt>
                         <dd>경기도 파주시</dd>
                         <dt>지원분야</dt>
-                        <dd>WebDesign/Publishing</dd>
+                        <dd>WebDesign / Publishing</dd>
                         <dt>기술</dt>
-                        <dd>Photoshop, Ilustrator, Html5, CSS3, Javascript, jQuery</dd>
+                        <dd>Photoshop,  Ilustrator,  Html5,  CSS3,  Javascript,  jQuery</dd>
                     </dl>
                     <div class="visual">
                         <img src="images/pr1.png" alt="">
@@ -150,7 +150,9 @@
     <footer>
         <div class="inner">
             <p>Copyright &copy; 2022 my portfolio, all right reserved</p>
-            <button class="darkmode" >다크모드</button>
+            <button class="darkmode" >
+                <span class="invert">Dark mode</span>
+            </button>
         </div>
     </footer>
 
@@ -162,7 +164,7 @@
                     if(toggle=="0"){
                     
                    $(".group").css({filter: "invert(100)"}); 
-                   $(".darkmode").css({filter: "invert(100)"}); 
+                //    $(".darkmode").css({filter: "invert(100)"}); 
                    $("header").css({filter: "invert(100)"}); 
                    $("footer").css({filter: "invert(100)"}); 
                    $("body #portfolio ul .pi").css({filter: "invert(100)"}); 
@@ -170,10 +172,10 @@
                     }
                     else{
                    $(".group").css({filter: "invert(0)"}); 
+                //    $(".darkmode").css({filter: "invert(0)"});
                    $("header").css({filter: "invert(0)"});
                    $("footer").css({filter: "invert(0)"});
                    $("body #portfolio ul .pi").css({filter: "invert(0)"}); 
-                   $(".darkmode").css({filter: "invert(0)"});
                    toggle = "0";
                     }
                 });
