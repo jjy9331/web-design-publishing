@@ -20,7 +20,7 @@ body {
     position:absolute; 
     visibility:hidden;
     width:100%; 
-    /* object-fit: cover; */
+    object-fit: cover;
     /* background-size: cover; */
     border:5px dashed #777777; 
     /* height:100%;  */
@@ -39,7 +39,8 @@ $(function(){
 	}
 	$(".movie img:first").css({visibility:"visible"});
 
-
+    // resize
+    let H = $(window).height();
 
     //애니메이션 시키기
 	let frameNum=0;
@@ -57,9 +58,9 @@ $(function(){
 		}
 
 		$(".movie img").css({visibility:"hidden"});
-        // $(".movie img").css({height:'70%'});
+        $(".movie img").css({height:H});
 		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
-        // $(".movie img:eq("+frameNum+")").css({height:'70%'});
+        $(".movie img:eq("+frameNum+")").css({height:H});
 	}
 
 	let k = setInterval(aniNext,20); //0.1초마다 aniNext 함수 실행
