@@ -12,7 +12,7 @@ ul {list-style: none;}
 img {border: 0; vertical-align: top; }
 
 /* base */
-body { font-size:14px; font-family:'Noto Sans KR'; font-weight:500; color:black; }
+body {  zoom: 0.55; font-size:14px; font-family:'Noto Sans KR'; font-weight:500; color:black; }
 a { text-decoration:none; color:black; }
 .blind { position:absolute; top:-9999px; }
 
@@ -279,7 +279,7 @@ header ul li:hover {
 
 #portfolio .inner ul li .pi a:hover{
     opacity: 0.3;
-    transition: 1s;
+    transition: 0s;
 }
 
 
@@ -363,7 +363,7 @@ footer .inner p {
 
 body {
     /* filter: invert(100%); */
-    zoom: 0.5;
+  
 }
 
 body #portfolio ul .pi {
