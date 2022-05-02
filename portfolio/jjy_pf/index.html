@@ -16,26 +16,71 @@ $(function(){
             $("#tt").text(b);
 
             $("#bar").css({transition:"0.5s"});
+            $('#portfolio .inner li:eq(0)').css({transition:"0.4s"});
+            $('#portfolio .inner li:eq(1)').css({transition:"0.4s"});
+            $('#portfolio .inner li:eq(1)').css({transition:"0.4s"});
+            $('#portfolio .inner li:eq(2)').css({transition:"1.0s"});
+            $('#portfolio .inner li:eq(3)').css({transition:"1.0s"});
+            $('#portfolio .inner li:eq(4)').css({transition:"1.0s"});
+            $('#portfolio .inner li:eq(5)').css({transition:"1.0s"});
+            $('#portfolio .inner li:eq(6)').css({transition:"1.0s"});
 
-            if((b >=0) && (b < 876)) {	//스크롤한 높이가 0~1200일경우
-				  $('#bar').css({right:673});
-                  $('#bar').css({width:35});
-			  } 
-	
-			  if((b >= 876) && (b < 1661)) {	//about
-				  $('#bar').css({right:464});
-                  $('#bar').css({width:113});
-			  } 
-							  
-			  if((b >= 1661) && (b < 3170)) { //works
-				  $('#bar').css({right:224});
-                  $('#bar').css({width:145});
-			  } 
-			  
-			  if(b >= 3170) {	//contact
-				 $('#bar').css({right:14});
-                 $('#bar').css({width:113});
-			  } 	
+            if((b >=0) && (b < 876)) {	//home
+                $('#bar').css({right:673});
+                $('#bar').css({width:35});
+            } 
+
+            if((b >= 876) && (b < 1661)) {	//introduce
+                $('#bar').css({right:464});
+                $('#bar').css({width:113});
+                $('#portfolio .inner li:eq(0)').css({opacity:0});
+                $('#portfolio .inner li:eq(1)').css({right:220});
+                $('#portfolio .inner li:eq(1)').css({opacity:1});
+                $('#portfolio .inner li:eq(2)').css({opacity:0});
+                $('#portfolio .inner li:eq(3)').css({opacity:0});
+            } 
+
+            if((b >= 1661) && (b < 1752)) {	//introduce
+                $('#bar').css({right:224});
+                $('#bar').css({width:145});
+                $('#portfolio .inner li:eq(0)').css({opacity:0});
+                $('#portfolio .inner li:eq(1)').css({opacity:1});
+                $('#portfolio .inner li:eq(2)').css({opacity:0});
+                $('#portfolio .inner li:eq(3)').css({opacity:0});
+                $('#portfolio .inner li:eq(4)').css({opacity:0});
+                $('#portfolio .inner li:eq(5)').css({opacity:0});
+                $('#portfolio .inner li:eq(6)').css({opacity:0});
+            } 
+            if((b >= 1797) && (b < 2223)) {	//introduce
+                $('#bar').css({right:224});
+                $('#bar').css({width:145});
+                $('#portfolio .inner li:eq(0)').css({opacity:1});
+                $('#portfolio .inner li:eq(1)').css({right:0});
+                $('#portfolio .inner li:eq(1)').css({opacity:1});
+                $('#portfolio .inner li:eq(2)').css({opacity:0.05});
+                $('#portfolio .inner li:eq(3)').css({opacity:0.05});
+                $('#portfolio .inner li:eq(4)').css({opacity:0.05});
+                $('#portfolio .inner li:eq(5)').css({opacity:0.05});
+                $('#portfolio .inner li:eq(6)').css({opacity:0.05});
+            } 
+                            
+            if((b >= 2223) && (b < 3170)) { //portfolio
+                $('#bar').css({right:224});
+                $('#bar').css({width:145});
+                $('#portfolio .inner li:eq(0)').css({opacity:0});
+                $('#portfolio .inner li:eq(1)').css({opacity:0});
+                $('#portfolio .inner li:eq(2)').css({opacity:1});
+                $('#portfolio .inner li:eq(3)').css({opacity:1});
+                $('#portfolio .inner li:eq(4)').css({opacity:1});
+                $('#portfolio .inner li:eq(5)').css({opacity:1});
+                $('#portfolio .inner li:eq(6)').css({opacity:1});
+                
+            } 
+            
+            if(b >= 3170) {	//contact
+                $('#bar').css({right:14});
+                $('#bar').css({width:113});
+            } 	
                     
         });
 });
@@ -45,7 +90,7 @@ $(function(){
 </head>
 <body>
     
-    <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px;">0</div>
+    <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
     <!-- <h2 class="time">시간</h2> -->
 
     <div class="movie">
