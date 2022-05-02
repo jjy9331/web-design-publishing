@@ -76,11 +76,12 @@ $(function () {
 						clearInterval(timer1); //setInterval종료					
 						$(".loading").fadeOut(1000); //로딩표시영역 사라짐
 				}
-            
+                console.log(roundPG);
         }
 
 		var timer1 = setInterval( loadingMotion, 10 ); //loadingMotion함수를 0.01초마다 실행
 
+        // console.log(timer1);
 
 /////////////////////// 로딩진행률 표시 end ///////////////////////////////////////////////
 
