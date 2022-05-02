@@ -438,3 +438,10 @@ body #portfolio ul .pi {
     /* border:5px dashed #777777;  */
     height:100%; 
 }
+
+.time {
+    position: absolute;
+    background-color: red;
+    font-size: 100px;
+    z-index: 100000;
+}
