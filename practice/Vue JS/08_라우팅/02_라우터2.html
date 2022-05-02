@@ -11,10 +11,12 @@
     <div id="app">
 		<router-link to="/">Main</router-link>
 		<router-link to="/sub1">Sub1</router-link>
-
-		<router-view name="header"></router-view>
+    
+		<!-- <router-view name="header"></router-view> -->
 		<router-view></router-view>
-		<router-view name="footer"></router-view>
+    <router-view name="C_header"></router-view>
+    <router-view name="C_footer"></router-view>
+		<!-- <router-view name="footer"></router-view> -->
     </div>
 
 
@@ -29,16 +31,18 @@
             path: '/',
             components: {
               default: { template: '<div>메인</div>' },
-              header: { template: '<div>헤더</div>' },
-              footer: { template: '<div>푸터</div>' },
+              C_header: { template: '<div>콤프1</div>' },
+              // header: { template: '<div>헤더</div>' },
+              C_footer: { template: '<div>푸터</div>' },
             }
           },
           {
             path: '/sub1',
             components: {
               default: { template: '<div>서브1</div>' },
-              header: { template: '<div>헤더</div>' },
-              footer: { template: '<div>푸터</div>' },
+              C_header: { template: '<div>콤프1</div>' },
+              // header: { template: '<div>헤더</div>' },
+              C_footer: { template: '<div>푸터</div>' },
             }
           },
         ]

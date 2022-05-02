@@ -49,7 +49,8 @@ div { border:5px solid #ccc; margin:5px; }
 
 				methods:{ 
 					RR:function(){
-						eventBus.$emit("ggg",100);
+						// eventBus.$emit("ggg",100);
+						eventBus.$emit("ggg",this.r1);
 					} 
 				},
 				template:"<div>룸<button v-on:click='RR'>버튼</button></div>",
