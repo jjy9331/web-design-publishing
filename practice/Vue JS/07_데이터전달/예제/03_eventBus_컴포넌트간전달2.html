@@ -15,7 +15,7 @@ div { border:5px solid #ccc; margin:5px; }
 
 <div id="app">
 
-	<h1>앱<button v-on:click="AA">버튼</button></h1>
+	<!-- <h1>앱<button v-on:click="AA">버튼</button></h1> -->
 
 	<Room></Room>
 
@@ -25,10 +25,19 @@ div { border:5px solid #ccc; margin:5px; }
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
 <script>
 
+	let eventBus = new Vue();//이벤트버스
+
 	new Vue({ //뷰 인스턴스 생성
 		el:"#app",
 		data:{ a:1, b:2 },
-		methods:{ AA:function(){ alert("안녕"); } },
+
+		created:function(){
+			eventBus.$on("ggg",function(value){
+				alert(value);
+			});
+		},
+
+		// methods:{ AA:function(){ alert("안녕"); } },
 		
 		components:{
 
@@ -38,7 +47,11 @@ div { border:5px solid #ccc; margin:5px; }
 					return { r1:7, r2:3 }
 	            },
 
-				methods:{ RR:function(){ alert(this.r1); } },
+				methods:{ 
+					RR:function(){
+						eventBus.$emit("ggg",100);
+					} 
+				},
 				template:"<div>룸<button v-on:click='RR'>버튼</button></div>",
 				
 			},
