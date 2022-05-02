@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<style>
+</style>
+</head>
+<body>
+
+    <div id="app">
+		<router-link to="/">Main</router-link>
+		<router-link to="/sub1">Sub1</router-link>
+    
+		<!-- <router-view name="header"></router-view> -->
+		<router-view></router-view>
+    <router-view name="C_header"></router-view>
+    <router-view name="C_footer"></router-view>
+		<!-- <router-view name="footer"></router-view> -->
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    <script>
+
+      let main = { template: '<div>메인</div>' };
+      let s1= { template: '<div>서브1</div>' };
+      let h =  { template: '<div>헤더</div>' };
+      let f =  { template: '<div>푸터</div>' };
+
+      var router = new VueRouter({
+        routes: [
+          {
+            path: '/',
+            components: {
+              default: main,
+              C_header: h,
+              // header: { template: '<div>헤더</div>' },
+              C_footer: f,
+            }
+          },
+          {
+            path: '/sub1',
+            components: {
+              default: s1,
+              C_header: h,
+              // header: { template: '<div>헤더</div>' },
+              C_footer: f,
+            }
+          },
+        ]
+      })
+
+      var app = new Vue({
+        router
+      }).$mount('#app');
+    </script>
+</body>
+</html>
