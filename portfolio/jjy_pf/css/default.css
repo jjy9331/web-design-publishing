@@ -225,6 +225,7 @@ header #bar {
 }
 
 #portfolio .inner ul {
+    opacity: 0;
     margin: 0 auto;
     width: 1314px;
     height: 1799px;
