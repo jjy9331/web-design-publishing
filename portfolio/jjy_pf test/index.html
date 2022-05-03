@@ -17,8 +17,8 @@ $(function(){
 
             $("#bar").css({transition:"0.5s"});
 
-            $('#home .inner .typo h3').css({transition:"0.4s"});
-            $('#home .inner .typo p').css({transition:"0.4s"});
+            $('#home .inner .typo h3').css({transition:"1.0s"});
+            $('#home .inner .typo p').css({transition:"1.0s"});
 
             $('#home .inner .typo h3 .kw1').css({transition:"0.4s"});
             $('#home .inner .typo h3 .kw2').css({transition:"0.4s"});
@@ -65,10 +65,14 @@ $(function(){
                 // $('#home .inner .typo p span').css({opacity:1});
                 // $('#home .inner .typo p span').text("같이");
                 
+            }
+            else{
+                $('#home .inner .typo h3').text("팀이 __하면, 프로젝트가 __된다");
+                $('#home .inner .typo p').text("일은 __ 하는 것이라 배웠습니다");
             } 
             
             
-            if((b >=182) && (b < 223)) {	//home
+            if((b >=182) && (b < 807)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
                 // $('#home .inner .typo h3').css({opacity:1});
@@ -81,7 +85,7 @@ $(function(){
                 $('#home .inner .typo p').css({opacity:1});
 
                 $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
-                $('#home .inner .typo p span').text("일은 같이 하는 것이라 배웠습니다");
+                $('#home .inner .typo p').text("일은 같이 하는 것이라 배웠습니다");
 
                 $('#home .inner .typo h3 .kw1').text("단결");
                 // $('#home .inner .typo h3 .kw2').css({opacity:1});
