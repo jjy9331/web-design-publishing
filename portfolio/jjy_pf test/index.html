@@ -17,6 +17,13 @@ $(function(){
 
             $("#bar").css({transition:"0.5s"});
 
+            $('#home .inner .typo h3').css({transition:"0.4s"});
+            $('#home .inner .typo p').css({transition:"0.4s"});
+
+            $('#home .inner .typo h3 .kw1').css({transition:"0.4s"});
+            $('#home .inner .typo h3 .kw2').css({transition:"0.4s"});
+            $('#home .inner .typo p span').css({transition:"0.4s"});
+
             $('#portfolio .inner li:eq(0)').css({transition:"0.4s"});
             $('#portfolio .inner li:eq(1)').css({transition:"0.4s"});
             $('#portfolio .inner li:eq(1)').css({transition:"0.4s"});
@@ -29,21 +36,29 @@ $(function(){
             if((b >=0) && (b < 876)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
+                $('#home .inner .typo h3').css({opacity:1});
+                $('#home .inner .typo p span').css({opacity:1});
+
+                $('#home .inner .typo h3 .kw1').text("__");
+                $('#home .inner .typo h3 .kw2').text("__");
+                $('#home .inner .typo p span').text("__");
             } 
             
             if((b >=140) && (b < 876)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
+                $('#home .inner .typo h3').css({opacity:0});
+                $('#home .inner .typo p span').css({opacity:0});
+                // $('#home .inner .typo h3 .kw1').text("단결");
+                // $('#home .inner .typo h3 .kw2').text("완결");
+                // $('#home .inner .typo p span').text("같이");
+                $('#home .inner .typo h3 .kw1').css({opacity:1});
                 $('#home .inner .typo h3 .kw1').text("단결");
+                $('#home .inner .typo h3 .kw2').css({opacity:1});
                 $('#home .inner .typo h3 .kw2').text("완결");
+                $('#home .inner .typo p span').css({opacity:1});
                 $('#home .inner .typo p span').text("같이");
-                // $('#home .inner .typo h3').fadeIn(500,function(){
-                //     $('#home .inner .typo h3 .kw1').text("단결");
-                //     $('#home .inner .typo h3 .kw2').text("완결");
-                // };);
-                // $('#home .inner .typo p').fadeIn(500,function(){
-                //     $('#home .inner .typo p span').text("같이");
-                // };);
+                
             } 
 
             if((b >= 876) && (b < 1661)) {	//introduce
