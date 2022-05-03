@@ -11,5 +11,23 @@ export default {
 </script>
 
 <style>
-#room {border 2px dashed orange}
+#room { border:20px solid #0cc; }
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
