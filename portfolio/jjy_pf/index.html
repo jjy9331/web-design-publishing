@@ -16,6 +16,17 @@ $(function(){
             $("#tt").text(b);
 
             $("#bar").css({transition:"0.5s"});
+            $('#home .inner .visual').css({transition:"0.4s"});
+            $('#home .inner .typo h3').css({transition:"0.8s"});
+            $('#home .inner .typo p').css({transition:"0.8s"});
+
+            $('#home .inner .typo h3 .kw1').css({transition:"0.4s"});
+            $('#home .inner .typo h3 .kw2').css({transition:"0.4s"});
+            $('#home .inner .typo p span').css({transition:"0.4s"});
+
+            $('#introduce .visual img:eq(1)').css({transition:"2.0s"});
+            $('#introduce .visual img:eq(2)').css({transition:"2.0s"});
+
             $('#portfolio .inner li:eq(0)').css({transition:"0.4s"});
             $('#portfolio .inner li:eq(1)').css({transition:"0.4s"});
             $('#portfolio .inner li:eq(1)').css({transition:"0.4s"});
@@ -25,10 +36,92 @@ $(function(){
             $('#portfolio .inner li:eq(5)').css({transition:"1.0s"});
             $('#portfolio .inner li:eq(6)').css({transition:"1.0s"});
 
-            if((b >=0) && (b < 876)) {	//home
+            if((b >=0) && (b < 153)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
+                $('#home .inner .visual').css({opacity:1});
+                // $('#home .inner .typo h3').css({opacity:1});
+                // $('#home .inner .typo p span').css({opacity:1});
+
+                // $('#home .inner .typo h3 .kw1').text("__");
+                // $('#home .inner .typo h3 .kw2').text("__");
+                // $('#home .inner .typo p span').text("__");
+                $('#home .inner .typo h3').css({opacity:1});
+                $('#home .inner .typo p').css({opacity:1});
             } 
+
+            if((b >=1) && (b < 123)) {	//home
+                $('#bar').css({right:673});
+                $('#bar').css({width:35});
+                $('#home .inner .visual').css({opacity:1});
+                $('#home .inner .typo h3').css({opacity:0});
+                $('#home .inner .typo p').css({opacity:0});
+                // $('#home .inner .typo h3 .kw1').text("단결");
+                // $('#home .inner .typo h3 .kw2').text("완결");
+                // $('#home .inner .typo p span').text("같이");
+                // $('#home .inner .typo h3 .kw1').css({opacity:1});
+
+                // $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
+                // $('#home .inner .typo p span').text("일은 같이 하는 것이라 배웠습니다");
+
+                // $('#home .inner .typo h3 .kw1').text("단결");
+                // $('#home .inner .typo h3 .kw2').css({opacity:1});
+                // $('#home .inner .typo h3 .kw2').text("완결");
+                // $('#home .inner .typo p span').css({opacity:1});
+                // $('#home .inner .typo p span').text("같이");
+                
+            }
+            else{
+                // $('#home .inner .typo h3').text("팀이 __하면, 프로젝트가 __된다");
+                // $('#home .inner .typo p').text("일은 __ 하는 것이라 배웠습니다");
+                $('#home .inner .typo h3 .kw1').text("__");
+                $('#home .inner .typo h3 .kw2').text("__");
+                $('#home .inner .typo p span').text("__");
+            } 
+            if((b >=811) && (b < 837)) {
+                $('#bar').css({right:673});
+                $('#bar').css({width:35});
+                $('#introduce .visual img:eq(1)').css({opacity:1});
+
+            }
+            if((b >=876) && (b < 908)) {
+                $('#bar').css({right:673});
+                $('#bar').css({width:35});
+                $('#introduce .visual img:eq(2)').css({opacity:1});
+
+            }
+            
+            if((b >=123) && (b < 747)) {	//home
+                $('#bar').css({right:673});
+                $('#bar').css({width:35});
+                // $('#home .inner .typo h3').css({opacity:1});
+                // $('#home .inner .typo p span').css({opacity:1});
+                // $('#home .inner .typo h3 .kw1').css({opacity:1});
+                $('#home .inner .visual').css({opacity:0});
+                $('#home .inner .typo h3').css({opacity:1});
+                $('#home .inner .typo p').css({opacity:1});
+                
+                // $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
+                // $('#home .inner .typo p').text("일은 같이 하는 것이라 배웠습니다");
+                
+                $('#home .inner .typo h3 .kw1').text("단결");
+                // $('#home .inner .typo h3 .kw2').css({opacity:1});
+                $('#home .inner .typo h3 .kw2').text("완결");
+                // $('#home .inner .typo p span').css({opacity:1});
+                $('#home .inner .typo p span').text("같이");
+                
+                $('#home .inner .typo h3 .kw1').css({"text-decoration":"underline"});
+                $('#home .inner .typo h3 .kw2').css({"text-decoration":"underline"});
+                $('#home .inner .typo p span').css({"text-decoration":"underline"});
+
+                $('#introduce .visual img:eq(1)').css({opacity:0});
+                $('#introduce .visual img:eq(2)').css({opacity:0});
+            } 
+            else{
+                $('#home .inner .typo h3 .kw1').css({"text-decoration":"none"});
+                $('#home .inner .typo h3 .kw2').css({"text-decoration":"none"});
+                $('#home .inner .typo p span').css({"text-decoration":"none"});
+            }
 
             if((b >= 876) && (b < 1661)) {	//introduce
                 $('#bar').css({right:464});
@@ -131,8 +224,8 @@ $(function(){
                     <img src="images/main3.gif" alt="teamwork visual icon">
                 </div>
                 <div class="typo">
-                    <h3>팀이 단결하면, 프로젝트가 완결된다</h3>
-                    <p>일은 같이 하는 것이라 배웠습니다</p>
+                    <h3>팀이 <span class="kw1">__</span>하면, 프로젝트가 <span class="kw2">__</span>된다</h3>
+                    <p>일은 <span>__</span> 하는 것이라 배웠습니다</p>
                 </div>
             </div>
         </section>
