@@ -67,8 +67,11 @@ $(function(){
                 
             }
             else{
-                $('#home .inner .typo h3').text("팀이 __하면, 프로젝트가 __된다");
-                $('#home .inner .typo p').text("일은 __ 하는 것이라 배웠습니다");
+                // $('#home .inner .typo h3').text("팀이 __하면, 프로젝트가 __된다");
+                // $('#home .inner .typo p').text("일은 __ 하는 것이라 배웠습니다");
+                $('#home .inner .typo h3 .kw1').text("__");
+                $('#home .inner .typo h3 .kw2').text("__");
+                $('#home .inner .typo p span').text("__");
             } 
             
             
@@ -81,8 +84,8 @@ $(function(){
                 $('#home .inner .typo h3').css({opacity:1});
                 $('#home .inner .typo p').css({opacity:1});
                 
-                $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
-                $('#home .inner .typo p').text("일은 같이 하는 것이라 배웠습니다");
+                // $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
+                // $('#home .inner .typo p').text("일은 같이 하는 것이라 배웠습니다");
                 
                 $('#home .inner .typo h3 .kw1').text("단결");
                 // $('#home .inner .typo h3 .kw2').css({opacity:1});
@@ -94,6 +97,11 @@ $(function(){
                 $('#home .inner .typo h3 .kw2').css({"text-decoration":"underline"});
                 $('#home .inner .typo p span').css({"text-decoration":"underline"});
             } 
+            else{
+                $('#home .inner .typo h3 .kw1').css({"text-decoration":"none"});
+                $('#home .inner .typo h3 .kw2').css({"text-decoration":"none"});
+                $('#home .inner .typo p span').css({"text-decoration":"none"});
+            }
 
             if((b >= 876) && (b < 1661)) {	//introduce
                 $('#bar').css({right:464});

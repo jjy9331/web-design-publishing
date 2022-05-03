@@ -2,12 +2,16 @@
   <div id="home">
     
     <Room></Room>
+    <Kitchen></Kitchen>
+    <Living></Living>
     
   </div>
 </template>
 
 <script>
-import Room from "./components/Room.vue"
+import Room from "./components/Room.vue";
+import Kitchen from "./components/Kitchen.vue";
+import Living from "./components/Living.vue";
 
 export default {
     data(){
@@ -20,13 +24,15 @@ export default {
     },
     components:{
         "Room":Room,
+        "Kitchen":Kitchen,
+        "Living":Living,
     },
     
 }
 </script>
 
 <style>
-
+#home { border: 10px dashed yellow; }
 </style>
 
 
