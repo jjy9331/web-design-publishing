@@ -19,6 +19,14 @@
           <li>20,000원</li>
         </ul>
       </li>
+      <li class="main" v-on:click="menuOpen(2);">
+        <strong>제품이름3</strong>
+        <ul class="sub">
+          <li><img src="./images/img1.jpg" alt=""></li>
+          <li>제품3설명입니다</li>
+          <li>20,000원</li>
+        </ul>
+      </li>
     </ul>
   </div>
 </template>
@@ -27,6 +35,7 @@
 let toggle = [];
 toggle[0]=0;
 toggle[1]=0;
+toggle[2]=0;
 
 export default {
   methods:{
