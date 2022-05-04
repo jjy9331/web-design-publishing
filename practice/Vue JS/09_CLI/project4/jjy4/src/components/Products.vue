@@ -5,9 +5,18 @@
       <li class="main" v-on:click="menuOpen">
         <strong>제품이름1</strong>
         <ul class="sub">
-          <li>사진</li>
-          <li>설명</li>
-          <li>가격</li>
+          <li><img src="./images/img1.jpg" alt=""></li>
+          <li>제품1설명입니다</li>
+          <li>20,000원</li>
+        </ul>
+      </li>
+
+      <li class="main" v-on:click="menuOpen">
+        <strong>제품이름2</strong>
+        <ul class="sub">
+          <li><img src="./images/img1.jpg" alt=""></li>
+          <li>제품2설명입니다</li>
+          <li>20,000원</li>
         </ul>
       </li>
     </ul>
