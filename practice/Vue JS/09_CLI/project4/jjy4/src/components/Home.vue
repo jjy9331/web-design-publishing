@@ -1,6 +1,7 @@
 <template>
   <div id="home">
-    홈
+    <h2>홈</h2>
+    <p>홈입니다.</p>
   </div>
 </template>
 
@@ -11,5 +12,6 @@ export default {
 </script>
 
 <style>
-#home { border:20px solid orange;}
+#home { border:20px solid orange;margin-bottom: 30px;}
+
 </style>

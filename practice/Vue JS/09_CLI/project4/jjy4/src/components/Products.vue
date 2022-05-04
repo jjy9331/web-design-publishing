@@ -1,15 +1,44 @@
 <template>
   <div id="products">
-    제품
+    <h2>제품</h2>
+    <ul>
+      <li class="main" v-on:click="menuOpen">
+        <strong>제품이름1</strong>
+        <ul class="sub">
+          <li>사진</li>
+          <li>설명</li>
+          <li>가격</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+let toggle = 0;
 export default {
-
+  methods:{
+    menuOpen:function(){
+      if(toggle == 0){
+        document.getElementsByClassName("sub")[0].style.display="block"
+        toggle = 1;
+        }
+      else{
+        document.getElementsByClassName("sub")[0].style.display="none"
+        toggle = 0;
+      }
+      
+    },
+  },
 }
 </script>
 
 <style>
-#products { border:20px solid blue;}
+#products { border:20px solid blue; margin-bottom: 30px;}
+
+#products h2 { margin-bottom: 30px;}
+
+#products .main { border: 5px dashed skyblue; margin: 20px;}
+
+#products .sub {display: none;}
 </style>

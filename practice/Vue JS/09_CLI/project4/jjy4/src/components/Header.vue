@@ -1,9 +1,9 @@
 <template>
   <div id="header">
     <h1>로고</h1>
-    <button v-on:click="AA">홈</button>
-    <button v-on:click="AA">제품</button>
-    <button v-on:click="AA" >연락처</button>
+    <button v-on:click="AA(0);">홈</button>
+    <button v-on:click="AA(1);">제품</button>
+    <button v-on:click="AA(2);" >연락처</button>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
     //Vue js 생명 주기 검색하면 시작 시점 여러가지가 있다.
 
     num = document.getElementsByClassName("con").length;
-    alert(num);
+    // alert(num);
 
     for( let i=0; i<num; i++){
       document.getElementsByClassName("con")[i].style.display="none";
@@ -27,11 +27,11 @@ export default {
   },
 
   methods: {
-    AA:function(){
+    AA:function(k){
       for( let i=0; i<num; i++){
         document.getElementsByClassName("con")[i].style.display="none";
       }
-      document.getElementsByClassName("con")[2].style.display="block";
+      document.getElementsByClassName("con")[k].style.display="block";
     },
   },
 }

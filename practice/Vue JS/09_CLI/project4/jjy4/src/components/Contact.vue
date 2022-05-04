@@ -1,6 +1,8 @@
 <template>
   <div id="contact">
-    컨텍트
+    <h2>연락처</h2>
+    <p>TEL : 010-1234-5678</p>
+    <p>E-mail : abc@naver.com</p>
   </div>
 </template>
 
