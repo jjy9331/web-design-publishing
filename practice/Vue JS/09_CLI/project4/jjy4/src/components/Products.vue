@@ -2,7 +2,7 @@
   <div id="products">
     <h2>제품</h2>
     <ul>
-      <li class="main" v-on:click="menuOpen">
+      <li class="main" v-on:click="menuOpen(0);">
         <strong>제품이름1</strong>
         <ul class="sub">
           <li><img src="./images/img1.jpg" alt=""></li>
@@ -11,7 +11,7 @@
         </ul>
       </li>
 
-      <li class="main" v-on:click="menuOpen">
+      <li class="main" v-on:click="menuOpen(1);">
         <strong>제품이름2</strong>
         <ul class="sub">
           <li><img src="./images/img1.jpg" alt=""></li>
@@ -24,19 +24,21 @@
 </template>
 
 <script>
-let toggle = 0;
+let toggle = [];
+toggle[0]=0;
+toggle[1]=0;
+
 export default {
   methods:{
-    menuOpen:function(){
-      if(toggle == 0){
-        document.getElementsByClassName("sub")[0].style.display="block"
-        toggle = 1;
+    menuOpen:function(i){
+      if(toggle[i] == 0){
+        document.getElementsByClassName("sub")[i].style.display="block"
+        toggle[i] = 1;
         }
       else{
-        document.getElementsByClassName("sub")[0].style.display="none"
-        toggle = 0;
-      }
-      
+        document.getElementsByClassName("sub")[i].style.display="none"
+        toggle[i] = 0;
+      }      
     },
   },
 }
