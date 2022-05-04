@@ -27,17 +27,47 @@
           <li>20,000원</li>
         </ul>
       </li>
+      <li class="main" v-on:click="menuOpen(3);">
+        <strong>제품이름4</strong>
+        <ul class="sub">
+          <li><img src="./images/img1.jpg" alt=""></li>
+          <li>제품4설명입니다</li>
+          <li>20,000원</li>
+        </ul>
+      </li>
+      <li class="main" v-on:click="menuOpen(4);">
+        <strong>제품이름5</strong>
+        <ul class="sub">
+          <li><img src="./images/img1.jpg" alt=""></li>
+          <li>제품5설명입니다</li>
+          <li>20,000원</li>
+        </ul>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 let toggle = [];
-toggle[0]=0;
-toggle[1]=0;
-toggle[2]=0;
+
+// toggle.push(0);
+// toggle.push(0);
+// toggle.push(0);
+// array add
+// let toggle = [0,0,0];
+// toggle[0]=0;
+// toggle[1]=0;
+// toggle[2]=0;
 
 export default {
+  mounted:function(){
+    let p_num = document.getElementsByClassName("sub").length;
+    for( let i=1; i<=p_num; i++){
+     toggle.push(0);
+    }
+  },
+ 
+
   methods:{
     menuOpen:function(i){
       if(toggle[i] == 0){
