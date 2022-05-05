@@ -7,7 +7,7 @@
 <title>tug of war</title>
 
 <style>
-.movie { position: relative; border:1px dashed #777; width:1920px; height:1080px; }
+.movie { position: relative; border:1px dashed #777; width:1920px; height:5080px; }
 .movie img { 
     position:absolute; 
     visibility:hidden;
@@ -18,10 +18,16 @@
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     $(function(){
+
+        $(window).scroll(function(){
+            var b = $(document).scrollTop(); 
+                        
+            $("#tt").text(b);
+        });
     
         //이미지 불러오기
         for (i=0; i<=29; i++){
-            $(".movie").append("<img src='tug_sequence"+i+".png'>");
+            $(".movie").append("<img src='tug_sequence/"+i+".png'>");
         }
         $(".movie img:first").css({visibility:"visible"});
     
@@ -57,13 +63,13 @@
     
     
     });
-    </script>
+</script>
     
 </head>
 <body>
 
-<div class="movie">
-</div>
+<div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
+<div class="movie"></div>
     
 </body>
 </html>
