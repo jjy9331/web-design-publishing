@@ -155,7 +155,7 @@ header #bar {
 /* home */
 #home .inner .visual img { margin: 0 auto; width: 100%;}
 
-#home .inner .typo { text-align: center;}
+#home .inner .typo { position:relative; text-align: center;}
 #home .inner .typo h3 { 
     font-family: 'hana_pro'; font-size: 72px; line-height: 1em;
     margin-top: -14px;
@@ -168,6 +168,67 @@ header #bar {
     color: rgba(0, 0, 0, 0.4);
     /* border: 2px dashed yellow; box-sizing: border-box; */
 }
+#home .inner .typo .d1 { opacity: 0;
+    position: absolute;
+    top: -10px;
+    left: 300px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3.5px;
+    background: black;
+}
+
+#home .inner .typo .d2 { opacity: 0;
+    position: absolute;
+    top: -10px;
+    left: 364px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3.5px;
+    background: black;
+}
+
+#home .inner .typo .d3 { opacity: 0;
+    position: absolute;
+    top: -10px;
+    right: 282px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3.5px;
+    background: black;
+}
+
+#home .inner .typo .d4 { opacity: 0;
+    position: absolute;
+    top: -10px;
+    right: 347px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3.5px;
+    background: black;
+}
+
+#home .inner .typo .d5 { opacity: 0;
+    position: absolute;
+    bottom: 57px;
+    left: 440px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3.5px;
+    background: rgba(0,0,0,0.4);
+}
+
+#home .inner .typo .d6 { opacity: 0;
+    position: absolute;
+    bottom: 57px;
+    left: 471px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3.5px;
+    background: rgba(0,0,0,0.4);
+}
+
+
 
 /* introduce */
 #introduce .inner h2 { 
