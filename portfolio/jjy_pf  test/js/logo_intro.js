@@ -43,7 +43,9 @@ $(function(){
         console.log(inc);
         // $(".movie").fadeOut(500); //로딩표시영역 사라짐
 
-        $('body').fadeIn(1000);//body스크롤없앰}
+        $('body').fadeIn(1000);
+        // $('body').css({display:"block"});
+
         
         if(inc >=177){ //로딩이 완료되면
             clearInterval(k); //setInterval종료					

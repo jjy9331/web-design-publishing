@@ -170,7 +170,7 @@ header #bar {
 }
 #home .inner .typo .d1 { opacity: 0;
     position: absolute;
-    top: -10px;
+    top: 0px;
     left: 300px;
     width: 7px;
     height: 7px;
@@ -180,7 +180,7 @@ header #bar {
 
 #home .inner .typo .d2 { opacity: 0;
     position: absolute;
-    top: -10px;
+    top: 0px;
     left: 364px;
     width: 7px;
     height: 7px;
@@ -190,7 +190,7 @@ header #bar {
 
 #home .inner .typo .d3 { opacity: 0;
     position: absolute;
-    top: -10px;
+    top: 0px;
     right: 282px;
     width: 7px;
     height: 7px;
@@ -200,7 +200,7 @@ header #bar {
 
 #home .inner .typo .d4 { opacity: 0;
     position: absolute;
-    top: -10px;
+    top: 0px;
     right: 347px;
     width: 7px;
     height: 7px;
@@ -221,7 +221,7 @@ header #bar {
 #home .inner .typo .d6 { opacity: 0;
     position: absolute;
     bottom: 57px;
-    left: 471px;
+    left: 478px;
     width: 7px;
     height: 7px;
     border-radius: 3.5px;
