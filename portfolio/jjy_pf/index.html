@@ -40,6 +40,13 @@ $(function(){
             $('#home .inner .typo h3 .kw2').css({transition:"0.4s"});
             $('#home .inner .typo p span').css({transition:"0.4s"});
 
+            $('#home .inner .typo .d1').css({transition:"0.4s"});
+            $('#home .inner .typo .d2').css({transition:"0.4s"});
+            $('#home .inner .typo .d3').css({transition:"0.4s"});
+            $('#home .inner .typo .d4').css({transition:"0.4s"});
+            $('#home .inner .typo .d5').css({transition:"0.4s"});
+            $('#home .inner .typo .d6').css({transition:"0.4s"});
+
             $('#introduce .visual img:eq(1)').css({transition:"0.5s"});
             $('#introduce .visual img:eq(2)').css({transition:"0.5s"});
 
@@ -51,6 +58,9 @@ $(function(){
             $('#portfolio .inner li:eq(4)').css({transition:"1.0s"});
             $('#portfolio .inner li:eq(5)').css({transition:"1.0s"});
             $('#portfolio .inner li:eq(6)').css({transition:"1.0s"});
+
+            $('#portfolio .inner li:eq(1) .f1').css({transition:"3.0s"});
+            // $('#portfolio .inner li:eq(1) .f2').css({transition:"3.0s"});
 
             if((b >=0) && (b < 153)) {	//home
                 $('#bar').css({right:673});
@@ -64,6 +74,15 @@ $(function(){
                 // $('#home .inner .typo p span').text("__");
                 $('#home .inner .typo h3').css({opacity:1});
                 $('#home .inner .typo p').css({opacity:1});
+
+                $('#home .inner .typo .d1').css({opacity:0});
+                $('#home .inner .typo .d2').css({opacity:0});
+                $('#home .inner .typo .d3').css({opacity:0});
+                $('#home .inner .typo .d4').css({opacity:0});
+                $('#home .inner .typo .d5').css({opacity:0});
+                $('#home .inner .typo .d6').css({opacity:0});
+
+                
             } 
 
             if((b >=1) && (b < 123)) {	//home
@@ -85,6 +104,13 @@ $(function(){
                 // $('#home .inner .typo h3 .kw2').text("완결");
                 // $('#home .inner .typo p span').css({opacity:1});
                 // $('#home .inner .typo p span').text("같이");
+
+                $('#home .inner .typo .d1').css({opacity:0});
+                $('#home .inner .typo .d2').css({opacity:0});
+                $('#home .inner .typo .d3').css({opacity:0});
+                $('#home .inner .typo .d4').css({opacity:0});
+                $('#home .inner .typo .d5').css({opacity:0});
+                $('#home .inner .typo .d6').css({opacity:0});
                 
             }
             else{
@@ -99,11 +125,25 @@ $(function(){
                 $('#bar').css({width:35});
                 // $('#introduce .visual img:eq(1)').css({opacity:1});
 
+                $('#home .inner .typo .d1').css({opacity:0});
+                $('#home .inner .typo .d2').css({opacity:0});
+                $('#home .inner .typo .d3').css({opacity:0});
+                $('#home .inner .typo .d4').css({opacity:0});
+                $('#home .inner .typo .d5').css({opacity:0});
+                $('#home .inner .typo .d6').css({opacity:0});
+
             }
             if((b >=876) && (b < 908)) {
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
                 $('#introduce .visual img:eq(2)').css({opacity:1});
+
+                $('#home .inner .typo .d1').css({opacity:0});
+                $('#home .inner .typo .d2').css({opacity:0});
+                $('#home .inner .typo .d3').css({opacity:0});
+                $('#home .inner .typo .d4').css({opacity:0});
+                $('#home .inner .typo .d5').css({opacity:0});
+                $('#home .inner .typo .d6').css({opacity:0});
 
             }
             
@@ -126,9 +166,15 @@ $(function(){
                 // $('#home .inner .typo p span').css({opacity:1});
                 $('#home .inner .typo p span').text("같이");
                 
-                $('#home .inner .typo h3 .kw1').css({"text-decoration":"underline"});
-                $('#home .inner .typo h3 .kw2').css({"text-decoration":"underline"});
-                $('#home .inner .typo p span').css({"text-decoration":"underline"});
+                // $('#home .inner .typo h3 .kw1').css({"text-decoration":"underline"});
+                // $('#home .inner .typo h3 .kw2').css({"text-decoration":"underline"});
+                // $('#home .inner .typo p span').css({"text-decoration":"underline"});
+                $('#home .inner .typo .d1').css({opacity:1});
+                $('#home .inner .typo .d2').css({opacity:1});
+                $('#home .inner .typo .d3').css({opacity:1});
+                $('#home .inner .typo .d4').css({opacity:1});
+                $('#home .inner .typo .d5').css({opacity:1});
+                $('#home .inner .typo .d6').css({opacity:1});
 
                 $('#introduce .visual img:eq(1)').css({opacity:0});
                 $('#introduce .visual img:eq(1)').css({left:-200});
@@ -168,8 +214,13 @@ $(function(){
                 $('#portfolio .inner li:eq(4)').css({opacity:0});
                 $('#portfolio .inner li:eq(5)').css({opacity:0});
                 $('#portfolio .inner li:eq(6)').css({opacity:0});
+
+                // $('#portfolio .inner li:eq(1) .f1').css({display:"block"});
+                $('#portfolio .inner li:eq(1) .f1').css({position:"absolute"});
+                $('#portfolio .inner li:eq(1) .f1').css({opacity:1});
+                $('#portfolio .inner li:eq(1) .f2').css({opacity:1});
             } 
-            if((b >= 1797) && (b < 2175)) {	//introduce
+            if((b >= 1797) && (b < 2223)) {	//introduce
                 $('#bar').css({right:224});
                 $('#bar').css({width:145});
                 $('#portfolio .inner li:eq(0)').css({opacity:1});
@@ -180,9 +231,13 @@ $(function(){
                 $('#portfolio .inner li:eq(4)').css({opacity:0.1});
                 $('#portfolio .inner li:eq(5)').css({opacity:0.1});
                 $('#portfolio .inner li:eq(6)').css({opacity:0.1});
-            } 
-                            
-            if((b >= 2175) && (b < 3170)) { //portfolio
+                
+                $('#portfolio .inner li:eq(1) .f1').css({position:"absolute"});
+                $('#portfolio .inner li:eq(1) .f1').css({opacity:0});
+                $('#portfolio .inner li:eq(1) .f2').css({opacity:1});
+                
+            }               
+            if((b >= 2223) && (b < 3170)) { //portfolio
                 $('#bar').css({right:224});
                 $('#bar').css({width:145});
                 $('#portfolio .inner li:eq(0)').css({opacity:0});
@@ -208,7 +263,7 @@ $(function(){
 </head>
 <body>
     
-    <!-- <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div> -->
+    <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
     <!-- <h2 class="time">시간</h2> -->
 
     <div class="movie">
@@ -250,6 +305,12 @@ $(function(){
                 <div class="typo">
                     <h3>팀이 <span class="kw1">__</span>하면, 프로젝트가 <span class="kw2">__</span>된다</h3>
                     <p>일은 <span>__</span> 하는 것이라 배웠습니다</p>
+                    <div class="dot d1"></div>
+                    <div class="dot d2"></div>
+                    <div class="dot d3"></div>
+                    <div class="dot d4"></div>
+                    <div class="dot d5"></div>
+                    <div class="dot d6"></div>
                 </div>
             </div>
         </section>
@@ -288,7 +349,8 @@ $(function(){
                     <li>
                         <div class="thum pi">
                             <a href="#">
-                                <img src="images/pf2.jpg" alt="ux,ui_img">
+                                <img  src="images/pf2.jpg" alt="ux,ui_img" class="face_change f1">
+                                <img  src="images/pf2_1.jpg" alt="ux,ui_img" class="face_change f2">
                                 <div class="ov">view</div>
                             </a>
                         </div>
