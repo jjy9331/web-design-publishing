@@ -7,7 +7,13 @@
 <title>tug of war</title>
 
 <style>
-.movie { position: relative; border:1px dashed #777; width:1920px; height:5080px; }
+.wrap { position: fixed;}
+.movie { 
+    /* zoom: 0.3;  */
+    position: relative; 
+    border:1px dashed #777; 
+    width:99999px; 
+    height:1080px; }
 .movie img { 
     position:absolute; 
     visibility:hidden;
@@ -16,50 +22,90 @@
     
     
 <script src="js/jquery-3.6.0.js"></script>
+<script src="js/mousewheel.js"></script>
 <script>
     $(function(){
 
-        $(window).scroll(function(){
-            var b = $(document).scrollTop(); 
-                        
-            $("#tt").text(b);
-        });
+
+
+
     
         //이미지 불러오기
-        for (i=0; i<=29; i++){
-            $(".movie").append("<img src='tug_sequence/"+i+".png'>");
+        for (i=0; i<=115; i++){
+            $(".movie").append("<img src='tug_sequence3/"+i+".png'>");
         }
         $(".movie img:first").css({visibility:"visible"});
     
+            //애니메이션 시키기
+	let frameNum=0;
+    let go = 0;
+
+    function aniNext(){
+        frameNum++;
+        go = go + 7;
+
+        if(frameNum> $(".movie img:last").index() ){
+            frameNum=0
+        };
+
+        $(".movie img").css({visibility:"hidden"});
+        $(".movie img:eq("+frameNum+")").css({visibility:"visible"});
+    }
+
+    function aniPrev(){//역방향 진행
+		frameNum--;
+        go = go - 7;
+
+		if(frameNum < 0 ){
+			frameNum = $(".movie img:last").index()
+		};
+
+		$(".movie img").css({visibility:"hidden"});
+		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
+	}
+
+	//setInterval(aniNext,100);//0.1초마다 aniNext함수 실행
+
+	$(".movie").mousewheel(function(e,delta){//.movie영역 위에서
+
+	
+		if( delta < 0 ){ //휠을 아래로 돌렸을때
+			aniNext();
+            g = $(".wrap").css({left: go });
+
+            // h = h + 0.1*(targetH - h);
+            
+            
+            
+
+		}
+		else { //휠을 위로 돌렸을때
+			aniPrev();
+            g = $(".movie").css({left: go });
+		}
+
+
+	});
+
+
+
+    $(window).scroll(function(){
+        var sc = $(document).scrollTop();
+        $("#tt").text(sc + "px").css({ fontSize: 20 });
+
+        // let e = 0;
+        // e = e - 1
+        // console.log(g);
+
+
+
+
+                    
+        // $("#tt").text(b);
+});
+
+
     
-    
-        //애니메이션 시키기
-        let frameNum=0;
-    
-        function aniNext(){
-    
-            frameNum++;
-    
-            //if(frameNum> $(".movie img:last").index() ){
-                //frameNum=0
-            //};
-    
-            if (frameNum > 29) {
-                frameNum=0;
-            }
-    
-            $(".movie img").css({visibility:"hidden"});
-            $(".movie img:eq("+frameNum+")").css({visibility:"visible"});
-        }
-    
-        let k = setInterval(aniNext,100); //0.1초마다 aniNext 함수 실행
-    
-        $(".movie").animate(
-            {center:2000},
-            10000,
-            function(){
-            clearInterval(k);
-        });
     
     
     });
@@ -69,7 +115,9 @@
 <body>
 
 <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
-<div class="movie"></div>
+<div class="wrap">
+    <div class="movie"></div>
+</div>
     
 </body>
 </html>
