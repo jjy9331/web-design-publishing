@@ -482,7 +482,7 @@ body #portfolio ul .pi {
 	border-radius: 50%; background: black; border: 2px solid #fff; transition: all .2s;
 }
 
-.darkmode .invert:hover{ text-decoration: underline;}
+.darkmode .invert:hover{ font-weight: 900;}
 
 
 /* logo intro */
