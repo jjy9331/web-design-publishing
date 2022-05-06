@@ -22,8 +22,10 @@
 	class Room extends React.Component {
 		render(){
 			return 	<div>
-						<h2>방</h2>
+						<h2>{this.props.ro}</h2>
 						<p>방입니다.</p>
+						<p>{this.props.des}</p>
+						
 					</div>
 		}
 	}
@@ -38,7 +40,9 @@
 	ReactDOM.render(
 		<div>
 			<h1>집</h1>
-			<Room 속성명="값"></Room>
+			<Room ro="방1" des="방1에 대한 설명입니다"></Room>
+			<Room ro="방2" des="방2에 대한 설명입니다"></Room>
+			<Room ro="방3" des="방3에 대한 설명입니다"></Room>
 		</div>,
 		document.querySelector("#wrap")
 	);

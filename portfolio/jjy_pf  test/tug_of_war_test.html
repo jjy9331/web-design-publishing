@@ -107,7 +107,8 @@
             // aniNext();
             aniPrev();
             // go = Math.trunc(delta);
-            g = $(".movie").css({center: frameNum++ });   
+            frameNum = frameNum + 2
+            g = $(".movie").css({center: frameNum });   
             
             if(frameNum> $(".movie img:last").index() ){
                 frameNum=0

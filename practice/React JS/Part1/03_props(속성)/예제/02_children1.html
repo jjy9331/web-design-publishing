@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리액트</title>
+<style>
+p { font-size:70px; }
+</style>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<script type="text/babel">
+
+
+	class Room extends React.Component {
+		render(){
+			return 	<div className="room">
+						<h2>{this.props.tit}</h2>
+						<p>{this.props.children}</p>
+					</div>
+		}
+	}
+
+
+	ReactDOM.render(
+		<div>
+			<h1>집</h1>
+			<Room tit="방1">방1 설명입니다.</Room>
+			<Room tit="방2">방2 설명입니다.</Room>
+			<Room tit="방3">방3 설명입니다.</Room>
+		</div>,
+		document.querySelector("#wrap")
+	);
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
