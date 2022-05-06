@@ -1,0 +1,37 @@
+
+1. Node.js 최신버전 설치
+  
+2. 프로젝트 폴더 생성
+
+3. 명령 프롬프트(터미널)
+  cd.. (상위경로 이동)
+  cd 폴더명 (하위폴더 이동)
+  d: (d드라이브 이동)
+
+  프로젝트 폴더 > npx create-react-app 프로젝트명
+
+  --- 참고 ---
+  npx : 라이브러리 설치 도와주는 명령어
+  (node.js설치되어있어야 npm이라는 툴 이용가능)
+
+  create-react-app: 리액트 세팅 다 된 boilerplate(코드 템플릿) 만들기 쉽게 도와주는 라이브러리
+
+4. 미리보기하려면 명령프롬프트에서
+  프로젝트 폴더> npm start
+  (10~30초 정도 기다려야 뜸)
+
+  node_modules : 라이브러리 폴더
+  public:기본파일들
+  src:소스화일들
+  package.json:설치한 라이브러리 목록
+  public/index.html이 메인페이지
+  App.js는 index.html에 들어갈 내용 JSX
+
+
+
+
+*  스테이트 사용하려면
+    import React, { useState } from 'react';
+
+
+

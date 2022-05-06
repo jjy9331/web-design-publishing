@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리액트</title>
+<style>
+.box { width:100px; height:100px; margin:3px; border:5px dashed hotpink; }
+</style>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<script type="text/babel">
+
+	function Box(props){
+		return(
+			<div className="box">
+				{ props.bx }
+			</div>
+		);
+	}
+
+
+
+	
+	ReactDOM.render(
+
+		<div>
+			<Box bx="안녕하세요" />
+			<Box bx="반갑습니다" />
+			<Box bx="감사합니다" />
+		</div>, 
+
+		document.querySelector("#wrap") 
+
+	);
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

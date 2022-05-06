@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리액트</title>
+<style>
+</style>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<script type="text/babel">
+
+	//함수형 컴포넌트에서 스테이트를 사용하려면 
+	//1. 노드JS를 설치
+	//2. create-react-app라이브러리를 설치하고
+	//import React, { useState } from 'react';
+
+
+	//함수 방식의 컴포넌트
+	function Study(){
+
+		let [name,nameSet] = useState("철수");
+		let [a,aSet] = useState(90);
+		let [b,bSet] = useState(80);
+		let [hap,hapSet] = useState(0);
+		let [pg,pgSet] = useState(0);
+
+		let sum = ()=>{
+			return hapSet(a+b);
+		};
+    
+		let plus = ()=>{
+			return aSet(a+1);
+		};
+    
+		setTimeout(plus,1000);
+    
+
+		let avg = ()=>{
+			return (a+b)/2;
+		};
+
+		let [avgR,setAvgR] = useState(avg); 
+
+   
+   
+
+
+		return(
+			<div>
+				<h2>{ name }</h2>
+				<p>국어점수는 { a }점입니다</p>
+				<p>영어점수는 { b }점입니다</p>
+				<p>합:{ a+b }점입니다</p> 		
+
+				<p>평균:{ avgR }점입니다</p> 	         
+				<p><button onClick={ ()=>{ sum() } }>버튼</button>{hap}점입니다</p> 							  
+			</div>
+		)
+
+
+	}
+
+
+	
+	ReactDOM.render(
+
+		<Study />, 
+
+		document.querySelector("#wrap") 
+
+	);
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

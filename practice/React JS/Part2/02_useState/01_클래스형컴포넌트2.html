@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리액트</title>
+<style>
+</style>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<script type="text/babel">
+
+	//클래스 방식의 컴포넌트
+	class Study extends React.Component {
+
+		constructor(){
+			super();
+			this.state = { name:"철수", a:90, b:80, hap:0, pg:0 }
+
+			this.sum = this.sum.bind(this);//사용할 함수를 바인딩하여 갱신해야 함수의 내용이 반영됨
+			this.avg = this.avg.bind(this);//사용할 함수를 바인딩하여 갱신해야 함수의 내용이 반영됨
+		}
+
+		sum() {
+			this.setState({ //스테이트 값을 수정
+				hap: this.state.a + this.state.b 
+			});
+		}
+
+		avg() {
+			this.setState({ //스테이트 값을 수정
+				pg: (this.state.a + this.state.b)/2
+			});
+		}
+
+
+		componentDidMount(){//컴포넌트가 마운트된후 실행
+			this.sum();
+		}
+
+
+		render(){
+			return(
+				<div>
+					<h2>{this.state.name}</h2>	
+					<p>국어점수는 {this.state.a}점입니다</p>
+					<p>영어점수는 {this.state.b}점입니다</p>
+					<p>총점은 {this.state.hap}점입니다</p>
+					<p>평균은 {this.state.pg}<button onClick={ this.avg }>점입니다</button></p> 							  
+				</div>
+			);	
+		}
+
+	}
+
+
+	
+	ReactDOM.render(
+
+		<Study />, 
+
+		document.querySelector("#wrap") 
+
+	);
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

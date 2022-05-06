@@ -7,17 +7,35 @@
 <title>tug of war</title>
 
 <style>
-.wrap { position: fixed;}
+.wrap { 
+    position: fixed;
+    width: 100%;
+    border:1px dashed black; 
+}
 .movie { 
     /* zoom: 0.3;  */
     position: relative; 
     border:1px dashed #777; 
-    width:99999px; 
-    height:1080px; }
+    width:1920px; 
+    height:1080px; 
+    padding-left: -100px;
+}
 .movie img { 
     position:absolute; 
     visibility:hidden;
+    
 }
+
+.wrap .movie .s1 {
+    float: left;
+    width:1920px; 
+    height:1080px; 
+    border:1px dashed #777; 
+    background: rgba(255, 255, 255, 0.4);
+}
+.s2 {}
+.s3 {}
+
 </style>
     
     
@@ -71,7 +89,7 @@
 	
 		if( delta < 0 ){ //휠을 아래로 돌렸을때
 			aniNext();
-            g = $(".wrap").css({left: go });
+            g = $(".movie").css({left: go });
 
             // h = h + 0.1*(targetH - h);
             
@@ -79,11 +97,15 @@
             
 
 		}
-		else { //휠을 위로 돌렸을때
+		else{ //휠을 위로 돌렸을때
 			aniPrev();
-            g = $(".movie").css({left: go });
+            g = $(".movie").css({left: go });   
 		}
-
+        if( delta == 0 ){
+            aniPrev();
+            g = $(".movie").css({left:0});   
+        }
+        console.log(go);
 
 	});
 
@@ -116,7 +138,11 @@
 
 <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
 <div class="wrap">
+    <div></div>
     <div class="movie"></div>
+    <div class="s1">01</div>
+    <div class="s2">02</div>
+    <div class="s3">03</div>
 </div>
     
 </body>
