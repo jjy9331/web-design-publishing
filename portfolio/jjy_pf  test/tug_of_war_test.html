@@ -93,17 +93,19 @@
 
             // h = h + 0.1*(targetH - h);
             
-            
-            
-
 		}
-		else{ //휠을 위로 돌렸을때
-			aniPrev();
-            g = $(".movie").css({left: go });   
-		}
-        if( delta == 0 ){
+		// else{ //휠을 위로 돌렸을때
+		// 	aniPrev();
+        //     g = $(".movie").css({left: go });   
+		// }
+        else if(delta > 0){
             aniPrev();
-            g = $(".movie").css({left:0});   
+            g = $(".movie").css({left: go});   
+        }
+        else if(delta == 0){
+            aniNext();
+            go = 0;
+            g = $(".movie").css({left: go});   
         }
         console.log(go);
 

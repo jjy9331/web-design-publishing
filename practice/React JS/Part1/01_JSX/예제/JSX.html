@@ -13,12 +13,32 @@
 
 
 <div id="wrap">
-
+    
 </div>
 
 
 <script type="text/babel">
 
+    //JSX: 리액트에서 태그처럼 사용 (진짜 html태그는 아님)
+    // ReactDOM.render( JSX, 출력될 목적지 요소 );
+
+    let a = <div> //두개 이상의 요소를 출력하려면 전체를 div로 감싼다.
+                <h1>제목</h1>
+                <h1>헬로</h1>
+                <p>안녕하세요</p>
+            </div>
+            
+            ReactDOM.render( 
+                a, 
+                document.getElementById("wrap")
+            );
+
+
+
+    <div>
+        <h1>제목</h1>
+        <br />
+    </div>
 
 
 </script>
