@@ -7,8 +7,12 @@
 <title>tug of war</title>
 
 <style>
+body {
+    overflow: auto;
+    margin: 0 ;
+}
 .wrap { 
-    margin-top: 300px;
+    /* margin-top: 300px; */
     position: fixed;
     width: 100%;
     border:1px dashed black; 
@@ -22,10 +26,12 @@
     width: 100%;
     height:1080px; 
     padding-left: -100px;
+    padding-right: 99999px;
 }
 .movie img { 
     position:absolute; 
     visibility:hidden;
+    border:1px dashed #777; 
     
 }
 
@@ -107,8 +113,8 @@
             // aniNext();
             aniPrev();
             // go = Math.trunc(delta);
-            frameNum = frameNum + 2
-            g = $(".movie").css({center: frameNum });   
+            frameNum = frameNum+1
+            g = $(".movie").css({center: go });   
             
             if(frameNum> $(".movie img:last").index() ){
                 frameNum=0
@@ -158,9 +164,9 @@
 <div class="wrap">
     <div></div>
     <div class="movie"></div>
-    <div class="s1">01</div>
+    <!-- <div class="s1">01</div>
     <div class="s2">02</div>
-    <div class="s3">03</div>
+    <div class="s3">03</div> -->
 </div>
     
 </body>
