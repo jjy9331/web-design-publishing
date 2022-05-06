@@ -12,6 +12,7 @@
     position: fixed;
     width: 100%;
     border:1px dashed black; 
+    overflow: hidden;
 }
 .movie { 
     /* zoom: 0.3;  */
@@ -102,19 +103,21 @@
             // aniNext();
             g = $(".movie").css({left: go });   
 		}
-        if(go == 0){
+        if((go > 0) && (delta < 0)){
             // aniNext();
             aniPrev();
             // go = Math.trunc(delta);
-            g = $(".movie").css({left: 0});   
+            g = $(".movie").css({center: frameNum++ });   
         }
+
         // if(delta == 0){
         //     // aniNext();
         //     aniPrev();
         //     go = 0;
         //     g = $(".movie").css({left: go});   
         // }
-        console.log(go);
+        // console.log(go);
+        console.log(frameNum);
         // console.log(delta);
 
 	});
