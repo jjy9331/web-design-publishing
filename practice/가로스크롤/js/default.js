@@ -7,8 +7,8 @@ $(function() {
     $(window).resize(function() {
         page_width = $("body").css("width");
         $(".s2").text(page_width).css({ fontSize: 20 });
-        $("#home,#about,#works,#contact").css({ width: page_width });
-        $('html,body').stop().animate({ scrollLeft: parseInt(page_width) * page_index }, 700);
+        // $("#home,#about,#works,#contact").css({ width: page_width });
+        // $('html,body').stop().animate({ scrollLeft: parseInt(page_width) * page_index }, 700);
     });
 
     //navigation

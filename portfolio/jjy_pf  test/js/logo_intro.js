@@ -51,15 +51,19 @@ $(function(){
             clearInterval(k); //setInterval종료					
             $(".movie img").hide(); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
-            $("header").fadeIn(1000); 
+            $(".wrap").fadeIn(1000); 
+            $("header").fadeIn(1000);
             $(".group").fadeIn(1000); 
             $("footer").fadeIn(1000); 
+
         }
         else {
             $('body').css({overflow:"hidden"});//body스크롤없앰}
+            $(".wrap").hide(); 
             $("header").hide(); 
             $(".group").hide(); 
             $("footer").hide(); 
+
         }
     }
     // alert(H)
@@ -76,9 +80,12 @@ $(function(){
         if(t == 4){
             $(".movie img").hide(); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
+            $(".wrap").fadeIn(1000); 
             $("header").fadeIn(1000); 
             $(".group").fadeIn(1000); 
-            $("footer").fadeIn(1000); 
+            $("footer").fadeIn(1000);
+            
+
             clearInterval(t);
         }
     }
