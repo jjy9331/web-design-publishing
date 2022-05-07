@@ -75,7 +75,7 @@ $(function(){
     let t = 0;
     function time(){
         t = t + 1;
-        console.log(t);
+        // console.log(t);
         $(".time").text(t);
         if(t == 4){
             $(".movie img").hide(); //로딩표시영역 사라짐
