@@ -434,6 +434,7 @@ header #bar {
 /* footer */
 
 footer .inner p {
+    margin-left: -20px;
     padding-top: 50px;
     /* text-align: center; */
     font-family: 'Noto Sans KR';
