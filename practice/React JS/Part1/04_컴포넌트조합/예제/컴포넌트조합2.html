@@ -4,7 +4,17 @@
 <meta charset="UTF-8">
 <title>리액트</title>
 <style>
+html,body { height: 100%,;}
+* {margin: 0; padding: 0;}
+ul {list-style: none;}
+	
 body { font-size:33px; }
+#house {border:20px solid #eee; padding: 10px;}
+
+.livingroom {border:10px solid #0cc; margin: 10px;}
+.kitchen {border:10px solid #fd0; margin: 10px;}
+.tv {border:10px dashed black; margin: 10px;}
+
 </style>
 <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
@@ -17,7 +27,48 @@ body { font-size:33px; }
 
 
 <script type="text/babel">
+	class LivingRoom extends React.Component {
+		render(){
+			return 	<div className="livingroom">	
+						<h2>거실</h2>
+						<p>거실입니다</p>
+						<TV c1="kbs채널" c2="mbc채널" c3="sbs채널">거실용TV</TV>
+						{this.props.children}
+					</div>
+		}
+	}
+	class Kitchen extends React.Component {
+		render(){
+			return 	<div className="kitchen">	
+						<h2>부엌</h2>
+						<p>부엌입니다</p>
+						<TV>부엌용TV</TV>	
+					</div>
+		}
+	}
+	class TV extends React.Component {
+		render(){
+			return 	<div className="tv">	
+						<h2>TV</h2>
+						<p>TV입니다</p>
+						<button onClick={}>{ this.props.c1 }</button>
+						<button onClick={}>{ this.props.c2 }</button>
+						<button onClick={}>{ this.props.c3 }</button>
+						{this.props.children}
+					</div>
+		}
+	}
 
+	ReactDOM.render(
+		<div>
+			<h1>집</h1>
+			<p>집입니다</p>
+			<LivingRoom></LivingRoom>
+			<Kitchen></Kitchen>
+		</div>
+		,
+		document.getElementById("house")
+	);
 
 </script>
 </body>
