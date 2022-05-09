@@ -25,15 +25,26 @@
 
 			this.state = { 
 				a:0, 
-				b:7, 
-				k:3
+				b:"안녕", 
 			}
 		};
+
+		componentDidMount(){//시작했을 때(마운트된 직후)
+			this.AA();
+		}
+
+		AA(){
+			alert("감사합니다");
+		}
+		BB(){
+			alert("안녕하세요");
+		}
 
 		render(){
 			return 	<div>
 						카운터
 						<h1>{this.state.a}</h1>
+						<button onClick={this.BB}>버튼</button>
 					</div>
 		}
 	}
