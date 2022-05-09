@@ -51,9 +51,9 @@ body { font-size:33px; }
 			return 	<div className="tv">	
 						<h2>TV</h2>
 						<p>TV입니다</p>
-						<button onClick={}>{ this.props.c1 }</button>
-						<button onClick={}>{ this.props.c2 }</button>
-						<button onClick={}>{ this.props.c3 }</button>
+						<button onClick={function(){ alert("kbs시청");}}>{ this.props.c1 }</button>
+						<button onClick={function(){ alert("mbc시청");}}>{ this.props.c2 }</button>
+						<button onClick={function(){ alert("sbs시청");}}>{ this.props.c3 }</button>
 						{this.props.children}
 					</div>
 		}
