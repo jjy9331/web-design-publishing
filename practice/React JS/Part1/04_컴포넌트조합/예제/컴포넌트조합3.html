@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리액트</title>
+<style>
+html,body { height: 100%,;}
+* {margin: 0; padding: 0;}
+ul {list-style: none;}
+	
+/* body { font-size:33px; } */
+#house {border:20px solid #eee; padding: 10px;}
+
+.r_header {border: 20px solid #0cc;  margin: 10px; box-sizing: border-box;}
+.group { display: flex;}
+.group .box { flex: 1; flex-wrap: wrap;}
+.box { width: 50%; border:5px solid orange; margin: 10px 0;}
+.gnb { border: 5px solid hotpink;}
+.gnb ul { display: flex;}
+.r_contents {border: 20px solid #fd0;  margin: 10px;}
+.r_footer {border: 20px solid #0cc;  margin: 10px;}
+
+</style>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+</div>
+
+
+<script type="text/babel">
+	class Header extends React.Component{
+		render(){
+			return	<div className="r_header">	
+						<h1>로고</h1>
+						<Gnb />
+					</div>
+		}
+	}
+	class Gnb extends React.Component{
+		render(){
+			return	<div className="gnb">	
+						<ul>
+							<li>메뉴1</li>
+							<li>메뉴2</li>
+							<li>메뉴3</li>
+						</ul>
+					</div>
+		}
+	}
+	class Contents extends React.Component{
+		render(){
+			return	<div className="r_contents">	
+						<h2>컨텐츠</h2>
+						<div className="group">
+							<Box bx="box1"></Box>
+							<Box bx="box2"></Box>
+							<Box bx="box3"></Box>
+							<Box bx="box4"></Box>
+						</div>
+					</div>
+		}
+	}
+	class Box extends React.Component{
+		render(){
+			return	<div className="box">	
+						<p>{this.props.bx}</p>
+					</div>
+		}
+	}
+	class Footer extends React.Component{
+		render(){
+			return	<div className="r_footer">	
+						copyright &copy; 2022
+					</div>
+		}
+	}
+
+	ReactDOM.render(
+		<div>
+			<Header></Header>
+			<Contents></Contents>
+			<Footer></Footer>
+		</div>
+		,
+		document.getElementById("wrap")
+	);
+
+</script>
+</body>
+</html>
+
