@@ -23,11 +23,17 @@
 
 	class Counter extends React.Component {
 
+		AA(){
+			alert("안녕하세요");
+		}
+
 		render(){
 
 			return(
 				<div>
-					<button>버튼</button>
+					<button onClick={function(){alert("안녕")}}>버튼</button>
+					<button onClick={()=>{alert("안녕")}}>버튼</button>
+					<button onClick={this.AA}>버튼</button>
 				</div>	
 			);
 		}
