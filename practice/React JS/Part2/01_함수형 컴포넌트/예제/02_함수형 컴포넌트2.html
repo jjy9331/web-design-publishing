@@ -4,10 +4,27 @@
 <meta charset="UTF-8">
 <title>리액트</title>
 <style>
+html,body { height:100%; }
+* { margin:0; padding:0; }
+ul { list-style:none; }
+
+/* layout */
 #wrap {border: 20px solid #ddd;}
-.header {border: 20 solid hotpink; margin: 10px;}
+.header { border:20px solid hotpink; margin:10px; }
+.contents { border:10px dashed #fd0; margin:10px; }
+.footer { border:20px solid #0cc; margin:10px; }
 
+/* header */
+h1 { text-align: center;}
+.gnb {border: 5px dashed #eee;}
+.gnb ul {display: flex; justify-content: space-between;}
 
+/*  contents */
+.group {display: flex; flex-wrap: wrap; justify-content: space-between;}
+.box { width: 48%; border: 10px solid #333; box-sizing: border-box; margin-top: 10px; margin-bottom: 10px; text-align: center;}
+
+/* footer */
+.copyright {text-align: center;}
 </style>
 <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
@@ -22,27 +39,45 @@
 
 <script type="text/babel">
 
+	////////헤더
 	function Header(){
-		return {
-			<div className="header">
-				헤더
-			<div/>
-		};
+			return <div className="header">
+				 	<h1>Brand</h1>
+				 	<nav className="gnb">
+						<ul>
+							<li>home</li>
+							<li>about</li>
+							<li>contact</li>
+						</ul>
+					</nav>
+			   </div>
 	}
 
+	////////컨텐츠
 	function Contents(){
-		return {
-			<div className="contents">
-				헤더
-			<div/>
-		};
+		return <div className="contents">
+				 <h2>title</h2>
+					<div className="group">	
+						 <Box></Box>
+						 <Box></Box>
+						 <Box></Box>
+						 <Box></Box>
+					</div>	
+				</div>
 	}
+
+		// 컨텐츠안의 박스
+		function Box(){
+			return	<div className="box">
+						박스
+					</div>
+		}
+
+	////////푸터
 	function Footer(){
-		return {
-			<div className="footer">
-				헤더
-			<div/>
-		};
+		return <div className="footer">
+				 <p className="copyright">copyright &copy; Brand</p>
+			   </div>
 	}
 	
 	ReactDOM.render(
