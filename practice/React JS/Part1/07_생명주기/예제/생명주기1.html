@@ -32,7 +32,7 @@
 
 			this.AA = this.AA.bind(this);
 
-			alert();
+			alert("가장 먼저 실행되지만 아직 마운트가 되지않아서 요소들을 정상적으로 제어안됨");
 		}
 
 
@@ -45,13 +45,13 @@
 
 
 		componentDidMount(){ //컴포넌트가 마운트된후 실행
-			//alert();
-			//document.querySelector("body").style.background="yellow";
+			// alert("777");
+			document.querySelector("body").style.background="yellow";
 		}
 
 		componentDidUpdate(){//컴포넌트가 업데이트된후 실행
 			//alert();
-			//document.querySelector("body").style.background="skyblue";
+			document.querySelector("body").style.background="skyblue";
 		}
 
 		render(){
