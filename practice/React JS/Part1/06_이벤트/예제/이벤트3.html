@@ -23,11 +23,26 @@
 
 	class Counter extends React.Component {
 
+		constructor(props){
+			super(props);
+
+			this.state = { a:0 }
+
+			this.AA = this.AA.bind(this);
+		}
+
+		AA(){
+			this.setState({
+				a: this.state.a + 1
+			});
+		}
+
 		render(){
 
 			return(
 				<div>
-					<button onMouseOver={this.AA} onMouseOut={this.BB}>버튼</button>
+					<h1>{this.state.a}</h1>
+					<button onClick={this.AA}>버튼</button>
 				</div>	
 			);
 		}
