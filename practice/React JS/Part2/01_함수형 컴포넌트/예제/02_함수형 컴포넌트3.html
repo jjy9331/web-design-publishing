@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리액트</title>
+<style>
+html,body { height:100%; }
+* { margin:0; padding:0; }
+ul { list-style:none; }
+
+/* layout */
+#wrap {border: 20px solid #ddd;}
+.header { border:20px solid hotpink; margin:10px; }
+.contents { border:10px dashed #fd0; margin:10px; }
+.footer { border:20px solid #0cc; margin:10px; }
+
+/* header */
+h1 { text-align: center;}
+.gnb {border: 5px dashed #eee;}
+.gnb ul {display: flex; justify-content: space-between;}
+
+/*  contents */
+.group {display: flex; flex-wrap: wrap; justify-content: space-between;}
+.box { width: 48%; border: 10px solid #333; box-sizing: border-box; margin-top: 10px; margin-bottom: 10px; text-align: center;}
+.box img { width: 100%;}
+
+/* footer */
+.copyright {text-align: center;}
+</style>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<script type="text/babel">
+
+	////////헤더
+	function Header(){
+			return <div className="header">
+				 	<h1>Brand</h1>
+				 	<nav className="gnb">
+						<ul>
+							<li>home</li>
+							<li>about</li>
+							<li>contact</li>
+						</ul>
+					</nav>
+			   </div>
+	}
+
+	////////컨텐츠
+	function Contents(){
+		return <div className="contents">
+				 <h2>title</h2>
+					<div className="group">	
+						 <Box n="images/img1.jpg" d="박스1"></Box>
+						 <Box n="images/img2.jpg" d="박스2"></Box>
+						 <Box n="images/img3.jpg" d="박스3"></Box>
+						 <Box n="images/img4.jpg" d="박스4"></Box>
+					</div>	
+				</div>
+	}
+
+		// 컨텐츠안의 박스
+		function Box(props){
+			return	<div className="box">
+						<img src={props.n} alt="" />
+						<p>{props.d}</p>
+					</div>
+		}
+
+	////////푸터
+	function Footer(){
+		return <div className="footer">
+				 <p className="copyright">copyright &copy; Brand</p>
+			   </div>
+	}
+	
+	ReactDOM.render(
+
+		<div>
+			<Header></Header>
+			<Contents></Contents>
+			<Footer></Footer>
+
+		</div>, 
+
+		document.querySelector("#wrap") 
+
+	);
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
