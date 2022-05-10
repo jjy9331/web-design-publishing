@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리액트</title>
+<style>
+#wrap {border: 20px solid #ddd;}
+.header {border: 20 solid hotpink; margin: 10px;}
+
+
+</style>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<script type="text/babel">
+
+	function Header(){
+		return {
+			<div className="header">
+				헤더
+			<div/>
+		};
+	}
+
+	function Contents(){
+		return {
+			<div className="contents">
+				헤더
+			<div/>
+		};
+	}
+	function Footer(){
+		return {
+			<div className="footer">
+				헤더
+			<div/>
+		};
+	}
+	
+	ReactDOM.render(
+
+		<div>
+			<Header></Header>
+			<Contents></Contents>
+			<Footer></Footer>
+
+		</div>, 
+
+		document.querySelector("#wrap") 
+
+	);
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
