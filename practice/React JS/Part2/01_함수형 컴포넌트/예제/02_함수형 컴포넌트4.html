@@ -124,10 +124,10 @@ h1 {
 		return <div className="home con">
 				 <h2>Home</h2>
 					<div className="group">	
-						 <Box n="images/img1.jpg" d="타이포그래피"></Box>
-						 <Box n="images/img2.jpg" d="파란상자들"></Box>
-						 <Box n="images/img3.jpg" d="노트북"></Box>
-						 <Box n="images/img4.jpg" d="스마트폰"></Box>
+						 <Box pn="0" n="images/img1.jpg" d="타이포그래피"></Box>
+						 <Box pn="1" n="images/img2.jpg" d="파란상자들"></Box>
+						 <Box pn="2" n="images/img3.jpg" d="노트북"></Box>
+						 <Box pn="3" n="images/img4.jpg" d="스마트폰"></Box>
 					</div>	
 					<Pop title="팝업1" info="팝업1내용입니다" />
 					<Pop title="팝업2" info="팝업2내용입니다" />
@@ -140,15 +140,19 @@ h1 {
 
 		///홈 안의 박스
 		function Box(props){
-		
+			
+
 			function popOpen(on){
 				document.querySelectorAll(".pop")[on].style.display="block";
 			}
-		
+			
+			let pn = props.pn;
+
 			return <div className="box">
-					  <img src={ props.n } onClick={ ()=>{ popOpen(0); } } />
-					  <p>{ props.d }</p>
-				   </div>
+					
+					<img src={ props.n } onClick={ ()=>{ popOpen(pn); } } />
+					<p>{ props.d }</p>
+				</div>
 		}
 		
 		/////홈 안의 팝업
