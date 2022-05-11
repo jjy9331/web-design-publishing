@@ -12,8 +12,8 @@ ul { list-style:none; }
 #wrap {border: 20px solid #ddd;}
 .header { position: relative; border:20px solid hotpink; margin:10px; }
 .home { border:10px dashed #fd0; margin:10px; }
-.about { border:10px dashed #fd0; margin:10px; }
-.contact { border:10px dashed #fd0; margin:10px; }
+.about { display: none; border:10px dashed #fd0; margin:10px; }
+.contact { display: none; border:10px dashed #fd0; margin:10px; }
 .footer { border:20px solid #0cc; margin:10px; }
 
 /* header */
@@ -81,6 +81,13 @@ h1 {
 			
 		}
 
+		function gotoNav(on){
+			for( let  i = 0; i<3; i++){
+				document.querySelectorAll(".con")[i].style.display="none"
+			}
+			document.querySelectorAll(".con")[on].style.display="block"
+		}
+
 
 		return <div className="header">
 				<h1>Brand</h1>
@@ -91,9 +98,9 @@ h1 {
 						<div></div>
 					</div>
 					<ul>
-						<li>home</li>
-						<li>about</li>
-						<li>contact</li>
+						<li onClick={ ()=>{gotoNav(0);}}>home</li>
+						<li onClick={ ()=>{gotoNav(1);}}>about</li>
+						<li onClick={ ()=>{gotoNav(2);}}>contact</li>
 					</ul>
 				</nav>
 			</div>
@@ -102,7 +109,7 @@ h1 {
 
 	////////컨텐츠
 	function Home(){
-		return <div className="home">
+		return <div className="home con">
 				 <h2>Home</h2>
 					<div className="group">	
 						 <Box n="images/img1.jpg" d="타이포그래피"></Box>
@@ -123,7 +130,7 @@ h1 {
 
 	////////어바웃
 	function About(){
-		return 	<div className="about">
+		return 	<div className="about con">
 					<h2>About</h2>
 					<p>브랜드 소개입니다</p>
 				</div>
@@ -132,7 +139,7 @@ h1 {
 
 	////////컨텍트
 	function Contact(){
-	return 	<div className="contact">
+	return 	<div className="contact con">
 				<h2>Contact</h2>
 				<p>브랜드 연락처입니다</p>
 			</div>
