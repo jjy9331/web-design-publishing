@@ -138,26 +138,27 @@ h1 {
 				</div>
 	}
 
-		// 컨텐츠안의 박스
+		///홈 안의 박스
 		function Box(props){
-
-			function popOpen(on) {
-				document.querySelectorAll(".pop")[on].style.display="block"
+		
+			function popOpen(on){
+				document.querySelectorAll(".pop")[on].style.display="block";
 			}
-
-			return	<div className="box">
-						<img src={props.n} alt="" onClick={ ()=>{popOpen(1); }} />
-						<p>{props.d}</p>
-					</div>
+		
+			return <div className="box">
+					  <img src={ props.n } onClick={ ()=>{ popOpen(0); } } />
+					  <p>{ props.d }</p>
+				   </div>
 		}
-
-
-		//홈 안의 팝업
+		
+		/////홈 안의 팝업
 		function Pop(props){
-			return	<div className="pop">
-						<h3>{props.title}</h3>
-						<p>{props.info}</p>
-					</div>
+		
+			return <div class="pop">
+					  <h3>{ props.title }</h3>
+					  <p>{ props.info }</p>
+				   </div>	 
+		
 		}
 
 	////////어바웃
