@@ -60,8 +60,20 @@ h1 {
 	////////헤더
 	function Header(){
 
+		let toggle=0;
+
 		function menuOpen(){
 			document.querySelector(".gnb").style.height="100px";
+
+			if( toggle==0 ){
+				document.querySelector(".gnb").style.height="100px";
+				toggle=1;
+			}else{
+				document.querySelector(".gnb").style.height="0px";
+				toggle=0;
+			}
+
+			
 		}
 
 
