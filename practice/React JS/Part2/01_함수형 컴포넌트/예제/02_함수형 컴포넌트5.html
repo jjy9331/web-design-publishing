@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>리액트</title>
+<style>
+html,body { height:100%; }
+* { margin:0; padding:0; }
+ul { list-style:none; }
+
+/* layout */
+#wrap {border: 20px solid #ddd;}
+.header { position: relative; border:20px solid hotpink; margin:10px; }
+.home { border:10px dashed #fd0; margin:10px; }
+.about { display: none; border:10px dashed #fd0; margin:10px; }
+.contact { display: none; border:10px dashed #fd0; margin:10px; }
+.footer { border:20px solid #0cc; margin:10px; }
+
+/* header */
+h1 { 
+	/* text-align: center; */
+}
+.gnb {
+	height: 0px;
+	overflow: hidden;
+	border: 5px dashed #eee;
+	transition: 0.5s;
+}
+.gnb ul {
+	/* display: flex; justify-content: space-between; */
+}
+.gnb ul li {text-align: center; margin: 10px;}
+.bt {position: absolute; right: 10px; top: 5px; justify-content: space-between; width: 30px; }
+.bt>div {height: 2px; background: #333; margin: 5px;}
+
+
+/*  home */
+.group {
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: space-between;
+}
+.box { width: 48%; border: 10px solid #333; box-sizing: border-box; margin-top: 10px; margin-bottom: 10px; text-align: center;}
+.box img { width: 100%;}
+
+
+
+
+/* footer */
+.copyright {text-align: center;}
+
+/* popup */
+.pop { 
+	display: none; 
+	position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 2000; background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+.pop .close {position: fixed; right: 20px; top: 30px; width: 20px; height: 20px; background: white;}
+
+</style>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+</div>
+
+
+<script type="text/babel">
+
+
+	////////헤더
+	function Header(){
+
+		let toggle=0;
+
+		function menuOpen(){
+			document.querySelector(".gnb").style.height="100px";
+
+			if( toggle==0 ){
+				document.querySelector(".gnb").style.height="100px";
+				toggle=1;
+			}else{
+				document.querySelector(".gnb").style.height="0px";
+				toggle=0;
+			}
+
+			
+		}
+
+		function gotoNav(on){
+			let con_num = document.querySelectorAll(".con").length;
+			alert(con_num);
+
+			for( let  i = 0; i<con_num; i++){
+				document.querySelectorAll(".con")[i].style.display="none"
+			}
+			document.querySelectorAll(".con")[on].style.display="block"
+		}
+
+
+		return <div className="header">
+				<h1>Brand</h1>
+				<nav className="gnb" onClick={menuOpen}>
+					<div className="bt">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<ul>
+						<li onClick={ ()=>{gotoNav(0);}}>home</li>
+						<li onClick={ ()=>{gotoNav(1);}}>about</li>
+						<li onClick={ ()=>{gotoNav(2);}}>contact</li>
+					</ul>
+				</nav>
+			</div>
+	}
+
+
+
+
+	////////홈
+	function Home(){
+		function popClose(){
+					let con_num = document.querySelectorAll(".con").length;
+					// alert(con_num)
+					for( let i = 0; i<=con_num; i++)
+					document.querySelectorAll(".pop")[i].style.display="none";
+		}
+		return <div className="home con">
+				<h2>Home</h2>
+					<div className="group">	
+						<Box pn="0" n="images/img1.jpg" d="타이포그래피"></Box>
+						<Box pn="1" n="images/img2.jpg" d="파란상자들"></Box>
+						<Box pn="2" n="images/img3.jpg" d="노트북"></Box>
+						<Box pn="3" n="images/img4.jpg" d="스마트폰"></Box>
+					</div>	
+					<div class="pop">
+						<h3>팝업1</h3>
+						<p>팝업1내용입니다.</p>
+						<div className="close" onClick={ popClose }></div>
+					</div>	 
+					<div class="pop">
+						<h3>팝업2</h3>
+						<p>팝업2내용입니다.</p>
+						<div className="close" onClick={ popClose }></div>
+					</div>	 
+					<div class="pop">
+						<h3>팝업3</h3>
+						<p>팝업3내용입니다.</p>
+						<div className="close" onClick={ popClose }></div>
+					</div>	 
+					<div class="pop">
+						<h3>팝업4</h3>
+						<p>팝업4내용입니다.</p>
+						<div className="close" onClick={ popClose }></div>
+					</div>	 
+				</div>
+	}
+
+		///홈 안의 박스
+		function Box(props){
+			
+
+			function popOpen(on){
+				document.querySelectorAll(".pop")[on].style.display="block";
+			}
+			
+			let pn = props.pn;
+
+			return <div className="box">
+					
+					<img src={ props.n } onClick={ ()=>{ popOpen(pn); } } />
+					<p>{ props.d }</p>
+			</div>
+		}
+		
+
+
+	////////어바웃
+	function About(){
+		return 	<div className="about con">
+					<h2>About</h2>
+					<p>브랜드 소개입니다</p>
+				</div>
+			
+	}
+
+	////////컨텍트
+	function Contact(){
+	return 	<div className="contact con">
+				<h2>Contact</h2>
+				<p>브랜드 연락처입니다</p>
+			</div>
+			
+	}
+
+	////////푸터
+	function Footer(){
+		return <div className="footer">
+				 <p className="copyright">copyright &copy; Brand</p>
+			   </div>
+	}
+	
+	ReactDOM.render(
+
+		<div>
+			<Header></Header>
+			<Home></Home>
+			<About></About>
+			<Contact></Contact>
+			<Footer></Footer>
+
+		</div>, 
+
+		document.querySelector("#wrap") 
+
+	);
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
