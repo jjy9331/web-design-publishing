@@ -11,7 +11,9 @@ ul { list-style:none; }
 /* layout */
 #wrap {border: 20px solid #ddd;}
 .header { position: relative; border:20px solid hotpink; margin:10px; }
-.contents { border:10px dashed #fd0; margin:10px; }
+.home { border:10px dashed #fd0; margin:10px; }
+.about { border:10px dashed #fd0; margin:10px; }
+.contact { border:10px dashed #fd0; margin:10px; }
 .footer { border:20px solid #0cc; margin:10px; }
 
 /* header */
@@ -32,7 +34,7 @@ h1 {
 .bt>div {height: 2px; background: #333; margin: 5px;}
 
 
-/*  contents */
+/*  home */
 .group {
 	display: flex; 
 	flex-wrap: wrap; 
@@ -40,6 +42,9 @@ h1 {
 }
 .box { width: 48%; border: 10px solid #333; box-sizing: border-box; margin-top: 10px; margin-bottom: 10px; text-align: center;}
 .box img { width: 100%;}
+
+
+
 
 /* footer */
 .copyright {text-align: center;}
@@ -96,9 +101,9 @@ h1 {
 
 
 	////////컨텐츠
-	function Contents(){
-		return <div className="contents">
-				 <h2>title</h2>
+	function Home(){
+		return <div className="home">
+				 <h2>Home</h2>
 					<div className="group">	
 						 <Box n="images/img1.jpg" d="타이포그래피"></Box>
 						 <Box n="images/img2.jpg" d="파란상자들"></Box>
@@ -116,6 +121,24 @@ h1 {
 					</div>
 		}
 
+	////////어바웃
+	function About(){
+		return 	<div className="about">
+					<h2>About</h2>
+					<p>브랜드 소개입니다</p>
+				</div>
+			
+	}
+
+	////////컨텍트
+	function Contact(){
+	return 	<div className="contact">
+				<h2>Contact</h2>
+				<p>브랜드 연락처입니다</p>
+			</div>
+			
+	}
+
 	////////푸터
 	function Footer(){
 		return <div className="footer">
@@ -127,7 +150,9 @@ h1 {
 
 		<div>
 			<Header></Header>
-			<Contents></Contents>
+			<Home></Home>
+			<About></About>
+			<Contact></Contact>
 			<Footer></Footer>
 
 		</div>, 

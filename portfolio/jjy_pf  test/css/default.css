@@ -545,7 +545,7 @@ body #portfolio ul .pi {
 
 } 
 
-@media all and (min-width:1441px) and  (max-width:1920px) { /* PC */
+@media all and (min-width:1441px) and  (max-width:1920px) { /* wide PC */
     body {zoom:0.75}
 } 
 
