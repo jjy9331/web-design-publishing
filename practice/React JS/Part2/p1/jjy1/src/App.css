@@ -6,3 +6,8 @@ ul {list-style: none;}
 body {font-family: 'Roboto';}
 
 h1 {color: orange;}
+
+
+.home {
+  border: 10px solid gray;
+}
