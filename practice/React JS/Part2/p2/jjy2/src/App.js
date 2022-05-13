@@ -1,39 +1,44 @@
-
+import './App.css';
+import Main from './Main.js';
+import About from './About';
+import Contact from './Contact';
 import { Routes, Route, Link } from 'react-router-dom'
 
 function App() {
   return  (
-    <div>
+    <div className='wrap'>
 
-      <header>
-        <h1></h1>
-        <nav className=''>
+      <header className='header'>
+        <h1>Brand</h1>
+        <nav className='gnb'>
           <ul>
-            <li><Link to="/">home</Link></li>
+            <li><Link to="/">main</Link></li>
             <li><Link to="/sub1">about</Link></li>
             <li><Link to="/sub2">contact</Link></li>
           </ul> 
         </nav> 
       </header>
       
+
       
       
       <Routes>
-        <Route path="/" element={ <Home/> }/>
-        <Route path="/sub1" element={ <div>어바웃입니다</div>} />
-        <Route path="/sub2" element={ <div>컨택트입니다</div>} />
+        <Route path="/" element={ <Main/> }/>
+        <Route path="/sub1" element={ <About/> }/>
+        <Route path="/sub2" element={ <Contact/> }/>
       </Routes>
+
+      <footer className='footer'>
+        <p>&copy;2022,Brand</p>
+      </footer>
 
     </div>
   );
 
   
-  function Home(){
-    return  <div>
-              <h2>Home</h2>
-              <p>홈입니다</p>
-            </div>
-  }
+
+
+
 
 }
 
