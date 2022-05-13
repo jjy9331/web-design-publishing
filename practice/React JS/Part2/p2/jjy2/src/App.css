@@ -18,3 +18,15 @@ a { text-decoration: none;}
 /* header */
 .gnb { border: 5px dashed #eee;}
 .gnb ul {display: flex; justify-content: space-between;}
+
+
+/* Main */
+.group { display: flex; flex-wrap: wrap; justify-content: space-between;}
+.group .box {
+    width:48%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 10px solid #0cc;
+    box-sizing: border-box;
+}
+.group .box img { width: 100%;}
