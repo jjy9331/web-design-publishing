@@ -7,12 +7,20 @@ function Main(){
     return  <div className='main'>
               <h2>Main</h2>
               <div className="group">
-                  <div className="box"><img src={img1} alt="" /></div>
-                  <div className="box"><img src={img2} alt="" /></div>
-                  <div className="box"><img src={img3} alt="" /></div>
-                  <div className="box"><img src={img4} alt="" /></div>
+              <Box g={img1} d="이미지1"/>
+              <Box g={img2} d="이미지2"/>
+              <Box g={img3} d="이미지3"/>
+              <Box g={img4} d="이미지4"/>
+                  
               </div>
             </div>
+}
+
+function Box(props){
+  return  <div className="box">
+            <img src={props.g} alt="이미지" />
+            <p>{props.d}입니다</p>
+          </div>
 }
 
 export default Main;
