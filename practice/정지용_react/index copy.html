@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React practice</title>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<style>
+/* reset */
+html,body { height:100%; }
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,button,input { margin:0; padding:0; }
+h1,h2,h3,h4 { font-size:12px; }
+ul,li,ol { list-style:none; }
+img,fieldset,iframe { border:0; }
+img { vertical-align:top; }
+table { border-collapse:collapse; }
+body {position: relative; margin: 0; overflow: hidden;}
+
+
+/* layout */
+#wrap {  margin:0 auto; }
+.header { max-height: 87px; background-color: #20232a; }
+.contents { margin: 0 auto; max-width: 750px;  overflow: auto;}
+.footer { position: absolute; bottom: 0px; background-color: #20232a; margin-top:10px; width: 100%;}
+
+
+/* header */
+h1 { text-align: center;}
+h1 img { width: 45px; height: 45px; padding: 20px; margin: 0 auto;}
+
+/* contents */
+.group { display:flex; flex-wrap:wrap; justify-content:space-evenly; padding: 20px;}
+.box { 
+	width:35%;
+    /* height:279px; */
+	border:3px solid #20232a;
+    border-radius: 2%; 
+	box-sizing:border-box;
+	margin:2% 0; 
+	text-align:center;
+    /* background-color: #20232a; */
+}
+.box img { margin-top: -17px; padding: 30%; width:30%; font-size: 30px; }
+
+.box p { color: #999; margin-top: -10px; padding: 20px; font-size: 2.5vw; background-color: #20232a;}
+
+
+
+/* footer */
+.copyright { display: block; color: #999; text-align:center; padding: 20px;}
+
+
+
+
+/* mediaquery */
+
+@media all and (max-width:500px) { 
+    .header {margin-bottom: 20%;}
+}
+
+@media all and (min-width:501px) and (max-width:619px) { /* */
+	.header {margin-bottom: 13%;}
+}
+
+@media all and (min-width:620px) and (max-width:720px) { /* */
+	.header {margin-bottom: 5%;}
+}
+
+@media all and (min-width:721px) and (max-width:783px) { /* */
+	.header {margin-bottom: 3%;}
+}
+
+@media all and (min-width:784px) and (max-width:1023px) { /* */
+	.header {margin-bottom: 2%;}
+}
+
+
+@media all and (min-width:1024px) and  (max-width:1440px) { /* PC */
+
+} 
+
+@media all and (min-width:1041px) and  (max-width:1600px) { /* PC */
+
+} 
+
+@media all and (min-width:1601px) and  (max-width:1920px) { /* wide PC */
+
+} 
+
+
+</style>
+<body>
+
+<div id="wrap">
+</div>
+
+<script type="text/babel">
+
+    function Header(){
+        return  <div className="header">
+                    <h1><img src="img/logo_react.svg" alt="logo" /></h1>
+                </div>
+    }
+
+    /////컨텐츠
+    function Contents() {
+        return <div className="contents">
+                    <div className="group">
+                        <Box g="img/img1.svg" d="Doc"/>
+                        <Box g="img/img2.svg" d="Tutorial" />
+                        <Box g="img/img3.svg" d="Blog" />
+                        <Box g="img/img4.svg" d="Community" />
+                    </div>
+                </div>
+    }
+
+            ///컨텐츠안의 Box
+            function Box(props) {
+                    return <div className="box">
+                                <img src={props.g} />
+                                <p>{props.d}</p>							 
+                            </div>
+            }
+
+    /////푸터
+    function Footer() {
+        return <div className="footer">
+                    <p className="copyright">Copyright &copy;2022 Meta Platforms, Inc.</p>
+                </div>
+    }
+
+
+    ReactDOM.render(
+        <div>
+            <Header />
+            <Contents />
+            <Footer />
+        </div>,
+        document.getElementById("wrap")
+    );
+
+</script>
+</body>
+</html>
