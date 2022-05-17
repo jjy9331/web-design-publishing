@@ -235,6 +235,9 @@ header {
 /* models */
 #models {
     background-color: white;
+    position: relative;
+    padding-top: 48.5px;
+    padding-bottom: 48.5px;
 }
 #models_inner {
     position: relative;
@@ -247,6 +250,14 @@ header {
 #models_inner h2 {
     margin-top: 128px;
     margin-bottom: 431px;
+}
+
+#models_start {
+    position: absolute;
+    top: -280px;
+    width: 10px; height:10px; 
+    /* background:red; */
+    padding-top: 208px;
 }
 
 .models_H {
@@ -316,9 +327,19 @@ header {
 }
 
 #service_inner h2 {
+    position: relative;
     padding-top: 147px;
     padding-bottom: 130px;
 }
+
+#service_start {
+    position: absolute;
+    top: -100px;
+    width: 10px; height:10px; 
+    /* background:red; */
+    padding-top: 262px;
+}
+
 .service_H {
     position: relative;
     display: flex;
