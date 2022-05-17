@@ -97,6 +97,10 @@ header {
     
 }
 
+.gnb .main:hover > a {
+    text-decoration: underline;
+}
+
 .gnb .main a:hover {
     text-decoration: underline;
 }
@@ -158,8 +162,10 @@ header {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
     
 }
+.sub_gnb li form fieldset:after {content:""; display:block; clear:both;}
 
 .sub_gnb li {
     /* border: 2px dashed yellow; */
@@ -175,13 +181,14 @@ header {
 
 .sub_gnb #input {
     width: 113px;
-    height: 24px;
-    margin-right: 7px;
+    height: 15px;
     background: none;
     border: 0px;
     border-bottom: 2px solid #c7c7c7;
     outline: none; /* focus시 생기는 라인 사용안함 */
     color: white;
+    margin-top: 7px;
+    margin-right: 9px;
 }
 
 .sub_gnb input {float: left;}
