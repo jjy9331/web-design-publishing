@@ -107,7 +107,12 @@ header {
 	height:0px; 
 	/* border:3px solid hotpink;  */
     /* border-bottom: 3px solid #222222; */
+
 }
+
+
+
+
 .gnb .sub li { 
     height:31px; 
     /* border:3px dashed skyblue;  */
@@ -124,7 +129,17 @@ header {
 }
 
 .gnb .sub li:first-child { 
-    padding-top:68px; 
+    padding-top:40px; 
+    /* border:2px dashed green;  */
+}
+
+.gnb .sub li:nth-child(2) { 
+    padding-top:39px; 
+    /* border:2px dashed green;  */
+}
+
+.gnb .sub li:last-child  { 
+    /* padding-bottom:54px;  */
     /* border:2px dashed green;  */
 }
 
@@ -180,6 +195,9 @@ header {
 .gnb:hover  .gnb_bgbox {
     display: block;
     height: 297px;
+    /* padding-bottom: 54px; */
+    padding-bottom: 54px;
+    /* border: 3px dashed orange; */
 }
 
 
