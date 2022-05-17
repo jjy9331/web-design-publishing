@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohenic garage</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <link rel="stylesheet" href="css/default.css">
 <script src="js/default.js"></script>
+
 </head>
 <body>
 
@@ -66,13 +68,20 @@
             <li>
                 <form>
                     <fieldset>
-
-                        <input type="text">
-                        <input type="image" src="images/search.png" alt="search">
+                        <legend class="blind">통합검색</legend>
+                        <label for="input" class="blind">검색어 입력</label>
+                        <input type="text" id="input">
+                        <input type="image" src="images/search.svg" alt="search" id="icon" style="height: 24px; margin-top: 2px;">
                     </fieldset>
                 </form>
             </li>
-            <li><a href="#"><img src="images/cart.png" alt="cart"></a></li>
+            <li>
+                <a href="#">
+                    <span class="material-symbols-outlined" id="icon" style="color:white;">
+                        shopping_bag
+                    </span>
+                </a>
+            </li>
         </ul>
     </div>
 </header>

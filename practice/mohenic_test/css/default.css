@@ -167,16 +167,24 @@ header {
 
 }
 
-.sub_gnb li input:nth-child(1) {
+
+
+.sub_gnb #icon { opacity: 0.8;}
+
+.sub_gnb #icon:hover { opacity: 1;}
+
+.sub_gnb #input {
     width: 113px;
+    height: 24px;
+    margin-right: 7px;
     background: none;
-    border-top: 0px solid transparent;
-    border-left: 0px solid transparent;
-    border-right: 0px solid transparent;
+    border: 0px;
     border-bottom: 2px solid #c7c7c7;
     outline: none; /* focus시 생기는 라인 사용안함 */
     color: white;
 }
+
+.sub_gnb input {float: left;}
 
 .gnb_bgbox { 
 	position:absolute; 
