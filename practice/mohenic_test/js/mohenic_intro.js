@@ -66,7 +66,7 @@ $(function(){
     // alert(H)
     
     
-    let k = setInterval(aniNext,25.25); //0.1초마다 aniNext 함수 실행
+    let k = setInterval(aniNext,25.25); //aniNext 함수 실행
 
     
     let t = 0;
@@ -76,31 +76,23 @@ $(function(){
         $(".time").text(t);
         if(t == 3){
             $(".movie img").fadeOut(1000); //로딩표시영역 사라짐
-            $('body').css({overflow:"auto"});//body스크롤없앰}
+            $('body').css({overflow:"auto"});
+            $("body").css({background:"white"}); 
             $("#wrap").css({display:"block"}); 
         }
         if(t == 4){
-            // $(".movie img").fadeOut(2000); //로딩표시영역 사라짐
-            // $('body').css({overflow:"auto"});//body스크롤없앰}
-            // $("header").show();
-            // $("section").show();
-            // $("footer").show();
-            // $("body").show();
+            $("body").css({background:"white"}); 
             $("#wrap").css({display:"block"}); 
             $("header").fadeIn(1000); 
             $("section").fadeIn(1000); 
             $("footer").fadeIn(1000);
 
             $(".movie").hide(); 
-            // $("body").fadeIn(2000);
 
             clearInterval(t);
         }
     }
-    // for (i=0; i<=4; i++){
-    //     t = t + 1
-    //     $(".time").text(t);
-    // }
+
     setInterval(time,1000); //0.1초마다 aniNext 함수 실행
 
 });
