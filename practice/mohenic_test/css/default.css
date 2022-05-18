@@ -492,3 +492,33 @@ footer {
 .sitemap div a:hover {
     text-decoration: underline;
 }
+
+
+
+.movie { 
+    /* position: relative;  */
+    position: absolute; 
+    /* border:5px dashed #777777;  */
+    /* object-fit: cover; */
+    /* width:1920px;  */
+    /* height:1080px; */
+    width:100%; 
+    height:100%; 
+}
+.movie img { 
+    /* zoom: 1.825; */
+    position:absolute; 
+    visibility:hidden;
+    width:100%; 
+    object-fit: cover;
+    /* background-size: cover; */
+    /* border:5px dashed #777777;  */
+    height:100%; 
+}
+
+.time {
+    position: absolute;
+    background-color: red;
+    font-size: 100px;
+    z-index: 100000;
+}
