@@ -221,18 +221,21 @@ header {
 /* visual */
 
 #visual {
-    background-color: #ededed;
+    /* background-color: #ededed; */
 }
 
-#visual_inner {
-    /* border:2px dashed yellow ; */
-    margin: 0 auto;
+/* swiper */
+#visual_inner { 
     background-position: center;
-    width: 1280px;
-}
-#visual_inner img {
-    width: 100%;
-}
+    width: 100%; /* 가변이미지의 부모에게는 height넣으면 안된다.*/
+    background-size: cover;
+    overflow:hidden; 
+    position:relative; 
+    margin:0 auto; 
+    /* height: 500px;  */
+    /* border:1px dashed skyblue;  */
+} /* 갤러리 전체영역 설정 */
+#visual_inner  .swiper-slide img { width: 100%;} /* 부모길이의 100%*/   
 
 /* models */
 #models {

@@ -89,6 +89,16 @@ $(function(){
 
             $(".movie").hide(); 
 
+            $(function(){
+                var mySwiper1 = new Swiper ('#visual_inner', { 
+                    loop: true, //순환유무	 
+                    grabCursor: true, //커서 손모양
+                    autoplay: 6000, //자동진행
+                    effect: 'fade', //효과
+                })
+            });
+            //intro에 swiper가 영향 받으므로 이곳에 배치
+
             clearInterval(t);
         }
     }

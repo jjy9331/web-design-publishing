@@ -44,5 +44,15 @@ window.addEventListener("load",function(){//페이지의 요소들이 다 로딩
 	});
 
 
+	/* form input refresh 방지*/ 
+	document.getElementById('my_form').onsubmit = function(){
+        var input = this.input.value
+
+        this.input.value = ""
+
+        return false;
+    }
+    //https://penguingoon.tistory.com/208 참고
+
 
 });
