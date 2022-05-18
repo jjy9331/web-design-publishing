@@ -50,10 +50,10 @@ $(function(){
             clearInterval(k); //setInterval종료					
             $(".movie img").hide(); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
+            $("#wrap").css({display:"block"}); 
             $("header").fadeIn(4000); 
             $("section").fadeIn(4000); 
             $("footer").fadeIn(4000);
-
         }
         else {
             $('body').css({overflow:"hidden"});//body스크롤없앰}
@@ -77,18 +77,7 @@ $(function(){
         if(t == 3){
             $(".movie img").fadeOut(1000); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
-            // $("header").show();
-            // $("section").show();
-            // $("footer").show();
-            // $("body").show();
-            
-            // $("header").fadeIn(2000); 
-            // $("section").fadeIn(2000); 
-            // $("footer").fadeIn(2000);
-
-            // $("body").fadeIn(2000);
-
-            // clearInterval(t);
+            $("#wrap").css({display:"block"}); 
         }
         if(t == 4){
             // $(".movie img").fadeOut(2000); //로딩표시영역 사라짐
@@ -97,7 +86,7 @@ $(function(){
             // $("section").show();
             // $("footer").show();
             // $("body").show();
-            
+            $("#wrap").css({display:"block"}); 
             $("header").fadeIn(1000); 
             $("section").fadeIn(1000); 
             $("footer").fadeIn(1000);

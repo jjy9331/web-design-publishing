@@ -16,6 +16,7 @@ body {
     font-weight: 300;
     color: #333;
 }
+#wrap {display: none;}
 .blind {
     position: absolute;
     left: 0;
@@ -300,7 +301,7 @@ header {
 .models_H div p:nth-child(1) {width: 206px;}
 .models_H div p:nth-child(2) {width: 176px;}
 .models_H div p:nth-child(3) {width: 195px;}
-.models_H div p:nth-child(4) {width: 175px;}
+.models_H div p:nth-child(4) {width: 190px;}
 
 
 .models_H li a img:hover {
