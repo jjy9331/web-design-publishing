@@ -6,7 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>happysocks 모바일 리디자인</title>
 </head>
+<style>
+
+/*Eric mayor reset*/
+
+body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd { margin: 0; padding: 0;}
+h1,h2,h3,h4,h5,h6 {font-size: 12px; line-height: 0;}
+ul {list-style: none;}
+img {border: 0; vertical-align: top; }
+
+.wrap { 
+    /* border: 1px red dashed;     */
+}
+.wrap .sheet{ 
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* border: 1px blue dashed; */
+}
+.wrap .s4 {
+    margin: 0 auto;
+    position: relative;
+}
+.wrap .sheet .d4{ 
+    box-sizing: border-box;
+    border: 3px blue dashed;
+}
+.wrap .s4 .main {
+    position: absolute;
+    left: 257px;
+    top: 255px;
+    box-sizing: border-box;
+    /* border: 3px blue dashed; */
+    z-index: -10;
+    width:351px;
+    height:566px;
+}
+
+
+</style>
 <body>
-    
+    <div class="wrap">
+        <div class="sheet"><img src="../happysocks/img/d1.jpg" alt="d1" class="d1"></div>
+        <div class="sheet"><img src="../happysocks/img/d2.jpg" alt="d2" class="d2"></div>
+        <div class="sheet"><img src="../happysocks/img/d3.jpg" alt="d3" class="d3"></div>
+        <div class="sheet s4">
+            <img src="../happysocks/img/d4.png" alt="d4" class="d4">
+            <video src="../happysocks/img/main.mp4" class="main" autoplay loop muted></video>
+        </div>
+        <div class="sheet"><img src="../happysocks/img/d5.png" alt="d5" class="d5"></div>
+        <div class="sheet"><img src="../happysocks/img/d6.png" alt="d6" class="d6"></div>
+        <div class="sheet"><img src="../happysocks/img/d7.jpg" alt="d7" class="d7"></div>
+    </div>
 </body>
 </html>
