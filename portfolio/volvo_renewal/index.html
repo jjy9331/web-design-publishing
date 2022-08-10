@@ -15,17 +15,87 @@ h1,h2,h3,h4,h5,h6 {font-size: 12px; line-height: 0;}
 ul {list-style: none;}
 img {border: 0; vertical-align: top;}
 
+/* base */
+p { font-family: 'Noto Sans KR'; color: #1C6BBA; font-size: 12px;}
+
+/* section 1 */
+.sec1 {
+    max-width: 1920px;
+    max-height: 1080px;
+    width: 100%;
+    /* border: 2px dashed black;  */
+}
+.t1 {
+    /* border: 2px dashed red;  */
+}
+.sec1 .wrap .t1 div:nth-child(1) img {
+    display: inline-block;
+    width: 7%;
+    /* border: 2px dashed black; */
+    margin-left: 46.5%;
+    margin-top: 3%;
+}
+.sec1 .wrap .t1 div:nth-child(1) h1 { 
+    display: block; 
+    /* border: 2px dashed black;  */
+    width: 100%; 
+    margin-top: 1.8%;
+    margin-bottom: 1%;
+    line-height:1;
+    color: #1C6BBA; 
+    font-size: 2.4vmax; 
+    text-align: center;
+    background: linear-gradient( to right, #1C6BBA, #2082E3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.sec1 .wrap .t1 div:nth-child(2) p { 
+    display: inline-block;
+    width: 100%; 
+    line-height:1;
+    /* border: 2px dashed black;  */
+    text-align: center;
+    font-size: 0.7vw; 
+    letter-spacing: 0.05vw;
+}
+
+.sec1 .wrap .moc1 {
+    position: relative;
+}
+.sec1 .wrap .moc1 img {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 3%;
+    z-index: 100;
+}
+.sec1 .wrap .moc1 video {
+    position: absolute;
+    left: 22.2%;
+    top: 11.2%;
+    /* border: 2px dashed red; */
+    width: 55.5%;
+    z-index: 0;
+}
+
+
 </style>
 <body>
 
 <section class="sec1">
     <div class="wrap">
         <div class="t1">
-            <div>메인 사이트 리뉴얼</div>
-            <div>개인 프로젝트  2022.7.21 - 8.1</div>
+            <div>
+                <img src="img/volvo_renewal_logo.png" alt="volvo_title_logo">
+                <h1>메인 사이트 리뉴얼</h1>
+            </div>
+            <div>
+                <p>개인 프로젝트 &nbsp 2022.7.21 - 8.1</p>
+            </div>
         </div>
-        <div>
-            <div></div>
+        <div class="moc1">
+            <img src="img/monitor.png" alt="monitor_mockup">
+            <video src="vid/main.mp4" autoplay loop muted></video>
         </div>
     </div>
 </section>
@@ -34,22 +104,26 @@ img {border: 0; vertical-align: top;}
     <div class="wrap">
         <div class="t2">
             <div>
-                보전형 소비자를 위한<br>
-                리뉴얼
+                <p>
+                    보전형 소비자를 위한<br>
+                    리뉴얼
+                </p>
             </div>
             <div>
-                효과적인 메인 사이트 리뉴얼을 위하여 최근 자동차 구매 트렌드와 
-                네이버 데이터 랩 그리고 신경 마케팅 Limbic map 을 활용하여
-                볼보의 잠재고객을 조사하였습니다*
-                <br>
-                조사에 의하면 볼보의 잠재고객은 40 – 50대 보전형 소비자로 심플함과 
-                안전성을 추구하는 유형임을 알 수 있었습니다  따라서 40 – 50대 보전형 
-                소비자에게 친화적인 메인 사이트로 리뉴얼하여 사이트의  그로스 해킹<sup>*</sup>
-                효과를 향상시키고자 합니다 
-                <br>
-                <sup>*</sup> 그로스 해킹 : 고객 데이터를 활용한 경제적이고 효율적인 마케팅 기법  
-                <br>
-                <sup>*</sup> 조사 내용 보기
+                <p>
+                    효과적인 메인 사이트 리뉴얼을 위하여 최근 자동차 구매 트렌드와 
+                    네이버 데이터 랩 그리고 신경 마케팅 Limbic map 을 활용하여
+                    볼보의 잠재고객을 조사하였습니다*
+                    <br>
+                    조사에 의하면 볼보의 잠재고객은 40 – 50대 보전형 소비자로 심플함과 
+                    안전성을 추구하는 유형임을 알 수 있었습니다  따라서 40 – 50대 보전형 
+                    소비자에게 친화적인 메인 사이트로 리뉴얼하여 사이트의  그로스 해킹<sup>*</sup>
+                    효과를 향상시키고자 합니다 
+                    <br>
+                    <sup>*</sup> 그로스 해킹 : 고객 데이터를 활용한 경제적이고 효율적인 마케팅 기법  
+                    <br>
+                    <sup>*</sup> 조사 내용 보기
+                </p>
             </div>
         </div>
         <div>
@@ -62,20 +136,22 @@ img {border: 0; vertical-align: top;}
     <div class="warp">
         <div class="t3">
             <div>
-                스타일 컨셉
+                <p>스타일 컨셉</p>
             </div>
             <div>
-                안전에 대한 제품의 가치를 소비자가 효과적으로 느낄 수 있도록 
-                3B 마케팅<sup>*</sup> 요소와 뉴모피즘을 적용하였습니다
-                <br>
-                40 – 50대 보전형 소비자에게 아기는 효과적으로 안전의 가치를
-                전달할 수 있는 마케팅 요소이므로  주요 이미지로 차용하였습니다
-                <br>
-                뉴모피즘은 사실적이며 심플함이 특징인 디자인 트렌드이므로 
-                보전형 소비자의 시각적 성향에 부합되며 가독성에도 효과적이므로 
-                레이아웃의 주요영역에 차용하였습니다
-                <br>
-                <sup>*</sup>  3B 마케팅 :  Beast 동물  Beauty 미인  Baby 아기            
+                <p>
+                    안전에 대한 제품의 가치를 소비자가 효과적으로 느낄 수 있도록 
+                    3B 마케팅<sup>*</sup> 요소와 뉴모피즘을 적용하였습니다
+                    <br>
+                    40 – 50대 보전형 소비자에게 아기는 효과적으로 안전의 가치를
+                    전달할 수 있는 마케팅 요소이므로  주요 이미지로 차용하였습니다
+                    <br>
+                    뉴모피즘은 사실적이며 심플함이 특징인 디자인 트렌드이므로 
+                    보전형 소비자의 시각적 성향에 부합되며 가독성에도 효과적이므로 
+                    레이아웃의 주요영역에 차용하였습니다
+                    <br>
+                    <sup>*</sup>  3B 마케팅 :  Beast 동물  Beauty 미인  Baby 아기  
+                </p>          
             </div>
         </div>
         <div>
@@ -87,13 +163,17 @@ img {border: 0; vertical-align: top;}
 <section class="sec4">
     <div class="wrap">
         <div class="t4">
-            <div>스타일 컬러</div>
             <div>
-                소비자에게 신뢰감을 제공하고 볼보의 정체성을 살릴 수<br>
-                있도록 볼보의 시그니처 컬러를 사용하였습니다
+                <p>스타일 컬러</p>
             </div>
             <div>
-                ●  FFFFFF ●  1D6BBA  ●  000000
+                <p>
+                    소비자에게 신뢰감을 제공하고 볼보의 정체성을 살릴 수<br>
+                    있도록 볼보의 시그니처 컬러를 사용하였습니다
+                </p>
+            </div>
+            <div>
+                <p> ●  FFFFFF ●  1D6BBA  ●  000000</p>
             </div>
         </div>
         <div></div>
@@ -102,10 +182,14 @@ img {border: 0; vertical-align: top;}
 
 <section class="sec5">
     <div class="wrap">
-        <div>스타일 폰트</div>
         <div>
-            가독성을 위하여 한글은 Noto Sans KR을 사용하였고<br>
-            영문은 Din Alternate를 사용하였습니다
+            <p>스타일 폰트</p>
+        </div>
+        <div>
+            <p>
+                가독성을 위하여 한글은 Noto Sans KR을 사용하였고<br>
+                영문은 Din Alternate를 사용하였습니다
+            </p>
         </div>
         <div>
             F
