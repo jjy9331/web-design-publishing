@@ -17,6 +17,7 @@ img {border: 0; vertical-align: top;}
 
 /* base */
 p { font-family: 'Noto Sans KR'; color: #1C6BBA; font-size: 12px;}
+a {   text-decoration: none; color: inherit; }
 
 /* section 1 */
 .sec1 {
@@ -45,7 +46,7 @@ p { font-family: 'Noto Sans KR'; color: #1C6BBA; font-size: 12px;}
     color: #1C6BBA; 
     font-size: 2.4vmax; 
     text-align: center;
-    background: linear-gradient( to right, #1C6BBA, #2082E3);
+    background: linear-gradient( to right, #1C6BBA 40%, #2082E3 60%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -78,6 +79,70 @@ p { font-family: 'Noto Sans KR'; color: #1C6BBA; font-size: 12px;}
     z-index: 0;
 }
 
+/* section 2 */
+
+.sec2 { 
+    /* border: 2px dashed orange;   */
+    margin-top: 10vw;
+}
+
+.sec2 .wrap {
+    /* border: 2px dashed blue;  */
+    max-height: 1080px ;
+}
+
+.sec2 .wrap .t2 {
+    display: inline-block;
+    /* border: 2px dashed red;  */
+    margin-left: 10vw;
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+    float:left;
+}
+
+.sec2 .wrap .t2 div:nth-child(1) h1 {
+    display: block; 
+    /* border: 2px dashed black;  */
+    width: 100%; 
+    margin-top: 1.8%;
+    margin-bottom: 10%;
+    line-height:1.2;
+    /* color: #1C6BBA;  */
+    font-size: 2.4vmax; 
+    /* text-align: center;  */
+    background: linear-gradient( to right, #1C6BBA 0%, #2082E3 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sec2 .wrap .t2 div:nth-child(2) p {
+    font-size: 1vw; 
+}
+
+.ls1{ letter-spacing: 0.9px;}
+.ls2{ letter-spacing: 1.1px;}
+.ls3{ letter-spacing: 0.11px;}
+.ls4{ letter-spacing: 0.11px;}
+
+.sec2 .wrap .moc2 {
+    position: relative;
+    border: 2px dashed red; 
+    /* width: 34%; */
+}
+.sec2 .wrap .moc2 img {
+    /* border: 2px dashed rgb(6, 5, 5);  */
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+    margin-left: 18vw;
+    width: 34%;
+}
+.sec2 .wrap .moc2 video {
+    position: absolute;
+    left: 58%;
+    top: 20%;
+    width: 32.5%;
+}
+
 
 </style>
 <body>
@@ -104,30 +169,33 @@ p { font-family: 'Noto Sans KR'; color: #1C6BBA; font-size: 12px;}
     <div class="wrap">
         <div class="t2">
             <div>
-                <p>
+                <h1>
                     보전형 소비자를 위한<br>
                     리뉴얼
-                </p>
+                </h1>
             </div>
             <div>
                 <p>
-                    효과적인 메인 사이트 리뉴얼을 위하여 최근 자동차 구매 트렌드와 
-                    네이버 데이터 랩 그리고 신경 마케팅 Limbic map 을 활용하여
+                    <span class="ls1">효과적인 메인 사이트 리뉴얼을 위하여 최근 자동차 구매 트렌드와</span><br>
+                    <span class="ls2">네이버 데이터 랩 그리고 신경 마케팅 Limbic map 을 활용하여</span><br>
                     볼보의 잠재고객을 조사하였습니다*
                     <br>
-                    조사에 의하면 볼보의 잠재고객은 40 – 50대 보전형 소비자로 심플함과 
-                    안전성을 추구하는 유형임을 알 수 있었습니다  따라서 40 – 50대 보전형 
-                    소비자에게 친화적인 메인 사이트로 리뉴얼하여 사이트의  그로스 해킹<sup>*</sup>
+                    <br>
+                    <span class="ls3">조사에 의하면 볼보의 잠재고객은 40 – 50대 보전형 소비자로 심플함과</span><br> 
+                    안전성을 추구하는 유형임을 알 수 있었습니다  따라서 40 – 50대 보전형<br> 
+                    <span class="ls4">소비자에게 친화적인 메인 사이트로 리뉴얼하여 사이트의  그로스 해킹<sup>*</sup></span><br>
                     효과를 향상시키고자 합니다 
                     <br>
-                    <sup>*</sup> 그로스 해킹 : 고객 데이터를 활용한 경제적이고 효율적인 마케팅 기법  
                     <br>
-                    <sup>*</sup> 조사 내용 보기
+                    <sup>*</sup> 그로스 해킹 : <span class="ls5">고객 데이터를 활용한 경제적이고 효율적인 마케팅 기법</span>  
+                    <br>
+                    <a href=""><sup>*</sup> 조사 내용 보기</a>
                 </p>
             </div>
         </div>
-        <div>
-            <div></div>
+        <div class="moc2">
+            <img src="img/monitor.png" alt="sec2_mockup">
+            <video src="vid/family_safety.mp4" autoplay loop muted></video>
         </div>
     </div>
 </section>
