@@ -101,6 +101,11 @@ img {border: 0; vertical-align: top;}
 
 </style>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
+<script type="text/javascript" src= http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js></script>
+<!-- <script type="text/javascript" src="</script'>http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+<script type="text/javascript" src="</script'>http://davidlynch.org/projects/maphilight/jquery.maphilight.min.js"></script>
+
 
 <body>
     <div class="wrap">
@@ -114,9 +119,10 @@ img {border: 0; vertical-align: top;}
         <div class="sheet s2">
             <video src="vid/family_safety.mp4" class="sub_v" autoplay loop muted></video>
             <!-- <img src="img/sec2.png" alt="sec2" class="sec2" >-->
-            <img src="img/sec2.png" usemap="#image-map">
-            <map name="image-map">
-                <area target="" alt="" title="" href="volvo_renewal_plan.pdf" coords="151,838,302,797" shape="rect">
+            <img src="img/sec2.png" usemap="#image-map" id="map1">
+            <map name="image-map" onmouseover="changeImg1(this,'img/sec2_hover.png')" onmouseout="changeImg1(this,'img/sec2.png')" >
+                <!-- onmouseover="this.src='img/sec2_hover.png'" onmouseout="this.src='img/sec2.png'" -->
+                <area  alt="move to pdf" title="renewal_plan_view" href="volvo_renewal_plan.pdf" coords="151,838,302,797" shape="rect">
             </map>
         </div>
         <div class="sheet"><img src="img/sec3.png" alt="sec3" class="sec3" ></div>
@@ -145,12 +151,24 @@ img {border: 0; vertical-align: top;}
         <video src="vid/full_case.mp4"></video>
     </article> -->
 </body>
+
 <!-- 반응형 이미지맵 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+
+
 <script>
     $(document).ready(function() {
         $('img[usemap]').rwdImageMaps();
     });
+
+    function changeImg1(obj, img){
+    var mapimg1 = document.getElementById('map1');
+    mapimg1.src = img;
+    }
+
 </script>
+
+
+
 </html>
