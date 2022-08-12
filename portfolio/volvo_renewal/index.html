@@ -7,271 +7,138 @@
     <title>Volvo main renewal</title>
 </head>
 <style>
-
-/*Eric mayor reset*/
+    /*Eric mayor reset*/
 
 body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd { margin: 0; padding: 0;}
 h1,h2,h3,h4,h5,h6 {font-size: 12px; line-height: 0;}
 ul {list-style: none;}
 img {border: 0; vertical-align: top;}
 
-/* base */
-p { font-family: 'Noto Sans KR'; color: #1C6BBA; font-size: 12px;}
-a {   text-decoration: none; color: inherit; }
-
-/* section 1 */
-.sec1 {
+.wrap { 
+    /* border: 1px red dashed;     */
+}
+.wrap .sheet{ 
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* width: 100%; */
     max-width: 1920px;
-    max-height: 1080px;
+    /* border: 1px blue dashed; */
+}
+.wrap .sheet img{ 
+    margin: 0 auto;
+    box-sizing: border-box;
     width: 100%;
-    /* border: 2px dashed black;  */
-}
-.t1 {
-    /* border: 2px dashed red;  */
-}
-.sec1 .wrap .t1 div:nth-child(1) img {
-    display: inline-block;
-    width: 7%;
-    /* border: 2px dashed black; */
-    margin-left: 46.5%;
-    margin-top: 3%;
-}
-.sec1 .wrap .t1 div:nth-child(1) h1 { 
-    display: block; 
-    /* border: 2px dashed black;  */
-    width: 100%; 
-    margin-top: 1.8%;
-    margin-bottom: 1%;
-    line-height:1;
-    color: #1C6BBA; 
-    font-size: 2.4vmax; 
-    text-align: center;
-    background: linear-gradient( to right, #1C6BBA 40%, #2082E3 60%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-}
-.sec1 .wrap .t1 div:nth-child(2) p { 
-    display: inline-block;
-    width: 100%; 
-    line-height:1;
-    /* border: 2px dashed black;  */
-    text-align: center;
-    font-size: 0.7vw; 
-    letter-spacing: 0.05vw;
+    /* max-width: 1920px; */
+    /* border: 1px blue dashed; */
 }
 
-.sec1 .wrap .moc1 {
+.wrap .s1 {
+    margin: 0 auto;
     position: relative;
+    /* border: 3px blue dashed; */
+    max-width: 1920px;
 }
-.sec1 .wrap .moc1 img {
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 3%;
-    z-index: 100;
-}
-.sec1 .wrap .moc1 video {
+.wrap .s1 .main_v {
     position: absolute;
-    left: 22.2%;
-    top: 11.2%;
-    /* border: 2px dashed red; */
-    width: 55.5%;
-    z-index: 0;
+    left: 23.8%;
+    top: 35.5%;
+    box-sizing: border-box;
+    /* border: 3px blue dashed; */
+    z-index: -10;
+    width: 53.25%;
 }
 
-/* section 2 */
-
-.sec2 { 
-    /* border: 2px dashed orange;   */
-    margin-top: 10vw;
-}
-
-.sec2 .wrap {
-    /* border: 2px dashed blue;  */
-    max-height: 1080px ;
-}
-
-.sec2 .wrap .t2 {
-    display: inline-block;
-    /* border: 2px dashed red;  */
-    margin-left: 10vw;
-    margin-top: 15vw;
-    margin-bottom: 15vw;
-    float:left;
-}
-
-.sec2 .wrap .t2 div:nth-child(1) h1 {
-    display: block; 
-    /* border: 2px dashed black;  */
-    width: 100%; 
-    margin-top: 1.8%;
-    margin-bottom: 10%;
-    line-height:1.2;
-    /* color: #1C6BBA;  */
-    font-size: 2.4vmax; 
-    /* text-align: center;  */
-    background: linear-gradient( to right, #1C6BBA 0%, #2082E3 20%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.sec2 .wrap .t2 div:nth-child(2) p {
-    font-size: 1vw; 
-}
-
-.ls1{ letter-spacing: 0.9px;}
-.ls2{ letter-spacing: 1.1px;}
-.ls3{ letter-spacing: 0.11px;}
-.ls4{ letter-spacing: 0.11px;}
-
-.sec2 .wrap .moc2 {
+.wrap .s2 {
+    margin: 0 auto;
     position: relative;
-    border: 2px dashed red; 
-    /* width: 34%; */
+    /* border: 3px blue dashed; */
+    max-width: 1920px;
 }
-.sec2 .wrap .moc2 img {
-    /* border: 2px dashed rgb(6, 5, 5);  */
-    margin-top: 15vw;
-    margin-bottom: 15vw;
-    margin-left: 18vw;
-    width: 34%;
-}
-.sec2 .wrap .moc2 video {
+.wrap .s2 .sub_v {
     position: absolute;
-    left: 58%;
-    top: 20%;
-    width: 32.5%;
+    right: 10.43%;
+    top: 28.24%;
+    box-sizing: border-box;
+    /* border: 3px blue dashed; */
+    z-index: -10;
+    width: 35.5%;
 }
 
+.wrap .s4 {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+}
+
+.wrap .s5 {
+    margin: 0 auto;
+    position: relative;
+    /* border: 3px blue dashed; */
+    max-width: 1920px;
+}
+
+.wrap .s6 {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+}
+
+.wrap .s6 .full_case {
+    position: absolute;
+    left: 11.9%;
+    top: 10.7%;
+    box-sizing: border-box;
+    border: 3px solid black ;
+    z-index: -10;
+    width: 76.7%;
+}
+
+/* body .loading img {
+    display: none;
+    width: 0%;
+    height: 0%;
+} */
 
 </style>
+
+
 <body>
-
-<section class="sec1">
     <div class="wrap">
-        <div class="t1">
-            <div>
-                <img src="img/volvo_renewal_logo.png" alt="volvo_title_logo">
-                <h1>메인 사이트 리뉴얼</h1>
-            </div>
-            <div>
-                <p>개인 프로젝트 &nbsp 2022.7.21 - 8.1</p>
-            </div>
+        <div class="sheet s1">
+            <video src="vid/main.mp4" class="main_v" autoplay loop muted></video>
+            <img src="img/sec1.png" alt="sec1" class="sec1" >
         </div>
-        <div class="moc1">
-            <img src="img/monitor.png" alt="monitor_mockup">
-            <video src="vid/main.mp4" autoplay loop muted></video>
+        <div class="sheet">
+            <img src="img/sec1_bottom.png" alt="sec1_b" class="sec1_b" >
         </div>
-    </div>
-</section>
-
-<section class="sec2">
-    <div class="wrap">
-        <div class="t2">
-            <div>
-                <h1>
-                    보전형 소비자를 위한<br>
-                    리뉴얼
-                </h1>
-            </div>
-            <div>
-                <p>
-                    <span class="ls1">효과적인 메인 사이트 리뉴얼을 위하여 최근 자동차 구매 트렌드와</span><br>
-                    <span class="ls2">네이버 데이터 랩 그리고 신경 마케팅 Limbic map 을 활용하여</span><br>
-                    볼보의 잠재고객을 조사하였습니다*
-                    <br>
-                    <br>
-                    <span class="ls3">조사에 의하면 볼보의 잠재고객은 40 – 50대 보전형 소비자로 심플함과</span><br> 
-                    안전성을 추구하는 유형임을 알 수 있었습니다  따라서 40 – 50대 보전형<br> 
-                    <span class="ls4">소비자에게 친화적인 메인 사이트로 리뉴얼하여 사이트의  그로스 해킹<sup>*</sup></span><br>
-                    효과를 향상시키고자 합니다 
-                    <br>
-                    <br>
-                    <sup>*</sup> 그로스 해킹 : <span class="ls5">고객 데이터를 활용한 경제적이고 효율적인 마케팅 기법</span>  
-                    <br>
-                    <a href=""><sup>*</sup> 조사 내용 보기</a>
-                </p>
-            </div>
+        <div class="sheet s2">
+            <video src="vid/family_safety.mp4" class="sub_v" autoplay loop muted></video>
+            <img src="img/sec2.png" alt="sec2" class="sec2" >
         </div>
-        <div class="moc2">
-            <img src="img/monitor.png" alt="sec2_mockup">
-            <video src="vid/family_safety.mp4" autoplay loop muted></video>
+        <div class="sheet"><img src="img/sec3.png" alt="sec3" class="sec3" ></div>
+        <div class="sheet s4">
+            <img src="img/sec4_c1.png" alt="sec4" class="sec4" >
+        </div>
+        <div class="sheet s5">
+            <img src="img/sec5.png" alt="sec5" class="sec5" >
+            <img src="img/sec5_bottom.png" alt="sec5_b" class="sec5_b" >
+        </div>
+        <div class="sheet s6">
+            <img src="img/sec6.png" alt="sec6" class="sec6" >
+            <video src="vid/full_case.mp4" class="full_case" autoplay loop muted></video>
         </div>
     </div>
-</section>
-
-<section class="sec3">
-    <div class="warp">
-        <div class="t3">
-            <div>
-                <p>스타일 컨셉</p>
-            </div>
-            <div>
-                <p>
-                    안전에 대한 제품의 가치를 소비자가 효과적으로 느낄 수 있도록 
-                    3B 마케팅<sup>*</sup> 요소와 뉴모피즘을 적용하였습니다
-                    <br>
-                    40 – 50대 보전형 소비자에게 아기는 효과적으로 안전의 가치를
-                    전달할 수 있는 마케팅 요소이므로  주요 이미지로 차용하였습니다
-                    <br>
-                    뉴모피즘은 사실적이며 심플함이 특징인 디자인 트렌드이므로 
-                    보전형 소비자의 시각적 성향에 부합되며 가독성에도 효과적이므로 
-                    레이아웃의 주요영역에 차용하였습니다
-                    <br>
-                    <sup>*</sup>  3B 마케팅 :  Beast 동물  Beauty 미인  Baby 아기  
-                </p>          
-            </div>
-        </div>
-        <div>
-            <div></div>
-        </div>
-    </div>
-</section>
-
-<section class="sec4">
-    <div class="wrap">
-        <div class="t4">
-            <div>
-                <p>스타일 컬러</p>
-            </div>
-            <div>
-                <p>
-                    소비자에게 신뢰감을 제공하고 볼보의 정체성을 살릴 수<br>
-                    있도록 볼보의 시그니처 컬러를 사용하였습니다
-                </p>
-            </div>
-            <div>
-                <p> ●  FFFFFF ●  1D6BBA  ●  000000</p>
-            </div>
-        </div>
-        <div></div>
-    </div>
-</section>
-
-<section class="sec5">
-    <div class="wrap">
-        <div>
-            <p>스타일 폰트</p>
-        </div>
-        <div>
-            <p>
-                가독성을 위하여 한글은 Noto Sans KR을 사용하였고<br>
-                영문은 Din Alternate를 사용하였습니다
-            </p>
-        </div>
-        <div>
-            F
-        </div>
-    </div>
-</section>
-
-<section class="sec6">
-    <div>
-        <div>
-            <div></div>
-        </div>
-    </div>
-</section>
-
+    <!-- <article class="loading">
+        <img src="img/sec1.png">
+        <img src="img/sec1_bottom.png">
+        <img src="img/sec2.png">
+        <img src="img/sec3.png">
+        <img src="img/sec4.png">
+        <img src="img/sec5.png">
+        <img src="img/sec6.png">
+        <video src="vid/main.mp4"></video>
+        <video src="vid/family_safety.mp4"></video>
+        <video src="vid/full_case.mp4"></video>
+    </article> -->
 </body>
 </html>
