@@ -65,9 +65,38 @@ img {border: 0; vertical-align: top;}
 }
 
 .wrap .s4 {
+    position: relative;
     margin: 0 auto;
     position: relative;
     max-width: 1920px;
+    /* border: 3px dashed red; */
+}
+
+.wrap .s4 .circle {
+    position: absolute;
+    right: 19.5%;
+    top: 30%;
+    background: #1C6BBA;
+    width: 22%;
+    height: 40%;
+    border-radius: 70%;
+    box-sizing: border-box;
+    /* border: 1px dashed red; */
+    transition: all ease-in-out 0.4s;
+}
+
+.wrap .s4 .circle_big {
+    position: absolute;
+    right: 19.5%;
+    top: 30%;
+    background: #1C6BBA;
+    width: 22%;
+    height: 40%;
+    border-radius: 70%;
+    box-sizing: border-box;
+    /* border: 1px dashed red; */
+    transform: scale(1.7);
+    transition: all ease 500ms ;
 }
 
 .wrap .s5 {
@@ -105,9 +134,60 @@ img {border: 0; vertical-align: top;}
 <!-- <script type="text/javascript" src= http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js></script> -->
 <!-- <script type="text/javascript" src="</script'>http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
 <!-- <script type="text/javascript" src="</script'>http://davidlynch.org/projects/maphilight/jquery.maphilight.min.js"></script> -->
+<script>
+    $(function(){ 
+
+        $(window).scroll(function(){ 
+            var b = $(document).scrollTop(); 
+                        
+            $("#tt").text(b);
+
+            $(window).resize(function() {
+                page_width = $("body").css("width");
+                // page_height = $("body").css("height");
+                page_height = window.innerHeight;
+                $(".s2_w").text(page_width).css({ fontSize: 20 });
+                $(".s2_h").text(page_height).css({ fontSize: 20 });
+            });
+
+            function scrollanimate(){
+                var target_c = document.querySelector('.circle');
+                var circle_position = target_c.getBoundingClientRect().top;
+                var screen_position = window.innerHeight / 2;
+
+                var c1 = parseInt(circle_position)
+                var c2 = parseInt(screen_position)
+
+                if( c1 < c2) {
+                    target_c.classList.add('circle_big');
+                    // target_c.classList.add('circle_big');
+                }
+                else if ( c1 > c2) {
+                    target_c.classList.remove('circle_big');
+                    target_c.classList.add('circle');
+                }
+
+                console.log("circle_position :" + c1)
+                console.log("screen_position :" + c2)
+            }
+            window.addEventListener('scroll',scrollanimate);
+
+        });
+});
+</script>
 
 
 <body>
+
+    <!-- position monitoring -->
+    <!-- <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
+    <div id="test" style="position:fixed; left:30px; top: 250px; z-index: 10;">
+        <p>body width: <span class="s2_w">0px</span></p>
+    </div>
+    <div id="test" style="position:fixed; left:30px; top: 300px; z-index: 10;">
+        <p>body height: <span class="s2_h">0px</span></p>
+    </div> -->
+
     <div class="wrap">
         <div class="sheet s1">
             <video src="vid/main.mp4" class="main_v" autoplay loop muted></video>
@@ -127,6 +207,7 @@ img {border: 0; vertical-align: top;}
         </div>
         <div class="sheet"><img src="img/sec3.png" alt="sec3" class="sec3" ></div>
         <div class="sheet s4">
+            <div class="circle"></div>
             <img src="img/sec4_c1.png" alt="sec4" class="sec4" >
         </div>
         <div class="sheet s5">
