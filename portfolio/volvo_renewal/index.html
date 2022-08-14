@@ -122,6 +122,34 @@ img {border: 0; vertical-align: top;}
     width: 76.7%;
 }
 
+.loader { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #fff; z-index: 100; color: #000; text-align: center; }
+.loader span { display: inline-block; padding-top: 20%; }
+
+
+/* base */
+body {  }
+
+
+/* 이미지 */
+.container img { width:100%; }
+
+
+/* 로딩 */
+.loading { position:fixed; z-index:1000; width:100%; height:100%; background:black; }
+
+.bar_bg { 
+    position:absolute; left:50%; top:50%; margin-left:-300px; width:600px; height:30px;	
+    background-color:white;
+    border-radius: 30px;
+}
+.bar_bg .bar { width:10%; height:100%;  background-color:red;  border-radius: 30px; }
+
+.tt {
+    position:absolute; top:50%; width:100%; margin-top:40px;
+    font-size:30px; color:white; text-align:center;	
+}
+
+
 /* body .loading img {
     display: none;
     width: 0%;
@@ -131,11 +159,53 @@ img {border: 0; vertical-align: top;}
 </style>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
 <!-- <script type="text/javascript" src= http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js></script> -->
 <!-- <script type="text/javascript" src="</script'>http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
 <!-- <script type="text/javascript" src="</script'>http://davidlynch.org/projects/maphilight/jquery.maphilight.min.js"></script> -->
 <script>
     $(function(){ 
+
+        /////////////////////// 로딩진행률 표시 start ///////////////////////////////////////////////
+
+        var total = imagesLoaded("body").images.length; //body에 로딩될 이미지 전체갯수
+        var num = 0; //로딩된 이미지 갯수를 저장하게될 변수
+
+        imagesLoaded("body").on("progress", function () { //body의 이미지를 로딩할때 마다
+            num++;
+        });
+
+
+        var pg = 0; //진행율 초기값
+		var targetPG = 0; //진행율 목적지 초기값
+
+
+        function loadingMotion(){
+            
+				targetPG = (num / total) * 100; //로딩상황 백분률 계산
+
+				pg = pg + 0.1*(targetPG - pg); //목적지공식으로 부드럽게 모션 진행           
+				
+				var roundPG = Math.round(pg); //소수점 이하를 버리기위해 반올림
+
+				$(".bar").css({ width:roundPG + "%" }); //로딩바의 가로길이에 로딩값을 반영
+				$(".tt").text( roundPG + "%" ); //텍스트에 로딩값을 반영
+
+
+				if(roundPG >= 100){ //로딩이 완료되면
+						clearInterval(timer1); //setInterval종료					
+						$(".loading").fadeOut(1000); //로딩표시영역 사라짐
+				}
+                console.log(roundPG);
+        }
+
+		var timer1 = setInterval( loadingMotion, 10 ); //loadingMotion함수를 0.01초마다 실행
+
+        // console.log(timer1);
+
+        /////////////////////// 로딩진행률 표시 end ///////////////////////////////////////////////
+
 
         $(window).scroll(function(){ 
             var b = $(document).scrollTop(); 
@@ -179,6 +249,17 @@ img {border: 0; vertical-align: top;}
 
 <body>
 
+    
+    <div class="loading">
+
+        <div class="bar_bg">
+            <div class="bar"></div>
+        </div>
+
+        <div class="tt">0%</div>
+
+    </div>
+
     <!-- position monitoring -->
     <!-- <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
     <div id="test" style="position:fixed; left:30px; top: 250px; z-index: 10;">
@@ -197,28 +278,29 @@ img {border: 0; vertical-align: top;}
             <img src="img/sec1_bottom.png" alt="sec1_b" class="sec1_b" >
         </div>
         <div class="sheet s2">
-            <video src="vid/family_safety.mp4" class="sub_v" autoplay loop muted></video>
+            <video src="vid/family_safety.mp4" class="sub_v" autoplay loop muted ></video>
             <!-- <img src="img/sec2.png" alt="sec2" class="sec2" >-->
-            <img src="img/sec2.png" usemap="#image-map" id="map1">
+            <img src="img/sec2.png" usemap="#image-map" id="map1" >
             <map name="image-map" onmouseover="changeImg1(this,'img/sec2_hover.png')" onmouseout="changeImg1(this,'img/sec2.png')" >
                 <!-- onmouseover="this.src='img/sec2_hover.png'" onmouseout="this.src='img/sec2.png'" -->
                 <area  alt="move to pdf" title="renewal_plan_view" href="volvo_renewal_plan.pdf" coords="151,838,302,797" shape="rect">
             </map>
         </div>
-        <div class="sheet"><img src="img/sec3.png" alt="sec3" class="sec3" ></div>
+        <div class="sheet"><img src="img/sec3.png" alt="sec3" class="sec3"  ></div>
         <div class="sheet s4">
             <div class="circle"></div>
-            <img src="img/sec4_c1.png" alt="sec4" class="sec4" >
+            <img src="img/sec4.png" alt="sec4" class="sec4" >
         </div>
         <div class="sheet s5">
-            <img src="img/sec5.png" alt="sec5" class="sec5" >
-            <img src="img/sec5_bottom.png" alt="sec5_b" class="sec5_b" >
+            <img src="img/sec5.png" alt="sec5" class="sec5"  >
+            <img src="img/sec5_bottom.png" alt="sec5_b" class="sec5_b"  >
         </div>
         <div class="sheet s6">
-            <img src="img/sec6.png" alt="sec6" class="sec6" >
-            <video src="vid/full_case.mp4" class="full_case" autoplay loop muted></video>
+            <img src="img/sec6.png" alt="sec6" class="sec6"  >
+            <video src="vid/full_case.mp4" class="full_case" autoplay loop muted loading="lazy"></video>
         </div>
     </div>
+    <p  class="loader"><span><img src="img/loader.gif" alt="로딩중입니다" /><br />loading</span></p>
     <!-- <article class="loading">
         <img src="img/sec1.png">
         <img src="img/sec1_bottom.png">
@@ -247,6 +329,11 @@ img {border: 0; vertical-align: top;}
     var mapimg1 = document.getElementById('map1');
     mapimg1.src = img;
     }
+
+    window.onload = function() {
+    $(".loader").hide();
+    };
+
 
 </script>
 
