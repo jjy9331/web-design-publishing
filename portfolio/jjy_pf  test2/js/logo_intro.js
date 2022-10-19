@@ -24,6 +24,7 @@ $(function(){
         // }
 
         $(".movie img").css({visibility:"hidden"});
+        // $("#portfolio .inner").css({visibility:"hidden"});
         // $(".logo_intro").css({height:H});
         // $(".movie img").css({width:W});
         // $(".movie img").css({height:H});
@@ -43,13 +44,14 @@ $(function(){
         console.log(inc);
         // $(".movie").fadeOut(500); //로딩표시영역 사라짐
 
-        $('body').fadeIn(1000);
-        // $('body').css({display:"block"});
+        // $('body').fadeIn(1000);
+        $('body').css({display:"block"});
 
         
         if(inc >=177){ //로딩이 완료되면
             clearInterval(k); //setInterval종료					
             $(".movie img").hide(); //로딩표시영역 사라짐
+            $("#portfolio .inner").css({visibility:"visible"});
             $('body').css({overflow:"auto"});//body스크롤없앰}
             $("#wrap").fadeIn(1000); 
             $("header").fadeIn(1000);
