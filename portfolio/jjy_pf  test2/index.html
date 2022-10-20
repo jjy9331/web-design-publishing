@@ -155,6 +155,7 @@ $(function(){
                 // $('#home .inner .typo h3 .kw1').css({opacity:1});
                 $('#home .inner .visual').css({opacity:0});
                 $('#home .inner .typo h3').css({opacity:1});
+                // $('#home .inner .typo h3').fadeIn();
                 $('#home .inner .typo p').css({opacity:1});
                 
                 // $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
@@ -180,11 +181,20 @@ $(function(){
                 $('#introduce .visual img:eq(1)').css({left:-200});
                 $('#introduce .visual img:eq(2)').css({opacity:0});
                 $('#introduce .visual img:eq(2)').css({left:-320});
+
+
+                $('#home .inner .typo').css({bottom:"48%"});
+                $('#home .inner .typo').css({left:"32%"});
+                $('#home .inner .typo h3').css({fontSize:"4.8vw"});
+
             } 
             else{
                 $('#home .inner .typo h3 .kw1').css({"text-decoration":"none"});
                 $('#home .inner .typo h3 .kw2').css({"text-decoration":"none"});
                 $('#home .inner .typo p span').css({"text-decoration":"none"});
+                $('#home .inner .typo').css({bottom:"34%"});
+                $('#home .inner .typo').css({left:"33.4%"});
+                $('#home .inner .typo h3').css({fontSize:"4.8vw"});
             }
 
             if((b >= 876) && (b < 1661)) {	//introduce
