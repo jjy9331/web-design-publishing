@@ -33,8 +33,8 @@ $(function(){
 
             $("#bar").css({transition:"0.5s"});
             $('#home .inner .visual').css({transition:"0.4s"});
-            $('#home .inner .typo h3').css({transition:"0.8s"});
-            $('#home .inner .typo p').css({transition:"0.8s"});
+            $('#home .inner .typo h3').css({transition:"1s"});
+            $('#home .inner .typo p').css({transition:"1s"});
 
             $('#home .inner .typo h3 .kw1').css({transition:"0.4s"});
             $('#home .inner .typo h3 .kw2').css({transition:"0.4s"});
@@ -62,7 +62,7 @@ $(function(){
             $('#portfolio .inner li:eq(1) .f1').css({transition:"3.0s"});
             // $('#portfolio .inner li:eq(1) .f2').css({transition:"3.0s"});
 
-            if((b >=0) && (b < 153)) {	//home
+            if((b >=0) && (b < 400)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
                 $('#home .inner .visual').css({opacity:1});
@@ -81,14 +81,18 @@ $(function(){
                 $('#home .inner .typo .d4').css({opacity:0});
                 $('#home .inner .typo .d5').css({opacity:0});
                 $('#home .inner .typo .d6').css({opacity:0});
+                $(window).scroll(function(){
+                    $('#home .inner .visual').css("opacity", 1 - $(window).scrollTop() / 40);
+                });
+            }
+            else {
+                $('#home .inner .visual').css({opacity:0});
+            }
 
-                
-            } 
-
-            if((b >=1) && (b < 123)) {	//home
+            if((b >=1) && (b < 400)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
-                $('#home .inner .visual').css({opacity:1});
+                // $('#home .inner .visual').css({opacity:1});
                 $('#home .inner .typo h3').css({opacity:0});
                 $('#home .inner .typo p').css({opacity:0});
                 // $('#home .inner .typo h3 .kw1').text("단결");
@@ -119,7 +123,11 @@ $(function(){
                 $('#home .inner .typo h3 .kw1').text("__");
                 $('#home .inner .typo h3 .kw2').text("__");
                 $('#home .inner .typo p span').text("__");
+                // $('#home .inner .visual').css({opacity:0});
             } 
+
+
+            
             if((b >=811) && (b < 837)) {
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
@@ -131,8 +139,12 @@ $(function(){
                 $('#home .inner .typo .d4').css({opacity:0});
                 $('#home .inner .typo .d5').css({opacity:0});
                 $('#home .inner .typo .d6').css({opacity:0});
-
+                $('#home .inner .visual').css({opacity:0});
             }
+            else{
+                $('#home .inner .visual').css({opacity:1});
+            }
+
             if((b >=876) && (b < 908)) {
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
@@ -145,17 +157,25 @@ $(function(){
                 $('#home .inner .typo .d5').css({opacity:0});
                 $('#home .inner .typo .d6').css({opacity:0});
 
+                $('#home .inner .visual').css({opacity:0});
+            }
+            else{
+                $('#home .inner .visual').css({opacity:1});
             }
             
-            if((b >=123) && (b < 747)) {	//home
+            if((b >=400) && (b < 1500)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
                 // $('#home .inner .typo h3').css({opacity:1});
                 // $('#home .inner .typo p span').css({opacity:1});
                 // $('#home .inner .typo h3 .kw1').css({opacity:1});
                 $('#home .inner .visual').css({opacity:0});
+
                 $('#home .inner .typo h3').css({opacity:1});
+                // $('#home .inner .typo h3').fadeIn(10000);
+
                 // $('#home .inner .typo h3').fadeIn();
+
                 $('#home .inner .typo p').css({opacity:1});
                 
                 // $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
@@ -186,7 +206,7 @@ $(function(){
                 $('#home .inner .typo').css({bottom:"48%"});
                 $('#home .inner .typo').css({left:"32%"});
                 $('#home .inner .typo h3').css({fontSize:"4.8vw"});
-
+                $('#home .inner .visual').css({opacity:0});
             } 
             else{
                 $('#home .inner .typo h3 .kw1').css({"text-decoration":"none"});
@@ -195,7 +215,9 @@ $(function(){
                 $('#home .inner .typo').css({bottom:"34%"});
                 $('#home .inner .typo').css({left:"33.4%"});
                 $('#home .inner .typo h3').css({fontSize:"4.8vw"});
+                $('#home .inner .visual').css({opacity:1});
             }
+
 
             if((b >= 876) && (b < 1661)) {	//introduce
                 $('#bar').css({right:464});
@@ -212,6 +234,17 @@ $(function(){
                 $('#introduce .visual img:eq(2)').css({opacity:1});
                 $('#introduce .visual img:eq(2)').css({left:0});
             } 
+
+            if((b > 1000) && (b < 4143)) {
+                $('#home .inner .visual').css({opacity:0});
+                $('#home .inner .typo h3').css({opacity:0});
+                $('#home .inner .typo p').css({opacity:0});
+            }
+            else{
+                // $('#home .inner .visual').css({opacity:1});
+                // $('#home .inner .typo h3').css({opacity:1});
+                // $('#home .inner .typo p').css({opacity:1});
+            }
 
             if((b >= 1661) && (b < 1752)) {	//introduce
                 $('#bar').css({right:224});
