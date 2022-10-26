@@ -62,7 +62,7 @@ $(function(){
             $('#portfolio .inner li:eq(1) .f1').css({transition:"3.0s"});
             // $('#portfolio .inner li:eq(1) .f2').css({transition:"3.0s"});
 
-            if((b >=0) && (b < 400)) {	//home
+            if((b >=0) && (b < 390)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
                 $('#home .inner .visual').css({opacity:1});
@@ -87,9 +87,14 @@ $(function(){
             }
             else {
                 $('#home .inner .visual').css({opacity:0});
+                $('#home .inner .typo h3').css({opacity:0});
+
+                $('#home .inner .typo').css({bottom:"48%"});
+                $('#home .inner .typo').css({left:"32%"});
+                $('#home .inner .typo h3').css({fontSize:"4.8vw"});
             }
 
-            if((b >=1) && (b < 400)) {	//home
+            if((b >=1) && (b < 390)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
                 // $('#home .inner .visual').css({opacity:1});
@@ -123,6 +128,10 @@ $(function(){
                 $('#home .inner .typo h3 .kw1').text("__");
                 $('#home .inner .typo h3 .kw2').text("__");
                 $('#home .inner .typo p span').text("__");
+
+                $('#home .inner .typo').css({bottom:"48%"});
+                $('#home .inner .typo').css({left:"32%"});
+                $('#home .inner .typo h3').css({fontSize:"4.8vw"});
                 // $('#home .inner .visual').css({opacity:0});
             } 
 
@@ -163,7 +172,7 @@ $(function(){
                 $('#home .inner .visual').css({opacity:1});
             }
             
-            if((b >=400) && (b < 1500)) {	//home
+            if((b >=390) && (b < 1500)) {	//home
                 $('#bar').css({right:673});
                 $('#bar').css({width:35});
                 // $('#home .inner .typo h3').css({opacity:1});
