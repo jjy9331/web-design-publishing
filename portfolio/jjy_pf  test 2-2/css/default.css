@@ -39,13 +39,15 @@ header .inner { position: relative;
 #home { 
     /* background: lightpink;  */
     width: 100%;
+    height: 3840px;
     padding-top: 407px; 
     padding-bottom: 467px; 
     background-color: white;
 }
 #home .inner { 
-    width: 1268px; height: 720px; margin: 0 auto; 
-    /* border: 2px dashed yellow; box-sizing: border-box; */
+    width: 40%; margin: 0 auto; 
+    border: 2px dashed orange; box-sizing: border-box;
+    
 }
 
 #introduce {
@@ -153,18 +155,23 @@ header #bar {
 
 
 /* home */
-#home .inner .visual img { margin: 0 auto; width: 100%;}
+#home .inner .visual img { 
+    margin: 0 auto; 
+    width: 100%;
+}
 
 #home .inner .typo { position:relative; text-align: center;}
 #home .inner .typo h3 { 
-    font-family: 'hana_pro'; font-size: 72px; 
+    font-family: 'hana_pro'; font-size: 4.8vw; 
     line-height: 1em;
     margin-top: -14px;
     /* padding-top: 14px; */
     /* border: 2px dashed yellow; box-sizing: border-box; */
 }
 #home .inner .typo p {
-    font-family: 'hana_air'; font-size: 48px; font-weight: 100;
+    font-family: 'hana_air'; 
+    font-size: 3vw; 
+    font-weight: 100;
     line-height: 1em;
     padding-top: 59px;
     color: rgba(0, 0, 0, 0.4);
@@ -240,6 +247,12 @@ header #bar {
     background: rgba(0,0,0,0.4);
 }
 
+
+#home .inner .t2 { 
+    position:relative; 
+    text-align: center;
+    margin-top: 120%;
+}
 
 
 /* introduce */
@@ -542,26 +555,5 @@ body #portfolio ul .pi {
 
 /* mediaquery */
 
-@media all and (max-width:767px) { /* ìŠ¤ë§ˆíŠ¸í° */
-   
-}
-
-
-@media all and (min-width:768px) and (max-width:1023px) { /* íƒœë¸”ë¦¿ */
-	
-}
-
-
-@media all and (min-width:1024px) and  (max-width:1440px) { /* PC */
-
-} 
-
-@media all and (min-width:1041px) and  (max-width:1600px) { /* PC */
-    body {zoom:0.55}
-} 
-
-@media all and (min-width:1601px) and  (max-width:1920px) { /* wide PC */
-    body {zoom:0.7}
-} 
 
 
