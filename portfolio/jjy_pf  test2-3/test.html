@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>logo_sequence</title>
+<style>
+
+body { 
+    margin: 0;
+}
+.movie { position: relative;  
+    /* border:5px dashed #777777;  */
+    /* object-fit: cover; */
+    /* width:1920px;  */
+    /* height:1080px; */
+    /* width:100%;  */
+    /* height:100%;  */
+}
+.movie img { 
+    position:absolute; 
+    visibility:hidden;
+    width:100%; 
+    object-fit: cover;
+    /* background-size: cover; */
+    border:5px dashed #777777; 
+    height:100%; 
+}
+
+.box { 
+    width: 100px;
+    height: 10000px;
+    background-color: black;
+}
+
+</style>
+
+
+<script src="js/jquery-3.6.0.js"></script>
+
+<script>
+$(function(){
+
+
+    var pg = 0; //진행율 초기값
+    var targetPG = 0; //진행율 목적지 초기값
+
+    //이미지 불러오기
+	for (i=0; i<=178; i++){
+		$(".movie").append("<img src='logo_sequence2/"+i+".png'>");
+	}
+	$(".movie img:first").css({visibility:"visible"});
+
+    // resize
+    let H = $(window).height();
+
+    //애니메이션 시키기
+	let frameNum=0;
+
+	function aniNext(){
+
+		frameNum++;
+
+		// if (frameNum > 177) {
+		// 	frameNum=0;			
+		// }
+
+		$(".movie img").css({visibility:"hidden"});
+        $(".movie img").css({height:H});
+		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
+        $(".movie img:eq("+frameNum+")").css({height:H});
+
+        $(".movie").animate(
+            {center:178},
+            3540,
+            function(){
+            clearInterval(k);
+        });
+        console.log(frameNum);
+
+        
+
+        if(frameNum == 177){ //로딩이 완료되면
+                    clearInterval(k); //setInterval종료					
+                    $(".movie").fadeOut(1000); //로딩표시영역 사라짐
+                    // $(".movie").hide(); //로딩표시영역 사라짐
+        }
+	}
+
+	let k = setInterval(aniNext,20); //0.1초마다 aniNext 함수 실행
+
+
+
+
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+    <div class="movie">
+    </div>
+
+    <!-- <div class="box"></div>
+    <div class="box"></div> -->
+
+
+
+</body>
+</html>
+
+<!-- resize 참고자료 -->
+<!-- https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
