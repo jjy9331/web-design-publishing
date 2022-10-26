@@ -8,8 +8,11 @@
 <link rel="stylesheet" href="css/default.css">
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/logo_intro.js"></script>
+
+
 <script>
 $(function(){ 
+
         $("header .inner .logo").click(function(){
                     $('html,body').animate({ scrollTop:0},700); return false;	    
         })
@@ -67,209 +70,209 @@ $(function(){
             $('#portfolio .inner li:eq(1) .f1').css({transition:"3.0s"});
             // $('#portfolio .inner li:eq(1) .f2').css({transition:"3.0s"});
 
-            if((b >=0) && (b < 390)) {	//home
-                $('#bar').css({right:673});
-                $('#bar').css({width:35});
-                $('#home .inner .visual').css({opacity:1});
-                // $('#home .inner .typo h3').css({opacity:1});
-                // $('#home .inner .typo p span').css({opacity:1});
+            // if((b >=0) && (b < 390)) {	//home
+            //     $('#bar').css({right:673});
+            //     $('#bar').css({width:35});
+            //     $('#home .inner .visual').css({opacity:1});
+            //     // $('#home .inner .typo h3').css({opacity:1});
+            //     // $('#home .inner .typo p span').css({opacity:1});
 
-                // $('#home .inner .typo h3 .kw1').text("__");
-                // $('#home .inner .typo h3 .kw2').text("__");
-                // $('#home .inner .typo p span').text("__");
-                $('#home .inner .typo h3').css({opacity:1});
-                $('#home .inner .typo p').css({opacity:1});
+            //     // $('#home .inner .typo h3 .kw1').text("__");
+            //     // $('#home .inner .typo h3 .kw2').text("__");
+            //     // $('#home .inner .typo p span').text("__");
+            //     $('#home .inner .typo h3').css({opacity:1});
+            //     $('#home .inner .typo p').css({opacity:1});
 
-                $('#home .inner .typo .t2 .d1').css({opacity:0});
-                $('#home .inner .typo .t2 .d2').css({opacity:0});
-                $('#home .inner .typo .t2 .d3').css({opacity:0});
-                $('#home .inner .typo .t2 .d4').css({opacity:0});
-                $('#home .inner .typo .t2 .d5').css({opacity:0});
-                $('#home .inner .typo .t2 .d6').css({opacity:0});
+            //     $('#home .inner .typo .t2 .d1').css({opacity:0});
+            //     $('#home .inner .typo .t2 .d2').css({opacity:0});
+            //     $('#home .inner .typo .t2 .d3').css({opacity:0});
+            //     $('#home .inner .typo .t2 .d4').css({opacity:0});
+            //     $('#home .inner .typo .t2 .d5').css({opacity:0});
+            //     $('#home .inner .typo .t2 .d6').css({opacity:0});
 
-                $(window).scroll(function(){
-                    $('#home .inner .visual').css("opacity", 1 - $(window).scrollTop() / 40);
-                });
-            }
-            else {
-                $('#home .inner .visual').css({opacity:0});
-                $('#home .inner .typo2 h3').css({opacity:0});
-                $('#home .inner .typo2 p').css({opacity:0});
+            //     // $(window).scroll(function(){
+            //     //     $('#home .inner .visual').css("opacity", 1 - $(window).scrollTop() / 40);
+            //     // });
+            // }
+            // else {
+            //     // $('#home .inner .visual').css({opacity:0});
+            //     // $('#home .inner .typo2 h3').css({opacity:0});
+            //     // $('#home .inner .typo2 p').css({opacity:0});
 
-                $('#home .inner .typo2').css({bottom:"34%"});
-                $('#home .inner .typo2').css({left:"33.4%"});
-                $('#home .inner .typo2 h3').css({fontSize:"4.8vw"});
-            }
+            //     $('#home .inner .typo2').css({bottom:"34%"});
+            //     $('#home .inner .typo2').css({left:"33.4%"});
+            //     $('#home .inner .typo2 h3').css({fontSize:"4.8vw"});
+            // }
 
-            if((b >=1) && (b < 390)) {	//home
-                $('#bar').css({right:673});
-                $('#bar').css({width:35});
-                // $('#home .inner .visual').css({opacity:1});
-                $('#home .inner .typo h3').css({opacity:0});
-                $('#home .inner .typo p').css({opacity:0});
-                // $('#home .inner .typo h3 .kw1').text("단결");
-                // $('#home .inner .typo h3 .kw2').text("완결");
-                // $('#home .inner .typo p span').text("같이");
-                // $('#home .inner .typo h3 .kw1').css({opacity:1});
+            // if((b >=1) && (b < 390)) {	//home
+            //     $('#bar').css({right:673});
+            //     $('#bar').css({width:35});
+            //     // $('#home .inner .visual').css({opacity:1});
+            //     // $('#home .inner .typo h3').css({opacity:0});
+            //     // $('#home .inner .typo p').css({opacity:0});
+            //     // $('#home .inner .typo h3 .kw1').text("단결");
+            //     // $('#home .inner .typo h3 .kw2').text("완결");
+            //     // $('#home .inner .typo p span').text("같이");
+            //     // $('#home .inner .typo h3 .kw1').css({opacity:1});
 
-                // $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
-                // $('#home .inner .typo p span').text("일은 같이 하는 것이라 배웠습니다");
+            //     // $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
+            //     // $('#home .inner .typo p span').text("일은 같이 하는 것이라 배웠습니다");
 
-                // $('#home .inner .typo h3 .kw1').text("단결");
-                // $('#home .inner .typo h3 .kw2').css({opacity:1});
-                // $('#home .inner .typo h3 .kw2').text("완결");
-                // $('#home .inner .typo p span').css({opacity:1});
-                // $('#home .inner .typo p span').text("같이");
+            //     // $('#home .inner .typo h3 .kw1').text("단결");
+            //     // $('#home .inner .typo h3 .kw2').css({opacity:1});
+            //     // $('#home .inner .typo h3 .kw2').text("완결");
+            //     // $('#home .inner .typo p span').css({opacity:1});
+            //     // $('#home .inner .typo p span').text("같이");
 
-                $('#home .inner .typo .d1').css({opacity:0});
-                $('#home .inner .typo .d2').css({opacity:0});
-                $('#home .inner .typo .d3').css({opacity:0});
-                $('#home .inner .typo .d4').css({opacity:0});
-                $('#home .inner .typo .d5').css({opacity:0});
-                $('#home .inner .typo .d6').css({opacity:0});
+            //     $('#home .inner .typo .d1').css({opacity:0});
+            //     $('#home .inner .typo .d2').css({opacity:0});
+            //     $('#home .inner .typo .d3').css({opacity:0});
+            //     $('#home .inner .typo .d4').css({opacity:0});
+            //     $('#home .inner .typo .d5').css({opacity:0});
+            //     $('#home .inner .typo .d6').css({opacity:0});
                 
-            }
-            else{
-                // $('#home .inner .typo h3').text("팀이 __하면, 프로젝트가 __된다");
-                // $('#home .inner .typo p').text("일은 __ 하는 것이라 배웠습니다");
-                $('#home .inner .visual').css({opacity:0});
-                $('#home .inner .typo2 h3').css({opacity:0});
-                $('#home .inner .typo2 p').css({opacity:0});
+            // }
+            // else{
+            //     // $('#home .inner .typo h3').text("팀이 __하면, 프로젝트가 __된다");
+            //     // $('#home .inner .typo p').text("일은 __ 하는 것이라 배웠습니다");
+            //     // $('#home .inner .visual').css({opacity:0});
+            //     // $('#home .inner .typo2 h3').css({opacity:0});
+            //     // $('#home .inner .typo2 p').css({opacity:0});
 
-                $('#home .inner .typo2').css({bottom:"34%"});
-                $('#home .inner .typo2').css({left:"33.4%"});
-                $('#home .inner .typo2 h3').css({fontSize:"4.8vw"});
+            //     $('#home .inner .typo2').css({bottom:"34%"});
+            //     $('#home .inner .typo2').css({left:"33.4%"});
+            //     $('#home .inner .typo2 h3').css({fontSize:"4.8vw"});
                 
-                $('#home .inner .typo2 h3').css({opacity:0});
-                $('#home .inner .typo2 p').css({opacity:0});
-                // $('#home .inner .visual').css({opacity:0});
-            } 
+            //     $('#home .inner .typo2 h3').css({opacity:0});
+            //     $('#home .inner .typo2 p').css({opacity:0});
+            //     // $('#home .inner .visual').css({opacity:0});
+            // } 
 
 
             
-            if((b >=811) && (b < 837)) {
-                $('#bar').css({right:673});
-                $('#bar').css({width:35});
-                // $('#introduce .visual img:eq(1)').css({opacity:1});
+            // if((b >=811) && (b < 837)) {
+            //     $('#bar').css({right:673});
+            //     $('#bar').css({width:35});
+            //     // $('#introduce .visual img:eq(1)').css({opacity:1});
 
-                $('#home .inner .typo .d1').css({opacity:0});
-                $('#home .inner .typo .d2').css({opacity:0});
-                $('#home .inner .typo .d3').css({opacity:0});
-                $('#home .inner .typo .d4').css({opacity:0});
-                $('#home .inner .typo .d5').css({opacity:0});
-                $('#home .inner .typo .d6').css({opacity:0});
-                $('#home .inner .visual').css({opacity:0});
-            }
-            else{
-                $('#home .inner .visual').css({opacity:1});
-            }
+            //     $('#home .inner .typo .d1').css({opacity:0});
+            //     $('#home .inner .typo .d2').css({opacity:0});
+            //     $('#home .inner .typo .d3').css({opacity:0});
+            //     $('#home .inner .typo .d4').css({opacity:0});
+            //     $('#home .inner .typo .d5').css({opacity:0});
+            //     $('#home .inner .typo .d6').css({opacity:0});
+            //     $('#home .inner .visual').css({opacity:0});
+            // }
+            // else{
+            //     $('#home .inner .visual').css({opacity:1});
+            // }
 
-            if((b >=876) && (b < 908)) {
-                $('#bar').css({right:673});
-                $('#bar').css({width:35});
-                $('#introduce .visual img:eq(2)').css({opacity:1});
+            // if((b >=876) && (b < 908)) {
+            //     $('#bar').css({right:673});
+            //     $('#bar').css({width:35});
+            //     $('#introduce .visual img:eq(2)').css({opacity:1});
 
-                $('#home .inner .typo .d1').css({opacity:0});
-                $('#home .inner .typo .d2').css({opacity:0});
-                $('#home .inner .typo .d3').css({opacity:0});
-                $('#home .inner .typo .d4').css({opacity:0});
-                $('#home .inner .typo .d5').css({opacity:0});
-                $('#home .inner .typo .d6').css({opacity:0});
+            //     $('#home .inner .typo .d1').css({opacity:0});
+            //     $('#home .inner .typo .d2').css({opacity:0});
+            //     $('#home .inner .typo .d3').css({opacity:0});
+            //     $('#home .inner .typo .d4').css({opacity:0});
+            //     $('#home .inner .typo .d5').css({opacity:0});
+            //     $('#home .inner .typo .d6').css({opacity:0});
 
-                $('#home .inner .visual').css({opacity:0});
-            }
-            else{
-                $('#home .inner .visual').css({opacity:1});
-            }
+            //     $('#home .inner .visual').css({opacity:0});
+            // }
+            // else{
+            //     $('#home .inner .visual').css({opacity:1});
+            // }
             
-            if((b >=390) && (b < 1500)) {	//home
-                $('#bar').css({right:673});
-                $('#bar').css({width:35});
-                // $('#home .inner .typo h3').css({opacity:1});
-                // $('#home .inner .typo p span').css({opacity:1});
-                // $('#home .inner .typo h3 .kw1').css({opacity:1});
-                $('#home .inner .visual').css({opacity:0});
+            // if((b >=390) && (b < 1500)) {	//home
+            //     $('#bar').css({right:673});
+            //     $('#bar').css({width:35});
+            //     // $('#home .inner .typo h3').css({opacity:1});
+            //     // $('#home .inner .typo p span').css({opacity:1});
+            //     // $('#home .inner .typo h3 .kw1').css({opacity:1});
+            //     $('#home .inner .visual').css({opacity:0});
 
-                $('#home .inner .typo2 h3').css({opacity:1});
-                // $('#home .inner .typo h3').fadeIn(10000);
+            //     $('#home .inner .typo2 h3').css({opacity:1});
+            //     // $('#home .inner .typo h3').fadeIn(10000);
 
-                // $('#home .inner .typo h3').fadeIn();
+            //     // $('#home .inner .typo h3').fadeIn();
 
-                $('#home .inner .typo2 p').css({opacity:1});
+            //     $('#home .inner .typo2 p').css({opacity:1});
                 
-                // $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
-                // $('#home .inner .typo p').text("일은 같이 하는 것이라 배웠습니다");
+            //     // $('#home .inner .typo h3').text("팀이 단결하면, 프로젝트가 완결된다");
+            //     // $('#home .inner .typo p').text("일은 같이 하는 것이라 배웠습니다");
                 
-                // $('#home .inner .typo h3 .kw1').text("단결");
-                // // $('#home .inner .typo h3 .kw2').css({opacity:1});
-                // $('#home .inner .typo h3 .kw2').text("완결");
-                // // $('#home .inner .typo p span').css({opacity:1});
-                // $('#home .inner .typo p span').text("같이");
+            //     // $('#home .inner .typo h3 .kw1').text("단결");
+            //     // // $('#home .inner .typo h3 .kw2').css({opacity:1});
+            //     // $('#home .inner .typo h3 .kw2').text("완결");
+            //     // // $('#home .inner .typo p span').css({opacity:1});
+            //     // $('#home .inner .typo p span').text("같이");
                 
-                // $('#home .inner .typo h3 .kw1').css({"text-decoration":"underline"});
-                // $('#home .inner .typo h3 .kw2').css({"text-decoration":"underline"});
-                // $('#home .inner .typo p span').css({"text-decoration":"underline"});
-                $('#home .inner .typo2 .d1').css({opacity:1});
-                $('#home .inner .typo2 .d2').css({opacity:1});
-                $('#home .inner .typo2 .d3').css({opacity:1});
-                $('#home .inner .typo2 .d4').css({opacity:1});
-                $('#home .inner .typo2 .d5').css({opacity:1});
-                $('#home .inner .typo2 .d6').css({opacity:1});
+            //     // $('#home .inner .typo h3 .kw1').css({"text-decoration":"underline"});
+            //     // $('#home .inner .typo h3 .kw2').css({"text-decoration":"underline"});
+            //     // $('#home .inner .typo p span').css({"text-decoration":"underline"});
+            //     $('#home .inner .typo2 .d1').css({opacity:1});
+            //     $('#home .inner .typo2 .d2').css({opacity:1});
+            //     $('#home .inner .typo2 .d3').css({opacity:1});
+            //     $('#home .inner .typo2 .d4').css({opacity:1});
+            //     $('#home .inner .typo2 .d5').css({opacity:1});
+            //     $('#home .inner .typo2 .d6').css({opacity:1});
 
-                $('#introduce .visual img:eq(1)').css({opacity:0});
-                $('#introduce .visual img:eq(1)').css({left:-200});
-                $('#introduce .visual img:eq(2)').css({opacity:0});
-                $('#introduce .visual img:eq(2)').css({left:-320});
-
-
-                $('#home .inner .typo2').css({bottom:"48%"});
-                $('#home .inner .typo2').css({left:"32%"});
-                $('#home .inner .typo2 h3').css({fontSize:"4.8vw"});
-                $('#home .inner .visual').css({opacity:0});
-            } 
-            else{
-                $('#home .inner .typo h3 .kw1').css({"text-decoration":"none"});
-                $('#home .inner .typo h3 .kw2').css({"text-decoration":"none"});
-                $('#home .inner .typo p span').css({"text-decoration":"none"});
-                // $('#home .inner .typo2').css({bottom:"34%"});
-                // $('#home .inner .typo2').css({left:"33.4%"});
-                $('#home .inner .typo2 h3').css({fontSize:"4.8vw"});
-                $('#home .inner .visual').css({opacity:1});
-                $('#home .inner .typo2 .d1').css({opacity:0});
-                $('#home .inner .typo2 .d2').css({opacity:0});
-                $('#home .inner .typo2 .d3').css({opacity:0});
-                $('#home .inner .typo2 .d4').css({opacity:0});
-                $('#home .inner .typo2 .d5').css({opacity:0});
-                $('#home .inner .typo2 .d6').css({opacity:0});
-            }
+            //     $('#introduce .visual img:eq(1)').css({opacity:0});
+            //     $('#introduce .visual img:eq(1)').css({left:-200});
+            //     $('#introduce .visual img:eq(2)').css({opacity:0});
+            //     $('#introduce .visual img:eq(2)').css({left:-320});
 
 
-            if((b >= 876) && (b < 1661)) {	//introduce
-                $('#bar').css({right:464});
-                $('#bar').css({width:113});
-                $('#portfolio .inner ul').css({opacity:1});
-                $('#portfolio .inner li:eq(0)').css({opacity:0});
-                $('#portfolio .inner li:eq(1)').css({right:220});
-                $('#portfolio .inner li:eq(1)').css({opacity:1});
-                $('#portfolio .inner li:eq(2)').css({opacity:0});
-                $('#portfolio .inner li:eq(3)').css({opacity:0});
+            //     $('#home .inner .typo2').css({bottom:"48%"});
+            //     $('#home .inner .typo2').css({left:"32%"});
+            //     $('#home .inner .typo2 h3').css({fontSize:"4.8vw"});
+            //     $('#home .inner .visual').css({opacity:0});
+            // } 
+            // else{
+            //     $('#home .inner .typo h3 .kw1').css({"text-decoration":"none"});
+            //     $('#home .inner .typo h3 .kw2').css({"text-decoration":"none"});
+            //     $('#home .inner .typo p span').css({"text-decoration":"none"});
+            //     // $('#home .inner .typo2').css({bottom:"34%"});
+            //     // $('#home .inner .typo2').css({left:"33.4%"});
+            //     $('#home .inner .typo2 h3').css({fontSize:"4.8vw"});
+            //     $('#home .inner .visual').css({opacity:1});
+            //     $('#home .inner .typo2 .d1').css({opacity:0});
+            //     $('#home .inner .typo2 .d2').css({opacity:0});
+            //     $('#home .inner .typo2 .d3').css({opacity:0});
+            //     $('#home .inner .typo2 .d4').css({opacity:0});
+            //     $('#home .inner .typo2 .d5').css({opacity:0});
+            //     $('#home .inner .typo2 .d6').css({opacity:0});
+            // }
 
-                $('#introduce .visual img:eq(1)').css({opacity:1});
-                $('#introduce .visual img:eq(1)').css({left:0});
-                $('#introduce .visual img:eq(2)').css({opacity:1});
-                $('#introduce .visual img:eq(2)').css({left:0});
-            } 
 
-            if((b > 1000) && (b < 4143)) {
-                $('#home .inner .visual').css({opacity:0});
-                $('#home .inner .typo2 h3').css({opacity:0});
-                $('#home .inner .typo2 p').css({opacity:0});
-            }
-            else{
-                // $('#home .inner .visual').css({opacity:1});
-                // $('#home .inner .typo h3').css({opacity:1});
-                // $('#home .inner .typo p').css({opacity:1});
-            }
+            // if((b >= 876) && (b < 1661)) {	//introduce
+            //     $('#bar').css({right:464});
+            //     $('#bar').css({width:113});
+            //     $('#portfolio .inner ul').css({opacity:1});
+            //     $('#portfolio .inner li:eq(0)').css({opacity:0});
+            //     $('#portfolio .inner li:eq(1)').css({right:220});
+            //     $('#portfolio .inner li:eq(1)').css({opacity:1});
+            //     $('#portfolio .inner li:eq(2)').css({opacity:0});
+            //     $('#portfolio .inner li:eq(3)').css({opacity:0});
+
+            //     $('#introduce .visual img:eq(1)').css({opacity:1});
+            //     $('#introduce .visual img:eq(1)').css({left:0});
+            //     $('#introduce .visual img:eq(2)').css({opacity:1});
+            //     $('#introduce .visual img:eq(2)').css({left:0});
+            // } 
+
+            // if((b > 1000) && (b < 4143)) {
+            //     $('#home .inner .visual').css({opacity:0});
+            //     $('#home .inner .typo2 h3').css({opacity:0});
+            //     $('#home .inner .typo2 p').css({opacity:0});
+            // }
+            // else{
+            //     // $('#home .inner .visual').css({opacity:1});
+            //     // $('#home .inner .typo h3').css({opacity:1});
+            //     // $('#home .inner .typo p').css({opacity:1});
+            // }
 
             if((b >= 1661) && (b < 1752)) {	//introduce
                 $('#bar').css({right:224});
@@ -338,6 +341,7 @@ $(function(){
     </div>
 
 
+
 <!-- <div class="logo_intro">
 </div> -->
     <header>
@@ -367,22 +371,29 @@ $(function(){
     <div class="group">
         <section id="home">
             <div class="inner">
-                <div class="visual">
-                    <img src="images/main3.gif" alt="teamwork visual icon">
+                <div class="sec1"
+                    data-0="opacity: 1;" 
+                    data-1100="opacity: 0;" 
+                >
+                    <div class="visual">
+                        <img src="images/main3.gif" alt="teamwork visual icon">
+                    </div>
+                    <div class="typo">
+                        <h3 >팀이 <span class="kw1">__</span>하면, 프로젝트가 <span class="kw2">__</span>된다</h3>
+                        <p>일은 <span>__</span> 하는 것이라 배웠습니다</p>
+                    </div>
                 </div>
-                <div class="typo">
-                    <h3>팀이 <span class="kw1">__</span>하면, 프로젝트가 <span class="kw2">__</span>된다</h3>
-                    <p>일은 <span>__</span> 하는 것이라 배웠습니다</p>
-                </div>
-                <div class="typo2">
-                    <h3>팀이 단결하면, 프로젝트가 완결된다</h3>
-                    <p>일은 같이 하는 것이라 배웠습니다</p>
-                    <div class="dot d1"></div>
-                    <div class="dot d2"></div>
-                    <div class="dot d3"></div>
-                    <div class="dot d4"></div>
-                    <div class="dot d5"></div>
-                    <div class="dot d6"></div>
+                <div class="sec2">
+                    <div class="typo2">
+                        <h3>팀이 단결하면, 프로젝트가 완결된다</h3>
+                        <p>일은 같이 하는 것이라 배웠습니다</p>
+                        <div class="dot d1"></div>
+                        <div class="dot d2"></div>
+                        <div class="dot d3"></div>
+                        <div class="dot d4"></div>
+                        <div class="dot d5"></div>
+                        <div class="dot d6"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -566,6 +577,10 @@ $(function(){
                 // });
         });
     
+    </script>
+    <script src="js/skrollr.min.js"></script>
+    <script >
+        var s = skrollr.init();
     </script>
 <!-- <script src="js/jquery-ui-1.12.1.min.js"></script>
 <script src="js/jquery.min_1.12.4.js"></script> -->
