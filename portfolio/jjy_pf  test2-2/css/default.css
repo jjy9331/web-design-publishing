@@ -160,12 +160,18 @@ header #bar {
 
 
 /* home */
+
+#home .inner .sec1 {
+    margin-top: 5%;
+    
+}
+
 #home .inner .sec1 .visual img { 
     /* margin: 0 auto;  */
-    width: 50%;
+    width: 40%;
     position: fixed; 
-    left: 23.5%; 
-    bottom: 44%;
+    left: 28%; 
+    bottom: 43%;
     /* transform: translate(-50%,-50%); */
     /* border: 2px dashed orange; box-sizing: border-box; */
 }
