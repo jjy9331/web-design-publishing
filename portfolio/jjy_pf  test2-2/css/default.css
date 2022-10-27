@@ -40,16 +40,16 @@ header .inner {
 #home { 
     /* background: lightpink;  */
     width: 100%;
-    height: 7680px;
+    height: 8680px;
     /* padding-top: 407px; 
     padding-bottom: 467px;  */
-    background-color: white;
+    /* background-color: white; */
     /* border: 2px dashed orange; box-sizing: border-box; */
 }
 #home .inner {
     position: relative; 
     width: 1268px;
-    height: 7680px; 
+    height: 8680px;
     margin: 0 auto; 
     /* position: fixed; left: 50%; top: 30%; */
     border: 2px dashed orange; box-sizing: border-box;
@@ -211,35 +211,37 @@ header #bar {
     position:relative; 
     text-align: center;
     position: fixed; 
-    left: 33.4%; 
-    bottom: 34%;
+    left: 32%; 
+    bottom: 43%;
 }
 
 #home .inner .sec2 .typo2 h3 { 
-    opacity: 0;
+    /* opacity: 0; */
     font-family: 'hana_pro'; 
     font-size: 8vw; 
     line-height: 1em;
     margin-top: -14px;
+    font-size: 4.8vw; 
     /* padding-top: 14px; */
     /* border: 2px dashed orange; box-sizing: border-box; */
 }
 #home .inner .sec2 .typo2 p {
-    opacity: 0;
+    /* opacity: 0; */
     font-family: 'hana_air'; 
     font-size: 3vw; 
     font-weight: 100;
     line-height: 1em;
     padding-top: 59px;
     color: rgba(0, 0, 0, 0.4);
+    font-size: 3vw; 
     /* border: 2px dashed yellow; box-sizing: border-box; */
 }
 
 #home .inner .sec2 .typo2 .d1 { 
-    opacity: 0;
+    /* opacity: 0; */
     position: absolute;
-    top: 0px;
-    left: 300px;
+    top: -7%;
+    left: 16.5%;
     width: 11px;
     height: 11px;
     border-radius: 5.5px;
@@ -249,10 +251,11 @@ header #bar {
     
 }
 
-#home .inner .sec2 .typo2 .d2 { opacity: 0;
+#home .inner .sec2 .typo2 .d2 { 
+    /* opacity: 0; */
     position: absolute;
-    top: 0px;
-    left: 364px;
+    top: -7%;
+    left: 22.8%;
     width: 11px;
     height: 11px;
     border-radius: 5.5px;
@@ -260,10 +263,11 @@ header #bar {
     margin-top: -14px
 }
 
-#home .inner .sec2 .typo2 .d3 { opacity: 0;
+#home .inner .sec2 .typo2 .d3 { 
+    /* opacity: 0; */
     position: absolute;
-    top: 0px;
-    right: 282px;
+    top: -7%;
+    right: 20.8%;
     width: 11px;
     height: 11px;
     border-radius: 5.5px;
@@ -271,10 +275,11 @@ header #bar {
     margin-top: -14px
 }
 
-#home .inner .sec2 .typo2 .d4 { opacity: 0;
+#home .inner .sec2 .typo2 .d4 { 
+    /* opacity: 0; */
     position: absolute;
-    top: 0px;
-    right: 347px;
+    top: -7%;
+    right: 14.5%;
     width: 11px;
     height: 11px;
     border-radius: 5.5px;
@@ -282,20 +287,22 @@ header #bar {
     margin-top: -14px
 }
 
-#home .inner .sec2 .typo2 .d5 { opacity: 0;
+#home .inner .sec2 .typo2 .d5 { 
+    /* opacity: 0; */
     position: absolute;
-    bottom: 57px;
-    left: 440px;
+    bottom: 37%;
+    left: 31.8%;
     width: 7px;
     height: 7px;
     border-radius: 3.5px;
     background: rgba(0,0,0,0.4);
 }
 
-#home .inner .sec2 .typo2 .d6 { opacity: 0;
+#home .inner .sec2 .typo2 .d6 { 
+    /* opacity: 0; */
     position: absolute;
-    bottom: 57px;
-    left: 478px;
+    bottom: 37%;
+    left: 35%;
     width: 7px;
     height: 7px;
     border-radius: 3.5px;
@@ -540,7 +547,7 @@ body #portfolio ul .pi {
     height: 100px;
     border: 3px solid transparent;
     /* border: 3px solid black; */
-    padding-right: 2.5%;
+    padding-right: 1.5%;
 }
 
 .darkmode .invert {
@@ -551,13 +558,13 @@ body #portfolio ul .pi {
 	cursor: pointer;
 }
 
-.darkmode .invert::after {
+/* .darkmode .invert::after {
     content: ''; 
     display: block; 
 	position: absolute; top: 7px; right: -38px; 
 	width: 20px; height: 20px; box-sizing: border-box;
 	border-radius: 50%; background: black; border: 2px solid #fff; transition: all .2s;
-}
+} */
 
 .darkmode .invert:hover{ text-decoration: underline;}
 
