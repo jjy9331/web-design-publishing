@@ -52,15 +52,16 @@ header .inner {
     height: 8680px;
     margin: 0 auto; 
     /* position: fixed; left: 50%; top: 30%; */
-    border: 2px dashed orange; box-sizing: border-box;
+    /* border: 2px dashed orange; box-sizing: border-box; */
 }
 
 #introduce {
     /* background: rgba(51, 51, 51, 1);  */
     background: rgba(0, 0, 0, 1); 
     width: 100%;
-    padding-top: 353px; 
-    padding-bottom: 467px; 
+    height: 8000px;
+    /* padding-top: 353px; 
+    padding-bottom: 467px;  */
 }
 #introduce .inner {
     position: relative;
