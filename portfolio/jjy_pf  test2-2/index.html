@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="css/default.css">
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/logo_intro.js"></script>
-
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
 
 <script>
 $(function(){ 
@@ -274,40 +275,40 @@ $(function(){
             //     // $('#home .inner .typo p').css({opacity:1});
             // }
 
-            if((b >= 1661) && (b < 1752)) {	//introduce
-                $('#bar').css({right:224});
-                $('#bar').css({width:145});
-                $('#portfolio .inner li:eq(0)').css({opacity:0});
-                $('#portfolio .inner li:eq(1)').css({right:220});
-                $('#portfolio .inner li:eq(1)').css({opacity:1});
-                $('#portfolio .inner li:eq(2)').css({opacity:0});
-                $('#portfolio .inner li:eq(3)').css({opacity:0});
-                $('#portfolio .inner li:eq(4)').css({opacity:0});
-                $('#portfolio .inner li:eq(5)').css({opacity:0});
-                $('#portfolio .inner li:eq(6)').css({opacity:0});
+            // if((b >= 1661) && (b < 1752)) {	//introduce
+            //     $('#bar').css({right:224});
+            //     $('#bar').css({width:145});
+            //     $('#portfolio .inner li:eq(0)').css({opacity:0});
+            //     $('#portfolio .inner li:eq(1)').css({right:220});
+            //     $('#portfolio .inner li:eq(1)').css({opacity:1});
+            //     $('#portfolio .inner li:eq(2)').css({opacity:0});
+            //     $('#portfolio .inner li:eq(3)').css({opacity:0});
+            //     $('#portfolio .inner li:eq(4)').css({opacity:0});
+            //     $('#portfolio .inner li:eq(5)').css({opacity:0});
+            //     $('#portfolio .inner li:eq(6)').css({opacity:0});
 
-                // $('#portfolio .inner li:eq(1) .f1').css({display:"block"});
-                $('#portfolio .inner li:eq(1) .f1').css({position:"absolute"});
-                $('#portfolio .inner li:eq(1) .f1').css({opacity:1});
-                $('#portfolio .inner li:eq(1) .f2').css({opacity:1});
-            } 
-            if((b >= 1797) && (b < 2223)) {	//introduce
-                $('#bar').css({right:224});
-                $('#bar').css({width:145});
-                $('#portfolio .inner li:eq(0)').css({opacity:1});
-                $('#portfolio .inner li:eq(1)').css({right:0});
-                $('#portfolio .inner li:eq(1)').css({opacity:1});
-                $('#portfolio .inner li:eq(2)').css({opacity:0.1});
-                $('#portfolio .inner li:eq(3)').css({opacity:0.1});
-                $('#portfolio .inner li:eq(4)').css({opacity:0.1});
-                $('#portfolio .inner li:eq(5)').css({opacity:0.1});
-                $('#portfolio .inner li:eq(6)').css({opacity:0.1});
+            //     // $('#portfolio .inner li:eq(1) .f1').css({display:"block"});
+            //     $('#portfolio .inner li:eq(1) .f1').css({position:"absolute"});
+            //     $('#portfolio .inner li:eq(1) .f1').css({opacity:1});
+            //     $('#portfolio .inner li:eq(1) .f2').css({opacity:1});
+            // } 
+            // if((b >= 1797) && (b < 2223)) {	//introduce
+            //     $('#bar').css({right:224});
+            //     $('#bar').css({width:145});
+            //     $('#portfolio .inner li:eq(0)').css({opacity:1});
+            //     $('#portfolio .inner li:eq(1)').css({right:0});
+            //     $('#portfolio .inner li:eq(1)').css({opacity:1});
+            //     $('#portfolio .inner li:eq(2)').css({opacity:0.1});
+            //     $('#portfolio .inner li:eq(3)').css({opacity:0.1});
+            //     $('#portfolio .inner li:eq(4)').css({opacity:0.1});
+            //     $('#portfolio .inner li:eq(5)').css({opacity:0.1});
+            //     $('#portfolio .inner li:eq(6)').css({opacity:0.1});
                 
-                $('#portfolio .inner li:eq(1) .f1').css({position:"absolute"});
-                $('#portfolio .inner li:eq(1) .f1').css({opacity:0});
-                $('#portfolio .inner li:eq(1) .f2').css({opacity:1});
+            //     $('#portfolio .inner li:eq(1) .f1').css({position:"absolute"});
+            //     $('#portfolio .inner li:eq(1) .f1').css({opacity:0});
+            //     $('#portfolio .inner li:eq(1) .f2').css({opacity:1});
                 
-            }               
+            // }               
             if((b >= 2223) && (b < 3170)) { //portfolio
                 $('#bar').css({right:224});
                 $('#bar').css({width:145});
@@ -330,6 +331,59 @@ $(function(){
 });
     
 
+</script>
+<script>
+    $(function(){
+    
+        //이미지 불러오기
+        for (i=0; i<=155; i++){
+            $("#introduce .inner .intro").append("<img src='track_run_start/"+i+".png'>");
+        }
+        $("#introduce .inner .intro img:first").css({visibility:"visible"});
+    
+    
+    
+        //애니메이션 시키기
+        let frameNum=0;
+    
+        function aniNext(){
+            frameNum++;
+    
+            if(frameNum> $("#introduce .inner .intro img:last").index() ){
+                frameNum=0
+            };
+    
+            $("#introduce .inner .intro img").css({visibility:"hidden"});
+            $("#introduce .inner .intro img:eq("+frameNum+")").css({visibility:"visible"});
+        }
+    
+    
+        function aniPrev(){//역방향 진행
+            frameNum--;
+    
+            if(frameNum < 0 ){
+                frameNum = $("#introduce .inner .intro img:last").index()
+            };
+    
+            $("#introduce .inner .intro img").css({visibility:"hidden"});
+            $("#introduce .inner .intro img:eq("+frameNum+")").css({visibility:"visible"});
+        }
+    
+        //setInterval(aniNext,100);//0.1초마다 aniNext함수 실행
+    
+        $("#introduce .inner .intro").mousewheel(function(e,delta){//.movie영역 위에서
+        
+            if( delta < 0 ){ //휠을 아래로 돌렸을때
+                aniNext();
+            }
+            else { //휠을 위로 돌렸을때
+                aniPrev();
+            }
+    
+        });
+    
+    
+    });
 </script>
 </head>
 <body>
@@ -430,23 +484,8 @@ $(function(){
         </section>
         <section id="introduce">
                 <div class="inner">
-                    <h2>자기소개</h2>
-                    <dl class="info">
-                        <dt>이름</dt>
-                        <dd>정지용</dd>
-                        <dt>생년월일</dt>
-                        <dd>1993.03.31</dd>
-                        <dt>거주지</dt>
-                        <dd>경기도 파주시</dd>
-                        <dt>지원분야</dt>
-                        <dd>WebDesign / Publishing</dd>
-                        <dt>기술</dt>
-                        <dd>Photoshop,  Ilustrator,  Html5,  CSS3,  Javascript,  jQuery</dd>
-                    </dl>
-                    <div class="visual">
-                        <img src="images/pr1.png" alt="">
-                        <img src="images/pr2.png" alt="">
-                        <img src="images/pr3.png" alt="">
+                    <div class="wrap">
+                        <div class="intro"></div>
                     </div>
                 </div>
         </section>
