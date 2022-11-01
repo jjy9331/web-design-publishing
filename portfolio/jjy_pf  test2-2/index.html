@@ -10,6 +10,7 @@
 <script src="js/logo_intro.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/jquery.mousewheel.min.js"></script>
+<script src="jQuery.scrollSpeed.js"></script>
 
 <script>
 $(function(){ 
@@ -375,9 +376,11 @@ $(function(){
         
             if( delta < 0 ){ //휠을 아래로 돌렸을때
                 aniNext();
+                // aniNext().scrollSpeed(100, 1400);
             }
             else { //휠을 위로 돌렸을때
                 aniPrev();
+                // aniPrev().scrollSpeed(100, 1400);
             }
     
         });
@@ -388,7 +391,6 @@ $(function(){
                 frameNum = 0
             }
         });    
-        console.log(frameNum);
     });
 </script>
 </head>
@@ -430,10 +432,16 @@ $(function(){
     </header>
     <div class="group">
         <section id="home">
+        <!-- <section id="home"
+        data-0="background: rgb(255,255,255);"
+        data-9399="background: rgb(255,255,255);"
+        data-10230="background: rgb(0,0,0);"
+        > -->
             <div class="inner">
                 <div class="sec0"
                     data-0="opacity: 1;" 
                     data-1600="opacity: 0;" 
+                    
                 >
                     <h3>Please, scroll down</h3>
                 </div>
@@ -490,13 +498,24 @@ $(function(){
         </section>
         <section id="introduce">
                 <div class="inner">
+                    <!-- <div class="wrap"
+                        data-0="display:none;"
+                        data-9399="opacity:0;"
+                        data-11166="display:block; opacity:0;"
+                        data-12400="opacity:1;"
+                    > -->
                     <div class="wrap"
                     data-0="display:none;"
                     data-11166="display:block;"
-                    
                     >
-                        <div class="intro"></div>
+                        <div class="intro"
+                        ></div>
                     </div>
+                    <!-- <h2
+                        data-0="display:none;"
+                        data-11900="display:block; opacity:0;"
+                        data-12000="opacity:1;"
+                    >자기소개</h2> -->
                 </div>
         </section>
     </div>

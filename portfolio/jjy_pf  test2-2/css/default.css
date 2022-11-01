@@ -59,7 +59,7 @@ header .inner {
     /* background: rgba(51, 51, 51, 1);  */
     background: rgba(0, 0, 0, 1); 
     width: 100%;
-    height: 8000px;
+    height: 48000px;
     /* padding-top: 353px; 
     padding-bottom: 467px;  */
 }
@@ -76,12 +76,13 @@ header .inner {
     top: 0%;
     width: 100%;
     height: 100%;
-    border:1px dashed black; 
+    /* border:1px dashed black;  */
     /* overflow: hidden; */
     display: none;
 }
 
-#introduce .inner .intro { margin:0 auto; border:5px dashed #ddd; 
+#introduce .inner .intro { 
+    /* margin:0 auto; border:5px dashed #ddd;  */
     width: 100%;
     height:1080px; 
 }
@@ -355,13 +356,14 @@ header #bar {
 
 /* introduce */
 #introduce .inner h2 { 
+    position: fixed;
+    bottom: 73%;
+    left: 41%;
     text-align: center;
-    line-height: 1em;
-    padding-top: 40px;
-    margin-bottom: 95px;
+    /* line-height: 1em; */
     color: white;
     font-family: 'hana_pro'; 
-    font-size: 90px;
+    font-size: 10em;
     /* border: 2px dashed yellow; box-sizing: border-box; */
 }
 
