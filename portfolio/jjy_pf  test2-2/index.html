@@ -369,9 +369,9 @@ $(function(){
             $("#introduce .inner .intro img:eq("+frameNum+")").css({visibility:"visible"});
         }
     
-        //setInterval(aniNext,100);//0.1초마다 aniNext함수 실행
+        // setInterval(aniNext,100);//0.1초마다 aniNext함수 실행
     
-        $("#introduce .inner .intro").mousewheel(function(e,delta){//.movie영역 위에서
+        $("#introduce .inner .intro").mousewheel(function(e,delta){//.영역 위에서
         
             if( delta < 0 ){ //휠을 아래로 돌렸을때
                 aniNext();
@@ -381,8 +381,14 @@ $(function(){
             }
     
         });
-    
-    
+
+        $(window).scroll(function(){ 
+            var b = $(document).scrollTop(); 
+            if((b <= 11166 )){
+                frameNum = 0
+            }
+        });    
+        console.log(frameNum);
     });
 </script>
 </head>
