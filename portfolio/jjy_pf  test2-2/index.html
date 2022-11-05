@@ -12,7 +12,6 @@
 <script src="js/jquery.mousewheel.min.js"></script>
 <script src="jQuery.scrollSpeed.js"></script>
 
-
 <script>
 $(function(){ 
 
@@ -145,7 +144,7 @@ $(function(){
             $("#introduce .inner .intro img").css({visibility:"hidden"});
             $("#introduce .inner .intro img:eq("+frameNum+")").css({visibility:"visible"});
         }
-        let k = setInterval(aniNext,30);//0.1초마다 aniNext함수 실행
+        // let k = setInterval(aniNext,30);//0.1초마다 aniNext함수 실행
     
         $("#introduce .inner .intro").mousewheel(function(e,delta){//intro.영역 위에서
         
@@ -165,7 +164,7 @@ $(function(){
     
         });
         // $("#introduce .inner").scrollSpeed(100, 1400);
-        $("#introduce .inner .intro").scrollSpeed(100, 1400);
+        $("#introduce .inner .intro").scrollSpeed(100, 2200);
         // $("#introduce .inner .intro img").scrollSpeed(100, 1400);
 
 
@@ -316,10 +315,10 @@ $(function(){
                     data-19000="left:0%;"
                     data-19441="left:-100%;"
                     > -->
-                    <div class="wrap"
+                    <!-- <div class="wrap"
                     data-0="display:none;"
                     data-11166="display:block;"
-                    >
+                    > -->
                         <div class="intro"
                         ></div>
                     </div>
