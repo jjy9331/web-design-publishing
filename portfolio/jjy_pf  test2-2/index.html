@@ -72,7 +72,7 @@ $(function(){
             $('#portfolio .inner li:eq(1) .f1').css({transition:"3.0s"});
             // $('#portfolio .inner li:eq(1) .f2').css({transition:"3.0s"});
 
-            
+
             if((b >= 2223) && (b < 3170)) { //portfolio
                 $('#bar').css({right:224});
                 $('#bar').css({width:145});
@@ -184,13 +184,11 @@ $(function(){
         $(window).scroll(function(){ 
             var b = $(document).scrollTop(); 
             var k = frameNum
-            let ani = setInterval(aniNext,30);//0.1초마다 aniNext함수 실행
             if((b <= 11166 )){
                 frameNum = 0
+                // frameNum = $("#introduce .inner .intro img:first").index()
             }
-            if((k >= 484 )){
-                clearInterval(ani)
-            }
+
         });    
     });
 </script>
