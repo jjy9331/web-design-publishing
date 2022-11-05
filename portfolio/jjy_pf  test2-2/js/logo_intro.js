@@ -79,7 +79,7 @@ $(function(){
         t = t + 1;
         // console.log(t);
         $(".time").text(t);
-        if(t == 4){
+        if(t == 5){
             $(".movie img").hide(); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
             $("#wrap").fadeIn(1000); 
