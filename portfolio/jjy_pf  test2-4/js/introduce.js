@@ -19,8 +19,15 @@ let H = $(window).height();
 
 const img = new Image()
 img.src = currentFrame(1);
-canvas.width=1158;
-canvas.height=770;
+
+
+
+canvas.width = $(window).width();
+canvas.height = $(window).height();
+
+
+canvas.style.top = '0%' 
+canvas.style.objectFit = "cover";
 
 
 img.onload=function(){

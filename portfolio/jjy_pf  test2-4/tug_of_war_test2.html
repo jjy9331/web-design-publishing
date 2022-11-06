@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tug of war</title>
+
+<style>
+body {
+    overflow: auto;
+    margin: 0 ;
+    width: 100%;
+    height: 100%;
+}
+.wrap { 
+    /* margin-top: 300px; */
+    position: fixed;
+    width: 100%;
+    border:1px dashed black; 
+    overflow: hidden;
+}
+.movie { 
+    /* zoom: 0.3;  */
+    position: relative; 
+    border:1px dashed #777; 
+    /* width:1920px;  */
+    width: 100%;
+    height:1080px; 
+    padding-left: -100px;
+    padding-right: 99999px;
+}
+.movie img { 
+    position:absolute; 
+    visibility:hidden;
+    /* width: 100%; */
+    border:1px dashed #777; 
+    
+}
+
+.wrap .movie .s1 {
+    float: left;
+    width:1920px; 
+    height:1080px; 
+    border:1px dashed #777; 
+    background: rgba(255, 255, 255, 0.4);
+}
+.s2 {}
+.s3 {}
+
+</style>
+    
+    
+<script src="js/jquery-3.6.0.js"></script>
+<script src="js/mousewheel.js"></script>
+<script>
+    $(function(){
+
+    // resizing
+    let W = $(window).width();
+    let H = $(window).height();
+
+    //page width
+    let page_width = $("body").css("width");
+    let page_height = $("body").css("height");
+    let page_index = 0;
+	
+    $(window).resize(function() {
+        page_width = $("body").css("width");
+        page_height = $("body").css("height");
+        $(".s2").text(page_width).css({ fontSize: 20 });
+        $(".s3").text(page_height).css({ fontSize: 20 });
+        // $("#home,#about,#works,#contact").css({ width: page_width });
+        // $('html,body').stop().animate({ scrollLeft: parseInt(page_width) * page_index }, 700);
+    });
+
+
+    
+
+
+    
+        //이미지 불러오기
+        for (i=0; i<=115; i++){
+            $(".movie").append("<img src='tug_sequence3/"+i+".png'>");
+        }
+        $(".movie img:first").css({visibility:"visible"});
+    
+            //애니메이션 시키기
+	let frameNum=0;
+    let go = 0;
+
+    function aniNext(){
+        frameNum++;
+        go = go + 7;
+
+        if(frameNum> $(".movie img:last").index() ){
+            frameNum=0
+        };
+
+        $(".movie img").css({visibility:"hidden"});
+        $(".movie img:eq("+frameNum+")").css({visibility:"visible"});
+    }
+
+    function aniPrev(){//역방향 진행
+		frameNum--;
+        go = go - 7;
+
+		if(frameNum < 0 ){
+			frameNum = $(".movie img:last").index()
+		};
+
+		$(".movie img").css({visibility:"hidden"});
+		$(".movie img:eq("+frameNum+")").css({visibility:"visible"});
+	}
+
+	//setInterval(aniNext,100);//0.1초마다 aniNext함수 실행
+
+	$(".movie").mousewheel(function(e,delta){//.movie영역 위에서
+
+	
+		if( delta < 0 ){ //휠을 아래로 돌렸을때
+			aniNext();
+            // aniPrev();
+            g = $(".movie").css({left: go });
+
+            // h = h + 0.1*(targetH - h);
+            
+		}
+		else{ //휠을 위로 돌렸을때
+			aniPrev();
+            // aniNext();
+            g = $(".movie").css({left: go });   
+		}
+        if((go > 0) && (delta < 0)){
+            // aniNext();
+            aniPrev();
+            // go = Math.trunc(delta);
+            frameNum = frameNum+1
+            g = $(".movie").css({center: go });   
+            
+            if(frameNum> $(".movie img:last").index() ){
+                frameNum=0
+            };
+        }
+
+        // if(delta == 0){
+        //     // aniNext();
+        //     aniPrev();
+        //     go = 0;
+        //     g = $(".movie").css({left: go});   
+        // }
+        // console.log(go);
+        console.log(frameNum);
+        // console.log(delta);
+
+	});
+
+
+
+    $(window).scroll(function(){
+        var sc = $(document).scrollTop();
+        $("#tt").text(sc + "px").css({ fontSize: 20 });
+
+        // let e = 0;
+        // e = e - 1
+        // console.log(g);
+
+
+
+
+                    
+        // $("#tt").text(b);
+    });
+
+
+    
+    
+    
+    });
+</script>
+    
+</head>
+<body>
+
+<div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
+
+<div id="test" style="position:fixed; left:30px; bottom:50px; z-index: 100;">
+    <!-- <p>scroll left: <span class="s1">0px</span></p> -->
+    <p style="color: black;" >body width: <span class="s2">0px</span></p>
+    <p style="color: black;" >body height: <span class="s3">0px</span></p>
+</div>
+
+<div class="wrap">
+    <div></div>
+    <div class="movie"></div>
+    <!-- <div class="s1">01</div>
+    <div class="s2">02</div>
+    <div class="s3">03</div> -->
+</div>
+    
+</body>
+</html>
