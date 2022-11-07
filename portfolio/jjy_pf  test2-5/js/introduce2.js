@@ -40,7 +40,7 @@ const preloadImages = () => {
     img.src = imgSrc
   })
 }
-setInterval(preloadImages,3000);
+setInterval(preloadImages,100);
 
 const onScrollHandler = () => {
   requestAnimationFrame(render)
@@ -92,18 +92,20 @@ const canvas = document.createElement('canvas')
 
 const context = canvas.getContext('2d')
 
-// canvas.width = $(window).width();
-// canvas.height = $(window).height();
-canvas.width = wrapper.offsetWidth
-canvas.height = (canvas.width / 3) * 2
+canvas.width = $(window).width();
+canvas.height = $(window).height();
+// canvas.width = wrapper.offsetWidth
+// canvas.height = (canvas.width / 3) * 2
 
 
 console.log("canvas.width:"+canvas.width);
 console.log("canvas.height:"+canvas.height);
 
+
 canvas.style.position = 'sticky'
 canvas.style.top = '50%'
 canvas.style.transform = 'translateY(-50%)'
+canvas.style.objectFit = 'cover';
 
 wrapper.append(canvas)
 
@@ -115,3 +117,5 @@ console.log("standardHeight:"+standardHeight);
 
 initFirstFrame()
 preloadImages()
+
+

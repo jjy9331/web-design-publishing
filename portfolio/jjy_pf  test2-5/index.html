@@ -11,7 +11,7 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 <!-- <script src="js/jquery.mousewheel.min.js"></script> -->
 <!-- <script src="jQuery.scrollSpeed.js"></script> -->
-
+<script defer src="js/introduce2.js"></script>
 
 <script>
 $(function(){ 
@@ -72,6 +72,8 @@ $(function(){
 
             $('#portfolio .inner li:eq(1) .f1').css({transition:"3.0s"});
             // $('#portfolio .inner li:eq(1) .f2').css({transition:"3.0s"});
+
+
 
 
             if((b >= 2223) && (b < 3170)) { //portfolio
@@ -202,9 +204,14 @@ $(function(){
                 </div>
             </div>
         </section>
+        <div class="bkbox"></div>
         <section id="introduce">
-            <!-- <div class="bkbox"></div> -->
             <main>
+                <!-- <div id="wrapper"
+                    data-0="display:none; " 
+                    data-9500="display:none;"
+                    data-10200="display:block; " 
+                    ></div> -->
                 <div id="wrapper"></div>
             </main>
         </section>
@@ -374,6 +381,33 @@ $(function(){
     </script>
 <!-- <script src="js/jquery-ui-1.12.1.min.js"></script>
 <script src="js/jquery.min_1.12.4.js"></script> -->
-<script defer src="js/introduce2.js"></script>
+<script>
+
+            $(window).scroll(function(){ 
+                var b = $(document).scrollTop(); 
+                    if((b >=0) && (b < 10200)) {	
+                        $('#introduce').css({opacity:0});
+                        $('main').css({opacity:0});
+                        $('#wrapper').css({opacity:0});
+                        $('canvas').css({opacity:0});
+
+                        $('#introduce').css({display: "none"});
+                        $('main').css({display: "none"});
+                        $('#wrapper').css({display: "none"});
+                        $('canvas').css({display: "none"});
+                    }
+                    if((b >=10700) && (b < 20000)) {	
+                        $('#introduce').css({opacity:1});
+                        $('main').css({opacity:1});
+                        $('#wrapper').css({opacity:1});
+                        $('canvas').css({opacity:1});
+
+                        $('#introduce').css({display: "block"});
+                        $('main').css({display: "block"});
+                        $('#wrapper').css({display: "block"});
+                        $('canvas').css({display: "block"});
+                    }
+            });
+</script>
 </body>
 </html>
