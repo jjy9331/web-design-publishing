@@ -102,8 +102,8 @@ $(function(){
     $(function(){
     
         //이미지 불러오기
-        for (i=0; i<=485; i++){
-            $("#introduce .inner .intro").append("<img src='track_run_start4/"+i+".png'>");
+        for (i=0; i<=155; i++){
+            $("#introduce .inner .intro").append("<img src='track_run_start5/"+i+".png'>");
         }
         $("#introduce .inner .intro img:first").css({visibility:"visible"});
     
@@ -123,7 +123,7 @@ $(function(){
             console.log(frameNum);
 
             if(frameNum> $("#introduce .inner .intro img:last").index() ){
-                frameNum=485
+                frameNum=155
             };
     
             $("#introduce .inner .intro img").css({visibility:"hidden"});
@@ -192,7 +192,7 @@ $(function(){
         $(window).scroll(function(){ 
             var b = $(document).scrollTop(); 
             var k = frameNum
-            if((b <= 11166 )){
+            if((b <= 11166) && (b < 20000) ){
                 frameNum = 0
                 // frameNum = $("#introduce .inner .intro img:first").index()
             }
