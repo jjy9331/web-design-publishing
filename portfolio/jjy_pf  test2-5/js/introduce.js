@@ -25,6 +25,8 @@ img.src = currentFrame(1);
 canvas.width = $(window).width();
 canvas.height = $(window).height();
 
+console.log("canvas.width:"+canvas.width);
+console.log("canvas.height:"+canvas.height);
 
 canvas.style.top = '0%' 
 canvas.style.objectFit = "cover";

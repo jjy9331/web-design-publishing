@@ -47,6 +47,7 @@ $(window).scroll(function(){
         context.beginPath();
         context.drawImage(img, 0, 0);
       }
+      
 
       const updateImage = index => {
         img.src = currentFrame(index);
@@ -69,8 +70,9 @@ $(window).scroll(function(){
         requestAnimationFrame(() => updateImage(frameIndex + 1))
 
         console.log(frameIndex);
-
+        // setInterval(addEventListener,1000);
       });
+      // setInterval(addEventListener,1000);
 
       preloadImages()
 
