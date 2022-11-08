@@ -1,8 +1,8 @@
 
 
-const imageSources = Array(485)
+const imageSources = Array(1943)
   .fill('')
-  .map((_, idx) => `./track_run_start4/${String(idx + 1)}.png`)
+  .map((_, idx) => `./track_run_start7/${String(idx + 1).padStart(4, '0')}.png`)
   console.log("imageSources:"+imageSources);
 
 const computeStartScrollY = () => {
