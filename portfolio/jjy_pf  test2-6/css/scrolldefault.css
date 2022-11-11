@@ -2,6 +2,9 @@
 @font-face { font-family:'hana_pro'; src: url('../font/BMHANNAProOTF.woff') format('woff');}
 @font-face { font-family:'hana_air'; src: url('../font/BMHANNAAir_otf.woff') format('woff');}
 
+* {
+    touch-action: manipulation; 
+}
 
 /*Eric mayor reset*/
 
