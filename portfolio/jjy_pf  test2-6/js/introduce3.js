@@ -7,9 +7,15 @@ var scrollYPos;
 
 img.src = "./track_run_start4/0.png";
 
-canvas.width = $(window).width();
-canvas.height = $(window).height();
+// canvas.width = $(window).width();
+// canvas.height = $(window).height();
+// canvas.width = canvas.offsetWidth
+// canvas.height = (canvas.width / 3) * 2
+canvas.width = 1920
 canvas.height = 1080
+
+console.log(canvas.width);
+console.log(canvas.height);
 
 // canvas.style.position = 'sticky'
 canvas.style.position = 'fixed'
@@ -38,7 +44,7 @@ window.addEventListener('scroll', function(e) {
     console.log(scrollYPos);
 
 
-});
+}, {passive: false} );
 
 // $(function(){
 //     $(window).scroll(function(){ 
