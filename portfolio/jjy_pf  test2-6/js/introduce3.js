@@ -44,7 +44,7 @@ window.addEventListener('scroll', function(e) {
     console.log(scrollYPos);
 
 
-}, {passive: false} );
+}, {passive: false});
 
 // $(function(){
 //     $(window).scroll(function(){ 
