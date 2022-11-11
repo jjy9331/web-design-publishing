@@ -63,5 +63,5 @@ function player(num) {
 img.addEventListener('load', function(e) {
     ctx.clearRect( 0, 0, ctx.canvas.width, ctx. canvas.height);
     ctx.drawImage(img, 0, 0);
-});
+}, {passive: false});
 
