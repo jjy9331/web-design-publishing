@@ -310,6 +310,26 @@ header #bar {
     object-fit: cover;
 }
 
+.item:nth-of-type(2) {
+    /* background-color: darkkhaki; */
+}
+
+.item:nth-of-type(2) .pf1 {
+    position: fixed;
+    bottom: 30%;
+    /* background-color: darkkhaki; */
+}
+
+.item:nth-of-type(2) img:nth-child(1) {
+    width: 771px;
+    height: 432px;
+    /* background-color: darkkhaki; */
+}
+
+/* .item:nth-of-type(2) img:nth-child(2) {
+    width: 60%;
+    opacity: 0;
+} */
 
 .item:nth-of-type(3) {
     background-color: darkkhaki;
