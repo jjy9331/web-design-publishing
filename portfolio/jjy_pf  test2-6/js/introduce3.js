@@ -18,8 +18,8 @@ console.log(canvas.width);
 console.log(canvas.height);
 
 // canvas.style.position = 'sticky'
-canvas.style.position = 'fixed'
-canvas.style.bottom = '0%'
+canvas.style.position = 'fixed';
+canvas.style.bottom = '0%';
 // canvas.style.right = '25%'
 // canvas.style.transform = 'translateY(-50%)'
 canvas.style.objectFit = 'cover';
@@ -29,7 +29,9 @@ window.addEventListener('scroll', function(e) {
     var y = window.scrollY;
 
     
-    scrollYPos = Math.round(((window.scrollY/30)-374));
+    scrollYPos = Math.round(((window.scrollY/100)-141));
+    // scrollYPos = Math.round(((window.scrollY/60)-187));
+    // scrollYPos = Math.round(((window.scrollY/30)-374));
     // scrollYPos = Math.round((window.scrollY/30)-375);
 
     

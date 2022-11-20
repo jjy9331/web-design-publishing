@@ -8,7 +8,50 @@
 <link rel="stylesheet" href="css/scrolldefault.css">
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $(function(){    
+        var pf2m = document.querySelector('.pf2_monitor');
+        var eye = document.querySelector('.pf2_eye');
 
+        pf2m.addEventListener('mouseover', () => {
+            eye.style.bottom = '0%'
+            eye.style.left = '0%'
+            eye.style.left = '0%'
+            // eye.style.transition = "ease-in-out 0.2s";
+            eye.style.transition = "0.3s ease-in-out 0.2s";
+        });
+
+        pf2m.addEventListener('mouseout',() => mouseout());
+
+        function mouseout() {
+            eye.style.bottom = '-44%'
+            eye.style.left = '-26%'
+        }
+
+        // class Eye_moving {//클래스명 첫글자는 대문자
+        // //속성(변수)
+        // //메서드(함수)
+
+        //     constructor(a){
+        //         this.a = a;
+        //         this.eye = document.querySelector(this.a);
+        //     }
+        //     moving(){
+        //         this.eye.addEventListener("mouseover",()=>{
+        //             this.eye.style.bottom = '0%'
+        //             this.eye.style.left = '0%'
+        //         });
+        //         this.eye.addEventListener("mouseout",()=>{
+        //             this.eye.style.bottom = '-44%'
+        //             this.eye.style.left = '-26%'
+        //         });
+        //     } 
+        // }
+        // let eyemoving = new Eye_moving(".pf2_eye");
+        // eyemoving.moving();
+        
+    });
+</script>
 
 </head>
 <body>
@@ -45,46 +88,46 @@
 
         <h2
             data-0="opacity: 1;" 
-            data-1600="opacity: 0;" 
+            data-4100="opacity: 0;" 
         >Please, scroll down</h2>
 
         <div class="sec1"
         >
             <div class="visual"
             data-0="opacity: 0;"
-            data-1600="opacity: 1" 
+            data-4100="opacity: 1" 
 
             >
                 <img src="images/main3.gif" alt="teamwork visual icon"
                     data-0="opacity: 0;"
-                    data-1600="opacity: 1; left: -30%" 
-                    data-4000="opacity: 1; left: 28.5%;"
-                    data-6000="opacity: 0;" 
+                    data-4100="opacity: 1; left: -30%" 
+                    data-7500="opacity: 1; left: 28.5%;"
+                    data-9500="opacity: 0;" 
                 >
             </div>
             <div class="typo"
                 data-0="opacity: 0;"
-                data-1600="opacity: 0;"
-                data-2001="opacity: 1;" 
-                data-4000="opacity: 1;"
-                data-6000="opacity: 0;"
+                data-4100="opacity: 0;"
+                data-5501="opacity: 1;" 
+                data-7500="opacity: 1;"
+                data-9500="opacity: 0;"
             >
                     <h3 >팀이 <span class="kw1">__</span>하면, 프로젝트가 <span class="kw2">__</span>된다</h3>
                     <p>일은 <span>__</span> 하는 것이라 배웠습니다</p>
             </div>
             <div class="sec2"
                 data-0="opacity: 0;"
-                data-6099="opacity: 0;"                 
-                data-7000="opacity: 1;"
-                data-8000="opacity: 1;"
-                data-9500="opacity: 0;" 
+                data-9599="opacity: 0;"                 
+                data-10500="opacity: 1;"
+                data-11500="opacity: 1;"
+                data-13000="opacity: 0;" 
             >
                 <div class="typo2"
                     data-0="opacity: 0;"
-                    data-6099="opacity: 0;"                 
-                    data-7000="opacity: 1;"
-                    data-8000="opacity: 1;"
-                    data-9500="opacity: 0;" 
+                    data-9599="opacity: 0;"                 
+                    data-10500="opacity: 1;"
+                    data-115000="opacity: 1;"
+                    data-13000="opacity: 0;" 
                 >
                     <h3>팀이 단결하면, 프로젝트가 완결된다</h3>
                     <p>일은 같이 하는 것이라 배웠습니다</p>
@@ -99,30 +142,32 @@
         </div>
         <div class="bkbox"
             data-0="top: 100%;"
-            data-9700="top: 100%; "
-            data-11300="top: 0%; "
-            data-11790="display: block; "
-            data-20000="display: none; "
+            data-13200="top: 100%; "
+            data-14800="top: 0%; "
+            data-15290="display: block; "
+            data-23500="display: none; "
             
         ></div>
         <div class="wrappr">
             <!-- <canvas width="1920" height="1080" id="screen"></canvas> -->
             <canvas id="screen"
                 data-0="display: none;"
-                data-11200="display: hidden; "
-                data-11250="display: block; "
-                data-25770="left:0%; display: block; " 
-                data-40000="left:-100%; display: none;"
+                data-14700="display: hidden; "
+                data-14750="display: block; "
+                data-63270="left:0%; display: block; "
+                data-70270="left:0%; display: block; " 
+                data-82500="left:-100%; display: none;"
             ></canvas>
         </div>
     </section>
     
     <section class="item portfolio">
         <div class="pf1"
-            data-33051="right:-155%;"
-            data-41999="right:15%;"
-            data-48999="right:15%;"
-            data-53999="right:100%;"
+            data-0="display:none; "
+            data-73551="display:block; right:-155%;"
+            data-84499="right:15%;"
+            data-91499="right:15%;"
+            data-96499="right:100%;"
         >
             <a href="#">
                 <img src="images/pf2_0.png" alt="ux,ui_img" class="face_change f1"
@@ -130,6 +175,28 @@
                     onmouseout="this.src='images/pf2_0.png'"
                 >
                 <!-- <img  src="images/pf2_1.jpg" alt="ux,ui_img" class="face_change f2"> -->
+            </a>
+        </div>
+        <div class="pf2"
+            data-0="display:none; "
+            data-96499="display:block; right:-50%;"
+            data-107499="right:25%;"
+            data-114499="right:25%;"
+            data-121499="right:100%;"
+        >
+            <a href="#">
+                <img src="images/monitor.png" alt="monitor" class="pf2_monitor">
+                <!-- <div class="pf2_bg"
+                    onmouseover=""
+                    onmouseout=""
+                > -->
+                <div class="pf2_bg">
+                    <h3>zero<span>lab</span></h3>
+                    <p>리디자인</p>
+                    <div class="eye_hide1"></div>
+                    <div class="eye_hide2"></div>
+                    <img src="images/pf2_eye.png" alt="mouseover_ani_source" class="pf2_eye">
+                </div>
             </a>
         </div>
     </section>
