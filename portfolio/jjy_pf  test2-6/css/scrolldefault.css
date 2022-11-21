@@ -410,6 +410,20 @@ header #bar {
     cursor: default;
 }
 
+
+.item:nth-of-type(2) .pf3 {
+    position: fixed;
+    bottom: 14%;
+    /* background-color: darkkhaki; */
+}
+.item:nth-of-type(2) .pf3 img:nth-child(1) {
+    position: relative;
+    width: 960px;
+    height: 730px;
+    z-index: 10;
+    /* background-color: darkkhaki; */
+}
+
 /* .item:nth-of-type(2) img:nth-child(2) {
     width: 60%;
     opacity: 0;
