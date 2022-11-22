@@ -424,6 +424,34 @@ header #bar {
     /* background-color: darkkhaki; */
 }
 
+.item:nth-of-type(2) .pf3 .movie { 
+    /* position: relative;  */
+    position: absolute; 
+    top: 4%;
+    left: 4%;
+    /* border:5px dashed #777777;  */
+    /* object-fit: cover; */
+    /* width:1920px;  */
+    /* height:1080px; */
+    width: 93%;
+    height: 72%;
+    z-index: 5;
+    
+}
+
+.item:nth-of-type(2) .pf3 .movie img { 
+    /* zoom: 1.825; */
+    position:absolute; 
+    visibility:hidden;
+    width:100%; 
+    object-fit: cover;
+    /* background-size: cover; */
+    /* border:5px dashed #777777;  */
+    height:100%; 
+}
+
+
+
 /* .item:nth-of-type(2) img:nth-child(2) {
     width: 60%;
     opacity: 0;

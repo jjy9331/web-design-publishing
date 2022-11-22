@@ -28,30 +28,157 @@
             eye.style.left = '-26%'
         }
 
-        // class Eye_moving {//클래스명 첫글자는 대문자
-        // //속성(변수)
-        // //메서드(함수)
+        //이미지 불러오기
+        for (i=0; i<=101; i++){
+            $(".movie").append("<img src='mohenic_sequence/"+i+".jpg'>");
+        }
+        $(".movie img:first").css({visibility:"visible"});
 
-        //     constructor(a){
-        //         this.a = a;
-        //         this.eye = document.querySelector(this.a);
-        //     }
-        //     moving(){
-        //         this.eye.addEventListener("mouseover",()=>{
-        //             this.eye.style.bottom = '0%'
-        //             this.eye.style.left = '0%'
-        //         });
-        //         this.eye.addEventListener("mouseout",()=>{
-        //             this.eye.style.bottom = '-44%'
-        //             this.eye.style.left = '-26%'
-        //         });
-        //     } 
-        // }
-        // let eyemoving = new Eye_moving(".pf2_eye");
-        // eyemoving.moving();
-        
+        //애니메이션 시키기
+        let frameNum=0;
+            
+        var pf3m = document.querySelector('.pf3');
+        // var pf3m = document.querySelector('.pf3_monitor');
+        // var pf3m = document.querySelector('.movie');
+
+        var k1;
+        var k2;
+        pf3m.addEventListener('mouseover',() => {
+            function aniNext(){   
+                let inc1 = frameNum++;
+
+                $(".movie img").css({visibility:"hidden"});
+
+                $(".movie img:eq("+inc1+")").css({visibility:"visible"});
+
+                $(".movie").animate(
+                    {center:101},
+                    2019.8,
+                    function(){
+                    clearInterval(k1);
+                });
+                
+                console.log("inc1:"+inc1);
+                console.log("mouseover")
+                if(inc1 >=101){ //로딩이 완료되면
+                    clearInterval(k1); //setInterval종료					
+                    frameNum = 101;
+                }
+                else if (frameNum > 0) {
+                    clearInterval(k2); //mouseout 중 mouseover할때 mouseout, mouseover setInteval 충돌방지  
+                }
+            }
+            var k1 = setInterval(aniNext,12.5); //aniNext 함수 실행
+        });
+
+        var k1;
+        var k2;
+        // var k2 = setInterval(aniBack,12.5)
+            pf3m.addEventListener('mouseout',() => aniBack());
+            function aniBack() {
+                    let inc2 = frameNum--;
+    
+                    $(".movie img").css({visibility:"hidden"});
+    
+                    $(".movie img:eq("+inc2+")").css({visibility:"visible"});
+    
+                    $(".movie").animate(
+                        {center:101},
+                        1000,
+                        function(){
+                        clearInterval(k2);
+                    }
+                    );
+    
+                    console.log("inc2:"+inc2);
+                        console.log("mouseout")
+                    if(inc2 >= 101){
+                        k2 = setInterval(aniBack,12.5); //setInterval종료
+                        clearInterval(k1);
+                    } 
+                    else if (inc2 <= 0 ) {
+                        frameNum = 0;
+                        if( inc2 == 0){
+                            console.log("minor")
+                            clearInterval(k2);
+                        }
+                    }
+                    else if (inc2 == 0) {
+                        console.log("minor")
+                        clearInterval(k2);
+                    }
+
+            //             console.log("mouseout")
+            }
+            var k2 = setInterval(aniBack,12.5)
+            // var k1 = setInterval(aniNext,12.5); //aniNext 함수 실행
+            
+
+                
+        // });
+
+        // pf3m.addEventListener('mouseout',() => aniBack());
+        //     function aniBack() {
+        //             let inc2 = frameNum--;
+    
+        //             $(".movie img").css({visibility:"hidden"});
+    
+        //             $(".movie img:eq("+inc2+")").css({visibility:"visible"});
+    
+        //             $(".movie").animate(
+        //                 {center:101},
+        //                 2019.8,
+        //                 function(){
+        //                 clearInterval(k2);
+        //             });
+    
+        //             console.log("inc2:"+inc2);
+        //             if(inc2 >= 101){
+        //                 setInterval(aniBack,25.25); //setInterval종료					
+        //             } else if (inc2 <= 0 ) {
+        //                 frameNum = 0;
+        //                 clearInterval(aniBack);
+                    // }
+                    //     console.log("mouseout")
+        //                 if(inc2 <= 0){
+        //                         clearInterval(k2);
+        //                 }
+            // }
+            // let k2 = setInterval(aniBack,25.25)
     });
 </script>
+<!-- <script>
+function aniBack() {
+    for (i=0; i<=101; i++){
+            $(".movie").append("<img src='mohenic_sequence/"+i+".jpg'>");
+    }
+    $(".movie img:first").css({visibility:"visible"});
+
+    //애니메이션 시키기
+    let frameNum = 101;
+    let frameNum = frameNum - 1;    
+
+    
+    $(".movie").animate(
+        {center:101},
+        2019.8,
+        //     function(){
+            //     // clearInterval(k2);
+            // }
+            );
+            if(frameNum >= 101){
+
+            setInterval(aniBack,12.5); //setInterval종료					
+        }
+    // let k2 = setInterval(aniBack,12.5)
+
+    console.log("mouseout")
+    console.log("inc2:"+inc2);
+
+}
+</script> -->
+
+
 
 </head>
 <body>
@@ -200,14 +327,18 @@
             </a>
         </div>
         <div class="pf3"
-        data-0="display:none; "
+            data-0="display:none; "
             data-121499="display:block; right:-50%;"
             data-132499="right:25%;"
             data-139499="right:25%;"
             data-146499="right:100%;"
         >
             <a href="#">
+                <!-- <img src="images/monitor.png" alt="monitor" class="pf3_monitor"
+                onmouseout="aniBack();"
+                > -->
                 <img src="images/monitor.png" alt="monitor" class="pf3_monitor">
+                <div class="movie"></div>
             </a>
         </div>
     </section>
