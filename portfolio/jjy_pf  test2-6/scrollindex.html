@@ -9,7 +9,10 @@
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
-    $(function(){    
+    $(function(){   
+
+        // pf2 zerolab eye animation 
+
         var pf2m = document.querySelector('.pf2_monitor');
         var eye = document.querySelector('.pf2_eye');
 
@@ -27,6 +30,11 @@
             eye.style.bottom = '-44%'
             eye.style.left = '-26%'
         }
+
+        /////////////////////////////////////////////////////////////////
+
+
+        // pf3 mohenic car light animation 
 
         //이미지 불러오기
         for (i=0; i<=101; i++){
@@ -105,6 +113,33 @@
                     }
             }
             var k2 = setInterval(aniBack,12.5)
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+
+        var pf4p = document.querySelector('.pf4_iphone');
+        var wbox1 = document.querySelector('.ypaint_hide1');
+        var wbox2 = document.querySelector('.ypaint_hide2');
+        var pf4subp = document.querySelector('.pf4_subp');
+
+        pf4p.addEventListener('mouseover', () => {
+            wbox1.style.left = '100%'
+            wbox2.style.left = '100%'
+            // wbox1.style.transition = "ease-in-out 0.2s";
+            wbox1.style.transition = "0.35s ease-out 0.28s";
+            wbox2.style.transition = "0.6s ease-out 0.4s";
+            // pf4subp.style.fontWeight = '500';
+            pf4subp.style.opacity = '0.7';
+            pf4subp.style.transition = "0.6s ease-out 0.38s";
+        });
+
+        pf4p.addEventListener('mouseout',() => pf4_mouseout());
+
+        function pf4_mouseout() {
+            wbox1.style.left = '16%'
+            wbox2.style.left = '16%'
+            pf4subp.style.opacity = '0.3';
+            // pf4subp.style.fontWeight = '100';
+        }
 
     });
 </script>
@@ -271,6 +306,26 @@
                 <div class="movie"></div>
             </a>
         </div>
+        <div class="pf4"
+            data-0="display:none; "
+            data-146499="display:block; right:-50%;"
+            data-153499="right:41.78%;"
+            data-160499="right:41.78%;"
+            data-167499="right:100%;"
+        >
+        <a href="#">
+            <img src="images/iphone.png" alt="iphone" class="pf4_iphone">
+            <div class="pf4_bg">
+                <img src="images/hss_log.svg" alt="happy_socks_logo" class="hss_logo">
+                <p class="pf4_subp">모바일 리디자인</p>
+                <div class="ypaint_hide1"></div>
+                <div class="ypaint_hide2"></div>
+                <img src="images/ypaint.png" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint1">
+                <img src="images/ypaint.png" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint2">
+            </div>
+        </a>
+    </div>
+        
     </section>
 
     <section class="item">
