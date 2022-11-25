@@ -473,19 +473,19 @@ header #bar {
 
 .item:nth-of-type(2) .pf4 .pf4_bg .hss_logo{
     position: absolute;
-    bottom: 4%;
+    bottom: 1.5%;
     left: 23%;
     width: 56%;
     z-index: 5;
 }
 .item:nth-of-type(2) .pf4 .pf4_bg .pf4_subp{
     position: absolute;
-    bottom: 44%;
-    right: 34%;
+    bottom: 41.5%;
+    left: 36.8%;
     /* font-family: 'Black Han Sans', sans-serif; */
     font-family: 'Noto Sans KR';
     /* font-family: 'OTEnjoystoriesBA'; */
-    font-size: 0.7vw;
+    font-size: 14px;
     /* opacity: 70%; */
     opacity: 35%;
     z-index: 5;
@@ -494,16 +494,16 @@ header #bar {
 
 .item:nth-of-type(2) .pf4 .pf4_bg .pf4_ypaint1{
     position: absolute;
-    top: 42%;
+    top: 46%;
     left: 17%;
     width: 71%;
     z-index: 2;
-    transform: scaleY(-1); 
+    transform: scaleY(-1);
 }
 
 .item:nth-of-type(2) .pf4 .pf4_bg .pf4_ypaint2{
     position: absolute;
-    bottom: 42.15%;
+    bottom: 37%;
     left: 31%;
     width: 45%;
     z-index: 2;
@@ -512,19 +512,18 @@ header #bar {
 
 .item:nth-of-type(2) .pf4 .pf4_bg .ypaint_hide1 {
     position: absolute;
-    top: 42%;
+    top: 45%;
     left: 16%;
     width: 70%;
     height: 10%;
     z-index: 4;
     background-color: white;
     cursor: default;
-    cursor: default;
 }
 
 .item:nth-of-type(2) .pf4 .pf4_bg .ypaint_hide2 {
     position: absolute;
-    bottom: 42%;
+    bottom: 38%;
     left: 16%;
     width: 70%;
     height: 6%;
@@ -532,6 +531,30 @@ header #bar {
     background-color: white;
     cursor: default;
 }
+
+.item:nth-of-type(2) .pf4 .pf4_bg .smile {
+    position: absolute;
+    /* top: 36.7%; */
+    top: 48.7%;
+    left: 44%;
+    /* width: 50%; */
+    height: 6%;
+    z-index: 1;
+    cursor: default;
+    /* visibility: hidden; */
+}
+
+.item:nth-of-type(2) .pf4 .pf4_bg #smile1 {
+    z-index: 3;
+    cursor: default;
+}
+
+.item:nth-of-type(2) .pf4 .pf4_bg #smile2 {
+    z-index: 1;
+    cursor: default;
+}
+
+
 
 /* .item:nth-of-type(2) img:nth-child(2) {
     width: 60%;
