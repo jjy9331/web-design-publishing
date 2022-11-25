@@ -34,7 +34,10 @@
         /////////////////////////////////////////////////////////////////
 
 
+
+
         // pf3 mohenic car light animation 
+
 
         //이미지 불러오기
         for (i=0; i<=101; i++){
@@ -43,7 +46,7 @@
         $(".movie img:first").css({visibility:"visible"});
 
         //애니메이션 시키기
-        let frameNum=0;
+        var frameNum=0;
             
         var pf3m = document.querySelector('.pf3');
         // var pf3m = document.querySelector('.pf3_monitor');
@@ -51,9 +54,12 @@
 
         var k1;
         var k2;
+        var inc1;
+        var wy = window.scrollY;
+
         pf3m.addEventListener('mouseover',() => {
             function aniNext(){   
-                let inc1 = frameNum++;
+                var inc1 = frameNum++;
 
                 $(".movie img").css({visibility:"hidden"});
 
@@ -75,12 +81,48 @@
                 else if (frameNum > 0) {
                     clearInterval(k2); //mouseout 중 mouseover할때 mouseout, mouseover setInteval 충돌방지  
                 }
+
+                // window.addEventListener('scroll', function(e) {
+                //     if(((wy <=121432) && (wy >= 146508))) {	
+                //         inc1 = 0;
+                //         frameNum = 0;
+                //         console.log("inc1:"+inc1);
+                //         console.log("frameNum:"+frameNum);
+                //         // pf3m.removeEventListener('mouseover',() => {aniNext();})
+                //         pf3m.removeEventListener('mouseover', aniNext);
+
+                //     }   
+                // }, {passive: false});   
+
+
             }
             var k1 = setInterval(aniNext,12.5); //aniNext 함수 실행
+
+            // window.addEventListener('scroll', function(e) {
+    
+            //     var wy = window.scrollY;
+            //     if(((wy <=121432) && (wy >= 146508))) {	
+            //         inc1 = 0;
+            //         frameNum = 0;
+            //         console.log("inc1:"+inc1);
+            //         console.log("frameNum:"+frameNum);
+            //         // pf3m.removeEventListener('mouseover',() => {aniNext();})
+            //         pf3m.removeEventListener('mouseover', aniNext);
+
+            //     }   
+
+            // }, {passive: false});   
+            
+            
+ 
+
+
+
         });
 
         var k1;
         var k2;
+        var inc2;
             pf3m.addEventListener('mouseout',() => aniBack());
             function aniBack() {
                     let inc2 = frameNum--;
@@ -100,7 +142,8 @@
                     console.log("inc2:"+inc2);
                         console.log("mouseout")
                     if(inc2 >= 101){
-                        k2 = setInterval(aniBack,12.5); //setInterval종료
+                        // k2 = setInterval(aniBack,12.5); //setInterval종료
+                        k2 = setInterval(aniBack,14.5); //setInterval종료
                         clearInterval(k1);
                     }
 
@@ -111,8 +154,18 @@
                             clearInterval(k2);
                         }
                     }
-            }
-            var k2 = setInterval(aniBack,12.5)
+        
+                }
+                var k2 = setInterval(aniBack,12.5)
+                // window.addEventListener('scroll', function(e) {
+    
+                //     var sY = window.scrollY;
+                //     if((sY >= 146508)) {	
+                //         // inc2 = 0;
+                //         frameNum = 0;
+                //     }   
+    
+                // }, {passive: false});    
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -370,12 +423,31 @@
                     }   
     
             });
+
+
             window.scroll({
                 top: 100,
                 left: 100,
                 behavior: 'smooth'
             });
+
+            
+            // window.addEventListener('scroll', function(e) {
+    
+            //     var wy = window.scrollY;
+            //     if(((wy <=121432) && (wy >= 146508))) {	
+            //         inc1 = 0;
+            //         frameNum = 0;
+            //         console.log("inc1:"+inc1);
+            //         console.log("frameNum:"+frameNum);
+            //         // pf3m.removeEventListener('mouseover',() => {aniNext();})
+            //         pf3m.removeEventListener('mouseover', aniNext);
+
+            //     }   
+
+            // }, {passive: false});   
     });
+    
 </script>
 
 </html>
