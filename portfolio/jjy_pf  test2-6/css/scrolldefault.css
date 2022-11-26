@@ -494,7 +494,7 @@ header #bar {
 
 .item:nth-of-type(2) .pf4 .pf4_bg .pf4_ypaint1{
     position: absolute;
-    top: 46%;
+    top: 44%;
     left: 17%;
     width: 71%;
     z-index: 2;
@@ -503,7 +503,7 @@ header #bar {
 
 .item:nth-of-type(2) .pf4 .pf4_bg .pf4_ypaint2{
     position: absolute;
-    bottom: 37%;
+    bottom: 39.8%;
     left: 31%;
     width: 45%;
     z-index: 2;
@@ -523,7 +523,7 @@ header #bar {
 
 .item:nth-of-type(2) .pf4 .pf4_bg .ypaint_hide2 {
     position: absolute;
-    bottom: 38%;
+    bottom: 40%;
     left: 16%;
     width: 70%;
     height: 6%;
@@ -533,6 +533,7 @@ header #bar {
 }
 
 .item:nth-of-type(2) .pf4 .pf4_bg .smile {
+    position: relative;
     position: absolute;
     /* top: 36.7%; */
     top: 48.7%;
@@ -549,9 +550,20 @@ header #bar {
     cursor: default;
 }
 
+.item:nth-of-type(2) .pf4 .pf4_bg .cls-1 {
+    z-index: 0;
+}
+
+.item:nth-of-type(2) .pf4 .pf4_bg .blind {
+    z-index: 2;
+    position: absolute;
+    transform-origin: 15px 10px;
+}
+
 .item:nth-of-type(2) .pf4 .pf4_bg #smile2 {
     z-index: 1;
     cursor: default;
+    /* visibility: hidden; */
 }
 
 
