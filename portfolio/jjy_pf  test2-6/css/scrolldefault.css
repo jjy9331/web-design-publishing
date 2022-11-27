@@ -572,7 +572,7 @@ header #bar {
 
 @keyframes growsmile {
     0% { transform: scale(0); }
-    75% { transform: scale(0.1); }
+    75% { transform: scale(0); }
     100% { transform: scale(1); }
 }
 
