@@ -98,17 +98,6 @@ header ul li:hover {
 
 
 
-header #bar { 
-    position:absolute; 
-    right:673px; 
-    bottom:30px; 
-    width:35px; 
-    height:3px; 
-    background:rgba(0, 0, 0, 0.5); 
-    /* margin-left: 23px; */
-    z-index: 1001;
-    /* border-left: 23px dashed rgba(0,0,0,1); */
-}
 
 
 

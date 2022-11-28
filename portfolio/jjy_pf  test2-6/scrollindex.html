@@ -11,6 +11,44 @@
 
 <script>
     $(function(){
+        $("header .inner .logo").click(function(){
+                    $('html,body').animate({ scrollTop:0},2100); return false;	    
+        })
+
+        $("header .inner ul li:eq(0) a, h1 a").click(function(){
+                $('html,body').animate({ scrollTop:0},2100); return false;	    
+        })
+        $("header .inner ul li:eq(1) a").click(function(){
+                $('html,body').animate({ scrollTop:14775},2100); return false;
+        })
+        $("header .inner ul li:eq(2) a").click(function(){
+                $('html,body').animate({ scrollTop:63996},2100); return false;
+        })
+        // $("header .inner ul li:eq(3) a").click(function(){
+        //         $('html,body').animate({ scrollTop:3170},700); return false;
+        // })
+
+        $(window).scroll(function(){
+            var b = $(document).scrollTop(); 
+            if((b >=0) && (b < 13284)) {
+                $('header ul li:nth-child(1) a').text('"홈"');
+                $('header ul li:nth-child(2) a').text('자기소개');
+                $('header ul li:nth-child(3) a').text('포트폴리오');
+                $('header ul li:nth-child(4) a').text('컨텍스트');
+            }
+            if((b >=14775) && (b < 53435)) {
+                $('header ul li:nth-child(1) a').text('홈');
+                $('header ul li:nth-child(2) a').text('"자기소개"');
+                $('header ul li:nth-child(3) a').text('포트폴리오');
+                $('header ul li:nth-child(4) a').text('컨텍스트');
+            }
+            if((b >=63996) && (b < 202085)) {
+                $('header ul li:nth-child(1) a').text('홈');
+                $('header ul li:nth-child(2) a').text('자기소개');
+                $('header ul li:nth-child(3) a').text('"포트폴리오"');
+                $('header ul li:nth-child(4) a').text('컨텍스트');
+            }
+        });
 
         // pf2 zerolab eye animation 
 
@@ -248,6 +286,7 @@
 <body>
 
 
+    
 
 <header>
     <div class="inner">
@@ -270,7 +309,6 @@
                 <a href="#contact">컨텍스트</a>
             </li>
         </ul>
-        <div id="bar"></div>
     </div>
 </header>
 
