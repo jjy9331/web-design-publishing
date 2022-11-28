@@ -115,7 +115,7 @@
             // }, {passive: false});   
             
             
- 
+
 
 
 
@@ -220,6 +220,24 @@
             // smile.style.top = '35.7%'
         }
 
+        //////////////////////////////////////////////////////////
+
+        // pf_more
+
+        var pfmore = document.querySelector('.pf_more_iphone');
+        var pfmore_img = document.querySelector('.pf_more_img');
+        
+
+
+        pfmore.addEventListener('mouseover', () => {
+            pfmore_img.src="images/more_view.gif"
+        });
+
+        pfmore.addEventListener('mouseout',() => pf_more_mouseout());
+
+        function pf_more_mouseout() {
+            pfmore_img.src="images/more_bg.png"
+        }
     });
 </script>
 
@@ -356,6 +374,7 @@
             data-107499="right:25%;"
             data-114499="right:25%;"
             data-121499="right:100%;"
+            data-121500="display:none; "
         >
             <a href="#">
                 <img src="images/monitor.png" alt="monitor" class="pf2_monitor">
@@ -378,6 +397,7 @@
             data-132499="right:25%;"
             data-139499="right:25%;"
             data-146499="right:100%;"
+            data-146500="display:none; "
         >
             <a href="#">
 
@@ -391,34 +411,64 @@
             data-153499="right:41.78%;"
             data-160499="right:41.78%;"
             data-167499="right:100%;"
+            data-167500="display:none; "
         >
-        <a href="#">
-            <img src="images/iphone.png" alt="iphone" class="pf4_iphone">
-            <div class="pf4_bg">
-                <img src="images/hss_log.svg" alt="happy_socks_logo" class="hss_logo">
-                <p class="pf4_subp">모바일 리디자인</p>
-                <div class="ypaint_hide1"></div>
-                <div class="ypaint_hide2"></div>
-                <img src="images/ypaint.png" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint1">
-                <img src="images/ypaint.png" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint2">
+            <a href="#">
+                <img src="images/iphone.png" alt="iphone" class="pf4_iphone">
+                <div class="pf4_bg">
+                    <img src="images/hss_log.svg" alt="happy_socks_logo" class="hss_logo">
+                    <p class="pf4_subp">모바일 리디자인</p>
+                    <div class="ypaint_hide1"></div>
+                    <div class="ypaint_hide2"></div>
+                    <img src="images/ypaint.png" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint1">
+                    <img src="images/ypaint.png" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint2">
 
-                <svg class="smile"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.62 31.62" preserveAspectRatio="none">
-                        <style>
-                            .cls-1{fill:#ffe422;}
-                            .blind{fill:#ffe422;}
-                            .cls-2{fill:#000;}
-                        </style>
-                        <circle class="cls-1" cx="15.81" cy="15.81" r="15.81"/>
-                        <g id="smile2">
-                            <path class="cls-3" d="M1216.67,463.09h0a.49.49,0,0,0-.58.36,1.49,1.49,0,0,1-2.9,0,.64.64,0,0,0,0-.07.48.48,0,1,0-.92.3,2.46,2.46,0,0,0,1.89,1.81,9.15,9.15,0,0,1-18.29,0,2.45,2.45,0,0,0,1.89-1.8h0a.47.47,0,0,0-.35-.58h0a.5.5,0,0,0-.59.36,1.49,1.49,0,0,1-2.9,0s0-.05,0-.07a.49.49,0,0,0-.61-.31.49.49,0,0,0-.31.61,2.44,2.44,0,0,0,1.91,1.81,10.12,10.12,0,0,0,20.23,0,2.47,2.47,0,0,0,1.92-1.81h0A.49.49,0,0,0,1216.67,463.09Z" transform="translate(-1189.16 -449.4)"/>
-                        </g>
+                    <svg class="smile"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.62 31.62" preserveAspectRatio="none">
+                            <style>
+                                .cls-1{fill:#ffe422;}
+                                .blind{fill:#ffe422;}
+                                .cls-2{fill:#000;}
+                            </style>
+                            <circle class="cls-1" cx="15.81" cy="15.81" r="15.81"/>
+                            <g id="smile2">
+                                <path class="cls-3" d="M1216.67,463.09h0a.49.49,0,0,0-.58.36,1.49,1.49,0,0,1-2.9,0,.64.64,0,0,0,0-.07.48.48,0,1,0-.92.3,2.46,2.46,0,0,0,1.89,1.81,9.15,9.15,0,0,1-18.29,0,2.45,2.45,0,0,0,1.89-1.8h0a.47.47,0,0,0-.35-.58h0a.5.5,0,0,0-.59.36,1.49,1.49,0,0,1-2.9,0s0-.05,0-.07a.49.49,0,0,0-.61-.31.49.49,0,0,0-.31.61,2.44,2.44,0,0,0,1.91,1.81,10.12,10.12,0,0,0,20.23,0,2.47,2.47,0,0,0,1.92-1.81h0A.49.49,0,0,0,1216.67,463.09Z" transform="translate(-1189.16 -449.4)"/>
+                            </g>
 
-                        <!-- <circle class="blind" cx="15.81" cy="15.81" r="15.81"/> -->
-                    <!-- <path id="smile1" class="cls-2" d="M1205,474.3a.54.54,0,0,1,.56.55.56.56,0,0,1-1.12,0A.54.54,0,0,1,1205,474.3Z" transform="translate(-1189.19 -449.4)"/> -->
-                </svg>
-            </div>
-        </a>
-    </div>
+                            <!-- <circle class="blind" cx="15.81" cy="15.81" r="15.81"/> -->
+                        <!-- <path id="smile1" class="cls-2" d="M1205,474.3a.54.54,0,0,1,.56.55.56.56,0,0,1-1.12,0A.54.54,0,0,1,1205,474.3Z" transform="translate(-1189.19 -449.4)"/> -->
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="pf5"
+            data-0="display:none; "
+            data-167499="display:block; right:-50%;"
+            data-174499="right:25%;"
+            data-181499="right:25%;"
+            data-188499="right:100%;"
+            data-188500="display:none; "
+        >
+            <a href="#">
+                <img src="images/monitor.png" alt="monitor" class="pf5_monitor">
+                
+            </a>
+        </div>
+        <div class="pf_more"
+            data-0="display:none; "
+            data-188499="display:block; right:-50%;"
+            data-195499="right:41.78%;"
+            data-202499="right:41.78%;"
+            data-209499="right:100%;"
+            data-209500="display:none; "
+        >
+            <a href="#">
+                <div class="more">
+                    <img src="images/iphone.png" alt="iphone" class="pf_more_iphone">
+                    <!-- <img src="images/more_bg.png" class="pf_more_img" alt="pf_more" onmouseover="this.src='images/more_view.gif'" onmouseout="this.src='images/more_bg.png'"> -->
+                    <img src="images/more_bg.png" class="pf_more_img" alt="pf_more">
+                </div>
+            </a>
+        </div>
         
     </section>
 
