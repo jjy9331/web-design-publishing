@@ -65,7 +65,7 @@ header .inner {
 header ul {
     position: absolute; 
     right: 9px; 
-    top: 23px;
+    top: 26px;
     padding-right: 1%;
     /* border: 2px dashed yellow; box-sizing: border-box; */
 } 
@@ -78,7 +78,8 @@ header a .logo {
     width: 105px;
 }
 
-header ul li {float: left;
+header ul li {
+    float: left;
     font-family: 'Noto Sans KR';
     font-size: 16.5px;
     font-weight: 500;
@@ -86,15 +87,144 @@ header ul li {float: left;
     line-height: 1em;
 }
 
-header ul li:nth-child(1) { padding-right:55px}
-header ul li:nth-child(2) { padding-right:55px}
-header ul li:nth-child(3) { padding-right:55px}
-
-header ul li:hover {
-    /* text-decoration: underline; */
-    /* font-weight: 900; */
+header ul li:nth-child(1) { position: relative; padding-right:55px}
+header ul li:nth-child(1) .hr_d1 { 
+    position: absolute;
+    top: -5px;
+    left: 6px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+header ul li:nth-child(2) { position: relative; padding-right:55px}
+header ul li:nth-child(2) .hr_d2 { 
+    position: absolute;
+    top: -5px;
+    left: 6px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
 }
 
+header ul li:nth-child(2) .hr_d3 { 
+    position: absolute;
+    top: -5px;
+    left: 21px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+header ul li:nth-child(2) .hr_d4 { 
+    position: absolute;
+    top: -5px;
+    left: 36px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+header ul li:nth-child(2) .hr_d5 { 
+    position: absolute;
+    top: -5px;
+    left: 52px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+header ul li:nth-child(3) { position: relative; padding-right:55px}
+header ul li:nth-child(3) .hr_d6 { 
+    position: absolute;
+    top: -5px;
+    left: 6px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+
+header ul li:nth-child(3) .hr_d7 { 
+    position: absolute;
+    top: -5px;
+    left: 21px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+header ul li:nth-child(3) .hr_d8 { 
+    position: absolute;
+    top: -5px;
+    left: 36px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+header ul li:nth-child(3) .hr_d9 { 
+    position: absolute;
+    top: -5px;
+    left: 52px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+header ul li:nth-child(3) .hr_d10 { 
+    position: absolute;
+    top: -5px;
+    left: 66px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+
+header ul li:nth-child(4) { position: relative;}
+header ul li:nth-child(4) .hr_d11 { 
+    position: absolute;
+    top: -5px;
+    left: 6px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+
+header ul li:nth-child(4) .hr_d12 { 
+    position: absolute;
+    top: -5px;
+    left: 21px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
+header ul li:nth-child(4) .hr_d13 { 
+    position: absolute;
+    top: -5px;
+    left: 36px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    visibility: hidden; 
+}
 
 
 
@@ -287,11 +417,7 @@ header ul li:hover {
     height: 1080px;
     background-color: black;
 }
-.item:nth-of-type(1){
-    /* background-color: black; */
-    /* width: 100%; */
-    /* object-fit: cover; */
-}
+
 
 .item:nth-of-type(1) .wrapper {
     width: 100%;
@@ -306,11 +432,10 @@ header ul li:hover {
     object-fit: cover;
 }
 
-.item:nth-of-type(2) {
-    /* background-color: white; */
-}
+
 
 .item:nth-of-type(2) .pf1 {
+    position: relative;
     position: fixed;
     bottom: 14%;
     /* background-color: darkkhaki; */
@@ -320,6 +445,110 @@ header ul li:hover {
     width: 1343px;
     height: 755px;
     /* background-color: darkkhaki; */
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+#pf1back {
+    position: absolute;
+    top: 48%;
+    left: -12%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#pf1next {
+    position: absolute;    
+    top: 48%;
+    right: -12%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#pf2back {
+    position: absolute;
+    top: 48%;
+    left: -27%;
+    visibility: hidden;
+    z-index: 6;
+    cursor: pointer;
+}
+
+#pf2next {
+    position: absolute;    
+    top: 48%;
+    right: -27%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#pf3back {
+    position: absolute;
+    top: 48%;
+    left: -27%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#pf3next {
+    position: absolute;    
+    top: 48%;
+    right: -27%;
+    visibility: hidden;
+    cursor: pointer;
+}
+#pf4back {
+    position: absolute;
+    top: 48%;
+    left: -128%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#pf4next {
+    position: absolute;    
+    top: 48%;
+    right: -128%;
+    visibility: hidden;
+    cursor: pointer;
+}
+#pf5back {
+    position: absolute;
+    top: 48%;
+    left: -27%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#pf5next {
+    position: absolute;    
+    top: 48%;
+    right: -27%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#pfmback {
+    position: absolute;
+    top: 48%;
+    left: -128%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#pfmnext {
+    position: absolute;    
+    top: 48%;
+    right: -128%;
+    visibility: hidden;
+    cursor: pointer;
 }
 
 .item:nth-of-type(2) .pf2 {
@@ -419,7 +648,7 @@ header ul li:hover {
     /* background-color: darkkhaki; */
 }
 
-.item:nth-of-type(2) .pf3 .movie { 
+.item:nth-of-type(2) .pf3 .movie1 { 
     /* position: relative;  */
     position: absolute; 
     top: 4%;
@@ -434,7 +663,7 @@ header ul li:hover {
     
 }
 
-.item:nth-of-type(2) .pf3 .movie img { 
+.item:nth-of-type(2) .pf3 .movie1 img { 
     /* zoom: 1.825; */
     position:absolute; 
     visibility:hidden;
@@ -583,6 +812,44 @@ header ul li:hover {
     height: 730px;
     z-index: 10;
     /* background-color: darkkhaki; */
+}
+
+.item:nth-of-type(2) .pf5 {
+    position: fixed;
+    bottom: 14%;
+    /* background-color: darkkhaki; */
+}
+.item:nth-of-type(2) .pf5 img:nth-child(1) {
+    position: relative;
+    width: 960px;
+    height: 730px;
+    z-index: 10;
+    /* background-color: darkkhaki; */
+}
+
+.item:nth-of-type(2) .pf5 .movie2 { 
+    /* position: relative; */
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    /* border: 5px dashed #777777; */
+    /* object-fit: cover; */
+    /* width: 1920px; */
+    /* height: 1080px; */
+    width: 93%;
+    height: 69%;
+    z-index: 5;
+}
+
+.item:nth-of-type(2) .pf5 .movie2 img { 
+    /* zoom: 1.825; */
+    position:absolute; 
+    visibility:hidden;
+    width:100%; 
+    object-fit: cover;
+    /* background-size: cover; */
+    /* border:5px dashed #777777;  */
+    height:100%; 
 }
 
 
