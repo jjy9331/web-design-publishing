@@ -31,24 +31,72 @@
         $(window).scroll(function(){
             var b = $(document).scrollTop(); 
             if((b >=0) && (b < 13284)) {
-                $('header ul li:nth-child(1) a').text('"홈"');
-                $('header ul li:nth-child(2) a').text('자기소개');
-                $('header ul li:nth-child(3) a').text('포트폴리오');
-                $('header ul li:nth-child(4) a').text('컨텍스트');
+                $('header ul li:nth-child(1) .hr_d1').css("visibility","visible");
+
+                $('header ul li:nth-child(2) .hr_d2').css("visibility","hidden");
+                $('header ul li:nth-child(2) .hr_d3').css("visibility","hidden");
+                $('header ul li:nth-child(2) .hr_d4').css("visibility","hidden");
+                $('header ul li:nth-child(2) .hr_d5').css("visibility","hidden");
+
+                $('header ul li:nth-child(3) .hr_d6').css("visibility","hidden");
+                $('header ul li:nth-child(3) .hr_d7').css("visibility","hidden");
+                $('header ul li:nth-child(3) .hr_d8').css("visibility","hidden");
+                $('header ul li:nth-child(3) .hr_d9').css("visibility","hidden");
+                $('header ul li:nth-child(3) .hr_d10').css("visibility","hidden");
             }
             if((b >=14775) && (b < 53435)) {
-                $('header ul li:nth-child(1) a').text('홈');
-                $('header ul li:nth-child(2) a').text('"자기소개"');
-                $('header ul li:nth-child(3) a').text('포트폴리오');
-                $('header ul li:nth-child(4) a').text('컨텍스트');
+                $('header ul li:nth-child(1) .hr_d1').css("visibility","hidden");
+
+                $('header ul li:nth-child(2) .hr_d2').css("visibility","visible");
+                $('header ul li:nth-child(2) .hr_d3').css("visibility","visible");
+                $('header ul li:nth-child(2) .hr_d4').css("visibility","visible");
+                $('header ul li:nth-child(2) .hr_d5').css("visibility","visible");
+
+                $('header ul li:nth-child(3) .hr_d6').css("visibility","hidden");
+                $('header ul li:nth-child(3) .hr_d7').css("visibility","hidden");
+                $('header ul li:nth-child(3) .hr_d8').css("visibility","hidden");
+                $('header ul li:nth-child(3) .hr_d9').css("visibility","hidden");
+                $('header ul li:nth-child(3) .hr_d10').css("visibility","hidden");
             }
             if((b >=63996) && (b < 202085)) {
-                $('header ul li:nth-child(1) a').text('홈');
-                $('header ul li:nth-child(2) a').text('자기소개');
-                $('header ul li:nth-child(3) a').text('"포트폴리오"');
-                $('header ul li:nth-child(4) a').text('컨텍스트');
+
+                $('header ul li:nth-child(1) .hr_d1').css("visibility","hidden");
+
+                $('header ul li:nth-child(2) .hr_d2').css("visibility","hidden");
+                $('header ul li:nth-child(2) .hr_d3').css("visibility","hidden");
+                $('header ul li:nth-child(2) .hr_d4').css("visibility","hidden");
+                $('header ul li:nth-child(2) .hr_d5').css("visibility","hidden");
+
+                $('header ul li:nth-child(3) .hr_d6').css("visibility","visible");
+                $('header ul li:nth-child(3) .hr_d7').css("visibility","visible");
+                $('header ul li:nth-child(3) .hr_d8').css("visibility","visible");
+                $('header ul li:nth-child(3) .hr_d9').css("visibility","visible");
+                $('header ul li:nth-child(3) .hr_d10').css("visibility","visible");
+
             }
         });
+
+        // $(window).scroll(function(){
+        //     var b = $(document).scrollTop(); 
+        //     if((b >=0) && (b < 13284)) {
+        //         $('header ul li:nth-child(1) a').text('"홈"');
+        //         $('header ul li:nth-child(2) a').text('자기소개');
+        //         $('header ul li:nth-child(3) a').text('포트폴리오');
+        //         $('header ul li:nth-child(4) a').text('컨텍스트');
+        //     }
+        //     if((b >=14775) && (b < 53435)) {
+        //         $('header ul li:nth-child(1) a').text('홈');
+        //         $('header ul li:nth-child(2) a').text('"자기소개"');
+        //         $('header ul li:nth-child(3) a').text('포트폴리오');
+        //         $('header ul li:nth-child(4) a').text('컨텍스트');
+        //     }
+        //     if((b >=63996) && (b < 202085)) {
+        //         $('header ul li:nth-child(1) a').text('홈');
+        //         $('header ul li:nth-child(2) a').text('자기소개');
+        //         $('header ul li:nth-child(3) a').text('"포트폴리오"');
+        //         $('header ul li:nth-child(4) a').text('컨텍스트');
+        //     }
+        // });
 
         // pf2 zerolab eye animation 
 
@@ -75,21 +123,21 @@
 
 
 
-        // pf3 mohenic car light animation 
+        // pf3 mohenic intro
 
 
         //이미지 불러오기
         for (i=0; i<=101; i++){
-            $(".movie").append("<img src='mohenic_sequence2/"+i.toString().padStart(3, '0')+".png'>");
+            $(".movie1").append("<img src='mohenic_sequence3/"+i.toString().padStart(3, '0')+".png'>");
         }
-        $(".movie img:first").css({visibility:"visible"});
+        $(".movie1 img:first").css({visibility:"visible"});
 
         //애니메이션 시키기
         var frameNum=0;
             
         var pf3m = document.querySelector('.pf3');
         // var pf3m = document.querySelector('.pf3_monitor');
-        // var pf3m = document.querySelector('.movie');
+        // var pf3m = document.querySelector('.movie1');
 
         var k1;
         var k2;
@@ -97,14 +145,14 @@
         var wy = window.scrollY;
 
         pf3m.addEventListener('mouseover',() => {
-            function aniNext(){   
+            function aniNext1(){   
                 var inc1 = frameNum++;
 
-                $(".movie img").css({visibility:"hidden"});
+                $(".movie1 img").css({visibility:"hidden"});
 
-                $(".movie img:eq("+inc1+")").css({visibility:"visible"});
+                $(".movie1 img:eq("+inc1+")").css({visibility:"visible"});
 
-                $(".movie").animate(
+                $(".movie1").animate(
                     {center:101},
                     2019.8,
                     function(){
@@ -127,15 +175,15 @@
                 //         frameNum = 0;
                 //         console.log("inc1:"+inc1);
                 //         console.log("frameNum:"+frameNum);
-                //         // pf3m.removeEventListener('mouseover',() => {aniNext();})
-                //         pf3m.removeEventListener('mouseover', aniNext);
+                //         // pf3m.removeEventListener('mouseover',() => {aniNext1();})
+                //         pf3m.removeEventListener('mouseover', aniNext1);
 
                 //     }   
                 // }, {passive: false});   
 
 
             }
-            var k1 = setInterval(aniNext,12.5); //aniNext 함수 실행
+            var k1 = setInterval(aniNext1,12.5); //aniNext1 함수 실행
 
             // window.addEventListener('scroll', function(e) {
     
@@ -145,8 +193,8 @@
             //         frameNum = 0;
             //         console.log("inc1:"+inc1);
             //         console.log("frameNum:"+frameNum);
-            //         // pf3m.removeEventListener('mouseover',() => {aniNext();})
-            //         pf3m.removeEventListener('mouseover', aniNext);
+            //         // pf3m.removeEventListener('mouseover',() => {aniNext1();})
+            //         pf3m.removeEventListener('mouseover', aniNext1);
 
             //     }   
 
@@ -162,15 +210,15 @@
         var k1;
         var k2;
         var inc2;
-            pf3m.addEventListener('mouseout',() => aniBack());
-            function aniBack() {
+            pf3m.addEventListener('mouseout',() => aniBack1());
+            function aniBack1() {
                     let inc2 = frameNum--;
     
-                    $(".movie img").css({visibility:"hidden"});
+                    $(".movie1 img").css({visibility:"hidden"});
     
-                    $(".movie img:eq("+inc2+")").css({visibility:"visible"});
+                    $(".movie1 img:eq("+inc2+")").css({visibility:"visible"});
     
-                    $(".movie").animate(
+                    $(".movie1").animate(
                         {center:101},
                         1000,
                         function(){
@@ -181,8 +229,8 @@
                     console.log("inc2:"+inc2);
                         console.log("mouseout")
                     if(inc2 >= 101){
-                        // k2 = setInterval(aniBack,12.5); //setInterval종료
-                        k2 = setInterval(aniBack,14.5); //setInterval종료
+                        // k2 = setInterval(aniBack1,12.5); //setInterval종료
+                        k2 = setInterval(aniBack1,14.5); //setInterval종료
                         clearInterval(k1);
                     }
 
@@ -195,7 +243,7 @@
                     }
         
                 }
-                var k2 = setInterval(aniBack,12.5)
+                var k2 = setInterval(aniBack1,12.5)
                 // window.addEventListener('scroll', function(e) {
     
                 //     var sY = window.scrollY;
@@ -207,6 +255,8 @@
                 // }, {passive: false});    
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // pf4 happysocks intro
 
         var pf4p = document.querySelector('.pf4_iphone');
         var wbox1 = document.querySelector('.ypaint_hide1');
@@ -260,6 +310,107 @@
 
         //////////////////////////////////////////////////////////
 
+        // pf5 volvo_intro
+
+        //이미지 불러오기
+        for (i=0; i<=40; i++){
+            $(".movie2").append("<img src='volvo_sequence/"+i.toString().padStart(3, '0')+".jpg'>");
+        }
+        $(".movie2 img:first").css({visibility:"visible"});
+
+        //애니메이션 시키기
+        var frameNum=0;
+            
+        var pf5m = document.querySelector('.pf5');
+
+        var k3;
+        var k4;
+        var inc3;
+        var wy = window.scrollY;
+
+        pf5m.addEventListener('mouseover',() => {
+            function aniNext2(){   
+                var inc3 = frameNum++;
+
+                $(".movie2 img").css({visibility:"hidden"});
+
+                $(".movie2 img:eq("+inc3+")").css({visibility:"visible"});
+
+                $(".movie2").animate(
+                    {center:40},
+                    2019.8,
+                    function(){
+                    clearInterval(k3);
+                });
+                
+                console.log("inc3:"+inc3);
+                console.log("mouseover")
+                if(inc3 >=40){ //로딩이 완료되면
+                    clearInterval(k3); //setInterval종료					
+                    frameNum = 40;
+                }
+                else if (frameNum > 0) {
+                    clearInterval(k4); //mouseout 중 mouseover할때 mouseout, mouseover setInteval 충돌방지  
+                }
+
+
+
+            }
+            var k3 = setInterval(aniNext2,40.5); //aniNext 함수 실행
+
+            
+
+
+
+
+        });
+
+        var k3;
+        var k4;
+        var inc4;
+            pf5m.addEventListener('mouseout',() => aniBack2());
+            function aniBack2() {
+                    let inc4 = frameNum--;
+    
+                    $(".movie2 img").css({visibility:"hidden"});
+    
+                    $(".movie2 img:eq("+inc4+")").css({visibility:"visible"});
+    
+                    $(".movie2").animate(
+                        {center:40},
+                        1000,
+                        function(){
+                        clearInterval(k4);
+                    }
+                    );
+    
+                    console.log("inc4:"+inc4);
+                        console.log("mouseout")
+                    if(inc4 >= 40){
+                        k4 = setInterval(aniBack2,40.5); //setInterval종료
+                        clearInterval(k3);
+                    }
+
+                    else if (inc4 <= 0 ) {
+                        frameNum = 0;
+                        if( inc4 == 0){
+                            console.log("minor")
+                            clearInterval(k4);
+                        }
+                    }
+        
+                }
+                var k4 = setInterval(aniBack2,40.5)
+
+
+
+
+
+
+
+
+        //////////////////////////////////////////////////////////
+
         // pf_more
 
         var pfmore = document.querySelector('.pf_more_iphone');
@@ -298,15 +449,29 @@
         <ul>
             <li>
                 <a href="#home">홈</a>
+                <div class="hr_d1"></div>
             </li>
             <li>
                 <a href="#introduce">자기소개</a>
+                <div class="hr_d2"></div>
+                <div class="hr_d3"></div>
+                <div class="hr_d4"></div>
+                <div class="hr_d5"></div>
             </li>
             <li>
                 <a href="#portfolio">포트폴리오</a>
+                <div class="hr_d6"></div>
+                <div class="hr_d7"></div>
+                <div class="hr_d8"></div>
+                <div class="hr_d9"></div>
+                <div class="hr_d10"></div>
             </li>
             <li>
-                <a href="#contact">컨텍스트</a>
+                <a href="#contact">컨텍트</a>
+                <div class="hr_d11"></div>
+                <div class="hr_d12"></div>
+                <div class="hr_d13"></div>
+                <div class="hr_d14"></div>
             </li>
         </ul>
     </div>
@@ -438,9 +603,8 @@
             data-146500="display:none; "
         >
             <a href="#">
-
                 <img src="images/monitor.png" alt="monitor" class="pf3_monitor">
-                <div class="movie"></div>
+                <div class="movie1"></div>
             </a>
         </div>
         <div class="pf4"
@@ -488,6 +652,7 @@
         >
             <a href="#">
                 <img src="images/monitor.png" alt="monitor" class="pf5_monitor">
+                <div class="movie2"></div>
                 
             </a>
         </div>
