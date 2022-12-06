@@ -41,7 +41,7 @@ window.addEventListener('scroll', function(e) {
     if (scrollYPos >= 485) scrollYPos = 485;
     
     // scrollYPos = scrollYPos % 486
-    if( y <= 11200) scrollYPos = 0;
+    if( y <= 14941) scrollYPos = 0;
     player(scrollYPos);
     console.log("scrollYPos: "+scrollYPos);
 
