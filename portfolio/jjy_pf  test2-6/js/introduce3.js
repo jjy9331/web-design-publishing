@@ -43,7 +43,7 @@ window.addEventListener('scroll', function(e) {
     // scrollYPos = scrollYPos % 486
     if( y <= 11200) scrollYPos = 0;
     player(scrollYPos);
-    console.log(scrollYPos);
+    console.log("scrollYPos: "+scrollYPos);
 
 
 }, {passive: false});
@@ -58,8 +58,8 @@ window.addEventListener('scroll', function(e) {
 //         });
 // });
 
-function player(num) {
-    img.src = "./track_run_start4/"+ num + ".png";
+function player(num1) {
+    img.src = "./track_run_start4/"+ num1 + ".png";
 }
 
 img.addEventListener('load', function(e) {
