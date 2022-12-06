@@ -5,7 +5,8 @@ var ctx2 = canvas2.getContext('2d');
 var scrollYPos2;
 
 
-cimg.src = "./contact_ani/0.png";
+// cimg.src = "./contact_ani/0.png";
+cimg.src = "./contact_ani2/000.png";
 
 // canvas2.width = $(window).width();
 // canvas2.height = $(window).height();
@@ -43,7 +44,7 @@ window.addEventListener('scroll', function(e) {
 
     
     if (scrollYPos2 == 0) scrollYPos2 = 0;
-    if (scrollYPos2 >= 251) scrollYPos2 = 251;
+    if (scrollYPos2 >= 254) scrollYPos2 = 254;
     
     // scrollYPos2 = scrollYPos2 % 486
     if( y2 <= 209520) scrollYPos2 = 0;
@@ -65,8 +66,8 @@ window.addEventListener('scroll', function(e) {
 // });
 
 function player2(num2) {
-    cimg.src = "./contact_ani/"+ num2 + ".png";
-    // cimg.src = "./contact_ani/"+ num.padStart(3, '0') + ".png";
+    // cimg.src = "./contact_ani/"+ num2 + ".png";
+    cimg.src = "./contact_ani2/"+ num2.toString().padStart(3, '0') + ".png";
 }
 
 cimg.addEventListener('load', function(e) {
