@@ -29,7 +29,11 @@ window.addEventListener('scroll', function(e) {
     var y2 = window.scrollY;
 
     
-    scrollYPos2 = Math.round(((window.scrollY/1000)-209));
+    // scrollYPos2 = Math.round(((window.scrollY/4000)-52.38));
+    // scrollYPos2 = Math.round(((window.scrollY/2000)-104.76));
+    // scrollYPos2 = Math.round(((window.scrollY/1000)-209));
+    // scrollYPos2 = Math.round(((window.scrollY/500)-419.04));
+    scrollYPos2 = Math.round(((window.scrollY/250)-838.08));
     // scrollYPos2 = Math.round(((window.scrollY/60)-187));
     // scrollYPos2 = Math.round(((window.scrollY/30)-374));
     // scrollYPos2 = Math.round((window.scrollY/30)-375);
