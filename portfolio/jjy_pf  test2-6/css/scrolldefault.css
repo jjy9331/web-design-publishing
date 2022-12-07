@@ -242,7 +242,7 @@ header ul li:nth-child(4) .hr_d13 {
 
 
 .item:nth-of-type(1) {
-    /* background-color: bisque; */
+    background-color: white;
     height: 11000px;
 }
 
@@ -287,6 +287,7 @@ header ul li:nth-child(4) .hr_d13 {
     font-size: 2.45vw; 
     line-height: 1em;
     margin-top: -14px;
+    color: black;
     /* padding-top: 14px; */
     /* border: 2px dashed orange; box-sizing: border-box; */
 }
@@ -320,7 +321,8 @@ header ul li:nth-child(4) .hr_d13 {
     font-size: 8vw; 
     line-height: 1em;
     margin-top: -14px;
-    font-size: 2.45vw; 
+    font-size: 2.45vw;
+    color: black; 
     /* padding-top: 14px; */
     /* border: 2px dashed orange; box-sizing: border-box; */
 }
@@ -432,6 +434,10 @@ header ul li:nth-child(4) .hr_d13 {
     object-fit: cover;
 }
 
+
+.portfolio {
+    background-color: white;
+}
 
 
 .item:nth-of-type(2) .pf1 {
@@ -581,12 +587,12 @@ header ul li:nth-child(4) .hr_d13 {
     right: 8%;
     /* font-family: 'Black Han Sans', sans-serif; */
     font-family: 'Open Sans', sans-serif;
-    font-size: 5vw;
+    font-size: 100px;
     font-weight: bold;
 }
 
 .item:nth-of-type(2) .pf2 .pf2_bg h3 span{
-    font-weight: 400;
+    font-weight: 100;
 }
 
 .item:nth-of-type(2) .pf2 .pf2_bg p{
@@ -594,8 +600,8 @@ header ul li:nth-child(4) .hr_d13 {
     top: 27%;
     right: 9%;
     /* font-family: 'Black Han Sans', sans-serif; */
-    font-family:'Noto Sans KR'; 
-    font-size: 1.5vw;
+    font-family: 'Noto Sans KR';
+    font-size: 30px;
     font-weight: 100;
     opacity: 70%;
 }
@@ -689,6 +695,16 @@ header ul li:nth-child(4) .hr_d13 {
     /* background-color: darkkhaki; */
 }
 
+.item:nth-of-type(2) .pf4 .pf4_bg .pf4bg {
+    position: absolute;
+    top: 12%;
+    left: 7%;
+    width: 280px;
+    height: 511px;
+    background-color: white;
+    z-index: 0;
+}
+
 .item:nth-of-type(2) .pf4 .pf4_bg .hss_logo{
     position: absolute;
     bottom: 1.5%;
@@ -745,6 +761,17 @@ header ul li:nth-child(4) .hr_d13 {
     left: 16%;
     width: 70%;
     height: 6%;
+    z-index: 4;
+    background-color: white;
+    cursor: default;
+}
+
+.item:nth-of-type(2) .pf4 .pf4_bg .ypaint_hide3 {
+    position: absolute;
+    bottom: 40%;
+    left: 98%;
+    width: 75%;
+    height: 23%;
     z-index: 4;
     background-color: white;
     cursor: default;
@@ -867,6 +894,16 @@ header ul li:nth-child(4) .hr_d13 {
     /* background-color: darkkhaki; */
 }
 
+.item:nth-of-type(2) .more .pfmore_bg {
+    position: absolute;
+    top: 12%;
+    left: 7%;
+    width: 280px;
+    height: 511px;
+    background-color: white;
+    z-index: 0;
+}
+
 .item:nth-of-type(2) .more img:nth-child(1) {
     position: absolute;
     width: 320px;
@@ -954,6 +991,7 @@ footer .inner p {
     /* height: 100px; */
     border: 3px solid transparent;
     /* border: 3px solid black; */
+    font-size: 11px; 
     padding-right: 1.5%;
 }
 
@@ -965,6 +1003,6 @@ footer .inner p {
     font-weight: 500; 
 	cursor: pointer;
 }
-.darkmode .invert:hover{ text-decoration: underline;}
+.darkmode .invert_text:hover{ text-decoration: underline;}
 
 

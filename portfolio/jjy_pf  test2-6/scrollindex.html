@@ -50,7 +50,7 @@
                 $('header ul li:nth-child(4) .hr_d12').css("visibility","hidden");
                 $('header ul li:nth-child(4) .hr_d13').css("visibility","hidden");
             }
-            if((b >=14941) && (b < 53435)) {
+            if((b >=14775) && (b < 53435)) {
                 $('header ul li:nth-child(1) .hr_d1').css("visibility","hidden");
 
                 $('header ul li:nth-child(2) .hr_d2').css("visibility","visible");
@@ -802,6 +802,8 @@
                     <p class="pf4_subp">모바일 리디자인</p>
                     <div class="ypaint_hide1"></div>
                     <div class="ypaint_hide2"></div>
+                    <div class="ypaint_hide3"></div>
+                    <div class="pf4bg"></div>
                     <img src="images/ypaint.png" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint1">
                     <img src="images/ypaint.png" alt="mouseover_pf4_ypaint_ani_source" class="pf4_ypaint2">
 
@@ -861,6 +863,7 @@
                     <img src="images/iphone.png" alt="iphone" class="pf_more_iphone">
                     <!-- <img src="images/more_bg.png" class="pf_more_img" alt="pf_more" onmouseover="this.src='images/more_view.gif'" onmouseout="this.src='images/more_bg.png'"> -->
                     <img src="images/more_bg.png" class="pf_more_img" alt="pf_more">
+                    <div class="pfmore_bg"></div>
                 </div>
             </a>
         <span id="pfmnext" class="material-symbols-outlined">
@@ -892,7 +895,7 @@
     <div class="inner">
         <p>Copyright &copy; 2022 my portfolio, all right reserved</p>
         <button class="darkmode" >
-            <span class="invert">Dark mode &nbsp;●</span>
+            <span class="invert"><span class="invert_text">Dark mode</span> &nbsp;●</span>
         </button>
     </div>
 </footer>       
@@ -926,24 +929,98 @@
                 left: 100,
                 behavior: 'smooth'
             });
-
-            
-            // window.addEventListener('scroll', function(e) {
-    
-            //     var wy = window.scrollY;
-            //     if(((wy <=121432) && (wy >= 146508))) {	
-            //         inc1 = 0;
-            //         frameNum = 0;
-            //         console.log("inc1:"+inc1);
-            //         console.log("frameNum:"+frameNum);
-            //         // pf3m.removeEventListener('mouseover',() => {aniNext();})
-            //         pf3m.removeEventListener('mouseover', aniNext);
-
-            //     }   
-
-            // }, {passive: false});   
     });
     
+</script>
+<script>
+    $(function(){
+        let toggle = "0";
+
+            $("button").click(function(){//버튼을 클릭했을 때
+                if(toggle=="0"){
+                toggle = "1";
+                $("body").css("background-color","black");
+                $("header").css({filter: "invert(100)"}); 
+                $("footer").css({filter: "invert(100)"});
+                $(".home").css("background-color","black");
+                $(".home h2").css("color","white");
+                $(".home .sec1 .visual img").css({filter: "invert(100)"});
+                $(".home .sec1 .typo h3").css("color","white");
+                $(".home .sec1 .typo p").css('color','rgba(255,255,255,0.4)');
+                $(".portfolio").css("background-color","black");
+                $(".sec2 .typo2 h3").css("color","white");
+                $(".sec2 .typo2 p").css('color','rgba(255,255,255,0.4)');
+                $(".sec2 .typo2 .d1").css("background-color","white");
+                $(".sec2 .typo2 .d2").css("background-color","white");
+                $(".sec2 .typo2 .d3").css("background-color","white");
+                $(".sec2 .typo2 .d4").css("background-color","white");
+                $(".sec2 .typo2 .d5").css('background-color','rgba(255,255,255,0.4)');
+                $(".sec2 .typo2 .d6").css('background-color','rgba(255,255,255,0.4)');
+                $(".bkbox").css("background-color","white");
+                $("#screen").css({filter: "invert(100)"});
+                $("#pf1back").css("color","white");
+                $("#pf2back").css("color","white");
+                $("#pf3back").css("color","white");
+                $("#pf4back").css("color","white");
+                $("#pf5back").css("color","white");
+                $("#pfmback").css("color","white");
+                $("#pf1next").css("color","white");
+                $("#pf2next").css("color","white");
+                $("#pf3next").css("color","white");
+                $("#pf4next").css("color","white");
+                $("#pf5next").css("color","white");
+                $("#pfmnext").css("color","white");
+                $(".eye_hide1").css("background-color","black");
+                $(".eye_hide2").css("background-color","black");
+                $(".pf4 .pf4_bg .ypaint_hide3").css("background-color","black");
+                $("#screen2").css({filter: "invert(100)"});
+                // $(".portfolio").css("background-color","white");
+                }
+                else{
+                toggle = "0";
+                $("body").css("background-color","white");
+                $("header").css({filter: "invert(0)"}); 
+                $("footer").css({filter: "invert(0)"});
+                $(".home").css("background-color","white");
+                $(".home h2").css("color","black");
+                $(".home .sec1 .visual img").css({filter: "invert(0)"});
+                $(".home .sec1 .typo h3").css("color","black");
+                $(".home .sec1 .typo p").css('color','rgba(0,0,0,0.4)');
+                $(".portfolio").css("background-color","white");
+                $(".sec2 .typo2 h3 ").css("color","black");
+                $(".sec2 .typo2 p").css('color','rgba(0,0,0,0.4)');
+                $(".sec2 .typo2 .d1").css("background-color","black");
+                $(".sec2 .typo2 .d2").css("background-color","black");
+                $(".sec2 .typo2 .d3").css("background-color","black");
+                $(".sec2 .typo2 .d4").css("background-color","black");
+                $(".sec2 .typo2 .d5").css('background-color','rgba(0,0,0,0.4)');
+                $(".sec2 .typo2 .d6").css('background-color','rgba(0,0,0,0.4)');
+                $(".bkbox").css("background-color","black");
+                $("#screen").css({filter: "invert(0)"});
+                $("#pf1back").css("color","black");
+                $("#pf2back").css("color","black");
+                $("#pf3back").css("color","black");
+                $("#pf4back").css("color","black");
+                $("#pf5back").css("color","black");
+                $("#pfmback").css("color","black");
+                $("#pf1next").css("color","black");
+                $("#pf2next").css("color","black");
+                $("#pf3next").css("color","black");
+                $("#pf4next").css("color","black");
+                $("#pf5next").css("color","black");
+                $("#pfmnext").css("color","black");
+                $(".eye_hide1").css("background-color","white");
+                $(".eye_hide2").css("background-color","white");
+                $(".pf4 .pf4_bg .ypaint_hide3").css("background-color","white");
+                $("#screen2").css({filter: "invert(0)"});
+                // $(".portfolio").css("background-color","black");
+                // $(".home").css({filter: "invert(0)"});
+                // $(".home h2").css({color: "black"});
+                }
+            });
+
+    });
+
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
