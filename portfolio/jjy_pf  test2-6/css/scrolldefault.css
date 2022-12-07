@@ -617,11 +617,9 @@ header ul li:nth-child(4) .hr_d13 {
 
 .item:nth-of-type(2) .pf2 .pf2_bg .eye_hide1 {
     position: absolute;
-    /* bottom: 0%;
-    left: 0%; */
     bottom: -44%;
-    left: -26%;
-    width: 500px;
+    left: -31%;
+    width: 510px;
     height: 195px;
     z-index: 4;
     background-color: white;
@@ -629,11 +627,9 @@ header ul li:nth-child(4) .hr_d13 {
 }
 .item:nth-of-type(2) .pf2 .pf2_bg .eye_hide2 {
     position: absolute;
-    /* bottom: 0%;
-    left: 0%; */
     bottom: -44%;
-    left: -26%;
-    width: 224px;
+    left: -29%;
+    width: 234px;
     height: 500px;
     z-index: 4;
     background-color: white;
@@ -928,7 +924,7 @@ header ul li:nth-child(4) .hr_d13 {
 
 .item:nth-of-type(3) .wrapper2 {
     width: 100%;
-    height: 6300px;
+    height: 6200px;
     /* object-fit: cover; */
 }
 .item:nth-of-type(3) canvas {
