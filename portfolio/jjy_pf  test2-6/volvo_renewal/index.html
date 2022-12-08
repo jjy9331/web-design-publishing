@@ -14,6 +14,11 @@ h1,h2,h3,h4,h5,h6 {font-size: 12px; line-height: 0;}
 ul {list-style: none;}
 img {border: 0; vertical-align: top;}
 
+html,body {
+    scroll-snap-type: y mandatory; /* 부모 적용 */
+}
+
+
 .wrap { 
     /* border: 1px red dashed;     */
 }
@@ -37,6 +42,7 @@ img {border: 0; vertical-align: top;}
     position: relative;
     /* border: 3px blue dashed; */
     max-width: 1920px;
+    scroll-snap-align: start;
 }
 .wrap .s1 .main_v {
     position: absolute;
@@ -53,6 +59,7 @@ img {border: 0; vertical-align: top;}
     position: relative;
     /* border: 3px blue dashed; */
     max-width: 1920px;
+    scroll-snap-align: start;
 }
 .wrap .s2 .sub_v {
     position: absolute;
@@ -63,6 +70,12 @@ img {border: 0; vertical-align: top;}
     z-index: -10;
     width: 35.5%;
 }
+.wrap .s3 {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
 
 .wrap .s4 {
     position: relative;
@@ -70,6 +83,7 @@ img {border: 0; vertical-align: top;}
     position: relative;
     max-width: 1920px;
     /* border: 3px dashed red; */
+    scroll-snap-align: start;
 }
 
 .wrap .s4 .circle {
@@ -83,6 +97,7 @@ img {border: 0; vertical-align: top;}
     box-sizing: border-box;
     /* border: 1px dashed red; */
     transition: all ease-in-out 0.4s;
+    
 }
 
 .wrap .s4 .circle_big {
@@ -104,12 +119,14 @@ img {border: 0; vertical-align: top;}
     position: relative;
     /* border: 3px blue dashed; */
     max-width: 1920px;
+    scroll-snap-align: start;
 }
 
 .wrap .s6 {
     margin: 0 auto;
     position: relative;
     max-width: 1920px;
+    scroll-snap-align: start;
 }
 
 .wrap .s6 .full_case {
@@ -286,7 +303,7 @@ body {  }
                 <area  alt="move to pdf" title="renewal_plan_view" href="volvo_renewal_plan.pdf" target="blank" coords="151,838,302,797" shape="rect">
             </map>
         </div>
-        <div class="sheet"><img src="img/sec3.png" alt="sec3" class="sec3"  ></div>
+        <div class="sheet s3"><img src="img/sec3.png" alt="sec3" class="sec3"  ></div>
         <div class="sheet s4">
             <div class="circle"></div>
             <img src="img/sec4.png" alt="sec4" class="sec4" >
