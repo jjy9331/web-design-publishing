@@ -3,10 +3,10 @@ $(function(){
 
 
     //이미지 불러오기
-    for (i=0; i<=178; i++){
-        $(".movie").append("<img src='logo_sequence2/"+i+".png'>");
+    for (i=0; i<=119; i++){
+        $(".logo_ani").append("<img src='logo_sequence4/"+i.toString().padStart(3, '0')+".png'>");
     }
-    $(".movie img:first").css({visibility:"visible"});
+    $(".logo_ani img:first").css({visibility:"visible"});
 
     //애니메이션 시키기
     let frameNum=0;
@@ -19,22 +19,22 @@ $(function(){
         
         let inc = frameNum++;
 
-        // if (frameNum > 177) {
+        // if (frameNum > 119) {
         // 	frameNum=0;			
         // }
 
-        $(".movie img").css({visibility:"hidden"});
+        $(".logo_ani img").css({visibility:"hidden"});
         // $("#portfolio .inner").css({visibility:"hidden"});
         // $(".logo_intro").css({height:H});
-        // $(".movie img").css({width:W});
-        // $(".movie img").css({height:H});
-        $(".movie img:eq("+inc+")").css({visibility:"visible"});
-        // $(".movie img:eq("+inc+")").css({width:W});
-        // $(".movie img:eq("+inc+")").css({height:H});
-        // $(".movie img:eq("+frameNum+")").css({height:H});
+        // $(".logo_ani img").css({width:W});
+        // $(".logo_ani img").css({height:H});
+        $(".logo_ani img:eq("+inc+")").css({visibility:"visible"});
+        // $(".logo_ani img:eq("+inc+")").css({width:W});
+        // $(".logo_ani img:eq("+inc+")").css({height:H});
+        // $(".logo_ani img:eq("+frameNum+")").css({height:H});
 
-        $(".movie").animate(
-            {center:178},
+        $(".logo_ani").animate(
+            {center:119},
             3540,
             function(){
             clearInterval(k);
@@ -42,20 +42,20 @@ $(function(){
         
         
         console.log(inc);
-        // $(".movie").fadeOut(500); //로딩표시영역 사라짐
+        // $(".logo_ani").fadeOut(500); //로딩표시영역 사라짐
 
         // $('body').fadeIn(1000);
         $('body').css({display:"block"});
 
         
-        if(inc >=177){ //로딩이 완료되면
+        if(inc >=119){ //로딩이 완료되면
             clearInterval(k); //setInterval종료					
-            $(".movie img").hide(); //로딩표시영역 사라짐
+            $(".logo_ani img").hide(); //로딩표시영역 사라짐
             $("#portfolio .inner").css({visibility:"visible"});
             $('body').css({overflow:"auto"});//body스크롤없앰}
             $("#wrap").fadeIn(1000); 
             $("header").fadeIn(1000);
-            $(".group").fadeIn(1000); 
+            $("section").fadeIn(1000); 
             $("footer").fadeIn(1000); 
 
         }
@@ -63,7 +63,7 @@ $(function(){
             $('body').css({overflow:"hidden"});//body스크롤없앰}
             $("#wrap").hide(); 
             $("header").hide(); 
-            $(".group").hide(); 
+            $("section").hide(); 
             $("footer").hide(); 
 
         }
@@ -71,7 +71,7 @@ $(function(){
     // alert(H)
     
     
-    let k = setInterval(aniNext,20); //0.1초마다 aniNext 함수 실행
+    let k = setInterval(aniNext,25); //0.1초마다 aniNext 함수 실행
 
     
     let t = 0;
@@ -80,7 +80,7 @@ $(function(){
         // console.log(t);
         $(".time").text(t);
         if(t == 5){
-            $(".movie img").hide(); //로딩표시영역 사라짐
+            $(".logo_ani img").hide(); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
             $("#wrap").fadeIn(1000); 
             $("header").fadeIn(1000); 
@@ -95,6 +95,6 @@ $(function(){
     //     t = t + 1
     //     $(".time").text(t);
     // }
-    setInterval(time,1000); //0.1초마다 aniNext 함수 실행
+    setInterval(time,4000); //0.1초마다 aniNext 함수 실행
 
 });
