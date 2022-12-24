@@ -4,7 +4,7 @@ $(function(){
 
     //이미지 불러오기
     for (i=0; i<=119; i++){
-        $(".logo_ani").append("<img src='logo_sequence4/"+i.toString().padStart(3, '0')+".png'>");
+        $(".logo_ani").append("<img src='logo_sequence6/"+i.toString().padStart(3, '0')+".png'>");
     }
     $(".logo_ani img:first").css({visibility:"visible"});
 
@@ -44,7 +44,7 @@ $(function(){
         console.log(inc);
         // $(".logo_ani").fadeOut(500); //로딩표시영역 사라짐
 
-        // $('body').fadeIn(1000);
+        // $('body').fadeIn(3000);
         $('body').css({display:"block"});
 
         
@@ -53,10 +53,14 @@ $(function(){
             $(".logo_ani img").hide(); //로딩표시영역 사라짐
             $("#portfolio .inner").css({visibility:"visible"});
             $('body').css({overflow:"auto"});//body스크롤없앰}
-            $("#wrap").show(); 
-            $("header").show();
-            $("section").show(); 
-            $("footer").show(); 
+            $("#wrap").fadeIn(3000); 
+            $("header").fadeIn(3000); 
+            $("section").fadeIn(3000); 
+            $("footer").fadeIn(3000);
+            // $("#wrap").show(); 
+            // $("header").show();
+            // $("section").show(); 
+            // $("footer").show(); 
 
         }
         else {
@@ -82,14 +86,14 @@ $(function(){
         if(t == 4){
             $(".logo_ani img").hide(); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
-            // $("#wrap").fadeIn(1000); 
-            // $("header").fadeIn(1000); 
-            // $("section").fadeIn(1000); 
-            // $("footer").fadeIn(1000);
-            $("#wrap").show(); 
-            $("header").show(); 
-            $("section").show(); 
-            $("footer").show();
+            $("#wrap").fadeIn(3000); 
+            $("header").fadeIn(3000); 
+            $("section").fadeIn(3000); 
+            $("footer").fadeIn(3000);
+            // $("#wrap").show(); 
+            // $("header").show(); 
+            // $("section").show(); 
+            // $("footer").show();
             
 
             clearInterval(t);
@@ -99,6 +103,6 @@ $(function(){
     //     t = t + 1
     //     $(".time").text(t);
     // }
-    setInterval(time,4000); //0.1초마다 aniNext 함수 실행
+    setInterval(time,1000); //0.1초마다 aniNext 함수 실행
 
 });
