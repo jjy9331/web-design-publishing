@@ -267,13 +267,11 @@ header ul li:nth-child(4) .hr_d13 {
 }
 
 .item:nth-of-type(1) .sec1 .visual img { 
-    /* margin: 0 auto;  */
     width: 40%;
-    position: fixed; 
-    left: -30%; 
-    bottom: 44%;
-    /* transform: translate(-50%,-50%); */
-    /* border: 2px dashed orange; box-sizing: border-box; */
+    position: fixed;
+    left: -30%;
+    bottom: 37%;
+    transform: scale(0.6);
 }
 
 
@@ -766,10 +764,10 @@ header ul li:nth-child(4) .hr_d13 {
 
 .item:nth-of-type(2) .pf4 .pf4_bg .ypaint_hide3 {
     position: absolute;
-    bottom: 40%;
+    bottom: 6%;
     left: 98%;
     width: 75%;
-    height: 23%;
+    height: 79%;
     z-index: 4;
     background-color: white;
     cursor: default;
@@ -881,7 +879,7 @@ header ul li:nth-child(4) .hr_d13 {
 
 .item:nth-of-type(2) .pf_more {
     position: fixed;
-    bottom: 18%;
+    /* bottom: 18%; */
     /* background-color: darkkhaki; */
 }
 
@@ -980,7 +978,8 @@ footer .inner p {
 
 .logo_ani { 
     /* position: relative;  */
-    position: absolute; 
+    /* position: absolute;  */
+    position: fixed; 
     /* border:5px dashed #777777;  */
     /* object-fit: cover; */
     /* width:1920px;  */
@@ -1032,3 +1031,147 @@ footer .inner p {
 .darkmode .invert_text:hover{ text-decoration: underline;}
 
 
+
+
+
+/* mediaquery */
+
+/* @media all and (max-width:767px) { } */
+/* @media all and (min-width:768px) and (max-width:1023px) {  } */
+/* @media all and (min-width:1024px) and  (max-width:1440px) {}   PC */
+@media all and (min-width:1041px) and  (max-width:1600px) {  
+    /* body {zoom:0.55} */
+    header {zoom:0.7}
+    footer {zoom:0.7}
+    .sec1 .visual img{
+        bottom: auto;
+        top: 16%;
+    }
+    .pf1 { 
+        display: block;
+        right: 15%;
+        top: 9%;
+        zoom: 0.835;
+        transform: scale(0.9);
+    }
+    #pf1back{
+        top: 54%;
+        left: -16%;
+    }
+    #pf1next{
+        top: 54%;
+        right: -16%;
+    }
+    .pf2 {
+        position: fixed;
+        zoom: 0.8;
+        transform: scale(0.9);
+        /* bottom: 11%; */
+        bottom: auto;
+        top: 13%;
+    }
+    #pf2back{
+        top: 49.5%;
+        left: -34%;
+    }
+    #pf2next{
+        top: 49.5%;
+        right: -34%;
+    }
+    .pf3 {
+        position: fixed;
+        zoom: 0.8;
+        transform: scale(0.9);
+        /* bottom: 11%; */
+        bottom: auto;
+        top: 13%;
+    }
+    #pf3back{
+        top: 49.5%;
+        left: -34%;
+    }
+    #pf3next{
+        top: 49.5%;
+        right: -34%;
+    }
+    .pf3 .movie1 {
+        margin-top: 1%;
+    }
+    .pf4{
+        display: block;
+        right: 41.78%;
+        zoom: 0.8;
+        transform: scale(0.9);
+        /* bottom: 14%; */
+        bottom: auto;
+        top: 16%;
+    }
+    .pf4 .pf4_bg .hss_logo {
+        bottom: auto;
+        top: -3%;
+    }
+    .pf4 .pf4_bg .pf4_subp { 
+        /* bottom: 36.5%; */
+        bottom: auto;
+        top: 60%;
+    }
+    .pf4 .pf4_bg .ypaint_hide1 {
+        /* top: 45%; */
+        top: auto;
+    }
+    .pf4 .pf4_bg .ypaint_hide2 {
+        /* bottom: 35%; */
+        bottom: auto;
+        top: 59%;
+    }
+    .pf4 .pf4_bg .pf4_ypaint1 {
+        /* top: 46%; */
+        top: auto;
+        margin-top: 4%;
+    }
+    .pf4 .pf4_bg .pf4_ypaint2 {
+        /* bottom: 34.4%; */
+        bottom: auto;
+        top: 58.5%;
+    }
+    
+    /* #pf4back{
+        top: 49.5%;
+        left: -34%;
+    }
+    #pf4next{
+        top: 49.5%;
+        right: -34%;
+    } */
+    .pf5 {
+        position: fixed;
+        zoom: 0.8;
+        transform: scale(0.9);
+        /* bottom: 11%; */
+        bottom: auto;
+        top: 13%;
+    }
+    #pf5back{
+        top: 49.5%;
+        left: -34%;
+    }
+    #pf5next{
+        top: 49.5%;
+        right: -34%;
+    }
+    .pf5 .movie2 {
+        transform: scale(1.04);
+        margin-top: 1.4%;
+    }
+    .pf_more{
+        display: block;
+        right: 41.78%;
+        zoom: 0.8;
+        transform: scale(0.9);
+        /* bottom: 14%; */
+        bottom: auto;
+        top: 14%;
+    }
+}  /* PC  */
+
+/* @media all and (min-width:1601px) and  (max-width:1920px) {   body {zoom:0.7}} wide PC  */

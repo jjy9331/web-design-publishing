@@ -53,10 +53,10 @@ $(function(){
             $(".logo_ani img").hide(); //로딩표시영역 사라짐
             $("#portfolio .inner").css({visibility:"visible"});
             $('body').css({overflow:"auto"});//body스크롤없앰}
-            $("#wrap").fadeIn(1000); 
-            $("header").fadeIn(1000);
-            $("section").fadeIn(1000); 
-            $("footer").fadeIn(1000); 
+            $("#wrap").show(); 
+            $("header").show();
+            $("section").show(); 
+            $("footer").show(); 
 
         }
         else {
@@ -79,13 +79,17 @@ $(function(){
         t = t + 1;
         // console.log(t);
         $(".time").text(t);
-        if(t == 5){
+        if(t == 4){
             $(".logo_ani img").hide(); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
-            $("#wrap").fadeIn(1000); 
-            $("header").fadeIn(1000); 
-            $(".group").fadeIn(1000); 
-            $("footer").fadeIn(1000);
+            // $("#wrap").fadeIn(1000); 
+            // $("header").fadeIn(1000); 
+            // $("section").fadeIn(1000); 
+            // $("footer").fadeIn(1000);
+            $("#wrap").show(); 
+            $("header").show(); 
+            $("section").show(); 
+            $("footer").show();
             
 
             clearInterval(t);
