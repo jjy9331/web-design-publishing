@@ -50,10 +50,10 @@ $(function(){
         
         if(inc >=119){ //로딩이 완료되면
             clearInterval(k); //setInterval종료					
-            $(".logo_ani img").hide(); //로딩표시영역 사라짐
+            $(".logo_ani img").css({display:"none"}); //로딩표시영역 사라짐
             $("#portfolio .inner").css({visibility:"visible"});
             $('body').css({overflow:"auto"});//body스크롤없앰}
-            $("#wrap").fadeIn(3000); 
+            // $("#wrap").fadeIn(3000); 
             $("header").fadeIn(3000); 
             $("section").fadeIn(3000); 
             $("footer").fadeIn(3000);
@@ -84,9 +84,9 @@ $(function(){
         // console.log(t);
         $(".time").text(t);
         if(t == 4){
-            $(".logo_ani img").hide(); //로딩표시영역 사라짐
+            $(".logo_ani img").css({display:"none"}); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
-            $("#wrap").fadeIn(3000); 
+            // $("#wrap").fadeIn(3000); 
             $("header").fadeIn(3000); 
             $("section").fadeIn(3000); 
             $("footer").fadeIn(3000);

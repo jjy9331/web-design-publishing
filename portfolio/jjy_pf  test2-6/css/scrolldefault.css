@@ -988,7 +988,7 @@ footer .inner p {
     /* background: black; */
     width:100%; 
     height:100%; 
-    
+    /* z-index: 1100; */
 }
 .logo_ani img { 
     /* zoom: 1.825; */
