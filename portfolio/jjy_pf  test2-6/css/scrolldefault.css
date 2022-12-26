@@ -461,6 +461,7 @@ header ul li:nth-child(4) .hr_d13 {
 
 .item:nth-of-type(3) .pf1 {
     position: relative;
+    margin-left: 40vw;
 }
 
 .item:nth-of-type(3) .pf1 img:nth-child(1) {
@@ -585,7 +586,7 @@ header ul li:nth-child(4) .hr_d13 {
     position: relative; 
     position: absolute;
     top: 4.5%;
-    left: 4%;
+    left: 3.8%;
     /* border: 5px dashed #777777; */
     /* object-fit: cover; */
     /* width: 1920px; */
