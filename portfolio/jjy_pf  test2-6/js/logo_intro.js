@@ -4,7 +4,7 @@ $(function(){
 
     //이미지 불러오기
     for (i=0; i<=119; i++){
-        $(".logo_ani").append("<img src='logo_sequence6/"+i.toString().padStart(3, '0')+".png'>");
+        $(".logo_ani").append("<img src='logo_sequence7/"+i.toString().padStart(3, '0')+".png'>");
     }
     $(".logo_ani img:first").css({visibility:"visible"});
 
@@ -35,7 +35,7 @@ $(function(){
 
         $(".logo_ani").animate(
             {center:119},
-            3540,
+            3740,
             function(){
             clearInterval(k);
         });
@@ -44,7 +44,7 @@ $(function(){
         console.log(inc);
         // $(".logo_ani").fadeOut(500); //로딩표시영역 사라짐
 
-        // $('body').fadeIn(3000);
+        // $('body').fadeIn(2000);
         $('body').css({display:"block"});
 
         
@@ -54,9 +54,10 @@ $(function(){
             $("#portfolio .inner").css({visibility:"visible"});
             $('body').css({overflow:"auto"});//body스크롤없앰}
             // $("#wrap").fadeIn(3000); 
-            $("header").fadeIn(3000); 
-            $("section").fadeIn(3000); 
-            $("footer").fadeIn(3000);
+            $("header").fadeIn(2000); 
+            $(".wrapper").fadeIn(2000);
+            $("section").fadeIn(2000); 
+            $("footer").fadeIn(2000);
             // $("#wrap").show(); 
             // $("header").show();
             // $("section").show(); 
@@ -66,7 +67,8 @@ $(function(){
         else {
             $('body').css({overflow:"hidden"});//body스크롤없앰}
             $("#wrap").hide(); 
-            $("header").hide(); 
+            $("header").hide();
+            $(".wrapper").hide(); 
             $("section").hide(); 
             $("footer").hide(); 
 
@@ -86,10 +88,11 @@ $(function(){
         if(t == 4){
             $(".logo_ani img").css({display:"none"}); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
-            // $("#wrap").fadeIn(3000); 
-            $("header").fadeIn(3000); 
-            $("section").fadeIn(3000); 
-            $("footer").fadeIn(3000);
+            // $("#wrap").fadeIn(2000); 
+            $("header").fadeIn(2000);
+            $(".wrapper").fadeIn(2000); 
+            $("section").fadeIn(2000); 
+            $("footer").fadeIn(2000);
             // $("#wrap").show(); 
             // $("header").show(); 
             // $("section").show(); 
