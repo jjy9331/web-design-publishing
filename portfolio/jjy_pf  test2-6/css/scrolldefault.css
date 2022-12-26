@@ -438,20 +438,33 @@ header ul li:nth-child(4) .hr_d13 {
 
 .portfolio {
     background-color: white;
+    position: fixed;
+    bottom: 0%;
+    padding: 0%;
 }
 
+.item:nth-of-type(3) .container { width: 100%;}
+
+.item:nth-of-type(3) .pf {
+    display: flex;
+    width: 600vw;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+}
+
+.item:nth-of-type(3) .pf_ani {
+    width: 55vw;
+    margin-right: 101vw;
+    margin-left: 6vw;
+}
 
 .item:nth-of-type(3) .pf1 {
     position: relative;
-    position: fixed;
-    bottom: 14%;
-    /* background-color: darkkhaki; */
 }
 
 .item:nth-of-type(3) .pf1 img:nth-child(1) {
-    width: 1343px;
-    height: 755px;
-    /* background-color: darkkhaki; */
+    width: 55vw;
 }
 
 
@@ -466,7 +479,7 @@ header ul li:nth-child(4) .hr_d13 {
 #pf1back {
     position: absolute;
     top: 48%;
-    left: -12%;
+    left: -24%;
     visibility: hidden;
     cursor: pointer;
 }
@@ -474,7 +487,7 @@ header ul li:nth-child(4) .hr_d13 {
 #pf1next {
     position: absolute;    
     top: 48%;
-    right: -12%;
+    right: -24%;
     visibility: hidden;
     cursor: pointer;
 }
@@ -482,7 +495,7 @@ header ul li:nth-child(4) .hr_d13 {
 #pf2back {
     position: absolute;
     top: 48%;
-    left: -27%;
+    left: -40%;
     visibility: hidden;
     z-index: 6;
     cursor: pointer;
@@ -491,7 +504,7 @@ header ul li:nth-child(4) .hr_d13 {
 #pf2next {
     position: absolute;    
     top: 48%;
-    right: -27%;
+    right: -40%;
     visibility: hidden;
     cursor: pointer;
 }
@@ -559,22 +572,17 @@ header ul li:nth-child(4) .hr_d13 {
 }
 
 .item:nth-of-type(3) .pf2 {
-    position: fixed;
-    bottom: 14%;
-    /* background-color: darkkhaki; */
+    position: relative;
 }
 
 .item:nth-of-type(3) .pf2 img:nth-child(1) {
     position: relative;
-    width: 61vw;
-    /* width: 960px; */
-    /* height: 730px; */
+    width: 40vw;
     z-index: 10;
-    /* background-color: darkkhaki; */
 }
 
 .item:nth-of-type(3) .pf2 .pf2_bg {
-    /* position: relative;  */
+    position: relative; 
     position: absolute;
     top: 4.5%;
     left: 4%;
@@ -582,8 +590,8 @@ header ul li:nth-child(4) .hr_d13 {
     /* object-fit: cover; */
     /* width: 1920px; */
     /* height: 1080px; */
-    width: 57vw;
-    height: 33vw;
+    width: 37vw;
+    height: 21vw;
     transform: scale(1);
     z-index: 5;
     background-color: rgba(240, 174, 0, 1);
@@ -592,10 +600,10 @@ header ul li:nth-child(4) .hr_d13 {
 .item:nth-of-type(3) .pf2 .pf2_bg h3{
     position: absolute;
     top: 17%;
-    right: 8%;
+    right: 7%;
     /* font-family: 'Black Han Sans', sans-serif; */
     font-family: 'Open Sans', sans-serif;
-    font-size: 7vw;
+    font-size: 4.3vw;
     font-weight: bold;
 }
 
@@ -606,10 +614,10 @@ header ul li:nth-child(4) .hr_d13 {
 .item:nth-of-type(3) .pf2 .pf2_bg p{
     position: absolute;
     top: 27%;
-    right: 9%;
+    right: 8%;
     /* font-family: 'Black Han Sans', sans-serif; */
     font-family: 'Noto Sans KR';
-    font-size: 2vw;
+    font-size: 1.3vw;
     font-weight: 100;
     opacity: 70%;
 }
@@ -628,7 +636,7 @@ header ul li:nth-child(4) .hr_d13 {
     bottom: -44%;
     left: -31%;
     width: 50vw;
-    height: 15vw;
+    height: 9vw;
     z-index: 4;
     background-color: white;
     cursor: default;
@@ -637,7 +645,7 @@ header ul li:nth-child(4) .hr_d13 {
     position: absolute;
     bottom: -44%;
     left: -29%;
-    width: 15vw;
+    width: 10vw;
     height: 38vw;
     z-index: 4;
     background-color: white;
@@ -646,17 +654,12 @@ header ul li:nth-child(4) .hr_d13 {
 
 
 .item:nth-of-type(3) .pf3 {
-    position: fixed;
-    bottom: 14%;
-    /* background-color: darkkhaki; */
+
 }
 .item:nth-of-type(3) .pf3 img:nth-child(1) {
     position: relative;
-    width: 61vw;
-    /* width: 960px; */
-    /* height: 730px; */
+    width: 40vw;
     z-index: 10;
-    /* background-color: darkkhaki; */
 }
 
 .item:nth-of-type(3) .pf3 .movie1 { 
@@ -688,17 +691,12 @@ header ul li:nth-child(4) .hr_d13 {
 
 
 .item:nth-of-type(3) .pf4 {
-    position: fixed;
-    bottom: 18%;
-    /* background-color: darkkhaki; */
 }
 
 .item:nth-of-type(3) .pf4 img:nth-child(1) {
     position: relative;
-    width: 320px;
-    height: 675px;
+    width: 15vw;
     z-index: 10;
-    /* background-color: darkkhaki; */
 }
 
 .item:nth-of-type(3) .pf4 .pf4_bg .pf4bg {
@@ -834,23 +832,17 @@ header ul li:nth-child(4) .hr_d13 {
 
 
 .item:nth-of-type(3) .pf5 {
-    position: fixed;
-    bottom: 14%;
-    /* background-color: darkkhaki; */
+
 }
 
 .item:nth-of-type(3) .pf5 img:nth-child(1) {
     position: relative;
-    width: 61vw;
-    /* width: 960px; */
-    /* height: 730px; */
+    width: 40vw;
     z-index: 10;
-    /* background-color: darkkhaki; */
 }
 
 .item:nth-of-type(3) .pf5 {
-    position: fixed;
-    bottom: 14%;
+
     /* background-color: darkkhaki; */
 }
 /* .item:nth-of-type(3) .pf5 img:nth-child(1) {
@@ -890,9 +882,7 @@ header ul li:nth-child(4) .hr_d13 {
 
 
 .item:nth-of-type(3) .pf_more {
-    position: fixed;
-    /* bottom: 18%; */
-    /* background-color: darkkhaki; */
+
 }
 
 .item:nth-of-type(3) .more {
@@ -912,12 +902,10 @@ header ul li:nth-child(4) .hr_d13 {
     z-index: 0;
 }
 
-.item:nth-of-type(3) .more img:nth-child(1) {
-    position: absolute;
-    width: 320px;
-    height: 675px;
+.item:nth-of-type(3) .pf_more img:nth-child(1) {
+    position: relative;
+    width: 15vw;
     z-index: 10;
-    /* background-color: darkkhaki; */
 }
 
 .item:nth-of-type(3) .pf_more_img {
@@ -1059,131 +1047,7 @@ footer .inner p {
         /* bottom: auto; */
         /* top: 16%; */
     }
-    .pf1 { 
-        display: block;
-        right: 15%;
-        top: 9%;
-        zoom: 0.835;
-        transform: scale(0.9);
-    }
-    #pf1back{
-        top: 54%;
-        left: -16%;
-    }
-    #pf1next{
-        top: 54%;
-        right: -16%;
-    }
-    .pf2 {
-        position: fixed;
-        zoom: 0.8;
-        transform: scale(0.9);
-        /* bottom: 11%; */
-        bottom: auto;
-        top: 13%;
-    }
-    #pf2back{
-        top: 49.5%;
-        left: -34%;
-    }
-    #pf2next{
-        top: 49.5%;
-        right: -34%;
-    }
-    .pf3 {
-        position: fixed;
-        zoom: 0.8;
-        transform: scale(0.9);
-        /* bottom: 11%; */
-        bottom: auto;
-        top: 13%;
-    }
-    #pf3back{
-        top: 49.5%;
-        left: -34%;
-    }
-    #pf3next{
-        top: 49.5%;
-        right: -34%;
-    }
-    .pf3 .movie1 {
-        /* margin-top: 1%; */
-    }
-    .pf4{
-        display: block;
-        right: 41.78%;
-        zoom: 0.8;
-        transform: scale(0.9);
-        /* bottom: 14%; */
-        bottom: auto;
-        top: 16%;
-    }
-    .pf4 .pf4_bg .hss_logo {
-        bottom: auto;
-        top: -3%;
-    }
-    .pf4 .pf4_bg .pf4_subp { 
-        /* bottom: 36.5%; */
-        bottom: auto;
-        top: 60%;
-    }
-    .pf4 .pf4_bg .ypaint_hide1 {
-        /* top: 45%; */
-        top: auto;
-    }
-    .pf4 .pf4_bg .ypaint_hide2 {
-        /* bottom: 35%; */
-        bottom: auto;
-        top: 59%;
-    }
-    .pf4 .pf4_bg .pf4_ypaint1 {
-        /* top: 46%; */
-        top: auto;
-        margin-top: 4%;
-    }
-    .pf4 .pf4_bg .pf4_ypaint2 {
-        /* bottom: 34.4%; */
-        bottom: auto;
-        top: 58.5%;
-    }
-    
-    /* #pf4back{
-        top: 49.5%;
-        left: -34%;
-    }
-    #pf4next{
-        top: 49.5%;
-        right: -34%;
-    } */
-    .pf5 {
-        position: fixed;
-        zoom: 0.8;
-        transform: scale(0.9);
-        /* bottom: 11%; */
-        bottom: auto;
-        top: 13%;
-    }
-    #pf5back{
-        top: 49.5%;
-        left: -34%;
-    }
-    #pf5next{
-        top: 49.5%;
-        right: -34%;
-    }
-    .pf5 .movie2 {
-        /* transform: scale(1.04); */
-        /* margin-top: 1.4%; */
-    }
-    .pf_more{
-        display: block;
-        right: 41.78%;
-        zoom: 0.8;
-        transform: scale(0.9);
-        /* bottom: 14%; */
-        bottom: auto;
-        top: 14%;
-    }
+
 }  /* PC  */
 
 /* @media all and (min-width:1601px) and  (max-width:1920px) {   body {zoom:0.7}} wide PC  */
