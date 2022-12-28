@@ -13,9 +13,11 @@ img.src = "./track_run_start4/000.png";
 // canvas.height = (canvas.width / 3) * 2
 canvas.width = 1920
 canvas.height = 1080
+// canvas.width = window.innerWidth
+// canvas.height = window.innerHeight
 
-console.log(canvas.width);
-console.log(canvas.height);
+console.log("innerWidth: "+canvas.width);
+console.log("innerHeight: "+canvas.height);
 
 // canvas.style.position = 'sticky'
 canvas.style.position = 'fixed';

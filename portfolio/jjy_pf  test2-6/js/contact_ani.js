@@ -34,7 +34,7 @@ window.addEventListener('scroll', function(e) {
     // scrollYPos2 = Math.round(((window.scrollY/2000)-104.76));
     // scrollYPos2 = Math.round(((window.scrollY/1000)-209));
     // scrollYPos2 = Math.round(((window.scrollY/500)-419.04));
-    scrollYPos2 = Math.round(((window.scrollY/250)-838.08));
+    scrollYPos2 = Math.round(((window.scrollY/250)-874.87));
     // scrollYPos2 = Math.round(((window.scrollY/60)-187));
     // scrollYPos2 = Math.round(((window.scrollY/30)-374));
     // scrollYPos2 = Math.round((window.scrollY/30)-375);
@@ -47,7 +47,7 @@ window.addEventListener('scroll', function(e) {
     if (scrollYPos2 >= 254) scrollYPos2 = 254;
     
     // scrollYPos2 = scrollYPos2 % 486
-    if( y2 <= 209520) scrollYPos2 = 0;
+    if( y2 <= 218718) scrollYPos2 = 0; //start scroll y 
     player2(scrollYPos2);
     console.log("y2: "+y2);
     console.log("scrollYPos2: "+scrollYPos2);

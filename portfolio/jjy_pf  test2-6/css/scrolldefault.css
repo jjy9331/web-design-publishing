@@ -10,7 +10,8 @@
 @font-face { font-family:'hana_air'; src: url('../font/BMHANNAAir_otf.woff') format('woff');}
 
 * {
-    touch-action: manipulation; 
+    /* touch-action: manipulation;  */
+    touch-action: auto; 
 }
 
 /*Eric mayor reset*/
@@ -449,7 +450,7 @@ header ul li:nth-child(4) .hr_d13 {
     display: flex;
     width: 600vw;
     height: 100vh;
-    text-align: center;
+    /* text-align: center; */
     align-items: center;
 }
 
@@ -513,7 +514,7 @@ header ul li:nth-child(4) .hr_d13 {
 #pf3back {
     position: absolute;
     top: 48%;
-    left: -27%;
+    left: -40%;
     visibility: hidden;
     cursor: pointer;
 }
@@ -521,7 +522,7 @@ header ul li:nth-child(4) .hr_d13 {
 #pf3next {
     position: absolute;    
     top: 48%;
-    right: -27%;
+    right: -40%;
     visibility: hidden;
     cursor: pointer;
 }
@@ -543,7 +544,7 @@ header ul li:nth-child(4) .hr_d13 {
 #pf5back {
     position: absolute;
     top: 48%;
-    left: -27%;
+    left: -40%;
     visibility: hidden;
     cursor: pointer;
 }
@@ -551,7 +552,7 @@ header ul li:nth-child(4) .hr_d13 {
 #pf5next {
     position: absolute;    
     top: 48%;
-    right: -27%;
+    right: -40%;
     visibility: hidden;
     cursor: pointer;
 }
@@ -655,7 +656,7 @@ header ul li:nth-child(4) .hr_d13 {
 
 
 .item:nth-of-type(3) .pf3 {
-
+    position: relative;
 }
 .item:nth-of-type(3) .pf3 img:nth-child(1) {
     position: relative;
@@ -664,7 +665,7 @@ header ul li:nth-child(4) .hr_d13 {
 }
 
 .item:nth-of-type(3) .pf3 .movie1 { 
-    position: relative; 
+    position: relative;
     position: absolute;
     top: 4.5%;
     left: 4%;
@@ -672,11 +673,10 @@ header ul li:nth-child(4) .hr_d13 {
     /* object-fit: cover; */
     /* width: 1920px; */
     /* height: 1080px; */
-    width: 57vw;
-    height: 33vw;
+    width: 37vw;
+    height: 21vw;
     transform: scale(1);
     z-index: 5;
-    
 }
 
 .item:nth-of-type(3) .pf3 .movie1 img { 
@@ -692,6 +692,7 @@ header ul li:nth-child(4) .hr_d13 {
 
 
 .item:nth-of-type(3) .pf4 {
+    position: relative;
 }
 
 .item:nth-of-type(3) .pf4 img:nth-child(1) {
@@ -703,16 +704,16 @@ header ul li:nth-child(4) .hr_d13 {
 .item:nth-of-type(3) .pf4 .pf4_bg .pf4bg {
     position: absolute;
     top: 12%;
-    left: 7%;
-    width: 280px;
-    height: 511px;
+    left: 5%;
+    width: 13.5vw;
+    height: 24vw;
     background-color: white;
     z-index: 0;
 }
 
 .item:nth-of-type(3) .pf4 .pf4_bg .hss_logo{
     position: absolute;
-    bottom: 1.5%;
+    bottom: 38.5%;
     left: 23%;
     width: 56%;
     z-index: 5;
@@ -720,12 +721,11 @@ header ul li:nth-child(4) .hr_d13 {
 .item:nth-of-type(3) .pf4 .pf4_bg .pf4_subp{
     position: absolute;
     bottom: 41.5%;
-    left: 36.8%;
+    left: 36%;
     /* font-family: 'Black Han Sans', sans-serif; */
     font-family: 'Noto Sans KR';
     /* font-family: 'OTEnjoystoriesBA'; */
-    font-size: 14px;
-    /* opacity: 70%; */
+    font-size: 0.7vw;
     opacity: 35%;
     z-index: 5;
     font-weight: 400;
@@ -828,12 +828,19 @@ header ul li:nth-child(4) .hr_d13 {
 
 @keyframes backsmile {
     0% { transform: scale(1); }
-    100% { transform: scale(1); }
+    25% { transform: scale(0); }
+    50% { transform: scale(0); }
+    75% { transform: scale(0); }
+    100% { transform: scale(0); }
 }
 
+/* @keyframes backsmile {
+    0% { transform: scale(1); }
+    100% { transform: scale(1); }
+} */
 
 .item:nth-of-type(3) .pf5 {
-
+    position: relative;
 }
 
 .item:nth-of-type(3) .pf5 img:nth-child(1) {
@@ -855,16 +862,16 @@ header ul li:nth-child(4) .hr_d13 {
 } */
 
 .item:nth-of-type(3) .pf5 .movie2 { 
-    position: relative; 
+    position: relative;
     position: absolute;
-    top: 4.5%;
+    top: 5%;
     left: 4%;
     /* border: 5px dashed #777777; */
     /* object-fit: cover; */
     /* width: 1920px; */
     /* height: 1080px; */
-    width: 57vw;
-    height: 33vw;
+    width: 37vw;
+    height: 21vw;
     transform: scale(1);
     z-index: 5;
 }
@@ -883,22 +890,22 @@ header ul li:nth-child(4) .hr_d13 {
 
 
 .item:nth-of-type(3) .pf_more {
-
+    position: relative;
 }
 
 .item:nth-of-type(3) .more {
     position: relative;
-    width: 320px;
-    height: 675px;
+    /* width: 320px;
+    height: 675px; */
     /* background-color: darkkhaki; */
 }
 
 .item:nth-of-type(3) .more .pfmore_bg {
     position: absolute;
     top: 12%;
-    left: 7%;
-    width: 280px;
-    height: 511px;
+    left: 5%;
+    width: 13.5vw;
+    height: 24vw;
     background-color: white;
     z-index: 0;
 }
@@ -948,7 +955,7 @@ footer {
     position: fixed;
     bottom: 0px;
     border-top: 2px solid black;
-    background: rgba(0, 0, 0, 0); 
+    /* background: rgba(0, 0, 0, 0);  */
     background: rgba(255, 255, 255, 1);
     width: 100%; 
 }
