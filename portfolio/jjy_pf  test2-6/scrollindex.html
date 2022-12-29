@@ -11,6 +11,16 @@
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/logo_intro.js"></script>
+<!-- <script src="js/scrooth.js"></script>
+<script>
+    const scroll = new Scrooth({
+        element: window,
+        strength: 500,
+        acceleration: 1.5,
+        deceleration: 0.975,
+    });
+</script> -->
+
 
 <script>
     $(function(){
@@ -631,7 +641,7 @@
         </ul>
     </div>
 </header>
-<!-- <div id="skrollr-body"> -->
+<div id="skrollr-body">
     
     <div id="container">
         <section class="item home">
@@ -857,16 +867,15 @@
         </section>
     
         <section class="item">
-            <div class="wrappr2">
+            <div class="wrapper2">
                 <canvas id="screen2"
                     data-0="display: none;"
                     data-218718="display: none;"
                     data-218719="display: block; "
                     data-288718="display: block; "
-                    
+                    data-288710="display: none; "
                 ></canvas>
             </div>
-            
         </section>
         <!-- <section class="item">
             <h2>Content 4</h2>
@@ -874,7 +883,7 @@
         <section class="item">
             <h2>Content 5</h2>
         </section> -->
-    <!-- </div> -->
+    </div>
 </div>
 <footer>
     <div class="inner">
@@ -894,6 +903,26 @@
 <script src="js//introduce3.js"></script>
 <script src="js/scroll.js"></script>
 <script src="js/skrollr.min.js"></script>
+<script src="js/mousewheel.js"></script>
+<script>
+    
+    $('html,body').mousewheel(function(event, delta) {
+        console.log("delta: "+delta);
+        //mac
+        if (!(navigator.appVersion.indexOf("Mac") != -1)) { 
+            // $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 390)) }, 1000, "linear");
+            // event.preventDefault();
+        }
+        // win
+        else if (navigator.appVersion.indexOf("Mac") != -1) {
+            // $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 290)) }, 850, "linear");
+            // $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 220)) }, 830, "linear");
+            $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 220)) }, 830, "swing");
+            // $(this).stop().animate({ scrollTop: (this.scrollTop + 3080) }, 830, "linear");
+            // event.preventDefault();
+        }
+    });
+</script>
 <script >
     var s = skrollr.init({
         smoothScrolling: true,
