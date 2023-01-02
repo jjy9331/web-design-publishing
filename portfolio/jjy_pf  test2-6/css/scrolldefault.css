@@ -39,6 +39,7 @@ body {
     font-family:'Noto Sans KR'; 
     font-weight:500; 
     color:black; 
+    background-color: black;
     /* display: none; */
     /* display: none; */
 }
@@ -52,6 +53,7 @@ header {
     /* height: 120px;  */
     border-bottom: 2px solid black;
     z-index: 1000;
+    visibility: hidden;
 }
 header .inner { 
     position: relative;  
@@ -231,7 +233,7 @@ header ul li:nth-child(4) .hr_d13 {
 
 
 
-
+section {visibility: hidden;}
 
 
 #container {
@@ -959,6 +961,7 @@ footer {
     /* background: rgba(0, 0, 0, 0);  */
     background: rgba(255, 255, 255, 1);
     width: 100%; 
+    visibility: hidden;
 }
 
 footer .inner {
@@ -1004,6 +1007,9 @@ footer .inner p {
     /* position: absolute;  */
     position: fixed; 
     top:0%;
+    bottom: 0%;
+    left:0%;
+    right: 0%;
     /* border:5px dashed #777777;  */
     /* object-fit: cover; */
     /* width:1920px;  */
