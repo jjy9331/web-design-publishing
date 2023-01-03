@@ -10,6 +10,7 @@ $(function(){
             $("lottie-player").css({display:"none"}); //로딩표시영역 사라짐
             // $("lottie-player").css({display:"block"}); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
+            $('body').css({position:"static"});
             $("header").fadeIn(2000);
             $(".wrapper").fadeIn(2000); 
             $("section").fadeIn(2000); 
@@ -24,6 +25,8 @@ $(function(){
             clearInterval(t);
         }
         else {
+            $('body').css({overflow:"visible"});
+            $('body').css({position:"fixed"});
             $("header").hide();
             $(".wrapper").hide(); 
             $("section").hide(); 
