@@ -56,6 +56,7 @@ $(function(){
             // $("#wrap").fadeIn(3000); 
             $("header").fadeIn(2000); 
             $(".wrapper").fadeIn(2000);
+            $(".container").fadeIn(2000);
             $("section").fadeIn(2000); 
             $("footer").fadeIn(2000);
             // $("#wrap").show(); 
@@ -68,6 +69,7 @@ $(function(){
             $('body').css({overflow:"hidden"});//body스크롤없앰}
             $("#wrap").hide(); 
             $("header").hide();
+            $(".container").hide(); 
             $(".wrapper").hide(); 
             $("section").hide(); 
             $("footer").hide(); 

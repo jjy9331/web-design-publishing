@@ -208,7 +208,12 @@
                     </span>
                         <a href="#">
                             <img src="images/monitor2.png" alt="monitor" class="pf3_monitor">
-                            <div class="movie1"></div>
+                            <!-- <div class="movie1"></div> -->
+                            <lottie-player 
+                                class="movie1" 
+                                src="data/mohenic_intro.json"
+                                speed="1"
+                            ></lottie-player>
                         </a>
                     <span id="pf3next" class="material-symbols-outlined">
                         arrow_forward_ios
@@ -256,7 +261,12 @@
                     </span>
                         <a href="./volvo_renewal/index.html" target="blank">
                             <img src="images/monitor2.png" alt="monitor" class="pf5_monitor">
-                            <div class="movie2"></div>
+                            <!-- <div class="movie2"></div> -->
+                            <lottie-player 
+                            class="movie2" 
+                            src="data/volvo_intro.json"
+                            speed="1"
+                            ></lottie-player>
                             
                         </a>
                     <span id="pf5next" class="material-symbols-outlined">
@@ -341,6 +351,7 @@
         }
     });
 </script>
+
 <script >
     var s = skrollr.init({
         smoothScrolling: true,
@@ -370,12 +381,32 @@
                 behavior: 'smooth'
             });
     });
-    
 </script>
 <script src="js/lottie_logo_ani.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
-
+<script>
+    LottieInteractivity.create({
+        player:'.movie1',
+        mode:"cursor",
+        actions: [
+            {
+                type: "hold"
+            }
+        ]
+    });
+</script>
+<script>
+    LottieInteractivity.create({
+        player:'.movie2',
+        mode:"cursor",
+        actions: [
+            {
+                type: "hold"
+            }
+        ]
+    });
+</script>
 
 </html>

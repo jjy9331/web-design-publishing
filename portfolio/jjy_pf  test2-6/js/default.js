@@ -258,123 +258,123 @@ $(function(){
 
 
     //이미지 불러오기
-    for (i=0; i<=101; i++){
-        $(".movie1").append("<img src='mohenic_sequence3/"+i.toString().padStart(3, '0')+".png'>");
-    }
-    $(".movie1 img:first").css({visibility:"visible"});
+    // for (i=0; i<=101; i++){
+    //     $(".movie1").append("<img src='mohenic_sequence3/"+i.toString().padStart(3, '0')+".png'>");
+    // }
+    // $(".movie1 img:first").css({visibility:"visible"});
 
-    //애니메이션 시키기
-    var frameNum=0;
+    // //애니메이션 시키기
+    // var frameNum=0;
         
-    // var pf3m = document.querySelector('.pf3');
-    var pf3m = document.querySelector('.pf3_monitor');
-    // var pf3m = document.querySelector('.movie1');
+    // // var pf3m = document.querySelector('.pf3');
+    // var pf3m = document.querySelector('.pf3_monitor');
+    // // var pf3m = document.querySelector('.movie1');
 
-    var k1;
-    var k2;
-    var inc1;
-    var wy = window.scrollY;
+    // var k1;
+    // var k2;
+    // var inc1;
+    // var wy = window.scrollY;
 
-    pf3m.addEventListener('mouseover',() => {
-        function aniNext1(){   
-            var inc1 = frameNum++;
+    // pf3m.addEventListener('mouseover',() => {
+    //     function aniNext1(){   
+    //         var inc1 = frameNum++;
 
-            $(".movie1 img").css({visibility:"hidden"});
+    //         $(".movie1 img").css({visibility:"hidden"});
 
-            $(".movie1 img:eq("+inc1+")").css({visibility:"visible"});
+    //         $(".movie1 img:eq("+inc1+")").css({visibility:"visible"});
 
-            $(".movie1").animate(
-                {center:101},
-                2019.8,
-                function(){
-                clearInterval(k1);
-            });
+    //         $(".movie1").animate(
+    //             {center:101},
+    //             2019.8,
+    //             function(){
+    //             clearInterval(k1);
+    //         });
             
-            console.log("inc1:"+inc1);
-            console.log("mouseover")
-            if(inc1 >=101){ //로딩이 완료되면
-                clearInterval(k1); //setInterval종료					
-                frameNum = 101;
-            }
-            else if (frameNum > 0) {
-                clearInterval(k2); //mouseout 중 mouseover할때 mouseout, mouseover setInteval 충돌방지  
-            }
+    //         console.log("inc1:"+inc1);
+    //         console.log("mouseover")
+    //         if(inc1 >=101){ //로딩이 완료되면
+    //             clearInterval(k1); //setInterval종료					
+    //             frameNum = 101;
+    //         }
+    //         else if (frameNum > 0) {
+    //             clearInterval(k2); //mouseout 중 mouseover할때 mouseout, mouseover setInteval 충돌방지  
+    //         }
 
-            // window.addEventListener('scroll', function(e) {
-            //     if(((wy <=121432) && (wy >= 146508))) {	
-            //         inc1 = 0;
-            //         frameNum = 0;
-            //         console.log("inc1:"+inc1);
-            //         console.log("frameNum:"+frameNum);
-            //         // pf3m.removeEventListener('mouseover',() => {aniNext1();})
-            //         pf3m.removeEventListener('mouseover', aniNext1);
+    //         // window.addEventListener('scroll', function(e) {
+    //         //     if(((wy <=121432) && (wy >= 146508))) {	
+    //         //         inc1 = 0;
+    //         //         frameNum = 0;
+    //         //         console.log("inc1:"+inc1);
+    //         //         console.log("frameNum:"+frameNum);
+    //         //         // pf3m.removeEventListener('mouseover',() => {aniNext1();})
+    //         //         pf3m.removeEventListener('mouseover', aniNext1);
 
-            //     }   
-            // }, {passive: false});   
+    //         //     }   
+    //         // }, {passive: false});   
 
 
-        }
-        var k1 = setInterval(aniNext1,12.5); //aniNext1 함수 실행
+    //     }
+    //     var k1 = setInterval(aniNext1,12.5); //aniNext1 함수 실행
 
-        // window.addEventListener('scroll', function(e) {
+    //     // window.addEventListener('scroll', function(e) {
 
-        //     var wy = window.scrollY;
-        //     if(((wy <=121432) && (wy >= 146508))) {	
-        //         inc1 = 0;
-        //         frameNum = 0;
-        //         console.log("inc1:"+inc1);
-        //         console.log("frameNum:"+frameNum);
-        //         // pf3m.removeEventListener('mouseover',() => {aniNext1();})
-        //         pf3m.removeEventListener('mouseover', aniNext1);
+    //     //     var wy = window.scrollY;
+    //     //     if(((wy <=121432) && (wy >= 146508))) {	
+    //     //         inc1 = 0;
+    //     //         frameNum = 0;
+    //     //         console.log("inc1:"+inc1);
+    //     //         console.log("frameNum:"+frameNum);
+    //     //         // pf3m.removeEventListener('mouseover',() => {aniNext1();})
+    //     //         pf3m.removeEventListener('mouseover', aniNext1);
 
-        //     }   
+    //     //     }   
 
-        // }, {passive: false});   
+    //     // }, {passive: false});   
         
         
-
-
-
-
-    });
-
-    var k1;
-    var k2;
-    var inc2;
-        pf3m.addEventListener('mouseout',() => aniBack1());
-        function aniBack1() {
-                let inc2 = frameNum--;
-
-                $(".movie1 img").css({visibility:"hidden"});
-
-                $(".movie1 img:eq("+inc2+")").css({visibility:"visible"});
-
-                $(".movie1").animate(
-                    {center:101},
-                    1000,
-                    function(){
-                    clearInterval(k2);
-                }
-                );
-
-                console.log("inc2:"+inc2);
-                    console.log("mouseout")
-                if(inc2 >= 101){
-                    // k2 = setInterval(aniBack1,12.5); //setInterval종료
-                    k2 = setInterval(aniBack1,14.5); //setInterval종료
-                    clearInterval(k1);
-                }
-
-                else if (inc2 <= 0 ) {
-                    frameNum = 0;
-                    if( inc2 == 0){
-                        console.log("minor")
-                        clearInterval(k2);
-                    }
-                }
     
-            }
-            var k2 = setInterval(aniBack1,12.5)
+
+
+
+    // });
+
+    // var k1;
+    // var k2;
+    // var inc2;
+    //     pf3m.addEventListener('mouseout',() => aniBack1());
+    //     function aniBack1() {
+    //             let inc2 = frameNum--;
+
+    //             $(".movie1 img").css({visibility:"hidden"});
+
+    //             $(".movie1 img:eq("+inc2+")").css({visibility:"visible"});
+
+    //             $(".movie1").animate(
+    //                 {center:101},
+    //                 1000,
+    //                 function(){
+    //                 clearInterval(k2);
+    //             }
+    //             );
+
+    //             console.log("inc2:"+inc2);
+    //                 console.log("mouseout")
+    //             if(inc2 >= 101){
+    //                 // k2 = setInterval(aniBack1,12.5); //setInterval종료
+    //                 k2 = setInterval(aniBack1,14.5); //setInterval종료
+    //                 clearInterval(k1);
+    //             }
+
+    //             else if (inc2 <= 0 ) {
+    //                 frameNum = 0;
+    //                 if( inc2 == 0){
+    //                     console.log("minor")
+    //                     clearInterval(k2);
+    //                 }
+    //             }
+    
+    //         }
+    //         var k2 = setInterval(aniBack1,12.5)
             // window.addEventListener('scroll', function(e) {
 
             //     var sY = window.scrollY;
@@ -384,6 +384,7 @@ $(function(){
             //     }   
 
             // }, {passive: false});    
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -455,95 +456,95 @@ $(function(){
     // pf5 volvo_intro
 
     //이미지 불러오기
-    for (i=0; i<=40; i++){
-        $(".movie2").append("<img src='volvo_sequence/"+i.toString().padStart(3, '0')+".jpg'>");
-    }
-    $(".movie2 img:first").css({visibility:"visible"});
+    // for (i=0; i<=40; i++){
+    //     $(".movie2").append("<img src='volvo_sequence/"+i.toString().padStart(3, '0')+".jpg'>");
+    // }
+    // $(".movie2 img:first").css({visibility:"visible"});
 
-    //애니메이션 시키기
-    var frameNumm=0;
+    // //애니메이션 시키기
+    // var frameNumm=0;
         
-    // var pf5m = document.querySelector('.pf5');
-    var pf5m = document.querySelector('.pf5_monitor');
+    // // var pf5m = document.querySelector('.pf5');
+    // var pf5m = document.querySelector('.pf5_monitor');
 
-    var k3;
-    var k4;
-    var inc3;
-    var wy = window.scrollY;
+    // var k3;
+    // var k4;
+    // var inc3;
+    // var wy = window.scrollY;
 
-    pf5m.addEventListener('mouseover',() => {
-        function aniNext2(){   
-            var inc3 = frameNumm++;
+    // pf5m.addEventListener('mouseover',() => {
+    //     function aniNext2(){   
+    //         var inc3 = frameNumm++;
 
-            $(".movie2 img").css({visibility:"hidden"});
+    //         $(".movie2 img").css({visibility:"hidden"});
 
-            $(".movie2 img:eq("+inc3+")").css({visibility:"visible"});
+    //         $(".movie2 img:eq("+inc3+")").css({visibility:"visible"});
 
-            $(".movie2").animate(
-                {center:40},
-                2019.8,
-                function(){
-                clearInterval(k3);
-            });
+    //         $(".movie2").animate(
+    //             {center:40},
+    //             2019.8,
+    //             function(){
+    //             clearInterval(k3);
+    //         });
             
-            console.log("inc3:"+inc3);
-            console.log("mouseover")
-            if(inc3 >=40){ //로딩이 완료되면
-                clearInterval(k3); //setInterval종료					
-                frameNumm = 40;
-            }
-            else if (frameNumm > 0) {
-                clearInterval(k4); //mouseout 중 mouseover할때 mouseout, mouseover setInteval 충돌방지  
-            }
+    //         console.log("inc3:"+inc3);
+    //         console.log("mouseover")
+    //         if(inc3 >=40){ //로딩이 완료되면
+    //             clearInterval(k3); //setInterval종료					
+    //             frameNumm = 40;
+    //         }
+    //         else if (frameNumm > 0) {
+    //             clearInterval(k4); //mouseout 중 mouseover할때 mouseout, mouseover setInteval 충돌방지  
+    //         }
 
 
 
-        }
-        var k3 = setInterval(aniNext2,40.5); //aniNext 함수 실행
+    //     }
+    //     var k3 = setInterval(aniNext2,40.5); //aniNext 함수 실행
 
         
 
 
 
 
-    });
+    // });
 
-    var k3;
-    var k4;
-    var inc4;
-        pf5m.addEventListener('mouseout',() => aniBack2());
-        function aniBack2() {
-                let inc4 = frameNumm--;
+    // var k3;
+    // var k4;
+    // var inc4;
+    //     pf5m.addEventListener('mouseout',() => aniBack2());
+    //     function aniBack2() {
+    //             let inc4 = frameNumm--;
 
-                $(".movie2 img").css({visibility:"hidden"});
+    //             $(".movie2 img").css({visibility:"hidden"});
 
-                $(".movie2 img:eq("+inc4+")").css({visibility:"visible"});
+    //             $(".movie2 img:eq("+inc4+")").css({visibility:"visible"});
 
-                $(".movie2").animate(
-                    {center:40},
-                    1000,
-                    function(){
-                    clearInterval(k4);
-                }
-                );
+    //             $(".movie2").animate(
+    //                 {center:40},
+    //                 1000,
+    //                 function(){
+    //                 clearInterval(k4);
+    //             }
+    //             );
 
-                console.log("inc4:"+inc4);
-                    console.log("mouseout")
-                if(inc4 >= 40){
-                    k4 = setInterval(aniBack2,40.5); //setInterval종료
-                    clearInterval(k3);
-                }
+    //             console.log("inc4:"+inc4);
+    //                 console.log("mouseout")
+    //             if(inc4 >= 40){
+    //                 k4 = setInterval(aniBack2,40.5); //setInterval종료
+    //                 clearInterval(k3);
+    //             }
 
-                else if (inc4 <= 0 ) {
-                    frameNumm = 0;
-                    if( inc4 == 0){
-                        console.log("minor")
-                        clearInterval(k4);
-                    }
-                }
+    //             else if (inc4 <= 0 ) {
+    //                 frameNumm = 0;
+    //                 if( inc4 == 0){
+    //                     console.log("minor")
+    //                     clearInterval(k4);
+    //                 }
+    //             }
     
-            }
-            var k4 = setInterval(aniBack2,40.5)
+    //         }
+    //         var k4 = setInterval(aniBack2,40.5)
 
 
 

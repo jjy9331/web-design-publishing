@@ -7,7 +7,7 @@ $(function(){
         console.log(t);
         $(".time").text(t);
         if(t >= 5){
-            $("lottie-player").css({display:"none"}); //로딩표시영역 사라짐
+            $("#logo_ani").css({display:"none"}); //로딩표시영역 사라짐
             // $("lottie-player").css({display:"block"}); //로딩표시영역 사라짐
             $('body').css({overflow:"auto"});//body스크롤없앰}
             $('body').css({position:"static"});

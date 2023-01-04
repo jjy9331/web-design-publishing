@@ -666,19 +666,20 @@ section {visibility: hidden;}
     z-index: 10;
 }
 
+
 .item:nth-of-type(3) .pf3 .movie1 { 
     position: relative;
     position: absolute;
-    top: 4.5%;
-    left: 3.9%;
+    top: 4.4%;
+    left: 2.9%;
     /* border: 5px dashed #777777; */
     /* object-fit: cover; */
     /* width: 1920px; */
     /* height: 1080px; */
-    width: 37vw;
-    height: 21vw;
+    width: 37.5vw;
+    height: 21.5vw;
     transform: scale(1);
-    z-index: 5;
+    z-index: 15;
 }
 
 .item:nth-of-type(3) .pf3 .movie1 img { 
@@ -866,16 +867,16 @@ section {visibility: hidden;}
 .item:nth-of-type(3) .pf5 .movie2 { 
     position: relative;
     position: absolute;
-    top: 5%;
-    left: 4%;
+    top: 4.4%;
+    left: 2.9%;
     /* border: 5px dashed #777777; */
     /* object-fit: cover; */
     /* width: 1920px; */
     /* height: 1080px; */
-    width: 37vw;
-    height: 21vw;
+    width: 37.5vw;
+    height: 21.5vw;
     transform: scale(1);
-    z-index: 5;
+    z-index: 15;
 }
 
 .item:nth-of-type(3) .pf5 .movie2 img { 
