@@ -351,8 +351,8 @@
         // console.log("delta: "+delta);
         //mac
         if (!(navigator.appVersion.indexOf("Mac") != -1)) { 
-            // $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 410)) }, 1000, "linear");
-            // event.preventDefault();
+            $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 1000/3)) }, 1000, "linear");
+            event.preventDefault();
         }
         // win
         else if (navigator.appVersion.indexOf("Mac") != -1) {
@@ -459,7 +459,12 @@
             {
                 visibility:[0, 1.0],
                 type: "seek",
-                frames: [0, 122],
+                frames: [0, 121],
+            },
+            {
+                visibility:[0, 0],
+                type: "stop", 
+                frames: [122]
             },
 
         ]
