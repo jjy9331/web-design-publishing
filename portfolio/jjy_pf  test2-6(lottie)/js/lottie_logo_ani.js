@@ -74,7 +74,7 @@ $(function(){
                 clearInterval(progressTimer);
                 $container.addClass('progress-complete');
                 $progressBar.add($progressText)
-                    // .delay(500)
+                    .delay(1000)
                 .animate({ opacity: 1 }, 250, function() {
 
 
@@ -86,7 +86,7 @@ $(function(){
                             actions: [
                                 {
                                     state: 'autoplay',
-                                    delay: 500
+                                    delay: 1000
                                 }
                             ]
                         });
@@ -127,6 +127,7 @@ $(function(){
                                         // $("#logo_ani").css({display:"none"}); //로딩표시영역 사라짐
                                         // $('body').css({overflow:"visible"});
                                         $('body').css({position:"fixed"});
+                                        $('body').css({overflow:"hidden"});
                                         $("header").hide();
                                         $("section").css('visibility', 'hidden');
                                         $(".wrapper").hide(); 

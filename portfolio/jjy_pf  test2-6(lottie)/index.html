@@ -59,53 +59,53 @@
         <section class="item home">
     
             <h2
-                data-0="opacity: 1;" 
+                data-0="display: block; opacity: 1;" 
                 data-4100="opacity: 0;"
-                data-14700="display: hidden; " 
+                data-14700="display: none; " 
             >Please, scroll down</h2>
     
             <div class="sec1"
             >
                 <div class="visual"
-                data-0="opacity: 0;"
+                data-0="display: block; opacity: 0;"
                 data-4100="opacity: 1"
-                data-14700="display: hidden; " 
+                data-14700="display: none; " 
     
                 >
                     <img src="images/main4.gif" alt="teamwork visual icon"
-                        data-0="opacity: 0;"
+                        data-0="display: block; opacity: 0;"
                         data-4100="opacity: 1; left: -30%" 
                         data-7500="opacity: 1; left: 28.5%;"
                         data-9500="opacity: 0;"
-                        data-14700="display: hidden; " 
+                        data-14700="display: none; " 
                     >
                 </div>
                 <div class="typo"
-                    data-0="opacity: 0;"
+                    data-0="display: block; opacity: 0;"
                     data-4100="opacity: 0;"
                     data-5501="opacity: 1;" 
                     data-7500="opacity: 1;"
                     data-9500="opacity: 0;"
-                    data-14700="display: hidden; "
+                    data-14700="display: none; "
                 >
                         <h3 >팀이 <span class="kw1">__</span>하면, 프로젝트가 <span class="kw2">__</span>된다</h3>
                         <p>일은 <span>__</span> 하는 것이라 배웠습니다</p>
                 </div>
                 <div class="sec2"
-                    data-0="opacity: 0;"
+                    data-0="display: block; opacity: 0;"
                     data-9599="opacity: 0;"                 
                     data-10500="opacity: 1;"
                     data-11500="opacity: 1;"
                     data-13000="opacity: 0;" 
-                    data-14700="display: hidden; "
+                    data-14700="display: none; "
                 >
                     <div class="typo2"
-                        data-0="opacity: 0;"
+                        data-0="display: block; opacity: 0;"
                         data-9599="opacity: 0;"                 
                         data-10500="opacity: 1;"
                         data-115000="opacity: 1;"
                         data-13000="opacity: 0;" 
-                        data-14700="display: hidden; "
+                        data-14700="display: none; "
                     >
                         <h3>팀이 단결하면, 프로젝트가 완결된다</h3>
                         <p>일은 같이 하는 것이라 배웠습니다</p>
@@ -139,18 +139,18 @@
                     data-82500="left:-100%; display: none;"
                 ></canvas> -->
                 <lottie-player 
-                id="screen" 
-                src="data/introduce_ani.json"
-                speed="1"
-                preserveAspectRatio="xMidYMid slice"
+                    id="screen" 
+                    src="data/introduce_ani.json"
+                    speed="1.2"
+                    preserveAspectRatio="xMidYMid slice"
 
-                data-0="display: none;"
-                data-14700="display: hidden; "
-                data-14750="display: block; "
-                data-63270="left:0%; display: block; "
-                data-70270="left:0%; display: block; " 
-                data-82500="left:-100%; display: none;"
-            ></lottie-player>
+                    data-0="display: none;"
+                    data-14700="display: hidden; "
+                    data-14750="display: block; "
+                    data-63270="left:0%; display: block; "
+                    data-70270="left:0%; display: block; " 
+                    data-82500="left:-100%; display: none;"
+                ></lottie-player>
             </div>
         </section>
         <section class="item portfolio"
@@ -331,7 +331,7 @@
 <lottie-player 
     id="logo_ani" 
     src="data/logo_intro.json"
-    speed="1"
+    speed="1.2"
     preserveAspectRatio="xMidYMid slice"
 ></lottie-player>       
 <div class="progress" id="progress"> <span class="progress-bar"></span> <span class="progress-text">0%</span> </div>
@@ -351,7 +351,7 @@
         // console.log("delta: "+delta);
         //mac
         if (!(navigator.appVersion.indexOf("Mac") != -1)) { 
-            $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 1000/3)) }, 1000, "linear");
+            $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 220)) }, 830, "linear");
             event.preventDefault();
         }
         // win
@@ -436,11 +436,11 @@
                 type: "stop",
                 frames: [0]
             },
-            // {
-            //     visibility:[0, 0],
-            //     type: "stop",
-            //     frames: [0]
-            // },
+            {
+                visibility:[0, 0],
+                type: "stop",
+                frames: [0]
+            },
             {
                 visibility:[0, 0],
                 type: "stop", 

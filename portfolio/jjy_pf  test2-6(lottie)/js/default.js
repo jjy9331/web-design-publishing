@@ -583,6 +583,7 @@ $(function(){
     $("button").click(function(){//버튼을 클릭했을 때
         if(toggle=="0"){
         toggle = "1";
+        $("body").css("background","black");
         $("body").css("background-color","black");
         $("header").css({filter: "invert(100)"}); 
         $("footer").css({filter: "invert(100)"});
@@ -624,6 +625,7 @@ $(function(){
         }
         else{
         toggle = "0";
+        $("body").css("background","white");
         $("body").css("background-color","white");
         $("header").css({filter: "invert(0)"}); 
         $("footer").css({filter: "invert(0)"});
