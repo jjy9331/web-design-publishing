@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volvo main renewal</title>
+</head>
+<style>
+    /*Eric mayor reset*/
+
+body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd { margin: 0; padding: 0;}
+h1,h2,h3,h4,h5,h6 {font-size: 12px; line-height: 0;}
+ul {list-style: none;}
+img {border: 0; vertical-align: top;}
+
+html,body {
+    scroll-snap-type: y mandatory; /* 부모 적용 */
+}
+
+
+.wrap { 
+    /* border: 1px red dashed;     */
+}
+.wrap .sheet{ 
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* width: 100%; */
+    max-width: 1920px;
+    /* border: 1px blue dashed; */
+}
+.wrap .sheet img{ 
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    /* max-width: 1920px; */
+    /* border: 1px blue dashed; */
+}
+
+.wrap .s1 {
+    margin: 0 auto;
+    position: relative;
+    /* border: 3px blue dashed; */
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
+.wrap .s1 .main_v {
+    position: absolute;
+    left: 23.8%;
+    top: 35.5%;
+    box-sizing: border-box;
+    /* border: 3px blue dashed; */
+    z-index: -10;
+    width: 53.25%;
+}
+
+.wrap .s2 {
+    margin: 0 auto;
+    position: relative;
+    /* border: 3px blue dashed; */
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
+.wrap .s2 .sub_v {
+    position: absolute;
+    right: 10.43%;
+    top: 28.24%;
+    box-sizing: border-box;
+    /* border: 3px blue dashed; */
+    z-index: -10;
+    width: 35.5%;
+}
+.wrap .s3 {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
+
+.wrap .s4 {
+    position: relative;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+    /* border: 3px dashed red; */
+    scroll-snap-align: start;
+}
+
+.wrap .s4 .circle {
+    position: absolute;
+    right: 19.5%;
+    top: 30%;
+    background: #1C6BBA;
+    width: 22%;
+    height: 40%;
+    border-radius: 70%;
+    box-sizing: border-box;
+    /* border: 1px dashed red; */
+    transition: all ease-in-out 0.4s;
+    
+}
+
+.wrap .s4 .circle_big {
+    position: absolute;
+    right: 19.5%;
+    top: 30%;
+    background: #1C6BBA;
+    width: 22%;
+    height: 40%;
+    border-radius: 70%;
+    box-sizing: border-box;
+    /* border: 1px dashed red; */
+    transform: scale(1.7);
+    transition: all ease 500ms ;
+}
+
+.wrap .s5 {
+    margin: 0 auto;
+    position: relative;
+    /* border: 3px blue dashed; */
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
+
+.wrap .s6 {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
+
+.wrap .s6 .full_case {
+    position: absolute;
+    left: 11.9%;
+    top: 10.7%;
+    box-sizing: border-box;
+    border: 3px solid black ;
+    z-index: -10;
+    width: 76.7%;
+}
+
+.loader { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #fff; z-index: 100; color: #000; text-align: center; }
+.loader span { display: inline-block; padding-top: 20%; }
+
+
+/* base */
+body {  }
+
+
+/* 이미지 */
+.container img { width:100%; }
+
+
+/* 로딩 */
+.loading { position:fixed; z-index:1000; width:100%; height:100%; background:white; }
+
+.bar_bg { 
+    position:absolute; left:50%; top:50%; margin-left:-300px; width:600px; height:30px;	
+    background-color:white;
+    border-radius: 30px;
+}
+.bar_bg .bar { width:10%; height:100%;  background-color:#1C6BBA;  border-radius: 30px; }
+
+.tt {
+    position:absolute; top:50%; width:100%; margin-top:40px;
+    font-size:30px; color:#1C6BBA; text-align:center;	
+}
+
+
+/* body .loading img {
+    display: none;
+    width: 0%;
+    height: 0%;
+} */
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js" ></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<!-- <script type="text/javascript" src= http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js></script> -->
+<!-- <script type="text/javascript" src="</script'>http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="</script'>http://davidlynch.org/projects/maphilight/jquery.maphilight.min.js"></script> -->
+<script>
+    $(function(){ 
+
+        /////////////////////// 로딩진행률 표시 start ///////////////////////////////////////////////
+
+        var total = imagesLoaded("body").images.length; //body에 로딩될 이미지 전체갯수
+        var num = 0; //로딩된 이미지 갯수를 저장하게될 변수
+
+        imagesLoaded("body").on("progress", function () { //body의 이미지를 로딩할때 마다
+            num++;
+        });
+
+
+        var pg = 0; //진행율 초기값
+		var targetPG = 0; //진행율 목적지 초기값
+
+
+        function loadingMotion(){
+            
+				targetPG = (num / total) * 100; //로딩상황 백분률 계산
+
+				pg = pg + 0.1*(targetPG - pg); //목적지공식으로 부드럽게 모션 진행           
+				
+				var roundPG = Math.round(pg); //소수점 이하를 버리기위해 반올림
+
+				$(".bar").css({ width:roundPG + "%" }); //로딩바의 가로길이에 로딩값을 반영
+				$(".tt").text( roundPG + "%" ); //텍스트에 로딩값을 반영
+
+
+				if(roundPG >= 100){ //로딩이 완료되면
+						clearInterval(timer1); //setInterval종료					
+						$(".loading").fadeOut(1000); //로딩표시영역 사라짐
+				}
+                console.log(roundPG);
+        }
+
+		var timer1 = setInterval( loadingMotion, 10 ); //loadingMotion함수를 0.01초마다 실행
+
+        // console.log(timer1);
+
+        /////////////////////// 로딩진행률 표시 end ///////////////////////////////////////////////
+
+
+        $(window).scroll(function(){ 
+            var b = $(document).scrollTop(); 
+                        
+            $("#tt").text(b);
+
+            $(window).resize(function() {
+                page_width = $("body").css("width");
+                // page_height = $("body").css("height");
+                page_height = window.innerHeight;
+                $(".s2_w").text(page_width).css({ fontSize: 20 });
+                $(".s2_h").text(page_height).css({ fontSize: 20 });
+            });
+
+            function scrollanimate(){
+                var target_c = document.querySelector('.circle');
+                var circle_position = target_c.getBoundingClientRect().top;
+                var screen_position = window.innerHeight / 2;
+
+                var c1 = parseInt(circle_position)
+                var c2 = parseInt(screen_position)
+
+                if( c1 < c2) {
+                    target_c.classList.add('circle_big');
+                    // target_c.classList.add('circle_big');
+                }
+                else if ( c1 > c2) {
+                    target_c.classList.remove('circle_big');
+                    target_c.classList.add('circle');
+                }
+
+                // console.log("circle_position :" + c1)
+                // console.log("screen_position :" + c2)
+            }
+            window.addEventListener('scroll',scrollanimate);
+
+        });
+});
+</script>
+
+
+<body>
+
+    
+    <div class="loading">
+
+        <div class="bar_bg">
+            <div class="bar"></div>
+        </div>
+
+        <div class="tt">0%</div>
+
+    </div>
+
+    <!-- position monitoring -->
+    <!-- <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
+    <div id="test" style="position:fixed; left:30px; top: 250px; z-index: 10;">
+        <p>body width: <span class="s2_w">0px</span></p>
+    </div>
+    <div id="test" style="position:fixed; left:30px; top: 300px; z-index: 10;">
+        <p>body height: <span class="s2_h">0px</span></p>
+    </div> -->
+
+    <div class="wrap">
+        <div class="sheet s1">
+            <video src="vid/main.mp4" class="main_v" autoplay loop muted></video>
+            <img src="img/sec1.png" alt="sec1" class="sec1" >
+        </div>
+        <div class="sheet">
+            <img src="img/sec1_bottom.png" alt="sec1_b" class="sec1_b" >
+        </div>
+        <div class="sheet s2">
+            <video src="vid/family_safety.mp4" class="sub_v" autoplay loop muted ></video>
+            <!-- <img src="img/sec2.png" alt="sec2" class="sec2" >-->
+            <img src="img/sec2.png" usemap="#image-map" id="map1" >
+            <map name="image-map" onmouseover="changeImg1(this,'img/sec2_hover.png')" onmouseout="changeImg1(this,'img/sec2.png')" >
+                <!-- onmouseover="this.src='img/sec2_hover.png'" onmouseout="this.src='img/sec2.png'" -->
+                <area  alt="move to pdf" title="renewal_plan_view" href="volvo_renewal_plan.pdf" target="blank" coords="151,838,302,797" shape="rect">
+            </map>
+        </div>
+        <div class="sheet s3"><img src="img/sec3.png" alt="sec3" class="sec3"  ></div>
+        <div class="sheet s4">
+            <div class="circle"></div>
+            <img src="img/sec4.png" alt="sec4" class="sec4" >
+        </div>
+        <div class="sheet s5">
+            <img src="img/sec5.png" alt="sec5" class="sec5"  >
+            <img src="img/sec5_bottom.png" alt="sec5_b" class="sec5_b"  >
+        </div>
+        <div class="sheet s6">
+            <img src="img/sec6.png" alt="sec6" class="sec6"  >
+            <video src="vid/full_case.mp4" class="full_case" autoplay loop muted loading="lazy"></video>
+        </div>
+    </div>
+    <p  class="loader"><span><img src="img/loader.gif" alt="로딩중입니다" /><br />loading</span></p>
+    <!-- <article class="loading">
+        <img src="img/sec1.png">
+        <img src="img/sec1_bottom.png">
+        <img src="img/sec2.png">
+        <img src="img/sec3.png">
+        <img src="img/sec4.png">
+        <img src="img/sec5.png">
+        <img src="img/sec6.png">
+        <video src="vid/main.mp4"></video>
+        <video src="vid/family_safety.mp4"></video>
+        <video src="vid/full_case.mp4"></video>
+    </article> -->
+</body>
+
+<!-- 반응형 이미지맵 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        $('img[usemap]').rwdImageMaps();
+    });
+
+    function changeImg1(obj, img){
+    var mapimg1 = document.getElementById('map1');
+    mapimg1.src = img;
+    }
+
+    window.onload = function() {
+    $(".loader").hide();
+    };
+
+
+</script>
+
+
+
+</html>

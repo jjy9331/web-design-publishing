@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smile</title>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<style>
+
+body {
+ margin:0;
+ background: #333;
+}
+svg {
+  display: block;
+  margin: 20px auto;
+  width:400px;
+}
+
+#smile2 {
+  visibility:hidden;
+}
+
+#slider {
+  width:420px;
+  margin:20px auto;
+}
+
+/* #smile1 {
+    position: absolute;
+    top: 33%;
+    left: 44%;
+    height: 6%;
+    z-index: 1;
+    cursor: default;
+}
+
+#smile2 {
+    visibility: hidden;
+    position: absolute;
+    top: 33%;
+    left: 44%;
+    height: 6%;
+    z-index: 1;
+    cursor: default;
+}
+
+#smile3 {
+    visibility: hidden;
+    position: absolute;
+    top: 33%;
+    left: 44%;
+    height: 6%;
+    z-index: 1;
+    cursor: default;
+} */
+</style>
+<script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.min.js"></script>
+
+
+<script>
+    var tl = gsap.timeline({onUpdate:updateSlider, defaults: {duration: 1}}),
+    smile = document.getElementById("smile1");
+
+    tl.to(smile, {morphSVG:"#smile2"}, "+=1")
+
+    /* controls */
+
+    $("#slider").slider({
+    range: false,
+    min: 0,
+    max: 1,
+    step:.001,
+    slide: function ( event, ui ) {
+        tl.progress( ui.value ).pause();
+    },
+    stop: function () {
+        tl.play();
+    }
+    });	
+
+    function updateSlider() {
+        $("#slider").slider("value", tl.progress());
+    } 
+</script>
+
+
+</head>
+
+<body>
+
+<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.62 31.62">
+    <style>
+        .cls-1{fill:#ffe422;}
+        .cls-2{fill:#000;}
+    </style>
+    <circle class="cls-1" cx="15.81" cy="15.81" r="15.81"/>
+    <path id="smile1" class="cls-2" d="M1205,474.3a.54.54,0,0,1,.56.55.56.56,0,0,1-1.12,0A.54.54,0,0,1,1205,474.3Z" transform="translate(-1189.19 -449.4)"/>
+    <path id="smile2" class="cls-3" d="M1216.67,463.09h0a.49.49,0,0,0-.58.36,1.49,1.49,0,0,1-2.9,0,.64.64,0,0,0,0-.07.48.48,0,1,0-.92.3,2.46,2.46,0,0,0,1.89,1.81,9.15,9.15,0,0,1-18.29,0,2.45,2.45,0,0,0,1.89-1.8h0a.47.47,0,0,0-.35-.58h0a.5.5,0,0,0-.59.36,1.49,1.49,0,0,1-2.9,0s0-.05,0-.07a.49.49,0,0,0-.61-.31.49.49,0,0,0-.31.61,2.44,2.44,0,0,0,1.91,1.81,10.12,10.12,0,0,0,20.23,0,2.47,2.47,0,0,0,1.92-1.81h0A.49.49,0,0,0,1216.67,463.09Z" transform="translate(-1189.16 -449.4)"/>
+</svg>
+    <div id="slider"></div>
+
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script>
+</html>

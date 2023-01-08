@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>브라우저 반응 사이즈 테스트</title>
+<script src="js/jquery-3.6.0.js"></script>
+
+</head>
+<body>
+
+
+<h1>0</h1>
+
+<h2>0</h2>
+
+<script>
+    $(function(){ 
+    
+        let X = $(window).width();        
+        let Y = $(window).height();
+    
+        $(window).resize(function(e){
+
+                $("h1").text(X); // x위치값 
+                $("h2").text(Y); // y위치값 
+
+                console.log(X);
+                console.log(Y);
+        });
+
+        // alert("hello");
+
+        // $(window).mousemove(function(e){
+        //     $("h1").text( e.pageX ); //마우스커서의 x위치값
+        //     $("h2").text( e.pageY ); //마우스커서의 y위치값
+
+        // });
+        
+    });
+</script>
+</body>
+</html>

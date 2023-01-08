@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>where's wally?</title>
+<style>
+
+.wrap { 
+    /* margin-top: 300px; */
+    position: fixed;
+    width: 100%;
+    border:1px dashed black; 
+    overflow: hidden;
+}
+.intro { margin:0 auto; 
+    /* border:5px dashed #ddd;  */
+    width: 100%;
+    height:1080px; 
+}
+.intro img { 
+    position:absolute;
+    visibility:hidden;
+}
+</style>
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+
+
+<script>
+    $(function(){
+    
+        //이미지 불러오기
+        for (i=0; i<=155; i++){
+            $(".intro").append("<img src='track_run_start/"+i+".png'>");
+        }
+        $(".intro img:first").css({visibility:"visible"});
+    
+    
+    
+        //애니메이션 시키기
+        let frameNum=0;
+    
+        function aniNext(){
+            frameNum++;
+    
+            if(frameNum> $(".intro img:last").index() ){
+                frameNum=0
+            };
+    
+            $(".intro img").css({visibility:"hidden"});
+            $(".intro img:eq("+frameNum+")").css({visibility:"visible"});
+        }
+    
+    
+        function aniPrev(){//역방향 진행
+            frameNum--;
+    
+            if(frameNum < 0 ){
+                frameNum = $(".intro img:last").index()
+            };
+    
+            $(".intro img").css({visibility:"hidden"});
+            $(".intro img:eq("+frameNum+")").css({visibility:"visible"});
+        }
+    
+        //setInterval(aniNext,100);//0.1초마다 aniNext함수 실행
+    
+        $(".intro").mousewheel(function(e,delta){//.movie영역 위에서
+        
+            if( delta < 0 ){ //휠을 아래로 돌렸을때
+                aniNext();
+            }
+            else { //휠을 위로 돌렸을때
+                aniPrev();
+            }
+    
+        });
+    
+    
+    });
+</script>
+
+</head>
+
+<body>
+
+
+    
+
+    <div class="wrap">
+        <div class="intro">
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

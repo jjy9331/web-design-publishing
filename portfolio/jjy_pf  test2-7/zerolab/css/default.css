@@ -1,0 +1,54 @@
+
+/*Eric mayor reset*/
+
+body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd { margin: 0; padding: 0;}
+h1,h2,h3,h4,h5,h6 {font-size: 12px; line-height: 0;}
+ul {list-style: none;}
+img {border: 0; vertical-align: top;}
+
+html,body {
+    scroll-snap-type: y mandatory; /* 부모 적용 */
+}
+
+.wrap { 
+    /* border: 1px red dashed;     */
+    /* overflow: auto; */
+}
+.wrap .sheet{ 
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* width: 100%; */
+    max-width: 1920px;
+    /* border: 1px blue dashed; */
+    
+}
+.wrap .s1 {scroll-snap-align: start;}
+.wrap .s2 {scroll-snap-align: start;}
+.wrap .s3 {scroll-snap-align: start;}
+
+.wrap .sheet img{ 
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    /* max-width: 1920px; */
+    /* border: 1px blue dashed; */
+}
+.wrap .s4 {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
+.wrap .s5 {
+    margin: 0 auto;
+    position: relative;
+    /* border: 3px blue dashed; */
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
+.wrap .s6 {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+    scroll-snap-align: start;
+}   
