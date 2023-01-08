@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jung Ji yong</title>
+<link rel="stylesheet" href="css/default.css">
+<script src="js/jquery-3.6.0.js"></script>
+<!-- <script src="js/logo_intro.js"></script> -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<!-- <script src="js/jquery.mousewheel.min.js"></script> -->
+<!-- <script src="jQuery.scrollSpeed.js"></script> -->
+<!-- <script defer src="js/introduce2.js"></script> -->
+<!-- <script defer src="js/introduce3.js"></script> -->
+
+<script>
+$(function(){ 
+
+        $("header .inner .logo").click(function(){
+                    $('html,body').animate({ scrollTop:0},700); return false;	    
+        })
+
+        $("header .inner ul li:eq(0) a, h1 a").click(function(){
+                $('html,body').animate({ scrollTop:0},700); return false;	    
+        })
+        $("header .inner ul li:eq(1) a").click(function(){
+                $('html,body').animate({ scrollTop:876},700); return false;
+        })
+        $("header .inner ul li:eq(2) a").click(function(){
+                $('html,body').animate({ scrollTop:1723},700); return false;
+        })
+        $("header .inner ul li:eq(3) a").click(function(){
+                $('html,body').animate({ scrollTop:3170},700); return false;
+        })
+        $(window).scroll(function(){ 
+            var b = $(document).scrollTop(); 
+                        
+            $("#tt").text(b);
+
+            $("#bar").css({transition:"0.5s"});
+            $('#home .inner .visual').css({transition:"0.4s"});
+            $('#home .inner .typo h3').css({transition:"1s"});
+            $('#home .inner .typo p').css({transition:"1s"});
+
+            $('#home .inner .visual').css({transition:"0.4s"});
+            $('#home .inner .typo2 h3').css({transition:"1s"});
+            $('#home .inner .typo2 p').css({transition:"1s"});
+
+            $('#home .inner .typo h3 .kw1').css({transition:"0.4s"});
+            $('#home .inner .typo h3 .kw2').css({transition:"0.4s"});
+            $('#home .inner .typo p span').css({transition:"0.4s"});
+            
+
+            $('#home .inner .typo .d1').css({transition:"0.4s"});
+            $('#home .inner .typo .d2').css({transition:"0.4s"});
+            $('#home .inner .typo .d3').css({transition:"0.4s"});
+            $('#home .inner .typo .d4').css({transition:"0.4s"});
+            $('#home .inner .typo .d5').css({transition:"0.4s"});
+            $('#home .inner .typo .d6').css({transition:"0.4s"});
+
+            $('#introduce .visual img:eq(1)').css({transition:"0.5s"});
+            $('#introduce .visual img:eq(2)').css({transition:"0.5s"});
+
+            $('#portfolio .inner li:eq(0)').css({transition:"0.4s"});
+            $('#portfolio .inner li:eq(1)').css({transition:"0.4s"});
+            $('#portfolio .inner li:eq(1)').css({transition:"0.4s"});
+            $('#portfolio .inner li:eq(2)').css({transition:"1.0s"});
+            $('#portfolio .inner li:eq(3)').css({transition:"1.0s"});
+            $('#portfolio .inner li:eq(4)').css({transition:"1.0s"});
+            $('#portfolio .inner li:eq(5)').css({transition:"1.0s"});
+            $('#portfolio .inner li:eq(6)').css({transition:"1.0s"});
+
+            $('#portfolio .inner li:eq(1) .f1').css({transition:"3.0s"});
+            // $('#portfolio .inner li:eq(1) .f2').css({transition:"3.0s"});
+
+
+
+
+            if((b >= 2223) && (b < 3170)) { //portfolio
+                $('#bar').css({right:224});
+                $('#bar').css({width:145});
+                $('#portfolio .inner li:eq(0)').css({opacity:0});
+                $('#portfolio .inner li:eq(1)').css({opacity:0});
+                $('#portfolio .inner li:eq(2)').css({opacity:1});
+                $('#portfolio .inner li:eq(3)').css({opacity:1});
+                $('#portfolio .inner li:eq(4)').css({opacity:1});
+                $('#portfolio .inner li:eq(5)').css({opacity:1});
+                $('#portfolio .inner li:eq(6)').css({opacity:1});
+                
+            } 
+            
+            if(b >= 3170) {	//contact
+                $('#bar').css({right:14});
+                $('#bar').css({width:113});
+            } 	
+
+
+                    
+        });
+});
+    
+
+</script>
+</head>
+<body>
+    
+    <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color: white; font-size: 30px; z-index: 10;">0</div>
+    <!-- <h2 class="time">시간</h2> -->
+
+    <div class="movie">
+    </div>
+
+
+
+<!-- <div class="logo_intro">
+</div> -->
+    <header>
+        <div class="inner">
+            <div>
+                <a href="#">
+                    <img src="../jjy_pf/images/logo.png" alt="logo" class="logo">
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="#home">홈</a>
+                </li>
+                <li>
+                    <a href="#introduce">자기소개</a>
+                </li>
+                <li>
+                    <a href="#portfolio">포트폴리오</a>
+                </li>
+                <li>
+                    <a href="#contact">컨텍스트</a>
+                </li>
+            </ul>
+            <div id="bar"></div>
+        </div>
+    </header>
+    <!-- <div class="group"> -->
+        <section id="home">
+        <!-- <section id="home"
+            data-0="background: rgb(255,255,255);"
+            data-9399="background: rgb(255,255,255);"
+            data-10230="background: rgb(0,0,0);"
+        > -->
+            <div class="inner">
+                <div class="sec0"
+                    data-0="opacity: 1;" 
+                    data-1600="opacity: 0;" 
+                >
+                    <h3>Please, scroll down</h3>
+                </div>
+                <div class="sec1"
+                >
+                    <div class="visual"
+                    data-0="opacity: 0;"
+                    data-1600="opacity: 1" 
+
+                    >
+                        <img src="images/main3.gif" alt="teamwork visual icon"
+                            data-0="opacity: 0;"
+                            data-1600="opacity: 1; left: -30%" 
+                            data-4000="opacity: 1; left: 28.5%;"
+                            data-6000="opacity: 0; " 
+                        >
+                    </div>
+                    <div class="typo"
+                        data-0="opacity: 0; display: hidden;"
+                        data-1600="opacity: 0; display: hidden;"
+                        data-2001="opacity: 1; display: block;" 
+                        data-4000="opacity: 1; display: block;"
+                        data-6000="opacity: 0; display: none;"
+                    >
+                        <h3 >팀이 <span class="kw1">__</span>하면, 프로젝트가 <span class="kw2">__</span>된다</h3>
+                        <p>일은 <span>__</span> 하는 것이라 배웠습니다</p>
+                    </div>
+                </div>
+                <div class="sec2"
+                    data-0="opacity: 0; display: hidden;"
+                    data-6099="opacity: 0; display: hidden;"                 
+                    data-7000="opacity: 1; display: hidden;"
+                    data-8000="opacity: 1; display: hidden;"
+                    data-9500="opacity: 0; display: none;" 
+                >
+                    <div class="typo2"
+                    data-0="opacity: 0; display: hidden;"
+                    data-6099="opacity: 0; display: hidden;"                 
+                    data-7000="opacity: 1; display: block;"
+                    data-8000="opacity: 1; display: block;"
+                    data-9500="opacity: 0; display: hidden;" 
+                    >
+                        <h3>팀이 단결하면, 프로젝트가 완결된다</h3>
+                        <p>일은 같이 하는 것이라 배웠습니다</p>
+                        <div class="dot d1"></div>
+                        <div class="dot d2"></div>
+                        <div class="dot d3"></div>
+                        <div class="dot d4"></div>
+                        <div class="dot d5"></div>
+                        <div class="dot d6"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <div class="bkbox"></div> -->
+        <section id="introduce">
+                <div id="wrapper"
+                data-parallax='{"y":10200, "from-scroll":9700, "distance":3000, "smoothness":0}'
+                >
+                    <canvas width="1920" height="1080" id="screen"></canvas>
+                </div>
+                <!-- <div class="boundary end"></div> -->
+        </section>
+    <!-- </div> -->
+        
+        <section id="portfolio">
+            <div class="inner">
+                <h2>포트폴리오</h2>
+                <ul>
+                    <li>
+                        <div class="thum">
+                                <img src="images/pf1.png" alt="portfolio_icon">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thum pi">
+                            <a href="#">
+                                <img  src="images/pf2.jpg" alt="ux,ui_img" class="face_change f1">
+                                <img  src="images/pf2_1.jpg" alt="ux,ui_img" class="face_change f2">
+                                <div class="ov">view</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thum pi">
+                            <a href="#">
+                                <img src="images/pf3.jpg" alt="WebDesign">
+                                <div class="ov">view</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thum pi">
+                            <a href="#">
+                                <img src="images/pf4.jpg" alt="Markup">
+                                <div class="ov">view</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thum pi">
+                            <a href="#">
+                                <img src="images/pf5.jpg" alt="MoblieDesign">
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thum pi">
+                            <a href="#">
+                                <img src="images/pf6.jpg" alt="">
+                                <div class="ov">view</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thum more">
+                            <a href="#">
+                                <img src="images/pf7.png" alt="">
+                                <div class="ov">
+                                    <img src="images/more_view.gif" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    <div class="group">
+        <section id="contact">
+            <div class="inner">
+                <div class="visual">
+                    <img src="images/c1.gif" alt="contact_visual">
+                </div>
+                <div class="typo">
+                    <h2>컨텍트</h2>
+                    <dl class="info">
+                        <dt>이메일</dt>
+                        <dd>jjy9331@naver.com</dd>
+                        <dt>핸드폰</dt>
+                        <dd>010-****-****</dd>
+                    </dl>
+                    <p>귀사와 좋은 인연이 되길 바랍니다!</p>
+                </div>
+    
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="inner">
+            <p>Copyright &copy; 2022 my portfolio, all right reserved</p>
+            <button class="darkmode" >
+                <span class="invert">Dark mode &nbsp;●</span>
+            </button>
+        </div>
+    </footer>       
+    
+
+
+
+    <script>
+        $(function(){
+            let toggle = "0";
+    
+                $("button").click(function(){//버튼을 클릭했을 때
+                    if(toggle=="0"){
+                    
+                   $(".group").css({filter: "invert(100)"}); 
+                //    $(".darkmode").css({filter: "invert(100)"}); 
+                   $("header").css({filter: "invert(100)"}); 
+                   $("footer").css({filter: "invert(100)"}); 
+                   $("body #portfolio").css({backgroundColor: "black"}); 
+                   $("body #portfolio .inner h2").css({color: "white"}); 
+                   $("body #portfolio .inner ul li:eq(0)").css({filter: "invert(100)"}); 
+                   $("body #portfolio .inner ul li:eq(1)").css('box-shadow', '0 0 0 3px white');
+                   $("body #portfolio .inner ul li:eq(2)").css('box-shadow', '0 0 0 3px white');
+                   $("body #portfolio .inner ul li:eq(3)").css('box-shadow', '0 0 0 3px white');
+                   $("body #portfolio .inner ul li:eq(4)").css('box-shadow', '0 0 0 3px white'); 
+                   $("body #portfolio .inner ul li:eq(5)").css('box-shadow', '0 0 0 3px white'); 
+                   $("body #portfolio .inner ul li:eq(6)").css({filter: "invert(100)"});
+                   $("body #portfolio .inner ul li:eq(0)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(1)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(2)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(3)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(4)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(5)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(6)").css({transition: "none"}); 
+                //    $("body #portfolio ul .pi").css({filter: "invert(100)"}); 
+                   toggle = "1";
+                    }
+                    else{
+                   $(".group").css({filter: "invert(0)"}); 
+                //    $(".darkmode").css({filter: "invert(0)"});
+                   $("header").css({filter: "invert(0)"});
+                   $("footer").css({filter: "invert(0)"});
+                   $("body #portfolio").css({backgroundColor: "white"}); 
+                   $("body #portfolio .inner h2").css({color: "black"}); 
+                   $("body #portfolio .inner ul li:eq(0)").css({filter: "invert(0)"}); 
+                   $("body #portfolio .inner ul li:eq(1)").css('box-shadow', '0 0 0 3px black');
+                   $("body #portfolio .inner ul li:eq(2)").css('box-shadow', '0 0 0 3px black');
+                   $("body #portfolio .inner ul li:eq(3)").css('box-shadow', '0 0 0 3px black');
+                   $("body #portfolio .inner ul li:eq(4)").css('box-shadow', '0 0 0 3px black'); 
+                   $("body #portfolio .inner ul li:eq(5)").css('box-shadow', '0 0 0 3px black'); 
+                   $("body #portfolio .inner ul li:eq(6)").css({filter: "invert(0)"}); 
+                   $("body #portfolio .inner ul li:eq(0)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(1)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(2)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(3)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(4)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(5)").css({transition: "none"}); 
+                   $("body #portfolio .inner ul li:eq(6)").css({transition: "none"}); 
+                //    $("body #portfolio ul .pi").css({filter: "invert(0)"}); 
+                   toggle = "0";
+                    }
+                });
+    
+                //invert
+                // $('.darkmode').click(function(){
+                //     $('body').toggleClass('invert');
+                // });
+        });
+    
+    </script>
+    <script src="js/skrollr.min.js"></script>
+    <script >
+        var s = skrollr.init();
+    </script>
+<!-- <script src="js/jquery-ui-1.12.1.min.js"></script>
+<script src="js/jquery.min_1.12.4.js"></script> -->
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.parallax-scroll.js"></script>
+<script src="js/introduce3.js"></script>
+<script src="js/scroll.js"></script>
+<!-- <script>
+
+            $(window).scroll(function(){ 
+                var b = $(document).scrollTop(); 
+                    if((b >=0) && (b < 10200)) {	
+                        $('#introduce').css({opacity:0});
+                        $('main').css({opacity:0});
+                        $('#wrapper').css({opacity:0});
+                        $('canvas').css({opacity:0});
+
+                        $('#introduce').css({display: "none"});
+                        $('main').css({display: "none"});
+                        $('#wrapper').css({display: "none"});
+                        $('canvas').css({display: "none"});
+                    }
+                    if((b >=10700) && (b < 20000)) {	
+                        $('#introduce').css({opacity:1});
+                        $('main').css({opacity:1});
+                        $('#wrapper').css({opacity:1});
+                        $('canvas').css({opacity:1});
+
+                        $('#introduce').css({display: "block"});
+                        $('main').css({display: "block"});
+                        $('#wrapper').css({display: "block"});
+                        $('canvas').css({display: "block"});
+                    }
+            });
+</script> -->
+</body>
+</html>
