@@ -11,50 +11,54 @@
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
 <!-- <script src="js/logo_intro.js"></script> -->
-<script src="js/default.js"></script>
+
 
 </head>
 <body>
 <!-- <div class="logo_ani"></div> -->
 
-<header>
-    <div class="inner">
-        <div>
-            <a href="#">
-                <img src="images/logo.png" alt="logo" class="logo">
-            </a>
-        </div>
-        <ul>
-            <li>
-                <a href="#home">홈</a>
-                <div class="hr_d1"></div>
-            </li>
-            <li>
-                <a href="#introduce">자기소개</a>
-                <div class="hr_d2"></div>
-                <div class="hr_d3"></div>
-                <div class="hr_d4"></div>
-                <div class="hr_d5"></div>
-            </li>
-            <li>
-                <a href="#portfolio">포트폴리오</a>
-                <div class="hr_d6"></div>
-                <div class="hr_d7"></div>
-                <div class="hr_d8"></div>
-                <div class="hr_d9"></div>
-                <div class="hr_d10"></div>
-            </li>
-            <li>
-                <a href="#contact">컨텍트</a>
-                <div class="hr_d11"></div>
-                <div class="hr_d12"></div>
-                <div class="hr_d13"></div>
-                <div class="hr_d14"></div>
-            </li>
-        </ul>
-    </div>
-</header>
+
+
 <div id="skrollr-body">
+
+    <header class="header">
+        <div class="inner">
+            <div>
+                <a href="#">
+                    <img src="images/logo.png" alt="logo" class="logo">
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="#home">홈</a>
+                    <div class="hr_d1"></div>
+                </li>
+                <li>
+                    <a href="#introduce">자기소개</a>
+                    <div class="hr_d2"></div>
+                    <div class="hr_d3"></div>
+                    <div class="hr_d4"></div>
+                    <div class="hr_d5"></div>
+                </li>
+                <li>
+                    <a href="#portfolio">포트폴리오</a>
+                    <div class="hr_d6"></div>
+                    <div class="hr_d7"></div>
+                    <div class="hr_d8"></div>
+                    <div class="hr_d9"></div>
+                    <div class="hr_d10"></div>
+                </li>
+                <li>
+                    <a href="#contact">컨텍트</a>
+                    <div class="hr_d11"></div>
+                    <div class="hr_d12"></div>
+                    <div class="hr_d13"></div>
+                    <div class="hr_d14"></div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
     
     <div id="container">
         <section class="item home">
@@ -160,11 +164,11 @@
         >
         <div class="container">
             <div class="pf">
-                <div class="pf_ani pf1">
+                <div class="pf_ani pf1" id="pf_ani">
                     <span id="pf1back" class="material-symbols-outlined">
                         arrow_back_ios
                     </span>
-                    <a href="./gebiscon/index.html" target="_blank">
+                    <a href="#" onclick="return false" class="menu">
                         <img src="images/pf2_0.png" alt="ux,ui_img" class="face_change f1"
                             onmouseover="this.src='images/pf2_3.gif'"
                             onmouseout="this.src='images/pf2_0.png'"
@@ -174,16 +178,29 @@
                         arrow_forward_ios
                     </span>
                 </div>
+                <div class="pop gebiscon">
+                    <div class="inner">
+                        <div class="sheet s1"><img src="./gebiscon/img/sec1.png" alt="d1"></div>
+                        <div class="sheet s2"><img src="./gebiscon/img/sec2.jpg" alt="d2"></div>
+                        <div class="sheet s3"><img src="./gebiscon/img/sec3.jpg" alt="d3"></div>
+                        <div class="sheet s4">
+                            <img src="./gebiscon/img/sec4.jpg" alt="d4" class="d4">
+                        </div>
+                        <div class="sheet s5">
+                            <img src="./gebiscon/img/sec5.jpg" alt="d5" class="d5">
+                        </div>
+                        <div class="sheet s6">
+                            <img src="./gebiscon/img/sec6.gif" alt="d6" class="d6">
+                        </div>
+                        <div class="close">X</div>
+                    </div>
+                </div>
                 <div class="pf_ani pf2">
                     <span id="pf2back" class="material-symbols-outlined">
                         arrow_back_ios
                     </span>
                         <a href="./zerolab/index.html" target="blank">
                             <img src="images/monitor2.png" alt="monitor" class="pf2_monitor">
-                            <!-- <div class="pf2_bg"
-                                onmouseover=""
-                                onmouseout=""
-                            > -->
                             <div class="pf2_bg">
                                 <h3>zero<span>lab</span></h3>
                                 <p>리디자인</p>
@@ -415,6 +432,7 @@
 
 
 <script src="js/lottie_logo_ani.js"></script>
+<script src="js/default.js"></script>
 <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
 
 </html>

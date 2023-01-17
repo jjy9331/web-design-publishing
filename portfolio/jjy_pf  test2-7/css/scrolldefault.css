@@ -66,6 +66,12 @@ header .inner {
     /* border: 2px dashed yellow; box-sizing: border-box;  */
 }
 
+/* popup */
+.pop { display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; background: white; z-index: 1200; overflow: auto; }
+.pop .inner { text-align: center; }
+.close { position: fixed; right: 40px; top: 20px; color: black; cursor: pointer;}
+
+
 /* header */
 header ul {
     position: absolute; 
@@ -470,6 +476,48 @@ section {visibility: hidden;}
 .item:nth-of-type(3) .pf1 img:nth-child(1) {
     width: 55vw;
 }
+
+
+
+.inner .sheet{ 
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* width: 100%; */
+    max-width: 1920px;
+    /* border: 1px blue dashed; */
+}
+.inner .sheet img{ 
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* width: 100%; */
+    width: 75%; 
+    /* max-width: 1920px; */
+    /* border: 1px blue dashed; */
+}
+.inner .s1 {scroll-snap-align: start; margin-top: 3%;}
+.inner .s2 {scroll-snap-align: start;}
+.inner .s3 {scroll-snap-align: start; }
+
+.inner .s4 {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
+.inner .s5 {
+    margin: 0 auto;
+    position: relative;
+    /* border: 3px blue dashed; */
+    max-width: 1920px;
+    scroll-snap-align: start;
+}
+.inner .s6 {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+    scroll-snap-align: start;
+    margin-bottom: 3%;
+}   
 
 
 .material-symbols-outlined {

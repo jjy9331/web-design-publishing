@@ -4,6 +4,12 @@ var canvas = document.getElementById('screen');
 var ctx = canvas.getContext('2d');
 var scrollYPos;
 
+    //이미지 불러오기
+    for (i=0; i<=485; i++){
+        $("#screen").append("<img src='track_run_start4/"+i.toString().padStart(3, '0')+".png'>");
+    }
+
+
 
 img.src = "./track_run_start4/000.png";
 

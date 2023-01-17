@@ -227,6 +227,8 @@ $(function(){
 
 
 
+
+
     ///////////////////////////////////////////////////////////////////////////////
 
     // pf2 zerolab eye animation 
@@ -669,6 +671,25 @@ $(function(){
 
 
     /////////////////////////////////////////////////////////
+
+
+    //popup
+    $('.menu').click(function() {
+        $(this).parent().next().fadeIn(300);
+        $('header').css('display','none');
+        $('header').css({visibility:"hidden"});
+        $('footer').css('display','none');
+        $('footer').css({visibility:"hidden"});
+        return false;
+    });
+    $('.close').click(function() {
+        $('.pop').fadeOut(100)
+        $('.header').css('display','block');
+        $('.header').css({visibility:"visible"});
+        $('footer').css('display','block');
+        $('footer').css({visibility:"visible"});
+        return false;
+    });
 
 
 });
