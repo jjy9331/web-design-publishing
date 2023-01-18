@@ -5,12 +5,15 @@ var ctx2 = canvas2.getContext('2d');
 var scrollYPos2;
 
 
+<<<<<<< HEAD
     //이미지 불러오기
     for (i=0; i<=254; i++){
         $("#screen").append("<img src='contact_ani2/"+i.toString().padStart(3, '0')+".png'>");
     }
 
 
+=======
+>>>>>>> 0c4ef0f5285af08fb5cf11abb77a51eb7a1314a9
 // cimg.src = "./contact_ani/0.png";
 cimg.src = "./contact_ani2/000.png";
 

@@ -102,28 +102,47 @@ $(function(){
                                 let t = 0;
                                 function Logo_ani(){
                                     t = t + 1;
+<<<<<<< HEAD
                                     console.log(t);
                                     $(".time").text(t);
                                     if(t == 6){
+=======
+                                    // console.log(t);
+                                    $(".time").text(t);
+                                    if(t >= 6){
+>>>>>>> 0c4ef0f5285af08fb5cf11abb77a51eb7a1314a9
                                         $("#logo_ani").css({display:"none"}); //로딩표시영역 사라짐
 
                                         $('body').css({overflow:"auto"});//body스크롤없앰}
                                         $('body').css({position:"static"});
                                         $("header").fadeIn(2000);
+<<<<<<< HEAD
                                         $("footer").fadeIn(2000);
                                         $(".wrapper").fadeIn(2000); 
                                         $("section").fadeIn(2000); 
+=======
+                                        $(".wrapper").fadeIn(2000); 
+                                        $("section").fadeIn(2000); 
+                                        $("footer").fadeIn(2000);
+>>>>>>> 0c4ef0f5285af08fb5cf11abb77a51eb7a1314a9
                             
                                         $("header").css('visibility', 'visible');
                                         $(".wrapper").css('visibility', 'visible');
                                         $("section").css('visibility', 'visible');
                                         $("footer").css('visibility', 'visible');
                                         $('body').css('backgroundColor', 'white');
+<<<<<<< HEAD
                                         
 
                                         clearInterval(t);
                                     }
                                     else if(t < 6){
+=======
+
+                                        clearInterval(t);
+                                    }
+                                    else {
+>>>>>>> 0c4ef0f5285af08fb5cf11abb77a51eb7a1314a9
                                         $("#logo_ani").css({display:"block"}); //로딩표시영역 사라짐
                                         // $("#logo_ani").css({display:"none"}); //로딩표시영역 사라짐
                                         // $('body').css({overflow:"visible"});
