@@ -21,6 +21,7 @@ h1,h2,h3,h4,h5,h6 {font-size: 12px; line-height: 0;}
 ul {list-style: none;}
 img {border: 0; vertical-align: top; }
 
+html{overflow: hidden;}
 
 html, body {
     margin: 0;
@@ -66,15 +67,70 @@ header .inner {
     /* border: 2px dashed yellow; box-sizing: border-box;  */
 }
 
-<<<<<<< HEAD
 /* popup */
-.pop { display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; background: white; z-index: 1200; overflow: auto; }
+.pop { display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; background: white; z-index: 1200; overflow: auto; scroll-snap-type: y mandatory;}
 .pop .inner { text-align: center; }
-.close { position: fixed; right: 40px; top: 20px; color: black; cursor: pointer;}
 
+.pop_h {
+    position: fixed; 
+    left: 0px; top: 0px; background: rgba(255, 255, 255, 1); 
+    width: 100%;
+    height: 6%;
+    /* height: 120px;  */
+    border-bottom: 2px solid black;
+    z-index: 1000;
+    /* visibility: hidden; */
+}
+.pop_h_inner{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+.pop_h_inner h3{
+    font-size: 1.05vw;
+    padding-left: 2%;
+    font-weight: 300;
+}
+.close { 
+    /* position: absolute; */
+    /* right: 0%; */
+    /* top: 26%; */
+    padding-right: 2%;
+    color: black;
+    cursor: pointer;
+    font-size: 0.9vw;
+    font-weight: 300;
+}
+.pop_f {
+    position: relative;
+    position: fixed;
+    bottom: 0px;
+    border-top: 2px solid black;
+    /* background: rgba(0, 0, 0, 0);  */
+    background: rgba(255, 255, 255, 1);
+    width: 100%; 
+    height: 6%;
+    /* visibility: hidden; */
+    z-index: 1000
+}
+.pop_f_inner{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 0.05vw;
+    font-weight: 300;
+}
 
-=======
->>>>>>> 0c4ef0f5285af08fb5cf11abb77a51eb7a1314a9
+.pop_f_inner a:hover {text-decoration: underline;}
+
+.inner .d6 { box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 13%);}
+
 /* header */
 header ul {
     position: absolute; 
@@ -481,7 +537,6 @@ section {visibility: hidden;}
 }
 
 
-<<<<<<< HEAD
 
 .inner .sheet{ 
     margin: 0 auto;
@@ -494,38 +549,84 @@ section {visibility: hidden;}
     margin: 0 auto;
     box-sizing: border-box;
     /* width: 100%; */
-    width: 75%; 
+    /* width: 75%;  */
+    width: 157.5vh;
     /* max-width: 1920px; */
     /* border: 1px blue dashed; */
 }
-.inner .s1 {scroll-snap-align: start; margin-top: 3%;}
-.inner .s2 {scroll-snap-align: start;}
-.inner .s3 {scroll-snap-align: start; }
+.inner .s1 { 
+    position: relative;
+    scroll-snap-align: center;
+    margin-top: 3%;
+    background: rgb(33, 33, 33);
+    z-index: 100;
+}
+.inner .s1_left{ 
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(49, 144, 219);
+    z-index: -1;
+    /* margin-top: 0.1%; */
+}
+.inner .s1_right{ 
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(226, 27, 39);
+    z-index: -1;
+    /* margin-top: 0.1%; */
+}
+.inner .s1_img {box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 13%);}
+.inner .s2 {scroll-snap-align: center;}
+.inner .s3 {scroll-snap-align: center; background: rgb(33, 33, 33);}
 
 .inner .s4 {
     margin: 0 auto;
     position: relative;
     max-width: 1920px;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
 }
 .inner .s5 {
     margin: 0 auto;
     position: relative;
     /* border: 3px blue dashed; */
     max-width: 1920px;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    background: rgb(33, 33, 33);
 }
 .inner .s6 {
+    position: relative;
     margin: 0 auto;
     position: relative;
     max-width: 1920px;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     margin-bottom: 3%;
+    background: rgb(33, 33, 33);
+    z-index: 100;
 }   
+.inner .s6_left{ 
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(49, 144, 219);
+    z-index: -1;
+    /* margin-top: 0.1%; */
+}
+.inner .s6_right{ 
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(226, 27, 39);
+    z-index: -1;
+    /* margin-top: 0.1%; */
+}
 
 
-=======
->>>>>>> 0c4ef0f5285af08fb5cf11abb77a51eb7a1314a9
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,

@@ -227,11 +227,8 @@ $(function(){
 
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 0c4ef0f5285af08fb5cf11abb77a51eb7a1314a9
     ///////////////////////////////////////////////////////////////////////////////
 
     // pf2 zerolab eye animation 
@@ -624,6 +621,9 @@ $(function(){
         $(".eye_hide2").css("background-color","black");
         $(".pf4 .pf4_bg .ypaint_hide3").css("background-color","black");
         $("#screen2").css({filter: "invert(100)"});
+        $(".pop_h").css({filter: "invert(100)"});
+        $(".pop_f").css({filter: "invert(100)"});
+        
         // $(".pf2_monitor").css({filter: "brightness(1.3)"});
         
         // $(".portfolio").css("background-color","white");
@@ -666,6 +666,8 @@ $(function(){
         $(".eye_hide2").css("background-color","white");
         $(".pf4 .pf4_bg .ypaint_hide3").css("background-color","white");
         $("#screen2").css({filter: "invert(0)"});
+        $(".pop_h").css({filter: "invert(0)"});
+        $(".pop_f").css({filter: "invert(0)"});
         // $(".portfolio").css("background-color","black");
         // $(".home").css({filter: "invert(0)"});
         // $(".home h2").css({color: "black"});
@@ -676,7 +678,6 @@ $(function(){
     /////////////////////////////////////////////////////////
 
 
-<<<<<<< HEAD
     //popup
     $('.menu').click(function() {
         $(this).parent().next().fadeIn(300);
@@ -684,6 +685,7 @@ $(function(){
         $('header').css({visibility:"hidden"});
         $('footer').css('display','none');
         $('footer').css({visibility:"hidden"});
+        $('html').css("overflow", "hidden");
         return false;
     });
     $('.close').click(function() {
@@ -692,10 +694,9 @@ $(function(){
         $('.header').css({visibility:"visible"});
         $('footer').css('display','block');
         $('footer').css({visibility:"visible"});
+        $('html').css("overflow", "auto");
         return false;
     });
 
 
-=======
->>>>>>> 0c4ef0f5285af08fb5cf11abb77a51eb7a1314a9
 });
