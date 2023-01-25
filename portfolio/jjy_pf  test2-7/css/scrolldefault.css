@@ -568,6 +568,7 @@ section {visibility: hidden;}
     height: 100%;
     background-color: rgb(49, 144, 219);
     z-index: -1;
+    border-bottom: 0.01px rgb(49, 144, 219) solid;
     /* margin-top: 0.1%; */
 }
 .inner .s1_right{ 
@@ -577,10 +578,11 @@ section {visibility: hidden;}
     height: 100%;
     background-color: rgb(226, 27, 39);
     z-index: -1;
+    border-bottom: 0.01px rgb(226, 27, 39) solid;
     /* margin-top: 0.1%; */
 }
 .inner .s1_img {box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 13%);}
-.inner .s2 {scroll-snap-align: center;}
+.inner .s2 {position: relative; scroll-snap-align: center;}
 .inner .s3 {scroll-snap-align: center; background: rgb(33, 33, 33);}
 
 .inner .s4 {
@@ -600,7 +602,6 @@ section {visibility: hidden;}
 .inner .s6 {
     position: relative;
     margin: 0 auto;
-    position: relative;
     max-width: 1920px;
     scroll-snap-align: center;
     margin-bottom: 3%;
@@ -810,6 +811,110 @@ section {visibility: hidden;}
     background-color: white;
     cursor: default;
 }
+
+.inner .pf2_1 { 
+    position: relative;
+    scroll-snap-align: center;
+    margin-top: 4%;
+    background: rgb(240 174 0);
+    z-index: 100;
+    text-align: right;
+}
+.inner .pf2_1_eye{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    /* width: 88%; */
+    /* height: 100%; */
+    /* transform: scale(0.5); */
+    zoom: 0.4;
+    z-index: 101;
+    /* display: none;*/
+}
+.inner .sheet .pf2_1{ 
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* width: 100%; */
+    /* width: 75%;  */
+    width: 157.5vh;
+    /* max-width: 1920px; */
+    /* border: 1px blue dashed; */
+}
+
+.inner .pf2_2 {position: relative; scroll-snap-align: center; display: flex;}
+
+.inner .pf2_2 .pf2_2_img {width: 78.5vh;}
+
+.inner .pf2_2_l {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.inner .pf2_2_r {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.inner .pf2_3 {
+    scroll-snap-align: center; 
+    background: rgb(43 82 125); 
+    text-align: right;
+    display: flex;
+}
+
+.inner .pf2_3 .pf2_3_d3_l {margin-left: 0%; width: 78.5vh;  margin-right: 2%;}
+.inner .pf2_3 .pf2_3_d3_r {width: 78.5vh;  margin-right: 2%;}
+
+.inner .pf2_5 {
+    margin: 0 auto;
+    position: relative;
+    /* border: 3px blue dashed; */
+    max-width: 1920px;
+    scroll-snap-align: center;
+    background: rgb(240 174 0);
+    text-align: left;
+    display: flex;
+    z-index: -2;
+}
+
+.inner .pf2_5 .pf2_5_d5_l {
+    width: 78.5vh;
+    margin-left: 4%;
+}
+.inner .pf2_5 .pf2_5_d5_r { 
+    /* position: absolute; */
+    /* right: 2%; */
+    width: 78.5vh;
+    margin-right: 0%;
+}
+.inner #pf2_5_rsub {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 10%;
+    height: 100%;
+    z-index: -1;
+}
+
+.inner .pf2_5 .pf2_5_d5 {margin-left: 2%;}
+
+.inner .pf2_6 {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1920px;
+    scroll-snap-align: center;
+    margin-bottom: 3%;
+    background: rgb(255 255 255);
+    z-index: 100;
+    margin-top: 1%;
+}   
 
 
 .item:nth-of-type(3) .pf3 {
@@ -1215,6 +1320,11 @@ footer .inner p {
 	cursor: pointer;
 }
 .darkmode .invert_text:hover{ text-decoration: underline;}
+
+
+/* sound */
+
+#scrollsound {display: none;}
 
 
 /* loading */

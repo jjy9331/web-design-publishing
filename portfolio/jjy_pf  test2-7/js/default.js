@@ -699,4 +699,13 @@ $(function(){
     });
 
 
+    /////////////////////////////////////////////////////////
+
+    // sound
+
+    // var scroll =new AudioFade('#scrollsound', 8000).init();
+
+    
+
+
 });

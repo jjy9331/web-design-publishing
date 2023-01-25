@@ -10,11 +10,13 @@
 <link rel="stylesheet" href="css/scrolldefault.css">
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
+<!-- <script src="js/AudioFade.js"></script> -->
 <!-- <script src="js/logo_intro.js"></script> -->
 
 </head>
 <body>
 <!-- <div class="logo_ani"></div> -->
+<!-- <audio id="scrollsound" src="sound/wooden-light-door-1522.wav"></audio> -->
 
 
 
@@ -216,7 +218,7 @@
                     <span id="pf2back" class="material-symbols-outlined">
                         arrow_back_ios
                     </span>
-                        <a href="./zerolab/index.html" target="blank">
+                        <a href="#" onclick="return false" class="menu">
                             <img src="images/monitor2.png" alt="monitor" class="pf2_monitor">
                             <div class="pf2_bg">
                                 <h3>zero<span>lab</span></h3>
@@ -229,6 +231,48 @@
                     <span id="pf2next" class="material-symbols-outlined">
                         arrow_forward_ios
                     </span>
+                </div>
+                <div class="pop zerolab">
+                    <div class="inner">
+                        <div class="pop_h">
+                            <div class="pop_h_inner">
+                                <h3>zerolab design renewal</h3>
+                                <div class="close"><div>X</div></div>
+                            </div>
+                        </div>
+                        <div class="sheet pf2_1">
+                            <img src="images/pf2_eye.png" alt="pf2_1_eye" class="pf2_1_eye">
+                            <img src="./zerolab/img/pop1.png" alt="d1" class="pf2_1">
+                        </div>
+                        <div class="sheet pf2_2">
+                            <img src="./zerolab/img/pop2_b_01.png" alt="d2_b" class="pf2_2_l">
+                            <img src="./zerolab/img/pop2_b_01.png" alt="d2_b" class="pf2_2_r">
+                            <img src="./zerolab/img/pop2_1.png" alt="d2_left" class="pf2_2_img">
+                            <img src="./zerolab/img/pop2_2.png" alt="d2_right" class="pf2_2_img">
+                        </div>
+                        <div class="sheet pf2_3">
+                            <img src="./zerolab/img/pop3_l.png" alt="d3" class="pf2_3_d3_l" >
+                            <img src="./zerolab/img/pop3_r.png" alt="d3" class="pf2_3_d3_r" >
+                        </div>
+                        <div class="sheet s4">
+                            <img src="./zerolab/img/pop4.png" alt="d4" class="d4">
+                        </div>
+                        <div class="sheet pf2_5">
+                            <img src="./zerolab/img/pop5_l.png" alt="d5" class="pf2_5_d5_l">
+                            <img src="./zerolab/img/pop5_r6.png" alt="d5" class="pf2_5_d5_r">
+                            <!-- <img src="./zerolab/img/pop5_rb.png" alt="d5" id="pf2_5_rsub"> -->
+                        </div>
+                        <div class="sheet pf2_6">
+                            <img src="./zerolab/img/pop6.png" alt="d6" >
+                        </div>
+                        <div class="pop_f">
+                            <div class="pop_f_inner">
+                                <p>Copyright &copy; my portfolio, all right reserved</p>
+                                <a href="./zerolab/index.html" target="blank">Full size</a>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
                 <div class="pf_ani pf3">
                     <span id="pf3back" class="material-symbols-outlined">
@@ -392,10 +436,56 @@
         mobileCheck: function(){
             if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
                 // mobile device
-            }
-        }
 
-    });
+                    var startX,startY, endX,endY;
+                    $("html,body").on('touchstart',function(event){
+                        startX = event.originalEvent.changedTouches[0].screenX;
+                        startY = event.originalEvent.changedTouches[0].screenY;
+
+                        console.log("startX: " + startX);
+                        console.log("startY: " + startY);
+                    });
+
+                    $("html,body").on('touchend',function(event, delta){
+                        endX=event.originalEvent.changedTouches[0].screenX;
+                        endY=event.originalEvent.changedTouches[0].screenY;
+
+                        console.log("endX: " + endX);
+                        console.log("endY: " + endY);
+                        console.log("startX-endX: " + (startX-endX)); 
+                        console.log("startY-endY: " + (startY-endY)); 
+
+                        // mobile touch scrolldown(force touch)
+                        if(startY-endY>0 && startY-endY<70){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop+1000) }, 830, "swing");
+                        }
+                        if(startY-endY>71 && startY-endY<150){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop+2000) }, 830, "swing");
+                        }
+                        if(startY-endY>151 && startY-endY<240){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop+3000) }, 830, "swing");
+                        }
+                        if(startY-endY>241 && startY-endY<500){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop+5000) }, 830, "swing");
+                        }
+
+                        // mobile touch scrollup(force touch)
+                        if(startY-endY<0 && startY-endY>-70){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop-1000) }, 830, "swing");
+                        }
+                        if(startY-endY<-71 && startY-endY>-150){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop-2000) }, 830, "swing");
+                        }
+                        if(startY-endY<-151 && startY-endY>-240){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop-3000) }, 830, "swing");
+                        }
+                        if(startY-endY<-241 && startY-endY>-550){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop-5000) }, 830, "swing");
+                        }
+                        
+                    });
+                }}
+        });
     // skrollr.init([smoothScrolling=true]);
 </script>
 <script>
@@ -451,5 +541,24 @@
 <script src="js/lottie_logo_ani.js"></script>
 <script src="js/default.js"></script>
 <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
+<script>
+        /////////////////////////////////////////////////////////
+
+        // mobile-detect 
+
+        var md = new MobileDetect(navigator.userAgent);
+    
+        console.log( "mobile: "+ md.mobile() );          // 'Sony'
+        console.log( "phone: "+ md.phone() );           // 'Sony'
+        console.log( "tablet: "+ md.tablet() );          // null
+        console.log( "userAgent: "+ md.userAgent() );       // 'Safari'
+        console.log( "os: "+ md.os() );              // 'AndroidOS'
+        console.log( "iPhone: "+ md.is('iPhone') );      // false
+        console.log( "bot: "+ md.is('bot') );         // false
+        console.log( "Webkit: "+ md.version('Webkit') );         // 534.3
+        console.log( "Build: "+ md.versionStr('Build') );       // '4.1.A.0.562'
+        console.log( "playstation|xbox: "+ md.match('playstation|xbox') ); // false
+</script>
 
 </html>
