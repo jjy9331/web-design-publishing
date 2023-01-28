@@ -14,6 +14,10 @@
     touch-action: auto; 
 }
 
+*:focus {
+    outline: 0;
+}
+
 /*Eric mayor reset*/
 
 body,p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd { margin: 0; padding: 0;}
@@ -27,8 +31,10 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    position: relative;
     /* scroll-snap-type: y mandatory; */
     /* scroll-snap-type: none; */
+    user-select: none;
 }
 
 body {  
@@ -130,6 +136,16 @@ header .inner {
 .pop_f_inner a:hover {text-decoration: underline;}
 
 .inner .d6 { box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 13%);}
+
+
+.hidden { 
+    /* position: fixed;  */
+    height:100%; 
+    min-height:100%; 
+    overflow:hidden !important; 
+    touch-action:none;
+}
+
 
 /* header */
 header ul {
@@ -364,7 +380,8 @@ section {visibility: hidden;}
     font-size: 1.6vw; 
     font-weight: 100;
     line-height: 1em;
-    padding-top: 29px;
+    /* padding-top: 29px; */
+    padding-top: 3vh;
     color: rgba(0, 0, 0, 0.4);
     /* border: 2px dashed yellow; box-sizing: border-box; */
 }
@@ -400,7 +417,8 @@ section {visibility: hidden;}
     font-size: 1.6vw; 
     font-weight: 100;
     line-height: 1em;
-    padding-top: 59px;
+    /* padding-top: 59px; */
+    padding-top: 9vh;
     color: rgba(0, 0, 0, 0.4);
     /* border: 2px dashed yellow; box-sizing: border-box; */
 }
@@ -1350,5 +1368,8 @@ footer .inner p {
     }
 
 }  /* PC  */
+
+@media(hover: hover) and (pointer: fine) {
+}
 
 /* @media all and (min-width:1601px) and  (max-width:1920px) {   body {zoom:0.7}} wide PC  */

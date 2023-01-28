@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/scrolldefault.css">
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
+
 <!-- <script src="js/AudioFade.js"></script> -->
 <!-- <script src="js/logo_intro.js"></script> -->
 
@@ -169,7 +170,7 @@
                     <span id="pf1back" class="material-symbols-outlined">
                         arrow_back_ios
                     </span>
-                    <a href="#" onclick="return false" class="menu">
+                    <a href="#" onclick="return false" class="menu" id="menu">
                         <img src="images/pf2_0.png" alt="ux,ui_img" class="face_change f1"
                             onmouseover="this.src='images/pf2_3.gif'"
                             onmouseout="this.src='images/pf2_0.png'"
@@ -184,7 +185,7 @@
                         <div class="pop_h">
                             <div class="pop_h_inner">
                                 <h3>UI UX mindset</h3>
-                                <div class="close"><div>X</div></div>
+                                <a href="#gebiscon" class="close"><div>X</div></a>
                             </div>
                         </div>
                         <div class="sheet s1">
@@ -436,20 +437,28 @@
         mobileCheck: function(){
             if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
                 // mobile device
-
                     var startX,startY, endX,endY;
                     $("html,body").on('touchstart',function(event){
                         startX = event.originalEvent.changedTouches[0].screenX;
                         startY = event.originalEvent.changedTouches[0].screenY;
-
                         console.log("startX: " + startX);
                         console.log("startY: " + startY);
                     });
 
+                    // $("html,body").on('touchmove',function(event){
+                    //     const targetElement = document.querySelector('.pop');
+                    //         $('.menu').click(function() {
+                    //             bodyScrollLock.disableBodyScroll(targetElement);
+                    //         });
+                    //         $('.close').click(function() {
+                    //             bodyScrollLock.enableBodyScroll(targetElement);
+                    //         });
+                    // });
+
+
                     $("html,body").on('touchend',function(event, delta){
                         endX=event.originalEvent.changedTouches[0].screenX;
                         endY=event.originalEvent.changedTouches[0].screenY;
-
                         console.log("endX: " + endX);
                         console.log("endY: " + endY);
                         console.log("startX-endX: " + (startX-endX)); 
@@ -537,7 +546,7 @@
 
 
 
-
+<!-- <script src="js/bodyScrollLock.js"></script> -->
 <script src="js/lottie_logo_ani.js"></script>
 <script src="js/default.js"></script>
 <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>

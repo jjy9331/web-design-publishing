@@ -679,24 +679,44 @@ $(function(){
 
 
     //popup
-    $('.menu').click(function() {
+
+    // const targetElement = document.querySelector('.pop');
+    // var position = $(".pop").offset().top;
+
+
+    var position = $('.menu').parent().next().offset().top;
+
+    $('.menu').click(function menu() {
         $(this).parent().next().fadeIn(300);
         $('header').css('display','none');
         $('header').css({visibility:"hidden"});
         $('footer').css('display','none');
         $('footer').css({visibility:"hidden"});
-        $('html').css("overflow", "hidden");
-        return false;
+        $('html,body').css("overflow", "hidden");
+
+        position = $(this).parent().next().offset().top;
+        console.log("position: "+position);
+
+
     });
-    $('.close').click(function() {
-        $('.pop').fadeOut(100)
+
+
+    $('.close').click(function () {
+        $('.pop').fadeOut(100);
+        // $('.pop').css('display','none');
         $('.header').css('display','block');
         $('.header').css({visibility:"visible"});
         $('footer').css('display','block');
         $('footer').css({visibility:"visible"});
-        $('html').css("overflow", "auto");
-        return false;
+        $('html,body').animate({ scrollTop:position},0); 
+        $('html,body').css("overflow", "auto");
+        
+        console.log("position: "+position);
+
     });
+
+
+
 
 
     /////////////////////////////////////////////////////////
