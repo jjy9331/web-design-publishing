@@ -16,7 +16,7 @@ $(function(){
             $('html,body').animate({ scrollTop:63996},2100); return false;
     })
     $("header .inner ul li:eq(3) a").click(function(){
-            $('html,body').animate({ scrollTop:218740},700); return false;
+            $('html,body').animate({ scrollTop:218740},2100); return false;
     })
 
     $(window).scroll(function(){
@@ -684,6 +684,7 @@ $(function(){
     // var position = $(".pop").offset().top;
 
 
+
     var position = $('.menu').parent().next().offset().top;
 
     $('.menu').click(function menu() {
@@ -697,6 +698,7 @@ $(function(){
         position = $(this).parent().next().offset().top;
         console.log("position: "+position);
 
+        $('.pop').animate({ scrollTop:0},0); return false;
 
     });
 
@@ -713,7 +715,13 @@ $(function(){
         
         console.log("position: "+position);
 
+        $('.pop').animate({ scrollTop:0},0); return false;
+
     });
+
+    $(".pop .pop_h_inner h3").click(function(){
+        $('.pop').animate({ scrollTop:0},2100); return false;
+    })
 
 
 

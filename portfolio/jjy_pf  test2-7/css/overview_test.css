@@ -423,7 +423,7 @@ body {
     padding-right: 125px;
     /* height: 100%; */
     overflow: auto;
-    border: 7px dashed #red ;
+    border: 7px dashed red ;
     font-family: 'hana_air';
 }
 
