@@ -107,17 +107,19 @@ $(function(){
                                     if(t == 6){
                                         $("#logo_ani").css({display:"none"}); //로딩표시영역 사라짐
 
-                                        $('body').css({overflow:"auto"});//body스크롤없앰}
-                                        $('body').css({position:"static"});
-                                        $("header").fadeIn(2000);
-                                        $("footer").fadeIn(2000);
+                                        // $('body').css({overflow:"auto"});//body스크롤없앰}
+                                        // $('body').css({position:"static"});
+                                        // $("header").fadeIn(2000);
+                                        // $("footer").fadeIn(2000);
                                         $(".wrapper").fadeIn(2000); 
-                                        $("section").fadeIn(2000); 
+                                        $(".startpop").fadeIn(2000); 
+                                        // $("section").fadeIn(2000); 
+                                        
                             
-                                        $("header").css('visibility', 'visible');
+                                        // $("header").css('visibility', 'visible');
                                         $(".wrapper").css('visibility', 'visible');
                                         $("section").css('visibility', 'visible');
-                                        $("footer").css('visibility', 'visible');
+                                        // $("footer").css('visibility', 'visible');
                                         $('body').css('backgroundColor', 'white');
                                         $('html').css("overflow", "auto");
 
@@ -131,6 +133,8 @@ $(function(){
                                         $('body').css({overflow:"hidden"});
                                         $("header").hide();
                                         $("section").css('visibility', 'hidden');
+                                        $(".startpop").hide(); 
+                                        $(".startpop").css({display:"none"});
                                         $(".wrapper").hide(); 
                                         $("section").hide(); 
                                         $("footer").hide(); 

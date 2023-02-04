@@ -8,6 +8,7 @@
 <title>Jung Ji yong</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="css/scrolldefault.css">
+<link rel="shortcut icon" href="images/jjy_pf_favicon.ico">
 
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -64,8 +65,26 @@
     
     
     <div id="container">
+        <div class="startpop">
+            <div class="startinner">
+                <div class="bgm_info">
+                    <h3>You can experience BGM designed for UI</h3>
+                    <div class="btwrap">
+                        <button id="bgmstart" class="go">YES</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button id="closepop">NO</button>
+                    </div>
+                </div>
+                <lottie-player 
+                class="soundwave" 
+                src="data/sound_wave.json"
+                speed="1"
+                preserveAspectRatio="xMidYMid slice"
+            ></lottie-player>
+            </div>
+
+        </div>
         <section class="item home">
-    
             <h2
                 data-0="display: block; opacity: 1;" 
                 data-4100="opacity: 0;"
@@ -544,7 +563,21 @@
         ]
     });
 </script>
-
+<script>
+    LottieInteractivity.create({
+        player:'.soundwave',
+        renderer:'png',
+        // disableCheck:'true',
+        mode:"cursor",
+        actions: [
+            {
+                position: { x: [0, 1], y: [-1, 2] },
+                type: 'seek',
+                frames: [0, 60],
+            }
+        ]
+    });
+</script>
 
 
 <!-- <script src="js/bodyScrollLock.js"></script> -->

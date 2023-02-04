@@ -733,7 +733,38 @@ $(function(){
 
     // var scroll =new AudioFade('#scrollsound', 8000).init();
 
+
+    $('#bgmstart').click(function () {
+        $('.startpop').fadeOut(100);
+        // $('.pop').css('display','none');
+        $('.header').css('display','block');
+        $('.header').css({visibility:"visible"});
+        $('footer').css('display','block');
+        $('footer').css({visibility:"visible"});
+        $('html,body').animate({ scrollTop:position},0); 
+        $('html,body').css("overflow", "auto");
+        $("section").fadeIn(2000); 
+
+        $('body').css({overflow:"auto"});//body스크롤없앰}
+        $('body').css({position:"static"});
+        $('.darkmode').click();
+    });
     
 
+    $('#closepop').click(function () {
+        $('.startpop').fadeOut(100);
+        // $('.pop').css('display','none');
+        $('.header').css('display','block');
+        $('.header').css({visibility:"visible"});
+        $('footer').css('display','block');
+        $('footer').css({visibility:"visible"});
+        $('html,body').animate({ scrollTop:position},0); 
+        $('html,body').css("overflow", "auto");
+        $("section").fadeIn(2000); 
+
+        $('body').css({overflow:"auto"});//body스크롤없앰}
+        $('body').css({position:"static"});
+        $('.darkmode').click();
+    });
 
 });
