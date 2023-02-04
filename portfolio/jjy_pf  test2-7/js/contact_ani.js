@@ -6,7 +6,7 @@ var scrollYPos2;
 
 
 // cimg.src = "./contact_ani/0.png";
-cimg.src = "./contact_ani2/000.png";
+cimg.src = "./contact_ani3/000.png";
 
 // canvas2.width = $(window).width();
 // canvas2.height = $(window).height();
@@ -67,7 +67,7 @@ window.addEventListener('scroll', function(e) {
 
 function player2(num2) {
     // cimg.src = "./contact_ani/"+ num2 + ".png";
-    cimg.src = "./contact_ani2/"+ num2.toString().padStart(3, '0') + ".png";
+    cimg.src = "./contact_ani3/"+ num2.toString().padStart(3, '0') + ".png";
 }
 
 cimg.addEventListener('load', function(e) {

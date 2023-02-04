@@ -5,7 +5,7 @@ var ctx = canvas.getContext('2d');
 var scrollYPos;
 
 
-img.src = "./track_run_start4/000.png";
+img.src = "./track_run_start8/000.png";
 
 // canvas.width = $(window).width();
 // canvas.height = $(window).height();
@@ -61,7 +61,7 @@ window.addEventListener('scroll', function(e) {
 // });
 
 function player(num1) {
-    img.src = "./track_run_start4/"+ num1.toString().padStart(3, '0') + ".png";
+    img.src = "./track_run_start8/"+ num1.toString().padStart(3, '0') + ".png";
 }
 
 img.addEventListener('load', function(e) {
