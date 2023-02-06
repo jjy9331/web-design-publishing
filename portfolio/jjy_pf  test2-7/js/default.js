@@ -733,6 +733,8 @@ $(function(){
 
     // var scroll =new AudioFade('#scrollsound', 8000).init();
 
+    var audio = new Audio('sound/JJ_pf_beat.mp3');
+    
 
     $('#bgmstart').click(function () {
         $('.startpop').fadeOut(100);
@@ -748,6 +750,12 @@ $(function(){
         $('body').css({overflow:"auto"});//body스크롤없앰}
         $('body').css({position:"static"});
         $('.darkmode').click();
+
+        audio.play();
+        audio.autoplay = true;
+        // audio.currentTime = 20;
+        audio.loop = true;
+        audio.volume = 0.5;
     });
     
 
