@@ -1351,40 +1351,47 @@ footer .inner p {
 footer .inner .hfm_btn{
     position: absolute;
     right: 0px;
-    bottom: 22px;
+    bottom: 30px;
     padding-right: 1.5%;
     cursor: pointer;
 }
 
-.hfm_wrap{ position: relative;}
+.hfm_wrap{
+    /* position: relative; */
+    /* position: absolute; */
+    width: 5.9vw;
+    /* height: 1.8vh; */
+    display: flex;
+    justify-content: space-between;
+}
 
 .hfm1{
-    position: absolute;
-    top: -2vh;
-    left: -6vw;
-    width: 0.5vw;
-    height: 0.5vw;
-    border-radius: 0.5vw;
+     /* position: absolute; */
+    /* top: -2vh; */
+    /* left: -6vw; */
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
     background: black;
 }
 
 .hfm2{
-    position: absolute;
-    top: -2vh;
-    left: -3.5vw;
-    width: 0.5vw;
-    height: 0.5vw;
-    border-radius: 0.5vw;
+    /* position: absolute; */
+    /* top: -2vh; */
+    /* left: 5.5vw; */
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
     background: black;
 }
 
 .hfm3{
-    position: absolute;
-    top: -2vh;
-    left: -1vw;
-    width: 0.5vw;
-    height: 0.5vw;
-    border-radius: 0.5vw;
+    /* position: absolute;  */
+    /* top: -2vh; */
+    /* left: 2vw; */
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
     background: black;
 }
 
@@ -1400,7 +1407,8 @@ footer .inner .hfm_btn{
     font-family: 'Noto Sans KR';
     font-size: 0.5em;
     font-weight: 500;
-    padding: 0.5vh;
+    padding-bottom: 0.6vh;
+    padding-top: 0.6vh;
     cursor: pointer;
 }
 

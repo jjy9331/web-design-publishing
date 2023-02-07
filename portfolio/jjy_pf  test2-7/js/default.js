@@ -1001,7 +1001,7 @@ $(function(){
         $(".pop_h").css({filter: "invert(100)"});
         $(".pop_f").css({filter: "invert(100)"});
         $(".hfm_list li").css({filter: "invert(100)"});
-        $(".darkmode").text('dark mode on');
+        $(".darkmode").text('Dark mode on');
         
         // $(".pf2_monitor").css({filter: "brightness(1.3)"});
         
@@ -1048,7 +1048,7 @@ $(function(){
         $(".pop_h").css({filter: "invert(0)"});
         $(".pop_f").css({filter: "invert(0)"});
         $(".hfm_list li").css({filter: "invert(0)"});
-        $(".darkmode").text('dark mode off');
+        $(".darkmode").text('Dark mode off');
         // $(".portfolio").css("background-color","black");
         // $(".home").css({filter: "invert(0)"});
         // $(".home h2").css({color: "black"});
@@ -1151,7 +1151,7 @@ $(function(){
         $('body').css({overflow:"auto"});//body스크롤없앰}
         $('body').css({position:"static"});
 
-        $(".sound_toggle").text('sound on');
+        $(".sound_toggle").text('Sound on');
         // $('.darkmode').click();
 
         audio.play();
@@ -1166,7 +1166,7 @@ $(function(){
             if(sound_toggle=="0"){
                 sound_toggle = "1";
                 audio.pause();
-                $(".sound_toggle").text('sound off');
+                $(".sound_toggle").text('Sound off');
             }
             else{
                 sound_toggle = "0"; 
@@ -1174,7 +1174,7 @@ $(function(){
                 audio.autoplay = true;
                 audio.loop = true;
                 audio.volume = 0.5;
-                $(".sound_toggle").text('sound on');
+                $(".sound_toggle").text('Sound on');
             }
         });
     });
@@ -1194,7 +1194,7 @@ $(function(){
         $('body').css({overflow:"auto"});//body스크롤없앰}
         $('body').css({position:"static"});
 
-        $(".sound_toggle").text('sound off');
+        $(".sound_toggle").text('Sound off');
 
         let sound_toggle = "0";
 
@@ -1205,12 +1205,12 @@ $(function(){
                 audio.autoplay = true;
                 audio.loop = true;
                 audio.volume = 0.5;
-                $(".sound_toggle").text('sound on');
+                $(".sound_toggle").text('Sound on');
             }
             else{
                 sound_toggle = "0"; 
                 audio.pause();
-                $(".sound_toggle").text('sound off');
+                $(".sound_toggle").text('Sound off');
             }
         });
 
