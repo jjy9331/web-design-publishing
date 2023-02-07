@@ -573,6 +573,383 @@ $(function(){
     function pf_more_mouseout() {
         pfmore_img.src="images/more_bg.png"
     }
+
+
+    //////////////////////////////////////////////////////////
+
+
+
+    $(".hfm_btn").click(function(){//버튼을 클릭했을 때
+        
+        $(".hfm_list").toggle();
+        
+    });
+
+    // let mdh_toggle = "0";
+
+    $(".menu_hide").click(function(){//버튼을 클릭했을 때
+
+        let mdh_toggle = "0";
+        
+        $(".hfm_list").toggle();
+        $('header').animate({ top:"-10vh"},1000); 
+        $('footer').animate({ bottom:"-10vh"},1000); 
+        $('.mbh_h').css('display','block');
+        $('.mbh_f').css('display','block');
+
+        // let mdh_toggle = "0";
+
+        // $('.close').click(function () {
+
+            // if(mdh_toggle=="0"){
+                // mdh_toggle = "1";
+                $('header').animate({ top:"-10vh"},1000); 
+                $('footer').animate({ bottom:"-10vh"},1000);
+                // $('header').removeClass('header'); 
+                // $('footer').removeClass('footer');
+                // $('header').remove('header'); 
+                // $('footer').remove('footer');
+                // $('header').addClass('header_hide'); 
+                // $('footer').addClass('footer_hide');
+            // }
+            // else{
+                // mdh_toggle = "0";
+
+                // $('header').animate({ top:"0vh"},1000); 
+                // $('footer').animate({ bottom:"0vh"},1000);
+
+            // }
+        // });
+
+    });
+
+
+
+    // $('.mbh_h').on('mouseover', () => {
+    //     $('header').animate({ top:"0vh"},1000); 
+    //     $('footer').animate({ bottom:"0vh"},1000); 
+
+    //     $(".hfm1").css("background","black");
+    //     $(".hfm2").css("background","black");
+    //     $(".hfm3").css("background","black");
+
+    // });
+
+    $('.mbh_f').on('mouseover', () => {
+        $('header').animate({ top:"0vh"},1000); 
+        $('footer').animate({ bottom:"0vh"},1000); 
+        
+        // $(".hfm1").css("background","black");
+        // $(".hfm2").css("background","black");
+        // $(".hfm3").css("background","black");
+
+    });
+
+
+    // //////////////////////////////////////////////////////////
+
+    // // hiden_function_menu
+
+    // let htf_toggle = "0";
+    // // console.log("htf_toggle: "+htf_toggle);
+
+    // $(".hfm_btn").click(function(){//버튼을 클릭했을 때
+    //     if(htf_toggle=="0"){
+    //     htf_toggle = "1";
+
+    //     console.log("기능메뉴 클릭 완료: "+htf_toggle);
+
+    //     $(".hfm1").css("background","white");
+    //     $(".hfm2").css("background","white");
+    //     $(".hfm3").css("background","white");
+    //     $(".hfm1").css("border", "1px solid black");
+    //     $(".hfm2").css("border", "1px solid black");
+    //     $(".hfm3").css("border", "1px solid black");
+    //     $(".hfm_list").css('display','flex');
+    //     $(".hfm_list").css('flex-direction','column');
+
+    //     let menu_toggle = "0";
+
+    //     // console.log("메뉴바 숨김 클릭: "+menu_toggle);
+
+    //         $(".menu_hide").click(function(){//버튼을 클릭했을 때
+    //             if(menu_toggle=="0"){
+    //                 menu_toggle = "1";
+
+    //                 console.log("메뉴바 숨김 완료: "+menu_toggle);
+
+    //                 $(".hfm_list").css('display','none');
+    //                 $('header').animate({ top:"-10vh"},1000); 
+    //                 $('footer').animate({ bottom:"-10vh"},1000); 
+    //                 $(".menu_hide").text('menu bar hide');
+    //                 $(".mbh_h").css('display','block');
+    //                 $(".mbh_f").css('display','block');
+
+
+    //                 // $('.mbh_h').on('mouseover', () => {
+    //                 //     $('header').animate({ top:"0vh"},1000); 
+    //                 //     $('footer').animate({ bottom:"0vh"},1000); 
+                
+    //                 //     $(".hfm1").css("background","black");
+    //                 //     $(".hfm2").css("background","black");
+    //                 //     $(".hfm3").css("background","black");
+
+    //                 //     $(".hfm_btn").click(function(){//버튼을 클릭했을 때
+    //                 //         if(htf_toggle=="0"){
+    //                 //         htf_toggle = "1";
+                    
+    //                 //         console.log("기능메뉴 클릭 완료: "+htf_toggle);
+                    
+    //                 //         $(".hfm1").css("background","white");
+    //                 //         $(".hfm2").css("background","white");
+    //                 //         $(".hfm3").css("background","white");
+    //                 //         $(".hfm1").css("border", "1px solid black");
+    //                 //         $(".hfm2").css("border", "1px solid black");
+    //                 //         $(".hfm3").css("border", "1px solid black");
+    //                 //         $(".hfm_list").css('display','flex');
+    //                 //         $(".hfm_list").css('flex-direction','column');
+    //                 //         }
+    //                 //         else{
+    //                 //             htf_toggle = "0";
+                        
+    //                 //             console.log("htf_toggle: "+htf_toggle);
+                        
+    //                 //             $(".hfm1").css("background","black");
+    //                 //             $(".hfm2").css("background","black");
+    //                 //             $(".hfm3").css("background","black");
+    //                 //             $(".hfm_list").css('display','none');
+    //                 //         }
+    //                 //     });
+    //                 // });
+                
+    //                 // $('.mbh_f').on('mouseover', () => {
+    //                 //     $('header').animate({ top:"0vh"},1000); 
+    //                 //     $('footer').animate({ bottom:"0vh"},1000); 
+                        
+    //                 //     $(".hfm1").css("background","black");
+    //                 //     $(".hfm2").css("background","black");
+    //                 //     $(".hfm3").css("background","black");
+
+    //                 //     $(".hfm_btn").click(function(){//버튼을 클릭했을 때
+    //                 //         if(htf_toggle=="0"){
+    //                 //         htf_toggle = "1";
+                    
+    //                 //         console.log("htf_toggle: "+htf_toggle);
+                    
+    //                 //         $(".hfm1").css("background","white");
+    //                 //         $(".hfm2").css("background","white");
+    //                 //         $(".hfm3").css("background","white");
+    //                 //         $(".hfm1").css("border", "1px solid black");
+    //                 //         $(".hfm2").css("border", "1px solid black");
+    //                 //         $(".hfm3").css("border", "1px solid black");
+    //                 //         $(".hfm_list").css('display','flex');
+    //                 //         $(".hfm_list").css('flex-direction','column');
+    //                 //         }
+    //                 //         else{
+    //                 //             htf_toggle = "0";
+                        
+    //                 //             console.log("htf_toggle: "+htf_toggle);
+                        
+    //                 //             $(".hfm1").css("background","black");
+    //                 //             $(".hfm2").css("background","black");
+    //                 //             $(".hfm3").css("background","black");
+    //                 //             $(".hfm_list").css('display','none');
+    //                 //         }
+    //                 //     });
+    //                 // });
+
+
+    //             }
+    //             else{
+    //                 menu_toggle = "0"; 
+
+    //                 console.log("메뉴바 숨김 해제: "+menu_toggle);
+
+    //                 $(".menu_hide").text('menu bar lock');
+    //                 $(".mbh_h").css('display','none');
+    //                 $(".mbh_f").css('display','none');
+
+    //                 $(".hfm1").css("background","black");
+    //                 $(".hfm2").css("background","black");
+    //                 $(".hfm3").css("background","black");
+    //             }
+    //         }); 
+        
+    //     }
+    //     else{
+    //     htf_toggle = "0";
+
+    //     console.log("기능메뉴 클릭 해제: "+htf_toggle);
+
+    //     $(".hfm1").css("background","black");
+    //     $(".hfm2").css("background","black");
+    //     $(".hfm3").css("background","black");
+    //     $(".hfm_list").css('display','none');
+
+
+    //     let menu_toggle = "0";
+
+    //     // console.log("menu_toggle: "+menu_toggle);
+
+    //         $(".menu_hide").click(function(){//버튼을 클릭했을 때
+    //             if(menu_toggle=="0"){
+    //                 menu_toggle = "1";
+                    
+    //                 console.log("메뉴바 숨김 완료: "+menu_toggle);
+
+    //                 $(".hfm_list").css('display','none');
+    //                 $('header').animate({ top:"-10vh"},1000); 
+    //                 $('footer').animate({ bottom:"-10vh"},1000); 
+    //                 $(".menu_hide").text('menu bar hide');
+    //                 $(".mbh_h").css('display','block');
+    //                 $(".mbh_f").css('display','block');
+    //             }
+    //             else{
+    //                 menu_toggle = "0"; 
+
+    //                 console.log("메뉴바 숨김 해제: "+menu_toggle);
+
+    //                 $(".menu_hide").text('menu bar lock');
+    //                 $(".mbh_h").css('display','none');
+    //                 $(".mbh_f").css('display','none');
+
+    //                 $(".hfm1").css("background","black");
+    //                 $(".hfm2").css("background","black");
+    //                 $(".hfm3").css("background","black");
+    //             }
+    //         }); 
+    //     }
+    // });
+
+
+    /////////////////////////////////////////////////////////
+
+    // menu bar hide
+
+    // let menu_toggle = "0";
+
+    // $(".menu_hide").click(function(){//버튼을 클릭했을 때
+    //     if(menu_toggle=="0"){
+    //         menu_toggle = "1";
+    //         $(".hfm_list").css('display','none');
+    //         $('header').animate({ top:"-10vh"},1000); 
+    //         $('footer').animate({ bottom:"-10vh"},1000); 
+    //         $(".menu_hide").text('menu bar hide');
+    //         $(".mbh_h").css('display','block');
+    //         $(".mbh_f").css('display','block');
+    //     }
+    //     else{
+    //         menu_toggle = "0"; 
+
+    //         $(".menu_hide").text('menu bar lock');
+    //         $(".mbh_h").css('display','none');
+    //         $(".mbh_f").css('display','none');
+
+    //         $(".hfm1").css("background","black");
+    //         $(".hfm2").css("background","black");
+    //         $(".hfm3").css("background","black");
+    //     }
+    // });
+
+
+    // .mbh_h
+    // .mbh_f
+
+    // menu bar hover animation 
+
+    // var mbh = document.querySelector('#mbh');
+
+    // $('.mbh_h').on('mouseover', () => {
+    //     $('header').animate({ top:"0vh"},1000); 
+    //     $('footer').animate({ bottom:"0vh"},1000); 
+
+    //     $(".hfm1").css("background","black");
+    //     $(".hfm2").css("background","black");
+    //     $(".hfm3").css("background","black");
+
+    //     htf_toggle = "1";
+
+    //     console.log("기능메뉴 클릭 해제: "+htf_toggle);
+
+    //     // $(".hfm_btn").click(function(){//버튼을 클릭했을 때
+    //     //     if(htf_toggle=="0"){
+    //     //     htf_toggle = "1";
+    
+    //     //     console.log("htf_toggle: "+htf_toggle);
+    
+    //     //     $(".hfm1").css("background","white");
+    //     //     $(".hfm2").css("background","white");
+    //     //     $(".hfm3").css("background","white");
+    //     //     $(".hfm1").css("border", "1px solid black");
+    //     //     $(".hfm2").css("border", "1px solid black");
+    //     //     $(".hfm3").css("border", "1px solid black");
+    //     //     $(".hfm_list").css('display','flex');
+    //     //     $(".hfm_list").css('flex-direction','column');
+    //     //     }
+    //     //     else{
+    //     //         htf_toggle = "0";
+        
+    //     //         console.log("htf_toggle: "+htf_toggle);
+        
+    //     //         $(".hfm1").css("background","black");
+    //     //         $(".hfm2").css("background","black");
+    //     //         $(".hfm3").css("background","black");
+    //     //         $(".hfm_list").css('display','none');
+    //     //     }
+    //     // });
+    // });
+
+    // $('.mbh_f').on('mouseover', () => {
+    //     $('header').animate({ top:"0vh"},1000); 
+    //     $('footer').animate({ bottom:"0vh"},1000); 
+        
+    //     $(".hfm1").css("background","black");
+    //     $(".hfm2").css("background","black");
+    //     $(".hfm3").css("background","black");
+
+    //     htf_toggle = "1";
+
+    //     console.log("기능메뉴 클릭 해제: "+htf_toggle);
+
+    //     // $(".hfm_btn").click(function(){//버튼을 클릭했을 때
+    //     //     if(htf_toggle=="0"){
+    //     //     htf_toggle = "1";
+    
+    //     //     console.log("htf_toggle: "+htf_toggle);
+    
+    //     //     $(".hfm1").css("background","white");
+    //     //     $(".hfm2").css("background","white");
+    //     //     $(".hfm3").css("background","white");
+    //     //     $(".hfm1").css("border", "1px solid black");
+    //     //     $(".hfm2").css("border", "1px solid black");
+    //     //     $(".hfm3").css("border", "1px solid black");
+    //     //     $(".hfm_list").css('display','flex');
+    //     //     $(".hfm_list").css('flex-direction','column');
+    //     //     }
+    //     //     else{
+    //     //         htf_toggle = "0";
+        
+    //     //         console.log("htf_toggle: "+htf_toggle);
+        
+    //     //         $(".hfm1").css("background","black");
+    //     //         $(".hfm2").css("background","black");
+    //     //         $(".hfm3").css("background","black");
+    //     //         $(".hfm_list").css('display','none');
+    //     //     }
+    //     // });
+    // });
+
+    // $('header, footer').on('mouseout',() => mouseout());
+
+    // function mouseout() {
+    //     $(".hfm_list").css('display','none');
+    //     $('header').animate({ top:"-10vh"},1000); 
+    //     $('footer').animate({ bottom:"-10vh"},1000); 
+    //     $(".menu_hide").text('menu bar lock');
+    // }
+
+
+
     
     //////////////////////////////////////////////////////////
 
@@ -582,7 +959,7 @@ $(function(){
 
     let toggle = "0";
 
-    $("button").click(function(){//버튼을 클릭했을 때
+    $(".darkmode").click(function(){//버튼을 클릭했을 때
         if(toggle=="0"){
         toggle = "1";
         $("body").css("background","black");
@@ -623,6 +1000,8 @@ $(function(){
         $("#screen2").css({filter: "invert(100)"});
         $(".pop_h").css({filter: "invert(100)"});
         $(".pop_f").css({filter: "invert(100)"});
+        $(".hfm_list li").css({filter: "invert(100)"});
+        $(".darkmode").text('dark mode on');
         
         // $(".pf2_monitor").css({filter: "brightness(1.3)"});
         
@@ -668,6 +1047,8 @@ $(function(){
         $("#screen2").css({filter: "invert(0)"});
         $(".pop_h").css({filter: "invert(0)"});
         $(".pop_f").css({filter: "invert(0)"});
+        $(".hfm_list li").css({filter: "invert(0)"});
+        $(".darkmode").text('dark mode off');
         // $(".portfolio").css("background-color","black");
         // $(".home").css({filter: "invert(0)"});
         // $(".home h2").css({color: "black"});
@@ -695,6 +1076,9 @@ $(function(){
         $('footer').css({visibility:"hidden"});
         $('html,body').css("overflow", "hidden");
 
+        $('.mbh_h').css('display','none');
+        $('.mbh_f').css('display','none');
+
         position = $(this).parent().next().offset().top;
         console.log("position: "+position);
 
@@ -712,10 +1096,27 @@ $(function(){
         $('footer').css({visibility:"visible"});
         $('html,body').animate({ scrollTop:position},0); 
         $('html,body').css("overflow", "auto");
+
+        // $('.mbh_h').css('display','block');
+        $('.mbh_f').css('display','block');
         
         console.log("position: "+position);
 
         $('.pop').animate({ scrollTop:0},0); return false;
+
+            // let mdh_toggle = "0";
+
+            // if(mdh_toggle=="0"){
+                // mdh_toggle = "0";
+                // $('header').animate({ top:"-10vh"},1000); 
+                // $('footer').animate({ bottom:"-10vh"},1000);
+                // $('header').removeClass('header'); 
+                // $('footer').removeClass('footer');
+                // $('header').addClass('header_hide'); 
+                // $('footer').addClass('footer_hide');
+            // }
+
+
 
     });
 
@@ -749,13 +1150,33 @@ $(function(){
 
         $('body').css({overflow:"auto"});//body스크롤없앰}
         $('body').css({position:"static"});
-        $('.darkmode').click();
+
+        $(".sound_toggle").text('sound on');
+        // $('.darkmode').click();
 
         audio.play();
         audio.autoplay = true;
         // audio.currentTime = 20;
         audio.loop = true;
         audio.volume = 0.5;
+
+        let sound_toggle = "0";
+
+        $(".sound_toggle").click(function(){//버튼을 클릭했을 때
+            if(sound_toggle=="0"){
+                sound_toggle = "1";
+                audio.pause();
+                $(".sound_toggle").text('sound off');
+            }
+            else{
+                sound_toggle = "0"; 
+                audio.play();
+                audio.autoplay = true;
+                audio.loop = true;
+                audio.volume = 0.5;
+                $(".sound_toggle").text('sound on');
+            }
+        });
     });
     
 
@@ -772,7 +1193,30 @@ $(function(){
 
         $('body').css({overflow:"auto"});//body스크롤없앰}
         $('body').css({position:"static"});
-        $('.darkmode').click();
+
+        $(".sound_toggle").text('sound off');
+
+        let sound_toggle = "0";
+
+        $(".sound_toggle").click(function(){//버튼을 클릭했을 때
+            if(sound_toggle=="0"){
+                sound_toggle = "1";
+                audio.play();
+                audio.autoplay = true;
+                audio.loop = true;
+                audio.volume = 0.5;
+                $(".sound_toggle").text('sound on');
+            }
+            else{
+                sound_toggle = "0"; 
+                audio.pause();
+                $(".sound_toggle").text('sound off');
+            }
+        });
+
+        // $('.darkmode').click();
     });
+
+
 
 });

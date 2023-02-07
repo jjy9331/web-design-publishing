@@ -56,12 +56,27 @@ a { text-decoration:none; color:black; }
 /* layout */
 header { 
     position: fixed; 
-    left: 0px; top: 0px; background: rgba(255, 255, 255, 1); width: 100%;
+    left: 0px; 
+    top: 0px; 
+    background: rgba(255, 255, 255, 1); 
+    width: 100%;
     /* height: 120px;  */
     border-bottom: 2px solid black;
     z-index: 1000;
     visibility: hidden;
 }
+
+.header_hide { 
+    position: fixed; 
+    left: 0px; 
+    top: -10vh; 
+    background: rgba(255, 255, 255, 1); 
+    width: 100%;
+    /* height: 120px;  */
+    border-bottom: 2px solid black;
+    z-index: 1000;
+}
+
 header .inner { 
     position: relative;  
     /* max-width: 1352px;  */
@@ -1234,7 +1249,7 @@ section {visibility: hidden;}
 }
 
 
-
+#screen2 {bottom: 0%;}
 
 
 
@@ -1249,6 +1264,18 @@ footer {
     background: rgba(255, 255, 255, 1);
     width: 100%; 
     visibility: hidden;
+    z-index: 1000;
+}
+
+.footer_hide { 
+    position: relative;
+    position: fixed;
+    bottom: -10vh;
+    border-top: 2px solid black;
+    /* background: rgba(0, 0, 0, 0);  */
+    background: rgba(255, 255, 255, 1);
+    width: 100%; 
+    z-index: 1000;
 }
 
 footer .inner {
@@ -1319,24 +1346,101 @@ footer .inner p {
     height:100%; 
 }
 
+/* hiden function menu */
+
+footer .inner .hfm_btn{
+    position: absolute;
+    right: 0px;
+    bottom: 22px;
+    padding-right: 1.5%;
+    cursor: pointer;
+}
+
+.hfm_wrap{ position: relative;}
+
+.hfm1{
+    position: absolute;
+    top: -2vh;
+    left: -6vw;
+    width: 0.5vw;
+    height: 0.5vw;
+    border-radius: 0.5vw;
+    background: black;
+}
+
+.hfm2{
+    position: absolute;
+    top: -2vh;
+    left: -3.5vw;
+    width: 0.5vw;
+    height: 0.5vw;
+    border-radius: 0.5vw;
+    background: black;
+}
+
+.hfm3{
+    position: absolute;
+    top: -2vh;
+    left: -1vw;
+    width: 0.5vw;
+    height: 0.5vw;
+    border-radius: 0.5vw;
+    background: black;
+}
+
+.hfm_list {
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: 1.5vw;
+    text-align: right;
+}
+
+.hfm_list li {
+    font-family: 'Noto Sans KR';
+    font-size: 0.5em;
+    font-weight: 500;
+    padding: 0.5vh;
+    cursor: pointer;
+}
+
+
+.mbh_h {
+    position: fixed; 
+    left: 0px; 
+    top: 0px; 
+    background: transparent;
+    width: 100%;
+    height: 7vh;
+    z-index: 500;
+    display: none;
+}
+
+.mbh_f {
+    position: fixed;
+    bottom: 0px;
+    background: transparent;
+    width: 100%; 
+    height: 7vh;
+    z-index: 500;
+    display: none;
+}
+
 
 /* darkmode */
 
 
-
-.darkmode {
-    /* position: fixed; */
-    position: absolute;
-    right: 0px;
-    bottom: 22px;
-    background: white;
-    /* width: 170px; */
-    /* height: 100px; */
-    border: 3px solid transparent;
-    /* border: 3px solid black; */
-    font-size: 11px; 
-    padding-right: 1.5%;
-}
+/* 
+    .darkmode {
+        position: absolute;
+        right: 0px;
+        bottom: 22px;
+        background: white;
+        border: 3px solid transparent;
+        font-size: 11px; 
+        padding-right: 1.5%;
+    }
+*/
 
 .darkmode .invert {
     position: relative; 
