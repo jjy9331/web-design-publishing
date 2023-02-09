@@ -1354,15 +1354,17 @@ footer .inner .hfm_btn{
     bottom: 30px;
     padding-right: 1.5%;
     cursor: pointer;
+    background: transparent;
+    border: 0px;
 }
 
 .hfm_wrap{
     /* position: relative; */
     /* position: absolute; */
-    width: 5.9vw;
+    /* width: 5.9vw; */
     /* height: 1.8vh; */
-    display: flex;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
 }
 
 .hfm1{

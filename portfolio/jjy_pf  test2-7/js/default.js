@@ -577,55 +577,163 @@ $(function(){
 
     //////////////////////////////////////////////////////////
 
+    // var c_target = $(e.target).attr("class");
 
-
+    let hfm_toggle = "0";
 
     $(".hfm_btn").click(function(){//버튼을 클릭했을 때
         
-        $(".hfm_list").toggle();
+        // $(".hfm_list").toggle();
 
         // console.log("getClass: "+getClass);
 
-    });
+        // hfm_toggle = "0";
+        
+        if (hfm_toggle == "0") {
+            hfm_toggle = "1";
+            // $(".hfm_list").css('display','none');
+            $(".hfm_list").css('display','block');
 
-    $("http, body").click(function(e){//버튼을 클릭했을 때
-
-        var c_target = $(e.target).attr("class");
-
-        if(c_target != $(".hfm_btn").attr("class")){
+            $("http, body").click(function(e){//버튼을 클릭했을 때
+                var c_target = $(e.target).parent().attr("class");
+                if(c_target != $(".hfm_btn").attr("class")){
+                    hfm_toggle = "0";
+                    $(".hfm_list").css('display','none');
+                }
+                if(c_target == $(".hfm_list").attr("class")){
+                    hfm_toggle = "1";
+                    $(".hfm_list").css('display','block');
+                }
+                
+                console.log("c_target: "+c_target);
+            });
+        }
+        else{
+            hfm_toggle = "0";
             $(".hfm_list").css('display','none');
-        }
-        if(c_target == $(".hfm1").attr("class")){
             // $(".hfm_list").css('display','block');
-            $(".hfm_list").toggle();
-        }
-        if(c_target == $(".hfm2").attr("class")){
-            // $(".hfm_list").css('display','block');
-            $(".hfm_list").toggle();
-        }
-        if(c_target == $(".hfm3").attr("class")){
-            // $(".hfm_list").css('display','block');
-            $(".hfm_list").toggle();
-        }
-        if(c_target == $(".hfm_wrap").attr("class")){
-            // $(".hfm_list").css('display','block');
-            $(".hfm_list").toggle();
-        }
-        if(c_target == $(".sound_toggle").attr("class")){
-            // $(".hfm_list").css('display','block');
-            $(".hfm_list").css('display','block');
-        }
-        if(c_target == $(".darkmode").attr("class")){
-            // $(".hfm_list").css('display','block');
-            $(".hfm_list").css('display','block');
         }
 
-        // var getClass=$(this).attr("class");
-        // console.log("getClass: "+getClass);
-        console.log("c_target: "+c_target);
-        // alert(c_target);
+
 
     });
+
+    // $("http, body").click(function(e){//버튼을 클릭했을 때
+            
+    //     var c_target = $(e.target).parent().attr("class");
+
+    //     if(c_target != $(".hfm_btn").attr("class")){
+    //     //     // $(".hfm_list").toggle();
+    //     //     hfm_toggle = "0";
+        
+    //     //     if (hfm_toggle = "0") {
+    //             hfm_toggle = "1";
+    //             $(".hfm_list").css('display','none');
+    //     //     }
+    //     //     else{
+    //     //         hfm_toggle = "0";
+    //     //         $(".hfm_list").css('display','block');
+    //     //     }
+    //     }
+
+    //     if(c_target == $(".hfm_list").attr("class")){
+    //         hfm_toggle = "1";
+    //         $(".hfm_list").css('display','block');
+    //     }
+        
+    //     console.log("c_target: "+c_target);
+    //     // alert(c_target);
+    // });
+
+    // let hfm_toggle = "0";
+
+    // $("http, body").click(function(e){//버튼을 클릭했을 때
+
+    //     // $(".hfm_btn").click(function(){//버튼을 클릭했을 때
+        
+    //     //     $(".hfm_list").toggle();
+    
+    //     //     // console.log("getClass: "+getClass);
+    
+    //     // });
+
+    //     hfm_toggle = "0";
+
+    //     var c_target = $(e.target).attr("class");
+
+    //     if(c_target != $(".hfm_btn").attr("class")){
+    //         $(".hfm_list").css('display','none');
+    //     }
+    //     // if(c_target == $(".hfm1, .hfm2, .hfm3, .hfm_wrap ").attr("class")){
+    //     //     $(".hfm_list").toggle();
+    //     // }
+    //     if(c_target == $(".hfm1").attr("class")){
+    //         // $(".hfm_list").toggle();
+    //         if (hfm_toggle=="0") {
+    //             hfm_toggle = "1";
+    //             $(".hfm_list").css('display','block'); 
+    //         }
+    //         else{
+    //             hfm_toggle = "0";
+    //             $(".hfm_list").css('display','none'); 
+    //         }
+    //     }
+    //     if(c_target == $(".hfm2").attr("class")){
+    //         // $(".hfm_list").toggle();
+    //         if (hfm_toggle=="0") {
+    //             hfm_toggle = "1";
+    //             $(".hfm_list").css('display','block'); 
+    //         }
+    //         else{
+    //             hfm_toggle = "0";
+    //             $(".hfm_list").css('display','none'); 
+    //         }
+    //     }
+    //     if(c_target == $(".hfm3").attr("class")){
+    //         // $(".hfm_list").toggle();
+    //         if (hfm_toggle=="0") {
+    //             hfm_toggle = "1";
+    //             $(".hfm_list").css('display','block'); 
+    //         }
+    //         else{
+    //             hfm_toggle = "0";
+    //             $(".hfm_list").css('display','none'); 
+    //         }
+    //     }
+    //     if(c_target == $(".hfm_wrap").attr("class")){
+    //         // $(".hfm_list").toggle();
+
+    //         // let mdh_toggle = "0";
+    //         // if(mdh_toggle=="0"){
+    //         //     mdh_toggle = "1";
+    //         //     $(".hfm_list").css('display','none');
+    //         // }
+    //         // else{
+    //         //     mdh_toggle = "0";
+    //         //     $(".hfm_list").css('display','block');
+    //         // }
+    //         if (hfm_toggle=="0") {
+    //             hfm_toggle = "1";
+    //             $(".hfm_list").css('display','block'); 
+    //         }
+    //         else{
+    //             hfm_toggle = "0";
+    //             $(".hfm_list").css('display','none'); 
+    //         }
+    //     }
+    //     if(c_target == $(".sound_toggle").attr("class")){
+    //         $(".hfm_list").css('display','block');
+    //     }
+    //     if(c_target == $(".darkmode").attr("class")){
+    //         $(".hfm_list").css('display','block');
+    //     }
+
+    //     // var getClass=$(this).attr("class");
+    //     // console.log("getClass: "+getClass);
+    //     console.log("c_target: "+c_target);
+    //     // alert(c_target);
+
+    // });
 
 
 
