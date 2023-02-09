@@ -1351,7 +1351,7 @@ footer .inner p {
 footer .inner .hfm_btn{
     position: absolute;
     right: 0px;
-    bottom: 30px;
+    bottom: 3.5vh;
     padding-right: 1.5%;
     cursor: pointer;
     background: transparent;
