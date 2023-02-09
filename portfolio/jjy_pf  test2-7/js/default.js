@@ -596,6 +596,7 @@ $(function(){
 
             $("http, body").click(function(e){//버튼을 클릭했을 때
                 var c_target = $(e.target).parent().attr("class");
+                var menu_hide = $(e.target).attr("class");
                 if(c_target != $(".hfm_btn").attr("class")){
                     hfm_toggle = "0";
                     $(".hfm_list").css('display','none');
@@ -604,6 +605,16 @@ $(function(){
                     hfm_toggle = "1";
                     $(".hfm_list").css('display','block');
                 }
+                if (menu_hide == $(".menu_hide").attr("class")) {
+                    hfm_toggle = "0";
+                    $(".hfm_list").css('display','none');
+                }
+
+                // $(".menu_hide").click(function(){//버튼을 클릭했을 때
+                //     hfm_toggle = "0";
+                //     $(".hfm_list").css('display','none');
+                    
+                // })
                 
                 console.log("c_target: "+c_target);
             });
@@ -761,6 +772,7 @@ $(function(){
                 // mdh_toggle = "1";
                 $('header').animate({ top:"-10vh"},1000); 
                 $('footer').animate({ bottom:"-10vh"},1000);
+                // $(".hfm_list").css('display','none');
                 // $('header').removeClass('header'); 
                 // $('footer').removeClass('footer');
                 // $('header').remove('header'); 

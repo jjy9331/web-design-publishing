@@ -20,7 +20,7 @@ console.log(canvas2.height);
 
 // canvas2.style.position = 'sticky'
 canvas2.style.position = 'fixed';
-canvas2.style.bottom = '2.5%';
+// canvas2.style.bottom = '2.5%';
 // canvas2.style.right = '25%'
 // canvas2.style.transform = 'translateY(-50%)'
 canvas2.style.objectFit = 'cover';
