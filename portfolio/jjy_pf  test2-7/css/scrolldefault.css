@@ -337,6 +337,13 @@ header ul li:nth-child(4) .hr_d13 {
 .header ul li:nth-child(4):hover {opacity: 0.5;} */
 
 
+@keyframes header_ani {
+    0% {top: 0vh; }
+    100% { top: -10vh; }
+}
+
+
+
 
 section {visibility: hidden;}
 
@@ -1202,6 +1209,8 @@ section {visibility: hidden;}
     /* width: 320px;
     height: 675px; */
     /* background-color: darkkhaki; */
+    perspective-origin: center;
+    perspective: 400vw;
 }
 
 .item:nth-of-type(3) .more .pfmore_bg {
@@ -1226,6 +1235,23 @@ section {visibility: hidden;}
     left: 2%;
     width: 95%;
     z-index: 5;
+}
+
+@keyframes phgrow {
+    0% { transform: translateZ(0vw); }
+    100% { transform: translateZ(399vw); }
+}
+
+@keyframes congrow {
+    0% { 
+        transform: translateZ(0vw);
+        left: 2%;
+    }
+    /* 50% { transform: translateZ(0vw); } */
+    100% { 
+        transform: translateZ(399vw); 
+        left: 1%;
+    }
 }
 
 
@@ -1297,6 +1323,13 @@ footer .inner p {
     color: rgba(0, 0, 0, 1);
     padding-left: 1.5%;
 }
+
+
+@keyframes footer_ani {
+    0% {bottom: 0vh; }
+    100% { bottom: -10vh; }
+}
+
 
 
 

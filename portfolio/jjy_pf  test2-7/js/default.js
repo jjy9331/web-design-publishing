@@ -769,5 +769,71 @@ $(function(){
     });
 
 
+    /////////////////////////////////////////////////////////
+
+    // more perspective click animation
+
+    // $(".more").click(function(){//버튼을 클릭했을 때
+    //     $('#pfmback').css('display','none');
+    //     $('#pfmnext').css('display','none');
+    //     $('header').animate({ top:"-10vh"},500); 
+    //     $('footer').animate({ bottom:"-10vh"},500); 
+
+    //     var frameNumm = 0;
+    //     var targetFN = 0;
+
+    //     function incZ(){
+    //         frameNumm = Math.floor(frameNumm+1);
+            
+    //         // frameNumm = frameNumm + 1*(targetFN - frameNumm); 
+    //         $(".pf_more_iphone").css({"transform":"translateZ("+frameNumm+"vw)"});
+    //         $(".pf_more_img").css({"transform":"translateZ("+frameNumm+"vw)"});
+    //         if(frameNumm > 398){
+    //             clearInterval(expz);
+    //         }
+    //         console.log("frameNumm:"+frameNumm);
+    //     }
+    //     var expz = setInterval(incZ,1);
+
+        // function incZ(){
+        //     frameNumm = Math.floor(frameNumm+1);
+            
+        //     frameNumm = frameNumm + 1*(targetFN - frameNumm); 
+        //     $(".pf_more_iphone").animation = "phgrow 1.5s ease-in-out";
+        //     $(".pf_more_img").animation = "congrow 1.5s ease-in-out";
+        //     console.log("frameNumm:"+frameNumm);
+        // }
+        // var expz = setInterval(incZ,1);
+
+    // });
+
+    var more = document.querySelector('.more');
+    var pfmback = document.querySelector('#pfmback');
+    var pfmnext = document.querySelector('#pfmnext');
+
+    var morephone = document.querySelector('.pf_more_iphone');
+    var moreplus = document.querySelector('.pf_more_img');
+
+    var header = document.querySelector('header');
+    var footer = document.querySelector('footer');
+
+
+    more.addEventListener('click', () => {
+
+        pfmback.style.display='none'
+        pfmnext.style.display='none'
+        morephone.style.animation = "phgrow 1.0s ease-in-out";
+        morephone.style.animationFillMode = "forwards";
+        moreplus.style.animation = "congrow 1.1s ease-in-out";
+        moreplus.style.animationFillMode = "forwards";
+
+        header.style.animation = "header_ani 0.5s ease-in-out";
+        header.style.animationFillMode = "forwards";
+        footer.style.animation = "footer_ani 0.5s ease-in-out";
+        footer.style.animationFillMode = "forwards";
+
+    });
+
+
 
 });
