@@ -442,15 +442,15 @@ $(function(){
 
 
     pfmore.addEventListener('mouseover', () => {
-        // pfmore_img.src="images/more_view.gif"
-        hover_runner.style.display = 'block'
+        pfmore_img.src="images/more_view.gif"
+        // hover_runner.style.display = 'block'
     });
 
     pfmore.addEventListener('mouseout',() => pf_more_mouseout());
 
     function pf_more_mouseout() {
-        // pfmore_img.src="images/more_bg.svg"
-        hover_runner.style.display = 'none'
+        pfmore_img.src="images/more_bg.png"
+        // hover_runner.style.display = 'none'
     }
 
 
@@ -826,23 +826,23 @@ $(function(){
 
     more.addEventListener('click', () => {
 
-        pfmback.style.display='none'
-        pfmnext.style.display='none'
-        morephone.style.animation = "phgrow 1.0s ease-in-out";
-        morephone.style.animationFillMode = "both";
-        moreplus.style.animation = "congrow 1.1s ease-in-out";
-        moreplus.style.animationFillMode = "both";
+        // pfmback.style.display='none'
+        // pfmnext.style.display='none'
+        // morephone.style.animation = "phgrow 1.0s ease-in-out";
+        // morephone.style.animationFillMode = "both";
+        // moreplus.style.animation = "congrow 1.1s ease-in-out";
+        // moreplus.style.animationFillMode = "both";
 
-        // morephone.src="images/ph_stroke.png"
-        // morephone.style.transition = "0.1s ease-out 0.1s";
+        // // morephone.src="images/ph_stroke.png"
+        // // morephone.style.transition = "0.1s ease-out 0.1s";
 
-        header.style.animation = "header_ani 0.5s ease-in-out";
-        header.style.animationFillMode = "both";
-        footer.style.animation = "footer_ani 0.5s ease-in-out";
-        footer.style.animationFillMode = "both";
+        // header.style.animation = "header_ani 0.5s ease-in-out";
+        // header.style.animationFillMode = "both";
+        // footer.style.animation = "footer_ani 0.5s ease-in-out";
+        // footer.style.animationFillMode = "both";
 
-        hover_runner.style.opacity = '0';
-        hover_runner.style.transition = "0.1s ease-out 0.1s";
+        // hover_runner.style.opacity = '0';
+        // hover_runner.style.transition = "0.1s ease-out 0.1s";
 
         setTimeout(() => {
             location.replace('overview.html') 
