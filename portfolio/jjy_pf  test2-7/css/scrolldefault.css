@@ -1227,30 +1227,48 @@ section {visibility: hidden;}
     position: relative;
     width: 15vw;
     z-index: 10;
+    
 }
 
 .item:nth-of-type(3) .pf_more_img {
     position: absolute;
-    top: 21%;
-    left: 2%;
+    top: 21.5%;
+    left: 1%;
     width: 95%;
     z-index: 5;
 }
 
+.item:nth-of-type(3) .hover_runner {
+    position: absolute;
+    top: 21%;
+    left: 2%;
+    width: 95%;
+    z-index: 1;
+    display: none;
+    opacity: 1;
+}
+
 @keyframes phgrow {
-    0% { transform: translateZ(0vw); }
-    100% { transform: translateZ(399vw); }
+    0% { 
+        transform: translateZ(0vw); 
+    }
+    50% { 
+        transform: translateZ(0vw); 
+    }
+    100% { 
+        transform: translateZ(399vw); 
+    }
 }
 
 @keyframes congrow {
     0% { 
         transform: translateZ(0vw);
-        left: 2%;
     }
-    /* 50% { transform: translateZ(0vw); } */
+    50% { 
+        transform: translateZ(0vw); 
+    }
     100% { 
         transform: translateZ(399vw); 
-        left: 1%;
     }
 }
 

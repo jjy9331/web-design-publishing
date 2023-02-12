@@ -438,17 +438,19 @@ $(function(){
 
     var pfmore = document.querySelector('.pf_more_iphone');
     var pfmore_img = document.querySelector('.pf_more_img');
-    
+    var hover_runner = document.querySelector('.hover_runner');
 
 
     pfmore.addEventListener('mouseover', () => {
-        pfmore_img.src="images/more_view.gif"
+        // pfmore_img.src="images/more_view.gif"
+        hover_runner.style.display = 'block'
     });
 
     pfmore.addEventListener('mouseout',() => pf_more_mouseout());
 
     function pf_more_mouseout() {
-        pfmore_img.src="images/more_bg.png"
+        // pfmore_img.src="images/more_bg.svg"
+        hover_runner.style.display = 'none'
     }
 
 
@@ -817,20 +819,34 @@ $(function(){
     var header = document.querySelector('header');
     var footer = document.querySelector('footer');
 
+    var hover_runner = document.querySelector('.hover_runner');
+
+
+    
 
     more.addEventListener('click', () => {
 
         pfmback.style.display='none'
         pfmnext.style.display='none'
         morephone.style.animation = "phgrow 1.0s ease-in-out";
-        morephone.style.animationFillMode = "forwards";
+        morephone.style.animationFillMode = "both";
         moreplus.style.animation = "congrow 1.1s ease-in-out";
-        moreplus.style.animationFillMode = "forwards";
+        moreplus.style.animationFillMode = "both";
+
+        // morephone.src="images/ph_stroke.png"
+        // morephone.style.transition = "0.1s ease-out 0.1s";
 
         header.style.animation = "header_ani 0.5s ease-in-out";
-        header.style.animationFillMode = "forwards";
+        header.style.animationFillMode = "both";
         footer.style.animation = "footer_ani 0.5s ease-in-out";
-        footer.style.animationFillMode = "forwards";
+        footer.style.animationFillMode = "both";
+
+        hover_runner.style.opacity = '0';
+        hover_runner.style.transition = "0.1s ease-out 0.1s";
+
+        setTimeout(() => {
+            location.replace('overview.html') 
+        }, 1500);
 
     });
 
