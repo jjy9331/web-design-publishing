@@ -3,20 +3,19 @@
 $(function(){
     // header mousewheel
     $("header .inner .logo").click(function(){
-                $('html,body').animate({ scrollTop:0},2100); return false;	    
+                $('html,body').animate({ scrollTop:0},2100); 
     })
-
     $("header .inner ul li:eq(0) a, h1 a").click(function(){
-            $('html,body').animate({ scrollTop:0},2100); return false;	    
+            $('html,body').animate({ scrollTop:0},2100); 
     })
     $("header .inner ul li:eq(1) a").click(function(){
-            $('html,body').animate({ scrollTop:14775},2100); return false;
+            $('html,body').animate({ scrollTop:14775},2100);
     })
     $("header .inner ul li:eq(2) a").click(function(){
-            $('html,body').animate({ scrollTop:63996},2100); return false;
+            $('html,body').animate({ scrollTop:63996},2100); 
     })
     $("header .inner ul li:eq(3) a").click(function(){
-            $('html,body').animate({ scrollTop:218740},2100); return false;
+            $('html,body').animate({ scrollTop:218740},2100); 
     })
 
     $(window).scroll(function(){
@@ -127,40 +126,40 @@ $(function(){
     // portfolio back & next
 
     $("#pf1back").click(function(){
-                $('html,body').animate({ scrollTop:63996},2100); return false;	    
+                $('html,body').animate({ scrollTop:63996},2100); 	    
     })
     $("#pf1next").click(function(){   
-                $('html,body').animate({ scrollTop:107499},2100); return false;
+                $('html,body').animate({ scrollTop:107499},2100); 
     })
     $("#pf2back").click(function(){
-                $('html,body').animate({ scrollTop:87999},2100); return false;	    
+                $('html,body').animate({ scrollTop:87999},2100); 	    
     })
     $("#pf2next").click(function(){   
-                $('html,body').animate({ scrollTop:137370},2100); return false;
+                $('html,body').animate({ scrollTop:137370},2100); 
     })
     $("#pf3back").click(function(){
-                $('html,body').animate({ scrollTop:114495},2100); return false;	    
+                $('html,body').animate({ scrollTop:114495},2100); 	    
     })
     $("#pf3next").click(function(){   
-                $('html,body').animate({ scrollTop:165492},2100); return false;
+                $('html,body').animate({ scrollTop:165492},2100); 
     })
     $("#pf4back").click(function(){
-                $('html,body').animate({ scrollTop:135999},2100); return false;	    
+                $('html,body').animate({ scrollTop:135999},2100); 	    
     })
     $("#pf4next").click(function(){   
-                $('html,body').animate({ scrollTop:186503},2100); return false;
+                $('html,body').animate({ scrollTop:186503},2100); 
     })
     $("#pf5back").click(function(){
-                $('html,body').animate({ scrollTop:170482},2100); return false;	    
+                $('html,body').animate({ scrollTop:170482},2100); 	    
     })
     $("#pf5next").click(function(){   
-        $('html,body').animate({ scrollTop:204717},2100); return false;
+        $('html,body').animate({ scrollTop:204717},2100); 
     })
     $("#pfmback").click(function(){
-                $('html,body').animate({ scrollTop:193502},2100); return false;	    
+                $('html,body').animate({ scrollTop:193502},2100); 	    
     })
     $("#pfmnext").click(function(){   
-                $('html,body').animate({ scrollTop:218740},2100); return false;
+                $('html,body').animate({ scrollTop:218740},2100); 
     })
 
     $(window).scroll(function(){
@@ -467,7 +466,7 @@ $(function(){
 
             $(".hfm_list").css('display','block');
 
-            $("http, body").click(function(e){//버튼을 클릭했을 때
+            $("html, body").click(function(e){//버튼을 클릭했을 때
                 var c_target = $(e.target).parent().attr("class");
                 var menu_hide = $(e.target).attr("class");
                 if(c_target != $(".hfm_btn").attr("class")){
@@ -769,10 +768,12 @@ $(function(){
         $('.mbh_h').css('display','none');
         $('.mbh_f').css('display','none');
 
+        $(".hfm_list").css('display','none');
+
         position = $(this).parent().next().offset().top;
         console.log("position: "+position);
 
-        $('.pop').animate({ scrollTop:0},0); return false;
+        $('.pop').animate({ scrollTop:0},0); 
 
     });
 
@@ -789,15 +790,17 @@ $(function(){
 
         $('.mbh_f').css('display','block');
         
+        $(".hfm_list").css('display','none');
+
         console.log("position: "+position);
 
-        $('.pop').animate({ scrollTop:0},0); return false;
+        $('.pop').animate({ scrollTop:0},0); 
 
 
     });
 
     $(".pop .pop_h_inner h3").click(function(){
-        $('.pop').animate({ scrollTop:0},2100); return false;
+        $('.pop').animate({ scrollTop:0},2100); 
     })
 
 
