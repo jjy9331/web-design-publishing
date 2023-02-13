@@ -2,20 +2,25 @@
 
 $(function(){
     // header mousewheel
-    $("header .inner .logo").click(function(){
+    $("header .inner .logo").click(function(e){
                 $('html,body').animate({ scrollTop:0},2100); 
+                e.preventDefault();
     })
-    $("header .inner ul li:eq(0) a, h1 a").click(function(){
-            $('html,body').animate({ scrollTop:0},2100); 
+    $("header .inner ul li:eq(0) a, h1 a").click(function(e){
+            $('html,body').animate({ scrollTop:0},2100);
+            e.preventDefault(); 
     })
-    $("header .inner ul li:eq(1) a").click(function(){
+    $("header .inner ul li:eq(1) a").click(function(e){
             $('html,body').animate({ scrollTop:14775},2100);
+            e.preventDefault();
     })
-    $("header .inner ul li:eq(2) a").click(function(){
-            $('html,body').animate({ scrollTop:63996},2100); 
+    $("header .inner ul li:eq(2) a").click(function(e){
+            $('html,body').animate({ scrollTop:63996},2100);
+            e.preventDefault(); 
     })
-    $("header .inner ul li:eq(3) a").click(function(){
-            $('html,body').animate({ scrollTop:218740},2100); 
+    $("header .inner ul li:eq(3) a").click(function(e){
+            $('html,body').animate({ scrollTop:218740},2100);
+            e.preventDefault(); 
     })
 
     $(window).scroll(function(){
@@ -125,41 +130,53 @@ $(function(){
     ///////////////////////////////////////////////////////////////////////////////
     // portfolio back & next
 
-    $("#pf1back").click(function(){
-                $('html,body').animate({ scrollTop:63996},2100); 	    
+    $("#pf1back").click(function(e){
+                $('html,body').animate({ scrollTop:63996},2100);
+                e.preventDefault(); 	    
     })
-    $("#pf1next").click(function(){   
-                $('html,body').animate({ scrollTop:107499},2100); 
+    $("#pf1next").click(function(e){   
+                $('html,body').animate({ scrollTop:107499},2100);
+                e.preventDefault(); 
     })
-    $("#pf2back").click(function(){
-                $('html,body').animate({ scrollTop:87999},2100); 	    
+    $("#pf2back").click(function(e){
+                $('html,body').animate({ scrollTop:87999},2100);
+                e.preventDefault(); 	    
     })
-    $("#pf2next").click(function(){   
-                $('html,body').animate({ scrollTop:137370},2100); 
+    $("#pf2next").click(function(e){   
+                $('html,body').animate({ scrollTop:137370},2100);
+                e.preventDefault(); 
     })
-    $("#pf3back").click(function(){
-                $('html,body').animate({ scrollTop:114495},2100); 	    
+    $("#pf3back").click(function(e){
+                $('html,body').animate({ scrollTop:114495},2100);
+                e.preventDefault(); 	    
     })
-    $("#pf3next").click(function(){   
-                $('html,body').animate({ scrollTop:165492},2100); 
+    $("#pf3next").click(function(e){   
+                $('html,body').animate({ scrollTop:165492},2100);
+                e.preventDefault(); 
     })
-    $("#pf4back").click(function(){
-                $('html,body').animate({ scrollTop:135999},2100); 	    
+    $("#pf4back").click(function(e){
+                $('html,body').animate({ scrollTop:135999},2100);
+                e.preventDefault(); 	    
     })
-    $("#pf4next").click(function(){   
-                $('html,body').animate({ scrollTop:186503},2100); 
+    $("#pf4next").click(function(e){   
+                $('html,body').animate({ scrollTop:186503},2100);
+                e.preventDefault(); 
     })
-    $("#pf5back").click(function(){
-                $('html,body').animate({ scrollTop:170482},2100); 	    
+    $("#pf5back").click(function(e){
+                $('html,body').animate({ scrollTop:170482},2100);
+                e.preventDefault(); 	    
     })
-    $("#pf5next").click(function(){   
-        $('html,body').animate({ scrollTop:204717},2100); 
+    $("#pf5next").click(function(e){   
+        $('html,body').animate({ scrollTop:204717},2100);
+        e.preventDefault(); 
     })
-    $("#pfmback").click(function(){
-                $('html,body').animate({ scrollTop:193502},2100); 	    
+    $("#pfmback").click(function(e){
+                $('html,body').animate({ scrollTop:193502},2100);
+                e.preventDefault(); 	    
     })
-    $("#pfmnext").click(function(){   
-                $('html,body').animate({ scrollTop:218740},2100); 
+    $("#pfmnext").click(function(e){   
+                $('html,body').animate({ scrollTop:218740},2100);
+                e.preventDefault(); 
     })
 
     $(window).scroll(function(){
@@ -441,15 +458,15 @@ $(function(){
 
 
     pfmore.addEventListener('mouseover', () => {
-        pfmore_img.src="images/more_view.gif"
-        // hover_runner.style.display = 'block'
+        // pfmore_img.src="images/more_view.gif"
+        hover_runner.style.display = 'block'
     });
 
     pfmore.addEventListener('mouseout',() => pf_more_mouseout());
 
     function pf_more_mouseout() {
-        pfmore_img.src="images/more_bg.png"
-        // hover_runner.style.display = 'none'
+        // pfmore_img.src="images/more_bg.png"
+        hover_runner.style.display = 'none'
     }
 
 
@@ -482,7 +499,7 @@ $(function(){
                     $(".hfm_list").css('display','none');
                 }
 
-
+                e.preventDefault();
                 
                 console.log("c_target: "+c_target);
             });
@@ -576,6 +593,10 @@ $(function(){
         $(".pop_f_inner ").css('font-weight', "400");  
         $(".darkmode").text('Dark mode on');
 
+        $(".pfmore_bg").css("background-color","black");
+        $(".pf_more_img").css({filter: "invert(100)"});
+        $(".hover_runner").css({filter: "invert(100)"});
+
             // if(id_target != $("#darkmode").attr("id")){
             //     toggle = "1";
             //     $(".darkmode").text('Dark mode on');
@@ -634,6 +655,10 @@ $(function(){
         $(".pop_h_inner").css('font-weight', "300");  
         $(".darkmode").text('Dark mode off');
 
+        $(".pfmore_bg").css("background-color","white");
+        $(".pf_more_img").css({filter: "invert(0)"});
+        $(".hover_runner").css({filter: "invert(0)"});
+
             // if(id_target != $("#darkmode").attr("id")){
             //     toggle = "0";
             //     $(".darkmode").text('Dark mode off');
@@ -648,6 +673,9 @@ $(function(){
     });
 
     $("#darkmode").click(function(e){//버튼을 클릭했을 때
+
+        e.preventDefault();
+
         if(toggle=="0"){
             toggle = "1";
             $("body").css("background","black");
@@ -693,6 +721,10 @@ $(function(){
             $(".close").css('font-weight', "400");  
             $(".pop_f_inner ").css('font-weight', "400");  
             $(".darkmode").text('Dark mode on');
+
+            $(".pfmore_bg").css("background-color","black");
+            $(".pf_more_img").css({filter: "invert(100)"});
+            $(".hover_runner").css({filter: "invert(100)"});
             
         }
         else{
@@ -740,6 +772,11 @@ $(function(){
             $(".close").css('font-weight', "300");  
             $(".pop_h_inner").css('font-weight', "300");  
             $(".darkmode").text('Dark mode off');
+
+            $(".pfmore_bg").css("background-color","white");
+            $(".pf_more_img").css({filter: "invert(0)"});
+            $(".hover_runner").css({filter: "invert(0)"});
+    
         }
 
     });
@@ -757,7 +794,7 @@ $(function(){
 
     var position = $('.menu').parent().next().offset().top;
 
-    $('.menu').click(function menu() {
+    $('.menu').click(function menu(e) {
         $(this).parent().next().fadeIn(300);
         $('header').css('display','none');
         $('header').css({visibility:"hidden"});
@@ -773,12 +810,14 @@ $(function(){
         position = $(this).parent().next().offset().top;
         console.log("position: "+position);
 
+        e.preventDefault();
+
         $('.pop').animate({ scrollTop:0},0); 
 
     });
 
 
-    $('.close').click(function () {
+    $('.close').click(function (e) {
         $('.pop').fadeOut(100);
         // $('.pop').css('display','none');
         $('.header').css('display','block');
@@ -791,6 +830,8 @@ $(function(){
         $('.mbh_f').css('display','block');
         
         $(".hfm_list").css('display','none');
+
+        e.preventDefault();
 
         console.log("position: "+position);
 
@@ -952,23 +993,25 @@ $(function(){
 
     more.addEventListener('click', () => {
 
-        // pfmback.style.display='none'
-        // pfmnext.style.display='none'
-        // morephone.style.animation = "phgrow 1.0s ease-in-out";
-        // morephone.style.animationFillMode = "both";
-        // moreplus.style.animation = "congrow 1.1s ease-in-out";
-        // moreplus.style.animationFillMode = "both";
+        // e.preventDefault();
 
-        // // morephone.src="images/ph_stroke.png"
-        // // morephone.style.transition = "0.1s ease-out 0.1s";
+        pfmback.style.display='none'
+        pfmnext.style.display='none'
+        morephone.style.animation = "phgrow 1.0s ease-in-out";
+        morephone.style.animationFillMode = "both";
+        moreplus.style.animation = "congrow 1.1s ease-in-out";
+        moreplus.style.animationFillMode = "both";
 
-        // header.style.animation = "header_ani 0.5s ease-in-out";
-        // header.style.animationFillMode = "both";
-        // footer.style.animation = "footer_ani 0.5s ease-in-out";
-        // footer.style.animationFillMode = "both";
+        // morephone.src="images/ph_stroke.png"
+        // morephone.style.transition = "0.1s ease-out 0.1s";
 
-        // hover_runner.style.opacity = '0';
-        // hover_runner.style.transition = "0.1s ease-out 0.1s";
+        header.style.animation = "header_ani 0.5s ease-in-out";
+        header.style.animationFillMode = "both";
+        footer.style.animation = "footer_ani 0.5s ease-in-out";
+        footer.style.animationFillMode = "both";
+
+        hover_runner.style.opacity = '0';
+        hover_runner.style.transition = "0.1s ease-out 0.1s";
 
         setTimeout(() => {
             location.replace('overview.html') 
