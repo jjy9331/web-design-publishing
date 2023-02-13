@@ -526,8 +526,12 @@ $(function(){
 
     let toggle = "0";
 
-    $(".darkmode").click(function(){//버튼을 클릭했을 때
+    $(".darkmode").click(function(e){//버튼을 클릭했을 때
+
+        var id_target = $(e.target).attr("id");
+
         if(toggle=="0"){
+
         toggle = "1";
         $("body").css("background","black");
         $("body").css("background-color","black");
@@ -572,7 +576,18 @@ $(function(){
         $(".close").css('font-weight', "400");  
         $(".pop_f_inner ").css('font-weight', "400");  
         $(".darkmode").text('Dark mode on');
+
+            // if(id_target != $("#darkmode").attr("id")){
+            //     toggle = "1";
+            //     $(".darkmode").text('Dark mode on');
+            // }
+            // else{
+            //     toggle = "0";
+            //     $("#darkmode a").append("<img src='images/contrast.svg' alt='contrast'>");
+            // }
         
+            // console.log("id_target: "+id_target);
+
         }
         else{
         toggle = "0";
@@ -615,11 +630,119 @@ $(function(){
         $(".pop_h").css({filter: "invert(0)"});
         $(".pop_f").css({filter: "invert(0)"});
         $(".hfm_list li").css({filter: "invert(0)"});
-        $(".darkmode").text('Dark mode off');
         $(".pop_h_inner h3").css('font-weight', "300");  
         $(".close").css('font-weight', "300");  
         $(".pop_h_inner").css('font-weight', "300");  
+        $(".darkmode").text('Dark mode off');
+
+            // if(id_target != $("#darkmode").attr("id")){
+            //     toggle = "0";
+            //     $(".darkmode").text('Dark mode off');
+            // }
+            // else{
+            //     toggle = "1";
+            //     $("#darkmode a").append("<img src='images/contrast.svg' alt='contrast'>");
+            // }
+        
+            // console.log("id_target: "+id_target);
         }
+    });
+
+    $("#darkmode").click(function(e){//버튼을 클릭했을 때
+        if(toggle=="0"){
+            toggle = "1";
+            $("body").css("background","black");
+            $("body").css("background-color","black");
+            $("header").css({filter: "invert(100)"}); 
+            $("footer").css({filter: "invert(100)"});
+            $(".home").css("background-color","black");
+            $(".home h2").css("color","white");
+            $(".home .sec1 .visual img").css({filter: "invert(100)"});
+            $(".home .sec1 .typo h3").css("color","white");
+            $(".home .sec1 .typo p").css('color','rgba(255,255,255,0.4)');
+            $(".portfolio").css("background-color","black");
+            $(".sec2 .typo2 h3").css("color","white");
+            $(".sec2 .typo2 p").css('color','rgba(255,255,255,0.4)');
+            $(".sec2 .typo2 .d1").css("background-color","white");
+            $(".sec2 .typo2 .d2").css("background-color","white");
+            $(".sec2 .typo2 .d3").css("background-color","white");
+            $(".sec2 .typo2 .d4").css("background-color","white");
+            $(".sec2 .typo2 .d5").css('background-color','rgba(255,255,255,0.4)');
+            $(".sec2 .typo2 .d6").css('background-color','rgba(255,255,255,0.4)');
+            $(".bkbox").css("background-color","white");
+            $("#screen").css({filter: "invert(100)"});
+            $("#pf1back").css("color","white");
+            $("#pf2back").css("color","white");
+            $("#pf3back").css("color","white");
+            $("#pf4back").css("color","white");
+            $("#pf5back").css("color","white");
+            $("#pfmback").css("color","white");
+            $("#pf1next").css("color","white");
+            $("#pf2next").css("color","white");
+            $("#pf3next").css("color","white");
+            $("#pf4next").css("color","white");
+            $("#pf5next").css("color","white");
+            $("#pfmnext").css("color","white");
+            $(".eye_hide1").css("background-color","black");
+            $(".eye_hide2").css("background-color","black");
+            $(".pf4 .pf4_bg .ypaint_hide3").css("background-color","black");
+            $("#screen2").css({filter: "invert(100)"});
+            $(".pop_h").css({filter: "invert(100)"});
+            $(".pop_f").css({filter: "invert(100)"});
+            $(".hfm_list li").css({filter: "invert(100)"});
+            $(".pop_h_inner h3").css('font-weight', "400");  
+            $(".close").css('font-weight', "400");  
+            $(".pop_f_inner ").css('font-weight', "400");  
+            $(".darkmode").text('Dark mode on');
+            
+        }
+        else{
+            toggle = "0";
+            $("body").css("background","white");
+            $("body").css("background-color","white");
+            $("header").css({filter: "invert(0)"}); 
+            $("footer").css({filter: "invert(0)"});
+            $(".home").css("background-color","white");
+            $(".home h2").css("color","black");
+            $(".home .sec1 .visual img").css({filter: "invert(0)"});
+            $(".home .sec1 .typo h3").css("color","black");
+            $(".home .sec1 .typo p").css('color','rgba(0,0,0,0.4)');
+            $(".portfolio").css("background-color","white");
+            $(".sec2 .typo2 h3 ").css("color","black");
+            $(".sec2 .typo2 p").css('color','rgba(0,0,0,0.4)');
+            $(".sec2 .typo2 .d1").css("background-color","black");
+            $(".sec2 .typo2 .d2").css("background-color","black");
+            $(".sec2 .typo2 .d3").css("background-color","black");
+            $(".sec2 .typo2 .d4").css("background-color","black");
+            $(".sec2 .typo2 .d5").css('background-color','rgba(0,0,0,0.4)');
+            $(".sec2 .typo2 .d6").css('background-color','rgba(0,0,0,0.4)');
+            $(".bkbox").css("background-color","black");
+            $("#screen").css({filter: "invert(0)"});
+            $("#pf1back").css("color","black");
+            $("#pf2back").css("color","black");
+            $("#pf3back").css("color","black");
+            $("#pf4back").css("color","black");
+            $("#pf5back").css("color","black");
+            $("#pfmback").css("color","black");
+            $("#pf1next").css("color","black");
+            $("#pf2next").css("color","black");
+            $("#pf3next").css("color","black");
+            $("#pf4next").css("color","black");
+            $("#pf5next").css("color","black");
+            $("#pfmnext").css("color","black");
+            $(".eye_hide1").css("background-color","white");
+            $(".eye_hide2").css("background-color","white");
+            $(".pf4 .pf4_bg .ypaint_hide3").css("background-color","white");
+            $("#screen2").css({filter: "invert(0)"});
+            $(".pop_h").css({filter: "invert(0)"});
+            $(".pop_f").css({filter: "invert(0)"});
+            $(".hfm_list li").css({filter: "invert(0)"});
+            $(".pop_h_inner h3").css('font-weight', "300");  
+            $(".close").css('font-weight', "300");  
+            $(".pop_h_inner").css('font-weight', "300");  
+            $(".darkmode").text('Dark mode off');
+        }
+
     });
 
 
