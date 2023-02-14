@@ -1574,24 +1574,25 @@ footer .inner .hfm_btn{
 
 
 .startpop .startinner .bgm_info h3 {
-    position: absolute;
+position: absolute;
     /* left: 33.5%; */
-    top: 32%;
+    top: 39%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'SF Pro';
-    font-size: 1.8vw;
+    font-size: 1.1vw;
     font-weight: 100;
     height: 4vh;
     width: 100vw;
     z-index: 10;
-    /* margin-top: -9%;*/
+    /* margin-top: -9%; */
+    letter-spacing: 0.2vw;
 }
 
 .startpop .startinner .bgm_info .btwrap {
     position: absolute;
-    bottom: 30%;
+    bottom: 37%;
     display: flex;
     align-content: center;
     align-items: center;
@@ -1606,16 +1607,17 @@ footer .inner .hfm_btn{
 .startpop .startinner .bgm_info .btwrap button {
     font-family: 'SF Pro';
     border: 0px;
-    font-size: 1.5vw;
+    font-size: 0.9vw;
     font-weight: 100;
     z-index: 100;
     background: white;
+    letter-spacing: 0.2vw;
 }
 
 .startpop .startinner .bgm_info .btwrap #bgmstart{
     /* position: absolute;  */
     /* left: 42.5%; */
-    margin-right: 7%;
+    margin-right: 5%;
 }
 .startpop .startinner .bgm_info .btwrap #closepop{
     /* position: absolute;  */
@@ -1626,7 +1628,7 @@ footer .inner .hfm_btn{
 #bgmstart:hover {
     font-family: 'SF Pro';
     border: 0px;
-    font-size: 1.5vw;
+    font-size: 0.9vw;
     /* font-weight: 500; */
     cursor: pointer;
     opacity: 0.5;
@@ -1635,7 +1637,7 @@ footer .inner .hfm_btn{
 #closepop:hover {
     font-family: 'SF Pro';
     border: 0px;
-    font-size: 1.5vw;
+    font-size: 0.9vw;
     /* font-weight: 500; */
     cursor: pointer;
     opacity: 0.5;

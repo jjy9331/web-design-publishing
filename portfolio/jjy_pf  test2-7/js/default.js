@@ -597,13 +597,13 @@ $(function(){
         $(".pf_more_img").css({filter: "invert(100)"});
         $(".hover_runner").css({filter: "invert(100)"});
 
-            // if(id_target != $("#darkmode").attr("id")){
+            // if(id_target != $(".pop_darkmode").attr("id")){
             //     toggle = "1";
             //     $(".darkmode").text('Dark mode on');
             // }
             // else{
             //     toggle = "0";
-            //     $("#darkmode a").append("<img src='images/contrast.svg' alt='contrast'>");
+            //     $(".pop_darkmode a").append("<img src='images/contrast.svg' alt='contrast'>");
             // }
         
             // console.log("id_target: "+id_target);
@@ -659,20 +659,20 @@ $(function(){
         $(".pf_more_img").css({filter: "invert(0)"});
         $(".hover_runner").css({filter: "invert(0)"});
 
-            // if(id_target != $("#darkmode").attr("id")){
+            // if(id_target != $(".pop_darkmode").attr("id")){
             //     toggle = "0";
             //     $(".darkmode").text('Dark mode off');
             // }
             // else{
             //     toggle = "1";
-            //     $("#darkmode a").append("<img src='images/contrast.svg' alt='contrast'>");
+            //     $(".pop_darkmode a").append("<img src='images/contrast.svg' alt='contrast'>");
             // }
         
             // console.log("id_target: "+id_target);
         }
     });
 
-    $("#darkmode").click(function(e){//버튼을 클릭했을 때
+    $(".pop_darkmode").click(function(e){//버튼을 클릭했을 때
 
         e.preventDefault();
 
@@ -855,9 +855,14 @@ $(function(){
     // var scroll =new AudioFade('#scrollsound', 8000).init();
 
     var audio = new Audio('sound/JJ_pf_beat.mp3');
+
+    let sound_toggle = "0";
     
 
     $('#bgmstart').click(function () {
+
+        sound_toggle = "0"; 
+
         $('.startpop').fadeOut(100);
         // $('.pop').css('display','none');
         $('.header').css('display','block');
@@ -872,6 +877,7 @@ $(function(){
         $('body').css({position:"static"});
 
         $(".sound_toggle").text('Sound on');
+        $(".pop_sound_toggle img").attr("src","images/volume.svg");
         // $('.darkmode').click();
 
         audio.play();
@@ -880,27 +886,56 @@ $(function(){
         audio.loop = true;
         audio.volume = 0.5;
 
-        let sound_toggle = "0";
+        // let sound_toggle = "0";
 
-        $(".sound_toggle").click(function(){//버튼을 클릭했을 때
-            if(sound_toggle=="0"){
-                sound_toggle = "1";
-                audio.pause();
-                $(".sound_toggle").text('Sound off');
-            }
-            else{
-                sound_toggle = "0"; 
-                audio.play();
-                audio.autoplay = true;
-                audio.loop = true;
-                audio.volume = 0.5;
-                $(".sound_toggle").text('Sound on');
-            }
-        });
+        // $(".sound_toggle").click(function(){//버튼을 클릭했을 때
+        //     if(sound_toggle=="0"){
+        //         sound_toggle = "1";
+        //         audio.pause();
+        //         $(".sound_toggle").text('Sound off');
+        //         $(".pop_sound_toggle img").attr("src","images/volume_mute.svg");
+        //     }
+        //     else{
+        //         sound_toggle = "0"; 
+        //         audio.play();
+        //         audio.autoplay = true;
+        //         audio.loop = true;
+        //         audio.volume = 0.5;
+        //         $(".sound_toggle").text('Sound on');
+        //         $(".pop_sound_toggle img").attr("src","images/volume.svg");
+        //     }
+        // });
+
+
+
+        
+
+    });
+
+
+    $(".sound_toggle").click(function(){//버튼을 클릭했을 때
+        if(sound_toggle=="0"){
+            sound_toggle = "1";
+            audio.pause();
+            $(".sound_toggle").text('Sound off');
+            $(".pop_sound_toggle img").attr("src","images/volume_mute.svg");
+        }
+        else{
+            sound_toggle = "0"; 
+            audio.play();
+            audio.autoplay = true;
+            audio.loop = true;
+            audio.volume = 0.5;
+            $(".sound_toggle").text('Sound on');
+            $(".pop_sound_toggle img").attr("src","images/volume.svg");
+        }
     });
     
 
     $('#closepop').click(function () {
+
+        sound_toggle = "1"; 
+
         $('.startpop').fadeOut(100);
         // $('.pop').css('display','none');
         $('.header').css('display','block');
@@ -915,26 +950,50 @@ $(function(){
         $('body').css({position:"static"});
 
         $(".sound_toggle").text('Sound off');
+        $(".pop_sound_toggle img").attr("src","images/volume_mute.svg");
 
-        let sound_toggle = "0";
 
-        $(".sound_toggle").click(function(){//버튼을 클릭했을 때
-            if(sound_toggle=="0"){
-                sound_toggle = "1";
-                audio.play();
-                audio.autoplay = true;
-                audio.loop = true;
-                audio.volume = 0.5;
-                $(".sound_toggle").text('Sound on');
-            }
-            else{
-                sound_toggle = "0"; 
-                audio.pause();
-                $(".sound_toggle").text('Sound off');
-            }
-        });
+        // $(".sound_toggle").click(function(){//버튼을 클릭했을 때
+        //     if(sound_toggle=="0"){
+        //         sound_toggle = "1";
+        //         audio.play();
+        //         audio.autoplay = true;
+        //         audio.loop = true;
+        //         audio.volume = 0.5;
+        //         $(".sound_toggle").text('Sound on');
+        //         $(".pop_sound_toggle img").attr("src","images/volume.svg");
+        //     }
+        //     else{
+        //         sound_toggle = "0"; 
+        //         audio.pause();
+        //         $(".sound_toggle").text('Sound off');
+        //         $(".pop_sound_toggle img").attr("src","images/volume_mute.svg");
+        //     }
+        // });
 
         // $('.darkmode').click();
+    });
+
+
+    $(".pop_sound_toggle").click(function(){//버튼을 클릭했을 때
+
+        
+        if(sound_toggle=="0"){
+            sound_toggle = "1";
+            audio.pause();
+            $(".pop_sound_toggle img").attr("src","images/volume_mute.svg");
+            $(".sound_toggle").text('Sound off');
+        }
+        else{
+            sound_toggle = "0"; 
+            audio.play();
+            audio.autoplay = true;
+            audio.loop = true;
+            audio.volume = 0.5;
+            $(".pop_sound_toggle img").attr("src","images/volume.svg");
+            $(".sound_toggle").text('Sound on');
+        }
+        
     });
 
 
