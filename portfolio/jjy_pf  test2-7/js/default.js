@@ -857,24 +857,45 @@ $(function(){
     var audio = new Audio('sound/JJ_pf_beat.mp3');
 
     let sound_toggle = "0";
+
+
+
+    let bgmst = document.querySelector('#bgmstart');
+    let sdwave = document.querySelector('.soundwave');
+
+    bgmst.addEventListener('click', () => {
+        // sdwave.addEventListener("play", () => {
+        //     console.log("bgmstart");
+        // });
+        sdwave.play();
+    });
+
+
     
 
     $('#bgmstart').click(function () {
 
+        $('.soundwave').click(function() {});
+
         sound_toggle = "0"; 
 
-        $('.startpop').fadeOut(100);
+        $('.startpop').delay(2000).fadeOut(100);
+        $('.bgm_info h3 ').fadeOut(100);
+        $('.btwrap').fadeOut(100);
         // $('.pop').css('display','none');
-        $('.header').css('display','block');
-        $('.header').css({visibility:"visible"});
-        $('footer').css('display','block');
-        $('footer').css({visibility:"visible"});
-        $('html,body').animate({ scrollTop:position},0); 
-        $('html,body').css("overflow", "auto");
-        $("section").fadeIn(2000); 
+        // $('.header').delay(2000).css('display','block');
+        $('.header').delay(1000).css({visibility:"visible"});
+        // $('footer').delay(2000).css('display','block');
+        $('footer').delay(1000).css({visibility:"visible"});
+        $('.header').delay(1000).fadeIn(100); 
+        $('footer').delay(1000).fadeIn(100); 
 
-        $('body').css({overflow:"auto"});//body스크롤없앰}
-        $('body').css({position:"static"});
+        $('html,body').delay(2000).animate({ scrollTop:position},0); 
+        $('html,body').delay(2000).css("overflow", "auto");
+        $("section").delay(2000).fadeIn(2000); 
+
+        $('body').delay(2000).css({overflow:"auto"});//body스크롤없앰}
+        $('body').delay(2000).css({position:"static"});
 
         $(".sound_toggle").text('Sound on');
         $(".pop_sound_toggle img").attr("src","images/volume.svg");
