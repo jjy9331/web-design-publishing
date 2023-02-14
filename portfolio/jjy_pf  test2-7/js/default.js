@@ -513,9 +513,11 @@ $(function(){
 
     });
 
+    let mdh_toggle = "0";
+
     $(".menu_hide").click(function(){//버튼을 클릭했을 때
 
-        let mdh_toggle = "0";
+        mdh_toggle = "1";
         
         $(".hfm_list").toggle();
         $('header').animate({ top:"-10vh"},1000); 
@@ -529,6 +531,9 @@ $(function(){
 
 
     $('.mbh_f').on('mouseover', () => {
+
+        mdh_toggle = "0";
+
         $('header').animate({ top:"0vh"},1000); 
         $('footer').animate({ bottom:"0vh"},1000); 
     });
@@ -1092,6 +1097,11 @@ $(function(){
 
         hover_runner.style.opacity = '0';
         hover_runner.style.transition = "0.1s ease-out 0.1s";
+
+        if (mdh_toggle == "1") {
+            header.style.display='none'
+            footer.style.display='none'
+        }
 
         setTimeout(() => {
             location.replace('overview.html') 
