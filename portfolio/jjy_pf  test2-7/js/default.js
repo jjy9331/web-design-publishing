@@ -887,6 +887,10 @@ $(function(){
         $('.soundwave').delay(1500).fadeOut(100)
         $('.startpop').delay(2000).fadeOut(100);
         $('.bgm_info h3 ').fadeOut(500);
+
+        $('.cursor ').fadeOut(500);
+        $('.cursor ').delay(2000).fadeIn(3500);
+
         $('.btwrap').fadeOut(500);
         // $('.pop').css('display','none');
         // $('.header').delay(2000).css('display','block');
@@ -1103,6 +1107,10 @@ $(function(){
 
         hover_runner.style.opacity = '0';
         hover_runner.style.transition = "0.1s ease-out 0.1s";
+
+        mouseCursor.style.opacity = '0';
+        mouseCursor.style.transition = "0.1s ease-out 0.1s";
+
 
         if (mdh_toggle == "1") {
             header.style.display='none'
