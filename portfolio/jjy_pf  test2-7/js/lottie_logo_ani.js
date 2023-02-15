@@ -94,7 +94,7 @@ $(function(){
                         $container.fadeOut(1000, function() {
                     //         $("body").css({ overflowX: "auto" });
                                 $("#progress").css({display:"none"}); 
-
+                                $(".cursor").css({display:"none"});
 
                             
                                 
@@ -123,6 +123,8 @@ $(function(){
                                         $('body').css('backgroundColor', 'white');
                                         $('html').css("overflow", "auto");
 
+                                        $(".cursor").fadeIn(2000); 
+
                                         clearInterval(t);
                                     }
                                     else if(t < 6){
@@ -139,6 +141,8 @@ $(function(){
                                         $("section").hide(); 
                                         $("footer").hide(); 
                                         $('html').css("overflow", "hidden");
+
+                                        $(".cursor").css({display:"none"});
 
                                         
 

@@ -880,13 +880,14 @@ $(function(){
 
     $('#bgmstart').click(function () {
 
-        $('.soundwave').click(function() {});
+        
 
         sound_toggle = "0"; 
 
+        $('.soundwave').delay(1500).fadeOut(100)
         $('.startpop').delay(2000).fadeOut(100);
-        $('.bgm_info h3 ').fadeOut(100);
-        $('.btwrap').fadeOut(100);
+        $('.bgm_info h3 ').fadeOut(500);
+        $('.btwrap').fadeOut(500);
         // $('.pop').css('display','none');
         // $('.header').delay(2000).css('display','block');
         $('.header').delay(1000).css({visibility:"visible"});
@@ -897,7 +898,7 @@ $(function(){
 
         $('html,body').delay(2000).animate({ scrollTop:position},0); 
         $('html,body').delay(2000).css("overflow", "auto");
-        $("section").delay(2000).fadeIn(2000); 
+        $("section").delay(2000).fadeIn(3500); 
 
         $('body').delay(2000).css({overflow:"auto"});//body스크롤없앰}
         $('body').delay(2000).css({position:"static"});
@@ -962,15 +963,20 @@ $(function(){
 
         sound_toggle = "1"; 
 
-        $('.startpop').fadeOut(100);
+        $('.soundwave').fadeOut(50)
+        $('.startpop').delay(500).fadeOut(100);
         // $('.pop').css('display','none');
+
+        $('.bgm_info h3 ').fadeOut(500);
+        $('.btwrap').fadeOut(500);
+
         $('.header').css('display','block');
         $('.header').css({visibility:"visible"});
         $('footer').css('display','block');
         $('footer').css({visibility:"visible"});
         $('html,body').animate({ scrollTop:position},0); 
         $('html,body').css("overflow", "auto");
-        $("section").fadeIn(2000); 
+        $("section").fadeIn(4500); 
 
         $('body').css({overflow:"auto"});//body스크롤없앰}
         $('body').css({position:"static"});
@@ -1084,7 +1090,7 @@ $(function(){
         pfmnext.style.display='none'
         morephone.style.animation = "phgrow 1.0s ease-in-out";
         morephone.style.animationFillMode = "both";
-        moreplus.style.animation = "congrow 1.1s ease-in-out";
+        moreplus.style.animation = "congrow 1.15s ease-in-out";
         moreplus.style.animationFillMode = "both";
 
         // morephone.src="images/ph_stroke.png"
@@ -1109,6 +1115,54 @@ $(function(){
 
     });
 
+
+    /////////////////////////////////////////////////////////
+
+    // mouse cursor
+
+
+    let mouseCursor = document.querySelector(".cursor");
+    let allLinks = document.querySelectorAll("body a,button,li,span"); //링크
+    let pftotal = document.querySelector("html,body");
+    //window 객체에 scroll & mouse 이벤트를 추가하고 cursor함수 실행되도록 함
+    window.addEventListener("scroll", cursor);
+    window.addEventListener("mousemove", cursor);
+    //커스텀 커서의 left값과 top값을 커서의 XY좌표값과 일치시킴
+    function cursor(e) {
+        mouseCursor.style.left = e.pageX + "px";
+        mouseCursor.style.top = e.pageY - scrollY + "px";
+    }
+
+    let hover_toggle = "0";
+
+    allLinks.forEach((link) => {
+        link.addEventListener("mouseover", () => {
+            mouseCursor.classList.add("cursor-grow");
+            mouseCursor.style.zIndex = "1100";
+            hover_toggle = "1";
+        });
+        link.addEventListener("mouseleave", () => {
+            mouseCursor.classList.remove("cursor-grow");
+            mouseCursor.style.zIndex = "1100";
+            hover_toggle = "0";
+        });
+    });
+
+    pftotal.addEventListener("click", () => {
+        mouseCursor.style.zIndex = "1100";
+        mouseCursor.classList.add("click_ani");
+        setTimeout(() => {
+            mouseCursor.classList.remove("click_ani");
+        }, 500);
+
+        if(hover_toggle == "1"){
+            mouseCursor.classList.remove("click_ani");
+        }
+        else{
+            hover_toggle = "0";
+            mouseCursor.classList.add("click_ani");
+        }
+    });
 
 
 });

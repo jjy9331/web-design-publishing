@@ -13,6 +13,7 @@
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
 
+
 <!-- <script src="js/AudioFade.js"></script> -->
 <!-- <script src="js/logo_intro.js"></script> -->
 
@@ -22,6 +23,7 @@
 <!-- <audio id="scrollsound" src="sound/wooden-light-door-1522.wav"></audio> -->
 
 
+<div class="cursor"></div>
 
 <div id="skrollr-body">
     <div class="mbh_h" id="mbh"></div>
@@ -186,7 +188,7 @@
         >
         <div class="container">
             <div class="pf">
-                <div class="pf_ani pf1" id="pf_ani">
+                <div class="pf_ani pf1" id="gebiscon">
                     <span id="pf1back" class="material-symbols-outlined">
                         arrow_back_ios
                     </span>
@@ -200,11 +202,11 @@
                         arrow_forward_ios
                     </span>
                 </div>
-                <div class="pop gebiscon" id="gebiscon">
+                <div class="pop gebiscon">
                     <div class="inner">
                         <div class="pop_h">
                             <div class="pop_h_inner">
-                                <h3>UI UX mindset</h3>
+                                <a><h3>UI UX mindset</h3></a>
                                 <a href="#gebiscon" class="close"><div>X</div></a>
                             </div>
                         </div>
@@ -246,7 +248,7 @@
                         
                     </div>
                 </div>
-                <div class="pf_ani pf2">
+                <div class="pf_ani pf2" id="zerolab">
                     <span id="pf2back" class="material-symbols-outlined">
                         arrow_back_ios
                     </span>
@@ -268,8 +270,8 @@
                     <div class="inner">
                         <div class="pop_h">
                             <div class="pop_h_inner">
-                                <h3>zerolab design renewal</h3>
-                                <div class="close"><div>X</div></div>
+                                <a><h3>zerolab design renewal</h3></a>
+                                <a href="#zerolab" class="close"><div>X</div></a>
                             </div>
                         </div>
                         <div class="sheet pf2_1">
@@ -668,5 +670,17 @@
         console.log( "Build: "+ md.versionStr('Build') );       // '4.1.A.0.562'
         console.log( "playstation|xbox: "+ md.match('playstation|xbox') ); // false
 </script>
+<!-- <script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js"></script>
+<script type="text/javascript">
+    options = {
+    "outerStyle": "disable",
+    "hoverEffect": "pointer-overlay",
+    "hoverItemMove": false,
+    "defaultCursor": false,
+    "outerWidth": 30,
+    "outerHeight": 30
+    };
+    magicMouse(options);
+</script> -->
 
 </html>

@@ -35,9 +35,12 @@ html, body {
     /* scroll-snap-type: y mandatory; */
     /* scroll-snap-type: none; */
     user-select: none;
+    --color-texta: #000;
+    --color-textb: #fff;
 }
 
 body {  
+    cursor: none;
     /* zoom: 0.55;  */
     margin: 0px;
     width: 100%;
@@ -50,7 +53,13 @@ body {
     /* display: none; */
     background-color: black;
 }
-a { text-decoration:none; color:black; }
+
+body:hover {
+    cursor: none;
+}
+
+a { text-decoration:none; color:black; cursor: none; }
+button {cursor: none; }
 .blind { position:absolute; top:-9999px; }
 
 /* layout */
@@ -86,6 +95,7 @@ header .inner {
     /* border-bottom: 4px solid black; */
     margin: 0 auto; 
     /* border: 2px dashed yellow; box-sizing: border-box;  */
+    z-index: 1200;
 }
 
 /* popup */
@@ -111,11 +121,13 @@ header .inner {
     flex-direction: row;
     align-items: center;
 }
-.pop_h_inner h3{
-    font-size: 1.05vw;
+.pop_h_inner a {
     padding-left: 2%;
+}
+.pop_h_inner a h3{
+    font-size: 1.05vw;
     font-weight: 300;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .close { 
     /* position: absolute; */
@@ -123,7 +135,7 @@ header .inner {
     /* top: 26%; */
     padding-right: 2%;
     color: black;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-size: 0.9vw;
     font-weight: 300;
 }
@@ -725,7 +737,7 @@ section {visibility: hidden;}
     top: 48%;
     left: -24%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #pf1next {
@@ -733,7 +745,7 @@ section {visibility: hidden;}
     top: 48%;
     right: -24%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #pf2back {
@@ -742,7 +754,7 @@ section {visibility: hidden;}
     left: -40%;
     visibility: hidden;
     z-index: 6;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #pf2next {
@@ -750,7 +762,7 @@ section {visibility: hidden;}
     top: 48%;
     right: -40%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #pf3back {
@@ -758,7 +770,7 @@ section {visibility: hidden;}
     top: 48%;
     left: -40%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #pf3next {
@@ -766,14 +778,14 @@ section {visibility: hidden;}
     top: 48%;
     right: -40%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 #pf4back {
     position: absolute;
     top: 48%;
     left: -128%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #pf4next {
@@ -781,14 +793,14 @@ section {visibility: hidden;}
     top: 48%;
     right: -128%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 #pf5back {
     position: absolute;
     top: 48%;
     left: -40%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #pf5next {
@@ -796,7 +808,7 @@ section {visibility: hidden;}
     top: 48%;
     right: -40%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #pfmback {
@@ -804,7 +816,7 @@ section {visibility: hidden;}
     top: 48%;
     left: -128%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #pfmnext {
@@ -812,7 +824,7 @@ section {visibility: hidden;}
     top: 48%;
     right: -128%;
     visibility: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .item:nth-of-type(3) .pf2 {
@@ -1439,7 +1451,7 @@ footer .inner .hfm_btn{
     right: 0px;
     bottom: 25px;
     padding-right: 1.5%;
-    cursor: pointer;
+    /* cursor: pointer; */
     background: transparent;
     border: 0px;
 }
@@ -1497,7 +1509,7 @@ footer .inner .hfm_btn{
     font-weight: 500;
     padding-bottom: 0.6vh;
     padding-top: 0.6vh;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 
@@ -1544,7 +1556,7 @@ footer .inner .hfm_btn{
     font-size: 11px; 
     font-family: 'Noto Sans KR';
     font-weight: 500; 
-	cursor: pointer;
+	/* cursor: pointer; */
 }
 .darkmode .invert_text:hover{ 
     /* text-decoration: underline; */
@@ -1612,6 +1624,7 @@ position: absolute;
     z-index: 100;
     background: white;
     letter-spacing: 0.2vw;
+    cursor: none;
 }
 
 .startpop .startinner .bgm_info .btwrap #bgmstart{
@@ -1630,8 +1643,8 @@ position: absolute;
     border: 0px;
     font-size: 0.9vw;
     /* font-weight: 500; */
-    cursor: pointer;
-    opacity: 0.5;
+    /* cursor: pointer; */
+    /* opacity: 0.5; */
 }
 
 #closepop:hover {
@@ -1639,8 +1652,8 @@ position: absolute;
     border: 0px;
     font-size: 0.9vw;
     /* font-weight: 500; */
-    cursor: pointer;
-    opacity: 0.5;
+    /* cursor: pointer; */
+    /* opacity: 0.5; */
 }
 
 
@@ -1661,6 +1674,47 @@ position: absolute;
 
 .toolbar {
     visibility: hidden;
+}
+
+
+ /* 커스텀 커서 스타일 정의해주기 */
+.cursor {
+    width: 0.5rem;
+    height: 0.5rem;
+    /* border: 2px solid var(--color-texta); */
+    border-radius: 50%;
+    position: fixed;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transition-property: transform;
+    transform-origin: 100% 100%;
+    backdrop-filter: invert(1);
+    background-size: cover;
+    z-index: 2000;
+    display: none;
+}
+
+.cursor-grow {
+    transform: scale(3.8)  translate(20%, 20%);
+    /* background-color: var(--color-texta); */
+    cursor: none;
+}
+
+
+.click_ani {
+    animation: cursor_click .7s backwards ;
+}
+
+.click_ani_hover {
+    animation: cursor_click .7s forwards ;
+}
+
+@keyframes cursor_click {
+    0% { transform: scale(1);}
+    50% { transform: scale(3.8) translate(25%, 25%);}
+    100% { transform: scale(1);}
 }
 
 
