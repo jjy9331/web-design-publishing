@@ -163,9 +163,11 @@ header .inner {
     font-weight: 300;
 }
 
+/* 
 .pop_f_inner a:hover {
-    /* text-decoration: underline; */
+    text-decoration: underline; 
 }
+*/
 
 .pop_fnc {
     display: flex;
@@ -1207,10 +1209,12 @@ section {visibility: hidden;}
     z-index: 10;
 }
 
+/* 
 .item:nth-of-type(3) .pf5 {
-
-    /* background-color: darkkhaki; */
+    background-color: darkkhaki; 
 }
+*/
+
 /* .item:nth-of-type(3) .pf5 img:nth-child(1) {
     position: relative;
     width: 960px;
@@ -1580,9 +1584,12 @@ footer .inner .hfm_btn{
     display: none;
 }
 
+/* 
 .startpop .startinner .bgm_info {
 
 }
+*/
+
 
 
 .startpop .startinner .bgm_info h3 {

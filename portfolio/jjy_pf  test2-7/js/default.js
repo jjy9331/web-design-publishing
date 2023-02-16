@@ -1138,7 +1138,17 @@ $(function(){
     // let pf_ani = document.querySelector(".pf_ani");
     let pf_ani = document.querySelectorAll(".pf_ani");
 
-    let pop_sheet = document.querySelectorAll(".pop .sheet");
+    let gebiscon = document.querySelectorAll(".gebiscon .sheet");
+    let zerolab = document.querySelectorAll(".zerolab .sheet");
+    
+
+    let gebiscon_h = document.querySelector(".gebiscon .pop_h");
+    let gebiscon_f = document.querySelector(".gebiscon .pop_f");
+
+    let zerolab_h = document.querySelector(".zerolab .pop_h");
+    let zerolab_f = document.querySelector(".zerolab .pop_f");
+
+    let pop = document.querySelector(".pop");
 
     // let pf1 = document.querySelector(".pf1");
     // let pf2 = document.querySelector(".pf2");
@@ -1163,9 +1173,7 @@ $(function(){
     let eye_hide1 = document.querySelector(".eye_hide1");
     let eye_hide2 = document.querySelector(".eye_hide2");
 
-    let pop_h = document.querySelector(".pop_h");
-    let pop_f = document.querySelector(".pop_f");
-    let pop = document.querySelector(".pop");
+
 
     let ypaint_hide3 = document.querySelector(".ypaint_hide3");
 
@@ -1323,10 +1331,8 @@ $(function(){
     let pop_hover = "0";
     
     for(var i = 0; i < 6; i++ ){
-        pop_sheet[i].addEventListener("mouseover", () => {
+        gebiscon[i].addEventListener("mouseover", () => {
             mouseCursor.classList.add("pf_cursor");
-            // mouseCursor.classList.remove("cursor");
-            // mouseCursor.classList.add("cursor-grow");
             mouseCursor.style.zIndex = "1100";
             // hover_toggle = "1";
             pop_hover = "1";
@@ -1334,13 +1340,37 @@ $(function(){
         
     }
 
-    pop_h.addEventListener("mouseover", () => {
+    for(var i = 0; i < 6; i++ ){
+        zerolab[i].addEventListener("mouseover", () => {
+            mouseCursor.classList.add("pf_cursor");
+            mouseCursor.style.zIndex = "1100";
+            // hover_toggle = "1";
+            pop_hover = "1";
+        });
+        
+    }
+
+    
+    gebiscon_h.addEventListener("mouseover", () => {
         mouseCursor.classList.remove("pf_cursor");
         mouseCursor.style.zIndex = "1100";
         // hover_toggle = "1";
         pop_hover = "1";
     });
-    pop_f .addEventListener("mouseover", () => {
+    gebiscon_f.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+    zerolab_h.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+    zerolab_f.addEventListener("mouseover", () => {
         mouseCursor.classList.remove("pf_cursor");
         mouseCursor.style.zIndex = "1100";
         // hover_toggle = "1";
