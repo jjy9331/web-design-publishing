@@ -1130,7 +1130,45 @@ $(function(){
 
 
     let mouseCursor = document.querySelector(".cursor");
-    let allLinks = document.querySelectorAll("body a,button,li,span"); //링크
+    let mCursor = document.querySelector("#cursor"); 
+    let allLinks = document.querySelectorAll("body a,button,li"); //링크
+    // let hspan = document.querySelectorAll(".pf_ani span");
+    let hspan = document.querySelector("span");
+
+    // let pf_ani = document.querySelector(".pf_ani");
+    let pf_ani = document.querySelectorAll(".pf_ani");
+
+    let pop_sheet = document.querySelectorAll(".pop .sheet");
+
+    // let pf1 = document.querySelector(".pf1");
+    // let pf2 = document.querySelector(".pf2");
+    // let pf3 = document.querySelector(".pf3");
+    // let pf4 = document.querySelector(".pf4");
+    // let pf5 = document.querySelector(".pf5");
+    // let pf_more = document.querySelector(".pf_more");
+
+    let pf1b = document.querySelector("#pf1back");
+    let pf1n = document.querySelector("#pf1next");
+    let pf2b = document.querySelector("#pf2back");
+    let pf2n = document.querySelector("#pf2next");
+    let pf3b = document.querySelector("#pf3back");
+    let pf3n = document.querySelector("#pf3next");
+    let pf4b = document.querySelector("#pf4back");
+    let pf4n = document.querySelector("#pf4next");
+    let pf5b = document.querySelector("#pf5back");
+    let pf5n = document.querySelector("#pf5next");
+    let pfmb = document.querySelector("#pfmback");
+    let pfmn = document.querySelector("#pfmnext");
+
+    let eye_hide1 = document.querySelector(".eye_hide1");
+    let eye_hide2 = document.querySelector(".eye_hide2");
+
+    let pop_h = document.querySelector(".pop_h");
+    let pop_f = document.querySelector(".pop_f");
+    let pop = document.querySelector(".pop");
+
+    let ypaint_hide3 = document.querySelector(".ypaint_hide3");
+
     let pftotal = document.querySelector("html,body");
     //window 객체에 scroll & mouse 이벤트를 추가하고 cursor함수 실행되도록 함
     window.addEventListener("scroll", cursor);
@@ -1143,18 +1181,172 @@ $(function(){
 
     let hover_toggle = "0";
 
+    let pf_ani_toggle = "0";
+
     allLinks.forEach((link) => {
         link.addEventListener("mouseover", () => {
             mouseCursor.classList.add("cursor-grow");
             mouseCursor.style.zIndex = "1100";
             hover_toggle = "1";
+            pf_ani_toggle = "0";
         });
         link.addEventListener("mouseleave", () => {
             mouseCursor.classList.remove("cursor-grow");
             mouseCursor.style.zIndex = "1100";
             hover_toggle = "0";
+            pf_ani_toggle = "0";
+            
         });
     });
+
+    for(var i = 0; i < 6; i++ ){
+        pf_ani[i].addEventListener("mouseover", () => {
+            mouseCursor.classList.add("pf_cursor");
+            // mouseCursor.classList.remove("cursor");
+            mouseCursor.classList.add("cursor-grow");
+            mouseCursor.style.zIndex = "1100";
+            hover_toggle = "1";
+
+        });
+        pf_ani[i].addEventListener("mouseleave", () => {
+            // mouseCursor.classList.add("cursor");
+            mouseCursor.classList.remove("pf_cursor");
+            mouseCursor.classList.remove("cursor-grow");
+            mouseCursor.style.zIndex = "1100";
+            hover_toggle = "0";
+        });
+    }
+
+
+
+    pf1b.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+    pf1n.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+
+    pf2b.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+    pf2n.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+
+
+    eye_hide1.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.classList.remove("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+    eye_hide2.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.classList.remove("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+
+
+    pf3b.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+    pf3n.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+
+    pf4b.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+    pf4n.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";    
+    });
+
+    ypaint_hide3.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.classList.remove("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+
+    pf5b.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+    pf5n.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+
+    pfmb.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+    pfmn.addEventListener("mouseenter", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.classList.add("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+    });
+
+
+    let pop_hover = "0";
+    
+    for(var i = 0; i < 6; i++ ){
+        pop_sheet[i].addEventListener("mouseover", () => {
+            mouseCursor.classList.add("pf_cursor");
+            // mouseCursor.classList.remove("cursor");
+            // mouseCursor.classList.add("cursor-grow");
+            mouseCursor.style.zIndex = "1100";
+            // hover_toggle = "1";
+            pop_hover = "1";
+        });
+        
+    }
+
+    pop_h.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+    pop_f .addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
 
     pftotal.addEventListener("click", () => {
         mouseCursor.style.zIndex = "1100";
@@ -1166,10 +1358,13 @@ $(function(){
         if(hover_toggle == "1"){
             mouseCursor.classList.remove("click_ani");
         }
+
         else{
             hover_toggle = "0";
             mouseCursor.classList.add("click_ani");
         }
+
+
     });
 
 
