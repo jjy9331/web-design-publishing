@@ -889,8 +889,8 @@ $(function(){
         $('.bgm_info h3 ').fadeOut(500);
 
         $('.cursor ').fadeOut(500);
-        $('.cursor ').delay(2000).fadeIn(3500);
-
+        // $('.cursor ').delay(2000).fadeIn(3500);
+        $('.cursor ').delay(2000).css('display','block');
         $('.btwrap').fadeOut(500);
         // $('.pop').css('display','none');
         // $('.header').delay(2000).css('display','block');

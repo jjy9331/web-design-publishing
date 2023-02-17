@@ -1692,11 +1692,12 @@ position: absolute;
     border-radius: 50%;
     position: fixed;
     z-index: 1000;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     pointer-events: none;
     transition: all 0.3s ease;
     transition-property: transform;
-    transform-origin: 100% 100%;
+    /* transform-origin: 100% 100%; */
+    transform-origin: center;
     backdrop-filter: invert(1);
     background-size: cover;
     z-index: 2000;
@@ -1711,11 +1712,12 @@ position: absolute;
     border-radius: 50%;
     position: fixed;
     z-index: 1000;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     pointer-events: none;
     transition: all 0.3s ease;
     transition-property: transform;
-    transform-origin: 100% 100%;
+    /* transform-origin: 100% 100%; */
+    transform-origin: center;
     background-color: rgba(233,233,233,0.8);
     backdrop-filter: none;
     background-size: cover;
@@ -1723,7 +1725,9 @@ position: absolute;
 }
 
 .cursor-grow {
-    transform: scale(3.8)  translate(20%, 20%);
+    /* transform: scale(3.8)  translate(20%, 20%); */
+    transform: scale(3.8);
+    transform-origin: center;
     /* background-color: var(--color-texta); */
     cursor: none;
 }
@@ -1738,9 +1742,9 @@ position: absolute;
 }
 
 @keyframes cursor_click {
-    0% { transform: scale(1);}
-    50% { transform: scale(3.8) translate(25%, 25%);}
-    100% { transform: scale(1);}
+    0% { transform: scale(1); transform-origin: center;}
+    50% { transform: scale(3.8); transform-origin: center; }
+    100% { transform: scale(1); transform-origin: center;}
 }
 
 
