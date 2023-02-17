@@ -889,8 +889,8 @@ $(function(){
         $('.bgm_info h3 ').fadeOut(500);
 
         $('.cursor ').fadeOut(500);
-        // $('.cursor ').delay(2000).fadeIn(3500);
-        $('.cursor ').delay(2000).css('display','block');
+        $('.cursor ').delay(2000).fadeIn(500);
+        // $('.cursor ').delay(2000).css('display','block');
         $('.btwrap').fadeOut(500);
         // $('.pop').css('display','none');
         // $('.header').delay(2000).css('display','block');
@@ -1257,11 +1257,13 @@ $(function(){
     eye_hide1.addEventListener("mouseenter", () => {
         mouseCursor.classList.remove("pf_cursor");
         mouseCursor.classList.remove("cursor-grow");
+        // mouseCursor.style.cursor = "none";
         mouseCursor.style.zIndex = "1100";
         hover_toggle = "1";
     });
     eye_hide2.addEventListener("mouseenter", () => {
         mouseCursor.classList.remove("pf_cursor");
+        // mouseCursor.style.cursor = "none";
         mouseCursor.classList.remove("cursor-grow");
         mouseCursor.style.zIndex = "1100";
         hover_toggle = "1";

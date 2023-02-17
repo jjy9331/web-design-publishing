@@ -1702,6 +1702,7 @@ position: absolute;
     background-size: cover;
     z-index: 2000;
     display: none;
+    cursor: none;
 }
 
 
@@ -1722,6 +1723,7 @@ position: absolute;
     backdrop-filter: none;
     background-size: cover;
     z-index: 2000;
+    cursor: none;
 }
 
 .cursor-grow {
@@ -1742,9 +1744,9 @@ position: absolute;
 }
 
 @keyframes cursor_click {
-    0% { transform: scale(1); transform-origin: center;}
-    50% { transform: scale(3.8); transform-origin: center; }
-    100% { transform: scale(1); transform-origin: center;}
+    0% { transform: scale(1); transform-origin: center; cursor: none;}
+    50% { transform: scale(3.8); transform-origin: center; cursor: none;}
+    100% { transform: scale(1); transform-origin: center; cursor: none;}
 }
 
 
