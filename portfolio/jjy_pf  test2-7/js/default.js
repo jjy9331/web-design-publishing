@@ -800,7 +800,7 @@ $(function(){
     var position = $('.menu').parent().next().offset().top;
 
     $('.menu').click(function menu(e) {
-        $(this).parent().next().fadeIn(300);
+        $(this).parent().next().fadeIn(1000);
         $('header').css('display','none');
         $('header').css({visibility:"hidden"});
         $('footer').css('display','none');
@@ -818,6 +818,7 @@ $(function(){
         e.preventDefault();
 
         $('.pop').animate({ scrollTop:0},0); 
+        $('.pop').stop(false,true);
 
     });
 
@@ -845,11 +846,32 @@ $(function(){
 
     });
 
+    let sct_ani = "0"; 
+    
+
     $(".pop .pop_h_inner h3").click(function(){
-        $('.pop').animate({ scrollTop:0},2100); 
+        $('.pop').animate({ scrollTop:0},700,"swing"); 
+        $('.pop').css("scroll-snap-type", "none");
+        sct_ani = "1";
+
     })
 
+    // h3 클릭 시, scrollTop 애니메이션 충돌 방지
+    $(".pop").on("mousewheel",function(e,delta) {
 
+        if(delta < 0) { //휠을 아래로 돌렸을때
+            console.log("sheet num: "+delta);
+            $(".pop").stop();
+            $('.pop').css("scroll-snap-type", "y mandatory");
+            sct_ani = "1";
+        } 
+        else { //휠을 위로 돌렸을때
+            console.log("sheet num: "+delta);
+            $('.pop').css("scroll-snap-type", "y mandatory");
+            $(".pop").stop();
+            sct_ani = "1";
+        }
+    });
 
 
 
@@ -1227,6 +1249,7 @@ $(function(){
 
 
 
+
     pf1b.addEventListener("mouseenter", () => {
         mouseCursor.classList.remove("pf_cursor");
         // mouseCursor.classList.add("cursor-grow");
@@ -1268,6 +1291,9 @@ $(function(){
         mouseCursor.style.zIndex = "1100";
         hover_toggle = "1";
     });
+    // eye_hide2.addEventListener("mouseover", () => {
+    //     mouseCursor.style.cursor = "none";
+    // });
 
 
     pf3b.addEventListener("mouseenter", () => {
