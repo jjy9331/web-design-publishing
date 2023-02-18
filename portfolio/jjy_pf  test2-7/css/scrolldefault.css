@@ -1454,10 +1454,30 @@ footer .inner p {
     transform-origin: center;
 }
 
-/* #pf-nav ul li:hover span {
+#pf-nav ul li[data-descr]:hover span {
     transform: scale(2);
     border-radius: 100%;
     transform-origin: center;
+}
+
+
+#pf-nav ul li:nth-child(1)[data-descr]:hover::after{ content: attr(data-descr); position: absolute; left: -6px; top: -10vh; /* min-width: 200px; */ /* border: 1px #aaaaaa solid; */ /* border-radius: 10px; */ background-color: transparent; padding: 12px; color: #000000; font-size: 14px; z-index: 1;}
+#pf-nav ul li:nth-child(2)[data-descr]:hover::after{ content: attr(data-descr); position: absolute; left: -24px; top: -10vh; /* min-width: 200px; */ /* border: 1px #aaaaaa solid; */ /* border-radius: 10px; */ background-color: transparent; padding: 12px; color: #000000; font-size: 14px; z-index: 1;}
+#pf-nav ul li:nth-child(3)[data-descr]:hover::after{ content: attr(data-descr); position: absolute; left: -31px; top: -10vh; /* min-width: 200px; */ /* border: 1px #aaaaaa solid; */ /* border-radius: 10px; */ background-color: transparent; padding: 12px; color: #000000; font-size: 14px; z-index: 1;}
+#pf-nav ul li:nth-child(4)[data-descr]:hover::after{ content: attr(data-descr); position: absolute; left: -40px; top: -10vh; /* min-width: 200px; */ /* border: 1px #aaaaaa solid; */ /* border-radius: 10px; */ background-color: transparent; padding: 12px; color: #000000; font-size: 14px; z-index: 1;}
+#pf-nav ul li:nth-child(5)[data-descr]:hover::after{ content: attr(data-descr); position: absolute; left: -18px; top: -10vh; /* min-width: 200px; */ /* border: 1px #aaaaaa solid; */ /* border-radius: 10px; */ background-color: transparent; padding: 12px; color: #000000; font-size: 14px; z-index: 1;}
+#pf-nav ul li:nth-child(6)[data-descr]:hover::after{ content: attr(data-descr); position: absolute; left: -20px; top: -10vh; /* min-width: 200px; */ /* border: 1px #aaaaaa solid; */ /* border-radius: 10px; */ background-color: transparent; padding: 12px; color: #000000; font-size: 14px; z-index: 1;}
+
+/* #pf-nav ul li .pf-tooltip {
+    top: -2px;
+    color: black;
+    font-size: 14px;
+    font-family: 'SF Pro','Noto Sans KR';
+    max-width: 220px;
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
 } */
 
 
