@@ -1155,6 +1155,8 @@ $(function(){
     let mCursor = document.querySelector("#cursor"); 
     let allLinks = document.querySelectorAll("body a,button,li"); //링크
     // let hspan = document.querySelectorAll(".pf_ani span");
+    let pf_nav = document.querySelectorAll("#pf-nav ul li");
+    let pf_nav_click = document.querySelector("#pf-nav ul li span");
     let hspan = document.querySelector("span");
 
     // let pf_ani = document.querySelector(".pf_ani");
@@ -1228,6 +1230,111 @@ $(function(){
             
         });
     });
+
+    for(var i = 0; i < 6; i++ ){
+        pf_nav[i].addEventListener("mouseover", () => {
+            mouseCursor.classList.remove("cursor-grow");
+            mouseCursor.style.zIndex = "1100";
+            hover_toggle = "1";
+        });
+
+        // pf_nav[i].addEventListener("click", () => {
+        //     pf_nav_click.classList.add("pf_nav_active");
+        // });
+    }
+
+    // pf_nav_click.addEventListener("click", () => {
+    //     pf_nav_click.classList.add("pf_nav_active");
+    // });
+
+    $('#pf-nav ul li:eq(0)').click(function(e){
+        $('html,body').animate({ scrollTop:86420},2100); 
+        e.preventDefault();
+    })
+    $('#pf-nav ul li:eq(1)').click(function(e){
+        $('html,body').animate({ scrollTop:107499},2100); 
+        e.preventDefault();
+    })
+    $('#pf-nav ul li:eq(2)').click(function(e){
+        $('html,body').animate({ scrollTop:137370},2100); 
+        e.preventDefault();
+    })
+    $('#pf-nav ul li:eq(3)').click(function(e){
+        $('html,body').animate({ scrollTop:163483},2100); 
+        e.preventDefault();
+    })
+    $('#pf-nav ul li:eq(4)').click(function(e){
+        $('html,body').animate({ scrollTop:186503},2100); 
+        e.preventDefault();
+    })
+    $('#pf-nav ul li:eq(5)').click(function(e){
+        $('html,body').animate({ scrollTop:204717},2100); 
+        e.preventDefault();
+    })
+
+
+    $(window).scroll(function(){
+        var b = $(document).scrollTop(); 
+        if((b >=63996) && (b < 86420)) {
+            $('#pf-nav ul li:eq(0) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(1) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(2) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(3) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(4) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(5) span').removeClass("pf_nav_active");
+        }
+        if((b >=86420) && (b < 91499)) {
+            $('#pf-nav ul li:eq(0) span').addClass("pf_nav_active");
+            $('#pf-nav ul li:eq(1) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(2) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(3) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(4) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(5) span').removeClass("pf_nav_active");
+        }
+        if((b >=107499) && (b < 114499)) {
+            $('#pf-nav ul li:eq(0) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(1) span').addClass("pf_nav_active");
+            $('#pf-nav ul li:eq(2) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(3) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(4) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(5) span').removeClass("pf_nav_active");
+
+        }
+        if((b >=137370) && (b < 144370)) {
+            $('#pf-nav ul li:eq(0) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(1) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(2) span').addClass("pf_nav_active");
+            $('#pf-nav ul li:eq(3) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(4) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(5) span').removeClass("pf_nav_active");
+        }
+        if((b >=163483) && (b < 170483)) {
+            $('#pf-nav ul li:eq(0) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(1) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(2) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(3) span').addClass("pf_nav_active");
+            $('#pf-nav ul li:eq(4) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(5) span').removeClass("pf_nav_active");
+        }
+        if((b >=186502) && (b < 193503)) {
+            $('#pf-nav ul li:eq(0) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(1) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(2) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(3) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(4) span').addClass("pf_nav_active");
+            $('#pf-nav ul li:eq(5) span').removeClass("pf_nav_active");
+        }
+        if((b >=204717) && (b < 211717)) {
+            $('#pf-nav ul li:eq(0) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(1) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(2) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(3) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(4) span').removeClass("pf_nav_active");
+            $('#pf-nav ul li:eq(5) span').addClass("pf_nav_active");
+        }
+    });
+
+    
 
     for(var i = 0; i < 6; i++ ){
         pf_ani[i].addEventListener("mouseover", () => {
