@@ -898,7 +898,7 @@ section {visibility: hidden;}
     height: 9vw;
     z-index: 4;
     background-color: white;
-    cursor: default;
+    cursor: none;
 }
 .item:nth-of-type(3) .pf2 .pf2_bg .eye_hide2 {
     position: absolute;
@@ -1118,7 +1118,7 @@ section {visibility: hidden;}
     height: 10%;
     z-index: 4;
     background-color: white;
-    cursor: default;
+    cursor: none;
 }
 
 .item:nth-of-type(3) .pf4 .pf4_bg .ypaint_hide2 {
@@ -1129,7 +1129,7 @@ section {visibility: hidden;}
     height: 6%;
     z-index: 4;
     background-color: white;
-    cursor: default;
+    cursor: none;
 }
 
 .item:nth-of-type(3) .pf4 .pf4_bg .ypaint_hide3 {
@@ -1140,7 +1140,7 @@ section {visibility: hidden;}
     height: 79%;
     z-index: 4;
     background-color: white;
-    cursor: default;
+    cursor: none;
 }
 
 .item:nth-of-type(3) .pf4 .pf4_bg .smile {
@@ -1152,13 +1152,13 @@ section {visibility: hidden;}
     /* width: 50%; */
     height: 6%;
     z-index: 1;
-    cursor: default;
+    cursor: none;
     /* visibility: hidden; */
 }
 
 .item:nth-of-type(3) .pf4 .pf4_bg #smile1 {
     z-index: 3;
-    cursor: default;
+    cursor: none;
 }
 
 .item:nth-of-type(3) .pf4 .pf4_bg .cls-1 {
@@ -1175,7 +1175,7 @@ section {visibility: hidden;}
 .item:nth-of-type(3) .pf4 .pf4_bg #smile2 {
     position: absolute;
     z-index: 1;
-    cursor: default;
+    cursor: none;
     transform-origin: 16px 25px;
     /* transform: scale(0); */
     /* visibility: hidden; */

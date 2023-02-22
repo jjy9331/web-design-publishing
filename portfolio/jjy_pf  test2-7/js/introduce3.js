@@ -69,7 +69,7 @@ window.addEventListener('scroll', () => {
 
     
     requestAnimationFrame(() => updateImage(frameIndex))
-});
+},{ passive: true });
 
 preloadImages()
 
