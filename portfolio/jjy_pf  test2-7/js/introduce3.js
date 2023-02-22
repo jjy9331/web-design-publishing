@@ -1,71 +1,74 @@
-var imgNum = 0;
-var img = new Image();
+
+const html = document.documentElement;
 var canvas = document.getElementById('screen');
-var ctx = canvas.getContext('2d');
-var scrollYPos;
+const context = canvas.getContext("2d");
 
 
-img.src = "./track_run_start8/000.png";
 
-// canvas.width = $(window).width();
-// canvas.height = $(window).height();
-// canvas.width = canvas.offsetWidth
-// canvas.height = (canvas.width / 3) * 2
+
+// //이미지 불러오기
+
+const frameCount = 485;
+const currentFrame = index => (
+    `./track_run_start8/${index.toString().padStart(3, '0')}.png`
+)
+
+const preloadImages = () => {
+    for (let i = 1; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+    }
+};
+
+const img = new Image()
+img.src = currentFrame(1);
+
 canvas.width = 1920
 canvas.height = 1080
-// canvas.width = window.innerWidth
-// canvas.height = window.innerHeight
-
-console.log("innerWidth: "+canvas.width);
-console.log("innerHeight: "+canvas.height);
-
-// canvas.style.position = 'sticky'
 canvas.style.position = 'fixed';
 canvas.style.bottom = '0%';
-// canvas.style.right = '25%'
-// canvas.style.transform = 'translateY(-50%)'
 canvas.style.objectFit = 'cover';
 
-
-window.addEventListener('scroll', function(e) {
-    var y = window.scrollY;
-
-    
-    scrollYPos = Math.round(((window.scrollY/100)-141));
-    // scrollYPos = Math.round(((window.scrollY/60)-187));
-    // scrollYPos = Math.round(((window.scrollY/30)-374));
-    // scrollYPos = Math.round((window.scrollY/30)-375);
-
-    
-
-    
-    if (scrollYPos == 0) scrollYPos = 0;
-    if (scrollYPos >= 485) scrollYPos = 485;
-    
-    // scrollYPos = scrollYPos % 486
-    if( y <= 14941) scrollYPos = 0;
-    player(scrollYPos);
-    console.log("scrollYPos: "+scrollYPos);
-
-
-}, {passive: false});
-
-// $(function(){
-//     $(window).scroll(function(){ 
-//         var y = window.scrollY;
-//         if((y <=9700)) {	
-//             scrollYPos = 0;
-//                 }   
-
-//         });
-// });
-
-function player(num1) {
-    img.src = "./track_run_start8/"+ num1.toString().padStart(3, '0') + ".png";
+img.onload=function(){
+    context.drawImage(img, 0, 0);
+}
+const updateImage = index => {
+    img.src = currentFrame(index);
+    context.drawImage(img, 0, 0);
 }
 
-img.addEventListener('load', function(e) {
-    ctx.clearRect( 0, 0, ctx.canvas.width, ctx. canvas.height);
-    ctx.drawImage(img, 0, 0);
-}, {passive: false});
+window.addEventListener('scroll', () => {  
+    let scrollTop = html.scrollTop;
+    // let maxScrollTop = 14775 - window.innerHeight;
+    // let scrollFraction = scrollTop / maxScrollTop;
+    // let frameIndex = Math.min(
+    //     frameCount - 1,
+    //      Math.ceil(scrollFraction * frameCount)
+    // );
+    let frameIndex = Math.round(((html.scrollTop/100)-149));
+
+
+    if (frameIndex == 0){
+        frameIndex = 0;
+    }
+    if (frameIndex >= 484){
+        frameIndex = 484;
+    }
+    if( scrollTop <= 14941){
+        frameIndex = 0;
+    } 
+    console.log("frameIndex: "+frameIndex);
+    console.log("scrollTop: "+scrollTop);
+    console.log("frameCount: "+frameCount);
+    console.log("scrollHeight: "+html.scrollHeight);
+    console.log("innerHeight: "+window.innerHeight);
+
+
+    
+    requestAnimationFrame(() => updateImage(frameIndex + 1))
+});
+
+preloadImages()
+
+
 

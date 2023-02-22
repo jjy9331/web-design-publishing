@@ -1513,6 +1513,20 @@ $(function(){
         pop_hover = "1";
     });
 
+    gebiscon_h.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+    gebiscon_f.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
     zerolab_h.addEventListener("mouseover", () => {
         mouseCursor.classList.remove("pf_cursor");
         mouseCursor.style.zIndex = "1100";
@@ -1521,6 +1535,21 @@ $(function(){
     });
     zerolab_f.addEventListener("mouseover", () => {
         mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+
+    zerolab_h.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+    zerolab_f.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
         mouseCursor.style.zIndex = "1100";
         // hover_toggle = "1";
         pop_hover = "1";
