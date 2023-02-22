@@ -4,8 +4,6 @@ var canvas = document.getElementById('screen');
 const context = canvas.getContext("2d");
 
 
-
-
 // //이미지 불러오기
 
 const frameCount = 485;
@@ -14,7 +12,7 @@ const currentFrame = index => (
 )
 
 const preloadImages = () => {
-    for (let i = 1; i < frameCount; i++) {
+    for (let i = 0; i < frameCount; i++) {
         const img = new Image();
         img.src = currentFrame(i);
     }
@@ -45,15 +43,20 @@ window.addEventListener('scroll', () => {
     //     frameCount - 1,
     //      Math.ceil(scrollFraction * frameCount)
     // );
+
+    // ani speed control
     let frameIndex = Math.round(((html.scrollTop/100)-149));
+
 
 
     if (frameIndex == 0){
         frameIndex = 0;
     }
-    if (frameIndex >= 484){
-        frameIndex = 484;
+    if (frameIndex >= 485){
+        frameIndex = 485;
     }
+
+    // scroll ani start point 
     if( scrollTop <= 14941){
         frameIndex = 0;
     } 
@@ -65,7 +68,7 @@ window.addEventListener('scroll', () => {
 
 
     
-    requestAnimationFrame(() => updateImage(frameIndex + 1))
+    requestAnimationFrame(() => updateImage(frameIndex))
 });
 
 preloadImages()
