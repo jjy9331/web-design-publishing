@@ -126,6 +126,7 @@ $(function(){
                                         $(".cursor").fadeIn(2000); 
 
                                         clearInterval(t);
+
                                     }
                                     else if(t < 6){
                                         $("#logo_ani").css({display:"block"}); //로딩표시영역 사라짐

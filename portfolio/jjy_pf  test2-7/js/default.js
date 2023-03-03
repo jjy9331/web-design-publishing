@@ -820,6 +820,28 @@ $(function(){
         $('.pop').animate({ scrollTop:0},0); 
         $('.pop').stop(false,true);
 
+
+        // $('img[usemap]').rwdImageMaps();
+
+        $(document).ready(function(e) {
+            $('img[usemap]').rwdImageMaps();
+    
+            $('area').on('mouseover', function() {
+
+                $(".pf3_4 img").attr("src","images/md4_hover.png");
+                $('area').css('cursor', 'none');
+                $('.cursor').addClass('cursor-grow');
+    
+            });
+    
+            $('area').on('mouseout', function() {
+
+                $(".pf3_4 img").attr("src","images/md4.png");
+                $('area').css('cursor', 'none');
+                $('.cursor').removeClass('cursor-grow') 
+            });
+        });
+
     });
 
 
@@ -1164,6 +1186,7 @@ $(function(){
 
     let gebiscon = document.querySelectorAll(".gebiscon .sheet");
     let zerolab = document.querySelectorAll(".zerolab .sheet");
+    let mohenic = document.querySelectorAll(".mohenic .sheet");
     
 
     let gebiscon_h = document.querySelector(".gebiscon .pop_h");
@@ -1171,6 +1194,9 @@ $(function(){
 
     let zerolab_h = document.querySelector(".zerolab .pop_h");
     let zerolab_f = document.querySelector(".zerolab .pop_f");
+
+    let mohenic_h = document.querySelector(".mohenic .pop_h");
+    let mohenic_f = document.querySelector(".mohenic .pop_f");
 
     let pop = document.querySelector(".pop");
 
@@ -1499,6 +1525,16 @@ $(function(){
         
     }
 
+    for(var i = 0; i < 4; i++ ){
+        mohenic[i].addEventListener("mouseover", () => {
+            mouseCursor.classList.add("pf_cursor");
+            mouseCursor.style.zIndex = "1100";
+            // hover_toggle = "1";
+            pop_hover = "1";
+        });
+        
+    }
+
     
     gebiscon_h.addEventListener("mouseover", () => {
         mouseCursor.classList.remove("pf_cursor");
@@ -1554,6 +1590,49 @@ $(function(){
         // hover_toggle = "1";
         pop_hover = "1";
     });
+
+
+
+    mohenic_h.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+    mohenic_f.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+    mohenic_h.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+    mohenic_f.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+
+    // function changeImg_m(obj,img){
+    //     var mapimg_m = document.getElementById('mcmap');
+    //     mapimg_m.src = img;
+    //     // alert("img_change")
+    //     console.log("img_change");
+    // }
+
+
+
+    
+
+    
 
 
     pftotal.addEventListener("click", () => {
