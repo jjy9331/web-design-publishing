@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohenic garage</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<link rel="stylesheet" href="css/default.css">
+<link href="css/swiper.css" rel="stylesheet">
+
+<script src="js/default.js"></script>
+
+<script src="js/jquery-3.6.0.js"></script>
+<script src="js/mohenic_intro.js"></script>
+<script src="js/swiper.js"></script>
+
+
+
+
+</head>
+<body>
+
+<div class="skip_navigation">
+    <a href="#models_start">모델 바로가기</a>
+    <a href="#service_start">서비스 바로가기</a>
+    <a href="#footer">하단 바로가기</a>
+</div>
+
+
+<div id="wrap">
+    
+    <header>
+        <div id="header_inner">
+                <a class="logo" href="#">
+                    <img src="images/logo.png" alt="main_logo">
+                </a>
+            <ul class="gnb">
+                <li class="main">
+                    <a href="#">Ms</a>
+                    <ul class="sub">
+                        <li><img src="images/ms_i.png" alt="Ms_icon" class="ms_i"></li>
+                        <li><a href="#" onclick="return false">Ms32E</a></li>
+                        <li><a href="#" onclick="return false">Ms64E</a></li>
+                        <li><a href="#" onclick="return false">Ms72S</a></li>
+                    </ul>
+                </li>
+                <li class="main">
+                    <a href="#">MG</a>
+                    <ul class="sub">
+                        <li><img src="images/mg_i.png" alt="MG_icon" class="mg_i"></li>
+                        <li><a href="#" onclick="return false">MOHENIC G</a></li>
+                        <li><a href="#" onclick="return false">MOHENIC D</a></li>
+                        <li><a href="#" onclick="return false">Roadster</a></li>
+                        <li><a href="#" onclick="return false">Jimmy</a></li>
+                    </ul>
+                </li>
+                <li class="main">
+                    <a href="#">BIKEs</a>
+                    <ul class="sub">
+                        <li><img src="images/bikes_i.png" alt="BIKEs_icon" class="bikes_i"></li>
+                        <li><a href="#" onclick="return false">UB46E</a></li>
+                    </ul>
+                </li>
+                <li class="main">
+                    <a href="#">MALL</a>
+                    <ul class="sub">
+                        <li><img src="images/mall_i.png" alt="Mall_icon" class="mall_i"></li>
+                        <li><a href="#" onclick="return false">Apparel</a></li>
+                        <li><a href="#" onclick="return false">Accessory</a></li>
+                        <li><a href="#" onclick="return false">Stay</a></li>
+                        <li><a href="#" onclick="return false">Food</a></li>
+                        <li><a href="#" onclick="return false">Camping</a></li>
+                        <li><a href="#" onclick="return false">ETC</a></li>
+                    </ul>
+                </li>
+                <div class="gnb_bgbox"></div>
+            </ul>
+            <ul class="sub_gnb">
+                <li>
+                    <form id="my_form">
+                        <fieldset>
+                            <legend class="blind">통합검색</legend>
+                            <label for="input" class="blind">검색어 입력</label>
+                            <input type="text" id="input">
+                            <input type="image" src="images/search.svg" alt="search" id="icon" class="search" style="height: 24px; margin-top: 2px;" >
+                        </fieldset>
+                    </form>
+                </li>
+                <li>
+                    <a href="#" onclick="return false">
+                        <span class="material-symbols-outlined" id="icon" style="color:white;">
+                            shopping_bag
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+    <section id="visual">
+        <div id="visual_inner">
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/visual1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/visual2.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/visual3.jpg" alt=""></div>
+                </div>            
+            <!-- <img src="images/visual1.jpg" alt="visual"> -->
+        </div>
+    </section>
+    
+    <section id="models">
+        <div id="models_inner">
+            <h2>
+                <div id="models_start"></div>
+                <img src="images/models-title.png" alt="models_title">
+            </h2>
+            <ul class="models_H">
+                <li>
+                    <a href="#" onclick="return false">
+                        <img src="images/m1.png" alt="mohenic_G" onmouseover="this.src='images/m1.gif'" onmouseout="this.src='images/m1.png'">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="return false">
+                        <img src="images/m2.png" alt="mohenic_D" onmouseover="this.src='images/m2.gif'" onmouseout="this.src='images/m2.png'">>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="return false">
+                        <img src="images/m3.png" alt="roadster" onmouseover="this.src='images/m3.gif'" onmouseout="this.src='images/m3.png'">>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="return false">
+                        <img src="images/m4.png" alt="jimmy" onmouseover="this.src='images/m4.gif'" onmouseout="this.src='images/m4.png'">>
+                    </a>
+                </li>
+                <div class="mn_n">
+                    <p class="mn">MOHENIC G</p>
+                    <p class="mn">MOHENIC D</p>
+                    <p class="mn">Roadster</p>
+                    <p class="mn">Jimmy</p>
+                </div>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="service">
+        <div id="service_inner">
+            <h2>
+                <div id="service_start"></div>
+                <img src="images/service-title.png" alt="service title">
+            </h2>
+            <ul class="service_H">
+                <li>
+                    <a href="#"><img src="images/s1.jpg" alt="sale contract" onclick="return false"></a>
+                    
+                    <div>
+                        <h3>계약안내</h3>
+                        
+                            모델에 대한 자세한 사항과 견적 등을<br>
+                            안내해드립니다
+                        
+                    </div>
+                    
+                </li>
+                <li>
+                    <a href="#"><img src="images/s2.jpg" alt="mohenic alliance" onclick="return false"></a>
+                    <div>
+                        <h3>모헤닉 몰</h3>
+                        
+                            모헤닉의 다양한 상품들을 만나보세요
+                        
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/s3.jpg" alt="mohenic mall" onclick="return false"></a>
+                    <div>
+                        <h3>모헤닉 얼라이언스</h3>
+                        
+                            구글플레이, 애플스토어에서 “모헤닉”을<br>
+                            검색하세요
+                        
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer id="footer">
+        <div id="footer_inner">
+            <div class="sitemap">
+                <h2 class="blind">사이트 맵</h2>
+                <div class="sm1">
+                    <h3>카테고리</h3>
+                    <ul>
+                        <li><a href="#" onclick="return false">Ms</a></li>
+                        <li><a href="#" onclick="return false">MG</a></li>
+                        <li><a href="#" onclick="return false">BIEKs</a></li>
+                        <li><a href="#" onclick="return false">MALL</a></li>
+                    </ul>
+                </div>
+                <div class="sm2">
+                    <h3>기업 정보</h3>
+                    <ul>
+                        <li><a href="#" onclick="return false">사업소개</a></li>
+                        <li><a href="#" onclick="return false">사업제안</a></li>
+                        <li><a href="#" onclick="return false">기술제안</a></li>
+                        <li><a href="#" onclick="return false">채용안내</a></li>
+                        <li><a href="#" onclick="return false">보도자료</a></li>
+                        <li><a href="#" onclick="return false">이벤트</a></li>
+                        <li><a href="#" onclick="return false">연락처</a></li>
+                    </ul>
+                </div>
+                <div class="sm3">
+                    <h3>고객지원</h3>
+                    <ul>
+                        <li><a href="#" onclick="return false">로그인</a></li>
+                        <li><a href="#" onclick="return false">Moohenic 계정찾기</a></li>
+                        <li><a href="#" onclick="return false">계정생성</a></li>
+                        <li><a href="#" onclick="return false">비밀번호 찾기</a></li>
+                        <li><a href="#" onclick="return false">문의하기</a></li>
+                        <li><a href="#" onclick="return false">개인정보 처리 방침</a></li>
+                        <li><a href="#" onclick="return false">쿠키설정</a></li>
+                    </ul>
+                </div>
+                <div class="sm4">
+                    <h3>지금 멤버십에 가입하세요!</h3>
+                    <p>지금 멤버십에 가입하시면 모헤닉 굿즈 증정</p>
+                    <a href="#" onclick="return false">지금 가입하기</a>
+                </div>
+                <div class="sm5">
+                    <a href="#" onclick="return false"><img src="images/sns1.png" alt="facebook"></a>
+                    <a href="#" onclick="return false"><img src="images/sns2.png" alt="twitter"></a>
+                    <a href="#" onclick="return false"><img src="images/sns3.png" alt="instagram"></a>
+                    <a href="#" onclick="return false"><img src="images/sns4.png" alt="youtube"></a>
+                    <a href="#" onclick="return false"><img src="images/sns5.png" alt="pinterest"></a>
+                </div>
+                <div class="sm6">
+                    <p class="copyright">Copyright &copy; 2022 Mohenic Garages. 모든 권리 보유.</p>
+                </div>
+                <div class="sm7">
+                    <a href="#" onclick="return false">
+                        <img src="images/footer-logo.png" alt="footer-logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<div class="movie">
+</div>
+
+<!-- <div id="tt" style="position: fixed; left: 30px; top: 200px; background: red; color:white; font-size: 30px; z-index: 1000;">0</div> -->
+
+<script src="js/scroll.js"></script>
+</body>
+</html>
