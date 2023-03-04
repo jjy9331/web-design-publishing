@@ -801,6 +801,7 @@ $(function(){
 
     $('.menu').click(function menu(e) {
         $(this).parent().next().fadeIn(1000);
+        // $('.pop').css('display','block');
         $('header').css('display','none');
         $('header').css({visibility:"hidden"});
         $('footer').css('display','none');
@@ -847,6 +848,7 @@ $(function(){
 
     $('.close').click(function (e) {
         $('.pop').fadeOut(100);
+        $('.pop').css('display','none');
         // $('.pop').css('display','none');
         $('.header').css('display','block');
         $('.header').css({visibility:"visible"});
