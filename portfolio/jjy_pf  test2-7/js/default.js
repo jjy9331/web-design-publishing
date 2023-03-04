@@ -829,7 +829,7 @@ $(function(){
     
             $('area').on('mouseover', function() {
 
-                $(".pf3_4 img").attr("src","images/md4_hover.png");
+                $(".pf3_4 .pf3_4_img").attr("src","images/md4_hover.png");
                 $('area').css('cursor', 'none');
                 $('.cursor').addClass('cursor-grow');
     
@@ -837,7 +837,7 @@ $(function(){
     
             $('area').on('mouseout', function() {
 
-                $(".pf3_4 img").attr("src","images/md4.png");
+                $(".pf3_4 .pf3_4_img").attr("src","images/md4.png");
                 $('area').css('cursor', 'none');
                 $('.cursor').removeClass('cursor-grow') 
             });
