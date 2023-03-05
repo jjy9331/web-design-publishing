@@ -164,6 +164,25 @@ header .inner {
     font-weight: 300;
 }
 
+.pop .inner .sc_al {
+    display: none;
+    visibility: hidden;
+    /* display: flex; */
+    height: 100vh;
+    width: 100vw;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.pop .inner .sc_al .sc_w {
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
 /* 
 .pop_f_inner a:hover {
     text-decoration: underline; 
@@ -1882,6 +1901,32 @@ position: absolute;
 /* @media all and (max-width:767px) { } */
 /* @media all and (min-width:768px) and (max-width:1023px) {  } */
 /* @media all and (min-width:1024px) and  (max-width:1440px) {}   PC */
+/* @media all and (min-width:0px) and  (max-width:1201px) {  
+    header {zoom:0.7}
+    footer {zoom:0.7}
+    .pop .inner .sc_al {
+        display: block;
+        visibility: visible;
+    }
+    .pop .inner .sheet {
+        display: none;
+    }
+
+}   */
+@media all and (max-aspect-ratio:12/7.64) {  
+    /* body {zoom:0.55} */
+    header {zoom:0.7}
+    footer {zoom:0.7}
+    .pop .inner .sc_al {
+        display: block;
+        visibility: visible;
+    }
+    .pop .inner .sheet {
+        display: none;
+    }
+
+}  
+
 @media all and (min-width:1041px) and  (max-width:1601px) {  
     /* body {zoom:0.55} */
     header {zoom:0.7}
