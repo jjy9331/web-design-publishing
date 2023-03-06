@@ -1913,13 +1913,30 @@ position: absolute;
     }
 
 }   */
+
+
+@media (pointer:fine) {
+    .cursor {
+        display: none;
+    }
+}
+
+@media (pointer:coarse) {
+    .cursor {
+        display: none;
+    }
+}
+
+@media (hover: none) {
+    .cursor { display:none;}
+}
+
 @media all and (max-aspect-ratio:12/7.64) {  
     /* body {zoom:0.55} */
-    header {zoom:0.7}
-    footer {zoom:0.7}
     .pop .inner .sc_al {
         display: block;
         visibility: visible;
+        transform: scale(0.8);
     }
     .pop .inner .sheet {
         display: none;

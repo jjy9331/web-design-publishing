@@ -936,6 +936,15 @@ $(function(){
 
         $('.cursor ').fadeOut(500);
         $('.cursor ').delay(2000).fadeIn(500);
+
+        // var md = new MobileDetect(navigator.userAgent);
+        // let curs = document.querySelector(".cursor");
+
+
+        // if( md.mobile() != null ){
+        //     curs.style.display = 'none'
+        // }
+
         // $('.cursor ').delay(2000).css('display','block');
         $('.btwrap').fadeOut(500);
         // $('.pop').css('display','none');

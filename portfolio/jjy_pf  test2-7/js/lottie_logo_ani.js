@@ -123,7 +123,39 @@ $(function(){
                                         $('body').css('backgroundColor', 'white');
                                         $('html').css("overflow", "auto");
 
-                                        $(".cursor").fadeIn(2000); 
+                                        // $(".cursor").fadeIn(2000); 
+
+                                        // var md = new MobileDetect(navigator.userAgent);
+                                        // let curs = document.querySelector(".cursor");
+                                
+                                        var md = new MobileDetect(navigator.userAgent);
+                                        let curs = document.querySelector(".cursor");
+
+                                        function isMobile(){
+                                                var UserAgent = navigator.userAgent;
+                                                if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null){
+                                                    return true;
+                                                } else {
+                                                    return false;
+                                                }
+                                        };
+                                    
+                                        if(isMobile()){
+                                            // location.href = "/mobile/index.html";	//모바일페이지
+                                            curs.style.display = 'none'
+                                        } else {
+                                            // location.href = "/main.html";		//PC용 페이지
+                                            curs.style.display = 'block'
+                                        }
+                                
+                                        // if( md.mobile() == "null" ){
+                                        //     // curs.style.display = 'block'
+                                        //     $(".cursor").fadeIn(2000); 
+                                        // }
+                                        // else {
+                                        //     curs.style.display = 'none'
+                                        // }
+
 
                                         clearInterval(t);
 

@@ -211,7 +211,7 @@
                             </div>
                         </div>
                         <div class="sc_al">
-                            <img src="images/sc_size_waring.svg" alt="interactive_screen_alert" class="sc_w">
+                            <img src="images/screen_size_control.svg" alt="interactive_screen_alert" class="sc_w">
                         </div>
                         <div class="sheet s1">
                             <div class="s1_left"></div>
@@ -278,7 +278,7 @@
                             </div>
                         </div>
                         <div class="sc_al">
-                            <img src="images/sc_size_waring.svg" alt="interactive_screen_alert" class="sc_w">
+                            <img src="images/screen_size_control.svg" alt="interactive_screen_alert" class="sc_w">
                         </div>
                         <div class="sheet pf2_1">
                             <img src="images/pf2_eye.png" alt="pf2_1_eye" class="pf2_1_eye">
@@ -350,7 +350,7 @@
                             </div>
                         </div>
                         <div class="sc_al">
-                            <img src="images/sc_size_waring.svg" alt="interactive_screen_alert" class="sc_w">
+                            <img src="images/screen_size_control.svg" alt="interactive_screen_alert" class="sc_w">
                         </div>
                         <div class="sheet pf3_1">
                             <img src="./mohenic_test/images/md1.png" alt="d1" class="pf3_1_img">
@@ -656,6 +656,8 @@
                         }
                         
                     });
+
+                    // $(".cursor").css('display','none');
                 }}
         });
     // skrollr.init([smoothScrolling=true]);
@@ -743,17 +745,48 @@
         // mobile-detect 
 
         var md = new MobileDetect(navigator.userAgent);
-    
-        // console.log( "mobile: "+ md.mobile() );          // 'Sony'
-        // console.log( "phone: "+ md.phone() );           // 'Sony'
-        // console.log( "tablet: "+ md.tablet() );          // null
-        // console.log( "userAgent: "+ md.userAgent() );       // 'Safari'
-        // console.log( "os: "+ md.os() );              // 'AndroidOS'
-        // console.log( "iPhone: "+ md.is('iPhone') );      // false
-        // console.log( "bot: "+ md.is('bot') );         // false
-        // console.log( "Webkit: "+ md.version('Webkit') );         // 534.3
-        // console.log( "Build: "+ md.versionStr('Build') );       // '4.1.A.0.562'
-        // console.log( "playstation|xbox: "+ md.match('playstation|xbox') ); // false
+        let curs = document.querySelector(".cursor");
+
+
+        // function isMobile(){
+        //         var UserAgent = navigator.userAgent;
+        //         if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null){
+        //             return true;
+        //         } else {
+        //             return false;
+        //         }
+        // };
+        
+        // if(isMobile()){
+        //     // location.href = "/mobile/index.html";	//모바일페이지
+        //     curs.style.display = 'none'
+        // } else {
+        //     // location.href = "/main.html";		//PC용 페이지
+        //     curs.style.display = 'block'
+        // }
+
+
+        // if( md.mobile() == "null" ){
+        //     curs.style.display = 'block'
+        // }
+        // else {
+        //     curs.style.display = 'none'
+        // }
+
+        //  var a = md.mobile()
+
+        // console.log( "typeof: "+ typeof a );     
+        
+        console.log( "mobile: "+ md.mobile() );          // 'Sony'
+        console.log( "phone: "+ md.phone() );           // 'Sony'
+        console.log( "tablet: "+ md.tablet() );          // null
+        console.log( "userAgent: "+ md.userAgent() );       // 'Safari'
+        console.log( "os: "+ md.os() );              // 'AndroidOS'
+        console.log( "iPhone: "+ md.is('iPhone') );      // false
+        console.log( "bot: "+ md.is('bot') );         // false
+        console.log( "Webkit: "+ md.version('Webkit') );         // 534.3
+        console.log( "Build: "+ md.versionStr('Build') );       // '4.1.A.0.562'
+        console.log( "playstation|xbox: "+ md.match('playstation|xbox') ); // false
 </script>
 <!-- <script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js"></script>
 <script type="text/javascript">
