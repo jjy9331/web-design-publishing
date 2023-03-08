@@ -1102,9 +1102,12 @@ img[usemap] {
 
 .item:nth-of-type(3) .pf4 {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.item:nth-of-type(3) .pf4 img:nth-child(1) {
+.item:nth-of-type(3) .pf4_iphone{
     position: relative;
     width: 15vw;
     z-index: 10;
@@ -1247,6 +1250,20 @@ img[usemap] {
     0% { transform: scale(1); }
     100% { transform: scale(1); }
 } */
+
+
+.inner .pf4{position: relative; scroll-snap-align: center; height: 100vh;}
+.inner .pf4 .pf4_bg{ position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; }
+.inner .pf4 .pf4_1_img { position: absolute; left: 0; top: 0; z-index: 1; display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center; transform: scale(0.75); object-fit: cover;}
+.inner .pf4 .pf4_2_img { position: absolute; left: 0; top: -3vh; z-index: 1; display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center; transform: scale(0.75); object-fit: cover;}
+.inner .pf4 .pf4_3t_img { position: absolute; left: 0; bottom: 74vh; z-index: 1; display: flex; width: 100vw; object-fit: cover;}
+.inner .pf4 .pf4_3_img { position: absolute; left: 0vw; top: 0; z-index: 1; display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center; transform: scale(0.75); object-fit: cover; margin-left: 3vw; margin-top: 0vw;}
+.inner .pf4 .pf4_3b_img { position: absolute; left: 0; top: 67vh; z-index: 1; display: flex; width: 100vw; justify-content: center; align-items: center; object-fit: cover;}
+.inner .pf4 .main_v {  position: absolute; left: 20.5vw; z-index: 1; display: flex; width: 235px; height: 410px; object-fit: cover;}
+.inner .pf4 .pf4_img {  position: absolute; left: 0; top: 0; z-index: 10; display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center; transform: scale(0.8); object-fit: cover;}
+.inner .pf4 .sub_v {  position: absolute; right: 20.5vw; z-index: 1; display: flex; width: 235px; height: 410px; object-fit: cover;}
+.inner .pf4 .menu_v{  position: absolute; left: 20.5vw; z-index: 1; display: flex; width: 235px; height: 410px; object-fit: cover; margin-top: -2.3vh;}
+.inner .pf4 .pf4_7_img{  position: absolute; left: 0; top: 0; z-index: 1; display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center; transform: scale(0.6); object-fit: cover;}
 
 .item:nth-of-type(3) .pf5 {
     position: relative;
