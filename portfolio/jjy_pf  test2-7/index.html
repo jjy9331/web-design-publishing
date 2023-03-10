@@ -360,7 +360,7 @@
                         <div class="sheet pf3_4">
                             <img src="images/md4.png" alt="d4" class="pf3_4_img" usemap="#image-map" id="map1"  >
                             <map name="image-map">
-                                <area target="_blank" href="./mohenic_test/index.html" coords="613,938,1306,773" shape="rect">
+                                <area target="_blank" class="pf3_4map" href="./mohenic_test/index.html" coords="613,938,1306,773" shape="rect">
                             </map>
                         </div>
                         <div class="pop_f">
@@ -447,7 +447,7 @@
                         <div class="sheet pf4">
                             <div class="pf4_main">
                                 <img src="./happysocks/img/hs_ph.png" alt="d4_hp" class="pf4_4_hp">
-                                <video src="./happysocks/img/main_1.mp4" class="main_v" autoplay loop muted></video>
+                                <video src="./happysocks/img/main_1.mp4" class="main_v" preload="metadata" loop muted></video>
                             </div>
                             <img src="./happysocks/img/hs4.png" alt="d4_title" class="pf4_4_img">
                             <img src="./happysocks/img/hs_bg.jpg" alt="d4bg" class="pf4_bg">
@@ -455,7 +455,7 @@
                         <div class="sheet pf4">
                             <div class="pf4_sub">
                                 <img src="./happysocks/img/hs_ph.png" alt="d5_hp" class="pf4_5_hp">
-                                <video src="./happysocks/img/sub_1.mp4" class="sub_v" autoplay loop muted></video>
+                                <video src="./happysocks/img/sub_1.mp4" class="sub_v" preload="metadata" loop muted></video>
                             </div>
                             <img src="./happysocks/img/hs5.png" alt="d5_title" class="pf4_5_img">
                             <img src="./happysocks/img/hs_bg.jpg" alt="d5bg" class="pf4_bg">
@@ -463,7 +463,7 @@
                         <div class="sheet pf4">
                             <div class="pf4_menu">
                                 <img src="./happysocks/img/hs_ph.png" alt="d5_hp" class="pf4_6_hp">
-                                <video src="./happysocks/img/menu_1.mp4" class="menu_v" autoplay loop muted></video>
+                                <video src="./happysocks/img/menu_1.mp4" class="menu_v" preload="metadata" loop muted></video>
                             </div>
                             <img src="./happysocks/img/hs6.png" alt="d6_title" class="pf4_6_img">
                             <img src="./happysocks/img/hs_bg.jpg" alt="bg" class="pf4_bg">
@@ -492,11 +492,11 @@
                         
                     </div>
                 </div>
-                <div class="pf_ani pf5">
+                <div class="pf_ani pf5" id="volvo">
                     <span id="pf5back" class="material-symbols-outlined">
                         arrow_back_ios
                     </span>
-                        <a href="./volvo_renewal/index.html" target="blank">
+                        <a href="#volvo" onclick="return false" class="menu">
                             <img src="images/monitor2.png" alt="monitor" class="pf5_monitor">
                             <!-- <div class="movie2"></div> -->
                             <lottie-player 
@@ -504,11 +504,66 @@
                                 src="data/volvo_intro.json"
                                 speed="1"
                             ></lottie-player>
-                            
                         </a>
                     <span id="pf5next" class="material-symbols-outlined">
                         arrow_forward_ios
                     </span>
+                </div>
+                <div class="pop volvo">
+                    <div class="inner">
+                        <div class="pop_h">
+                            <div class="pop_h_inner">
+                                <a><h3>Volvo main renewal</h3></a>
+                                <a href="#mohenic" class="close"><div>X</div></a>
+                            </div>
+                        </div>
+                        <div class="sc_al">
+                            <img src="images/screen_size_control.svg" alt="interactive_screen_alert" class="sc_w">
+                        </div>
+                        <div class="sheet pf5">
+                            <img src="./volvo_renewal/img/sec1.png" alt="d1" class="pf5_1_img">
+                            <img src="./volvo_renewal/img/sec1_bottom.png" alt="d1b" class="pf5_1b_img">
+                            <video src="./volvo_renewal/vid/main_1.mp4" class="pf5_1v" preload="metadata" loop muted></video>
+                        </div>
+                        <div class="sheet pf5">
+                            <img src="./volvo_renewal/img/sec2.png" alt="d2" class="pf5_2_img" usemap="#volvo-map" id="map1" >
+                            <map name="volvo-map">
+                                <!-- onmouseover="this.src='img/sec2_hover.png'" onmouseout="this.src='img/sec2.png'" -->
+                                <area class="pf5_2map" alt="move to pdf" title="renewal_plan_view" href="./volvo_renewal/volvo_renewal_plan.pdf" coords="151,838,302,797" shape="rect">
+                            </map>
+                            <video src="./volvo_renewal/vid/family_safety.mp4" class="pf5_2v" preload="metadata" loop muted></video>
+                        </div>
+                        <div class="sheet pf5"><img src="./volvo_renewal/img/sec3.png" alt="d3" class="pf5_3_img"></div>
+                        <div class="sheet pf5">
+                            <div class="v_circle"></div>
+                            <img src="./volvo_renewal/img/sec4.png" alt="d4" class="pf5_4_img">
+                        </div>
+                        <div class="sheet pf5">
+                            <img src="./volvo_renewal/img/sec5.png" alt="d4" class="pf5_5_img">
+                        </div>
+                        <div class="sheet pf5">
+                            <img src="./volvo_renewal/img/sec6.png" alt="d4" class="pf5_6_img">
+                            <video src="./volvo_renewal/vid/full_case_1.mp4" class="pf5_6v" preload="metadata" loop muted></video>
+                        </div>
+                        <div class="pop_f">
+                            <div class="pop_f_inner">
+                                <p>Copyright &copy; my portfolio, all right reserved</p>
+                                <!-- <a href="./gebiscon/index.html" target="blank">Full size</a> -->
+                                <div class="pop_fnc">
+                                    <a href="#" onclick="return false" class="pop_darkmode">
+                                        <img src="images/contrast.svg" alt="contrast" title="Darkmode on/off">
+                                    </a>
+                                    <a href="#" onclick="return false" class="pop_sound_toggle">
+                                        <img src="images/volume_mute.svg" alt="volume_mute" title="Sound on/off">
+                                    </a>
+                                    <a href="gebiscon/index.html" target="blank">
+                                        <img src="images/fullscreen.svg" alt="fullscreen" title="To fullscreen">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
                 <div class="pf_ani pf_more">
                     <span id="pfmback" class="material-symbols-outlined">

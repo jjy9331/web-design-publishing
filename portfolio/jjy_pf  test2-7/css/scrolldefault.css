@@ -1278,7 +1278,7 @@ img[usemap] {
     position: relative;
 }
 
-.item:nth-of-type(3) .pf5 img:nth-child(1) {
+.item:nth-of-type(3) .pf5 .pf5_monitor {
     position: relative;
     width: 40vw;
     z-index: 10;
@@ -1324,6 +1324,16 @@ img[usemap] {
     height:100%; 
 }
 
+.inner .pf5 { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; scroll-snap-align: center;}
+.inner .pf5 .pf5_1_img { z-index: 10; margin-top: 3vw;}
+.inner .pf5 .pf5_1b_img {z-index: 10;}
+.inner .pf5 .pf5_1v{ position: absolute; bottom: 18vh; width: 83.5vh; margin-left: 1vh; margin-bottom: 0.5vh;}
+.inner .pf5 .pf5_2_img{z-index: 10;}
+.inner .pf5 .pf5_2v{ position: absolute; top: 25vh; margin-left: 68vh; width: 57vh;}
+.inner .pf5 .v_circle{  position: absolute; right: 19.5%; top: 30%; background: #1C6BBA; width: 34vh; height: 34vh; border-radius: 100%; box-sizing: border-box; transition: all ease-in-out 0.4s;}
+.inner .pf5 .vb_circle{  position: absolute; right: 19.5%; top: 30%; background: #1C6BBA; width: 34vh; height: 34vh; border-radius: 100%; box-sizing: border-box; transform: scale(1.7); transition: all ease 500ms;}
+.inner .pf5 .pf5_6_img{ z-index: 10; margin-bottom: 6vh;}
+.inner .pf5 .pf5_6v{ position: absolute; bottom: 16.5vh; width: 121vh; margin-left: 1vh; margin-bottom: 0.5vh;}
 
 
 .item:nth-of-type(3) .pf_more {
