@@ -910,7 +910,34 @@ $(function(){
             $('video').get(i).currentTime = 0;
         }
 
+        $('.pop .sheet .pf5_1v').trigger('play');
+
     });
+
+    // $('#volvo_pop').click(function() {
+    //     $('.volvo').css('display','block');
+
+    //     $('header').css('display','none');
+    //     $('header').css({visibility:"hidden"});
+    //     $('footer').css('display','none');
+    //     $('footer').css({visibility:"hidden"});
+    //     $('html,body').css("overflow", "hidden");
+
+    //     $('.mbh_h').css('display','none');
+    //     $('.mbh_f').css('display','none');
+
+    //     $(".hfm_list").css('display','none');
+
+    //     position = $(this).parent().next().offset().top;
+    //     // console.log("position: "+position);
+
+    //     e.preventDefault();
+
+    //     $('.pop').animate({ scrollTop:0},0); 
+    //     $('.pop').stop(false,true);
+
+    //     $('.pop .sheet .pf5_1v').trigger('play');
+    // });
 
 
 
@@ -933,7 +960,7 @@ $(function(){
 
         e.preventDefault();
 
-        console.log("position: "+position);
+        // console.log("position: "+position);
 
         $('.pop').animate({ scrollTop:0},0); 
 
@@ -978,8 +1005,8 @@ $(function(){
         var c1 = parseInt(circle_position)
         var c2 = parseInt(screen_position)
 
-        console.log("c1: "+c1);
-        console.log("c2: "+c2);
+        // console.log("c1: "+c1);
+        // console.log("c2: "+c2);
 
         if( c1 < c2) {
             target_c.classList.add('vb_circle');
@@ -1037,14 +1064,14 @@ $(function(){
             var vp = parseInt(vscreen_position)
 
 
-            console.log("h1: "+h1);
-            console.log("h2: "+h2);
-            console.log("h3: "+h3);
+            // console.log("h1: "+h1);
+            // console.log("h2: "+h2);
+            // console.log("h3: "+h3);
 
 
             console.log("v1: "+v1);
-            console.log("v2: "+v2);
-            console.log("v3: "+v3);
+            // console.log("v2: "+v2);
+            // console.log("v3: "+v3);
             console.log("vp: "+vp);
 
             if( h1 < vp) {
@@ -1088,13 +1115,17 @@ $(function(){
                 
             if( v1 < vp) {
                 volvo_v1.play();
+                volvo_v2.pause();
+                volvo_v3.pause();
             }
             if ( v1 < 0) {
                 volvo_v1.pause();
             }
     
             if( v2 < vp) {
+                volvo_v1.pause();
                 volvo_v2.play();
+                volvo_v3.pause();
             }
             else if ( v2 > vp) {
                 volvo_v2.pause();
@@ -1104,6 +1135,8 @@ $(function(){
             }
 
             if( v3 < vp) {
+                volvo_v1.pause();
+                volvo_v2.pause();
                 volvo_v3.play();
             }
             else if ( v3 > vp) {
@@ -1418,6 +1451,8 @@ $(function(){
     let gebiscon = document.querySelectorAll(".gebiscon .sheet");
     let zerolab = document.querySelectorAll(".zerolab .sheet");
     let mohenic = document.querySelectorAll(".mohenic .sheet");
+    let happysocks = document.querySelectorAll(".happysocks .sheet");
+    let volvo = document.querySelectorAll(".volvo .sheet");
     
 
     let gebiscon_h = document.querySelector(".gebiscon .pop_h");
@@ -1428,6 +1463,12 @@ $(function(){
 
     let mohenic_h = document.querySelector(".mohenic .pop_h");
     let mohenic_f = document.querySelector(".mohenic .pop_f");
+
+    let hss_h = document.querySelector(".happysocks .pop_h");
+    let hss_f = document.querySelector(".happysocks .pop_f");
+
+    let volvo_h = document.querySelector(".volvo .pop_h");
+    let volvo_f = document.querySelector(".volvo .pop_f");
 
     let pop = document.querySelector(".pop");
 
@@ -1734,6 +1775,8 @@ $(function(){
     });
 
 
+    // cursor mouse control
+
     let pop_hover = "0";
     
     for(var i = 0; i < 6; i++ ){
@@ -1763,8 +1806,27 @@ $(function(){
             // hover_toggle = "1";
             pop_hover = "1";
         });
-        
     }
+
+    for(var i = 0; i < 7; i++ ){
+        happysocks[i].addEventListener("mouseover", () => {
+            mouseCursor.classList.add("pf_cursor");
+            mouseCursor.style.zIndex = "1100";
+            // hover_toggle = "1";
+            pop_hover = "1";
+        });
+    }
+
+    for(var i = 0; i < 6; i++ ){
+        volvo[i].addEventListener("mouseover", () => {
+            mouseCursor.classList.add("pf_cursor");
+            mouseCursor.style.zIndex = "1100";
+            // hover_toggle = "1";
+            pop_hover = "1";
+        });
+    }
+
+    
 
     
     gebiscon_h.addEventListener("mouseover", () => {
@@ -1850,6 +1912,64 @@ $(function(){
         // hover_toggle = "1";
         pop_hover = "1";
     });
+
+
+    hss_h.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+    hss_f.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+    hss_h.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+    hss_f.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+
+    volvo_h.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+    volvo_f.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+    volvo_h.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+    volvo_f.addEventListener("mouseleave", () => {
+        mouseCursor.classList.add("pf_cursor");
+        mouseCursor.style.zIndex = "1100";
+        // hover_toggle = "1";
+        pop_hover = "1";
+    });
+
+
 
 
     // function changeImg_m(obj,img){
