@@ -1348,7 +1348,7 @@ $(function(){
     // var container = document.querySelector('#skrollr-body')
     var container = document.querySelector('#skrollr-body')
 
-    for(var i = 0; i < 4; i++ ){
+    for(var i = 0; i < 5; i++ ){
         toggleFullscreenBtn[i].addEventListener('click', e => {
             toggleFullScreen(container)
             console.log("fullscreen click")
