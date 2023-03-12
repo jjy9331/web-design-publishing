@@ -1069,9 +1069,9 @@ $(function(){
             // console.log("h3: "+h3);
 
 
-            console.log("v1: "+v1);
+            // console.log("v1: "+v1);
             // console.log("v2: "+v2);
-            // console.log("v3: "+v3);
+            console.log("v3: "+v3);
             console.log("vp: "+vp);
 
             if( h1 < vp) {
@@ -1082,7 +1082,7 @@ $(function(){
             else if ( h1 > vp) {
                 hss_v1.pause();
             }
-            if ( h1 < 0) {
+            if ( h1 <= 0) {
                 hss_v1.pause();
             }
 
@@ -1094,7 +1094,7 @@ $(function(){
             else if ( h2 > vp) {
                 hss_v2.pause();
             }
-            if ( h2 < 0) {
+            if ( h2 <= 0) {
                 hss_v2.pause();
             }
 
@@ -1106,7 +1106,7 @@ $(function(){
             else if ( h3 > vp) {
                 hss_v3.pause();
             }
-            if ( h3 < 0) {
+            if ( h3 <= 0) {
                 hss_v3.pause();
             }
 
@@ -1118,7 +1118,7 @@ $(function(){
                 volvo_v2.pause();
                 volvo_v3.pause();
             }
-            if ( v1 < 0) {
+            if ( v1 <= 0) {
                 volvo_v1.pause();
             }
     
@@ -1130,7 +1130,7 @@ $(function(){
             else if ( v2 > vp) {
                 volvo_v2.pause();
             }
-            if ( v2 < 0) {
+            if ( v2 <= 0) {
                 volvo_v2.pause();
             }
 
@@ -1142,7 +1142,7 @@ $(function(){
             else if ( v3 > vp) {
                 volvo_v3.pause();
             }
-            if ( v3 < 0) {
+            if ( v3 <= 0) {
                 volvo_v3.pause();
             }
     
@@ -2003,6 +2003,20 @@ $(function(){
         }
 
 
+    });
+
+    // chrome left bottom a tag tooltip remove
+
+    $("body").on('mouseover', 'a', function (e) {
+            var $link = $(this),
+                href = $link.attr('href') || $link.data("href");
+    
+            $link.off('click.chrome');
+            $link.on('click.chrome', function () {
+            window.location.href = href;
+            }).attr('data-href', href) //href에 지정된 링크 연결을 유지 시킵니다.
+            // .css({ cursor: 'pointer' })
+            .removeAttr('href'); // 이 부분이 브라우저에서 뜨는 Url 상태바를 안보이게 처리합니다.
     });
 
 

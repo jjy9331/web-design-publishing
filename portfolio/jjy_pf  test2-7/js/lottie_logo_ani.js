@@ -146,6 +146,7 @@ $(function(){
                                         } else {
                                             // location.href = "/main.html";		//PC용 페이지
                                             curs.style.display = 'block'
+                                            // document.body.style.cursor = 'none';
                                         }
                                 
                                         // if( md.mobile() == "null" ){
