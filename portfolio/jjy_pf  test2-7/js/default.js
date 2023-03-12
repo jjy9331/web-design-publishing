@@ -800,7 +800,8 @@ $(function(){
     var position = $('.menu').parent().next().offset().top;
 
     $('.menu').click(function menu(e) {
-        $(this).parent().next().fadeIn(1000);
+        // $(this).parent().next().fadeIn(1000);
+        $(this).parent().next().css('display','block');
         // $('.pop').css('display','block');
         $('header').css('display','none');
         $('header').css({visibility:"hidden"});
@@ -1339,6 +1340,43 @@ $(function(){
         }
         
     });
+
+    // fullscreen toggle 
+
+    // var toggleFullscreenBtn = document.querySelector('.pop_fullscreen_toggle')
+    var toggleFullscreenBtn = document.querySelectorAll('.pop_fullscreen_toggle')
+    // var container = document.querySelector('#skrollr-body')
+    var container = document.querySelector('#skrollr-body')
+
+    for(var i = 0; i < 4; i++ ){
+        toggleFullscreenBtn[i].addEventListener('click', e => {
+            toggleFullScreen(container)
+            console.log("fullscreen click")
+        })
+    }
+
+    var fullscreen = element => {
+        if (element.requestFullscreen) return element.requestFullscreen()
+        if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
+        if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
+        if (element.msRequestFullscreen) return element.msRequestFullscreen()
+    }
+
+    function toggleFullScreen(element) {
+        if (!document.fullscreenElement) {
+            if (element.requestFullscreen) return element.requestFullscreen()
+            if (element.webkitRequestFullscreen)
+                return element.webkitRequestFullscreen()
+            if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
+            if (element.msRequestFullscreen) return element.msRequestFullscreen()
+            } else {
+            if (document.exitFullscreen) return document.exitFullscreen()
+            if (document.webkitCancelFullscreen)
+                return document.webkitCancelFullscreen()
+            if (document.mozCancelFullScreen) return document.mozCancelFullScreen()
+            if (document.msExitFullscreen) return document.msExitFullscreen()
+            }
+    }
 
 
     /////////////////////////////////////////////////////////
