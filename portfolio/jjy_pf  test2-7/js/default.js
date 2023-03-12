@@ -556,6 +556,7 @@ $(function(){
         toggle = "1";
         $("body").css("background","black");
         $("body").css("background-color","black");
+        $("#skrollr-body").css("background","black");
         $("header").css({filter: "invert(100)"}); 
         $("footer").css({filter: "invert(100)"});
         $(".home").css("background-color","black");
@@ -618,6 +619,7 @@ $(function(){
         toggle = "0";
         $("body").css("background","white");
         $("body").css("background-color","white");
+        $("#skrollr-body").css("background","white");
         $("header").css({filter: "invert(0)"}); 
         $("footer").css({filter: "invert(0)"});
         $(".home").css("background-color","white");
@@ -1072,8 +1074,8 @@ $(function(){
 
             // console.log("v1: "+v1);
             // console.log("v2: "+v2);
-            console.log("v3: "+v3);
-            console.log("vp: "+vp);
+            // console.log("v3: "+v3);
+            // console.log("vp: "+vp);
 
             if( h1 < vp) {
                 hss_v1.play();
