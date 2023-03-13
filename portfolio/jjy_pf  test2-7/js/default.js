@@ -3,28 +3,46 @@
 $(function(){
     // header mousewheel
     $("header .inner .logo").click(function(e){
-                $('html,body').animate({ scrollTop:0},2100); 
+ 
+                $('#container').hide( 0, function() {
+                    $( this ).delay(500).fadeIn( 1000 );
+                    $('html,body').delay(0).stop(true,true).scrollTop(0);
+                } );
                 e.preventDefault();
+
     })
     $("header .inner ul li:eq(0) a, h1 a").click(function(e){
-            $('html,body').animate({ scrollTop:0},2100);
+            $('#container').delay(0).hide( 0, function() {
+                $( this ).delay(500).fadeIn( 1000 );
+                $('html,body').delay(0).stop(true,true).scrollTop(0);
+            } );
             e.preventDefault(); 
     })
     $("header .inner ul li:eq(1) a").click(function(e){
-            $('html,body').animate({ scrollTop:14775},2100);
+            $('#container').hide( 0, function() {
+                $( this ).delay(500).fadeIn( 1000 );
+                $('html,body').delay(0).stop(true,true).scrollTop(14775);
+            } );
             e.preventDefault();
     })
     $("header .inner ul li:eq(2) a").click(function(e){
-            $('html,body').animate({ scrollTop:63996},2100);
+            $('#container').hide( 0, function() {
+                $( this ).delay(500).fadeIn( 1000 );
+                $('html,body').delay(0).stop(true,true).scrollTop(63996);
+            } );
             e.preventDefault(); 
     })
     $("header .inner ul li:eq(3) a").click(function(e){
-            $('html,body').animate({ scrollTop:218740},2100);
+            $('#container').hide( 0, function() {
+                $( this ).delay(500).fadeIn( 1000 );
+                $('html,body').delay(0).stop(true,true).scrollTop(218740);
+            } );
             e.preventDefault(); 
     })
 
     $(window).scroll(function(){
         var b = $(document).scrollTop(); 
+        skrollr.init();
         if((b >=0) && (b < 13284)) {
             $('header ul li:nth-child(1) .hr_d1').css("visibility","visible");
 
