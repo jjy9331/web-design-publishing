@@ -1362,18 +1362,31 @@ $(function(){
     });
 
     // fullscreen toggle 
+    
 
-    // var toggleFullscreenBtn = document.querySelector('.pop_fullscreen_toggle')
+    var toggleFullscreen = document.querySelector('.pop_fullscreen_toggle')
     var toggleFullscreenBtn = document.querySelectorAll('.pop_fullscreen_toggle')
     // var container = document.querySelector('#skrollr-body')
     var container = document.querySelector('#skrollr-body')
+    var screen_toggle = "0"; 
 
-    for(var i = 0; i < 5; i++ ){
-        toggleFullscreenBtn[i].addEventListener('click', e => {
-            toggleFullScreen(container)
-            console.log("fullscreen click")
-        })
-    }
+    $(".pop_fullscreen_toggle").click(function(){//버튼을 클릭했을 때
+
+        toggleFullScreen(container)
+        
+        if(screen_toggle=="0"){
+            screen_toggle = "1";
+            $(".pop_fullscreen_toggle img").attr("src","images/fullscreen_exit.svg");
+            $(".screen_toggle").text('Full screen on');
+        }
+        else{
+            screen_toggle = "0"; 
+            $(".pop_fullscreen_toggle img").attr("src","images/fullscreen.svg");
+            $(".screen_toggle").text('Full screen off');
+        }
+        
+    });
+
 
     var fullscreen = element => {
         if (element.requestFullscreen) return element.requestFullscreen()
@@ -1389,13 +1402,18 @@ $(function(){
                 return element.webkitRequestFullscreen()
             if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
             if (element.msRequestFullscreen) return element.msRequestFullscreen()
-            } else {
+            if (screen_toggle=="0"){
+            }
+        } else {
             if (document.exitFullscreen) return document.exitFullscreen()
             if (document.webkitCancelFullscreen)
                 return document.webkitCancelFullscreen()
             if (document.mozCancelFullScreen) return document.mozCancelFullScreen()
             if (document.msExitFullscreen) return document.msExitFullscreen()
+            if (screen_toggle=="1"){
             }
+
+        }
     }
 
 
