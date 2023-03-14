@@ -839,8 +839,8 @@ $(function(){
         e.preventDefault();
 
         $('.pop').animate({scrollTop:0},0); 
-        // console.log('pop_scrollT: '+$('.pop').scrollY)
         $('.pop').stop(false,true);
+        $('html,body').animate({ scrollTop:position},0); 
 
 
         // $('img[usemap]').rwdImageMaps();
