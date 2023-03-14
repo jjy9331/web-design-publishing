@@ -60,11 +60,11 @@ window.addEventListener('scroll', () => {
     if( scrollTop <= 14941){
         frameIndex = 0;
     } 
-    console.log("frameIndex: "+frameIndex);
-    console.log("scrollTop: "+scrollTop);
-    console.log("frameCount: "+frameCount);
-    console.log("scrollHeight: "+html.scrollHeight);
-    console.log("innerHeight: "+window.innerHeight);
+    // console.log("frameIndex: "+frameIndex);
+    // console.log("scrollTop: "+scrollTop);
+    // console.log("frameCount: "+frameCount);
+    // console.log("scrollHeight: "+html.scrollHeight);
+    // console.log("innerHeight: "+window.innerHeight);
 
 
     

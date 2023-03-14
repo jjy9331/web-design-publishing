@@ -61,12 +61,12 @@ $(function(){
             imgLoaded++;
         });
         var progressTimer = setInterval(updateProgress, 1000/15);
-        console.log("progressTimer: "+progressTimer)
+        // console.log("progressTimer: "+progressTimer)
 
         function updateProgress() {
             var target = (imgLoaded / imgTotal) * 100;
             current += (target - current) * 0.1;
-            console.log("current: "+current)
+            // console.log("current: "+current)
 
             $progressBar.css({ width: current + '%' });
             $progressText.text(Math.floor(current) + '%');
@@ -121,6 +121,7 @@ $(function(){
                                         $("section").css('visibility', 'visible');
                                         // $("footer").css('visibility', 'visible');
                                         $('body').css('backgroundColor', 'white');
+                                        $('#skrollr-body').css('backgroundColor', 'white');
                                         $('html').css("overflow", "auto");
 
                                         // $(".cursor").fadeIn(2000); 
@@ -167,6 +168,7 @@ $(function(){
                                         // $('body').css({overflow:"visible"});
                                         $('body').css({position:"fixed"});
                                         $('body').css({overflow:"hidden"});
+                                        $('#skrollr-body').css('backgroundColor', 'black');
                                         $("header").hide();
                                         $("section").css('visibility', 'hidden');
                                         $(".startpop").hide(); 

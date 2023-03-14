@@ -50,11 +50,11 @@ window.addEventListener('scroll', () => {
     if( scrollTop2 <= 218740){
         frameIndex2 = 0;
     } 
-    console.log("frameIndex2: "+frameIndex2);
-    console.log("scrollTop2: "+scrollTop2);
-    console.log("frameCount2: "+frameCount2);
-    console.log("scrollHeight: "+html2.scrollHeight);
-    console.log("innerHeight2: "+window.innerHeight);
+    // console.log("frameIndex2: "+frameIndex2);
+    // console.log("scrollTop2: "+scrollTop2);
+    // console.log("frameCount2: "+frameCount2);
+    // console.log("scrollHeight: "+html2.scrollHeight);
+    // console.log("innerHeight2: "+window.innerHeight);
 
 
     

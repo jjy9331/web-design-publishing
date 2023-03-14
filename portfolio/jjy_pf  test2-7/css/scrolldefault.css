@@ -62,10 +62,10 @@ a { text-decoration:none; color:black; cursor: none; }
 button {cursor: none; }
 .blind { position:absolute; top:-9999px; }
 
-
+/* 
 #skrollr-body {
     background: white;
-}
+} */
 
 /* layout */
 header { 
