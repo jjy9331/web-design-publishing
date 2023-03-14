@@ -834,7 +834,7 @@ $(function(){
         $(".hfm_list").css('display','none');
 
         position = $(this).parent().next().offset().top;
-        console.log("position: "+position);
+        // console.log("position: "+position);
 
         e.preventDefault();
 
@@ -1384,7 +1384,7 @@ $(function(){
         
         if(screen_toggle=="0"){
             screen_toggle = "1";
-            $(".pop_fullscreen_toggle img").attr("src","images/fullscreen.svg");
+            $(".pop_fullscreen_toggle img").attr("src","images/fullscreen_exit.svg");
             $('html,body').mousewheel(function(event, delta) {
                 $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 880)) }, 830, "swing");
             });
@@ -1392,7 +1392,7 @@ $(function(){
         }
         else{
             screen_toggle = "0"; 
-            $(".pop_fullscreen_toggle img").attr("src","images/fullscreen_exit.svg");
+            $(".pop_fullscreen_toggle img").attr("src","images/fullscreen.svg");
             $('html,body').mousewheel(function(event, delta) {
                 $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 1)) }, 830, "swing");
             });
