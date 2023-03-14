@@ -1,9 +1,10 @@
 const html2 = document.documentElement;
-var canvas2 = document.getElementById('screen2');
+const canvas2 = document.getElementById('screen2');
 const context2 = canvas2.getContext("2d");
 
-
-const frameCount2 = 254;
+const img2 = [null]
+// const img2 = new Image()
+const frameCount2 = 255;
 const currentFrame2 = index2 => (
     `./contact_ani3/${index2.toString().padStart(3, '0')}.png`
 )
@@ -11,12 +12,13 @@ const currentFrame2 = index2 => (
 
 const preloadImages2 = () => {
     for (let i2 = 0; i2 < frameCount2; i2++) {
-        const img2 = new Image();
-        img2.src = currentFrame2(i2);
+        img2[i2] = new Image();
+        img2[i2].src = currentFrame2(i2);
+        // context2.drawImage(img2[i2], 0, 0);
     }
 };
 
-const img2 = new Image()
+
 img2.src = currentFrame2(1);
 
 canvas2.width = 1920
@@ -25,12 +27,16 @@ canvas2.style.position = 'fixed';
 canvas2.style.bottom = '0%';
 canvas2.style.objectFit = 'cover';
 
-img2.onload=function(){
-    context2.drawImage(img2, 0, 0);
-}
+// img2.onload=function(){
+//     var canvas2 = document.getElementById('screen2');
+//     var context2 = canvas2.getContext("2d");
+//     for (let i2 = 0; i2 < frameCount; i2++) {
+//         context2.drawImage(img2[i2], 0, 0);
+//     }
+// }
 const updateImage2 = index2 => {
-    img2.src = currentFrame2(index2);
-    context2.drawImage(img2, 0, 0);
+    // img2.src = currentFrame2(index2);
+    context2.drawImage(img2[index2], 0, 0);
 }
 
 window.addEventListener('scroll', () => {  

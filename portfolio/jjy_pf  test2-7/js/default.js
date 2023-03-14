@@ -33,7 +33,7 @@ $(function(){
     })
     $("header .inner ul li:eq(3) a").click(function(e){
             $('#container').delay(0).hide( 0, function() {
-                $( this ).delay(500).fadeIn( 1000 );
+                $( this ).delay(500).fadeIn( 1500 );
                 $('html,body').delay(0).stop(true,true).scrollTop(218740);
             } );
             e.preventDefault(); 
@@ -838,7 +838,8 @@ $(function(){
 
         e.preventDefault();
 
-        $('.pop').animate({ scrollTop:0},0); 
+        $('.pop').animate({scrollTop:0},0); 
+        // console.log('pop_scrollT: '+$('.pop').scrollY)
         $('.pop').stop(false,true);
 
 
@@ -1045,7 +1046,7 @@ $(function(){
         }
 
     }
-    document.body.addEventListener('scroll',scrollanimate);
+    window.addEventListener('scroll',scrollanimate);
 
     
     // pop video play
