@@ -879,59 +879,17 @@ $(function(){
             });
         });
 
-
-        // pop video play
-
-        // $('.pop').scroll(function(){
-        //     var target_v = $('.pf5_1v');
-
-        //     var v1 = target_v.position().top;
-        //     // var v1 = target_v.offset().top;
-        //     var v2 =window.innerHeight / 2;
-
-        //     console.log("v1: "+v1);
-        //     console.log("v2: "+v2);
-
-
-        //     if( v1 < v2) {
-        //         target_v.trigger('play');
-        //     }
-        //     else if ( v1 > v2) {
-        //             target_v.trigger('pause');
-        //     }
-        // });
-
-
-        // function pop_vpy(){
-            // var target_v = document.querySelector('video');
-            // var target_v = $('video');
-
-            // var video_position = target_v.getBoundingClientRect().top;
-            // var vscreen_position = window.innerHeight / 2;
-    
-            // var v1 = parseInt(video_position)
-            // var v2 = parseInt(vscreen_position)
-    
-            // if( v1 < v2) {
-                // target_v.trigger('play');
-        //     }
-        //     else if ( v1 > v2) {
-        //         target_v.pause();
-        //     }
-    
-        // }
-        // window.addEventListener('scroll',pop_vpy);
-
-        // var v_ft = document.querySelector('video');
-
-        // v_ft.currentTime = 0;
-        // $('video').currentTime = 0;
-        
         for(var i = 0; i < 6; i++ ){
             $('video').get(i).currentTime = 0;
         }
 
-        $('.pop .sheet .pf5_1v').trigger('play');
+        function jvolvo_v1py() {
+            $('.pop .sheet .pf5_1v').trigger('play');
+        }
+        
+        if (jvolvo_v1py() !== undefined) {
+            jvolvo_v1py().then((_) => {}).catch((error) => {});
+        }
 
     });
 
@@ -987,7 +945,16 @@ $(function(){
 
         $('.pop').animate({ scrollTop:0},0); 
 
-        $('.pop .sheet video').trigger('pause');
+
+        function jvolvo_v1pe() {
+            $('.pop .sheet video').trigger('pause');
+        }
+        
+        if (jvolvo_v1pe() !== undefined) {
+            jvolvo_v1pe().then((_) => {}).catch((error) => {});
+        }
+
+        
 
 
     });
@@ -999,6 +966,13 @@ $(function(){
         $('.pop').animate({ scrollTop:0},700,"swing"); 
         $('.pop').css("scroll-snap-type", "none");
         sct_ani = "1";
+
+        var volvo_v1 = document.querySelector('.pf5_1v');
+        
+        function volvo_v1py(){ return volvo_v1.play(); }
+        if (volvo_v1py() !== undefined) {
+            volvo_v1py().then((_) => {}).catch((error) => {});
+        }
 
     })
 
@@ -1028,8 +1002,8 @@ $(function(){
         var c1 = parseInt(circle_position)
         var c2 = parseInt(screen_position)
 
-        // console.log("c1: "+c1);
-        // console.log("c2: "+c2);
+        console.log("c1: "+c1);
+        console.log("c2: "+c2);
 
         if( c1 < c2) {
             target_c.classList.add('vb_circle');
@@ -1088,86 +1062,190 @@ $(function(){
             var vp = parseInt(vscreen_position)
 
 
-            // console.log("h1: "+h1);
-            // console.log("h2: "+h2);
-            // console.log("h3: "+h3);
+            function hss_v1py(){ return hss_v1.play(); }
+            function hss_v2py(){ return hss_v2.play(); }
+            function hss_v3py(){ return hss_v3.play(); }
+
+            function hss_v1pe(){ return hss_v1.pause(); }
+            function hss_v2pe(){ return hss_v2.pause(); }
+            function hss_v3pe(){ return hss_v3.pause(); }
+
+            function volvo_v1py(){ return volvo_v1.play(); }
+            function volvo_v2py(){ return volvo_v2.play(); }
+            function volvo_v3py(){ return volvo_v3.play(); }
+
+            function volvo_v1pe(){ return volvo_v1.pause(); }
+            function volvo_v2pe(){ return volvo_v2.pause(); }
+            function volvo_v3pe(){ return volvo_v3.pause(); }
+
+            
 
 
-            // console.log("v1: "+v1);
-            // console.log("v2: "+v2);
-            // console.log("v3: "+v3);
-            // console.log("vp: "+vp);
+            // var hss_v1py = hss_v1.play();
+            // var hss_v2py = hss_v2.play();
+            // var hss_v3py = hss_v3.play();
+
+            // var hss_v1pe = hss_v1.pause();
+            // var hss_v2pe = hss_v2.pause();
+            // var hss_v3pe = hss_v3.pause();
+
+            // var volvo_v1py = volvo_v1.play();
+            // var volvo_v2py = volvo_v2.play();
+            // var volvo_v3py = volvo_v3.play();
+
+            // var volvo_v1pe = volvo_v1.pause();
+            // var volvo_v2pe = volvo_v2.pause();
+            // var volvo_v3pe = volvo_v3.pause();
+
+            if (hss_v1py() !== undefined) {
+                hss_v1py().then((_) => {}).catch((error) => {});
+            }
+            if(hss_v2py() !== undefined){
+                hss_v2py().then((_) => {}).catch((error) => {});
+            }
+            if(hss_v3py() !== undefined){
+                hss_v3py().then((_) => {}).catch((error) => {});
+            }
+            if(hss_v1pe() !== undefined){
+                hss_v1pe().then((_) => {}).catch((error) => {});
+            }
+            if(hss_v2pe() !== undefined){
+                hss_v2pe().then((_) => {}).catch((error) => {});
+            }
+            if(hss_v3pe() !== undefined){
+                hss_v3pe().then((_) => {}).catch((error) => {});
+            }
+
+
+
+            if (volvo_v1py() !== undefined) {
+                volvo_v1py().then((_) => {}).catch((error) => {});
+            }
+            if(volvo_v2py() !== undefined){
+                volvo_v2py().then((_) => {}).catch((error) => {});
+            }
+            if(volvo_v3py() !== undefined){
+                volvo_v3py().then((_) => {}).catch((error) => {});
+            }
+            if(volvo_v1pe() !== undefined){
+                volvo_v1pe().then((_) => {}).catch((error) => {});
+            }
+            if(volvo_v2pe() !== undefined){
+                volvo_v2pe().then((_) => {}).catch((error) => {});
+            }
+            if(volvo_v3pe() !== undefined){
+                volvo_v3pe().then((_) => {}).catch((error) => {});
+            }
+
+            console.log("h1: "+h1);
+            console.log("h2: "+h2);
+            console.log("h3: "+h3);
+
+
+            console.log("v1: "+v1);
+            console.log("v2: "+v2);
+            console.log("v3: "+v3);
+            console.log("vp: "+vp);
 
             if( h1 < vp) {
-                hss_v1.play();
-                hss_v2.pause();
-                hss_v3.pause();
+                hss_v1py();
+                hss_v2pe();
+                hss_v3pe();
+                // hss_v1.play();
+                // hss_v2.pause();
+                // hss_v3.pause();
             }
             else if ( h1 > vp) {
-                hss_v1.pause();
+                hss_v1pe();
+                // hss_v1.pause();
             }
             if ( h1 <= 0) {
-                hss_v1.pause();
+                hss_v1pe();
+                // hss_v1.pause();
             }
 
             if( h2 < vp) {
-                hss_v1.pause();
-                hss_v2.play();
-                hss_v3.pause();
+                hss_v1pe();
+                hss_v2py();
+                hss_v3pe();
+                // hss_v1.pause();
+                // hss_v2.play();
+                // hss_v3.pause();
             }
             else if ( h2 > vp) {
-                hss_v2.pause();
+                hss_v2pe();
+                // hss_v2.pause();
             }
             if ( h2 <= 0) {
-                hss_v2.pause();
+                hss_v2pe();
+                // hss_v2.pause();
             }
 
             if( h3 < vp) {
-                hss_v1.pause();;
-                hss_v2.pause();
-                hss_v3.play();
+                hss_v1pe();
+                hss_v2pe();
+                hss_v3py();
+                // hss_v1.pause();;
+                // hss_v2.pause();
+                // hss_v3.play();
             }
             else if ( h3 > vp) {
-                hss_v3.pause();
+                hss_v3pe();
+                // hss_v3.pause();
             }
             if ( h3 <= 0) {
-                hss_v3.pause();
+                hss_v3pe();
+                // hss_v3.pause();
             }
 
 
 
                 
             if( v1 < vp) {
-                volvo_v1.play();
-                volvo_v2.pause();
-                volvo_v3.pause();
+                volvo_v1py();
+                volvo_v2pe();
+                volvo_v3pe();
+                // volvo_v1.play();
+                // volvo_v2.pause();
+                // volvo_v3.pause();
             }
             if ( v1 <= 0) {
-                volvo_v1.pause();
+                volvo_v1pe();
+                // volvo_v1.pause();
             }
     
             if( v2 < vp) {
-                volvo_v1.pause();
-                volvo_v2.play();
-                volvo_v3.pause();
+                volvo_v1pe();
+                volvo_v2py();
+                volvo_v3pe();
+                // volvo_v1.pause();
+                // volvo_v2.play();
+                // volvo_v3.pause();
             }
             else if ( v2 > vp) {
-                volvo_v2.pause();
+                volvo_v2pe();
+                // volvo_v2.pause();
             }
             if ( v2 <= 0) {
-                volvo_v2.pause();
+                volvo_v2pe();
+                // volvo_v2.pause();
             }
 
             if( v3 < vp) {
-                volvo_v1.pause();
-                volvo_v2.pause();
-                volvo_v3.play();
+                volvo_v1pe();
+                volvo_v2pe();
+                volvo_v3py();
+                // volvo_v1.pause();
+                // volvo_v2.pause();
+                // volvo_v3.play();
             }
             else if ( v3 > vp) {
-                volvo_v3.pause();
+                volvo_v3pe();
+                // volvo_v3.pause();
             }
             if ( v3 <= 0) {
-                volvo_v3.pause();
+                volvo_v3pe();
+                // volvo_v3.pause();
             }
     
         }
@@ -1417,17 +1495,14 @@ $(function(){
                 return element.webkitRequestFullscreen()
             if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
             if (element.msRequestFullscreen) return element.msRequestFullscreen()
-            if (screen_toggle=="0"){
-            }
+            // if (screen_toggle=="0"){}
         } else {
             if (document.exitFullscreen) return document.exitFullscreen()
             if (document.webkitCancelFullscreen)
                 return document.webkitCancelFullscreen()
             if (document.mozCancelFullScreen) return document.mozCancelFullScreen()
             if (document.msExitFullscreen) return document.msExitFullscreen()
-            if (screen_toggle=="1"){
-            }
-
+            // if (screen_toggle=="1"){}
         }
     }
 
