@@ -451,10 +451,9 @@ section {visibility: hidden;}
     letter-spacing: 0.1vw;
 }
 
-.item:nth-of-type(1) .sec1 {
+/* .item:nth-of-type(1) .sec1 {
     margin-top: 5%;
-    
-}
+} */
 
 .item:nth-of-type(1) .sec1 .visual img { 
     width: 40%;
