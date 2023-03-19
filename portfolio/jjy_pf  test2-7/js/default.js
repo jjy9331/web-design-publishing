@@ -4,6 +4,7 @@ $(function(){
 
     var pf_hb = $("html,body");
     var pf_cr = $('#container');
+    var m_pf =  $(".portfolio");
     let m_hr = $('header');
     let m_hr_in = $('header .inner');
     let m_fr = $('footer');
@@ -43,8 +44,8 @@ $(function(){
             pf_cr.delay(1000).fadeIn( 1000 );
         }
 
-        console.log(h_elem_c);
-        console.log(h_elem.data('value'));
+        // console.log(h_elem_c);
+        // console.log(h_elem.data('value'));
     }
 
     m_hr.click(header_click);
@@ -149,7 +150,28 @@ $(function(){
 
 
     ///////////////////////////////////////////////////////////////////////////////
-    // portfolio back & next
+    // JQ portfolio back & next
+    
+    function port_nb(e){
+        let port_elem = $(e.target);
+
+        if(!$('span')){
+            port_elem = null;
+            return
+        }
+
+        portfolio_move();
+
+        function portfolio_move(){
+            pf_hb.animate({ scrollTop: port_elem.data('value')},1000); 
+            e.preventDefault();
+            ck_toggle = "1";
+        }
+        // console.log(port_elem.data('value'));
+    }
+
+    m_pf.click(port_nb);
+
 
     var jq_pf1b = $("#pf1back")
     var jq_pf2b = $("#pf2back")
@@ -164,55 +186,6 @@ $(function(){
     var jq_pf4n = $("#pf4next")
     var jq_pf5n = $("#pf5next")
     var jq_pfmn = $("#pfmnext")
-
-    jq_pf1b.click(function(e){
-                pf_hb.animate({ scrollTop:63996},1000);
-                e.preventDefault(); 	    
-    })
-    jq_pf1n.click(function(e){   
-                pf_hb.animate({ scrollTop:107499},1000);
-                e.preventDefault(); 
-    })
-    jq_pf2b.click(function(e){
-                pf_hb.animate({ scrollTop:87999},1000);
-                e.preventDefault(); 	    
-    })
-    jq_pf2n.click(function(e){   
-                pf_hb.animate({ scrollTop:137370},1000);
-                e.preventDefault(); 
-    })
-    jq_pf3b.click(function(e){
-                pf_hb.animate({ scrollTop:114495},1000);
-                e.preventDefault(); 	    
-    })
-    jq_pf3n.click(function(e){   
-                pf_hb.animate({ scrollTop:165492},1000);
-                e.preventDefault(); 
-    })
-    jq_pf4b.click(function(e){
-                pf_hb.animate({ scrollTop:135999},1000);
-                e.preventDefault(); 	    
-    })
-    jq_pf4n.click(function(e){   
-                pf_hb.animate({ scrollTop:186503},1000);
-                e.preventDefault(); 
-    })
-    jq_pf5b.click(function(e){
-                pf_hb.animate({ scrollTop:170482},1000);
-                e.preventDefault(); 	    
-    })
-    jq_pf5n.click(function(e){   
-        pf_hb.animate({ scrollTop:204717},1000);
-        e.preventDefault(); 
-    })
-    jq_pfmb.click(function(e){
-                pf_hb.animate({ scrollTop:193502},1000);
-                e.preventDefault(); 	    
-    })
-    jq_pfmn.click(function(e){   
-                pf_hb.animate({ scrollTop:218740},1000);
-                e.preventDefault(); 
-    })
 
     $(window).scroll(function(){
         var b = $(document).scrollTop(); 
@@ -467,7 +440,7 @@ $(function(){
     var sec2_ty2_d4 = $(".sec2 .typo2 .d4");
     var sec2_ty2_d5 = $(".sec2 .typo2 .d5");
     var sec2_ty2_d6 = $(".sec2 .typo2 .d6");
-    var m_pf =  $(".portfolio");
+    
     var bkb = $(".bkbox");
     var sc1 = $("#screen");
     var sc2 = $("#screen2");
