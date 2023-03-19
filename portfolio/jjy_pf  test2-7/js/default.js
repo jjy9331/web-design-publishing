@@ -3,45 +3,52 @@
 $(function(){
 
     var pf_hb = $("html,body");
-    var pf_cr = $('#container')
+    var pf_cr = $('#container');
+    let m_hr = $('header');
+    let m_fr = $('footer');
+    var logo = $('.logo');
 
-    // header mousewheel
-    $("header .inner .logo").click(function(e){
-                pf_cr.delay(0).hide( 0, function() {
-                    $( this ).delay(500).fadeIn( 2000 );
-                    pf_hb.delay(0).stop(true,true).scrollTop(0);
-                } );
-                e.preventDefault();
 
-    })
-    $("header .inner ul li:eq(0) a, h1 a").click(function(e){
-            pf_cr.delay(0).hide( 0, function() {
-                $( this ).delay(500).fadeIn( 2000 );
-                pf_hb.delay(0).stop(true,true).scrollTop(0);
-            } );
-            e.preventDefault(); 
-    })
-    $("header .inner ul li:eq(1) a").click(function(e){
-            pf_cr.delay(0).hide( 0, function() {
-                $( this ).delay(500).fadeIn( 1500 );
-                pf_hb.delay(0).stop(true,true).scrollTop(14775);
-            } );
-            e.preventDefault();
-    })
-    $("header .inner ul li:eq(2) a").click(function(e){
-            pf_cr.delay(0).hide( 0, function() {
-                $( this ).delay(500).fadeIn( 1500 );
-                pf_hb.delay(0).stop(true,true).scrollTop(63996);
-            } );
-            e.preventDefault(); 
-    })
-    $("header .inner ul li:eq(3) a").click(function(e){
-            pf_cr.delay(0).hide( 0, function() {
-                $( this ).delay(500).fadeIn( 1500 );
-                pf_hb.delay(0).stop(true,true).scrollTop(218740);
-            } );
-            e.preventDefault(); 
-    })
+    // JQ header evnet delegation nav
+
+    function header_click(e){
+        let h_elem = $(e.target)
+        let h_elem_c = $(e.target).attr("class");
+
+        if(h_elem_c == logo.attr("class")){
+            h_elem_c = logo.parent().attr("class");
+            h_elem = logo.parent();
+        }
+
+        c_hide();
+        c_quick();
+        c_fi();
+
+        // pf_cr.hide(0, function() {
+        //     pf_hb.stop(false,true).scrollTop(h_elem.data('value'));
+        //     $( this ).delay(500).fadeIn( 1000 );
+        // } );
+        // e.preventDefault();
+
+        function c_hide(){
+            // pf_cr.hide(0, function(){});
+            // pf_cr.css("visibility","hidden");
+            pf_cr.css('display','none');
+        }
+
+        function c_quick(){
+            pf_hb.stop(false,true).scrollTop(h_elem.data('value'));
+        }
+
+        function c_fi(){
+            pf_cr.delay(1000).fadeIn( 1000 );
+        }
+
+        console.log(h_elem_c);
+        console.log(h_elem.data('value'));
+    }
+
+    m_hr.click(header_click);
 
 
     const hr_d1 = $('.hr_d1');
@@ -140,27 +147,6 @@ $(function(){
         }
     });
 
-    // $(window).scroll(function(){
-    //     var b = $(document).scrollTop(); 
-    //     if((b >=0) && (b < 13284)) {
-    //         $('header ul li:nth-child(1) a').text('"홈"');
-    //         $('header ul li:nth-child(2) a').text('자기소개');
-    //         $('header ul li:nth-child(3) a').text('포트폴리오');
-    //         $('header ul li:nth-child(4) a').text('컨텍스트');
-    //     }
-    //     if((b >=14775) && (b < 53435)) {
-    //         $('header ul li:nth-child(1) a').text('홈');
-    //         $('header ul li:nth-child(2) a').text('"자기소개"');
-    //         $('header ul li:nth-child(3) a').text('포트폴리오');
-    //         $('header ul li:nth-child(4) a').text('컨텍스트');
-    //     }
-    //     if((b >=63996) && (b < 202085)) {
-    //         $('header ul li:nth-child(1) a').text('홈');
-    //         $('header ul li:nth-child(2) a').text('자기소개');
-    //         $('header ul li:nth-child(3) a').text('"포트폴리오"');
-    //         $('header ul li:nth-child(4) a').text('컨텍스트');
-    //     }
-    // });
 
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -566,8 +552,6 @@ $(function(){
     });
 
     let mdh_toggle = "0";
-    let m_hr = $('header');
-    let m_fr = $('footer');
     let mbh_h = $('.mbh_h');
     let mbh_f = $('.mbh_f');
 
@@ -968,7 +952,7 @@ $(function(){
             $('video').get(i).currentTime = 0;
         }
 
-        pf5_1v.trigger('play');
+        // pf5_1v.trigger('play');
         
         // function jvolvo_v1py() {
             // pf5_1v.trigger('play');
@@ -1033,7 +1017,7 @@ $(function(){
         pp.animate({ scrollTop:0},0); 
 
 
-        $('.pop .sheet video').trigger('pause');
+        // $('.pop .sheet video').trigger('pause');
 
         // function jvolvo_v1pe() {
             // $('.pop .sheet video').trigger('pause');
@@ -1056,7 +1040,7 @@ $(function(){
         pp.css("scroll-snap-type", "none");
         sct_ani = "1";
 
-        pf5_1v.trigger('play');
+        // pf5_1v.trigger('play');
 
         // var volvo_v1 = document.querySelector('.pf5_1v');
 
@@ -1093,8 +1077,8 @@ $(function(){
         var c1 = parseInt(circle_position)
         var c2 = parseInt(screen_position)
 
-        console.log("c1: "+c1);
-        console.log("c2: "+c2);
+        // console.log("c1: "+c1);
+        // console.log("c2: "+c2);
 
         if( c1 < c2) {
             target_c.classList.add('vb_circle');
@@ -1120,209 +1104,209 @@ $(function(){
 
     // popmenu.addEventListener('click', () => {
 
-        function pop_vpy(){
+        // function pop_vpy(){
 
-            var hss_v1 = document.querySelector('.main_v');
-            var hss_v2 = document.querySelector('.sub_v');
-            var hss_v3 = document.querySelector('.menu_v');
+        //     var hss_v1 = document.querySelector('.main_v');
+        //     var hss_v2 = document.querySelector('.sub_v');
+        //     var hss_v3 = document.querySelector('.menu_v');
 
-            var volvo_v1 = document.querySelector('.pf5_1v');
-            var volvo_v2 = document.querySelector('.pf5_2v');
-            var volvo_v3 = document.querySelector('.pf5_6v');
+        //     var volvo_v1 = document.querySelector('.pf5_1v');
+        //     var volvo_v2 = document.querySelector('.pf5_2v');
+        //     var volvo_v3 = document.querySelector('.pf5_6v');
 
-            // var target_v = $('video');
+        //     // var target_v = $('video');
 
-            var hvideo_position1 = hss_v1.getBoundingClientRect().top;
-            var hvideo_position2 = hss_v2.getBoundingClientRect().top;
-            var hvideo_position3 = hss_v3.getBoundingClientRect().top;
+        //     var hvideo_position1 = hss_v1.getBoundingClientRect().top;
+        //     var hvideo_position2 = hss_v2.getBoundingClientRect().top;
+        //     var hvideo_position3 = hss_v3.getBoundingClientRect().top;
 
-            var video_position1 = volvo_v1.getBoundingClientRect().top;
-            var video_position2 = volvo_v2.getBoundingClientRect().top;
-            var video_position3 = volvo_v3.getBoundingClientRect().top;
+        //     var video_position1 = volvo_v1.getBoundingClientRect().top;
+        //     var video_position2 = volvo_v2.getBoundingClientRect().top;
+        //     var video_position3 = volvo_v3.getBoundingClientRect().top;
             
-            var vscreen_position = window.innerHeight / 2;
+        //     var vscreen_position = window.innerHeight / 2;
     
 
-            var h1 = parseInt(hvideo_position1)
-            var h2 = parseInt(hvideo_position2)
-            var h3 = parseInt(hvideo_position3)
+        //     var h1 = parseInt(hvideo_position1)
+        //     var h2 = parseInt(hvideo_position2)
+        //     var h3 = parseInt(hvideo_position3)
 
-            var v1 = parseInt(video_position1)
-            var v2 = parseInt(video_position2)
-            var v3 = parseInt(video_position3)
-            var vp = parseInt(vscreen_position)
-
-
-            function hss_v1py(){ return hss_v1.play(); }
-            function hss_v2py(){ return hss_v2.play(); }
-            function hss_v3py(){ return hss_v3.play(); }
-
-            function hss_v1pe(){ return hss_v1.pause(); }
-            function hss_v2pe(){ return hss_v2.pause(); }
-            function hss_v3pe(){ return hss_v3.pause(); }
-
-            function volvo_v1py(){ return volvo_v1.play(); }
-            function volvo_v2py(){ return volvo_v2.play(); }
-            function volvo_v3py(){ return volvo_v3.play(); }
-
-            function volvo_v1pe(){ return volvo_v1.pause(); }
-            function volvo_v2pe(){ return volvo_v2.pause(); }
-            function volvo_v3pe(){ return volvo_v3.pause(); }
+        //     var v1 = parseInt(video_position1)
+        //     var v2 = parseInt(video_position2)
+        //     var v3 = parseInt(video_position3)
+        //     var vp = parseInt(vscreen_position)
 
 
-            if (hss_v1py() !== undefined) {
-                hss_v1py().then((_) => {}).catch((error) => {});
-            }
-            if(hss_v2py() !== undefined){
-                hss_v2py().then((_) => {}).catch((error) => {});
-            }
-            if(hss_v3py() !== undefined){
-                hss_v3py().then((_) => {}).catch((error) => {});
-            }
-            if(hss_v1pe() !== undefined){
-                hss_v1pe().then((_) => {}).catch((error) => {});
-            }
-            if(hss_v2pe() !== undefined){
-                hss_v2pe().then((_) => {}).catch((error) => {});
-            }
-            if(hss_v3pe() !== undefined){
-                hss_v3pe().then((_) => {}).catch((error) => {});
-            }
+        //     function hss_v1py(){ return hss_v1.play(); }
+        //     function hss_v2py(){ return hss_v2.play(); }
+        //     function hss_v3py(){ return hss_v3.play(); }
+
+        //     function hss_v1pe(){ return hss_v1.pause(); }
+        //     function hss_v2pe(){ return hss_v2.pause(); }
+        //     function hss_v3pe(){ return hss_v3.pause(); }
+
+        //     function volvo_v1py(){ return volvo_v1.play(); }
+        //     function volvo_v2py(){ return volvo_v2.play(); }
+        //     function volvo_v3py(){ return volvo_v3.play(); }
+
+        //     function volvo_v1pe(){ return volvo_v1.pause(); }
+        //     function volvo_v2pe(){ return volvo_v2.pause(); }
+        //     function volvo_v3pe(){ return volvo_v3.pause(); }
+
+
+        //     if (hss_v1py() !== undefined) {
+        //         hss_v1py().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(hss_v2py() !== undefined){
+        //         hss_v2py().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(hss_v3py() !== undefined){
+        //         hss_v3py().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(hss_v1pe() !== undefined){
+        //         hss_v1pe().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(hss_v2pe() !== undefined){
+        //         hss_v2pe().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(hss_v3pe() !== undefined){
+        //         hss_v3pe().then((_) => {}).catch((error) => {});
+        //     }
 
 
 
-            if (volvo_v1py() !== undefined) {
-                volvo_v1py().then((_) => {}).catch((error) => {});
-            }
-            if(volvo_v2py() !== undefined){
-                volvo_v2py().then((_) => {}).catch((error) => {});
-            }
-            if(volvo_v3py() !== undefined){
-                volvo_v3py().then((_) => {}).catch((error) => {});
-            }
-            if(volvo_v1pe() !== undefined){
-                volvo_v1pe().then((_) => {}).catch((error) => {});
-            }
-            if(volvo_v2pe() !== undefined){
-                volvo_v2pe().then((_) => {}).catch((error) => {});
-            }
-            if(volvo_v3pe() !== undefined){
-                volvo_v3pe().then((_) => {}).catch((error) => {});
-            }
+        //     if (volvo_v1py() !== undefined) {
+        //         volvo_v1py().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(volvo_v2py() !== undefined){
+        //         volvo_v2py().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(volvo_v3py() !== undefined){
+        //         volvo_v3py().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(volvo_v1pe() !== undefined){
+        //         volvo_v1pe().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(volvo_v2pe() !== undefined){
+        //         volvo_v2pe().then((_) => {}).catch((error) => {});
+        //     }
+        //     if(volvo_v3pe() !== undefined){
+        //         volvo_v3pe().then((_) => {}).catch((error) => {});
+        //     }
 
-            console.log("h1: "+h1);
-            console.log("h2: "+h2);
-            console.log("h3: "+h3);
+        //     // console.log("h1: "+h1);
+        //     // console.log("h2: "+h2);
+        //     // console.log("h3: "+h3);
 
 
-            console.log("v1: "+v1);
-            console.log("v2: "+v2);
-            console.log("v3: "+v3);
-            console.log("vp: "+vp);
+        //     // console.log("v1: "+v1);
+        //     // console.log("v2: "+v2);
+        //     // console.log("v3: "+v3);
+        //     // console.log("vp: "+vp);
 
-            if( h1 < vp) {
-                hss_v1py();
-                hss_v2pe();
-                hss_v3pe();
-                // hss_v1.play();
-                // hss_v2.pause();
-                // hss_v3.pause();
-            }
-            else if ( h1 > vp) {
-                hss_v1pe();
-                // hss_v1.pause();
-            }
-            if ( h1 <= 0) {
-                hss_v1pe();
-                // hss_v1.pause();
-            }
+        //     if( h1 < vp) {
+        //         hss_v1py();
+        //         hss_v2pe();
+        //         hss_v3pe();
+        //         // hss_v1.play();
+        //         // hss_v2.pause();
+        //         // hss_v3.pause();
+        //     }
+        //     else if ( h1 > vp) {
+        //         hss_v1pe();
+        //         // hss_v1.pause();
+        //     }
+        //     if ( h1 <= 0) {
+        //         hss_v1pe();
+        //         // hss_v1.pause();
+        //     }
 
-            if( h2 < vp) {
-                hss_v1pe();
-                hss_v2py();
-                hss_v3pe();
-                // hss_v1.pause();
-                // hss_v2.play();
-                // hss_v3.pause();
-            }
-            else if ( h2 > vp) {
-                hss_v2pe();
-                // hss_v2.pause();
-            }
-            if ( h2 <= 0) {
-                hss_v2pe();
-                // hss_v2.pause();
-            }
+        //     if( h2 < vp) {
+        //         hss_v1pe();
+        //         hss_v2py();
+        //         hss_v3pe();
+        //         // hss_v1.pause();
+        //         // hss_v2.play();
+        //         // hss_v3.pause();
+        //     }
+        //     else if ( h2 > vp) {
+        //         hss_v2pe();
+        //         // hss_v2.pause();
+        //     }
+        //     if ( h2 <= 0) {
+        //         hss_v2pe();
+        //         // hss_v2.pause();
+        //     }
 
-            if( h3 < vp) {
-                hss_v1pe();
-                hss_v2pe();
-                hss_v3py();
-                // hss_v1.pause();;
-                // hss_v2.pause();
-                // hss_v3.play();
-            }
-            else if ( h3 > vp) {
-                hss_v3pe();
-                // hss_v3.pause();
-            }
-            if ( h3 <= 0) {
-                hss_v3pe();
-                // hss_v3.pause();
-            }
+        //     if( h3 < vp) {
+        //         hss_v1pe();
+        //         hss_v2pe();
+        //         hss_v3py();
+        //         // hss_v1.pause();;
+        //         // hss_v2.pause();
+        //         // hss_v3.play();
+        //     }
+        //     else if ( h3 > vp) {
+        //         hss_v3pe();
+        //         // hss_v3.pause();
+        //     }
+        //     if ( h3 <= 0) {
+        //         hss_v3pe();
+        //         // hss_v3.pause();
+        //     }
 
 
 
                 
-            if( v1 < vp) {
-                volvo_v1py();
-                volvo_v2pe();
-                volvo_v3pe();
-                // volvo_v1.play();
-                // volvo_v2.pause();
-                // volvo_v3.pause();
-            }
-            if ( v1 <= 0) {
-                volvo_v1pe();
-                // volvo_v1.pause();
-            }
+        //     if( v1 < vp) {
+        //         volvo_v1py();
+        //         volvo_v2pe();
+        //         volvo_v3pe();
+        //         // volvo_v1.play();
+        //         // volvo_v2.pause();
+        //         // volvo_v3.pause();
+        //     }
+        //     if ( v1 <= 0) {
+        //         volvo_v1pe();
+        //         // volvo_v1.pause();
+        //     }
     
-            if( v2 < vp) {
-                volvo_v1pe();
-                volvo_v2py();
-                volvo_v3pe();
-                // volvo_v1.pause();
-                // volvo_v2.play();
-                // volvo_v3.pause();
-            }
-            else if ( v2 > vp) {
-                volvo_v2pe();
-                // volvo_v2.pause();
-            }
-            if ( v2 <= 0) {
-                volvo_v2pe();
-                // volvo_v2.pause();
-            }
+        //     if( v2 < vp) {
+        //         volvo_v1pe();
+        //         volvo_v2py();
+        //         volvo_v3pe();
+        //         // volvo_v1.pause();
+        //         // volvo_v2.play();
+        //         // volvo_v3.pause();
+        //     }
+        //     else if ( v2 > vp) {
+        //         volvo_v2pe();
+        //         // volvo_v2.pause();
+        //     }
+        //     if ( v2 <= 0) {
+        //         volvo_v2pe();
+        //         // volvo_v2.pause();
+        //     }
 
-            if( v3 < vp) {
-                volvo_v1pe();
-                volvo_v2pe();
-                volvo_v3py();
-                // volvo_v1.pause();
-                // volvo_v2.pause();
-                // volvo_v3.play();
-            }
-            else if ( v3 > vp) {
-                volvo_v3pe();
-                // volvo_v3.pause();
-            }
-            if ( v3 <= 0) {
-                volvo_v3pe();
-                // volvo_v3.pause();
-            }
+        //     if( v3 < vp) {
+        //         volvo_v1pe();
+        //         volvo_v2pe();
+        //         volvo_v3py();
+        //         // volvo_v1.pause();
+        //         // volvo_v2.pause();
+        //         // volvo_v3.play();
+        //     }
+        //     else if ( v3 > vp) {
+        //         volvo_v3pe();
+        //         // volvo_v3.pause();
+        //     }
+        //     if ( v3 <= 0) {
+        //         volvo_v3pe();
+        //         // volvo_v3.pause();
+        //     }
     
-        }
-        window.addEventListener('scroll',pop_vpy);
+        // }
+        // window.addEventListener('scroll',pop_vpy);
 
         // chrome video tag exption handling
     
