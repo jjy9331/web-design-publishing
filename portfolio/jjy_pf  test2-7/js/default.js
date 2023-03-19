@@ -5,6 +5,7 @@ $(function(){
     var pf_hb = $("html,body");
     var pf_cr = $('#container');
     let m_hr = $('header');
+    let m_hr_in = $('header .inner');
     let m_fr = $('footer');
     var logo = $('.logo');
 
@@ -20,19 +21,17 @@ $(function(){
             h_elem = logo.parent();
         }
 
+        // click event not working area control
+        if(!h_elem.hasClass("h_btn")){
+            h_elem = null;
+            return
+        }
+
         c_hide();
         c_quick();
         c_fi();
 
-        // pf_cr.hide(0, function() {
-        //     pf_hb.stop(false,true).scrollTop(h_elem.data('value'));
-        //     $( this ).delay(500).fadeIn( 1000 );
-        // } );
-        // e.preventDefault();
-
         function c_hide(){
-            // pf_cr.hide(0, function(){});
-            // pf_cr.css("visibility","hidden");
             pf_cr.css('display','none');
         }
 
@@ -302,142 +301,6 @@ $(function(){
         eye.style.bottom = '-44%'
         eye.style.left = '-26%'
     }
-
-    /////////////////////////////////////////////////////////////////
-
-
-
-
-    // pf3 mohenic intro
-
-
-    //이미지 불러오기
-    // for (i=0; i<=101; i++){
-    //     $(".movie1").append("<img src='mohenic_sequence3/"+i.toString().padStart(3, '0')+".png'>");
-    // }
-    // $(".movie1 img:first").css({visibility:"visible"});
-
-    // //애니메이션 시키기
-    // var frameNum=0;
-        
-    // // var pf3m = document.querySelector('.pf3');
-    // var pf3m = document.querySelector('.pf3_monitor');
-    // // var pf3m = document.querySelector('.movie1');
-
-    // var k1;
-    // var k2;
-    // var inc1;
-    // var wy = window.scrollY;
-
-    // pf3m.addEventListener('mouseover',() => {
-    //     function aniNext1(){   
-    //         var inc1 = frameNum++;
-
-    //         $(".movie1 img").css({visibility:"hidden"});
-
-    //         $(".movie1 img:eq("+inc1+")").css({visibility:"visible"});
-
-    //         $(".movie1").animate(
-    //             {center:101},
-    //             2019.8,
-    //             function(){
-    //             clearInterval(k1);
-    //         });
-            
-    //         console.log("inc1:"+inc1);
-    //         console.log("mouseover")
-    //         if(inc1 >=101){ //로딩이 완료되면
-    //             clearInterval(k1); //setInterval종료					
-    //             frameNum = 101;
-    //         }
-    //         else if (frameNum > 0) {
-    //             clearInterval(k2); //mouseout 중 mouseover할때 mouseout, mouseover setInteval 충돌방지  
-    //         }
-
-    //         // window.addEventListener('scroll', function(e) {
-    //         //     if(((wy <=121432) && (wy >= 146508))) {	
-    //         //         inc1 = 0;
-    //         //         frameNum = 0;
-    //         //         console.log("inc1:"+inc1);
-    //         //         console.log("frameNum:"+frameNum);
-    //         //         // pf3m.removeEventListener('mouseover',() => {aniNext1();})
-    //         //         pf3m.removeEventListener('mouseover', aniNext1);
-
-    //         //     }   
-    //         // }, {passive: false});   
-
-
-    //     }
-    //     var k1 = setInterval(aniNext1,12.5); //aniNext1 함수 실행
-
-    //     // window.addEventListener('scroll', function(e) {
-
-    //     //     var wy = window.scrollY;
-    //     //     if(((wy <=121432) && (wy >= 146508))) {	
-    //     //         inc1 = 0;
-    //     //         frameNum = 0;
-    //     //         console.log("inc1:"+inc1);
-    //     //         console.log("frameNum:"+frameNum);
-    //     //         // pf3m.removeEventListener('mouseover',() => {aniNext1();})
-    //     //         pf3m.removeEventListener('mouseover', aniNext1);
-
-    //     //     }   
-
-    //     // }, {passive: false});   
-        
-        
-    
-
-
-
-    // });
-
-    // var k1;
-    // var k2;
-    // var inc2;
-    //     pf3m.addEventListener('mouseout',() => aniBack1());
-    //     function aniBack1() {
-    //             let inc2 = frameNum--;
-
-    //             $(".movie1 img").css({visibility:"hidden"});
-
-    //             $(".movie1 img:eq("+inc2+")").css({visibility:"visible"});
-
-    //             $(".movie1").animate(
-    //                 {center:101},
-    //                 1000,
-    //                 function(){
-    //                 clearInterval(k2);
-    //             }
-    //             );
-
-    //             console.log("inc2:"+inc2);
-    //                 console.log("mouseout")
-    //             if(inc2 >= 101){
-    //                 // k2 = setInterval(aniBack1,12.5); //setInterval종료
-    //                 k2 = setInterval(aniBack1,14.5); //setInterval종료
-    //                 clearInterval(k1);
-    //             }
-
-    //             else if (inc2 <= 0 ) {
-    //                 frameNum = 0;
-    //                 if( inc2 == 0){
-    //                     console.log("minor")
-    //                     clearInterval(k2);
-    //                 }
-    //             }
-    
-    //         }
-    //         var k2 = setInterval(aniBack1,12.5)
-            // window.addEventListener('scroll', function(e) {
-
-            //     var sY = window.scrollY;
-            //     if((sY >= 146508)) {	
-            //         // inc2 = 0;
-            //         frameNum = 0;
-            //     }   
-
-            // }, {passive: false});    
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1846,41 +1709,32 @@ $(function(){
     let ck_toggle = "0";
 
 
-    // $('#pf-nav ul li:eq(0)').on('mouseover', () => {
-    //     $('.pf-tooltip').style.transition = "0.3s ease-in-out 0.2s";
-    //     $('.pf-tooltip').style.opacity = '1';
-    // })
+    // JQ port remote control
 
-    $('#pf-nav ul li:eq(0)').click(function(e){
-        pf_hb.animate({ scrollTop:86420},1000); 
-        e.preventDefault();
-        ck_toggle = "1";
-    })
-    $('#pf-nav ul li:eq(1)').click(function(e){
-        pf_hb.animate({ scrollTop:107499},1000); 
-        e.preventDefault();
-        ck_toggle = "1";
-    })
-    $('#pf-nav ul li:eq(2)').click(function(e){
-        pf_hb.animate({ scrollTop:137370},1000); 
-        e.preventDefault();
-        ck_toggle = "1";
-    })
-    $('#pf-nav ul li:eq(3)').click(function(e){
-        pf_hb.animate({ scrollTop:163483},1000); 
-        e.preventDefault();
-        ck_toggle = "1";
-    })
-    $('#pf-nav ul li:eq(4)').click(function(e){
-        pf_hb.animate({ scrollTop:186503},1000); 
-        e.preventDefault();
-        ck_toggle = "1";
-    })
-    $('#pf-nav ul li:eq(5)').click(function(e){
-        pf_hb.animate({ scrollTop:204717},1000); 
-        e.preventDefault()
-        ck_toggle = "1";
-    })
+    let pf_rm = $('.pf-nav');
+    
+    function port_remote(e){
+        let pf_elem = $(e.target);
+
+        if(!$('span')){
+            pf_elem = null;
+            return
+        }
+
+        port_move();
+
+        function port_move(){
+            pf_hb.animate({ scrollTop: pf_elem.data('value')},1000); 
+            e.preventDefault();
+            ck_toggle = "1";
+        }
+
+        // console.log(pf_elem.data('value'));
+    }
+
+    m_fr.click(port_remote);
+
+
 
     var pfnv_li0_sn = $('#pf-nav ul li:eq(0) span');
     var pfnv_li1_sn = $('#pf-nav ul li:eq(1) span');
