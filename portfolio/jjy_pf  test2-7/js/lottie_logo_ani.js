@@ -219,7 +219,7 @@ $(function(){
                         
                     });
                 });
-        }
+            }
             if (current > 99.9) {
                 current = 100;
 

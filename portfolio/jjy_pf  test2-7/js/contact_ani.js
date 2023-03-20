@@ -18,6 +18,31 @@ const preloadImages2 = () => {
     }
 };
 
+// contact_ani img preload web worker
+
+const mine2 = {js:{type:'text/javascript'}};
+
+const WorkerPromise2 = (f) => {
+    let resolve2, reject2;
+    
+    const worker2 = Object.assign(
+        new Worker(
+            URL.createObjectURL(
+            new Blob([`onmessage2=e=>postMessage((${f})(e.data2));`], mine2.js) 
+            )
+        ),
+        { onmessage2: (e) => resolve2(e.data2), onerror2: (e) => reject2(e.data2) } 
+    );
+    return (data2) =>
+        new Promise((res2, rej2) => {
+            resolve2 = res2;
+            reject2 = rej2;
+            worker2.postMessage(data2); 
+        });
+};
+
+WorkerPromise2(preloadImages2());
+
 
 img2.src = currentFrame2(1);
 
@@ -67,6 +92,6 @@ window.addEventListener('scroll', () => {
     requestAnimationFrame(() => updateImage2(frameIndex2))
 },{ passive: true });
 
-preloadImages2()
+// preloadImages2();
 
 

@@ -21,6 +21,34 @@ const preloadImages = () => {
     }
 };
 
+// introduce img preload web worker
+
+const mine = {js:{type:'text/javascript'}};
+
+const WorkerPromise = (f) => {
+    let resolve, reject;
+    
+    const worker = Object.assign(
+        new Worker(
+            URL.createObjectURL(
+            new Blob([`onmessage=e=>postMessage((${f})(e.data));`], mine.js) 
+            )
+        ),
+        { onmessage: (e) => resolve(e.data), onerror: (e) => reject(e.data) } 
+    );
+    return (data) =>
+        new Promise((res, rej) => {
+            resolve = res;
+            reject = rej;
+            worker.postMessage(data); 
+        });
+};
+
+WorkerPromise(preloadImages());
+
+// const intro_pre = WorkerPromise(preloadImages());
+// intro_pre().then(console.log);
+
 
 // img.src = currentFrame(1);
 
@@ -81,7 +109,7 @@ window.addEventListener('scroll', () => {
     requestAnimationFrame(() => updateImage(frameIndex))
 },{ passive: true });
 
-preloadImages();
+// preloadImages();
 
 
 
