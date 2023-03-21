@@ -40,7 +40,7 @@ $(function(){
     // var lottie_logo = document.createElement("lottie-player");
     
     // lottie_logo.setAttribute('id', 'logo_ani');
-    // lottie_logo.setAttribute('src', 'data/logo_intro.json');
+    // lottie_logo.setAttribute('src', 'data3/logo_intro.json');
     // lottie_logo.setAttribute('speed', '1');
     // lottie_logo.setAttribute('preserveAspectRatio', 'xMidYMid slice');
     // lottie_logo.setAttribute('autoplay', 'true');
@@ -78,6 +78,7 @@ $(function(){
                 .animate({ opacity: 1 }, 250, function() {
 
 
+                    function lottie_logo(){
                         LottieInteractivity.create({
                             player:'#logo_ani',
                             renderer:'svg',
@@ -90,6 +91,46 @@ $(function(){
                                 }
                             ]
                         });
+                    }
+
+                    const mine3 = {js:{type:'text/javascript'}};
+
+                    const WorkerPromise3 = (f) => {
+                        let resolve3, reject3;
+                        
+                        const worker3 = Object.assign(
+                            new Worker(
+                                URL.createObjectURL(
+                                new Blob([`onmessage=e=>postMessage((${f})(e.data3));`], mine3.js) 
+                                )
+                            ),
+                            { onmessage3: (e) => resolve3(e.data3), onerror3: (e) => reject3(e.data3) } 
+                        );
+                        return (data3) =>
+                            new Promise((res3, rej3) => {
+                                resolve3 = res3;
+                                reject3 = rej3;
+                                worker3.postMessage(data3); 
+                            });
+                    };
+
+                    WorkerPromise(lottie_logo());
+
+
+
+
+                        // LottieInteractivity.create({
+                        //     player:'#logo_ani',
+                        //     renderer:'svg',
+                        //     disableCheck:'true',
+                        //     mode:"chain",
+                        //     actions: [
+                        //         {
+                        //             state: 'autoplay',
+                        //             delay: 1000
+                        //         }
+                        //     ]
+                        // });
                         // $container.animate({ opacity: 0}, 1000, function() {
                         $container.fadeOut(1000, function() {
                     //         $("body").css({ overflowX: "auto" });
