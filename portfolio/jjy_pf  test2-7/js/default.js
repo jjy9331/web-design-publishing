@@ -20,6 +20,9 @@ $(function(){
         if(h_elem_c == logo.attr("class")){
             h_elem_c = logo.parent().attr("class");
             h_elem = logo.parent();
+            c_hide();
+            c_quick();
+            c_fi();
         }
 
         // click event not working area control
@@ -724,8 +727,9 @@ $(function(){
     var position = mu.parent().next().offset().top;
 
     mu.click(function menu(e) {
-        // $(this).parent().next().fadeIn(1000);
-        $(this).parent().next().css('display','block');
+        $(this).parent().next().fadeIn(1000);
+        // $(this).parent().next().css('display','block');
+        $(this).parent().next().css({visibility:"visible"});
         // pp.css('display','block');
         m_hr.css('display','none');
         m_hr.css({visibility:"hidden"});
@@ -770,7 +774,7 @@ $(function(){
 
             pf5_2mp.on('mouseover', function() {
 
-                pf5_2_img.attr("src","images/sec2_hover.png");
+                pf5_2_img.attr("src","images/v2_hover.png");
                 pf5_2mp.css('cursor', 'none');
                 curs.addClass('cursor-grow');
     
@@ -778,7 +782,7 @@ $(function(){
     
             pf5_2mp.on('mouseout', function() {
 
-                pf5_2_img.attr("src","images/sec2.png");
+                pf5_2_img.attr("src","images/v2.png");
                 pf5_2mp.css('cursor', 'none');
                 curs.removeClass('cursor-grow') 
             });
