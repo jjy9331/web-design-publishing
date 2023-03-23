@@ -378,7 +378,7 @@ $(function(){
 
                 e.preventDefault();
                 
-                console.log("c_target: "+c_target);
+                // console.log("c_target: "+c_target);
             });
         }
         else{
@@ -727,10 +727,12 @@ $(function(){
     var position = mu.parent().next().offset().top;
 
     mu.click(function menu(e) {
-        $(this).parent().next().fadeIn(1000);
-        // $(this).parent().next().css('display','block');
-        $(this).parent().next().css({visibility:"visible"});
+        $(this).parent().next().css('display','block');
+        // $(this).parent().next().delay(1000).fadeIn(1000);
+        // $(this).parent().next().animate({opacity: '1'}, 1000);
+        // $(this).parent().next().css({visibility:"visible"});
         // pp.css('display','block');
+        // pp.css({visibility:"visible"});
         m_hr.css('display','none');
         m_hr.css({visibility:"hidden"});
         m_fr.css('display','none');
@@ -1176,6 +1178,7 @@ $(function(){
         //     console.log("bgmstart");
         // });
         sdwave.play();
+        
     });
 
 
