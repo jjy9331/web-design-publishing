@@ -179,19 +179,19 @@ $(function(){
 
 
 
-    var jq_pf1b = document.querySelector("#pf1back")
-    var jq_pf2b = document.querySelector("#pf2back")
-    var jq_pf3b = document.querySelector("#pf3back")
-    var jq_pf4b = document.querySelector("#pf4back")
-    var jq_pf5b = document.querySelector("#pf5back")
-    var jq_pfmb = document.querySelector("#pfmback")
+    var jq_pf1b = document.querySelector("#pf1back");
+    var jq_pf2b = document.querySelector("#pf2back");
+    var jq_pf3b = document.querySelector("#pf3back");
+    var jq_pf4b = document.querySelector("#pf4back");
+    var jq_pf5b = document.querySelector("#pf5back");
+    var jq_pfmb = document.querySelector("#pfmback");
 
-    var jq_pf1n = document.querySelector("#pf1next")
-    var jq_pf2n = document.querySelector("#pf2next")
-    var jq_pf3n = document.querySelector("#pf3next")
-    var jq_pf4n = document.querySelector("#pf4next")
-    var jq_pf5n = document.querySelector("#pf5next")
-    var jq_pfmn = document.querySelector("#pfmnext")
+    var jq_pf1n = document.querySelector("#pf1next");
+    var jq_pf2n = document.querySelector("#pf2next");
+    var jq_pf3n = document.querySelector("#pf3next");
+    var jq_pf4n = document.querySelector("#pf4next");
+    var jq_pf5n = document.querySelector("#pf5next");
+    var jq_pfmn = document.querySelector("#pfmnext");
 
     window.addEventListener('scroll', function() {
         var b = window.scrollY;
