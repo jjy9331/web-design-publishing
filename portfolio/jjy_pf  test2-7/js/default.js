@@ -54,102 +54,104 @@ $(function(){
     m_hr.click(header_click);
 
 
-    const hr_d1 = $('.hr_d1');
-    const hr_d2 = $('.hr_d2');
-    const hr_d3 = $('.hr_d3');
-    const hr_d4 = $('.hr_d4');
-    const hr_d5 = $('.hr_d5');
-    const hr_d6 = $('.hr_d6');
-    const hr_d7 = $('.hr_d7');
-    const hr_d8 = $('.hr_d8');
-    const hr_d9 = $('.hr_d9');
-    const hr_d10 = $('.hr_d10');
-    const hr_d11 = $('.hr_d11');
-    const hr_d12 = $('.hr_d12');
-    const hr_d13 = $('.hr_d13');
+    const hr_d1 = document.querySelector('.hr_d1');
+    const hr_d2 = document.querySelector('.hr_d2');
+    const hr_d3 = document.querySelector('.hr_d3');
+    const hr_d4 = document.querySelector('.hr_d4');
+    const hr_d5 = document.querySelector('.hr_d5');
+    const hr_d6 = document.querySelector('.hr_d6');
+    const hr_d7 = document.querySelector('.hr_d7');
+    const hr_d8 = document.querySelector('.hr_d8');
+    const hr_d9 = document.querySelector('.hr_d9');
+    const hr_d10 = document.querySelector('.hr_d10');
+    const hr_d11 = document.querySelector('.hr_d11');
+    const hr_d12 = document.querySelector('.hr_d12');
+    const hr_d13 = document.querySelector('.hr_d13');
 
-
-    $(window).scroll(function(){
-        var b = $(document).scrollTop();
+    window.addEventListener('scroll', function() {
+        var b = window.scrollY;
         skrollr.init();
+
         if((b >=0) && (b < 13284)) {
-            hr_d1.css("visibility","visible");
 
-            hr_d2.css("visibility","hidden");
-            hr_d3.css("visibility","hidden");
-            hr_d4.css("visibility","hidden");
-            hr_d5.css("visibility","hidden");
+            
+            hr_d1.style.visibility = "visible";
 
-            hr_d6.css("visibility","hidden");
-            hr_d7.css("visibility","hidden");
-            hr_d8.css("visibility","hidden");
-            hr_d9.css("visibility","hidden");
-            hr_d10.css("visibility","hidden");
+            hr_d2.style.visibility = "hidden";
+            hr_d3.style.visibility = "hidden";
+            hr_d4.style.visibility = "hidden";
+            hr_d5.style.visibility = "hidden";
 
-            hr_d11.css("visibility","hidden");
-            hr_d12.css("visibility","hidden");
-            hr_d13.css("visibility","hidden");
+            hr_d6.style.visibility = "hidden";
+            hr_d7.style.visibility = "hidden";
+            hr_d8.style.visibility = "hidden";
+            hr_d9.style.visibility = "hidden";
+            hr_d10.style.visibility = "hidden";
+
+            hr_d11.style.visibility = "hidden";
+            hr_d12.style.visibility = "hidden";
+            hr_d13.style.visibility = "hidden";
         }
         else if((b >=14775) && (b < 53435)) {
-            hr_d1.css("visibility","hidden");
+            hr_d1.style.visibility = "hidden";
 
-            hr_d2.css("visibility","visible");
-            hr_d3.css("visibility","visible");
-            hr_d4.css("visibility","visible");
-            hr_d5.css("visibility","visible");
+            hr_d2.style.visibility = "visible";
+            hr_d3.style.visibility = "visible";
+            hr_d4.style.visibility = "visible";
+            hr_d5.style.visibility = "visible";
 
-            hr_d6.css("visibility","hidden");
-            hr_d7.css("visibility","hidden");
-            hr_d8.css("visibility","hidden");
-            hr_d9.css("visibility","hidden");
-            hr_d10.css("visibility","hidden");
+            hr_d6.style.visibility = "hidden";
+            hr_d7.style.visibility = "hidden";
+            hr_d8.style.visibility = "hidden";
+            hr_d9.style.visibility = "hidden";
+            hr_d10.style.visibility = "hidden";
 
-            hr_d11.css("visibility","hidden");
-            hr_d12.css("visibility","hidden");
-            hr_d13.css("visibility","hidden");
+            hr_d11.style.visibility = "hidden";
+            hr_d12.style.visibility = "hidden";
+            hr_d13.style.visibility = "hidden";
 
         }
         else if((b >=63996) && (b < 202085)) {
 
-            hr_d1.css("visibility","hidden");
+            hr_d1.style.visibility = "hidden";
 
-            hr_d2.css("visibility","hidden");
-            hr_d3.css("visibility","hidden");
-            hr_d4.css("visibility","hidden");
-            hr_d5.css("visibility","hidden");
+            hr_d2.style.visibility = "hidden";
+            hr_d3.style.visibility = "hidden";
+            hr_d4.style.visibility = "hidden";
+            hr_d5.style.visibility = "hidden";
 
-            hr_d6.css("visibility","visible");
-            hr_d7.css("visibility","visible");
-            hr_d8.css("visibility","visible");
-            hr_d9.css("visibility","visible");
-            hr_d10.css("visibility","visible");
+            hr_d6.style.visibility = "visible";
+            hr_d7.style.visibility = "visible";
+            hr_d8.style.visibility = "visible";
+            hr_d9.style.visibility = "visible";
+            hr_d10.style.visibility = "visible";
 
-            hr_d11.css("visibility","hidden");
-            hr_d12.css("visibility","hidden");
-            hr_d13.css("visibility","hidden");
+            hr_d11.style.visibility = "hidden";
+            hr_d12.style.visibility = "hidden";
+            hr_d13.style.visibility = "hidden";
 
         }
         else if((b >=209507) && (b < 463831)) {
 
-            hr_d1.css("visibility","hidden");
-            hr_d2.css("visibility","hidden");
-            hr_d3.css("visibility","hidden");
-            hr_d4.css("visibility","hidden");
-            hr_d5.css("visibility","hidden");
+            hr_d1.style.visibility = "hidden";
+            hr_d2.style.visibility = "hidden";
+            hr_d3.style.visibility = "hidden";
+            hr_d4.style.visibility = "hidden";
+            hr_d5.style.visibility = "hidden";
 
-            hr_d6.css("visibility","hidden");
-            hr_d7.css("visibility","hidden");
-            hr_d8.css("visibility","hidden");
-            hr_d9.css("visibility","hidden");
-            hr_d10.css("visibility","hidden");
+            hr_d6.style.visibility = "hidden";
+            hr_d7.style.visibility = "hidden";
+            hr_d8.style.visibility = "hidden";
+            hr_d9.style.visibility = "hidden";
+            hr_d10.style.visibility = "hidden";
 
-            hr_d11.css("visibility","visible");
-            hr_d12.css("visibility","visible");
-            hr_d13.css("visibility","visible");
+            hr_d11.style.visibility = "visible";
+            hr_d12.style.visibility = "visible";
+            hr_d13.style.visibility = "visible";
 
         }
-    });
 
+    });
 
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -176,81 +178,84 @@ $(function(){
     m_pf.click(port_nb);
 
 
-    var jq_pf1b = $("#pf1back")
-    var jq_pf2b = $("#pf2back")
-    var jq_pf3b = $("#pf3back")
-    var jq_pf4b = $("#pf4back")
-    var jq_pf5b = $("#pf5back")
-    var jq_pfmb = $("#pfmback")
 
-    var jq_pf1n = $("#pf1next")
-    var jq_pf2n = $("#pf2next")
-    var jq_pf3n = $("#pf3next")
-    var jq_pf4n = $("#pf4next")
-    var jq_pf5n = $("#pf5next")
-    var jq_pfmn = $("#pfmnext")
+    var jq_pf1b = document.querySelector("#pf1back")
+    var jq_pf2b = document.querySelector("#pf2back")
+    var jq_pf3b = document.querySelector("#pf3back")
+    var jq_pf4b = document.querySelector("#pf4back")
+    var jq_pf5b = document.querySelector("#pf5back")
+    var jq_pfmb = document.querySelector("#pfmback")
 
-    $(window).scroll(function(){
-        var b = $(document).scrollTop(); 
+    var jq_pf1n = document.querySelector("#pf1next")
+    var jq_pf2n = document.querySelector("#pf2next")
+    var jq_pf3n = document.querySelector("#pf3next")
+    var jq_pf4n = document.querySelector("#pf4next")
+    var jq_pf5n = document.querySelector("#pf5next")
+    var jq_pfmn = document.querySelector("#pfmnext")
+
+    window.addEventListener('scroll', function() {
+        var b = window.scrollY;
 
         if((b >=86419) && (b < 91499)) { 
             // pf1
-            jq_pf1b.css("visibility","visible");
-            jq_pf1n.css("visibility","visible");
+            jq_pf1b.style.visibility = "visible";
+            jq_pf1n.style.visibility = "visible";
 
         }
         else{
-            jq_pf1b.css("visibility","hidden");
-            jq_pf1n.css("visibility","hidden");
+            jq_pf1b.style.visibility = "hidden";
+            jq_pf1n.style.visibility = "hidden";
         }
         if((b >=107499) && (b < 114499)) {
             // pf2
-            jq_pf2b.css("visibility","visible");
-            jq_pf2n.css("visibility","visible");
+            jq_pf2b.style.visibility = "visible";
+            jq_pf2n.style.visibility = "visible";
         }
         else{
-            jq_pf2b.css("visibility","hidden");
-            jq_pf2n.css("visibility","hidden");
+            jq_pf2b.style.visibility = "hidden";
+            jq_pf2n.style.visibility = "hidden";
         }
         if((b >=137370) && (b < 144370)) {
             // pf3
-            jq_pf3b.css("visibility","visible");
-            jq_pf3n.css("visibility","visible");
+            jq_pf3b.style.visibility = "visible";
+            jq_pf3n.style.visibility = "visible";
         }
         else{
-            jq_pf3b.css("visibility","hidden");
-            jq_pf3n.css("visibility","hidden");
+            jq_pf3b.style.visibility = "hidden";
+            jq_pf3n.style.visibility = "hidden";
         }
         if((b >=163483) && (b < 170483)) {
             // pf4
-            jq_pf4b.css("visibility","visible");
-            jq_pf4n.css("visibility","visible");
+            jq_pf4b.style.visibility = "visible";
+            jq_pf4n.style.visibility = "visible";
         }
         else{
-            jq_pf4b.css("visibility","hidden");
-            jq_pf4n.css("visibility","hidden");
+            jq_pf4b.style.visibility = "hidden";
+            jq_pf4n.style.visibility = "hidden";
         }
         
         if((b >=186503) && (b < 193503)) {
             // pf5
-            jq_pf5b.css("visibility","visible");
-            jq_pf5n.css("visibility","visible");
+            jq_pf5b.style.visibility = "visible";
+            jq_pf5n.style.visibility = "visible";
         }
         else{
-            jq_pf5b.css("visibility","hidden");
-            jq_pf5n.css("visibility","hidden");
+            jq_pf5b.style.visibility = "hidden";
+            jq_pf5n.style.visibility = "hidden";
         }
         if((b >=204717) && (b < 211717)) {
             // pfmore
-            jq_pfmb.css("visibility","visible");
-            jq_pfmn.css("visibility","visible");
+            jq_pfmb.style.visibility = "visible";
+            jq_pfmn.style.visibility = "visible";
         }
         else{
-            jq_pfmb.css("visibility","hidden");
-            jq_pfmn.css("visibility","hidden");
+            jq_pfmb.style.visibility = "hidden";
+            jq_pfmn.style.visibility = "hidden";
         }
 
     });
+
+    
 
 
 
@@ -1783,7 +1788,7 @@ $(function(){
         }
     });
 
-    
+
     for(var i = 0; i < 6; i++ ){
         pf_ani[i].addEventListener("mouseover", () => {
             mouseCursor.classList.add("pf_cursor");
