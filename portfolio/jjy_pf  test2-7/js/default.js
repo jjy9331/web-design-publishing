@@ -4,7 +4,7 @@ $(function(){
 
     var pf_hb = $("html,body");
     var pf_cr = $('#container');
-    var m_pf =  $(".portfolio");
+    var j_m_pf =  $(".portfolio");
     let m_hr = $('header');
     let m_hr_in = $('header .inner');
     let m_fr = $('footer');
@@ -155,12 +155,15 @@ $(function(){
 
 
     ///////////////////////////////////////////////////////////////////////////////
-    // JQ portfolio back & next
+    // JS portfolio back & next
     
-    function port_nb(e){
-        let port_elem = $(e.target);
+    var m_pf =  document.querySelector('.portfolio');
+    var sn = document.querySelector('span');
 
-        if(!$('span')){
+    function port_nb(e){
+        let port_elem = e.target;
+
+        if(!sn){
             port_elem = null;
             return
         }
@@ -168,14 +171,14 @@ $(function(){
         portfolio_move();
 
         function portfolio_move(){
-            pf_hb.animate({ scrollTop: port_elem.data('value')},1000); 
+            window.scrollTo({top: port_elem.dataset.value, behavior: 'smooth', duration: 1000});
             e.preventDefault();
             ck_toggle = "1";
         }
-        // console.log(port_elem.data('value'));
+        console.log(port_elem.dataset.value);
     }
 
-    m_pf.click(port_nb);
+    m_pf.addEventListener('click', port_nb);
 
 
 
@@ -488,7 +491,7 @@ $(function(){
             sec1_vimg.css({filter: "invert(100)"});
             sec1_ty_h3.css("color","white");
             sec1_ty_p.css('color','rgba(255,255,255,0.4)');
-            m_pf.css("background-color","black");
+            j_m_pf.css("background-color","black");
             sec2_ty2_h3.css("color","white");
             sec2_ty2_p.css('color','rgba(255,255,255,0.4)');
             sec2_ty2_d1.css("background-color","white");
@@ -551,7 +554,7 @@ $(function(){
             sec1_vimg.css({filter: "invert(0)"});
             sec1_ty_h3.css("color","black");
             sec1_ty_p.css('color','rgba(0,0,0,0.4)');
-            m_pf.css("background-color","white");
+            j_m_pf.css("background-color","white");
             sec2_ty2_h3.css("color","black");
             sec2_ty2_p.css('color','rgba(0,0,0,0.4)');
             sec2_ty2_d1.css("background-color","black");
@@ -618,7 +621,7 @@ $(function(){
             sec1_vimg.css({filter: "invert(100)"});
             sec1_ty_h3.css("color","white");
             sec1_ty_p.css('color','rgba(255,255,255,0.4)');
-            m_pf.css("background-color","black");
+            j_m_pf.css("background-color","black");
             sec2_ty2_h3.css("color","white");
             sec2_ty2_p.css('color','rgba(255,255,255,0.4)');
             sec2_ty2_d1.css("background-color","white");
@@ -669,7 +672,7 @@ $(function(){
             sec1_vimg.css({filter: "invert(0)"});
             sec1_ty_h3.css("color","black");
             sec1_ty_p.css('color','rgba(0,0,0,0.4)');
-            m_pf.css("background-color","white");
+            j_m_pf.css("background-color","white");
             sec2_ty2_h3.css("color","black");
             sec2_ty2_p.css('color','rgba(0,0,0,0.4)');
             sec2_ty2_d1.css("background-color","black");
