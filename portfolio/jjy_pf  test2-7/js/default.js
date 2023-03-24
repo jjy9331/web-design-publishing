@@ -2,13 +2,15 @@
 
 $(function(){
 
-    var pf_hb = $("html,body");
-    var pf_cr = $('#container');
+    var j_pf_hb = $("html,body");
+    var j_pf_cr = $('#container');
     var j_m_pf =  $(".portfolio");
-    let m_hr = $('header');
-    let m_hr_in = $('header .inner');
-    let m_fr = $('footer');
+    let j_m_hr = $('header');
+    let j_m_hr_in = $('header .inner');
+    let j_m_fr = $('footer');
     var logo = $('.logo');
+
+    var pf_hb = document.querySelector("html,body");
 
 
     // JQ header evnet delegation nav
@@ -36,22 +38,22 @@ $(function(){
         c_fi();
 
         function c_hide(){
-            pf_cr.css('display','none');
+            j_pf_cr.css('display','none');
         }
 
         function c_quick(){
-            pf_hb.stop(false,true).scrollTop(h_elem.data('value'));
+            j_pf_hb.stop(false,true).scrollTop(h_elem.data('value'));
         }
 
         function c_fi(){
-            pf_cr.delay(1000).fadeIn( 1000 );
+            j_pf_cr.delay(1000).fadeIn( 1000 );
         }
 
         // console.log(h_elem_c);
         // console.log(h_elem.data('value'));
     }
 
-    m_hr.click(header_click);
+    j_m_hr.click(header_click);
 
 
     const hr_d1 = document.querySelector('.hr_d1');
@@ -175,85 +177,100 @@ $(function(){
             e.preventDefault();
             ck_toggle = "1";
         }
-        console.log(port_elem.dataset.value);
+        console.log("pf_BN: "+port_elem.dataset.value);
     }
 
     m_pf.addEventListener('click', port_nb);
 
 
 
-    var jq_pf1b = document.querySelector("#pf1back");
-    var jq_pf2b = document.querySelector("#pf2back");
-    var jq_pf3b = document.querySelector("#pf3back");
-    var jq_pf4b = document.querySelector("#pf4back");
-    var jq_pf5b = document.querySelector("#pf5back");
-    var jq_pfmb = document.querySelector("#pfmback");
+    var pf1b = document.querySelector("#pf1back");
+    var pf2b = document.querySelector("#pf2back");
+    var pf3b = document.querySelector("#pf3back");
+    var pf4b = document.querySelector("#pf4back");
+    var pf5b = document.querySelector("#pf5back");
+    var pfmb = document.querySelector("#pfmback");
 
-    var jq_pf1n = document.querySelector("#pf1next");
-    var jq_pf2n = document.querySelector("#pf2next");
-    var jq_pf3n = document.querySelector("#pf3next");
-    var jq_pf4n = document.querySelector("#pf4next");
-    var jq_pf5n = document.querySelector("#pf5next");
-    var jq_pfmn = document.querySelector("#pfmnext");
+    var pf1n = document.querySelector("#pf1next");
+    var pf2n = document.querySelector("#pf2next");
+    var pf3n = document.querySelector("#pf3next");
+    var pf4n = document.querySelector("#pf4next");
+    var pf5n = document.querySelector("#pf5next");
+    var pfmn = document.querySelector("#pfmnext");
+
+
+    var jq_pf1b = $("#pf1back");
+    var jq_pf2b = $("#pf2back");
+    var jq_pf3b = $("#pf3back");
+    var jq_pf4b = $("#pf4back");
+    var jq_pf5b = $("#pf5back");
+    var jq_pfmb = $("#pfmback");
+
+    var jq_pf1n = $("#pf1next");
+    var jq_pf2n = $("#pf2next");
+    var jq_pf3n = $("#pf3next");
+    var jq_pf4n = $("#pf4next");
+    var jq_pf5n = $("#pf5next");
+    var jq_pfmn = $("#pfmnext");
 
     window.addEventListener('scroll', function() {
         var b = window.scrollY;
 
         if((b >=86419) && (b < 91499)) { 
             // pf1
-            jq_pf1b.style.visibility = "visible";
-            jq_pf1n.style.visibility = "visible";
+            pf1b.style.visibility = "visible";
+            pf1n.style.visibility = "visible";
 
         }
         else{
-            jq_pf1b.style.visibility = "hidden";
-            jq_pf1n.style.visibility = "hidden";
+            pf1b.style.visibility = "hidden";
+            pf1n.style.visibility = "hidden";
         }
         if((b >=107499) && (b < 114499)) {
             // pf2
-            jq_pf2b.style.visibility = "visible";
-            jq_pf2n.style.visibility = "visible";
+            pf2b.style.visibility = "visible";
+            pf2n.style.visibility = "visible";
         }
         else{
-            jq_pf2b.style.visibility = "hidden";
-            jq_pf2n.style.visibility = "hidden";
+            pf2b.style.visibility = "hidden";
+            pf2n.style.visibility = "hidden";
         }
         if((b >=137370) && (b < 144370)) {
             // pf3
-            jq_pf3b.style.visibility = "visible";
-            jq_pf3n.style.visibility = "visible";
+            pf3b.style.visibility = "visible";
+            pf3n.style.visibility = "visible";
         }
         else{
-            jq_pf3b.style.visibility = "hidden";
-            jq_pf3n.style.visibility = "hidden";
+            pf3b.style.visibility = "hidden";
+            pf3n.style.visibility = "hidden";
         }
         if((b >=163483) && (b < 170483)) {
             // pf4
-            jq_pf4b.style.visibility = "visible";
-            jq_pf4n.style.visibility = "visible";
+            pf4b.style.visibility = "visible";
+            pf4n.style.visibility = "visible";
         }
         else{
-            jq_pf4b.style.visibility = "hidden";
-            jq_pf4n.style.visibility = "hidden";
+            pf4b.style.visibility = "hidden";
+            pf4n.style.visibility = "hidden";
         }
         
         if((b >=186503) && (b < 193503)) {
             // pf5
-            jq_pf5b.style.visibility = "visible";
-            jq_pf5n.style.visibility = "visible";
+            pf5b.style.visibility = "visible";
+            pf5n.style.visibility = "visible";
         }
         else{
-            jq_pf5b.style.visibility = "hidden";
-            jq_pf5n.style.visibility = "hidden";
+            pf5b.style.visibility = "hidden";
+            pf5n.style.visibility = "hidden";
         }
         if((b >=204717) && (b < 211717)) {
             // pfmore
-            jq_pfmb.style.visibility = "visible";
-            jq_pfmn.style.visibility = "visible";
+            pfmb.style.visibility = "visible";
+            pfmn.style.visibility = "visible";
         }
         else{
-            jq_pfmb.style.visibility = "hidden";
-            jq_pfmn.style.visibility = "hidden";
+            pfmb.style.visibility = "hidden";
+            pfmn.style.visibility = "hidden";
         }
 
     });
@@ -355,75 +372,168 @@ $(function(){
     //////////////////////////////////////////////////////////
 
 
-    let hfm_toggle = "0";
-    let hfm_bt = $(".hfm_btn")
-    let hfm_li = $(".hfm_list")
-    let mn_h = $(".menu_hide")
+    let j_hfm_toggle = "0";
+    let j_hfm_bt = $(".hfm_btn")
+    let j_hfm_li = $(".hfm_list")
+    let j_mn_h = $(".menu_hide")
 
-    hfm_bt.click(function(){//버튼을 클릭했을 때
-        
+    let hfm_toggle = "0";
+    let hfm_bt = document.querySelector(".hfm_btn");
+    let hfm_li = document.querySelector(".hfm_list");
+    var mn_h = document.querySelector(".menu_hide");
+
+    hfm_bt.addEventListener('click', () => {//버튼을 클릭했을 때
         
         if (hfm_toggle == "0") {
             hfm_toggle = "1";
 
-            hfm_li.css('display','block');
-
-            pf_hb.click(function(e){//버튼을 클릭했을 때
-                var c_target = $(e.target).parent().attr("class");
-                var menu_hide = $(e.target).attr("class");
-                if(c_target != hfm_bt.attr("class")){
-                    hfm_toggle = "0";
-                    hfm_li.css('display','none');
-                }
-                if(c_target == hfm_li.attr("class")){
-                    hfm_toggle = "1";
-                    hfm_li.css('display','block');
-                }
-                if (menu_hide == mn_h.attr("class")) {
-                    hfm_toggle = "0";
-                    hfm_li.css('display','none');
-                }
-
-                e.preventDefault();
-                
-                // console.log("c_target: "+c_target);
-            });
+            hfm_li.style.display = 'block'
         }
         else{
             hfm_toggle = "0";
-            hfm_li.css('display','none');
+            hfm_li.style.display = 'none'
         }
 
 
 
     });
 
-    let mdh_toggle = "0";
-    let mbh_h = $('.mbh_h');
-    let mbh_f = $('.mbh_f');
+    
+    pf_hb.addEventListener('click', function(e){
+            var c_target = e.target.parentNode.getAttribute('class');
+            var menu_hide = e.target.getAttribute('class');
+            if(c_target != hfm_bt.classList){
+                hfm_toggle = "0";
+                hfm_li.style.display = 'none'
+            }
+            if(c_target == hfm_li.classList){
+                hfm_toggle = "1";
+                hfm_li.style.display = 'block'
+            }
+            if (menu_hide == mn_h.classList) {
+                hfm_toggle = "0";
+                hfm_li.style.display = 'none'
+            }
 
-    mn_h.click(function(){//버튼을 클릭했을 때
+            e.preventDefault();
+            
+            console.log("c_target: "+c_target);
+            console.log("menu_hide: "+menu_hide);
+        // };
+    });
+
+    // window.addEventListener('click', target_con);
+
+    // j_hfm_bt.click(function(){//버튼을 클릭했을 때
+        
+        
+    //     if (j_hfm_toggle == "0") {
+    //         j_hfm_toggle = "1";
+
+    //         j_hfm_li.css('display','block');
+
+    //         j_pf_hb.click(function(e){//버튼을 클릭했을 때
+    //             var c_target = $(e.target).parent().attr("class");
+    //             var menu_hide = $(e.target).attr("class");
+    //             if(c_target != j_hfm_bt.attr("class")){
+    //                 j_hfm_toggle = "0";
+    //                 j_hfm_li.css('display','none');
+    //             }
+    //             if(c_target == j_hfm_li.attr("class")){
+    //                 j_hfm_toggle = "1";
+    //                 j_hfm_li.css('display','block');
+    //             }
+    //             if (menu_hide == j_mn_h.attr("class")) {
+    //                 j_hfm_toggle = "0";
+    //                 j_hfm_li.css('display','none');
+    //             }
+
+    //             e.preventDefault();
+                
+    //             // console.log("c_target: "+c_target);
+    //         });
+    //     }
+    //     else{
+    //         j_hfm_toggle = "0";
+    //         j_hfm_li.css('display','none');
+    //     }
+
+
+
+    // });
+
+    
+
+    let mdh_toggle = "0";
+    let mbh_h = document.querySelector('.mbh_h');
+    let mbh_f = document.querySelector('.mbh_f');
+    let m_hr = document.querySelector('header');
+    let m_fr = document.querySelector('footer');
+
+    let j_mbh_h = $('.mbh_h');
+    let j_mbh_f = $('.mbh_f');
+
+    mn_h.addEventListener('click', function(){//버튼을 클릭했을 때
 
         mdh_toggle = "1";
         
-        hfm_li.toggle();
-        m_hr.animate({ top:"-10vh"},1000); 
-        m_fr.animate({ bottom:"-10vh"},1000); 
-        mbh_h.css('display','block');
-        mbh_f.css('display','block');
-        m_hr.animate({ top:"-10vh"},1000); 
-        m_fr.animate({ bottom:"-10vh"},1000);
+    //     // hfm_li.toggle();
+        m_hr.animate([{ top:"-10vh"}], { fill: "forwards", duration: 500, behavior: 'smooth'}); 
+        m_fr.animate([{ bottom:"-10vh"}], { fill: "forwards", duration: 500, behavior: 'smooth'}); 
+        mbh_h.style.display = 'block'
+        mbh_f.style.display = 'block'
+    //     // m_hr.animate({ top:"-10vh", behavior: 'smooth', duration: 1000}); 
+    //     // m_fr.animate({ bottom:"-10vh", behavior: 'smooth', duration: 1000});
+
+        console.log("menu_hide click");
 
     });
 
 
-    mbh_f.on('mouseover', () => {
+    mbh_f.addEventListener('mouseover', function(){//버튼을 클릭했을 때
 
         mdh_toggle = "0";
 
-        m_hr.animate({ top:"0vh"},1000); 
-        m_fr.animate({ bottom:"0vh"},1000); 
+        m_hr.animate([{ top:"0vh"}], { fill: "forwards", duration: 500, behavior: 'smooth'});
+        m_fr.animate([{ bottom:"0vh"}], { fill: "forwards", duration: 500, behavior: 'smooth'}); 
+        mbh_h.style.display = 'none'
+        mbh_f.style.display = 'none'
+
+        console.log("j_mbh_f mouseover");
     });
+
+
+    
+
+
+    // let j_hfm_li = $(".hfm_list");
+    // let j_m_hr = $('header');
+    // let j_m_fr = $('footer');
+    // let mdh_toggle = "0";
+    // let j_mbh_h = $('.mbh_h');
+    // let j_mbh_f = $('.mbh_f');
+
+    // j_mn_h.click(function(){//버튼을 클릭했을 때
+
+    //     mdh_toggle = "1";
+        
+        // j_hfm_li.toggle();
+    //     j_m_hr.animate({ top:"-10vh"},1000); 
+    //     j_m_fr.animate({ bottom:"-10vh"},1000); 
+    //     j_mbh_h.css('display','block');
+    //     j_mbh_f.css('display','block');
+
+    //     console.log("menu_hide click");
+    // });
+
+
+    // j_mbh_f.on('mouseover', () => {
+
+    //     mdh_toggle = "0";
+
+    //     j_m_hr.animate({ top:"0vh"},1000); 
+    //     j_m_fr.animate({ bottom:"0vh"},1000); 
+    // });
 
 
     // //////////////////////////////////////////////////////////
@@ -481,11 +591,11 @@ $(function(){
         if(toggle=="0"){
 
             toggle = "1";
-            pf_hb.css("background","black");
-            pf_hb.css("background-color","black");
+            j_pf_hb.css("background","black");
+            j_pf_hb.css("background-color","black");
             skr_by.css("background","black");
-            m_hr.css({filter: "invert(100)"}); 
-            m_fr.css({filter: "invert(100)"});
+            j_m_hr.css({filter: "invert(100)"}); 
+            j_m_fr.css({filter: "invert(100)"});
             sec_hm.css("background-color","black");
             sec_hm_h2.css("color","white");
             sec1_vimg.css({filter: "invert(100)"});
@@ -544,11 +654,11 @@ $(function(){
         }
         else{
             toggle = "0";
-            pf_hb.css("background","white");
-            pf_hb.css("background-color","white");
+            j_pf_hb.css("background","white");
+            j_pf_hb.css("background-color","white");
             skr_by.css("background","white");
-            m_hr.css({filter: "invert(0)"}); 
-            m_fr.css({filter: "invert(0)"});
+            j_m_hr.css({filter: "invert(0)"}); 
+            j_m_fr.css({filter: "invert(0)"});
             sec_hm.css("background-color","white");
             sec_hm_h2.css("color","black");
             sec1_vimg.css({filter: "invert(0)"});
@@ -612,10 +722,10 @@ $(function(){
 
         if(toggle=="0"){
             toggle = "1";
-            pf_hb.css("background","black");
-            pf_hb.css("background-color","black");
-            m_hr.css({filter: "invert(100)"}); 
-            m_fr.css({filter: "invert(100)"});
+            j_pf_hb.css("background","black");
+            j_pf_hb.css("background-color","black");
+            j_m_hr.css({filter: "invert(100)"}); 
+            j_m_fr.css({filter: "invert(100)"});
             sec_hm.css("background-color","black");
             sec_hm_h2.css("color","white");
             sec1_vimg.css({filter: "invert(100)"});
@@ -663,10 +773,10 @@ $(function(){
         }
         else{
             toggle = "0";
-            pf_hb.css("background","white");
-            pf_hb.css("background-color","white");
-            m_hr.css({filter: "invert(0)"}); 
-            m_fr.css({filter: "invert(0)"});
+            j_pf_hb.css("background","white");
+            j_pf_hb.css("background-color","white");
+            j_m_hr.css({filter: "invert(0)"}); 
+            j_m_fr.css({filter: "invert(0)"});
             sec_hm.css("background-color","white");
             sec_hm_h2.css("color","black");
             sec1_vimg.css({filter: "invert(0)"});
@@ -741,16 +851,16 @@ $(function(){
         // $(this).parent().next().css({visibility:"visible"});
         // pp.css('display','block');
         // pp.css({visibility:"visible"});
-        m_hr.css('display','none');
-        m_hr.css({visibility:"hidden"});
-        m_fr.css('display','none');
-        m_fr.css({visibility:"hidden"});
-        pf_hb.css("overflow", "hidden");
+        j_m_hr.css('display','none');
+        j_m_hr.css({visibility:"hidden"});
+        j_m_fr.css('display','none');
+        j_m_fr.css({visibility:"hidden"});
+        j_pf_hb.css("overflow", "hidden");
 
-        mbh_h.css('display','none');
-        mbh_f.css('display','none');
+        j_mbh_h.css('display','none');
+        j_mbh_f.css('display','none');
 
-        hfm_li.css('display','none');
+        j_hfm_li.css('display','none');
 
         position = $(this).parent().next().offset().top;
         // console.log("position: "+position);
@@ -759,7 +869,7 @@ $(function(){
 
         pp.animate({scrollTop:0},0); 
         pp.stop(false,true);
-        pf_hb.animate({ scrollTop:position},0); 
+        j_pf_hb.animate({ scrollTop:position},0); 
 
 
         // $('img[usemap]').rwdImageMaps();
@@ -817,16 +927,16 @@ $(function(){
     // $('#volvo_pop').click(function() {
     //     $('.volvo').css('display','block');
 
-    //     m_hr.css('display','none');
-    //     m_hr.css({visibility:"hidden"});
-    //     m_fr.css('display','none');
-    //     m_fr.css({visibility:"hidden"});
-    //      pf_hb.css("overflow", "hidden");
+    //     j_m_hr.css('display','none');
+    //     j_m_hr.css({visibility:"hidden"});
+    //     j_m_fr.css('display','none');
+    //     j_m_fr.css({visibility:"hidden"});
+    //      j_pf_hb.css("overflow", "hidden");
 
-    //     mbh_h.css('display','none');
-    //     mbh_f.css('display','none');
+    //     j_mbh_h.css('display','none');
+    //     j_mbh_f.css('display','none');
 
-    //     hfm_li.css('display','none');
+    //     j_hfm_li.css('display','none');
 
     //     position = $(this).parent().next().offset().top;
     //     // console.log("position: "+position);
@@ -847,16 +957,16 @@ $(function(){
         // pp.fadeOut(100);
         pp.css('display','none');
         // pp.css('display','none');
-        m_hr.css('display','block');
-        m_hr.css({visibility:"visible"});
-        m_fr.css('display','block');
-        m_fr.css({visibility:"visible"});
-        pf_hb.animate({ scrollTop:position},0); 
-        pf_hb.css("overflow", "auto");
+        j_m_hr.css('display','block');
+        j_m_hr.css({visibility:"visible"});
+        j_m_fr.css('display','block');
+        j_m_fr.css({visibility:"visible"});
+        j_pf_hb.animate({ scrollTop:position},0); 
+        j_pf_hb.css("overflow", "auto");
 
-        mbh_f.css('display','block');
+        j_mbh_f.css('display','block');
         
-        hfm_li.css('display','none');
+        j_hfm_li.css('display','none');
 
         curs.removeClass('pf_cursor');
 
@@ -1220,20 +1330,20 @@ $(function(){
         // $('.cursor ').delay(2000).css('display','block');
         btwp.fadeOut(500);
         // pp.css('display','none');
-        // m_hr.delay(2000).css('display','block');
-        m_hr.delay(1000).css({visibility:"visible"});
-        // m_fr.delay(2000).css('display','block');
-        m_fr.delay(1000).css({visibility:"visible"});
-        m_hr.delay(1000).fadeIn(100); 
-        m_fr.delay(1000).fadeIn(100); 
+        // j_m_hr.delay(2000).css('display','block');
+        j_m_hr.delay(1000).css({visibility:"visible"});
+        // j_m_fr.delay(2000).css('display','block');
+        j_m_fr.delay(1000).css({visibility:"visible"});
+        j_m_hr.delay(1000).fadeIn(100); 
+        j_m_fr.delay(1000).fadeIn(100); 
 
-        pf_hb.delay(2000).animate({ scrollTop:position},0); 
-        pf_hb.delay(2000).css("overflow", "auto");
+        j_pf_hb.delay(2000).animate({ scrollTop:position},0); 
+        j_pf_hb.delay(2000).css("overflow", "auto");
         sn.css('display','block');
         sec_hm_h2.delay(2000).fadeIn(3500); 
 
-        pf_hb.delay(2000).css({overflow:"auto"});//body스크롤없앰}
-        pf_hb.delay(2000).css({position:"static"});
+        j_pf_hb.delay(2000).css({overflow:"auto"});//body스크롤없앰}
+        j_pf_hb.delay(2000).css({position:"static"});
 
         sd_tg.text('Sound on');
         p_sd_tg_img.attr("src","images/volume.svg");
@@ -1335,17 +1445,17 @@ $(function(){
         bgm_if_h3.fadeOut(500);
         btwp.fadeOut(500);
 
-        m_hr.css('display','block');
-        m_hr.css({visibility:"visible"});
-        m_fr.css('display','block');
-        m_fr.css({visibility:"visible"});
-        pf_hb.animate({ scrollTop:position},0); 
-        pf_hb.css("overflow", "auto");
+        j_m_hr.css('display','block');
+        j_m_hr.css({visibility:"visible"});
+        j_m_fr.css('display','block');
+        j_m_fr.css({visibility:"visible"});
+        j_pf_hb.animate({ scrollTop:position},0); 
+        j_pf_hb.css("overflow", "auto");
         sn.css('display','block');
         sec_hm_h2.fadeIn(4500); 
 
-        pf_hb.css({overflow:"auto"});//body스크롤없앰}
-        pf_hb.css({position:"static"});
+        j_pf_hb.css({overflow:"auto"});//body스크롤없앰}
+        j_pf_hb.css({position:"static"});
 
         sd_tg.text('Sound off');
         p_sd_tg_img.attr("src","images/volume_mute.svg");
@@ -1432,7 +1542,7 @@ $(function(){
         if(screen_toggle=="0"){
             screen_toggle = "1";
             pp_fc_tgg_img.attr("src","images/fullscreen_exit.svg");
-            pf_hb.mousewheel(function(event, delta) {
+            j_pf_hb.mousewheel(function(event, delta) {
                 if (!(navigator.appVersion.indexOf("Mac") != -1)) { 
                     $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 880)) }, 830, "swing");
                 }
@@ -1447,7 +1557,7 @@ $(function(){
         else{
             screen_toggle = "0"; 
             pp_fc_tgg_img.attr("src","images/fullscreen.svg");
-            pf_hb.mousewheel(function(event, delta) {
+            j_pf_hb.mousewheel(function(event, delta) {
                 if (!(navigator.appVersion.indexOf("Mac") != -1)) { 
                     $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 1)) }, 830, "swing");
                 }
@@ -1497,8 +1607,8 @@ $(function(){
     // $(".more").click(function(){//버튼을 클릭했을 때
     //     pfmb.css('display','none');
     //     pfmn.css('display','none');
-    //     m_hr.animate({ top:"-10vh"},500); 
-    //     m_fr.animate({ bottom:"-10vh"},500); 
+    //     j_m_hr.animate({ top:"-10vh"},500); 
+    //     j_m_fr.animate({ bottom:"-10vh"},500); 
 
     //     var frameNumm = 0;
     //     var targetFN = 0;
@@ -1628,19 +1738,6 @@ $(function(){
     // let pf5 = document.querySelector(".pf5");
     // let pf_more = document.querySelector(".pf_more");
 
-    let pf1b = document.querySelector("#pf1back");
-    let pf1n = document.querySelector("#pf1next");
-    let pf2b = document.querySelector("#pf2back");
-    let pf2n = document.querySelector("#pf2next");
-    let pf3b = document.querySelector("#pf3back");
-    let pf3n = document.querySelector("#pf3next");
-    let pf4b = document.querySelector("#pf4back");
-    let pf4n = document.querySelector("#pf4next");
-    let pf5b = document.querySelector("#pf5back");
-    let pf5n = document.querySelector("#pf5next");
-    let pfmb = document.querySelector("#pfmback");
-    let pfmn = document.querySelector("#pfmnext");
-
     let eye_hide1 = document.querySelector(".eye_hide1");
     let eye_hide2 = document.querySelector(".eye_hide2");
 
@@ -1697,7 +1794,7 @@ $(function(){
     let ck_toggle = "0";
 
 
-    // JQ port remote control
+    // JQ footer port remote control
 
     let pf_rm = $('.pf-nav');
     
@@ -1712,7 +1809,7 @@ $(function(){
         port_move();
 
         function port_move(){
-            pf_hb.animate({ scrollTop: pf_elem.data('value')},1000); 
+            j_pf_hb.animate({ scrollTop: pf_elem.data('value')},1000); 
             e.preventDefault();
             ck_toggle = "1";
         }
@@ -1720,7 +1817,7 @@ $(function(){
         // console.log(pf_elem.data('value'));
     }
 
-    m_fr.click(port_remote);
+    j_m_fr.click(port_remote);
 
 
 
@@ -2150,7 +2247,7 @@ $(function(){
 
     // chrome left bottom a tag tooltip remove
 
-    pf_hb.on('mouseover', 'a', function (e) {
+    j_pf_hb.on('mouseover', 'a', function (e) {
             var $link = $(this),
                 href = $link.attr('href') || $link.data("href");
     
