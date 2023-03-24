@@ -1716,76 +1716,74 @@ $(function(){
 
 
 
-    var pfnv_li0_sn = $('#pf-nav ul li:eq(0) span');
-    var pfnv_li1_sn = $('#pf-nav ul li:eq(1) span');
-    var pfnv_li2_sn = $('#pf-nav ul li:eq(2) span');
-    var pfnv_li3_sn = $('#pf-nav ul li:eq(3) span');
-    var pfnv_li4_sn = $('#pf-nav ul li:eq(4) span');
-    var pfnv_li5_sn = $('#pf-nav ul li:eq(5) span');
+    var pfnv_li0_sn = document.querySelector('.pf-nav0');
+    var pfnv_li1_sn = document.querySelector('.pf-nav1');
+    var pfnv_li2_sn = document.querySelector('.pf-nav2');
+    var pfnv_li3_sn = document.querySelector('.pf-nav3');
+    var pfnv_li4_sn = document.querySelector('.pf-nav4');
+    var pfnv_li5_sn = document.querySelector('.pf-nav5');
 
-    $(window).scroll(function(){
-        var b = $(document).scrollTop(); 
+    window.addEventListener('scroll', function() {
+        var b = window.scrollY;
         if((b >=63996) && (b < 86420)) {
-            pfnv_li0_sn.removeClass("pf_nav_active");
-            pfnv_li1_sn.removeClass("pf_nav_active");
-            pfnv_li2_sn.removeClass("pf_nav_active");
-            pfnv_li3_sn.removeClass("pf_nav_active");
-            pfnv_li4_sn.removeClass("pf_nav_active");
-            pfnv_li5_sn.removeClass("pf_nav_active");
+            pfnv_li0_sn.classList.remove("pf_nav_active");
+            pfnv_li1_sn.classList.remove("pf_nav_active");
+            pfnv_li2_sn.classList.remove("pf_nav_active");
+            pfnv_li3_sn.classList.remove("pf_nav_active");
+            pfnv_li4_sn.classList.remove("pf_nav_active");
+            pfnv_li5_sn.classList.remove("pf_nav_active");
         }
         if((b >=86420) && (b < 91499)) {
-            pfnv_li0_sn.addClass("pf_nav_active");
-            pfnv_li1_sn.removeClass("pf_nav_active");
-            pfnv_li2_sn.removeClass("pf_nav_active");
-            pfnv_li3_sn.removeClass("pf_nav_active");
-            pfnv_li4_sn.removeClass("pf_nav_active");
-            pfnv_li5_sn.removeClass("pf_nav_active");
+            pfnv_li0_sn.classList.add("pf_nav_active");
+            pfnv_li1_sn.classList.remove("pf_nav_active");
+            pfnv_li2_sn.classList.remove("pf_nav_active");
+            pfnv_li3_sn.classList.remove("pf_nav_active");
+            pfnv_li4_sn.classList.remove("pf_nav_active");
+            pfnv_li5_sn.classList.remove("pf_nav_active");
         }
         if((b >=107499) && (b < 114499)) {
-            pfnv_li0_sn.removeClass("pf_nav_active");
-            pfnv_li1_sn.addClass("pf_nav_active");
-            pfnv_li2_sn.removeClass("pf_nav_active");
-            pfnv_li3_sn.removeClass("pf_nav_active");
-            pfnv_li4_sn.removeClass("pf_nav_active");
-            pfnv_li5_sn.removeClass("pf_nav_active");
-
+            pfnv_li0_sn.classList.remove("pf_nav_active");
+            pfnv_li1_sn.classList.add("pf_nav_active");
+            pfnv_li2_sn.classList.remove("pf_nav_active");
+            pfnv_li3_sn.classList.remove("pf_nav_active");
+            pfnv_li4_sn.classList.remove("pf_nav_active");
+            pfnv_li5_sn.classList.remove("pf_nav_active");
         }
         if((b >=137370) && (b < 144370)) {
-            pfnv_li0_sn.removeClass("pf_nav_active");
-            pfnv_li1_sn.removeClass("pf_nav_active");
-            pfnv_li2_sn.addClass("pf_nav_active");
-            pfnv_li3_sn.removeClass("pf_nav_active");
-            pfnv_li4_sn.removeClass("pf_nav_active");
-            pfnv_li5_sn.removeClass("pf_nav_active");
+            pfnv_li0_sn.classList.remove("pf_nav_active");
+            pfnv_li1_sn.classList.remove("pf_nav_active");
+            pfnv_li2_sn.classList.add("pf_nav_active");
+            pfnv_li3_sn.classList.remove("pf_nav_active");
+            pfnv_li4_sn.classList.remove("pf_nav_active");
+            pfnv_li5_sn.classList.remove("pf_nav_active");
         }
         if((b >=163483) && (b < 170483)) {
-            pfnv_li0_sn.removeClass("pf_nav_active");
-            pfnv_li1_sn.removeClass("pf_nav_active");
-            pfnv_li2_sn.removeClass("pf_nav_active");
-            pfnv_li3_sn.addClass("pf_nav_active");
-            pfnv_li4_sn.removeClass("pf_nav_active");
-            pfnv_li5_sn.removeClass("pf_nav_active");
+            pfnv_li0_sn.classList.remove("pf_nav_active");
+            pfnv_li1_sn.classList.remove("pf_nav_active");
+            pfnv_li2_sn.classList.remove("pf_nav_active");
+            pfnv_li3_sn.classList.add("pf_nav_active");
+            pfnv_li4_sn.classList.remove("pf_nav_active");
+            pfnv_li5_sn.classList.remove("pf_nav_active");
         }
         if((b >=186502) && (b < 193503)) {
-            pfnv_li0_sn.removeClass("pf_nav_active");
-            pfnv_li1_sn.removeClass("pf_nav_active");
-            pfnv_li2_sn.removeClass("pf_nav_active");
-            pfnv_li3_sn.removeClass("pf_nav_active");
-            pfnv_li4_sn.addClass("pf_nav_active");
-            pfnv_li5_sn.removeClass("pf_nav_active");
+            pfnv_li0_sn.classList.remove("pf_nav_active");
+            pfnv_li1_sn.classList.remove("pf_nav_active");
+            pfnv_li2_sn.classList.remove("pf_nav_active");
+            pfnv_li3_sn.classList.remove("pf_nav_active");
+            pfnv_li4_sn.classList.add("pf_nav_active");
+            pfnv_li5_sn.classList.remove("pf_nav_active");
         }
         if((b >=204717) && (b < 211717)) {
-            pfnv_li0_sn.removeClass("pf_nav_active");
-            pfnv_li1_sn.removeClass("pf_nav_active");
-            pfnv_li2_sn.removeClass("pf_nav_active");
-            pfnv_li3_sn.removeClass("pf_nav_active");
-            pfnv_li4_sn.removeClass("pf_nav_active");
-            pfnv_li5_sn.addClass("pf_nav_active");
+            pfnv_li0_sn.classList.remove("pf_nav_active");
+            pfnv_li1_sn.classList.remove("pf_nav_active");
+            pfnv_li2_sn.classList.remove("pf_nav_active");
+            pfnv_li3_sn.classList.remove("pf_nav_active");
+            pfnv_li4_sn.classList.remove("pf_nav_active");
+            pfnv_li5_sn.classList.add("pf_nav_active");
         }
     });
 
     
-
     for(var i = 0; i < 6; i++ ){
         pf_ani[i].addEventListener("mouseover", () => {
             mouseCursor.classList.add("pf_cursor");
