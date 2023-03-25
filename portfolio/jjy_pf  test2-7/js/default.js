@@ -553,15 +553,7 @@ $(function(){
     var sec1_vimg = $(".home .sec1 .visual img");
     var sec1_ty_h3 = $(".home .sec1 .typo h3");
     var sec1_ty_p =  $(".home .sec1 .typo p");
-    var sec2_ty2_h3 = $(".sec2 .typo2 h3");
-    var sec2_ty2_p = $(".sec2 .typo2 p");
-    var sec2_ty2_d1 = $(".sec2 .typo2 .d1");
-    var sec2_ty2_d2 = $(".sec2 .typo2 .d2");
-    var sec2_ty2_d3 = $(".sec2 .typo2 .d3");
-    var sec2_ty2_d4 = $(".sec2 .typo2 .d4");
-    var sec2_ty2_d5 = $(".sec2 .typo2 .d5");
-    var sec2_ty2_d6 = $(".sec2 .typo2 .d6");
-    
+    var sec2_ty2 = $(".typo2");
     var bkb = $(".bkbox");
     var sc1 = $("#screen");
     var sc2 = $("#screen2");
@@ -578,7 +570,95 @@ $(function(){
     var hr_rn = $(".hover_runner");
     var skr_by = $("#skrollr-body");
 
+    function dark_on(){
+        toggle = "1";
+        j_pf_hb.css("background","black");
+        j_pf_hb.css("background-color","black");
+        skr_by.css("background","black");
+        j_m_hr.css({filter: "invert(100)"}); 
+        j_m_fr.css({filter: "invert(100)"});
+        sec_hm.css("background-color","black");
+        sec_hm_h2.css("color","white");
+        sec1_vimg.css({filter: "invert(100)"});
+        sec1_ty_h3.css("color","white");
+        sec1_ty_p.css('color','rgba(255,255,255,0.4)');
+        j_m_pf.css("background-color","black");
+        sec2_ty2.css({filter: "invert(100)"});
+        bkb.css("background-color","white");
+        sc1.css({filter: "invert(100)"});
+        jq_pf1b.css("color","white");
+        jq_pf2b.css("color","white");
+        jq_pf3b.css("color","white");
+        jq_pf4b.css("color","white");
+        jq_pf5b.css("color","white");
+        jq_pfmb.css("color","white");
+        jq_pf1n.css("color","white");
+        jq_pf2n.css("color","white");
+        jq_pf3n.css("color","white");
+        jq_pf4n.css("color","white");
+        jq_pf5n.css("color","white");
+        jq_pfmn.css("color","white");
+        eh_1.css("background-color","black");
+        eh_2.css("background-color","black");
+        pf4_yh3.css("background-color","black");
+        sc2.css({filter: "invert(100)"});
+        p_h.css({filter: "invert(100)"});
+        p_f.css({filter: "invert(100)"});
+        hfm_lt_li.css({filter: "invert(100)"});
+        ph_in_h3.css('font-weight', "400");  
+        ce.css('font-weight', "400");  
+        pf_in.css('font-weight', "400");  
+        dkm.text('Dark mode on');
 
+        pfm_bg.css("background-color","black");
+        pfm_img.css({filter: "invert(100)"});
+        hr_rn.css({filter: "invert(100)"});
+    };
+
+    function dark_off(){
+        toggle = "0";
+        j_pf_hb.css("background","white");
+        j_pf_hb.css("background-color","white");
+        skr_by.css("background","white");
+        j_m_hr.css({filter: "invert(0)"}); 
+        j_m_fr.css({filter: "invert(0)"});
+        sec_hm.css("background-color","white");
+        sec_hm_h2.css("color","black");
+        sec1_vimg.css({filter: "invert(0)"});
+        sec1_ty_h3.css("color","black");
+        sec1_ty_p.css('color','rgba(0,0,0,0.4)');
+        j_m_pf.css("background-color","white");
+        sec2_ty2.css({filter: "invert(0)"});
+        bkb.css("background-color","black");
+        sc1.css({filter: "invert(0)"});
+        jq_pf1b.css("color","black");
+        jq_pf2b.css("color","black");
+        jq_pf3b.css("color","black");
+        jq_pf4b.css("color","black");
+        jq_pf5b.css("color","black");
+        jq_pfmb.css("color","black");
+        jq_pf1n.css("color","black");
+        jq_pf2n.css("color","black");
+        jq_pf3n.css("color","black");
+        jq_pf4n.css("color","black");
+        jq_pf5n.css("color","black");
+        jq_pfmn.css("color","black");
+        eh_1.css("background-color","white");
+        eh_2.css("background-color","white");
+        pf4_yh3.css("background-color","white");
+        sc2.css({filter: "invert(0)"});
+        p_h.css({filter: "invert(0)"});
+        p_f.css({filter: "invert(0)"});
+        hfm_lt_li.css({filter: "invert(0)"});
+        ph_in_h3.css('font-weight', "300");  
+        ce.css('font-weight', "300");  
+        ph_in.css('font-weight', "300");  
+        dkm.text('Dark mode off');
+
+        pfm_bg.css("background-color","white");
+        pfm_img.css({filter: "invert(0)"});
+        hr_rn.css({filter: "invert(0)"});
+    };
 
 
 
@@ -589,130 +669,10 @@ $(function(){
         var id_target = $(e.target).attr("id");
 
         if(toggle=="0"){
-
-            toggle = "1";
-            j_pf_hb.css("background","black");
-            j_pf_hb.css("background-color","black");
-            skr_by.css("background","black");
-            j_m_hr.css({filter: "invert(100)"}); 
-            j_m_fr.css({filter: "invert(100)"});
-            sec_hm.css("background-color","black");
-            sec_hm_h2.css("color","white");
-            sec1_vimg.css({filter: "invert(100)"});
-            sec1_ty_h3.css("color","white");
-            sec1_ty_p.css('color','rgba(255,255,255,0.4)');
-            j_m_pf.css("background-color","black");
-            sec2_ty2_h3.css("color","white");
-            sec2_ty2_p.css('color','rgba(255,255,255,0.4)');
-            sec2_ty2_d1.css("background-color","white");
-            sec2_ty2_d2.css("background-color","white");
-            sec2_ty2_d3.css("background-color","white");
-            sec2_ty2_d4.css("background-color","white");
-            sec2_ty2_d5.css('background-color','rgba(255,255,255,0.4)');
-            sec2_ty2_d6.css('background-color','rgba(255,255,255,0.4)');
-            bkb.css("background-color","white");
-            sc1.css({filter: "invert(100)"});
-            jq_pf1b.css("color","white");
-            jq_pf2b.css("color","white");
-            jq_pf3b.css("color","white");
-            jq_pf4b.css("color","white");
-            jq_pf5b.css("color","white");
-            jq_pfmb.css("color","white");
-            jq_pf1n.css("color","white");
-            jq_pf2n.css("color","white");
-            jq_pf3n.css("color","white");
-            jq_pf4n.css("color","white");
-            jq_pf5n.css("color","white");
-            jq_pfmn.css("color","white");
-            eh_1.css("background-color","black");
-            eh_2.css("background-color","black");
-            pf4_yh3.css("background-color","black");
-            sc2.css({filter: "invert(100)"});
-            p_h.css({filter: "invert(100)"});
-            p_f.css({filter: "invert(100)"});
-            hfm_lt_li.css({filter: "invert(100)"});
-            ph_in_h3.css('font-weight', "400");  
-            ce.css('font-weight', "400");  
-            pf_in.css('font-weight', "400");  
-            dkm.text('Dark mode on');
-
-            pfm_bg.css("background-color","black");
-            pfm_img.css({filter: "invert(100)"});
-            hr_rn.css({filter: "invert(100)"});
-
-            // if(id_target != p_dkm.attr("id")){
-            //     toggle = "1";
-            //     dkm.text('Dark mode on');
-            // }
-            // else{
-            //     toggle = "0";
-            //     $(".pop_darkmode a").append("<img src='images/contrast.svg' alt='contrast'>");
-            // }
-        
-            // console.log("id_target: "+id_target);
-
+            dark_on();
         }
         else{
-            toggle = "0";
-            j_pf_hb.css("background","white");
-            j_pf_hb.css("background-color","white");
-            skr_by.css("background","white");
-            j_m_hr.css({filter: "invert(0)"}); 
-            j_m_fr.css({filter: "invert(0)"});
-            sec_hm.css("background-color","white");
-            sec_hm_h2.css("color","black");
-            sec1_vimg.css({filter: "invert(0)"});
-            sec1_ty_h3.css("color","black");
-            sec1_ty_p.css('color','rgba(0,0,0,0.4)');
-            j_m_pf.css("background-color","white");
-            sec2_ty2_h3.css("color","black");
-            sec2_ty2_p.css('color','rgba(0,0,0,0.4)');
-            sec2_ty2_d1.css("background-color","black");
-            sec2_ty2_d2.css("background-color","black");
-            sec2_ty2_d3.css("background-color","black");
-            sec2_ty2_d4.css("background-color","black");
-            sec2_ty2_d5.css('background-color','rgba(0,0,0,0.4)');
-            sec2_ty2_d6.css('background-color','rgba(0,0,0,0.4)');
-            bkb.css("background-color","black");
-            sc1.css({filter: "invert(0)"});
-            jq_pf1b.css("color","black");
-            jq_pf2b.css("color","black");
-            jq_pf3b.css("color","black");
-            jq_pf4b.css("color","black");
-            jq_pf5b.css("color","black");
-            jq_pfmb.css("color","black");
-            jq_pf1n.css("color","black");
-            jq_pf2n.css("color","black");
-            jq_pf3n.css("color","black");
-            jq_pf4n.css("color","black");
-            jq_pf5n.css("color","black");
-            jq_pfmn.css("color","black");
-            eh_1.css("background-color","white");
-            eh_2.css("background-color","white");
-            pf4_yh3.css("background-color","white");
-            sc2.css({filter: "invert(0)"});
-            p_h.css({filter: "invert(0)"});
-            p_f.css({filter: "invert(0)"});
-            hfm_lt_li.css({filter: "invert(0)"});
-            ph_in_h3.css('font-weight', "300");  
-            ce.css('font-weight', "300");  
-            ph_in.css('font-weight', "300");  
-            dkm.text('Dark mode off');
-
-            pfm_bg.css("background-color","white");
-            pfm_img.css({filter: "invert(0)"});
-            hr_rn.css({filter: "invert(0)"});
-
-            // if(id_target != p_dkm.attr("id")){
-            //     toggle = "0";
-            //     dkm.text('Dark mode off');
-            // }
-            // else{
-            //     toggle = "1";
-            //     $(".pop_darkmode a").append("<img src='images/contrast.svg' alt='contrast'>");
-            // }
-        
-            // console.log("id_target: "+id_target);
+            dark_off();
         }
     });
 
@@ -721,106 +681,10 @@ $(function(){
         e.preventDefault();
 
         if(toggle=="0"){
-            toggle = "1";
-            j_pf_hb.css("background","black");
-            j_pf_hb.css("background-color","black");
-            j_m_hr.css({filter: "invert(100)"}); 
-            j_m_fr.css({filter: "invert(100)"});
-            sec_hm.css("background-color","black");
-            sec_hm_h2.css("color","white");
-            sec1_vimg.css({filter: "invert(100)"});
-            sec1_ty_h3.css("color","white");
-            sec1_ty_p.css('color','rgba(255,255,255,0.4)');
-            j_m_pf.css("background-color","black");
-            sec2_ty2_h3.css("color","white");
-            sec2_ty2_p.css('color','rgba(255,255,255,0.4)');
-            sec2_ty2_d1.css("background-color","white");
-            sec2_ty2_d2.css("background-color","white");
-            sec2_ty2_d3.css("background-color","white");
-            sec2_ty2_d4.css("background-color","white");
-            sec2_ty2_d5.css('background-color','rgba(255,255,255,0.4)');
-            sec2_ty2_d6.css('background-color','rgba(255,255,255,0.4)');
-            bkb.css("background-color","white");
-            sc1.css({filter: "invert(100)"});
-            jq_pf1b.css("color","white");
-            jq_pf2b.css("color","white");
-            jq_pf3b.css("color","white");
-            jq_pf4b.css("color","white");
-            jq_pf5b.css("color","white");
-            jq_pfmb.css("color","white");
-            jq_pf1n.css("color","white");
-            jq_pf2n.css("color","white");
-            jq_pf3n.css("color","white");
-            jq_pf4n.css("color","white");
-            jq_pf5n.css("color","white");
-            jq_pfmn.css("color","white");
-            eh_1.css("background-color","black");
-            eh_2.css("background-color","black");
-            pf4_yh3.css("background-color","black");
-            sc2.css({filter: "invert(100)"});
-            p_h.css({filter: "invert(100)"});
-            p_f.css({filter: "invert(100)"});
-            hfm_lt_li.css({filter: "invert(100)"});
-            ph_in_h3.css('font-weight', "400");  
-            ce.css('font-weight', "400");  
-            pf_in.css('font-weight', "400");  
-            dkm.text('Dark mode on');
-
-            pfm_bg.css("background-color","black");
-            pfm_img.css({filter: "invert(100)"});
-            hr_rn.css({filter: "invert(100)"});
-            
+            dark_on();
         }
         else{
-            toggle = "0";
-            j_pf_hb.css("background","white");
-            j_pf_hb.css("background-color","white");
-            j_m_hr.css({filter: "invert(0)"}); 
-            j_m_fr.css({filter: "invert(0)"});
-            sec_hm.css("background-color","white");
-            sec_hm_h2.css("color","black");
-            sec1_vimg.css({filter: "invert(0)"});
-            sec1_ty_h3.css("color","black");
-            sec1_ty_p.css('color','rgba(0,0,0,0.4)');
-            j_m_pf.css("background-color","white");
-            sec2_ty2_h3.css("color","black");
-            sec2_ty2_p.css('color','rgba(0,0,0,0.4)');
-            sec2_ty2_d1.css("background-color","black");
-            sec2_ty2_d2.css("background-color","black");
-            sec2_ty2_d3.css("background-color","black");
-            sec2_ty2_d4.css("background-color","black");
-            sec2_ty2_d5.css('background-color','rgba(0,0,0,0.4)');
-            sec2_ty2_d6.css('background-color','rgba(0,0,0,0.4)');
-            bkb.css("background-color","black");
-            sc1.css({filter: "invert(0)"});
-            jq_pf1b.css("color","black");
-            jq_pf2b.css("color","black");
-            jq_pf3b.css("color","black");
-            jq_pf4b.css("color","black");
-            jq_pf5b.css("color","black");
-            jq_pfmb.css("color","black");
-            jq_pf1n.css("color","black");
-            jq_pf2n.css("color","black");
-            jq_pf3n.css("color","black");
-            jq_pf4n.css("color","black");
-            jq_pf5n.css("color","black");
-            jq_pfmn.css("color","black");
-            eh_1.css("background-color","white");
-            eh_2.css("background-color","white");
-            pf4_yh3.css("background-color","white");
-            sc2.css({filter: "invert(0)"});
-            p_h.css({filter: "invert(0)"});
-            p_f.css({filter: "invert(0)"});
-            hfm_lt_li.css({filter: "invert(0)"});
-            ph_in_h3.css('font-weight', "300");  
-            ce.css('font-weight', "300");  
-            ph_in.css('font-weight', "300");  
-            dkm.text('Dark mode off');
-
-            pfm_bg.css("background-color","white");
-            pfm_img.css({filter: "invert(0)"});
-            hr_rn.css({filter: "invert(0)"});
-    
+            dark_off();
         }
 
     });
