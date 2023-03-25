@@ -10,7 +10,8 @@ $(function(){
     let j_m_fr = $('footer');
     var j_logo = $('.logo');
 
-    var pf_hb = document.querySelector("html,body");
+    var pf_h = document.querySelector("html");
+    var pf_b = document.querySelector("body");
     var pf_cr = document.querySelector("#container");
     let m_hr = document.querySelector('header');
     var logo = document.querySelector('.logo');
@@ -42,7 +43,7 @@ $(function(){
         }
     
         function c_quick() {
-            pf_hb.scrollTop = h_elem.dataset.value;
+            pf_h.scrollTop = h_elem.dataset.value;
         }
     
         function c_fi() {
@@ -190,14 +191,14 @@ $(function(){
     var pf3b = document.querySelector("#pf3back");
     var pf4b = document.querySelector("#pf4back");
     var pf5b = document.querySelector("#pf5back");
-    var pfmb = document.querySelector("#pfmback");
+    var pfmb = document.querySelector("#pf6back");
 
     var pf1n = document.querySelector("#pf1next");
     var pf2n = document.querySelector("#pf2next");
     var pf3n = document.querySelector("#pf3next");
     var pf4n = document.querySelector("#pf4next");
     var pf5n = document.querySelector("#pf5next");
-    var pfmn = document.querySelector("#pfmnext");
+    var pfmn = document.querySelector("#pf6next");
 
 
     var jq_pf1b = $("#pf1back");
@@ -205,14 +206,14 @@ $(function(){
     var jq_pf3b = $("#pf3back");
     var jq_pf4b = $("#pf4back");
     var jq_pf5b = $("#pf5back");
-    var jq_pfmb = $("#pfmback");
+    var jq_pfmb = $("#pf6back");
 
     var jq_pf1n = $("#pf1next");
     var jq_pf2n = $("#pf2next");
     var jq_pf3n = $("#pf3next");
     var jq_pf4n = $("#pf4next");
     var jq_pf5n = $("#pf5next");
-    var jq_pfmn = $("#pfmnext");
+    var jq_pfmn = $("#pf6next");
 
     window.addEventListener('scroll', function() {
         var b = window.scrollY;
@@ -372,6 +373,8 @@ $(function(){
 
     //////////////////////////////////////////////////////////
 
+    // JS function mene 
+
 
     let j_hfm_toggle = "0";
     let j_hfm_bt = $(".hfm_btn")
@@ -381,6 +384,7 @@ $(function(){
     let hfm_toggle = "0";
     let hfm_bt = document.querySelector(".hfm_btn");
     let hfm_li = document.querySelector(".hfm_list");
+    let hfm_li_a = document.querySelector(".hfm_list");
     var mn_h = document.querySelector(".menu_hide");
 
     hfm_bt.addEventListener('click', () => {//버튼을 클릭했을 때
@@ -400,7 +404,7 @@ $(function(){
     });
 
     
-    pf_hb.addEventListener('click', function(e){
+    pf_b.addEventListener('click', function(e){
             var c_target = e.target.parentNode.getAttribute('class');
             var menu_hide = e.target.getAttribute('class');
             if(c_target != hfm_bt.classList){
@@ -543,152 +547,288 @@ $(function(){
 
 
     let toggle = "0";
-    let dkm = $(".darkmode");
-    var pp = $('.pop');
-    var p_dkm = $(".pop_darkmode");
-    var p_h = $(".pop_h");
-    var p_f = $(".pop_f");
-    var sec_hm = $(".home");
-    var sec_hm_h2 = $(".home h2");
-    var sec1_vimg = $(".home .sec1 .visual img");
-    var sec1_ty_h3 = $(".home .sec1 .typo h3");
-    var sec1_ty_p =  $(".home .sec1 .typo p");
-    var sec2_ty2 = $(".typo2");
-    var bkb = $(".bkbox");
-    var sc1 = $("#screen");
-    var sc2 = $("#screen2");
-    var eh_1 = $(".eye_hide1");
-    var eh_2 = $(".eye_hide2");
-    var pf4_yh3= $(".pf4 .pf4_bg .ypaint_hide3");
-    var hfm_lt_li = $(".hfm_list li");
-    var ph_in = $(".pop_h_inner");
-    var ph_in_h3 = $(".pop_h_inner h3");
-    var pf_in = $(".pop_f_inner");
-    var ce = $(".close");
-    var pfm_bg = $(".pfmore_bg");
-    var pfm_img = $(".pf_more_img");
-    var hr_rn = $(".hover_runner");
-    var skr_by = $("#skrollr-body");
+    // let j_dkm = $(".darkmode");
+    var j_pp = $('.pop');
+    // var j_p_dkm = $(".pop_darkmode");
+    // var j_p_h = $(".pop_h");
+    // var j_p_f = $(".pop_f");
+    // var j_sec_hm = $(".home");
+    var j_sec_hm_h2 = $(".sl_gd");
+    // var j_sec1_vimg = $(".runners");
+    // var j_sec1_ty_h3 = $(".tw_1");
+    // var j_sec1_ty_p =  $(".tw_2");
+    // var j_sec2_ty2 = $(".typo2");
+    // var j_bkb = $(".bkbox");
+    // var j_sc1 = $("#screen");
+    // var j_sc2 = $("#screen2");
+    // var j_eh_1 = $(".eye_hide1");
+    // var j_eh_2 = $(".eye_hide2");
+    // var j_pf4_yh3= $(".ypaint_hide3");
+    // var j_hfm_lt_li = $(".hfm_list li");
+    // var j_ph_in = $(".pop_h_inner");
+    // var j_ph_in_h3 = $(".pop_h_inner h3");
+    // var j_pf_in = $(".pop_f_inner");
+    var j_ce = $(".close");
+    // var j_pfm_bg = $(".pfmore_bg");
+    // var j_pfm_img = $(".pf_more_img");
+    // var j_hr_rn = $(".hover_runner");
+    // var j_skr_by = $("#skrollr-body");
 
-    function dark_on(){
-        toggle = "1";
-        j_pf_hb.css("background","black");
-        j_pf_hb.css("background-color","black");
-        skr_by.css("background","black");
-        j_m_hr.css({filter: "invert(100)"}); 
-        j_m_fr.css({filter: "invert(100)"});
-        sec_hm.css("background-color","black");
-        sec_hm_h2.css("color","white");
-        sec1_vimg.css({filter: "invert(100)"});
-        sec1_ty_h3.css("color","white");
-        sec1_ty_p.css('color','rgba(255,255,255,0.4)');
-        j_m_pf.css("background-color","black");
-        sec2_ty2.css({filter: "invert(100)"});
-        bkb.css("background-color","white");
-        sc1.css({filter: "invert(100)"});
-        jq_pf1b.css("color","white");
-        jq_pf2b.css("color","white");
-        jq_pf3b.css("color","white");
-        jq_pf4b.css("color","white");
-        jq_pf5b.css("color","white");
-        jq_pfmb.css("color","white");
-        jq_pf1n.css("color","white");
-        jq_pf2n.css("color","white");
-        jq_pf3n.css("color","white");
-        jq_pf4n.css("color","white");
-        jq_pf5n.css("color","white");
-        jq_pfmn.css("color","white");
-        eh_1.css("background-color","black");
-        eh_2.css("background-color","black");
-        pf4_yh3.css("background-color","black");
-        sc2.css({filter: "invert(100)"});
-        p_h.css({filter: "invert(100)"});
-        p_f.css({filter: "invert(100)"});
-        hfm_lt_li.css({filter: "invert(100)"});
-        ph_in_h3.css('font-weight', "400");  
-        ce.css('font-weight', "400");  
-        pf_in.css('font-weight', "400");  
-        dkm.text('Dark mode on');
+    // function dark_on(){
+    //     toggle = "1";
+    //     j_pf_hb.css("background","black");
+    //     j_pf_hb.css("background-color","black");
+    //     j_skr_by.css("background","black");
+    //     j_m_hr.css({filter: "invert(100)"}); 
+    //     j_m_fr.css({filter: "invert(100)"});
+    //     j_sec_hm.css("background-color","black");
+    //     j_sec_hm_h2.css("color","white");
+    //     j_sec1_vimg.css({filter: "invert(100)"});
+    //     j_sec1_ty_h3.css("color","white");
+    //     j_sec1_ty_p.css('color','rgba(255,255,255,0.4)');
+    //     j_m_pf.css("background-color","black");
+    //     j_sec2_ty2.css({filter: "invert(100)"});
+    //     j_bkb.css("background-color","white");
+    //     j_sc1.css({filter: "invert(100)"});
+    //     jq_pf1b.css("color","white");
+    //     jq_pf2b.css("color","white");
+    //     jq_pf3b.css("color","white");
+    //     jq_pf4b.css("color","white");
+    //     jq_pf5b.css("color","white");
+    //     jq_pfmb.css("color","white");
+    //     jq_pf1n.css("color","white");
+    //     jq_pf2n.css("color","white");
+    //     jq_pf3n.css("color","white");
+    //     jq_pf4n.css("color","white");
+    //     jq_pf5n.css("color","white");
+    //     jq_pfmn.css("color","white");
+    //     j_eh_1.css("background-color","black");
+    //     j_eh_2.css("background-color","black");
+    //     j_pf4_yh3.css("background-color","black");
+    //     j_sc2.css({filter: "invert(100)"});
+    //     j_p_h.css({filter: "invert(100)"});
+    //     j_p_f.css({filter: "invert(100)"});
+    //     j_hfm_lt_li.css({filter: "invert(100)"});
+    //     j_ph_in_h3.css('font-weight', "400");  
+    //     j_ce.css('font-weight', "400");  
+    //     j_pf_in.css('font-weight', "400");  
+    //     j_dkm.text('Dark mode on');
 
-        pfm_bg.css("background-color","black");
-        pfm_img.css({filter: "invert(100)"});
-        hr_rn.css({filter: "invert(100)"});
-    };
+    //     j_pfm_bg.css("background-color","black");
+    //     j_pfm_img.css({filter: "invert(100)"});
+    //     j_hr_rn.css({filter: "invert(100)"});
+    // };
 
-    function dark_off(){
-        toggle = "0";
-        j_pf_hb.css("background","white");
-        j_pf_hb.css("background-color","white");
-        skr_by.css("background","white");
-        j_m_hr.css({filter: "invert(0)"}); 
-        j_m_fr.css({filter: "invert(0)"});
-        sec_hm.css("background-color","white");
-        sec_hm_h2.css("color","black");
-        sec1_vimg.css({filter: "invert(0)"});
-        sec1_ty_h3.css("color","black");
-        sec1_ty_p.css('color','rgba(0,0,0,0.4)');
-        j_m_pf.css("background-color","white");
-        sec2_ty2.css({filter: "invert(0)"});
-        bkb.css("background-color","black");
-        sc1.css({filter: "invert(0)"});
-        jq_pf1b.css("color","black");
-        jq_pf2b.css("color","black");
-        jq_pf3b.css("color","black");
-        jq_pf4b.css("color","black");
-        jq_pf5b.css("color","black");
-        jq_pfmb.css("color","black");
-        jq_pf1n.css("color","black");
-        jq_pf2n.css("color","black");
-        jq_pf3n.css("color","black");
-        jq_pf4n.css("color","black");
-        jq_pf5n.css("color","black");
-        jq_pfmn.css("color","black");
-        eh_1.css("background-color","white");
-        eh_2.css("background-color","white");
-        pf4_yh3.css("background-color","white");
-        sc2.css({filter: "invert(0)"});
-        p_h.css({filter: "invert(0)"});
-        p_f.css({filter: "invert(0)"});
-        hfm_lt_li.css({filter: "invert(0)"});
-        ph_in_h3.css('font-weight', "300");  
-        ce.css('font-weight', "300");  
-        ph_in.css('font-weight', "300");  
-        dkm.text('Dark mode off');
-
-        pfm_bg.css("background-color","white");
-        pfm_img.css({filter: "invert(0)"});
-        hr_rn.css({filter: "invert(0)"});
-    };
-
+    // function dark_off(){
+    //     toggle = "0";
+    //     j_pf_hb.css("background","white");
+    //     j_pf_hb.css("background-color","white");
+    //     j_skr_by.css("background","white");
+    //     j_m_hr.css({filter: "invert(0)"}); 
+    //     j_m_fr.css({filter: "invert(0)"});
+    //     j_sec_hm.css("background-color","white");
+    //     j_sec_hm_h2.css("color","black");
+    //     j_sec1_vimg.css({filter: "invert(0)"});
+    //     j_sec1_ty_h3.css("color","black");
+    //     j_sec1_ty_p.css('color','rgba(0,0,0,0.4)');
+    //     j_m_pf.css("background-color","white");
+    //     j_sec2_ty2.css({filter: "invert(0)"});
+    //     j_bkb.css("background-color","black");
+    //     j_sc1.css({filter: "invert(0)"});
+    //     jq_pf1b.css("color","black");
+    //     jq_pf2b.css("color","black");
+    //     jq_pf3b.css("color","black");
+    //     jq_pf4b.css("color","black");
+    //     jq_pf5b.css("color","black");
+    //     jq_pfmb.css("color","black");
+    //     jq_pf1n.css("color","black");
+    //     jq_pf2n.css("color","black");
+    //     jq_pf3n.css("color","black");
+    //     jq_pf4n.css("color","black");
+    //     jq_pf5n.css("color","black");
+    //     jq_pfmn.css("color","black");
+    //     j_eh_1.css("background-color","white");
+    //     j_eh_2.css("background-color","white");
+    //     j_pf4_yh3.css("background-color","white");
+    //     j_sc2.css({filter: "invert(0)"});
+    //     j_p_h.css({filter: "invert(0)"});
+    //     j_p_f.css({filter: "invert(0)"});
+    //     j_hfm_lt_li.css({filter: "invert(0)"});
+    //     j_ph_in_h3.css('font-weight', "300");  
+    //     j_ce.css('font-weight', "300");  
+    //     j_ph_in.css('font-weight', "300");  
+    //     j_dkm.text('Dark mode off');
+    //     j_pfm_bg.css("background-color","white");
+    //     j_pfm_img.css({filter: "invert(0)"});
+    //     j_hr_rn.css({filter: "invert(0)"});
+    // };
 
 
 
 
-    dkm.click(function(e){//버튼을 클릭했을 때
 
-        var id_target = $(e.target).attr("id");
+    // j_dkm.click(function(e){//버튼을 클릭했을 때
 
-        if(toggle=="0"){
+    //     // var id_target = $(e.target).attr("id");
+
+    //     if(toggle=="0"){
+    //         dark_on();
+    //     }
+    //     else{
+    //         dark_off();
+    //     }
+    // });
+
+    // j_p_dkm.click(function(e){//버튼을 클릭했을 때
+
+    //     e.preventDefault();
+
+    //     if(toggle=="0"){
+    //         dark_on();
+    //     }
+    //     else{
+    //         dark_off();
+    //     }
+
+    // });
+
+
+
+
+    let dkm = document.querySelector(".darkmode");
+    var pp = document.querySelector('.pop');
+    var p_dkm = document.querySelector(".pop_darkmode");
+    var p_h = document.querySelector(".pop_h");
+    var p_f = document.querySelector(".pop_f");
+    var sec_hm = document.querySelector(".home");
+    var sec_hm_h2 = document.querySelector(".sl_gd");
+    var sec1_vimg = document.querySelector(".runners");
+    var sec1_ty_h3 = document.querySelector(".tw_1");
+    var sec1_ty_p =  document.querySelector(".tw_2");
+    var sec2_ty2 = document.querySelector(".typo2");
+    var bkb = document.querySelector(".bkbox");
+    var sc1 = document.querySelector("#screen");
+    var sc2 = document.querySelector("#screen2");
+    var eh_1 = document.querySelector(".eye_hide1");
+    var eh_2 = document.querySelector(".eye_hide2");
+    var pf4_yh3= document.querySelector(".ypaint_hide3");
+    var hfm_lt_li = document.querySelector(".hfm_list li");
+    var ph_in = document.querySelector(".pop_h_inner");
+    var ph_in_h3 = document.querySelector(".pop_h_inner h3");
+    var pf_in = document.querySelector(".pop_f_inner");
+    var ce = document.querySelector(".close");
+    var pfm_bg = document.querySelector(".pfmore_bg");
+    var pfm_img = document.querySelector(".pf_more_img");
+    var hr_rn = document.querySelector(".hover_runner");
+    var skr_by = document.querySelector("#skrollr-body");
+
+
+    function dark_on() {
+        let toggle = "1";
+        pf_b.style.background = "black";
+        pf_b.style.backgroundColor = "black";
+        skr_by.style.background = "black";
+        m_hr.style.filter = "invert(100)";
+        m_fr.style.filter = "invert(100)";
+        sec_hm.style.backgroundColor = "black";
+        sec_hm_h2.style.color = "white";
+        sec1_vimg.style.filter = "invert(100)";
+        sec1_ty_h3.style.color = "white";
+        sec1_ty_p.style.color = "rgba(255, 255, 255, 0.4)";
+        m_pf.style.backgroundColor = "black";
+        sec2_ty2.style.filter = "invert(100)";
+        bkb.style.backgroundColor = "white";
+        sc1.style.filter = "invert(100)";
+        pf1b.style.color = "white";
+        pf2b.style.color = "white";
+        pf3b.style.color = "white";
+        pf4b.style.color = "white";
+        pf5b.style.color = "white";
+        pfmb.style.color = "white";
+        pf1n.style.color = "white";
+        pf2n.style.color = "white";
+        pf3n.style.color = "white";
+        pf4n.style.color = "white";
+        pf5n.style.color = "white";
+        pfmn.style.color = "white";
+        eh_1.style.backgroundColor = "black";
+        eh_2.style.backgroundColor = "black";
+        pf4_yh3.style.backgroundColor = "black";
+        sc2.style.filter = "invert(100)";
+        p_h.style.filter = "invert(100)";
+        p_f.style.filter = "invert(100)";
+        hfm_li_a.style.filter = "invert(100)";
+
+        ph_in_h3.style.fontWeight = "400";
+        ce.style.fontWeight = "400";
+        pf_in.style.fontWeight = "400";
+        dkm.textContent = "Dark mode on";
+        pfm_bg.style.backgroundColor = "black";
+        pfm_img.style.filter = "invert(100)";
+        hr_rn.style.filter = "invert(100)";
+    }
+
+    function dark_off() {
+        let toggle = "0";
+        pf_b.style.background = "white";
+        pf_b.style.backgroundColor = "white";
+        skr_by.style.background = "white";
+        m_hr.style.filter = "invert(0)";
+        m_fr.style.filter = "invert(0)";
+        sec_hm.style.backgroundColor = "white";
+        sec_hm_h2.style.color = "black";
+        sec1_vimg.style.filter = "invert(0)";
+        sec1_ty_h3.style.color = "black";
+        sec1_ty_p.style.color = "rgba(0,0,0,0.4)";
+        m_pf.style.backgroundColor = "white";
+        sec2_ty2.style.filter = "invert(0)";
+        bkb.style.backgroundColor = "black";
+        sc1.style.filter = "invert(0)";
+        pf1b.style.color = "black";
+        pf2b.style.color = "black";
+        pf3b.style.color = "black";
+        pf4b.style.color = "black";
+        pf5b.style.color = "black";
+        pfmb.style.color = "black";
+        pf1n.style.color = "black";
+        pf2n.style.color = "black";
+        pf3n.style.color = "black";
+        pf4n.style.color = "black";
+        pf5n.style.color = "black";
+        pfmn.style.color = "black";
+        eh_1.style.backgroundColor = "white";
+        eh_2.style.backgroundColor = "white";
+        pf4_yh3.style.backgroundColor = "white";
+        sc2.style.filter = "invert(0)";
+        p_h.style.filter = "invert(0)";
+        p_f.style.filter = "invert(0)";
+        hfm_li_a.style.filter = "invert(0)";
+        ph_in_h3.style.fontWeight = "300";
+        ce.style.fontWeight = "300";
+        ph_in.style.fontWeight = "300";
+        dkm.textContent = "Dark mode off";
+        pfm_bg.style.backgroundColor = "white";
+        pfm_img.style.filter = "invert(0)";
+        hr_rn.style.filter = "invert(0)";
+    }
+
+
+    dkm.addEventListener("click", function(e) {
+        if (toggle === "0") {
             dark_on();
-        }
-        else{
+        } else {
             dark_off();
         }
     });
 
-    p_dkm.click(function(e){//버튼을 클릭했을 때
-
+    p_dkm.addEventListener("click", function(e) {
         e.preventDefault();
-
-        if(toggle=="0"){
+        if (toggle === "0") {
             dark_on();
-        }
-        else{
+        } else {
             dark_off();
         }
-
     });
-
 
     /////////////////////////////////////////////////////////
 
@@ -696,7 +836,7 @@ $(function(){
     //popup
 
     // const targetElement = document.querySelector('.pop');
-    // var position = pp.offset().top;
+    // var position = j_pp.offset().top;
 
     
     var mu = $('.menu');
@@ -713,8 +853,8 @@ $(function(){
         // $(this).parent().next().delay(1000).fadeIn(1000);
         // $(this).parent().next().animate({opacity: '1'}, 1000);
         // $(this).parent().next().css({visibility:"visible"});
-        // pp.css('display','block');
-        // pp.css({visibility:"visible"});
+        // j_pp.css('display','block');
+        // j_pp.css({visibility:"visible"});
         j_m_hr.css('display','none');
         j_m_hr.css({visibility:"hidden"});
         j_m_fr.css('display','none');
@@ -731,8 +871,8 @@ $(function(){
 
         e.preventDefault();
 
-        pp.animate({scrollTop:0},0); 
-        pp.stop(false,true);
+        j_pp.animate({scrollTop:0},0); 
+        j_pp.stop(false,true);
         j_pf_hb.animate({ scrollTop:position},0); 
 
 
@@ -807,8 +947,8 @@ $(function(){
 
     //     e.preventDefault();
 
-    //     pp.animate({ scrollTop:0},0); 
-    //     pp.stop(false,true);
+    //     j_pp.animate({ scrollTop:0},0); 
+    //     j_pp.stop(false,true);
 
     //     pf5_1v.trigger('play');
     // });
@@ -817,10 +957,10 @@ $(function(){
 
 
 
-    ce.click(function (e) {
-        // pp.fadeOut(100);
-        pp.css('display','none');
-        // pp.css('display','none');
+    j_ce.click(function (e) {
+        // j_pp.fadeOut(100);
+        j_pp.css('display','none');
+        // j_pp.css('display','none');
         j_m_hr.css('display','block');
         j_m_hr.css({visibility:"visible"});
         j_m_fr.css('display','block');
@@ -838,7 +978,7 @@ $(function(){
 
         // console.log("position: "+position);
 
-        pp.animate({ scrollTop:0},0); 
+        j_pp.animate({ scrollTop:0},0); 
 
 
         // $('.pop .sheet video').trigger('pause');
@@ -860,8 +1000,8 @@ $(function(){
     
 
     $(".pop .pop_h_inner h3").click(function(){
-        pp.animate({ scrollTop:0},700,"swing"); 
-        pp.css("scroll-snap-type", "none");
+        j_pp.animate({ scrollTop:0},700,"swing"); 
+        j_pp.css("scroll-snap-type", "none");
         sct_ani = "1";
 
         // pf5_1v.trigger('play');
@@ -876,18 +1016,18 @@ $(function(){
     })
 
     // h3 클릭 시, scrollTop 애니메이션 충돌 방지
-    pp.on("mousewheel",function(e,delta) {
+    j_pp.on("mousewheel",function(e,delta) {
 
         if(delta < 0) { //휠을 아래로 돌렸을때
             // console.log("sheet num: "+delta);
-            pp.stop();
-            pp.css("scroll-snap-type", "y mandatory");
+            j_pp.stop();
+            j_pp.css("scroll-snap-type", "y mandatory");
             sct_ani = "1";
         } 
         else { //휠을 위로 돌렸을때
             // console.log("sheet num: "+delta);
-            pp.css("scroll-snap-type", "y mandatory");
-            pp.stop();
+            j_pp.css("scroll-snap-type", "y mandatory");
+            j_pp.stop();
             sct_ani = "1";
         }
     });
@@ -1193,7 +1333,7 @@ $(function(){
 
         // $('.cursor ').delay(2000).css('display','block');
         btwp.fadeOut(500);
-        // pp.css('display','none');
+        // j_pp.css('display','none');
         // j_m_hr.delay(2000).css('display','block');
         j_m_hr.delay(1000).css({visibility:"visible"});
         // j_m_fr.delay(2000).css('display','block');
@@ -1204,7 +1344,7 @@ $(function(){
         j_pf_hb.delay(2000).animate({ scrollTop:position},0); 
         j_pf_hb.delay(2000).css("overflow", "auto");
         sn.css('display','block');
-        sec_hm_h2.delay(2000).fadeIn(3500); 
+        j_sec_hm_h2.delay(2000).fadeIn(3500); 
 
         j_pf_hb.delay(2000).css({overflow:"auto"});//body스크롤없앰}
         j_pf_hb.delay(2000).css({position:"static"});
@@ -1304,7 +1444,7 @@ $(function(){
 
         sdwv.fadeOut(50)
         stpp.delay(500).fadeOut(100);
-        // pp.css('display','none');
+        // j_pp.css('display','none');
 
         bgm_if_h3.fadeOut(500);
         btwp.fadeOut(500);
@@ -1316,7 +1456,7 @@ $(function(){
         j_pf_hb.animate({ scrollTop:position},0); 
         j_pf_hb.css("overflow", "auto");
         sn.css('display','block');
-        sec_hm_h2.fadeIn(4500); 
+        j_sec_hm_h2.fadeIn(4500); 
 
         j_pf_hb.css({overflow:"auto"});//body스크롤없앰}
         j_pf_hb.css({position:"static"});
@@ -1482,7 +1622,7 @@ $(function(){
             
     //         // frameNumm = frameNumm + 1*(targetFN - frameNumm); 
     //         $(".pf_more_iphone").css({"transform":"translateZ("+frameNumm+"vw)"});
-    //         pfm_img.css({"transform":"translateZ("+frameNumm+"vw)"});
+    //         j_pfm_img.css({"transform":"translateZ("+frameNumm+"vw)"});
     //         if(frameNumm > 398){
     //             clearInterval(expz);
     //         }
@@ -1495,7 +1635,7 @@ $(function(){
             
         //     frameNumm = frameNumm + 1*(targetFN - frameNumm); 
         //     $(".pf_more_iphone").animation = "phgrow 1.5s ease-in-out";
-        //     pfm_img.animation = "congrow 1.5s ease-in-out";
+        //     j_pfm_img.animation = "congrow 1.5s ease-in-out";
         //     console.log("frameNumm:"+frameNumm);
         // }
         // var expz = setInterval(incZ,1);

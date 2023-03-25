@@ -441,7 +441,7 @@ section {visibility: hidden;}
     height: 11000px;
 }
 
-.item:nth-of-type(1) h2 { 
+.sl_gd { 
     position: relative;
     text-align: center;
     position: fixed;
@@ -460,7 +460,7 @@ section {visibility: hidden;}
     margin-top: 5%;
 } */
 
-.item:nth-of-type(1) .sec1 .visual img { 
+.runners { 
     width: 40%;
     position: fixed;
     left: -30%;
@@ -476,7 +476,7 @@ section {visibility: hidden;}
     left: 37%;
     bottom: 34%;
 }
-.item:nth-of-type(1) .sec1 .typo h3 { 
+.typo .tw_1 { 
     font-family: 'SF Pro KR';
     font-size: 2vw;
     line-height: 1em;
@@ -485,7 +485,7 @@ section {visibility: hidden;}
     /* padding-top: 14px; */
     font-weight: 100;
 }
-.item:nth-of-type(1) .sec1 .typo p {
+.typo .tw_2 {
     font-family: 'SF Pro KR';
     font-size: 1.1vw;
     font-weight: 100;
@@ -495,10 +495,10 @@ section {visibility: hidden;}
     color: rgba(0, 0, 0, 0.5);
 }
 
-.item:nth-of-type(1) .sec1 .typo h3 span .kw1 { line-height: 0;}
-.item:nth-of-type(1) .sec1 .typo h3 span .kw2 { line-height: 0;}
-.item:nth-of-type(1) .sec1 .typo h3 span .kw3 { line-height: 0;}
-.item:nth-of-type(1) .sec1 .typo h3 span .kw4 { line-height: 0;}
+.typo .tw_1 .kw1 { line-height: 0;}
+.typo .tw_1 .kw2 { line-height: 0;}
+.typo .tw_2 .kw3 { line-height: 0;}
+
 
 
 .item:nth-of-type(1) .sec2 .typo2 { 
@@ -842,7 +842,7 @@ section {visibility: hidden;}
     /* cursor: pointer; */
 }
 
-#pfmback {
+#pf6back {
     position: absolute;
     top: 48%;
     left: -128%;
@@ -850,7 +850,7 @@ section {visibility: hidden;}
     /* cursor: pointer; */
 }
 
-#pfmnext {
+#pf6next {
     position: absolute;    
     top: 48%;
     right: -128%;
