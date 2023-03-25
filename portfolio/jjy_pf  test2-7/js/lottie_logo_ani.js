@@ -1,53 +1,6 @@
 
 $(function(){
 
-    // let t = 0;
-    // function time(){
-    //     t = t + 1;
-    //     console.log(t);
-    //     $(".time").text(t);
-    //     if(t >= 3){
-    //         // $("#logo_ani").css({display:"none"}); //로딩표시영역 사라짐
-    //         // $("lottie-player").css({display:"block"}); //로딩표시영역 사라짐
-    //         $('body').css({overflow:"auto"});//body스크롤없앰}
-    //         $('body').css({position:"static"});
-    //         $("header").fadeIn(2000);
-    //         $(".wrapper").fadeIn(2000); 
-    //         $("section").fadeIn(2000); 
-    //         $("footer").fadeIn(2000);
-
-    //         $("header").css('visibility', 'visible');
-    //         $(".wrapper").css('visibility', 'visible');
-    //         $("section").css('visibility', 'visible');
-    //         $("footer").css('visibility', 'visible');
-    //         $('body').css('backgroundColor', 'white');
-
-    //         clearInterval(t);
-    //     }
-    //     else {
-    //         $("#logo_ani").css({display:"none"}); //로딩표시영역 사라짐
-    //         $('body').css({overflow:"visible"});
-    //         $('body').css({position:"fixed"});
-    //         $("header").hide();
-    //         $("section").css('visibility', 'hidden');
-    //         $(".wrapper").hide(); 
-    //         $("section").hide(); 
-    //         $("footer").hide(); 
-    //     }
-    // }
-    // setInterval(time,1000); //0.1초마다 aniNext 함수 실행
-
-    // var lottie_logo = document.createElement("lottie-player");
-    
-    // lottie_logo.setAttribute('id', 'logo_ani');
-    // lottie_logo.setAttribute('src', 'data3/logo_intro.json');
-    // lottie_logo.setAttribute('speed', '1');
-    // lottie_logo.setAttribute('preserveAspectRatio', 'xMidYMid slice');
-    // lottie_logo.setAttribute('autoplay', 'true');
-
-    // document.body.appendChild(lottie_logo);
-    // var lottie_logo = document.createElement("div");
-
     // loading
     function imagesProgress() {
         var $container = $('#progress');
@@ -221,36 +174,6 @@ $(function(){
 
                                         $(".cursor").css({display:"none"});
 
-                                        
-
-                                        // lottie_logo.getAttribute('autoplay');
-                                        // lottie_logo.attr('autoplay');
-                                        
-
-                                        // LottieInteractivity.create({
-                                        //     player:'#logo_ani',
-                                        //     renderer:'svg',
-                                        //     disableCheck:'true',
-                                        //     mode:"chain",
-                                        //     actions: [
-                                        //         // {
-                                        //         //     type: "pauseHold"
-                                        //         // },
-                                        //         {
-                                        //             state: 'autoplay',
-                                        //             frames: [0, 120],
-                                        //             transition: 'seek',
-                                        //             // reset: true,
-                                        //         },
-                                        //         // {
-                                        //         //     state: 'autoplay',
-                                        //         //     frames: [61, 120],
-                                        //         //     transition: 'none',
-                                        //         //     // reset: true,
-                                        //         // },
-                                        //     ]
-                                        // });
-
                                     }       
                                 }
                                 setInterval(Logo_ani,1000); //0.1초마다 aniNext 함수 실행
@@ -263,9 +186,6 @@ $(function(){
             }
             if (current > 99.9) {
                 current = 100;
-
-                
-                
             }
         }
     }

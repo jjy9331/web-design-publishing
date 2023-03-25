@@ -8,52 +8,53 @@ $(function(){
     let j_m_hr = $('header');
     let j_m_hr_in = $('header .inner');
     let j_m_fr = $('footer');
-    var logo = $('.logo');
+    var j_logo = $('.logo');
 
     var pf_hb = document.querySelector("html,body");
+    var pf_cr = document.querySelector("#container");
+    let m_hr = document.querySelector('header');
+    var logo = document.querySelector('.logo');
 
 
-    // JQ header evnet delegation nav
+    // JS header evnet delegation nav
 
-    function header_click(e){
-        let h_elem = $(e.target)
-        let h_elem_c = $(e.target).attr("class");
-
-        if(h_elem_c == logo.attr("class")){
-            h_elem_c = logo.parent().attr("class");
-            h_elem = logo.parent();
-            c_hide();
-            c_quick();
-            c_fi();
+    function header_click(e) {
+        let h_elem = e.target;
+        let h_elem_c = h_elem.getAttribute("class");
+        let h_btn_c = !h_elem.classList.contains("h_btn");
+    
+        if (h_btn_c != logo.getAttribute("class")) {
+            h_elem_c = logo.parentNode.getAttribute("class");
         }
-
+    
         // click event not working area control
-        if(!h_elem.hasClass("h_btn")){
+        if (!h_elem.classList.contains("h_btn")) {
             h_elem = null;
-            return
+            return;
         }
-
+    
         c_hide();
         c_quick();
         c_fi();
-
-        function c_hide(){
-            j_pf_cr.css('display','none');
+    
+        function c_hide() {
+            pf_cr.style.display = "none";
         }
-
-        function c_quick(){
-            j_pf_hb.stop(false,true).scrollTop(h_elem.data('value'));
+    
+        function c_quick() {
+            pf_hb.scrollTop = h_elem.dataset.value;
         }
-
-        function c_fi(){
-            j_pf_cr.delay(1000).fadeIn( 1000 );
+    
+        function c_fi() {
+            setTimeout(function() {
+                pf_cr.style.display = "block";
+            }, 1000);
         }
-
-        // console.log(h_elem_c);
-        // console.log(h_elem.data('value'));
+    
+        console.log(h_elem_c);
+        console.log(h_elem.dataset.value);
     }
-
-    j_m_hr.click(header_click);
+    m_hr.addEventListener("click", header_click);
 
 
     const hr_d1 = document.querySelector('.hr_d1');
@@ -177,7 +178,7 @@ $(function(){
             e.preventDefault();
             ck_toggle = "1";
         }
-        console.log("pf_BN: "+port_elem.dataset.value);
+        // console.log("pf_BN: "+port_elem.dataset.value);
     }
 
     m_pf.addEventListener('click', port_nb);
@@ -467,7 +468,6 @@ $(function(){
     let mdh_toggle = "0";
     let mbh_h = document.querySelector('.mbh_h');
     let mbh_f = document.querySelector('.mbh_f');
-    let m_hr = document.querySelector('header');
     let m_fr = document.querySelector('footer');
 
     let j_mbh_h = $('.mbh_h');
