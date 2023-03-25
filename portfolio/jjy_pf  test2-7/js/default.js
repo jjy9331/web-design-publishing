@@ -185,7 +185,6 @@ $(function(){
     m_pf.addEventListener('click', port_nb);
 
     
-
     const pfn_bn = ["pf1back","pf2back","pf3back","pf4back","pf5back","pf6back","pf1next","pf2next","pf3next","pf4next","pf5next","pf6next",];
 
     var pf1b = document.querySelector("#pf1back");
@@ -202,20 +201,6 @@ $(function(){
     var pf5n = document.querySelector("#pf5next");
     var pfmn = document.querySelector("#pf6next");
 
-
-    var jq_pf1b = $("#pf1back");
-    var jq_pf2b = $("#pf2back");
-    var jq_pf3b = $("#pf3back");
-    var jq_pf4b = $("#pf4back");
-    var jq_pf5b = $("#pf5back");
-    var jq_pfmb = $("#pf6back");
-
-    var jq_pf1n = $("#pf1next");
-    var jq_pf2n = $("#pf2next");
-    var jq_pf3n = $("#pf3next");
-    var jq_pf4n = $("#pf4next");
-    var jq_pf5n = $("#pf5next");
-    var jq_pfmn = $("#pf6next");
 
     window.addEventListener('scroll', function() {
         var b = window.scrollY;
@@ -582,9 +567,7 @@ $(function(){
     var pp = document.querySelector('.pop');
     var p_dkm = document.querySelector(".pop_darkmode");
     var p_dkm_a = document.querySelectorAll(".pop_darkmode");
-    // var p_h = document.querySelector(".pop_h");
     var p_h_a = document.querySelectorAll(".pop_h");
-    // var p_f = document.querySelector(".pop_f");
     var p_f_a = document.querySelectorAll(".pop_f");
     var sec_hm = document.querySelector(".home");
     var sec_hm_h2 = document.querySelector(".sl_gd");
@@ -1812,32 +1795,16 @@ $(function(){
 
 
 
-
-    pf1b.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
-    pf1n.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
+    pfn_bn.forEach(function(id) {
+        var element = document.querySelector("#" + id);
+        element.addEventListener("mouseenter", function(e) {
+            e.preventDefault();
+            mouseCursor.classList.remove("pf_cursor");
+            mouseCursor.style.zIndex = "1100";
+            hover_toggle = "1";
+        });
     });
 
-    pf2b.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
-    pf2n.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
 
 
     eye_hide1.addEventListener("mouseenter", () => {
@@ -1859,31 +1826,6 @@ $(function(){
     // });
 
 
-    pf3b.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
-    pf3n.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
-
-    pf4b.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
-    pf4n.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";    
-    });
 
     ypaint_hide3.addEventListener("mouseenter", () => {
         mouseCursor.classList.remove("pf_cursor");
@@ -1892,31 +1834,6 @@ $(function(){
         hover_toggle = "1";
     });
 
-    pf5b.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
-    pf5n.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
-
-    pfmb.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
-    pfmn.addEventListener("mouseenter", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        // mouseCursor.classList.add("cursor-grow");
-        mouseCursor.style.zIndex = "1100";
-        hover_toggle = "1";
-    });
 
 
     // cursor mouse control
