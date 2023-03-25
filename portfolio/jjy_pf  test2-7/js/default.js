@@ -417,8 +417,8 @@ $(function(){
 
             e.preventDefault();
             
-            console.log("c_target: "+c_target);
-            console.log("menu_hide: "+menu_hide);
+            // console.log("c_target: "+c_target);
+            // console.log("menu_hide: "+menu_hide);
         // };
     });
 
@@ -1796,12 +1796,12 @@ $(function(){
 
     // JQ footer port remote control
 
-    let pf_rm = $('.pf-nav');
+    let pf_rm = document.querySelector('.pf-nav');
     
     function port_remote(e){
-        let pf_elem = $(e.target);
+        let pf_elem = e.target;
 
-        if(!$('span')){
+        if(!sn){
             pf_elem = null;
             return
         }
@@ -1809,16 +1809,45 @@ $(function(){
         port_move();
 
         function port_move(){
-            j_pf_hb.animate({ scrollTop: pf_elem.data('value')},1000); 
+
+            window.scrollTo({top: pf_elem.dataset.value, behavior: 'smooth', duration: 1000});
             e.preventDefault();
+        
             ck_toggle = "1";
         }
 
         // console.log(pf_elem.data('value'));
+        // console.log("pf_BN: "+pf_elem.dataset.value);
     }
 
-    j_m_fr.click(port_remote);
+    // j_m_fr.click(port_remote);
+    m_fr.addEventListener('click', port_remote);
+    
 
+
+
+    // let pf_rm = $('.pf-nav');
+    
+    // function port_remote(e){
+    //     let pf_elem = $(e.target);
+
+    //     if(!$('span')){
+    //         pf_elem = null;
+    //         return
+    //     }
+
+    //     port_move();
+
+    //     function port_move(){
+    //         j_pf_hb.animate({ scrollTop: pf_elem.data('value')},1000); 
+    //         e.preventDefault();
+    //         ck_toggle = "1";
+    //     }
+
+    //     // console.log(pf_elem.data('value'));
+    // }
+
+    // j_m_fr.click(port_remote);
 
 
     var pfnv_li0_sn = document.querySelector('.pf-nav0');
