@@ -1521,8 +1521,6 @@ $(function(){
     // });
 
     var more = document.querySelector('.more');
-    var pfmback = document.querySelector('#pfmback');
-    var pfmnext = document.querySelector('#pfmnext');
 
     var morephone = document.querySelector('.pf_more_iphone');
     var moreplus = document.querySelector('.pf_more_img');
@@ -1533,14 +1531,12 @@ $(function(){
     var hover_runner = document.querySelector('.hover_runner');
 
 
-    
-
     more.addEventListener('click', () => {
 
         // e.preventDefault();
 
-        pfmback.style.display='none'
-        pfmnext.style.display='none'
+        pfmb.style.display='none'
+        pfmn.style.display='none'
         morephone.style.animation = "phgrow 1.0s ease-in-out";
         morephone.style.animationFillMode = "both";
         moreplus.style.animation = "congrow 1.15s ease-in-out";
