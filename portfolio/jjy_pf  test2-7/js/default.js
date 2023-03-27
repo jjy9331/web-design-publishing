@@ -10,6 +10,7 @@ $(function(){
     let j_m_fr = $('footer');
     var j_logo = $('.logo');
 
+    var pf_hb = document.querySelector("html, body");
     var pf_h = document.querySelector("html");
     var pf_b = document.querySelector("body");
     var pf_cr = document.querySelector("#container");
@@ -879,7 +880,7 @@ $(function(){
     mu.forEach(function(event) {
         event.addEventListener('click', function(e) {
             position = window.scrollY;
-            // console.log("menu_position: "+position);
+            console.log("menu_position: "+position);
             var pp = this.parentElement.nextElementSibling;
             pp.style.display = 'block';
             m_hr.style.display = 'none';
@@ -898,7 +899,7 @@ $(function(){
 
     ce.forEach(function(event) {
         event.addEventListener('click', function(e) {
-            // console.log("close_position: "+position);
+            console.log("close_position: "+position);
             pp.forEach(function(event){
                 event.style.display = 'none';
             })
@@ -911,7 +912,7 @@ $(function(){
             hfm_li.style.display = 'none';
             curs.classList.remove('pf_cursor');
             e.preventDefault();
-            window.scrollTo({ top: position, behavior: 'auto' });
+            pf_hb.scrollTo({ top: position, behavior: 'auto' });
             
         });
     });
