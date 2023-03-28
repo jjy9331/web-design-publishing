@@ -1311,37 +1311,8 @@ $(function(){
 
     // let pf_ani = document.querySelector(".pf_ani");
     
-
-    let gebiscon = document.querySelectorAll(".gebiscon .sheet");
-    let zerolab = document.querySelectorAll(".zerolab .sheet");
-    let mohenic = document.querySelectorAll(".mohenic .sheet");
-    let happysocks = document.querySelectorAll(".happysocks .sheet");
-    let volvo = document.querySelectorAll(".volvo .sheet");
-    
-
-    let gebiscon_h = document.querySelector(".gebiscon .pop_h");
-    let gebiscon_f = document.querySelector(".gebiscon .pop_f");
-
-    let zerolab_h = document.querySelector(".zerolab .pop_h");
-    let zerolab_f = document.querySelector(".zerolab .pop_f");
-
-    let mohenic_h = document.querySelector(".mohenic .pop_h");
-    let mohenic_f = document.querySelector(".mohenic .pop_f");
-
-    let hss_h = document.querySelector(".happysocks .pop_h");
-    let hss_f = document.querySelector(".happysocks .pop_f");
-
-    let volvo_h = document.querySelector(".volvo .pop_h");
-    let volvo_f = document.querySelector(".volvo .pop_f");
-
     let pop = document.querySelector(".pop");
 
-    // let pf1 = document.querySelector(".pf1");
-    // let pf2 = document.querySelector(".pf2");
-    // let pf3 = document.querySelector(".pf3");
-    // let pf4 = document.querySelector(".pf4");
-    // let pf5 = document.querySelector(".pf5");
-    // let pf_more = document.querySelector(".pf_more");
 
     let eye_hide1 = document.querySelector(".eye_hide1");
     let eye_hide2 = document.querySelector(".eye_hide2");
@@ -1380,17 +1351,20 @@ $(function(){
         });
     });
 
-    for(var i = 0; i < 6; i++ ){
-        pf_nav[i].addEventListener("mouseover", () => {
-            mouseCursor.classList.remove("cursor-grow");
-            mouseCursor.style.zIndex = "1100";
-            hover_toggle = "1";
-        });
+
+
+    pf_nav.forEach((element)=>{
+        element.addEventListener("mouseover", () => {
+        mouseCursor.classList.remove("cursor-grow");
+        mouseCursor.style.zIndex = "1100";
+        hover_toggle = "1";
+        })
+    });
 
         // pf_nav[i].addEventListener("click", () => {
         //     pf_nav_click.classList.add("pf_nav_active");
         // });
-    }
+
 
     // pf_nav_click.addEventListener("click", () => {
     //     pf_nav_click.classList.add("pf_nav_active");
@@ -1498,27 +1472,27 @@ $(function(){
     });
 
 
-    for(var i = 0; i < 6; i++ ){
-        pf_ani[i].addEventListener("mouseover", () => {
+    pf_ani.forEach((element)=>{
+        element.addEventListener("mouseover", () => {
             mouseCursor.classList.add("pf_cursor");
             // mouseCursor.classList.remove("cursor");
             mouseCursor.classList.add("cursor-grow");
             mouseCursor.style.zIndex = "1100";
             hover_toggle = "1";
-
-        });
-        pf_ani[i].addEventListener("mouseleave", () => {
+        })
+        element.addEventListener("mouseleave", () => {
             // mouseCursor.classList.add("cursor");
             mouseCursor.classList.remove("pf_cursor");
             mouseCursor.classList.remove("cursor-grow");
             mouseCursor.style.zIndex = "1100";
             hover_toggle = "0";
-        });
-    }
+        })
+    })
 
 
 
-    pfn_bn.forEach(function(id) {
+
+    pfn_bn.forEach((id) => {
         var element = document.querySelector("#" + id);
         element.addEventListener("mouseenter", function(e) {
             e.preventDefault();
@@ -1562,211 +1536,41 @@ $(function(){
     // cursor mouse control
 
     let pop_hover = "0";
+
+    // var pfs = [...gebescon, ...zerolab, ...mohenic, ...happysocks, ...volvo];
+
+    let pfs_sts = document.querySelectorAll(".sheet")
+
     
-    for(var i = 0; i < 6; i++ ){
-        gebiscon[i].addEventListener("mouseover", () => {
-            mouseCursor.classList.add("pf_cursor");
+    pfs_sts.forEach((el) => {
+        el.addEventListener("mouseover", () => {
+                    mouseCursor.classList.add("pf_cursor");
+                    mouseCursor.style.zIndex = "1100";
+                    // hover_toggle = "1";
+                    pop_hover = "1";
+        });
+    });
+    
+    p_h_a.forEach((el) => {
+        el.addEventListener("mouseover", () => {
+            mouseCursor.classList.remove("pf_cursor");
             mouseCursor.style.zIndex = "1100";
             // hover_toggle = "1";
             pop_hover = "1";
         });
-    }
+    });
 
-    for(var i = 0; i < 6; i++ ){
-        zerolab[i].addEventListener("mouseover", () => {
-            mouseCursor.classList.add("pf_cursor");
+
+    p_f_a.forEach((el) => {
+        el.addEventListener("mouseover", () => {
+            mouseCursor.classList.remove("pf_cursor");
             mouseCursor.style.zIndex = "1100";
             // hover_toggle = "1";
             pop_hover = "1";
         });
-        
-    }
-
-    for(var i = 0; i < 4; i++ ){
-        mohenic[i].addEventListener("mouseover", () => {
-            mouseCursor.classList.add("pf_cursor");
-            mouseCursor.style.zIndex = "1100";
-            // hover_toggle = "1";
-            pop_hover = "1";
-        });
-    }
-
-    for(var i = 0; i < 7; i++ ){
-        happysocks[i].addEventListener("mouseover", () => {
-            mouseCursor.classList.add("pf_cursor");
-            mouseCursor.style.zIndex = "1100";
-            // hover_toggle = "1";
-            pop_hover = "1";
-        });
-    }
-
-    for(var i = 0; i < 6; i++ ){
-        volvo[i].addEventListener("mouseover", () => {
-            mouseCursor.classList.add("pf_cursor");
-            mouseCursor.style.zIndex = "1100";
-            // hover_toggle = "1";
-            pop_hover = "1";
-        });
-    }
-
+    });
     
 
-    
-    gebiscon_h.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-    gebiscon_f.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-
-    // gebiscon_h.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-    // gebiscon_f.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-    zerolab_h.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-    zerolab_f.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-
-
-    // zerolab_h.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-    // zerolab_f.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-
-
-    mohenic_h.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-    mohenic_f.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-
-    // mohenic_h.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-    // mohenic_f.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-
-    hss_h.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-    hss_f.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-
-    // hss_h.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-    // hss_f.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-
-    volvo_h.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-    volvo_f.addEventListener("mouseover", () => {
-        mouseCursor.classList.remove("pf_cursor");
-        mouseCursor.style.zIndex = "1100";
-        // hover_toggle = "1";
-        pop_hover = "1";
-    });
-
-    // volvo_h.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-    // volvo_f.addEventListener("mouseleave", () => {
-    //     mouseCursor.classList.add("pf_cursor");
-    //     mouseCursor.style.zIndex = "1100";
-    //     // hover_toggle = "1";
-    //     pop_hover = "1";
-    // });
-
-
-
-
-    // function changeImg_m(obj,img){
-    //     var mapimg_m = document.getElementById('mcmap');
-    //     mapimg_m.src = img;
-    //     // alert("img_change")
-    //     console.log("img_change");
-    // }
-
-
-
-    
-
-    
 
 
     pftotal.addEventListener("click", () => {
