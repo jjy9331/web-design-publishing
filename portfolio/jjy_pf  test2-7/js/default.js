@@ -508,39 +508,6 @@ $(function(){
     });
 
 
-    
-
-
-    // let j_hfm_li = $(".hfm_list");
-    // let j_m_hr = $('header');
-    // let j_m_fr = $('footer');
-    // let mdh_toggle = "0";
-    // let j_mbh_h = $('.mbh_h');
-    // let j_mbh_f = $('.mbh_f');
-
-    // j_mn_h.click(function(){//버튼을 클릭했을 때
-
-    //     mdh_toggle = "1";
-        
-        // j_hfm_li.toggle();
-    //     j_m_hr.animate({ top:"-10vh"},1000); 
-    //     j_m_fr.animate({ bottom:"-10vh"},1000); 
-    //     j_mbh_h.css('display','block');
-    //     j_mbh_f.css('display','block');
-
-    //     console.log("menu_hide click");
-    // });
-
-
-    // j_mbh_f.on('mouseover', () => {
-
-    //     mdh_toggle = "0";
-
-    //     j_m_hr.animate({ top:"0vh"},1000); 
-    //     j_m_fr.animate({ bottom:"0vh"},1000); 
-    // });
-
-
     // //////////////////////////////////////////////////////////
 
 
@@ -555,25 +522,6 @@ $(function(){
     // var j_p_f = $(".pop_f");
     // var j_sec_hm = $(".home");
     var j_sec_hm_h2 = $(".sl_gd");
-    // var j_sec1_vimg = $(".runners");
-    // var j_sec1_ty_h3 = $(".tw_1");
-    // var j_sec1_ty_p =  $(".tw_2");
-    // var j_sec2_ty2 = $(".typo2");
-    // var j_bkb = $(".bkbox");
-    // var j_sc1 = $("#screen");
-    // var j_sc2 = $("#screen2");
-    // var j_eh_1 = $(".eye_hide1");
-    // var j_eh_2 = $(".eye_hide2");
-    // var j_pf4_yh3= $(".ypaint_hide3");
-    // var j_hfm_lt_li = $(".hfm_list li");
-    // var j_ph_in = $(".pop_h_inner");
-    // var j_ph_in_h3 = $(".pop_h_inner h3");
-    // var j_pf_in = $(".pop_f_inner");
-    var j_ce = $(".close");
-    // var j_pfm_bg = $(".pfmore_bg");
-    // var j_pfm_img = $(".pf_more_img");
-    // var j_hr_rn = $(".hover_runner");
-    // var j_skr_by = $("#skrollr-body");
 
 
 
@@ -824,16 +772,6 @@ $(function(){
         j_pp.animate({ scrollTop:0},700,"swing"); 
         j_pp.css("scroll-snap-type", "none");
         sct_ani = "1";
-
-        // j_pf5_1v.trigger('play');
-
-        // var volvo_v1 = document.querySelector('.j_pf5_1v');
-
-        // function volvo_v1py(){ return volvo_v1.play(); }
-        // if (volvo_v1py() !== undefined) {
-        //     volvo_v1py().then((_) => {}).catch((error) => {});
-        // }
-
     })
 
     // h3 클릭 시, scrollTop 애니메이션 충돌 방지
