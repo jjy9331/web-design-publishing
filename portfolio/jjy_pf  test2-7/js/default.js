@@ -1,5 +1,3 @@
-
-
 $(function(){
 
     var j_pf_hb = $("html,body");
@@ -163,6 +161,7 @@ $(function(){
     // JS portfolio back & next
     
     var m_pf =  document.querySelector('.portfolio');
+    let pf_ani = document.querySelectorAll(".pf_ani");
     var sn = document.querySelector('span');
 
     function cursor_blink() {
@@ -194,8 +193,10 @@ $(function(){
     }
 
 
-
-    m_pf.addEventListener('click', port_nb);
+    pf_ani.forEach(function(element){
+        element.addEventListener('click', port_nb);
+    });
+    
 
     
     const pfn_bn = ["pf1back","pf2back","pf3back","pf4back","pf5back","pf6back","pf1next","pf2next","pf3next","pf4next","pf5next","pf6next",];
@@ -373,7 +374,7 @@ $(function(){
 
     //////////////////////////////////////////////////////////
 
-    // JS function mene 
+    // JS function menu 
 
 
     let j_hfm_toggle = "0";
@@ -1498,7 +1499,7 @@ $(function(){
     let hspan = document.querySelector("span");
 
     // let pf_ani = document.querySelector(".pf_ani");
-    let pf_ani = document.querySelectorAll(".pf_ani");
+    
 
     let gebiscon = document.querySelectorAll(".gebiscon .sheet");
     let zerolab = document.querySelectorAll(".zerolab .sheet");
