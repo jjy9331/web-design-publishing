@@ -165,6 +165,13 @@ $(function(){
     var m_pf =  document.querySelector('.portfolio');
     var sn = document.querySelector('span');
 
+    function cursor_blink() {
+        curs.style.opacity = '0';
+        setTimeout(() => {
+        curs.style.opacity = '1';
+        }, 1000); 
+    }
+    
     function port_nb(e){
         let port_elem = e.target;
 
@@ -181,7 +188,12 @@ $(function(){
             ck_toggle = "1";
         }
         // console.log("pf_BN: "+port_elem.dataset.value);
+
+        cursor_blink();
+
     }
+
+
 
     m_pf.addEventListener('click', port_nb);
 
