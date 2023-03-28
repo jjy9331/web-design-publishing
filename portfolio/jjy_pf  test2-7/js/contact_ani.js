@@ -2,21 +2,21 @@ const html2 = document.documentElement;
 const canvas2 = document.getElementById('screen2');
 const context2 = canvas2.getContext("2d");
 
-const img2 = [null]
-// const img2 = new Image()
+
 const frameCount2 = 255;
+const img2 = Array.from({ length: frameCount2 }, () => null); // Create an array with frameCount number of null values
 const currentFrame2 = index2 => (
     `./contact_ani3/${index2.toString().padStart(3, '0')}.png`
 )
 
-
 const preloadImages2 = () => {
-    for (let i2 = 0; i2 < frameCount2; i2++) {
+    img2.forEach((_, i2) => { // Use the forEach method to loop over the img array
         img2[i2] = new Image();
         img2[i2].src = currentFrame2(i2);
-        // context2.drawImage(img2[i2], 0, 0);
-    }
+        // console.log("img[i].src: "+img[i].src);
+    });
 };
+
 
 // contact_ani img preload web worker
 

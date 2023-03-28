@@ -6,19 +6,18 @@ const context = canvas.getContext("2d");
 
 // //이미지 불러오기
 
-const img = [null]
-// const img = new Image()
 const frameCount = 486;
+const img = Array.from({ length: frameCount }, () => null); // Create an array with frameCount number of null values
 const currentFrame = index => (
     `./track_run_start8/${index.toString().padStart(3, '0')}.png`
 )
 
 const preloadImages = () => {
-    for (let i = 0; i < frameCount; i++) {
+    img.forEach((_, i) => { // Use the forEach method to loop over the img array
         img[i] = new Image();
         img[i].src = currentFrame(i);
         // console.log("img[i].src: "+img[i].src);
-    }
+    });
 };
 
 // introduce img preload web worker
