@@ -425,48 +425,7 @@ $(function(){
             
             // console.log("c_target: "+c_target);
             // console.log("menu_hide: "+menu_hide);
-        // };
     });
-
-    // window.addEventListener('click', target_con);
-
-    // j_hfm_bt.click(function(){//버튼을 클릭했을 때
-        
-        
-    //     if (j_hfm_toggle == "0") {
-    //         j_hfm_toggle = "1";
-
-    //         j_hfm_li.css('display','block');
-
-    //         j_pf_hb.click(function(e){//버튼을 클릭했을 때
-    //             var c_target = $(e.target).parent().attr("class");
-    //             var menu_hide = $(e.target).attr("class");
-    //             if(c_target != j_hfm_bt.attr("class")){
-    //                 j_hfm_toggle = "0";
-    //                 j_hfm_li.css('display','none');
-    //             }
-    //             if(c_target == j_hfm_li.attr("class")){
-    //                 j_hfm_toggle = "1";
-    //                 j_hfm_li.css('display','block');
-    //             }
-    //             if (menu_hide == j_mn_h.attr("class")) {
-    //                 j_hfm_toggle = "0";
-    //                 j_hfm_li.css('display','none');
-    //             }
-
-    //             e.preventDefault();
-                
-    //             // console.log("c_target: "+c_target);
-    //         });
-    //     }
-    //     else{
-    //         j_hfm_toggle = "0";
-    //         j_hfm_li.css('display','none');
-    //     }
-
-
-
-    // });
 
     
 
@@ -515,12 +474,7 @@ $(function(){
 
 
     let toggle = "0";
-    // let j_dkm = $(".darkmode");
     var j_pp = $('.pop');
-    // var j_p_dkm = $(".pop_darkmode");
-    // var j_p_h = $(".pop_h");
-    // var j_p_f = $(".pop_f");
-    // var j_sec_hm = $(".home");
     var j_sec_hm_h2 = $(".sl_gd");
 
 
@@ -545,7 +499,7 @@ $(function(){
     var pf4_yh3= document.querySelector(".ypaint_hide3");
     var hfm_lt_li = document.querySelector(".hfm_list li");
     var ph_in = document.querySelector(".pop_h_inner");
-    var ph_in_h3 = document.querySelector(".pop_h_inner h3");
+    var pp_t = document.querySelectorAll(".pp_t");
     var pf_in = document.querySelector(".pop_f_inner");
     var ce = document.querySelectorAll(".close");
     var pfm_bg = document.querySelector(".pfmore_bg");
@@ -592,7 +546,9 @@ $(function(){
 
         hfm_li_a.style.filter = "invert(100)";
 
-        ph_in_h3.style.fontWeight = "400";
+        pp_t.forEach((element)=>{
+            element.style.fontWeight = "400";
+        });
         ce.forEach((element)=>{
             element.style.fontWeight = "400";
         });
@@ -641,7 +597,10 @@ $(function(){
         });
 
         hfm_li_a.style.filter = "invert(0)";
-        ph_in_h3.style.fontWeight = "300";
+        pp_t.forEach((element)=>{
+            element.style.fontWeight = "300";
+        });
+
         ce.forEach((element)=>{
             element.style.fontWeight = "300";
         });
@@ -767,30 +726,45 @@ $(function(){
 
     let sct_ani = "0"; 
     
-
-    $(".pop .pop_h_inner h3").click(function(){
-        j_pp.animate({ scrollTop:0},700,"swing"); 
-        j_pp.css("scroll-snap-type", "none");
-        sct_ani = "1";
-    })
-
-    // h3 클릭 시, scrollTop 애니메이션 충돌 방지
-    j_pp.on("mousewheel",function(e,delta) {
-
-        if(delta < 0) { //휠을 아래로 돌렸을때
-            // console.log("sheet num: "+delta);
-            j_pp.stop();
-            j_pp.css("scroll-snap-type", "y mandatory");
-            sct_ani = "1";
-        } 
-        else { //휠을 위로 돌렸을때
-            // console.log("sheet num: "+delta);
-            j_pp.css("scroll-snap-type", "y mandatory");
-            j_pp.stop();
-            sct_ani = "1";
-        }
+    pp_t.forEach(el => {
+        el.addEventListener('click', () => {
+            pp.forEach(element => {
+                element.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                element.style.scrollSnapType = 'none';
+                sctAni = '1';
+            });
+        });
     });
 
+    pp.forEach(el => {
+        function sc_ty(){
+            el.style.scrollSnapType = 'y mandatory';
+        };
+                el.addEventListener('wheel', (e) => {
+                    const delta = e.deltaY;
+                    console.log("delta: "+delta);
+                    
+                    if (delta > 0) {
+                        sc_ty();
+                        pp.forEach(element => {
+                            element.addEventListener('scroll',()=>{})
+                            // console.log("pp.scrollTop: "+element.scrollTop);
+                        });
+                        sctAni = '1';
+                    } else {
+                        sc_ty();  
+                        pp.forEach(element => {
+                            element.addEventListener('scroll',()=>{})
+                            // console.log("pp.scrollTop: "+element.scrollTop);
+                        });
+                        sctAni = '1';
+                    }
+                });  
+    });
+    
 
     function scrollanimate(){
         var target_c = document.querySelector('.v_circle');
