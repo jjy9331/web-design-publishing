@@ -376,12 +376,6 @@ $(function(){
 
     // JS function menu 
 
-
-    let j_hfm_toggle = "0";
-    let j_hfm_bt = $(".hfm_btn")
-    let j_hfm_li = $(".hfm_list")
-    let j_mn_h = $(".menu_hide")
-
     let hfm_toggle = "0";
     let hfm_bt = document.querySelector(".hfm_btn");
     let hfm_li = document.querySelector(".hfm_list");
@@ -434,8 +428,6 @@ $(function(){
     let mbh_f = document.querySelector('.mbh_f');
     let m_fr = document.querySelector('footer');
 
-    let j_mbh_h = $('.mbh_h');
-    let j_mbh_f = $('.mbh_f');
 
     mn_h.addEventListener('click', function(){//버튼을 클릭했을 때
 
@@ -498,9 +490,9 @@ $(function(){
     var eh_2 = document.querySelector(".eye_hide2");
     var pf4_yh3= document.querySelector(".ypaint_hide3");
     var hfm_lt_li = document.querySelector(".hfm_list li");
-    var ph_in = document.querySelector(".pop_h_inner");
+    var ph_in = document.querySelectorAll(".pop_h_inner");
     var pp_t = document.querySelectorAll(".pp_t");
-    var pf_in = document.querySelector(".pop_f_inner");
+    var pf_in = document.querySelectorAll(".pop_f_inner");
     var ce = document.querySelectorAll(".close");
     var pfm_bg = document.querySelector(".pfmore_bg");
     var pfm_img = document.querySelector(".pf_more_img");
@@ -553,7 +545,9 @@ $(function(){
             element.style.fontWeight = "400";
         });
         // ce.style.fontWeight = "400";
-        pf_in.style.fontWeight = "400";
+        pf_in.forEach(el =>{
+            el.style.fontWeight = "400";
+        })
         dkm.textContent = "Dark mode on";
         pfm_bg.style.backgroundColor = "black";
         pfm_img.style.filter = "invert(100)";
@@ -605,7 +599,9 @@ $(function(){
             element.style.fontWeight = "300";
         });
         // ce.style.fontWeight = "300";
-        ph_in.style.fontWeight = "300";
+        pf_in.forEach(el =>{
+            el.style.fontWeight = "400";
+        })
         dkm.textContent = "Dark mode off";
         pfm_bg.style.backgroundColor = "white";
         pfm_img.style.filter = "invert(0)";
@@ -669,6 +665,12 @@ $(function(){
             mbh_f.style.display = 'none';
             hfm_li.style.display = 'none';
             pp.scrollTo({ top: 0, behavior: 'auto' }); // pop scroll refresh
+            pp_t.forEach((element)=>{
+                element.style.fontWeight = "300";
+            });
+            pf_in.forEach(el =>{
+                el.style.fontWeight = "400";
+            })
             e.preventDefault();
 
             imageMapResize();
@@ -812,63 +814,80 @@ $(function(){
     let bgmst = document.querySelector('#bgmstart');
     let sdwave = document.querySelector('.soundwave');
 
+    var sdwv = document.querySelector('.soundwave');
+    var stpp = document.querySelector('.startpop');
+    var bgm_if_h3 = document.querySelector('.bgm_info_h3');
+    var btwp = document.querySelector('.btwrap');
+    var sn = document.querySelectorAll('section');
+    var sd_tg = document.querySelector(".sound_toggle");
+    var p_sd_tg_img = document.querySelectorAll(".pop_sound_toggle");
+
     bgmst.addEventListener('click', () => {
-        // sdwave.addEventListener("play", () => {
-        //     console.log("bgmstart");
-        // });
-        sdwave.play();
+        sound_toggle = "0"; 
+
+
+
+
+
+        sd_tg.textContent = 'Sound on';
+        p_sd_tg_img.src = "images/volume.svg";
         
+        sdwave.play();
+
+        function soundpy() {
+            audio.play();
+            audio.autoplay = true;
+            audio.loop = true;
+            audio.volume = 0.5;
+        }
+        if (soundpy() !== undefined) {
+            soundpy().then((_) => {}).catch((error) => {});
+        }
+
+        soundpy();
     });
 
 
-    var sdwv = $('.soundwave');
-    var stpp = $('.startpop');
-    var bgm_if_h3 = $('.bgm_info h3');
-    var btwp = $('.btwrap');
-    var sn = $('section');
-    var sd_tg = $(".sound_toggle");
-    var p_sd_tg_img = $(".pop_sound_toggle img");
+    var j_sdwv = $('.soundwave');
+    var j_stpp = $('.startpop');
+    var j_bgm_if_h3 = $('.bgm_info_h3');
+    var j_btwp = $('.btwrap');
+    var j_sn = $('section');
+    var j_sd_tg = $(".sound_toggle");
+    var j_p_sd_tg_img = $(".pop_sound_toggle");
+
+
+
 
     $('#bgmstart').click(function () {
 
         sound_toggle = "0"; 
 
-        sdwv.delay(1500).fadeOut(100)
-        stpp.delay(2000).fadeOut(100);
-        bgm_if_h3.fadeOut(500);
+        j_sdwv.delay(1500).fadeOut(100)
+        j_stpp.delay(2000).fadeOut(100);
+        j_bgm_if_h3.fadeOut(500);
 
         j_curs.fadeOut(500);
         j_curs.delay(2000).fadeIn(500);
 
-        // var md = new MobileDetect(navigator.userAgent);
-        // let j_curs = document.querySelector(".cursor");
 
+        j_btwp.fadeOut(500);
 
-        // if( md.mobile() != null ){
-        //     j_curs.style.display = 'none'
-        // }
-
-        // $('.cursor ').delay(2000).css('display','block');
-        btwp.fadeOut(500);
-        // j_pp.css('display','none');
-        // j_m_hr.delay(2000).css('display','block');
         j_m_hr.delay(1000).css({visibility:"visible"});
-        // j_m_fr.delay(2000).css('display','block');
         j_m_fr.delay(1000).css({visibility:"visible"});
         j_m_hr.delay(1000).fadeIn(100); 
         j_m_fr.delay(1000).fadeIn(100); 
 
         j_pf_hb.delay(2000).animate({ scrollTop:j_position},0); 
         j_pf_hb.delay(2000).css("overflow", "auto");
-        sn.css('display','block');
+        j_sn.css('display','block');
         j_sec_hm_h2.delay(2000).fadeIn(3500); 
 
         j_pf_hb.delay(2000).css({overflow:"auto"});//body스크롤없앰}
         j_pf_hb.delay(2000).css({position:"static"});
 
-        sd_tg.text('Sound on');
-        p_sd_tg_img.attr("src","images/volume.svg");
-        // $('.darkmode').click();
+        j_sd_tg.text('Sound on');
+        j_p_sd_tg_img.attr("src","images/volume.svg");
 
 
         function soundpy() {
@@ -881,42 +900,12 @@ $(function(){
             soundpy().then((_) => {}).catch((error) => {});
         }
 
-        
-        // audio.play();
         soundpy();
-        // audio.autoplay = true;
-        // audio.loop = true;
-        // audio.volume = 0.5;
-        // audio.currentTime = 20;
-
-        // let sound_toggle = "0";
-
-        // sd_tg.click(function(){//버튼을 클릭했을 때
-        //     if(sound_toggle=="0"){
-        //         sound_toggle = "1";
-        //         audio.pause();
-        //         sd_tg.text('Sound off');
-        //         p_sd_tg_img.attr("src","images/volume_mute.svg");
-        //     }
-        //     else{
-        //         sound_toggle = "0"; 
-        //         audio.play();
-        //         audio.autoplay = true;
-        //         audio.loop = true;
-        //         audio.volume = 0.5;
-        //         sd_tg.text('Sound on');
-        //         p_sd_tg_img.attr("src","images/volume.svg");
-        //     }
-        // });
-
-
-
-        
 
     });
 
 
-    sd_tg.click(function(){//버튼을 클릭했을 때
+    j_sd_tg.click(function(){//버튼을 클릭했을 때
 
         function soundpy() {
             audio.play();
@@ -939,8 +928,8 @@ $(function(){
             sound_toggle = "1";
             // audio.pause();
             soundpe();
-            sd_tg.text('Sound off');
-            p_sd_tg_img.attr("src","images/volume_mute.svg");
+            j_sd_tg.text('Sound off');
+            j_p_sd_tg_img.attr("src","images/volume_mute.svg");
         }
         else{
             sound_toggle = "0"; 
@@ -949,8 +938,8 @@ $(function(){
             // audio.autoplay = true;
             // audio.loop = true;
             // audio.volume = 0.5;
-            sd_tg.text('Sound on');
-            p_sd_tg_img.attr("src","images/volume.svg");
+            j_sd_tg.text('Sound on');
+            j_p_sd_tg_img.attr("src","images/volume.svg");
         }
     });
     
@@ -959,12 +948,12 @@ $(function(){
 
         sound_toggle = "1"; 
 
-        sdwv.fadeOut(50)
-        stpp.delay(500).fadeOut(100);
+        j_sdwv.fadeOut(50)
+        j_stpp.delay(500).fadeOut(100);
         // j_pp.css('display','none');
 
-        bgm_if_h3.fadeOut(500);
-        btwp.fadeOut(500);
+        j_bgm_if_h3.fadeOut(500);
+        j_btwp.fadeOut(500);
 
         j_m_hr.css('display','block');
         j_m_hr.css({visibility:"visible"});
@@ -972,31 +961,31 @@ $(function(){
         j_m_fr.css({visibility:"visible"});
         j_pf_hb.animate({ scrollTop:j_position},0); 
         j_pf_hb.css("overflow", "auto");
-        sn.css('display','block');
+        j_sn.css('display','block');
         j_sec_hm_h2.fadeIn(4500); 
 
         j_pf_hb.css({overflow:"auto"});//body스크롤없앰}
         j_pf_hb.css({position:"static"});
 
-        sd_tg.text('Sound off');
-        p_sd_tg_img.attr("src","images/volume_mute.svg");
+        j_sd_tg.text('Sound off');
+        j_p_sd_tg_img.attr("src","images/volume_mute.svg");
 
 
-        // sd_tg.click(function(){//버튼을 클릭했을 때
+        // j_sd_tg.click(function(){//버튼을 클릭했을 때
         //     if(sound_toggle=="0"){
         //         sound_toggle = "1";
         //         audio.play();
         //         audio.autoplay = true;
         //         audio.loop = true;
         //         audio.volume = 0.5;
-        //         sd_tg.text('Sound on');
-        //         p_sd_tg_img.attr("src","images/volume.svg");
+        //         j_sd_tg.text('Sound on');
+        //         j_p_sd_tg_img.attr("src","images/volume.svg");
         //     }
         //     else{
         //         sound_toggle = "0"; 
         //         audio.pause();
-        //         sd_tg.text('Sound off');
-        //         p_sd_tg_img.attr("src","images/volume_mute.svg");
+        //         j_sd_tg.text('Sound off');
+        //         j_p_sd_tg_img.attr("src","images/volume_mute.svg");
         //     }
         // });
 
@@ -1028,8 +1017,8 @@ $(function(){
             sound_toggle = "1";
             soundpe();
             // audio.pause();
-            p_sd_tg_img.attr("src","images/volume_mute.svg");
-            sd_tg.text('Sound off');
+            j_p_sd_tg_img.attr("src","images/volume_mute.svg");
+            j_sd_tg.text('Sound off');
         }
         else{
             sound_toggle = "0"; 
@@ -1038,8 +1027,8 @@ $(function(){
             // audio.autoplay = true;
             // audio.loop = true;
             // audio.volume = 0.5;
-            p_sd_tg_img.attr("src","images/volume.svg");
-            sd_tg.text('Sound on');
+            j_p_sd_tg_img.attr("src","images/volume.svg");
+            j_sd_tg.text('Sound on');
         }
         
     });
