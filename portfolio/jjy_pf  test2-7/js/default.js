@@ -1,18 +1,18 @@
 $(function(){
 
-    var j_pf_hb = $("html,body");
+    let j_pf_hb = $("html,body");
 
-    var pf_hb = document.querySelector("html, body");
-    var pf_h = document.querySelector("html");
-    var pf_b = document.querySelector("body");
-    var pf_cr = document.querySelector("#container");
+    let pf_hb = document.querySelector("html, body");
+    let pf_h = document.querySelector("html");
+    let pf_b = document.querySelector("body");
+    let pf_cr = document.querySelector("#container");
     let m_hr = document.querySelector('header');
-    var logo = document.querySelector('.logo');
+    let logo = document.querySelector('.logo');
 
 
     // JS header evnet delegation nav
 
-    function header_click(e) {
+    const header_click = (e) => {
         let h_elem = e.target;
         let h_elem_c = h_elem.getAttribute("class");
         let h_btn_c = !h_elem.classList.contains("h_btn");
@@ -27,23 +27,25 @@ $(function(){
             return;
         }
     
-        c_hide();
-        c_quick();
-        c_fi();
+
     
-        function c_hide() {
+        const c_hide = () => {
             pf_cr.style.display = "none";
         }
     
-        function c_quick() {
+        const c_quick = () => {
             pf_h.scrollTop = h_elem.dataset.value;
         }
     
-        function c_fi() {
+        const c_fi = () => {
             setTimeout(function() {
                 pf_cr.style.display = "block";
             }, 1000);
         }
+
+        c_hide();
+        c_quick();
+        c_fi();
     
         // console.log(h_elem_c);
         // console.log(h_elem.dataset.value);
@@ -65,8 +67,8 @@ $(function(){
     const hr_d12 = document.querySelector('.hr_d12');
     const hr_d13 = document.querySelector('.hr_d13');
 
-    window.addEventListener('scroll', function() {
-        var b = window.scrollY;
+    window.addEventListener('scroll', () => {
+        let b = window.scrollY;
         skrollr.init();
 
         if((b >=0) && (b < 13284)) {
@@ -154,18 +156,18 @@ $(function(){
     ///////////////////////////////////////////////////////////////////////////////
     // JS portfolio back & next
     
-    var m_pf =  document.querySelector('.portfolio');
+    let m_pf =  document.querySelector('.portfolio');
     let pf_ani = document.querySelectorAll(".pf_ani");
-    var sn = document.querySelector('span');
+    let sn = document.querySelector('span');
 
-    function cursor_blink() {
+    const cursor_blink = () => {
         curs.style.opacity = '0';
         setTimeout(() => {
         curs.style.opacity = '1';
         }, 1000); 
     }
     
-    function port_nb(e){
+    const port_nb = (e) => {
         let port_elem = e.target;
 
         if(!sn){
@@ -173,21 +175,22 @@ $(function(){
             return
         }
 
-        portfolio_move();
+        
 
-        function portfolio_move(){
+        portfolio_move = () =>{
             window.scrollTo({top: port_elem.dataset.value, behavior: 'smooth', duration: 1000});
             e.preventDefault();
             ck_toggle = "1";
         }
         // console.log("pf_BN: "+port_elem.dataset.value);
 
+        portfolio_move();
         cursor_blink();
 
     }
 
 
-    pf_ani.forEach(function(element){
+    pf_ani.forEach((element) => {
         element.addEventListener('click', port_nb,{passive: false});
     });
     
@@ -195,23 +198,23 @@ $(function(){
     
     const pfn_bn = ["pf1back","pf2back","pf3back","pf4back","pf5back","pf6back","pf1next","pf2next","pf3next","pf4next","pf5next","pf6next",];
 
-    var pf1b = document.querySelector("#pf1back");
-    var pf2b = document.querySelector("#pf2back");
-    var pf3b = document.querySelector("#pf3back");
-    var pf4b = document.querySelector("#pf4back");
-    var pf5b = document.querySelector("#pf5back");
-    var pfmb = document.querySelector("#pf6back");
+    let pf1b = document.querySelector("#pf1back");
+    let pf2b = document.querySelector("#pf2back");
+    let pf3b = document.querySelector("#pf3back");
+    let pf4b = document.querySelector("#pf4back");
+    let pf5b = document.querySelector("#pf5back");
+    let pfmb = document.querySelector("#pf6back");
 
-    var pf1n = document.querySelector("#pf1next");
-    var pf2n = document.querySelector("#pf2next");
-    var pf3n = document.querySelector("#pf3next");
-    var pf4n = document.querySelector("#pf4next");
-    var pf5n = document.querySelector("#pf5next");
-    var pfmn = document.querySelector("#pf6next");
+    let pf1n = document.querySelector("#pf1next");
+    let pf2n = document.querySelector("#pf2next");
+    let pf3n = document.querySelector("#pf3next");
+    let pf4n = document.querySelector("#pf4next");
+    let pf5n = document.querySelector("#pf5next");
+    let pfmn = document.querySelector("#pf6next");
 
 
-    window.addEventListener('scroll', function() {
-        var b = window.scrollY;
+    window.addEventListener('scroll', () => {
+        let b = window.scrollY;
 
         if((b >=86419) && (b < 91499)) { 
             // pf1
@@ -278,8 +281,8 @@ $(function(){
 
     // pf2 zerolab eye animation 
 
-    var pf2m = document.querySelector('.pf2_monitor');
-    var eye = document.querySelector('.pf2_eye');
+    let pf2m = document.querySelector('.pf2_monitor');
+    let eye = document.querySelector('.pf2_eye');
 
     pf2m.addEventListener('mouseover', () => {
         eye.style.bottom = '0%'
@@ -291,7 +294,7 @@ $(function(){
 
     pf2m.addEventListener('mouseout',() => mouseout(),{passive: false});
 
-    function mouseout() {
+    const mouseout = () => {
         eye.style.bottom = '-44%'
         eye.style.left = '-26%'
     }
@@ -301,14 +304,14 @@ $(function(){
 
     // pf4 happysocks intro
 
-    var pf4p = document.querySelector('.pf4_iphone');
-    var wbox1 = document.querySelector('.ypaint_hide1');
-    var wbox2 = document.querySelector('.ypaint_hide2');
-    var pf4subp = document.querySelector('.pf4_subp');
-    var smile = document.querySelector('.smile');
-    var smile2p = document.querySelector('.cls-3');
-    var smile2 = document.querySelector('#smile2');
-    var blind= document.querySelector('.blind');
+    let pf4p = document.querySelector('.pf4_iphone');
+    let wbox1 = document.querySelector('.ypaint_hide1');
+    let wbox2 = document.querySelector('.ypaint_hide2');
+    let pf4subp = document.querySelector('.pf4_subp');
+    let smile = document.querySelector('.smile');
+    let smile2p = document.querySelector('.cls-3');
+    let smile2 = document.querySelector('#smile2');
+    let blind= document.querySelector('.blind');
 
     pf4p.addEventListener('mouseover', () => {
         wbox1.style.left = '100%'
@@ -325,7 +328,7 @@ $(function(){
 
     pf4p.addEventListener('mouseout',() => pf4_mouseout(),{passive: false});
 
-    function pf4_mouseout() {
+    const pf4_mouseout = () => {
         wbox1.style.left = '16%'
         wbox2.style.left = '16%'
         pf4subp.style.opacity = '0.3';
@@ -341,21 +344,21 @@ $(function(){
 
     // pf_more
 
-    var pfmore = document.querySelector('.pf_more_iphone');
-    var pfmore_img = document.querySelector('.pf_more_img');
-    var hover_runner = document.querySelector('.hover_runner');
+    let pfmore = document.querySelector('.pf_more_iphone');
+    let pfmore_img = document.querySelector('.pf_more_img');
+    let hr_rn = document.querySelector('.hover_runner');
 
 
     pfmore.addEventListener('mouseover', () => {
         // pfmore_img.src="images/more_view.gif"
-        hover_runner.style.display = 'block'
+        hr_rn.style.display = 'block'
     },{passive: false});
 
     pfmore.addEventListener('mouseout',() => pf_more_mouseout(),{passive: false});
 
-    function pf_more_mouseout() {
+    const pf_more_mouseout = () => {
         // pfmore_img.src="images/more_bg.png"
-        hover_runner.style.display = 'none'
+        hr_rn.style.display = 'none'
     }
 
 
@@ -367,7 +370,7 @@ $(function(){
     let hfm_bt = document.querySelector(".hfm_btn");
     let hfm_li = document.querySelector(".hfm_list");
     let hfm_li_a = document.querySelector(".hfm_list");
-    var mn_h = document.querySelector(".menu_hide");
+    let mn_h = document.querySelector(".menu_hide");
 
     hfm_bt.addEventListener('click', () => {//버튼을 클릭했을 때
         
@@ -386,9 +389,9 @@ $(function(){
     });
 
     
-    pf_b.addEventListener('click', function(e){
-            var c_target = e.target.parentNode.getAttribute('class');
-            var menu_hide = e.target.getAttribute('class');
+    pf_b.addEventListener('click', (e) => {
+            let c_target = e.target.parentNode.getAttribute('class');
+            let menu_hide = e.target.getAttribute('class');
             if(c_target != hfm_bt.classList){
                 hfm_toggle = "0";
                 hfm_li.style.display = 'none'
@@ -416,7 +419,7 @@ $(function(){
     let m_fr = document.querySelector('footer');
 
 
-    mn_h.addEventListener('click', function(){//버튼을 클릭했을 때
+    mn_h.addEventListener('click', () => {//버튼을 클릭했을 때
 
         mdh_toggle = "1";
         
@@ -433,7 +436,7 @@ $(function(){
     },{passive: false});
 
 
-    mbh_f.addEventListener('mouseover', function(){//버튼을 클릭했을 때
+    mbh_f.addEventListener('mouseover', () =>{//버튼을 클릭했을 때
 
         mdh_toggle = "0";
 
@@ -455,35 +458,34 @@ $(function(){
     let toggle = "0";
 
     let dkm = document.querySelector(".darkmode");
-    var pp = document.querySelectorAll('.pop');
-    var p_dkm = document.querySelector(".pop_darkmode");
-    var p_dkm_a = document.querySelectorAll(".pop_darkmode");
-    var p_h_a = document.querySelectorAll(".pop_h");
-    var p_f_a = document.querySelectorAll(".pop_f");
-    var sec_hm = document.querySelector(".home");
-    var sec_hm_h2 = document.querySelector(".sl_gd");
-    var sec1_vimg = document.querySelector(".runners");
-    var sec1_ty_h3 = document.querySelector(".tw_1");
-    var sec1_ty_p =  document.querySelector(".tw_2");
-    var sec2_ty2 = document.querySelector(".typo2");
-    var bkb = document.querySelector(".bkbox");
-    var sc1 = document.querySelector("#screen");
-    var sc2 = document.querySelector("#screen2");
-    var eh_1 = document.querySelector(".eye_hide1");
-    var eh_2 = document.querySelector(".eye_hide2");
-    var pf4_yh3= document.querySelector(".ypaint_hide3");
-    var hfm_lt_li = document.querySelector(".hfm_list li");
-    var ph_in = document.querySelectorAll(".pop_h_inner");
-    var pp_t = document.querySelectorAll(".pp_t");
-    var pf_in = document.querySelectorAll(".pop_f_inner");
-    var ce = document.querySelectorAll(".close");
-    var pfm_bg = document.querySelector(".pfmore_bg");
-    var pfm_img = document.querySelector(".pf_more_img");
-    var hr_rn = document.querySelector(".hover_runner");
-    var skr_by = document.querySelector("#skrollr-body");
+    let pp = document.querySelectorAll('.pop');
+    let p_dkm = document.querySelector(".pop_darkmode");
+    let p_dkm_a = document.querySelectorAll(".pop_darkmode");
+    let p_h_a = document.querySelectorAll(".pop_h");
+    let p_f_a = document.querySelectorAll(".pop_f");
+    let sec_hm = document.querySelector(".home");
+    let sec_hm_h2 = document.querySelector(".sl_gd");
+    let sec1_vimg = document.querySelector(".runners");
+    let sec1_ty_h3 = document.querySelector(".tw_1");
+    let sec1_ty_p =  document.querySelector(".tw_2");
+    let sec2_ty2 = document.querySelector(".typo2");
+    let bkb = document.querySelector(".bkbox");
+    let sc1 = document.querySelector("#screen");
+    let sc2 = document.querySelector("#screen2");
+    let eh_1 = document.querySelector(".eye_hide1");
+    let eh_2 = document.querySelector(".eye_hide2");
+    let pf4_yh3= document.querySelector(".ypaint_hide3");
+    let hfm_lt_li = document.querySelector(".hfm_list li");
+    let ph_in = document.querySelectorAll(".pop_h_inner");
+    let pp_t = document.querySelectorAll(".pp_t");
+    let pf_in = document.querySelectorAll(".pop_f_inner");
+    let ce = document.querySelectorAll(".close");
+    let pfm_bg = document.querySelector(".pfmore_bg");
+    let pfm_img = document.querySelector(".pf_more_img");
+    let skr_by = document.querySelector("#skrollr-body");
 
  
-    function dark_on() {
+    const dark_on = () => {
         toggle = "1";
         pf_b.style.background = "black";
         pf_b.style.backgroundColor = "black";
@@ -500,8 +502,8 @@ $(function(){
         bkb.style.backgroundColor = "white";
         sc1.style.filter = "invert(100)";
 
-        pfn_bn.forEach(function(id) {
-            var element = document.querySelector("#" + id);
+        pfn_bn.forEach((id) => {
+            let element = document.querySelector("#" + id);
             if (element) {
                 element.style.color = "white";
             }
@@ -512,10 +514,10 @@ $(function(){
         pf4_yh3.style.backgroundColor = "black";
         sc2.style.filter = "invert(100)";
 
-        p_h_a.forEach(function(element) {
+        p_h_a.forEach((element) => {
             element.style.filter = "invert(100)";
         });
-        p_f_a.forEach(function(element) {
+        p_f_a.forEach((element) => {
             element.style.filter = "invert(100)";
         });
 
@@ -537,7 +539,7 @@ $(function(){
         hr_rn.style.filter = "invert(100)";
     }
 
-    function dark_off() {
+    const dark_off = () => {
         toggle = "0";
         pf_b.style.background = "white";
         pf_b.style.backgroundColor = "white";
@@ -554,8 +556,8 @@ $(function(){
         bkb.style.backgroundColor = "black";
         sc1.style.filter = "invert(0)";
 
-        pfn_bn.forEach(function(id) {
-            var element = document.querySelector("#" + id);
+        pfn_bn.forEach((id) => {
+            let element = document.querySelector("#" + id);
             if (element) {
                 element.style.color = "black";
             }
@@ -566,23 +568,23 @@ $(function(){
         pf4_yh3.style.backgroundColor = "white";
         sc2.style.filter = "invert(0)";
 
-        p_h_a.forEach(function(element) {
+        p_h_a.forEach(element => {
             element.style.filter = "invert(0)";
         });
-        p_f_a.forEach(function(element) {
+        p_f_a.forEach(element => {
             element.style.filter = "invert(0)";
         });
 
         hfm_li_a.style.filter = "invert(0)";
-        pp_t.forEach((element)=>{
+        pp_t.forEach(element=>{
             element.style.fontWeight = "300";
         });
 
-        ce.forEach((element)=>{
+        ce.forEach(element=>{
             element.style.fontWeight = "300";
         });
         // ce.style.fontWeight = "300";
-        pf_in.forEach(el =>{
+        pf_in.forEach(el => {
             el.style.fontWeight = "400";
         })
         dkm.textContent = "Dark mode off";
@@ -592,7 +594,7 @@ $(function(){
     }
 
 
-    dkm.addEventListener("click", function(e) {
+    dkm.addEventListener("click", e => {
         if (toggle === "0") {
             dark_on();
         } else {
@@ -601,8 +603,8 @@ $(function(){
         // console.log("dkm_click")
     },{passive: false});
 
-    p_dkm_a.forEach(function(element) {
-        element.addEventListener("click", function(e) {
+    p_dkm_a.forEach(element => {
+        element.addEventListener("click", (e) => {
         e.preventDefault();
         if (toggle === "0") {
             dark_on();
@@ -627,14 +629,14 @@ $(function(){
     const pf5_2_img = document.querySelector('.pf5_2_img');
     const pf5_1v = document.querySelector('.pf5_1v');
 
-    var position = 0;
+    let position = 0;
 
-    mu.forEach(function(event) {
-        event.addEventListener('click', function(e) {
+    mu.forEach(event => {
+        event.addEventListener('click', function(e){
             position = window.scrollY;
             // console.log("menu_position: "+position);
-            var pp = this.parentElement.nextElementSibling;
-            pp.style.display = 'block';
+            let pp_th = this.parentElement.nextElementSibling;
+            pp_th.style.display = 'block';
             m_hr.style.display = 'none';
             m_hr.style.visibility = 'hidden';
             m_fr.style.display = 'none';
@@ -643,7 +645,7 @@ $(function(){
             mbh_h.style.display = 'none';
             mbh_f.style.display = 'none';
             hfm_li.style.display = 'none';
-            pp.scrollTo({ top: 0, behavior: 'auto' }); // pop scroll refresh
+            pp_th.scrollTo({ top: 0, behavior: 'auto' }); // pop scroll refresh
             pp_t.forEach((element)=>{
                 element.style.fontWeight = "300";
             });
@@ -654,25 +656,25 @@ $(function(){
 
             imageMapResize();
 
-            pf3_4mp.addEventListener('mouseover', function() {
+            pf3_4mp.addEventListener('mouseover', () => {
                 pf3_4_img.setAttribute('src', 'images/md4_hover.png');
                 pf3_4mp.style.cursor = 'none';
                 curs.classList.add('cursor-grow');
             },{passive: false});
         
-            pf3_4mp.addEventListener('mouseout', function() {
+            pf3_4mp.addEventListener('mouseout', () => {
                 pf3_4_img.setAttribute('src', 'images/md4.png');
                 pf3_4mp.style.cursor = 'none';
                 curs.classList.remove('cursor-grow');
             },{passive: false});
         
-            pf5_2mp.addEventListener('mouseover', function() {
+            pf5_2mp.addEventListener('mouseover', () => {
                 pf5_2_img.setAttribute('src', 'images/v2_hover.png');
                 pf5_2mp.style.cursor = 'none';
                 curs.classList.add('cursor-grow');
                 });
         
-            pf5_2mp.addEventListener('mouseout', function() {
+            pf5_2mp.addEventListener('mouseout', () => {
                 pf5_2_img.setAttribute('src', 'images/v2.png');
                 pf5_2mp.style.cursor = 'none';
                 curs.classList.remove('cursor-grow');
@@ -681,10 +683,10 @@ $(function(){
     });
 
 
-    ce.forEach(function(event) {
-        event.addEventListener('click', function(e) {
+    ce.forEach(event => {
+        event.addEventListener('click', e => {
             // console.log("close_position: "+position);
-            pp.forEach(function(event){
+            pp.forEach(event => {
                 event.style.display = 'none';
             })
             m_hr.style.display = 'block';
@@ -721,10 +723,10 @@ $(function(){
     });
 
     pp.forEach(el => {
-        function sc_ty(){
+        const sc_ty = () => {
             el.style.scrollSnapType = 'y mandatory';
         };
-                el.addEventListener('wheel', (e) => {
+                el.addEventListener('wheel', e => {
                     const delta = e.deltaY;
                     // console.log("delta: "+delta);
                     
@@ -747,13 +749,13 @@ $(function(){
     });
     
 
-    function scrollanimate(){
-        var target_c = document.querySelector('.v_circle');
-        var circle_position = target_c.getBoundingClientRect().top;
-        var screen_position = window.innerHeight / 2;
+    const scrollanimate = () => {
+        const target_c = document.querySelector('.v_circle');
+        const circle_position = target_c.getBoundingClientRect().top;
+        const screen_position = window.innerHeight / 2;
 
-        var c1 = parseInt(circle_position)
-        var c2 = parseInt(screen_position)
+        const c1 = parseInt(circle_position)
+        const c2 = parseInt(screen_position)
 
         // console.log("c1: "+c1);
         // console.log("c2: "+c2);
@@ -782,9 +784,9 @@ $(function(){
 
     // sound
 
-    // var scroll =new AudioFade('#scrollsound', 8000).init();
+    // let scroll =new AudioFade('#scrollsound', 8000).init();
 
-    var audio = new Audio('sound/JJ_pf_beat.mp3');
+    let audio = new Audio('sound/JJ_pf_beat.mp3');
 
     let sound_toggle = "0";
 
@@ -793,19 +795,19 @@ $(function(){
     let bgmst = document.querySelector('#bgmstart');
     let sdwave = document.querySelector('.soundwave');
 
-    var sdwv = document.querySelector('.soundwave');
-    var stpp = document.querySelector('.startpop');
-    var bgm_if_h3 = document.querySelector('.bgm_info_h3');
-    var btwp = document.querySelector('.btwrap');
-    var sn = document.querySelectorAll('section');
-    var sd_tg = document.querySelector(".sound_toggle");
-    var p_sd_tg_img = document.querySelectorAll(".pop_sound_toggle");
+    let sdwv = document.querySelector('.soundwave');
+    let stpp = document.querySelector('.startpop');
+    let bgm_if_h3 = document.querySelector('.bgm_info_h3');
+    let btwp = document.querySelector('.btwrap');
+    let sect = document.querySelectorAll('section');
+    let sd_tg = document.querySelector(".sound_toggle");
+    let p_sd_tg_img = document.querySelectorAll(".pop_sound_toggle");
 
 
     bgmst.addEventListener('click', async () => {
         try {
-            function start_pop_fdo() {
-                return new Promise((resolve) => {
+            const start_pop_fdo = () => {
+                return new Promise(resolve => {
                     sec_hm_h2.style.opacity = '0';
                     bgm_if_h3.style.opacity = '0';
                     btwp.style.opacity = '0';
@@ -819,10 +821,10 @@ $(function(){
                 });
             };
 
-            function pf_fdi() {
-                return new Promise((resolve) => {
+            const pf_fdi = () => {
+                return new Promise(resolve => {
                     // curs.style.transition = "all ease-in-out 1s";
-                    sn.forEach((section) => {
+                    sect.forEach((section) => {
                         section.style.display = 'block';
                         section.style.visibility = 'visible';
                     });
@@ -843,8 +845,8 @@ $(function(){
                 });
             };
 
-            function st_fdo(){
-                return new Promise((resolve) => {
+            const st_fdo = () => {
+                return new Promise(resolve => {
                     m_hr.style.display = 'block';
                     m_fr.style.display = 'block';
                     m_hr.style.visibility = 'visible';
@@ -865,8 +867,8 @@ $(function(){
                 });
             };
 
-            function soundpy() {
-                return new Promise((resolve) => {
+            const soundpy = () => {
+                return new Promise(resolve => {
                 audio.play();
                 audio.autoplay = true;
                 audio.loop = true;
@@ -891,20 +893,20 @@ $(function(){
     },{passive: false});
 
 
-    sd_tg.addEventListener('click', function() {
-        function soundpy() {
+    sd_tg.addEventListener('click', () => {
+        const soundpy = () => {
             audio.play();
             audio.autoplay = true;
             audio.loop = true;
             audio.volume = 0.5;
-        }
+        };
         if (soundpy() !== undefined) {
             soundpy().then((_) => {}).catch((error) => {});
         }
     
-        function soundpe() {
+        const soundpe = () => {
             audio.pause();
-        }
+        };
         if (soundpe() !== undefined) {
             soundpe().then((_) => {}).catch((error) => {});
         }
@@ -923,9 +925,9 @@ $(function(){
         }
     },{passive: false});
 
-    p_sd_tg_img.forEach((el) => {
-        el.addEventListener('click', function() {
-            function soundpy() {
+    p_sd_tg_img.forEach(el => {
+        el.addEventListener('click', () => {
+            const soundpy = () => {
                 audio.play();
                 audio.autoplay = true;
                 audio.loop = true;
@@ -935,7 +937,7 @@ $(function(){
                 soundpy().then((_) => {}).catch((error) => {});
             }
         
-            function soundpe() {
+            const soundpe = () => {
             audio.pause();
             }
             if (soundpe() !== undefined) {
@@ -961,7 +963,7 @@ $(function(){
 
     bgm_cl.addEventListener('click', async () => {
         try {
-            function start_pop_fdo() {
+            const start_pop_fdo = () => {
                 return new Promise((resolve) => {
                     sec_hm_h2.style.opacity = '0';
                     bgm_if_h3.style.opacity = '0';
@@ -975,9 +977,9 @@ $(function(){
                 });
             };
 
-            function pf_fdi() {
+            const pf_fdi = () => {
                 return new Promise((resolve) => {
-                    sn.forEach((section) => {
+                    sect.forEach((section) => {
                         section.style.display = 'block';
                         section.style.visibility = 'visible';
                     });
@@ -995,7 +997,7 @@ $(function(){
                 });
             };
 
-            function st_fdo(){
+            const st_fdo = () => {
                 return new Promise((resolve) => {
                     m_hr.style.display = 'block';
                     m_fr.style.display = 'block';
@@ -1029,16 +1031,16 @@ $(function(){
     // fullscreen toggle 
     
 
-    var toggleFullscreen = document.querySelector('.pop_fullscreen_toggle')
-    var toggleFullscreenBtn = document.querySelectorAll('.pop_fullscreen_toggle')
-    // var container = document.querySelector('#skrollr-body')
-    var container = document.querySelector('#skrollr-body')
-    // var container2 = document.querySelector('body')
-    var pp_fc_tgg_img = $(".pop_fullscreen_toggle img");
-    var sc_tg = $(".screen_toggle");
-    var screen_toggle = "0"; 
+    let toggleFullscreen = document.querySelector('.pop_fullscreen_toggle')
+    let toggleFullscreenBtn = document.querySelectorAll('.pop_fullscreen_toggle')
+    // let container = document.querySelector('#skrollr-body')
+    let container = document.querySelector('#skrollr-body')
+    // let container2 = document.querySelector('body')
+    let pp_fc_tgg_img = $(".pop_fullscreen_toggle img");
+    let sc_tg = $(".screen_toggle");
+    let screen_toggle = "0"; 
 
-    $(".pop_fullscreen_toggle").click(function(){//버튼을 클릭했을 때
+    $(".pop_fullscreen_toggle").click(() => {//버튼을 클릭했을 때
 
         toggleFullScreen(container);
 
@@ -1054,7 +1056,7 @@ $(function(){
                 }
             });
             sc_tg.text('Full screen on');
-            // var container = document.querySelector('#skrollr-body')
+            // let container = document.querySelector('#skrollr-body')
             // toggleFullScreen(container);
         }
         else{
@@ -1070,14 +1072,14 @@ $(function(){
                 
             });
             sc_tg.text('Full screen off');
-            // var container2 = document.querySelector('body')
+            // let container2 = document.querySelector('body')
             // toggleFullScreen(container2);
         }
         
     });
 
 
-    var fullscreen = element => {
+    let fullscreen = element => {
         if (element.requestFullscreen) return element.requestFullscreen()
         if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
         if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
@@ -1107,15 +1109,14 @@ $(function(){
 
     // more perspective click animation
 
-    var more = document.querySelector('.more');
+    let more = document.querySelector('.more');
 
-    var morephone = document.querySelector('.pf_more_iphone');
-    var moreplus = document.querySelector('.pf_more_img');
+    let morephone = document.querySelector('.pf_more_iphone');
+    let moreplus = document.querySelector('.pf_more_img');
 
-    var header = document.querySelector('header');
-    var footer = document.querySelector('footer');
+    let header = document.querySelector('header');
+    let footer = document.querySelector('footer');
 
-    var hover_runner = document.querySelector('.hover_runner');
 
 
     more.addEventListener('click', () => {
@@ -1134,8 +1135,8 @@ $(function(){
         footer.style.animation = "footer_ani 0.5s ease-in-out";
         footer.style.animationFillMode = "both";
 
-        hover_runner.style.opacity = '0';
-        hover_runner.style.transition = "0.1s ease-out 0.1s";
+        hr_rn.style.opacity = '0';
+        hr_rn.style.transition = "0.1s ease-out 0.1s";
 
         mouseCursor.style.opacity = '0';
         mouseCursor.style.transition = "0.1s ease-out 0.1s";
@@ -1180,13 +1181,15 @@ $(function(){
 
     let pftotal = document.querySelector("html,body");
     //window 객체에 scroll & mouse 이벤트를 추가하고 cursor함수 실행되도록 함
-    window.addEventListener("scroll", cursor);
-    window.addEventListener("mousemove", cursor);
+
     //커스텀 커서의 left값과 top값을 커서의 XY좌표값과 일치시킴
-    function cursor(e) {
+    const cursor = (e) => {
         mouseCursor.style.left = e.pageX + "px";
         mouseCursor.style.top = e.pageY - scrollY + "px";
     }
+
+    window.addEventListener("scroll", cursor);
+    window.addEventListener("mousemove", cursor);
 
     let hover_toggle = "0";
 
@@ -1225,7 +1228,7 @@ $(function(){
 
     let pf_rm = document.querySelector('.pf-nav');
     
-    function port_remote(e){
+    const port_remote = (e) => {
         let pf_elem = e.target;
 
         if(!sn){
@@ -1233,15 +1236,15 @@ $(function(){
             return
         }
 
-        port_move();
-
-        function port_move(){
+        const port_move = () => {
 
             window.scrollTo({top: pf_elem.dataset.value, behavior: 'smooth', duration: 1000});
             e.preventDefault();
         
             ck_toggle = "1";
         }
+
+        port_move();
 
         // console.log(pf_elem.data('value'));
         // console.log("pf_BN: "+pf_elem.dataset.value);
@@ -1252,15 +1255,15 @@ $(function(){
 
 
 
-    var pfnv_li0_sn = document.querySelector('.pf-nav0');
-    var pfnv_li1_sn = document.querySelector('.pf-nav1');
-    var pfnv_li2_sn = document.querySelector('.pf-nav2');
-    var pfnv_li3_sn = document.querySelector('.pf-nav3');
-    var pfnv_li4_sn = document.querySelector('.pf-nav4');
-    var pfnv_li5_sn = document.querySelector('.pf-nav5');
+    let pfnv_li0_sn = document.querySelector('.pf-nav0');
+    let pfnv_li1_sn = document.querySelector('.pf-nav1');
+    let pfnv_li2_sn = document.querySelector('.pf-nav2');
+    let pfnv_li3_sn = document.querySelector('.pf-nav3');
+    let pfnv_li4_sn = document.querySelector('.pf-nav4');
+    let pfnv_li5_sn = document.querySelector('.pf-nav5');
 
-    window.addEventListener('scroll', function() {
-        var b = window.scrollY;
+    window.addEventListener('scroll', () => {
+        let b = window.scrollY;
         if((b >=63996) && (b < 86420)) {
             pfnv_li0_sn.classList.remove("pf_nav_active");
             pfnv_li1_sn.classList.remove("pf_nav_active");
@@ -1320,7 +1323,7 @@ $(function(){
     },{passive: true});
 
 
-    pf_ani.forEach((element)=>{
+    pf_ani.forEach(element => {
         element.addEventListener("mouseover", () => {
             mouseCursor.classList.add("pf_cursor");
             // mouseCursor.classList.remove("cursor");
@@ -1341,8 +1344,8 @@ $(function(){
 
 
     pfn_bn.forEach((id) => {
-        var element = document.querySelector("#" + id);
-        element.addEventListener("mouseenter", function(e) {
+        let element = document.querySelector("#" + id);
+        element.addEventListener("mouseenter", e => {
             e.preventDefault();
             mouseCursor.classList.remove("pf_cursor");
             mouseCursor.style.zIndex = "1100";
@@ -1385,12 +1388,12 @@ $(function(){
 
     let pop_hover = "0";
 
-    // var pfs = [...gebescon, ...zerolab, ...mohenic, ...happysocks, ...volvo];
+    // let pfs = [...gebescon, ...zerolab, ...mohenic, ...happysocks, ...volvo];
 
     let pfs_sts = document.querySelectorAll(".sheet")
 
     
-    pfs_sts.forEach((el) => {
+    pfs_sts.forEach(el => {
         el.addEventListener("mouseover", () => {
                     mouseCursor.classList.add("pf_cursor");
                     mouseCursor.style.zIndex = "1100";
@@ -1409,7 +1412,7 @@ $(function(){
     });
 
 
-    p_f_a.forEach((el) => {
+    p_f_a.forEach(el => {
         el.addEventListener("mouseover", () => {
             mouseCursor.classList.remove("pf_cursor");
             mouseCursor.style.zIndex = "1100";
@@ -1442,18 +1445,27 @@ $(function(){
 
     // chrome left bottom a tag tooltip remove
 
-    j_pf_hb.on('mouseover', 'a', function (e) {
-            var $link = $(this),
-                href = $link.attr('href') || $link.data("href");
-    
-            $link.off('click.chrome');
-            $link.on('click.chrome', function () {
-            window.location.href = href;
-            }).attr('data-href', href) //href에 지정된 링크 연결을 유지 시킵니다.
-            // .css({ cursor: 'pointer' })
-            .removeAttr('href'); // 이 부분이 브라우저에서 뜨는 Url 상태바를 안보이게 처리합니다.
-            // mouseCursor.classList.remove("pf_cursor");
-    });
 
+    function clickHandler(event){
+        let href = this.getAttribute('data-href');
+        window.location.href = href;
+    }
+
+    let links = pf_hb.querySelectorAll('a, area');
+    links.forEach(link => {
+        let hrefs = link.getAttribute('href') || link.getAttribute('data-href');
+
+        link.removeEventListener('click', clickHandler);
+        link.addEventListener('click', clickHandler);
+        link.setAttribute('data-href', hrefs);
+        link.removeAttribute('href');
+        
+        link.addEventListener('mouseover', function(event){
+            hrefs = this.getAttribute('href') || this.getAttribute('data-href');
+            this.setAttribute('data-href', hrefs);
+            event.preventDefault();
+        },{passive: false});
+        
+    });
 
 });
