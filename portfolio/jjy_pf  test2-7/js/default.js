@@ -54,7 +54,7 @@ $(function(){
         // console.log(h_elem_c);
         // console.log(h_elem.dataset.value);
     }
-    m_hr.addEventListener("click", header_click);
+    m_hr.addEventListener("click", header_click,{passive: false});
 
 
     const hr_d1 = document.querySelector('.hr_d1');
@@ -154,7 +154,7 @@ $(function(){
 
         }
 
-    });
+    },{passive: true});
 
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -194,7 +194,7 @@ $(function(){
 
 
     pf_ani.forEach(function(element){
-        element.addEventListener('click', port_nb);
+        element.addEventListener('click', port_nb,{passive: false});
     });
     
 
@@ -276,7 +276,7 @@ $(function(){
             pfmn.style.visibility = "hidden";
         }
 
-    });
+    },{passive: true});
 
     
 
@@ -299,7 +299,7 @@ $(function(){
         eye.style.transition = "0.3s ease-in-out 0.2s";
     });
 
-    pf2m.addEventListener('mouseout',() => mouseout());
+    pf2m.addEventListener('mouseout',() => mouseout(),{passive: false});
 
     function mouseout() {
         eye.style.bottom = '-44%'
@@ -331,9 +331,9 @@ $(function(){
         smile2.style.animation = "growsmile 1.5s ease-in-out";
         smile.style.top = '35.7%'
 
-    });
+    },{passive: false});
 
-    pf4p.addEventListener('mouseout',() => pf4_mouseout());
+    pf4p.addEventListener('mouseout',() => pf4_mouseout(),{passive: false});
 
     function pf4_mouseout() {
         wbox1.style.left = '16%'
@@ -362,9 +362,9 @@ $(function(){
     pfmore.addEventListener('mouseover', () => {
         // pfmore_img.src="images/more_view.gif"
         hover_runner.style.display = 'block'
-    });
+    },{passive: false});
 
-    pfmore.addEventListener('mouseout',() => pf_more_mouseout());
+    pfmore.addEventListener('mouseout',() => pf_more_mouseout(),{passive: false});
 
     function pf_more_mouseout() {
         // pfmore_img.src="images/more_bg.png"
@@ -419,7 +419,7 @@ $(function(){
             
             // console.log("c_target: "+c_target);
             // console.log("menu_hide: "+menu_hide);
-    });
+    },{passive: false});
 
     
 
@@ -443,7 +443,7 @@ $(function(){
 
         // console.log("menu_hide click");
 
-    });
+    },{passive: false});
 
 
     mbh_f.addEventListener('mouseover', function(){//버튼을 클릭했을 때
@@ -456,7 +456,7 @@ $(function(){
         mbh_f.style.display = 'none'
 
         // console.log("j_mbh_f mouseover");
-    });
+    },{passive: false});
 
 
     // //////////////////////////////////////////////////////////
@@ -499,7 +499,7 @@ $(function(){
     var hr_rn = document.querySelector(".hover_runner");
     var skr_by = document.querySelector("#skrollr-body");
 
-
+ 
     function dark_on() {
         toggle = "1";
         pf_b.style.background = "black";
@@ -616,7 +616,7 @@ $(function(){
             dark_off();
         }
         // console.log("dkm_click")
-    });
+    },{passive: false});
 
     p_dkm_a.forEach(function(element) {
         element.addEventListener("click", function(e) {
@@ -627,7 +627,7 @@ $(function(){
             dark_off();
         }
             // console.log("p_dkm_click")
-        });
+        },{passive: false});
     });
 
     /////////////////////////////////////////////////////////
@@ -679,13 +679,13 @@ $(function(){
                 pf3_4_img.setAttribute('src', 'images/md4_hover.png');
                 pf3_4mp.style.cursor = 'none';
                 curs.classList.add('cursor-grow');
-            });
+            },{passive: false});
         
             pf3_4mp.addEventListener('mouseout', function() {
                 pf3_4_img.setAttribute('src', 'images/md4.png');
                 pf3_4mp.style.cursor = 'none';
                 curs.classList.remove('cursor-grow');
-            });
+            },{passive: false});
         
             pf5_2mp.addEventListener('mouseover', function() {
                 pf5_2_img.setAttribute('src', 'images/v2_hover.png');
@@ -697,8 +697,8 @@ $(function(){
                 pf5_2_img.setAttribute('src', 'images/v2.png');
                 pf5_2mp.style.cursor = 'none';
                 curs.classList.remove('cursor-grow');
-            });
-        });
+            },{passive: false});
+        },{passive: false});
     });
 
 
@@ -719,7 +719,7 @@ $(function(){
             e.preventDefault();
             pf_hb.scrollTo({ top: position, behavior: 'auto' });
             
-        });
+        },{passive: false});
     });
 
 
@@ -738,7 +738,7 @@ $(function(){
                 element.style.scrollSnapType = 'none';
                 sctAni = '1';
             });
-        });
+        },{passive: false});
     });
 
     pp.forEach(el => {
@@ -747,24 +747,24 @@ $(function(){
         };
                 el.addEventListener('wheel', (e) => {
                     const delta = e.deltaY;
-                    console.log("delta: "+delta);
+                    // console.log("delta: "+delta);
                     
                     if (delta > 0) {
                         sc_ty();
                         pp.forEach(element => {
-                            element.addEventListener('scroll',()=>{})
+                            element.addEventListener('scroll',()=>{},{passive: true})
                             // console.log("pp.scrollTop: "+element.scrollTop);
                         });
                         sctAni = '1';
                     } else {
                         sc_ty();  
                         pp.forEach(element => {
-                            element.addEventListener('scroll',()=>{})
+                            element.addEventListener('scroll',()=>{},{passive: true})
                             // console.log("pp.scrollTop: "+element.scrollTop);
                         });
                         sctAni = '1';
                     }
-                });  
+                },{passive: true});  
     });
     
 
@@ -794,7 +794,7 @@ $(function(){
         }
 
     }
-    window.addEventListener('scroll',scrollanimate);
+    window.addEventListener('scroll',scrollanimate,{passive: false});
 
     
 
@@ -822,30 +822,217 @@ $(function(){
     var sd_tg = document.querySelector(".sound_toggle");
     var p_sd_tg_img = document.querySelectorAll(".pop_sound_toggle");
 
-    bgmst.addEventListener('click', () => {
-        sound_toggle = "0"; 
 
+    bgmst.addEventListener('click', async () => {
+        try {
+            function start_pop_fdo() {
+                return new Promise((resolve) => {
+                    sec_hm_h2.style.opacity = '0';
+                    bgm_if_h3.style.opacity = '0';
+                    btwp.style.opacity = '0';
+                    curs.style.opacity = '0';
+                    m_hr.style.opacity = '0';
+                    m_fr.style.opacity = '0';
+                    bgm_if_h3.style.transition = 'ease-in-out 0.5s';
+                    btwp.style.transition = 'ease-in-out 0.5s';
+                    // curs.style.transition = "ease-in-out 1s";
+                    resolve();
+                });
+            };
 
+            function pf_fdi() {
+                return new Promise((resolve) => {
+                    // curs.style.transition = "all ease-in-out 1s";
+                    sn.forEach((section) => {
+                        section.style.display = 'block';
+                        section.style.visibility = 'visible';
+                    });
+                    pf_hb.scrollTo(0, position);
+                    pf_b.style.overflow = 'auto';
+                    pf_b.style.position = 'static';
+                    sd_tg.textContent = 'Sound on';
+                    p_sd_tg_img.forEach((section) => {
+                        section.src = 'images/volume.svg';
+                    });
+                    setTimeout(() => {
+                        stpp.style.opacity = '0';
+                        stpp.style.transition = 'ease-in-out 0.3s';
+                        sdwv.style.opacity = '0';
+                        sdwv.style.transition = 'ease-in-out 0.3s';
+                        resolve();
+                    }, 500);
+                });
+            };
 
+            function st_fdo(){
+                return new Promise((resolve) => {
+                    m_hr.style.display = 'block';
+                    m_fr.style.display = 'block';
+                    m_hr.style.visibility = 'visible';
+                    m_fr.style.visibility = 'visible';
+                    curs.style.opacity = '1';
+                    setTimeout(() => {
+                        m_hr.style.opacity = '1';
+                        m_fr.style.opacity = '1';
+                        m_hr.style.transition = 'ease-in-out 0.1s';
+                        m_fr.style.transition = 'ease-in-out 0.1s';
+                        sec_hm_h2.style.opacity = '1';
+                        sec_hm_h2.style.transition = 'ease-in-out 0.1s';
+                        stpp.style.display = 'none';
+                        bgm_if_h3.style.display = 'none';
+                        btwp.style.display = 'none';
+                        resolve();
+                    }, 1000);
+                });
+            };
 
+            function soundpy() {
+                return new Promise((resolve) => {
+                audio.play();
+                audio.autoplay = true;
+                audio.loop = true;
+                audio.volume = 0.5;
+                sdwave.play();
 
-        sd_tg.textContent = 'Sound on';
-        p_sd_tg_img.src = "images/volume.svg";
+                
         
-        sdwave.play();
+                    // Pause the sound after 2 seconds
+                    setTimeout(() => {
+                        sdwave.play();
+                        resolve();
+                    }, 2000);
+                });
+            }
 
-        function soundpy() {
-            audio.play();
-            audio.autoplay = true;
-            audio.loop = true;
-            audio.volume = 0.5;
+            start_pop_fdo();
+            await soundpy();
+            await pf_fdi();
+            await st_fdo();
+        } catch (error) {
+            console.error(error);
         }
-        if (soundpy() !== undefined) {
-            soundpy().then((_) => {}).catch((error) => {});
-        }
+    },{passive: false});
 
-        soundpy();
-    });
+    // bgmst.addEventListener('click',() => {
+
+    //     function start_pop_fdo(){
+    //         bgm_if_h3.style.opacity = '0';
+    //         btwp.style.opacity = '0';
+    //         curs.style.opacity = '0';
+    //         bgm_if_h3.style.transition = "ease-in-out 1s";
+    //         btwp.style.transition = "ease-in-out 1s";
+    //         // curs.style.transition = "ease-in-out 1s";
+    //     };
+
+    //     function pf_fdi(){
+    //         stpp.style.opacity = '0';
+    //         stpp.style.display = 'none';
+    //         stpp.style.transition = "ease-in-out 1s";
+    //         bgm_if_h3.style.display = 'none';
+    //         btwp.style.display = 'none';
+    //         m_hr.style.opacity = '1';
+    //         m_fr.style.opacity = '1';
+    //         m_hr.style.transition = "ease-in-out 1s";
+    //         m_fr.style.transition = "ease-in-out 1s";
+    //         m_hr.style.visibility = "visible";
+    //         m_fr.style.visibility = "visible";
+    //         m_hr.style.display = 'block';
+    //         m_fr.style.display = 'block';
+    //         curs.style.opacity = '1';
+    //         // curs.style.transition = "all ease-in-out 1s";
+    //         sn.forEach((section) => {
+    //             section.style.display = 'block'
+    //             section.style.visibility = "visible";
+    //         });
+    //         pf_hb.scrollTo(0, position);
+    //         pf_b.style.overflow = "auto";
+    //         pf_b.style.position = "static";
+    //         sd_tg.textContent = 'Sound on';
+    //         p_sd_tg_img.src = "images/volume.svg";
+    //     };
+
+
+    //     function soundpy() {
+    //         audio.play();
+    //         audio.autoplay = true;
+    //         audio.loop = true;
+    //         audio.volume = 0.5;
+    //     }
+    //     if (soundpy() !== undefined) {
+    //         soundpy().then((_) => {}).catch((error) => {});
+    //     }
+
+    //     start_pop_fdo();
+    //     sdwave.play();
+    //     pf_fdi();
+
+
+        
+    // });
+
+    // bgmst.addEventListener('click', async function() {
+    //     let sound_toggle = "0";
+    
+    //     await new Promise(resolve => setTimeout(() => {
+    //         sdwv.style.display = 'none';
+    //         stpp.style.display = 'none';
+    //         bgm_if_h3.style.display = 'none';
+    //         curs.style.display = 'none';
+    //         curs.style.display = 'block';
+    //         btwp.style.display = 'none';
+    //         m_hr.style.visibility = "visible";
+    //         m_fr.style.visibility = "visible";
+    //         m_hr.style.display = 'block';
+    //         m_fr.style.display = 'block';
+    //         pf_hb.scrollTo(0, position);
+    //         pf_hb.style.overflow = 'auto';
+    //         sn.forEach(section => section.style.display = 'block');
+    //         sec_hm_h2.style.display = 'block';
+    //         pf_hb.style.overflow = "auto";
+    //         pf_hb.style.position = "static";
+    //         sd_tg.textContent = 'Sound on';
+    //         p_sd_tg_img.src = "images/volume.svg";
+    //         resolve();
+    //     }, 2000));
+    
+    //     function soundpy() {
+    //         audio.play();
+    //         audio.autoplay = true;
+    //         audio.loop = true;
+    //         audio.volume = 0.5;
+    //     }
+    
+    //     try {
+    //         await soundpy();
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // });
+
+    // bgmst.addEventListener('click', () => {
+    //     sound_toggle = "0"; 
+
+
+
+
+
+    //     sd_tg.textContent = 'Sound on';
+    //     p_sd_tg_img.src = "images/volume.svg";
+        
+    //     sdwave.play();
+
+    //     function soundpy() {
+    //         audio.play();
+    //         audio.autoplay = true;
+    //         audio.loop = true;
+    //         audio.volume = 0.5;
+    //     }
+    //     if (soundpy() !== undefined) {
+    //         soundpy().then((_) => {}).catch((error) => {});
+    //     }
+
+    //     soundpy();
+    // });
 
 
     var j_sdwv = $('.soundwave');
@@ -857,52 +1044,50 @@ $(function(){
     var j_p_sd_tg_img = $(".pop_sound_toggle");
 
 
+    // $('#bgmstart').click(function () {
+
+    //     sound_toggle = "0"; 
+
+    //     j_sdwv.delay(1500).fadeOut(100)
+    //     j_stpp.delay(2000).fadeOut(100);
+    //     j_bgm_if_h3.fadeOut(500);
+
+    //     j_curs.fadeOut(500);
+    //     j_curs.delay(2000).fadeIn(500);
 
 
-    $('#bgmstart').click(function () {
+    //     j_btwp.fadeOut(500);
 
-        sound_toggle = "0"; 
+    //     j_m_hr.delay(1000).css({visibility:"visible"});
+    //     j_m_fr.delay(1000).css({visibility:"visible"});
+    //     j_m_hr.delay(1000).fadeIn(100); 
+    //     j_m_fr.delay(1000).fadeIn(100); 
 
-        j_sdwv.delay(1500).fadeOut(100)
-        j_stpp.delay(2000).fadeOut(100);
-        j_bgm_if_h3.fadeOut(500);
+    //     j_pf_hb.delay(2000).animate({ scrollTop:j_position},0); 
+    //     j_pf_hb.delay(2000).css("overflow", "auto");
+    //     j_sn.css('display','block');
+    //     j_sec_hm_h2.delay(2000).fadeIn(3500); 
 
-        j_curs.fadeOut(500);
-        j_curs.delay(2000).fadeIn(500);
+    //     j_pf_hb.delay(2000).css({overflow:"auto"});//body스크롤없앰}
+    //     j_pf_hb.delay(2000).css({position:"static"});
 
-
-        j_btwp.fadeOut(500);
-
-        j_m_hr.delay(1000).css({visibility:"visible"});
-        j_m_fr.delay(1000).css({visibility:"visible"});
-        j_m_hr.delay(1000).fadeIn(100); 
-        j_m_fr.delay(1000).fadeIn(100); 
-
-        j_pf_hb.delay(2000).animate({ scrollTop:j_position},0); 
-        j_pf_hb.delay(2000).css("overflow", "auto");
-        j_sn.css('display','block');
-        j_sec_hm_h2.delay(2000).fadeIn(3500); 
-
-        j_pf_hb.delay(2000).css({overflow:"auto"});//body스크롤없앰}
-        j_pf_hb.delay(2000).css({position:"static"});
-
-        j_sd_tg.text('Sound on');
-        j_p_sd_tg_img.attr("src","images/volume.svg");
+    //     j_sd_tg.text('Sound on');
+    //     j_p_sd_tg_img.attr("src","images/volume.svg");
 
 
-        function soundpy() {
-            audio.play();
-            audio.autoplay = true;
-            audio.loop = true;
-            audio.volume = 0.5;
-        }
-        if (soundpy() !== undefined) {
-            soundpy().then((_) => {}).catch((error) => {});
-        }
+    //     function soundpy() {
+    //         audio.play();
+    //         audio.autoplay = true;
+    //         audio.loop = true;
+    //         audio.volume = 0.5;
+    //     }
+    //     if (soundpy() !== undefined) {
+    //         soundpy().then((_) => {}).catch((error) => {});
+    //     }
 
-        soundpy();
+    //     soundpy();
 
-    });
+    // });
 
 
     j_sd_tg.click(function(){//버튼을 클릭했을 때
@@ -1370,7 +1555,7 @@ $(function(){
             pfnv_li4_sn.classList.remove("pf_nav_active");
             pfnv_li5_sn.classList.add("pf_nav_active");
         }
-    });
+    },{passive: true});
 
 
     pf_ani.forEach((element)=>{
@@ -1400,7 +1585,7 @@ $(function(){
             mouseCursor.classList.remove("pf_cursor");
             mouseCursor.style.zIndex = "1100";
             hover_toggle = "1";
-        });
+        },{passive: false});
     });
 
 
@@ -1411,14 +1596,14 @@ $(function(){
         // mouseCursor.style.cursor = "none";
         mouseCursor.style.zIndex = "1100";
         hover_toggle = "1";
-    });
+    },{passive: false});
     eye_hide2.addEventListener("mouseenter", () => {
         mouseCursor.classList.remove("pf_cursor");
         // mouseCursor.style.cursor = "none";
         mouseCursor.classList.remove("cursor-grow");
         mouseCursor.style.zIndex = "1100";
         hover_toggle = "1";
-    });
+    },{passive: false});
     // eye_hide2.addEventListener("mouseover", () => {
     //     mouseCursor.style.cursor = "none";
     // });
@@ -1430,7 +1615,7 @@ $(function(){
         mouseCursor.classList.remove("cursor-grow");
         mouseCursor.style.zIndex = "1100";
         hover_toggle = "1";
-    });
+    },{passive: false});
 
 
 
@@ -1449,7 +1634,7 @@ $(function(){
                     mouseCursor.style.zIndex = "1100";
                     // hover_toggle = "1";
                     pop_hover = "1";
-        });
+        },{passive: false});
     });
     
     p_h_a.forEach((el) => {
@@ -1458,7 +1643,7 @@ $(function(){
             mouseCursor.style.zIndex = "1100";
             // hover_toggle = "1";
             pop_hover = "1";
-        });
+        },{passive: false});
     });
 
 
@@ -1468,7 +1653,7 @@ $(function(){
             mouseCursor.style.zIndex = "1100";
             // hover_toggle = "1";
             pop_hover = "1";
-        });
+        },{passive: false});
     });
     
 
@@ -1491,7 +1676,7 @@ $(function(){
         }
 
 
-    });
+    },{passive: false});
 
     // chrome left bottom a tag tooltip remove
 
