@@ -175,8 +175,6 @@ $(function(){
             return
         }
 
-        
-
         portfolio_move = () =>{
             window.scrollTo({top: port_elem.dataset.value, behavior: 'smooth', duration: 1000});
             e.preventDefault();
@@ -185,7 +183,6 @@ $(function(){
         // console.log("pf_BN: "+port_elem.dataset.value);
 
         portfolio_move();
-        cursor_blink();
 
     }
 
@@ -492,6 +489,8 @@ $(function(){
         skr_by.style.background = "black";
         m_hr.style.filter = "invert(100)";
         m_fr.style.filter = "invert(100)";
+        m_hr.style.transition = 'none';
+        m_fr.style.transition = 'none';
         sec_hm.style.backgroundColor = "black";
         sec_hm_h2.style.color = "white";
         sec1_vimg.style.filter = "invert(100)";
@@ -546,6 +545,8 @@ $(function(){
         skr_by.style.background = "white";
         m_hr.style.filter = "invert(0)";
         m_fr.style.filter = "invert(0)";
+        m_hr.style.transition = 'none';
+        m_fr.style.transition = 'none';
         sec_hm.style.backgroundColor = "white";
         sec_hm_h2.style.color = "black";
         sec1_vimg.style.filter = "invert(0)";
@@ -636,6 +637,7 @@ $(function(){
             position = window.scrollY;
             // console.log("menu_position: "+position);
             let pp_th = this.parentElement.nextElementSibling;
+            curs.style.opacity = '1';
             pp_th.style.display = 'block';
             m_hr.style.display = 'none';
             m_hr.style.visibility = 'hidden';
