@@ -1,6 +1,4 @@
-$(function(){
 
-    let j_pf_hb = $("html,body");
 
     let pf_hb = document.querySelector("html, body");
     let pf_h = document.querySelector("html");
@@ -170,7 +168,7 @@ $(function(){
     const port_nb = (e) => {
         let port_elem = e.target;
 
-        if(!sn){
+        if(!sn){v
             port_elem = null;
             return
         }
@@ -183,6 +181,7 @@ $(function(){
         // console.log("pf_BN: "+port_elem.dataset.value);
 
         portfolio_move();
+        cursor_blink();
 
     }
 
@@ -481,7 +480,7 @@ $(function(){
     let pfm_img = document.querySelector(".pf_more_img");
     let skr_by = document.querySelector("#skrollr-body");
 
- 
+
     const dark_on = () => {
         toggle = "1";
         pf_b.style.background = "black";
@@ -637,6 +636,7 @@ $(function(){
             position = window.scrollY;
             // console.log("menu_position: "+position);
             let pp_th = this.parentElement.nextElementSibling;
+            // clearInterval(cursor_blink);
             curs.style.opacity = '1';
             pp_th.style.display = 'block';
             m_hr.style.display = 'none';
@@ -1530,4 +1530,4 @@ $(function(){
         
     });
 
-});
+
