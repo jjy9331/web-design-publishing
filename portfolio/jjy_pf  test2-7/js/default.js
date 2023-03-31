@@ -1031,80 +1031,140 @@ $(function(){
 
 
     // fullscreen toggle 
-    
 
-    let toggleFullscreen = document.querySelector('.pop_fullscreen_toggle')
-    let toggleFullscreenBtn = document.querySelectorAll('.pop_fullscreen_toggle')
-    // let container = document.querySelector('#skrollr-body')
-    let container = document.querySelector('#skrollr-body')
-    // let container2 = document.querySelector('body')
-    let pp_fc_tgg_img = $(".pop_fullscreen_toggle img");
-    let sc_tg = $(".screen_toggle");
+
+    let container = document.querySelector('#skrollr-body');
+    let pp_fc_tgg_img = document.querySelectorAll('.pop_fullscreen_toggle');
+    let sc_tg = document.querySelector(".screen_toggle");
     let screen_toggle = "0"; 
 
-    $(".pop_fullscreen_toggle").click(() => {//버튼을 클릭했을 때
 
-        toggleFullScreen(container);
 
-        if(screen_toggle=="0"){
-            screen_toggle = "1";
-            pp_fc_tgg_img.attr("src","images/fullscreen_exit.svg");
-            j_pf_hb.mousewheel(function(event, delta) {
-                if (!(navigator.appVersion.indexOf("Mac") != -1)) { 
-                    $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 880)) }, 830, "swing");
-                }
-                else if (navigator.appVersion.indexOf("Mac") != -1) {
-                    $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 880)) }, 830, "swing");
-                }
+    // Define a function to update the UI based on the full-screen state
+    const updateUI = () => {
+        if (document.fullscreenElement) {
+            sc_tg.textContent = 'Full screen on';
+            pp_fc_tgg_img.forEach(el => {
+                el.setAttribute("src", "images/fullscreen_exit.svg");
             });
-            sc_tg.text('Full screen on');
-            // let container = document.querySelector('#skrollr-body')
-            // toggleFullScreen(container);
-        }
-        else{
-            screen_toggle = "0"; 
-            pp_fc_tgg_img.attr("src","images/fullscreen.svg");
-            j_pf_hb.mousewheel(function(event, delta) {
-                if (!(navigator.appVersion.indexOf("Mac") != -1)) { 
-                    $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 1)) }, 830, "swing");
-                }
-                else if (navigator.appVersion.indexOf("Mac") != -1) {
-                    $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 440)) }, 830, "swing");
-                }
-                
+            // screen_toggle.setAttribute("aria-pressed", "true");
+            // screen_toggle.setAttribute("aria-label", "Exit full screen");
+            // screen_toggle.setAttribute("title", "Exit full screen");
+        } else {
+            sc_tg.textContent = 'Full screen off';
+            pp_fc_tgg_img.forEach(el => {
+                el.setAttribute("src", "images/fullscreen.svg");
             });
-            sc_tg.text('Full screen off');
-            // let container2 = document.querySelector('body')
-            // toggleFullScreen(container2);
+            // screen_toggle.setAttribute("aria-pressed", "false");
+            // screen_toggle.setAttribute("aria-label", "Enter full screen");
+            // screen_toggle.setAttribute("title", "Enter full screen");
         }
-        
-    });
+    };
+
+    // Add a listener for the full-screen change event
+    document.addEventListener("fullscreenchange", updateUI);
+    document.addEventListener("webkitfullscreenchange", updateUI);
+    document.addEventListener("mozfullscreenchange", updateUI);
+    document.addEventListener("MSFullscreenChange", updateUI);
 
 
     let fullscreen = element => {
-        if (element.requestFullscreen) return element.requestFullscreen()
-        if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
-        if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
-        if (element.msRequestFullscreen) return element.msRequestFullscreen()
-    }
+        if (element.requestFullscreen) return element.requestFullscreen();
+        if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen();
+        if (element.mozRequestFullScreen) return element.mozRequestFullScreen();
+        if (element.msRequestFullscreen) return element.msRequestFullscreen();
+    };
 
-    function toggleFullScreen(element) {
+    let toggleFullScreen = (element) => {
         if (!document.fullscreenElement) {
-            if (element.requestFullscreen) return element.requestFullscreen()
-            if (element.webkitRequestFullscreen)
-                return element.webkitRequestFullscreen()
-            if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
-            if (element.msRequestFullscreen) return element.msRequestFullscreen()
-            // if (screen_toggle=="0"){}
+            if (element.requestFullscreen) return element.requestFullscreen();
+            if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen();
+            if (element.mozRequestFullScreen) return element.mozRequestFullScreen();
+            if (element.msRequestFullscreen) return element.msRequestFullscreen();
         } else {
-            if (document.exitFullscreen) return document.exitFullscreen()
-            if (document.webkitCancelFullscreen)
-                return document.webkitCancelFullscreen()
-            if (document.mozCancelFullScreen) return document.mozCancelFullScreen()
-            if (document.msExitFullscreen) return document.msExitFullscreen()
-            // if (screen_toggle=="1"){}
+            if (document.exitFullscreen) return document.exitFullscreen();
+            if (document.webkitCancelFullscreen) return document.webkitCancelFullscreen();
+            if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+            if (document.msExitFullscreen) return document.msExitFullscreen();
         }
     }
+
+    const tgg_fullsc = () => {
+        toggleFullScreen(container);
+        updateUI();
+    };
+
+    // Add event listeners to toggle full-screen mode when the buttons are clicked
+    pp_fc_tgg_img.forEach(el => {
+        el.addEventListener('click', tgg_fullsc, {passive: true})
+    });
+
+    sc_tg.addEventListener('click', tgg_fullsc, {passive: true});
+    
+    document.addEventListener('keydown', (event) => {
+        if (event.ctrlKey && event.metaKey && event.code === 'KeyF') {
+          event.preventDefault(); // Prevent the default full screen behavior
+          toggleFullScreen(container); // Call your toggleFullScreen function
+          updateUI(); // Update the UI using your updateUI function
+        }
+    });
+
+    // let container = document.querySelector('#skrollr-body')
+    // let pp_fc_tgg_img = document.querySelectorAll('.pop_fullscreen_toggle')
+    // let sc_tg = document.querySelector(".screen_toggle");
+    // let screen_toggle = "0"; 
+
+
+    // const tgg_fullsc = () => {
+    //     toggleFullScreen(container);
+    //     if(screen_toggle=="0"){
+    //         screen_toggle = "1";
+    //         pp_fc_tgg_img.forEach(el => {
+    //             el.setAttribute("src","images/fullscreen_exit.svg");
+    //         })
+    //         sc_tg.textContent = 'Full screen on';
+    //     }
+    //     else{
+    //         screen_toggle = "0"; 
+    //         pp_fc_tgg_img.forEach(el => {
+    //             el.setAttribute("src","images/fullscreen.svg");
+    //         })
+            
+    //         sc_tg.textContent = 'Full screen off';
+    //     }
+    // };
+
+    // pp_fc_tgg_img.forEach(el => {
+    //     el.addEventListener('click', tgg_fullsc,{passive: true})
+    // })
+    // sc_tg.addEventListener('click',tgg_fullsc,{passive: true})
+
+
+
+    // let fullscreen = element => {
+    //     if (element.requestFullscreen) return element.requestFullscreen()
+    //     if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
+    //     if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
+    //     if (element.msRequestFullscreen) return element.msRequestFullscreen()
+    // }
+
+    // function toggleFullScreen(element) {
+    //     if (!document.fullscreenElement) {
+    //         if (element.requestFullscreen) return element.requestFullscreen()
+    //         if (element.webkitRequestFullscreen)
+    //             return element.webkitRequestFullscreen()
+    //         if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
+    //         if (element.msRequestFullscreen) return element.msRequestFullscreen()
+    //         // if (screen_toggle=="0"){}
+    //     } else {
+    //         if (document.exitFullscreen) return document.exitFullscreen()
+    //         if (document.webkitCancelFullscreen)
+    //             return document.webkitCancelFullscreen()
+    //         if (document.mozCancelFullScreen) return document.mozCancelFullScreen()
+    //         if (document.msExitFullscreen) return document.msExitFullscreen()
+    //         // if (screen_toggle=="1"){}
+    //     }
+    // }
 
 
     /////////////////////////////////////////////////////////
@@ -1153,7 +1213,7 @@ $(function(){
             location.replace('overview.html') 
         }, 1500);
 
-    });
+    },{passive: true});
 
 
     /////////////////////////////////////////////////////////
