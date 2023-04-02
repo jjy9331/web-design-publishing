@@ -13,8 +13,18 @@
     let current = 0;
 
 
+    const fadeIn = (element, duration, callback) => {
+        element.style.transition = `ease-in-out ${duration / 1000}s`;
+        element.style.opacity = 1;
+        
+        setTimeout(() => {
+            element.style.display = 'block';
+            if (typeof callback === 'function') callback();
+        }, duration);
+    }
+
     const fadeOut = (element, duration, callback) => {
-        element.style.transition = `opacity ${duration / 1000}s`;
+        element.style.transition = `ease-in-out ${duration / 1000}s`;
         element.style.opacity = 0;
         
         setTimeout(() => {
@@ -23,7 +33,7 @@
         }, duration);
     }
 
-    function lottie_logo(){
+    lottie_logo = () => {
         LottieInteractivity.create({
             player:'#logo_ani',
             renderer:'svg',
@@ -50,6 +60,91 @@
     };
 
 
+
+    const imgpg = () => {
+        imgLoad.on('progress', () => {
+            imgLoaded++;
+        });
+    };
+
+    const up_imgpg = () => {
+            let target = (imgLoaded / imgTotal) * 100;
+            current += (target - current) * 0.1;
+            progressBar.style.width = current + '%';
+            progressText.textContent = Math.floor(current) + '%';
+            // console.log("imgLoaded: "+imgLoaded)
+            // console.log("imgTotal: "+imgTotal)
+    }
+
+    const pg_fdo = () => {
+            prog.classList.add('progress-complete');
+            setTimeout(() => {
+                // progressBar.add(progressText).delay = 1000;
+                progressBar.style.opacity = 1;
+                progressText.style.opacity = 1;
+                fadeOut( prog, 300, () => {});
+            }, 1000);
+    } 
+
+    const lg_st = () => {
+            setTimeout(()=>{
+                lottie_logo();
+            },1000)
+    }
+
+    const lg_ed = () => {
+            fadeOut( lg_an, 300, () => {});
+    }
+
+    const cr_fdo = () => {
+            fadeOut(pf_cr, 300, () =>  {});
+            curs.style.display = "none";
+    } 
+
+    const stpp_fdi = () => {
+            fadeIn( stpp, 500,()=>{});
+    } 
+    const cr_fdi = () => {
+        setTimeout(()=>{
+            fadeIn( pf_cr, 300,()=>{});
+        },1000);
+    }
+
+    const pf_loading = () => {
+            lg_an.style.display = "block"; //로딩표시영역 사라짐
+            pf_b.style.position = "fixed";
+            pf_b.style.overflow = "hidden";
+            skr_by.style.backgroundColor = "black";
+            m_hr.style.display = "none";
+            sect.forEach(element => {
+                element.style.visibility = "hidden";
+            });
+            stpp.style.display = "block";
+            stpp.style.visibility = "visible";
+            stpp.style.opacity = 0;
+            wrp.style.display = "none";
+            curs.style.display = "none";
+            m_fr.style.display = "none";
+            pf_b.style.overflow = "hidden";
+    }
+
+    const pf_start = () => {
+            wrp.style.display = "block";
+            wrp.style.visibility = "visible";
+            sect.forEach(element => {
+                element.style.visibility = "visible";
+            });
+            pf_b.style.backgroundColor = "white";
+            pf_hb.style.overflow = "auto";
+            skr_by.style.backgroundColor = "white";
+            if(isMobile()){
+                curs.style.display = 'none' //모바일페이지
+            } else {
+                curs.style.display = 'block'  //PC용 페이지
+            }
+    } 
+
+
     const mine3 = {js:{type:'text/javascript'}};
 
     const WorkerPromise3 = (f) => {
@@ -71,97 +166,52 @@
             });
     };
 
-    WorkerPromise3(lottie_logo());
+
 
 
     const imagesProgress = () => {
-
-        imgLoad.on('progress', () => {
-            imgLoaded++;
-        });
-
-
-        const updateProgress = () => {
-            let target = (imgLoaded / imgTotal) * 100;
-            current += (target - current) * 0.1;
-            // console.log("current: "+current)
-            progressBar.style.width = current + '%';
-            progressText.textContent = Math.floor(current) + '%';
-
-            if (current >= 100) {
-                clearInterval(progressTimer);
-                prog.classList.add('progress-complete');
-                setTimeout(() => {
-                    // progressBar.add(progressText).delay = 1000;
-                    progressBar.style.opacity = 1;
-                    progressText.style.opacity = 1;
-
-                    WorkerPromise3(lottie_logo());
-                    // lottie_logo();
-
-                    fadeOut(pf_cr, 1000, () =>  {
-                        // Callback function to be executed after the element has faded out
-                        prog.style.display = "none";
-                        curs.style.display = "none";
-
-                        if (current === 100) {
-                            let t = 0;
-
-                            logoAni = () => {
-                                t = t + 1;
-                                // console.log(t);
-                                // tm.textContent = t;
-                                if (t == 6) {
-                                    lg_an.style.display = "none"; //로딩표시영역 사라짐
-                                    pf_cr.style.opacity = '1';
-                                    pf_cr.style.display = "block";
-                                    // fadeIn(wrp, 2000);
-                                    // fadeIn(stpp, 2000);
-                                    wrp.style.display = "block";
-                                    stpp.style.display = "block";
-                                    wrp.style.visibility = "visible";
-                                    sect.forEach(element => {
-                                        element.style.visibility = "visible";
-                                    });
-                                    pf_b.style.backgroundColor = "white";
-                                    pf_hb.style.overflow = "auto";
-                                    skr_by.style.backgroundColor = "white";
-
-                                    if(isMobile()){
-                                        curs.style.display = 'none' //모바일페이지
-                                    } else {
-                                        curs.style.display = 'block'  //PC용 페이지
-                                    }
-
-                                    clearInterval(t);
-                                }else if(t < 6){
-                                    lg_an.style.display = "block"; //로딩표시영역 사라짐
-                                    pf_b.style.position = "fixed";
-                                    pf_b.style.overflow = "hidden";
-                                    skr_by.style.backgroundColor = "black";
-                                    m_hr.style.display = "none";
-                                    sect.forEach(element => {
-                                        element.style.visibility = "hidden";
-                                    });
-                                    stpp.style.display = "none";
-                                    wrp.style.display = "none";
-                                    curs.style.display = "none";
-                                    m_fr.style.display = "none";
-                                    pf_b.style.overflow = "hidden";
-                                }     
-                            }
-                            setInterval(logoAni, 1000); //0.1초마다 aniNext 함수 실행
+        return new Promise((resolve, reject) => {
+            WorkerPromise3(imgpg());
+            const updateProgress = () => {
+                up_imgpg();
+                // WorkerPromise3(up_imgpg());
+                if (current >= 100) {
+                    clearInterval(progressTimer);
+                    pg_fdo();
+                    lg_st();
+                    cr_fdo();
+                    if (current === 100) {
+                        let t = 0;
+                        logoAni = () => {
+                            t = t + 1;
+                            if (t == 6) {
+                                lg_ed();
+                                stpp_fdi();
+                                cr_fdi();
+                                pf_start();
+                                clearInterval(t);
+                                resolve();
+                            } else if(t < 6){
+                                pf_loading();
+                            }     
                         }
-                    });
-                }, 1000);
+                        setInterval(logoAni, 1000);
+                    }
+                }
+                if (current > 99.9) {
+                    current = 100;
+                }
             }
-            if (current > 99.9) {
-                current = 100;
-            }
-        }
-        const progressTimer = setInterval(updateProgress, 1000/15);
-        // console.log("progressTimer: "+progressTimer)
-    }
-    imagesProgress()
+            WorkerPromise3(updateProgress())
+            const progressTimer = setInterval(updateProgress, 0);
+        });
+    };
+
+    WorkerPromise3(imagesProgress())
     
-    // WorkerPromise3(imagesProgress());
+    // (async () => {
+    //     await imagesProgress();
+    //     // Code to be executed after the images have finished loading
+    // })();
+
+
