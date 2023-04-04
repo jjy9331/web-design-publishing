@@ -187,27 +187,49 @@
             });
     };
 
-    const ld_video = document.querySelectorAll("video")
-    const ld_vid = () => {
-        ld_video.forEach(el => {
-            el.addEventListener("loadedmetadata", () => {
-                el.currentTime = el.duration;
-            });
-        })
-    }
 
+    const pf_vid = ["../vid/main.mp4", "../vid/menu_1.mp4", "../vid/sub_1.mp4", "../vid/v_family_safety.mp4", "../vid/v_full_case_1.mp4", "../vid/v_main_1.mp4"];
+    
+
+    const ld_vid = () => {
+        Promise.all(
+            pf_vid.map(url =>
+                fetch(url).then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+                    }
+                        return response.json();
+                })
+            )
+        )
+        .then(dataArray => {
+            // do something with the array of JSON data
+        })
+        .catch(error => console.error(error));
+    }
     WorkerPromise3(ld_vid);
 
 
-    const lott = document.querySelectorAll("lottie-player")
-    const lott_ani = () => {
-        lott.forEach(el => {
-            el.addEventListener("loadedmetadata", () => {
-                el.src;
-            });
+    const urls = ["../data/logo_intro.json", "../data/mohenic_intro.json", "../data/sound_wave.json", "../data/volvo_intro.json"];
+    
+    const lott_ld = () => {
+        Promise.all(
+            urls.map(url =>
+                fetch(url).then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+                    }
+                        return response.json();
+                })
+            )
+        )
+        .then(dataArray => {
+            // do something with the array of JSON data
         })
+        .catch(error => console.error(error));
     }
-    WorkerPromise3(lott_ani);
+
+    WorkerPromise3(lott_ld);
 
 
 

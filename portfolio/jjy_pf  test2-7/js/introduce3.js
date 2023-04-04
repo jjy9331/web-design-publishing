@@ -4,13 +4,38 @@ var canvas = document.getElementById('screen');
 const context = canvas.getContext("2d");
 
 
+const canUseWebP = () => {
+    const elem = document.createElement('canvas');
+
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+        // was able or not to get WebP representation
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    }
+
+    // very old browser like IE 8, canvas not supported
+    return false;
+};
+
+const folderName = canUseWebP() ? 'wp_track_run_start8' : 'track_run_start8';
+const frameCount = 486;
+const img = Array.from({ length: frameCount }, () => null);
+
+
+const currentFrame = index => {
+    const fileExtension = canUseWebP() ? 'webp' : 'png';
+    return `./${folderName}/${index.toString().padStart(3, '0')}.${fileExtension}`;
+};
+
+
+
 // //이미지 불러오기
 
-const frameCount = 486;
-const img = Array.from({ length: frameCount }, () => null); // Create an array with frameCount number of null values
-const currentFrame = index => (
-    `./track_run_start8/${index.toString().padStart(3, '0')}.png`
-)
+// const frameCount = 486;
+// const img = Array.from({ length: frameCount }, () => null); // Create an array with frameCount number of null values
+// const currentFrame = index => (
+//     `./track_run_start8/${index.toString().padStart(3, '0')}.png`
+// )
+
 
 const preloadImages = () => {
     img.forEach((_, i) => { // Use the forEach method to loop over the img array

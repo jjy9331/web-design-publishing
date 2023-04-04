@@ -3,11 +3,28 @@ const canvas2 = document.getElementById('screen2');
 const context2 = canvas2.getContext("2d");
 
 
+const canUseWebP2 = () => {
+    const elem = document.createElement('canvas');
+
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+        // was able or not to get WebP representation
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    }
+
+    // very old browser like IE 8, canvas not supported
+    return false;
+};
+
+const folderName2 = canUseWebP2() ? 'wp_track_run_start8' : 'track_run_start8';
 const frameCount2 = 255;
 const img2 = Array.from({ length: frameCount2 }, () => null); // Create an array with frameCount number of null values
-const currentFrame2 = index2 => (
-    `./contact_ani3/${index2.toString().padStart(3, '0')}.png`
-)
+// const currentFrame2 = index2 => (
+//     `./contact_ani3/${index2.toString().padStart(3, '0')}.png`
+// )
+const currentFrame2 = index2 => {
+    const fileExtension2 = canUseWebP2() ? 'webp' : 'png';
+    return `./${folderName2}/${index2.toString().padStart(3, '0')}.${fileExtension2}`;
+};
 
 const preloadImages2 = () => {
     img2.forEach((_, i2) => { // Use the forEach method to loop over the img array

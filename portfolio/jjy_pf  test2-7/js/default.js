@@ -615,6 +615,199 @@
         },{passive: false});
     });
 
+
+    /////////////////////////////////////////////////////////
+
+
+    // scroll video toggle player
+    
+    const hss_v1 = document.querySelector('.main_v');
+    const hss_v2 = document.querySelector('.sub_v');
+    const hss_v3 = document.querySelector('.menu_v');
+
+    const volvo_v1 = document.querySelector('.pf5_1v');
+    const volvo_v2 = document.querySelector('.pf5_2v');
+    const volvo_v3 = document.querySelector('.pf5_6v');
+
+    const hss_v1py = () => { return hss_v1.play(); }
+    const hss_v2py = () => { return hss_v2.play(); }
+    const hss_v3py = () => { return hss_v3.play(); }
+
+    const hss_v1pe = () => { return hss_v1.pause(); }
+    const hss_v2pe = () => { return hss_v2.pause(); }
+    const hss_v3pe = () => { return hss_v3.pause(); }
+
+    const volvo_v1py = () => { return volvo_v1.play(); }
+    const volvo_v2py = () => { return volvo_v2.play(); }
+    const volvo_v3py = () => { return volvo_v3.play(); }
+
+    const volvo_v1pe = () => { return volvo_v1.pause(); }
+    const volvo_v2pe = () => { return volvo_v2.pause(); }
+    const volvo_v3pe = () => { return volvo_v3.pause(); }
+
+    function pop_vpy(){
+
+        let hvideo_position1 = hss_v1.getBoundingClientRect().top;
+        let hvideo_position2 = hss_v2.getBoundingClientRect().top;
+        let hvideo_position3 = hss_v3.getBoundingClientRect().top;
+
+        let video_position1 = volvo_v1.getBoundingClientRect().top;
+        let video_position2 = volvo_v2.getBoundingClientRect().top;
+        let video_position3 = volvo_v3.getBoundingClientRect().top;
+
+        let vscreen_position = window.innerHeight / 2;
+
+        
+
+        let h1 = parseInt(hvideo_position1);
+        let h2 = parseInt(hvideo_position2);
+        let h3 = parseInt(hvideo_position3);
+
+        let v1 = parseInt(video_position1);
+        let v2 = parseInt(video_position2);
+        let v3 = parseInt(video_position3);
+        let vp = parseInt(vscreen_position);
+
+
+        if (hss_v1py() !== undefined) {
+            hss_v1py().then((_) => {}).catch((error) => {});
+        }
+        if(hss_v2py() !== undefined){
+            hss_v2py().then((_) => {}).catch((error) => {});
+        }
+        if(hss_v3py() !== undefined){
+            hss_v3py().then((_) => {}).catch((error) => {});
+        }
+        if(hss_v1pe() !== undefined){
+            hss_v1pe().then((_) => {}).catch((error) => {});
+        }
+        if(hss_v2pe() !== undefined){
+            hss_v2pe().then((_) => {}).catch((error) => {});
+        }
+        if(hss_v3pe() !== undefined){
+            hss_v3pe().then((_) => {}).catch((error) => {});
+        }
+
+        if (volvo_v1py() !== undefined) {
+            volvo_v1py().then((_) => {}).catch((error) => {});
+        }
+        if(volvo_v2py() !== undefined){
+            volvo_v2py().then((_) => {}).catch((error) => {});
+        }
+        if(volvo_v3py() !== undefined){
+            volvo_v3py().then((_) => {}).catch((error) => {});
+        }
+        if(volvo_v1pe() !== undefined){
+            volvo_v1pe().then((_) => {}).catch((error) => {});
+        }
+        if(volvo_v2pe() !== undefined){
+            volvo_v2pe().then((_) => {}).catch((error) => {});
+        }
+        if(volvo_v3pe() !== undefined){
+            volvo_v3pe().then((_) => {}).catch((error) => {});
+        }
+
+    
+        // console.log("h1: "+h1);
+        // console.log("h2: "+h2);
+        // console.log("h3: "+h3);
+
+
+        // console.log("v1: "+v1);
+        // console.log("v2: "+v2);
+        // console.log("v3: "+v3);
+        // console.log("vp: "+vp);
+
+        if( h1 < vp) {
+            hss_v1py();
+            hss_v2pe();
+            hss_v3pe();
+            // hss_v1.play();
+            // hss_v2.pause();
+            // hss_v3.pause();
+        }
+        else if ( h1 > vp) {
+            hss_v1pe();
+            // hss_v1.pause();
+        }
+        if ( h1 <= 0) {
+            hss_v1pe();
+            // hss_v1.pause();
+        }
+
+        if( h2 < vp) {
+            hss_v1pe();
+            hss_v2py();
+            hss_v3pe();
+            // hss_v1.pause();
+            // hss_v2.play();
+            // hss_v3.pause();
+        }
+        else if ( h2 > vp) {
+            hss_v2pe();
+            // hss_v2.pause();
+        }
+        if ( h2 <= 0) {
+            hss_v2pe();
+            // hss_v2.pause();
+        }
+
+        if( h3 < vp) {
+            hss_v1pe();
+            hss_v2pe();
+            hss_v3py();
+            // hss_v1.pause();;
+            // hss_v2.pause();
+            // hss_v3.play();
+        }
+        else if ( h3 > vp) {
+            hss_v3pe();
+            // hss_v3.pause();
+        }
+        if ( h3 <= 0) {
+            hss_v3pe();
+            // hss_v3.pause();
+        }
+
+        if( v1 < vp) {
+            volvo_v1py();
+            volvo_v2pe();
+            volvo_v3pe();
+            // volvo_v1.play();
+            // volvo_v2.pause();
+            // volvo_v3.pause();
+        }
+        if( v2 < vp) {
+            volvo_v1pe();
+            volvo_v2py();
+            volvo_v3pe();
+            // volvo_v1.play();
+            // volvo_v2.pause();
+            // volvo_v3.pause();
+        }
+        if( v3 < vp) {
+            volvo_v1pe();
+            volvo_v2pe();
+            volvo_v3py();
+            // volvo_v1.play();
+            // volvo_v2.pause();
+            // volvo_v3.pause();
+        }
+        if ( v1 < 0) {
+            volvo_v1pe();
+            // volvo_v1.pause();
+        }
+        if ( v1 === 0) {
+            volvo_v1py();
+            // volvo_v1.pause();
+        }
+        if ( v2 <= 0) {
+            volvo_v2pe();
+            // volvo_v1.pause();
+        }
+    }
+    
+
     /////////////////////////////////////////////////////////
 
 
@@ -622,6 +815,7 @@
 
 
     const mu = document.querySelectorAll('.menu');
+    const video = document.querySelectorAll('video');
     const curs = document.querySelector('.cursor');    
     const pf3_4mp = document.querySelector('.pf3_4map');
     const pf3_4_img = document.querySelector('.pf3_4_img');
@@ -631,8 +825,31 @@
 
     let position = 0;
 
+    const v_mu = document.querySelector('.vol_mu');
+
+    v_mu.addEventListener('click', function(){
+        let pp_th = this.parentElement.nextElementSibling;
+        position = window.scrollY;
+        pp_th.style.display = 'block';
+        m_hr.style.display = 'none';
+        m_hr.style.visibility = 'hidden';
+        m_fr.style.display = 'none';
+        m_fr.style.visibility = 'hidden';
+        pf_h.style.overflow = 'hidden';
+        mbh_h.style.display = 'none';
+        mbh_f.style.display = 'none';
+        hfm_li.style.display = 'none';
+        volvo_v1py();
+    })
+
     mu.forEach(event => {
         event.addEventListener('click', function(e){
+
+            window.addEventListener('scroll',pop_vpy);
+            video.forEach(el => {
+                el.currentTime = 0;
+            })
+
             position = window.scrollY;
             // console.log("menu_position: "+position);
             let pp_th = this.parentElement.nextElementSibling;
@@ -710,6 +927,9 @@
 
 
     let sct_ani = "0"; 
+
+    const vol_tt = document.querySelector('.volvo_tt');
+    vol_tt.addEventListener('click', () => {volvo_v1py();})
     
     pp_t.forEach(el => {
         el.addEventListener('click', () => {
@@ -719,7 +939,7 @@
                     behavior: 'smooth'
                 });
                 element.style.scrollSnapType = 'none';
-                sctAni = '1';
+                sct_ani = '1';
             });
         },{passive: false});
     });
@@ -738,14 +958,14 @@
                             element.addEventListener('scroll',()=>{},{passive: true})
                             // console.log("pp.scrollTop: "+element.scrollTop);
                         });
-                        sctAni = '1';
+                        sct_ani = '1';
                     } else {
                         sc_ty();  
                         pp.forEach(element => {
                             element.addEventListener('scroll',()=>{},{passive: true})
                             // console.log("pp.scrollTop: "+element.scrollTop);
                         });
-                        sctAni = '1';
+                        sct_ani = '1';
                     }
                 },{passive: true});  
     });
@@ -779,7 +999,6 @@
     }
     window.addEventListener('scroll',scrollanimate,{passive: false});
 
-    
 
 
     /////////////////////////////////////////////////////////
@@ -1108,63 +1327,6 @@
           updateUI(); // Update the UI using your updateUI function
         }
     });
-
-    // let container = document.querySelector('#skrollr-body')
-    // let pp_fc_tgg_img = document.querySelectorAll('.pop_fullscreen_toggle')
-    // let sc_tg = document.querySelector(".screen_toggle");
-    // let screen_toggle = "0"; 
-
-
-    // const tgg_fullsc = () => {
-    //     toggleFullScreen(container);
-    //     if(screen_toggle=="0"){
-    //         screen_toggle = "1";
-    //         pp_fc_tgg_img.forEach(el => {
-    //             el.setAttribute("src","images/fullscreen_exit.svg");
-    //         })
-    //         sc_tg.textContent = 'Full screen on';
-    //     }
-    //     else{
-    //         screen_toggle = "0"; 
-    //         pp_fc_tgg_img.forEach(el => {
-    //             el.setAttribute("src","images/fullscreen.svg");
-    //         })
-            
-    //         sc_tg.textContent = 'Full screen off';
-    //     }
-    // };
-
-    // pp_fc_tgg_img.forEach(el => {
-    //     el.addEventListener('click', tgg_fullsc,{passive: true})
-    // })
-    // sc_tg.addEventListener('click',tgg_fullsc,{passive: true})
-
-
-
-    // let fullscreen = element => {
-    //     if (element.requestFullscreen) return element.requestFullscreen()
-    //     if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
-    //     if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
-    //     if (element.msRequestFullscreen) return element.msRequestFullscreen()
-    // }
-
-    // function toggleFullScreen(element) {
-    //     if (!document.fullscreenElement) {
-    //         if (element.requestFullscreen) return element.requestFullscreen()
-    //         if (element.webkitRequestFullscreen)
-    //             return element.webkitRequestFullscreen()
-    //         if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
-    //         if (element.msRequestFullscreen) return element.msRequestFullscreen()
-    //         // if (screen_toggle=="0"){}
-    //     } else {
-    //         if (document.exitFullscreen) return document.exitFullscreen()
-    //         if (document.webkitCancelFullscreen)
-    //             return document.webkitCancelFullscreen()
-    //         if (document.mozCancelFullScreen) return document.mozCancelFullScreen()
-    //         if (document.msExitFullscreen) return document.msExitFullscreen()
-    //         // if (screen_toggle=="1"){}
-    //     }
-    // }
 
 
     /////////////////////////////////////////////////////////
