@@ -166,12 +166,55 @@
             });
     };
 
+    
+
+    const WorkerPromise4 = (f) => {
+        let resolve4, reject4;
+        
+        const worker4 = Object.assign(
+            new Worker(
+                URL.createObjectURL(
+                    new Blob([`onmessage=e=>postMessage((${f})(e.data4));`], {type: 'application/javascript'})
+                )
+            ),
+            { onmessage4: (e) => resolve4(e.data4), onerror4: (e) => reject4(e.data4) } 
+        );
+        return (data4) =>
+            new Promise((res4, rej4) => {
+                resolve4 = res4;
+                reject4 = rej4;
+                worker4.postMessage(data4); 
+            });
+    };
+
+    const ld_video = document.querySelectorAll("video")
+    const ld_vid = () => {
+        ld_video.forEach(el => {
+            el.addEventListener("loadedmetadata", () => {
+                el.currentTime = el.duration;
+            });
+        })
+    }
+
+    WorkerPromise3(ld_vid);
+
+
+    const lott = document.querySelectorAll("lottie-player")
+    const lott_ani = () => {
+        lott.forEach(el => {
+            el.addEventListener("loadedmetadata", () => {
+                el.src;
+            });
+        })
+    }
+    WorkerPromise3(lott_ani);
 
 
 
     const imagesProgress = () => {
         return new Promise((resolve, reject) => {
-            WorkerPromise3(imgpg());
+            // WorkerPromise3(imgpg);
+            imgpg();
             const updateProgress = () => {
                 up_imgpg();
                 // WorkerPromise3(up_imgpg());
@@ -202,12 +245,13 @@
                     current = 100;
                 }
             }
-            WorkerPromise3(updateProgress())
+            // WorkerPromise3(updateProgress);
+            updateProgress()
             const progressTimer = setInterval(updateProgress, 0);
         });
     };
-
-    WorkerPromise3(imagesProgress())
+    // WorkerPromise3(imagesProgress);
+    imagesProgress();
     
     // (async () => {
     //     await imagesProgress();
