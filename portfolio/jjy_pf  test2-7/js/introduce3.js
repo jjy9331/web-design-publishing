@@ -16,6 +16,8 @@ const canUseWebP = () => {
     return false;
 };
 
+// WorkerPromise(canUseWebP());
+
 const folderName = canUseWebP() ? 'wp_track_run_start8' : 'track_run_start8';
 const frameCount = 486;
 const img = Array.from({ length: frameCount }, () => null);
@@ -26,23 +28,36 @@ const currentFrame = index => {
     return `./${folderName}/${index.toString().padStart(3, '0')}.${fileExtension}`;
 };
 
+// WorkerPromise(currentFrame());
 
 
 // //이미지 불러오기
 
-// const frameCount = 486;
-// const img = Array.from({ length: frameCount }, () => null); // Create an array with frameCount number of null values
-// const currentFrame = index => (
-//     `./track_run_start8/${index.toString().padStart(3, '0')}.png`
-// )
-
-
-const preloadImages = () => {
-    img.forEach((_, i) => { // Use the forEach method to loop over the img array
-        img[i] = new Image();
-        img[i].src = currentFrame(i);
-        // console.log("img[i].src: "+img[i].src);
+const loadImage = (src) => {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+        resolve(img);
+        };
+        img.onerror = (err) => {
+        reject(err);
+        };
+        img.src = src;
     });
+};
+
+const preloadImages = async () => {
+    try {
+    const promises = img.map((_, i) => {
+        return loadImage(currentFrame(i));
+    });
+    const images = await Promise.all(promises);
+        images.forEach((image, i) => {
+            img[i] = image;
+        });
+    } catch (err) {
+    console.error(err);
+    }
 };
 
 // introduce img preload web worker
@@ -68,7 +83,7 @@ const WorkerPromise = (f) => {
         });
 };
 
-WorkerPromise(preloadImages());
+WorkerPromise(preloadImages);
 
 // const intro_pre = WorkerPromise(preloadImages());
 // intro_pre().then(console.log);
@@ -85,25 +100,20 @@ canvas.style.objectFit = 'cover';
 img.onload=function(){
     context.drawImage(img[i], 0, 0);
 }
-const updateImage = index => {
-    // img.src = currentFrame(index);
-    context.drawImage(img[index], 0, 0);
-    // console.log("index: "+index);
-}
+
+
+const updateImage = async index => {
+    const image = await loadImage(currentFrame(index));
+    context.drawImage(image, 0, 0);
+};
+
+
 
 window.addEventListener('scroll', () => {  
     let scrollTop = html.scrollTop;
-    // let maxScrollTop = 14775 - window.innerHeight;
-    // let scrollFraction = scrollTop / maxScrollTop;
-    // let frameIndex = Math.min(
-    //     frameCount - 1,
-    //      Math.ceil(scrollFraction * frameCount)
-    // );
 
     // ani speed control
     let frameIndex = Math.round(((html.scrollTop/100)-149));
-
-
 
     if (frameIndex == 0){
         frameIndex = 0;

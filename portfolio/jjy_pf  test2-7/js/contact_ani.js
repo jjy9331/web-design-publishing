@@ -15,23 +15,43 @@ const canUseWebP2 = () => {
     return false;
 };
 
-const folderName2 = canUseWebP2() ? 'wp_track_run_start8' : 'track_run_start8';
+// WorkerPromise2(canUseWebP2());
+
+const folderName2 = canUseWebP2() ? 'wp_contact_ani3' : 'contact_ani3';
 const frameCount2 = 255;
 const img2 = Array.from({ length: frameCount2 }, () => null); // Create an array with frameCount number of null values
-// const currentFrame2 = index2 => (
-//     `./contact_ani3/${index2.toString().padStart(3, '0')}.png`
-// )
+
 const currentFrame2 = index2 => {
     const fileExtension2 = canUseWebP2() ? 'webp' : 'png';
     return `./${folderName2}/${index2.toString().padStart(3, '0')}.${fileExtension2}`;
 };
 
-const preloadImages2 = () => {
-    img2.forEach((_, i2) => { // Use the forEach method to loop over the img array
-        img2[i2] = new Image();
-        img2[i2].src = currentFrame2(i2);
-        // console.log("img[i].src: "+img[i].src);
+
+const loadImage2 = (src) => {
+    return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => {
+        resolve(image);
+    };
+    image.onerror = (err) => {
+        reject(err);
+    };
+    image.src = src;
     });
+};
+    
+const preloadImages2 = async () => {
+    try {
+    const promises = img2.map((_, i2) => {
+        return loadImage2(currentFrame2(i2));
+    });
+    const images = await Promise.all(promises);
+        images.forEach((image, i) => {
+            img2[i] = image;
+        });
+    } catch (err) {
+    console.error(err);
+    }
 };
 
 
@@ -58,7 +78,7 @@ const WorkerPromise2 = (f) => {
         });
 };
 
-WorkerPromise2(preloadImages2());
+WorkerPromise2(preloadImages2);
 
 
 img2.src = currentFrame2(1);
@@ -69,17 +89,13 @@ canvas2.style.position = 'fixed';
 canvas2.style.bottom = '0%';
 canvas2.style.objectFit = 'cover';
 
-// img2.onload=function(){
-//     var canvas2 = document.getElementById('screen2');
-//     var context2 = canvas2.getContext("2d");
-//     for (let i2 = 0; i2 < frameCount; i2++) {
-//         context2.drawImage(img2[i2], 0, 0);
-//     }
-// }
-const updateImage2 = index2 => {
-    // img2.src = currentFrame2(index2);
-    context2.drawImage(img2[index2], 0, 0);
-}
+
+const updateImage2 = async index2 => {
+    const image = await loadImage2(currentFrame2(index2));
+    context2.drawImage(image, 0, 0);
+};
+
+
 
 window.addEventListener('scroll', () => {  
     let scrollTop2 = html2.scrollTop;
