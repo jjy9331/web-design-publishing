@@ -1,3 +1,4 @@
+
 const html2 = document.documentElement;
 const canvas2 = document.getElementById('screen2');
 const context2 = canvas2.getContext("2d");
@@ -42,17 +43,18 @@ const loadImage2 = (src) => {
     
 const preloadImages2 = async () => {
     try {
-    const promises = img2.map((_, i2) => {
-        return loadImage2(currentFrame2(i2));
-    });
-    const images = await Promise.all(promises);
-        images.forEach((image, i) => {
-            img2[i] = image;
+        const promises = img2.map((_, i2) => {
+            return loadImage2(currentFrame2(i2));
         });
+        const images = await Promise.all(promises);
+            images.forEach((image, i) => {
+                img2[i] = image;
+            });
     } catch (err) {
-    console.error(err);
+        console.error(err);
     }
 };
+
 
 
 // contact_ani img preload web worker
@@ -60,25 +62,23 @@ const preloadImages2 = async () => {
 const mine2 = {js:{type:'text/javascript'}};
 
 const WorkerPromise2 = (f) => {
-    let resolve2, reject2;
-    
-    const worker2 = Object.assign(
-        new Worker(
+    return (data2) => {
+        return new Promise((resolve2, reject2) => {
+        const worker2 = new Worker(
             URL.createObjectURL(
-            new Blob([`onmessage2=e=>postMessage((${f})(e.data2));`], mine2.js) 
+                new Blob([`onmessage=e=>postMessage((${f})(e.data));`], mine2.js)
             )
-        ),
-        { onmessage2: (e) => resolve2(e.data2), onerror2: (e) => reject2(e.data2) } 
-    );
-    return (data2) =>
-        new Promise((res2, rej2) => {
-            resolve2 = res2;
-            reject2 = rej2;
-            worker2.postMessage(data2); 
+        );
+            worker2.onmessage = (e) => resolve2(e.data2);
+            worker2.onerror = (e) => reject2(e.data2);
+            worker2.postMessage(data2);
         });
+    };
 };
 
-WorkerPromise2(preloadImages2);
+
+const prewk2 = preloadImages2();
+WorkerPromise2(prewk2);
 
 
 img2.src = currentFrame2(1);

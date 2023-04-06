@@ -60,36 +60,30 @@ const preloadImages = async () => {
     }
 };
 
+
 // introduce img preload web worker
 
 const mine = {js:{type:'text/javascript'}};
 
 const WorkerPromise = (f) => {
-    let resolve, reject;
-    
-    const worker = Object.assign(
-        new Worker(
+    return (data) => {
+        return new Promise((resolve, reject) => {
+        const worker = new Worker(
             URL.createObjectURL(
-            new Blob([`onmessage=e=>postMessage((${f})(e.data));`], mine.js) 
+                new Blob([`onmessage=e=>postMessage((${f})(e.data));`], mine.js)
             )
-        ),
-        { onmessage: (e) => resolve(e.data), onerror: (e) => reject(e.data) } 
-    );
-    return (data) =>
-        new Promise((res, rej) => {
-            resolve = res;
-            reject = rej;
-            worker.postMessage(data); 
+        );
+            worker.onmessage = (e) => resolve(e.data);
+            worker.onerror = (e) => reject(e.data);
+            worker.postMessage(data);
         });
+    };
 };
 
-WorkerPromise(preloadImages);
 
-// const intro_pre = WorkerPromise(preloadImages());
-// intro_pre().then(console.log);
+const prewk = preloadImages();
+WorkerPromise(prewk);
 
-
-// img.src = currentFrame(1);
 
 canvas.width = 1920
 canvas.height = 1080

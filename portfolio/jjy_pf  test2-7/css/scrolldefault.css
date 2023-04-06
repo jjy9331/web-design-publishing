@@ -60,10 +60,39 @@ a { text-decoration:none; color:black; cursor: none; }
 button {cursor: none; }
 .blind { position:absolute; top:-9999px; }
 
-/* 
-#skrollr-body {
-    background: white;
+
+/* video:hover{
+    filter: opacity(0.3);
+    transition: all ease-in-out 0.5s;
 } */
+
+/* Hide the sound control */
+video::-webkit-media-controls-volume-slider {
+    display: none;
+}
+
+video::-webkit-media-controls-panel{
+    --gradient-steps: transparent;
+    background: rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    margin-right: -7%;
+}
+video::-webkit-media-controls-play-button{    
+    transform: scale(4);
+    margin-left: -5%;
+    padding-right: 100%;
+}
+video::-webkit-media-controls input[pseudo="-webkit-media-controls-play-button" i]:enabled:hover::-internal-media-controls-button-hover-background {
+    background-color: transparent;
+}
+video::-webkit-media-controls-timeline { display: none;}
+video::-webkit-media-controls-fullscreen-button { display: none;}
+video::-webkit-media-controls-volume-control-container{ display: none;}
+video::-webkit-internal-media-controls-overflow-button{display: none;}
+video::-webkit-media-controls-current-time-display{display: none;}
+video::-webkit-media-controls-time-remaining-display{display: none;}
+
+
 
 /* layout */
 header { 
@@ -118,7 +147,7 @@ header .inner {
     width: 100%;
     height: 6%;
     /* height: 120px;  */
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgba(0,0,0,0.4);
     z-index: 1000;
     /* visibility: hidden; */
 }
@@ -151,7 +180,7 @@ header .inner {
     position: relative;
     position: fixed;
     bottom: 0px;
-    border-top: 2px solid black;
+    border-top: 2px solid rgba(0,0,0,0.4);
     /* background: rgba(0, 0, 0, 0);  */
     background: rgba(255, 255, 255, 1);
     width: 100%; 
@@ -1271,15 +1300,15 @@ img[usemap] {
 .inner .pf4 .pf4_3b_img { position: absolute; left: 0; top: 67vh; z-index: 1; display: flex; width: 100vw; justify-content: center; align-items: center; object-fit: cover;}
 .inner .pf4 .pf4_main {  position: relative; left: 19%; width: 19vw; height: 100vh; display: flex; justify-content: center; align-items: center;}
 .inner .pf4 .pf4_main .pf4_4_hp{ position: absolute; z-index: 10; width: 23.3vw;}
-.inner .pf4 .pf4_main .main_v { position: absolute; z-index: 1; margin-left: 3%; margin-bottom: 0.5%; width: 14.5vw;}
+.inner .pf4 .pf4_main .main_v {  position: absolute; margin-left: 4%; margin-bottom: 1.5%; width: 14.1vw; z-index: 100;}
 .inner .pf4 .pf4_4_img {   z-index: 1; width: 21%; margin-right: 21%;}
 .inner .pf4 .pf4_sub { position: relative; left: 62%; width: 19vw; height: 100vh; display: flex; justify-content: center; align-items: center;}
 .inner .pf4 .pf4_sub .pf4_5_hp{ position: absolute; z-index: 10; width: 23.3vw; }
-.inner .pf4 .pf4_sub .sub_v { position: absolute; z-index: 1; margin-left: 2%; margin-bottom: 0.5%; width: 14.5vw;}
+.inner .pf4 .pf4_sub .sub_v { position: absolute; z-index: 100; margin-left: 4%; margin-bottom: 1.5%; width: 14.1vw; }
 .inner .pf4 .pf4_5_img { z-index: 1; width: 21%; margin-left: 1%;}
 .inner .pf4 .pf4_menu{ position: relative; left: 19%; width: 19vw; height: 100vh; display: flex; justify-content: center; align-items: center;}
 .inner .pf4 .pf4_menu .pf4_6_hp{ position: absolute; z-index: 10; width: 23.3vw;}
-.inner .pf4 .pf4_menu .menu_v{  position: absolute; z-index: 1; margin-left: 3%; margin-bottom: 0.5%; width: 14.5vw;}
+.inner .pf4 .pf4_menu .menu_v{  position: absolute; z-index: 100; margin-left: 4%; margin-bottom: 1.5%; width: 14.1vw;}
 .inner .pf4 .pf4_6_img{ z-index: 1; width: 21%; margin-right: 21%;}
 
 .inner .pf4 .pf4_7_img{  position: absolute; left: 0; top: 0; z-index: 1; display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center; transform: scale(0.6); object-fit: cover;}
@@ -1337,9 +1366,9 @@ img[usemap] {
 .inner .pf5 { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; scroll-snap-align: center;}
 .inner .pf5 .pf5_1_img { z-index: 10; margin-top: 3vw;}
 .inner .pf5 .pf5_1b_img {z-index: 10;}
-.inner .pf5 .pf5_1v{ position: absolute; bottom: 18vh; width: 83.5vh; margin-left: 1vh; margin-bottom: 0.5vh;}
+.inner .pf5 .pf5_1v{ position: absolute;bottom: 18vh;width: 83.5vh;margin-left: 1vh;margin-bottom: 0.5vh;z-index: 100;}
 .inner .pf5 .pf5_2_img{z-index: 10;}
-.inner .pf5 .pf5_2v{ position: absolute; top: 25vh; margin-left: 68vh; width: 57vh;}
+.inner .pf5 .pf5_2v{ position: absolute;top: 25vh;margin-left: 68.5vh;width: 56vh;z-index: 100;}
 .inner .pf5 .v_circle{  position: absolute; right: 19.5%; top: 30%; background: #1C6BBA; width: 34vh; height: 34vh; border-radius: 100%; box-sizing: border-box; transition: all ease-in-out 0.4s;}
 .inner .pf5 .vb_circle{  position: absolute; right: 19.5%; top: 30%; background: #1C6BBA; width: 34vh; height: 34vh; border-radius: 100%; box-sizing: border-box; transform: scale(1.7); transition: all ease 500ms;}
 .inner .pf5 .pf5_6_img{ z-index: 10; margin-bottom: 6vh;}

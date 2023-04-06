@@ -188,55 +188,22 @@
     };
 
 
-    const pf_vid = ["../vid/main_1.mp4", "../vid/menu_1.mp4", "../vid/sub_1.mp4", "../vid/v_family_safety.mp4", "../vid/v_full_case_1.mp4", "../vid/v_main_1.mp4"];
-    
+    // const pf_vid = ["../vid/main_1.mp4", "../vid/menu_1.mp4", "../vid/sub_1.mp4", "../vid/v_family_safety.mp4", "../vid/v_full_case_1.mp4", "../vid/v_main_1.mp4"];
 
     // const ld_vid = () => {
-    //     Promise.all(
-    //         pf_vid.map(url =>
-    //             fetch(url).then(response => {
-    //                 if (!response.ok) {
-    //                     throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
-    //                 }
-    //                     return response.json();
-    //             })
-    //         )
-    //     )
-    //     .then(dataArray => {
-    //         // do something with the array of JSON data
-    //     })
-    //     .catch(error => console.error(error));
-    // }
-    // const ld_vid = () => {
-    //     Promise.all(pf_vid.map(url =>
-    //         fetch(url, { responseType: 'blob' })
-    //         .then(response => {
-    //             if (!response.ok) {
-    //             throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
-    //             }
-    //             return response.blob();
-    //         })
-    //     ))
-    //     .then(blobs => {
-    //         // do something with the array of video blobs
-    //     })
-    //     .catch(error => console.error(error));
+    //     window.addEventListener('load', () => {
+    //         const videoElements = document.querySelectorAll('video[preload="none"]');
+    //         videoElements.forEach((video) => {
+    //             pf_vid.forEach((src) => {
+    //                 const sourceElement = document.createElement('source');
+    //                 sourceElement.src = src;
+    //                 video.appendChild(sourceElement);
+    //             });
+    //             video.load();
+    //         });
+    //     });
     // };
-
-    const ld_vid = () => {
-        window.addEventListener('load', () => {
-            const videoElements = document.querySelectorAll('video[preload="auto"]');
-            videoElements.forEach((video) => {
-                pf_vid.forEach((src) => {
-                    const sourceElement = document.createElement('source');
-                    sourceElement.src = src;
-                    video.appendChild(sourceElement);
-                });
-                video.load();
-            });
-        });
-    };
-    WorkerPromise3(ld_vid);
+    // WorkerPromise3(ld_vid);
 
 
     const urls = ["../data/logo_intro.json", "../data/mohenic_intro.json", "../data/sound_wave.json", "../data/volvo_intro.json"];
