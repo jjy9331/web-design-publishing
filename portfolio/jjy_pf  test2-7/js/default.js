@@ -8,9 +8,57 @@
     let logo = document.querySelector('.logo');
 
 
+
+
+    ///////////////////////////////////////////////////////////////////////
+
+    // window mouse wheel srolltop control
+
+    // document.addEventListener('wheel', function(event) {
+    //     var delta = (event.deltaY || -event.wheelDelta || event.detail) * -1;
+    //     // var element = document.documentElement;
+    //     var element = document.documentElement;
+
+    //     if (navigator.userAgent.indexOf("Mac") === -1) {
+    //         if (!event.target.closest('.pop')) { // popup scroll prevent
+    //             // element.scrollTop -= delta * 220;
+    //             event.preventDefault();
+    //         }
+    //     } 
+    //     else {
+    //         if (!event.target.closest('.pop')) { // popup scroll prevent
+    //             var start = element.scrollTop;
+    //             var end = start - delta * 30;
+    //             var duration = 400;
+    //             var currentTime = 0;
+
+    //             function easeOutCubic(t) {
+    //                 return 1 - Math.pow(1 - t, 3);
+    //             }
+        
+    //             function animateScroll() {
+    //                 currentTime += 16;
+    //                 var progress = currentTime / duration;
+    //                 progress = (progress > 1) ? 1 : progress;
+    //                 var easedProgress = easeOutCubic(progress);
+    //                 element.scrollTop = start + (end - start) * easedProgress;
+    //                 if (progress < 1) {
+    //                     requestAnimationFrame(animateScroll);
+    //                 }
+    //                 // console.log("progress: "+progress);
+    //             }
+    //             animateScroll();
+
+    //             event.preventDefault();
+    //         }
+    //     }
+    // }, { passive: false });
+
+
     // JS header evnet delegation nav
 
     const header_click = (e) => {
+
         let h_elem = e.target;
         let h_elem_c = h_elem.getAttribute("class");
         let h_btn_c = !h_elem.classList.contains("h_btn");
@@ -32,11 +80,11 @@
         }
     
         const c_quick = () => {
-            pf_h.scrollTop = h_elem.dataset.value;
+                pf_h.scrollTop = h_elem.dataset.value;
         }
-    
+        
         const c_fi = () => {
-            setTimeout(function() {
+            setTimeout(() => {
                 pf_cr.style.display = "block";
             }, 1000);
         }
@@ -802,6 +850,10 @@
             volvo_v2pe();
         }
     }
+    pp.forEach(element => {
+        element.addEventListener('scroll',pop_vpy,{passive: false});
+        // console.log("pp.scrollTop: "+element.scrollTop);
+    });
     
 
     // /////////////////////////////////////////////////////////
@@ -993,7 +1045,11 @@
         }
 
     }
-    window.addEventListener('scroll',scrollanimate,{passive: false});
+    pp.forEach(element => {
+        element.addEventListener('scroll',scrollanimate,{passive: false});
+        // console.log("pp.scrollTop: "+element.scrollTop);
+    });
+    // window.addEventListener('scroll',scrollanimate,{passive: false});
 
 
 
@@ -1687,5 +1743,3 @@
         },{passive: false});
         
     });
-
-

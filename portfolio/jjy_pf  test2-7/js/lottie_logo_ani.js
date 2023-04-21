@@ -2,6 +2,8 @@
 
     // loading
 
+    // var pf_cr = document.querySelector("#container");
+
     const lg_an = document.querySelector("#logo_ani");
     const wrp = document.querySelector(".wrapper");
     const prog = document.querySelector('#progress');
