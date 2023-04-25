@@ -1,3 +1,7 @@
+import {
+    WorkerPromise
+} from './default.js';
+
 
 const html2 = document.documentElement;
 const canvas2 = document.getElementById('screen2');
@@ -59,26 +63,27 @@ const preloadImages2 = async () => {
 
 // contact_ani img preload web worker
 
-const mine2 = {js:{type:'text/javascript'}};
+// const mine2 = {js:{type:'text/javascript'}};
 
-const WorkerPromise2 = (f) => {
-    return (data2) => {
-        return new Promise((resolve2, reject2) => {
-        const worker2 = new Worker(
-            URL.createObjectURL(
-                new Blob([`onmessage=e=>postMessage((${f})(e.data));`], mine2.js)
-            )
-        );
-            worker2.onmessage = (e) => resolve2(e.data2);
-            worker2.onerror = (e) => reject2(e.data2);
-            worker2.postMessage(data2);
-        });
-    };
-};
+// const WorkerPromise2 = (f) => {
+//     return (data2) => {
+//         return new Promise((resolve2, reject2) => {
+//         const worker2 = new Worker(
+//             URL.createObjectURL(
+//                 new Blob([`onmessage=e=>postMessage((${f})(e.data));`], mine2.js)
+//             )
+//         );
+//             worker2.onmessage = (e) => resolve2(e.data2);
+//             worker2.onerror = (e) => reject2(e.data2);
+//             worker2.postMessage(data2);
+//         });
+//     };
+// };
 
 
 const prewk2 = preloadImages2();
-WorkerPromise2(prewk2);
+// WorkerPromise2(prewk2);
+WorkerPromise(prewk2);
 
 
 img2.src = currentFrame2(1);

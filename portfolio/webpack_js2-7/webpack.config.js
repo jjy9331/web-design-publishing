@@ -47,7 +47,64 @@ module.exports = {
 				test: /\.js$/,
 				enforce: 'pre',
 				use: ['source-map-loader'],
-			}
+			},
+			{
+				test: /\.css$/,
+				use: ["style-loader", "css-loader"],
+				exclude: /node_modules/,
+			},
+			{
+				test: /\.png$/, // .png 확장자로 마치는 모든 파일
+				loader: "file-loader", // 파일 로더를 적용한다
+			},
+			// {
+			// 	test: /\.(jpe?g|png)$/i,
+			// 	loaders: [
+			// 		'file-loader',
+			// 		'webp-loader'
+			// 	]
+			// },
+			{
+				test : /\.json$/,
+				loader : "json-loader"
+			},
+			{
+				type: 'javascript/auto',
+				test: /\.json$/,
+				include: /(lottie)/,
+				loader: 'lottie-web-webpack-loader',
+				options: {
+					assets: {
+						scale: 0.5 // proportional resizing multiplier
+					}
+				}
+			},
+			{
+				test: /\.(mp4|ogg)$/, // 로더를 적용할 파일 유형
+				exclude: /(node_modules|bower_components)/,
+				use: {
+				  // 해당 파일에 적용할 로더의 이름
+					loader: "file-loader",
+					options: {
+						name: "assets/media/[name].[ext]?[hash]",
+				},
+				},
+			},
+			{
+				type: 'javascript/auto',
+				test: /\.json$/,
+				include: /(lottie)/,
+				loader: 'lottie-web-webpack-loader',
+				options: {
+					assets: {
+						scale: 0.5 // proportional resizing multiplier
+					}
+				}
+			},
+			// {
+			// 	test: /\.html$/i,
+			// 	loader: "html-loader",
+			// },
 		]
 	},
 	plugins: [
@@ -66,7 +123,7 @@ module.exports = {
 		// 그대로 사용할 파일들이 없다면 CopyWebpackPlugin을 통째로 주석 처리 해주세요.
 		new CopyWebpackPlugin({
 			patterns: [
-				{ from: "./src/main.css", to: "./main.css" },
+				{ from: "./src/css/scrolldefault.css", to: "./main.css" },
 				{ from: "./src/images", to: "./images" },
 			],
 		})

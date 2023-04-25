@@ -1,12 +1,34 @@
 
 
-    let pf_hb = document.querySelector("html, body");
-    let pf_h = document.querySelector("html");
-    let pf_b = document.querySelector("body");
-    let pf_cr = document.querySelector("#container");
-    let m_hr = document.querySelector('header');
-    let logo = document.querySelector('.logo');
+// importScripts('./imagesloaded.pkgd.min.js');
+// importScripts('https://cdn.jsdelivr.net/gh/scottjehl/picturefill@3.0.2/dist/picturefill.js');
 
+import '../css/scrolldefault.css'
+import $ from "jquery"; 
+import skrollr from "skrollr";
+import imageMapResize from "image-map-resizer";
+import "jquery-mousewheel";
+import MobileDetect from "mobile-detect";
+import "addeventlistener";
+import "lottie-web";
+import '../js/lottie_logo_ani.js';
+import '../js/introduce3.js';
+import '../js/contact_ani.js';
+import "jquery-browserify";
+// import imagesLoaded from "imagesloaded";
+
+
+// import "@lottiefiles/lottie-player";
+
+    // export const  imagesLoaded  =  require ( 'imagesloaded' ) ;
+    // export const imgLoad = imagesLoaded(document.body);
+    export let pf_hb = document.querySelector("html, body");
+    let pf_h = document.querySelector("html");
+    export let pf_b = document.querySelector("body");
+    export let pf_cr = document.querySelector("#container");
+    export let m_hr = document.querySelector('header');
+    let logo = document.querySelector('.logo');
+    export const curs = document.querySelector('.cursor');  
 
 
 
@@ -221,7 +243,7 @@
             return
         }
 
-        portfolio_move = () =>{
+        const portfolio_move = () =>{
             window.scrollTo({top: port_elem.dataset.value, behavior: 'smooth', duration: 1000});
             e.preventDefault();
             ck_toggle = "1";
@@ -457,7 +479,7 @@
     let mdh_toggle = "0";
     let mbh_h = document.querySelector('.mbh_h');
     let mbh_f = document.querySelector('.mbh_f');
-    let m_fr = document.querySelector('footer');
+    export let m_fr = document.querySelector('footer');
 
 
     mn_h.addEventListener('click', () => {//버튼을 클릭했을 때
@@ -523,7 +545,7 @@
     let ce = document.querySelectorAll(".close");
     let pfm_bg = document.querySelector(".pfmore_bg");
     let pfm_img = document.querySelector(".pf_more_img");
-    let skr_by = document.querySelector("#skrollr-body");
+    export let skr_by = document.querySelector("#skrollr-body");
 
 
     const dark_on = () => {
@@ -676,39 +698,39 @@
 
 
     const hss_v1py = () => {
-        el = hss_v1.play();
+        const el = hss_v1.play();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
     const hss_v2py = () => {
-        el = hss_v2.play();
+        const el = hss_v2.play();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
     const hss_v3py = () => {
-        el = hss_v3.play();
+        const el = hss_v3.play();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
 
     const volvo_v1py =  () => { 
-        el = volvo_v1.play();
+        const el = volvo_v1.play();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
 
     const volvo_v2py = () => {
-        el = volvo_v2.play();
+        const el = volvo_v2.play();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
     const volvo_v3py = () => {
-        el = volvo_v3.play();
+        const el = volvo_v3.play();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
@@ -716,37 +738,37 @@
 
 
     const hss_v1pe = () => {
-        el = hss_v1.pause();
+        const el = hss_v1.pause();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
     const hss_v2pe = () => {
-        el = hss_v2.pause();
+        const el = hss_v2.pause();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
     const hss_v3pe = () => {
-        el = hss_v3.pause();
+        const el = hss_v3.pause();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
     const volvo_v1pe = ()  => {
-        el = volvo_v1.pause();
+        const el = volvo_v1.pause();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
     const volvo_v2pe = ()  => {
-        el = volvo_v2.pause();
+        const el = volvo_v2.pause();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
     }
     const volvo_v3pe = ()  => {
-        el = volvo_v3.pause();
+        const el = volvo_v3.pause();
         if(el !== undefined){
             el.then((_) => {}).catch((error) => {});
         }
@@ -864,7 +886,7 @@
 
     const mu = document.querySelectorAll('.menu');
     const video = document.querySelectorAll('video');
-    const curs = document.querySelector('.cursor');    
+  
     const pf3_4mp = document.querySelector('.pf3_4map');
     const pf3_4_img = document.querySelector('.pf3_4_img');
     const pf5_2mp = document.querySelector('.pf5_2map');
@@ -1059,7 +1081,7 @@
 
     // let scroll =new AudioFade('#scrollsound', 8000).init();
 
-    let audio = new Audio('sound/JJ_pf_beat.mp3');
+    let audio = new Audio('./sound/JJ_pf_beat.mp3');
 
     let sound_toggle = "0";
 
@@ -1069,10 +1091,10 @@
     let sdwave = document.querySelector('.soundwave');
 
     let sdwv = document.querySelector('.soundwave');
-    let stpp = document.querySelector('.startpop');
+    export let stpp = document.querySelector('.startpop');
     let bgm_if_h3 = document.querySelector('.bgm_info_h3');
     let btwp = document.querySelector('.btwrap');
-    let sect = document.querySelectorAll('section');
+    export let sect = document.querySelectorAll('section');
     let sd_tg = document.querySelector(".sound_toggle");
     let p_sd_tg_img = document.querySelectorAll(".pop_sound_toggle");
 
@@ -1742,4 +1764,195 @@
             event.preventDefault();
         },{passive: false});
         
+    });
+
+
+    ///////////////////////////////////////////////////////////////////////
+
+    // webworker
+
+    const mine = {js:{type:'text/javascript'}};
+
+    export const WorkerPromise = (f) => {
+        return (data) => {
+            return new Promise((resolve, reject) => {
+            const worker = new Worker(
+                URL.createObjectURL(
+                    new Blob([`onmessage=e=>postMessage((${f})(e.data));`], mine.js)
+                )
+            );
+                worker.onmessage = (e) => resolve(e.data);
+                worker.onerror = (e) => reject(e.data);
+                worker.postMessage(data);
+            });
+        };
+    };
+
+
+    ///////////////////////////////////////////////////////////////////////
+
+    // skrollr mobile controls
+
+    var s = skrollr.init({
+        smoothScrolling: true,
+        mobileCheck: function(){
+            if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+                // mobile device
+                    var startX,startY, endX,endY;
+                    $("html,body").on('touchstart',function(event){
+                        startX = event.originalEvent.changedTouches[0].screenX;
+                        startY = event.originalEvent.changedTouches[0].screenY;
+                        console.log("startX: " + startX);
+                        console.log("startY: " + startY);
+                    });
+
+                    // $("html,body").on('touchmove',function(event){
+                    //     const targetElement = document.querySelector('.pop');
+                    //         $('.menu').click(function() {
+                    //             bodyScrollLock.disableBodyScroll(targetElement);
+                    //         });
+                    //         $('.close').click(function() {
+                    //             bodyScrollLock.enableBodyScroll(targetElement);
+                    //         });
+                    // });
+
+
+                    $("html,body").on('touchend',function(event, delta){
+                        endX=event.originalEvent.changedTouches[0].screenX;
+                        endY=event.originalEvent.changedTouches[0].screenY;
+                        // console.log("endX: " + endX);
+                        // console.log("endY: " + endY);
+                        // console.log("startX-endX: " + (startX-endX)); 
+                        // console.log("startY-endY: " + (startY-endY)); 
+
+                        // mobile touch scrolldown(force touch)
+                        if(startY-endY>0 && startY-endY<70){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop+1000) }, 830, "swing");
+                        }
+                        if(startY-endY>71 && startY-endY<150){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop+2000) }, 830, "swing");
+                        }
+                        if(startY-endY>151 && startY-endY<240){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop+3000) }, 830, "swing");
+                        }
+                        if(startY-endY>241 && startY-endY<500){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop+5000) }, 830, "swing");
+                        }
+
+                        // mobile touch scrollup(force touch)
+                        if(startY-endY<0 && startY-endY>-70){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop-1000) }, 830, "swing");
+                        }
+                        if(startY-endY<-71 && startY-endY>-150){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop-2000) }, 830, "swing");
+                        }
+                        if(startY-endY<-151 && startY-endY>-240){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop-3000) }, 830, "swing");
+                        }
+                        if(startY-endY<-241 && startY-endY>-550){
+                            $("html,body").stop().animate({ scrollTop: (this.scrollTop-5000) }, 830, "swing");
+                        }
+                        
+                    });
+
+                    // $(".cursor").css('display','none');
+                }}
+        });
+    // skrollr.init([smoothScrolling=true]);
+
+
+    ///////////////////////////////////////////////////////////////////////
+
+
+        // window mouse wheel srolltop control
+    
+        $('html,body').mousewheel(function(event, delta) {
+            // console.log("delta: "+delta);
+            //mac
+            if (!(navigator.userAgent.indexOf("Mac") != -1)) { 
+            }
+            // win
+            else if (navigator.userAgent.indexOf("Mac") != -1) {
+                $(this).stop().animate({ scrollTop: (this.scrollTop - (delta * 440)) }, 830, "swing");
+            }
+        });
+
+
+
+    /////////////////////////////////////////////////////////
+
+    // mobile-detect 
+
+    var md = new MobileDetect(navigator.userAgent);
+    // let curs = document.querySelector(".cursor");
+
+
+    // function isMobile(){
+    //         var UserAgent = navigator.userAgent;
+    //         if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null){
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    // };
+    
+    // if(isMobile()){
+    //     // location.href = "/mobile/index.html";	//모바일페이지
+    //     curs.style.display = 'none'
+    // } else {
+    //     // location.href = "/main.html";		//PC용 페이지
+    //     curs.style.display = 'block'
+    // }
+
+
+    // if( md.mobile() == "null" ){
+    //     curs.style.display = 'block'
+    // }
+    // else {
+    //     curs.style.display = 'none'
+    // }
+
+    //  var a = md.mobile()
+
+    // console.log( "typeof: "+ typeof a );     
+    
+    // console.log( "mobile: "+ md.mobile() );          // 'Sony'
+    // console.log( "phone: "+ md.phone() );           // 'Sony'
+    // console.log( "tablet: "+ md.tablet() );          // null
+    // console.log( "userAgent: "+ md.userAgent() );       // 'Safari'
+    // console.log( "os: "+ md.os() );              // 'AndroidOS'
+    // console.log( "iPhone: "+ md.is('iPhone') );      // false
+    // console.log( "bot: "+ md.is('bot') );         // false
+    // console.log( "Webkit: "+ md.version('Webkit') );         // 534.3
+    // console.log( "Build: "+ md.versionStr('Build') );       // '4.1.A.0.562'
+    // console.log( "playstation|xbox: "+ md.match('playstation|xbox') ); // false
+        
+
+
+    /////////////////////////////////////////////////////////
+
+    // lottie
+
+    LottieInteractivity.create({
+        player:'.movie1',
+        renderer:'svg',
+        // disableCheck:'true',
+        mode:"cursor",
+        actions: [
+            {
+                type: "hold"
+            }
+        ]
+    });
+
+    LottieInteractivity.create({
+        player:'.movie2',
+        renderer:'svg',
+        disableCheck:'true',
+        mode:"cursor",
+        actions: [
+            {
+                type: "hold"
+            }
+        ]
     });

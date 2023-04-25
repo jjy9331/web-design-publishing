@@ -1,3 +1,8 @@
+import {
+    WorkerPromise
+} from './default.js';
+
+
 
 const html = document.documentElement;
 var canvas = document.getElementById('screen');
@@ -63,26 +68,27 @@ const preloadImages = async () => {
 
 // introduce img preload web worker
 
-const mine = {js:{type:'text/javascript'}};
+// const mine = {js:{type:'text/javascript'}};
 
-const WorkerPromise = (f) => {
-    return (data) => {
-        return new Promise((resolve, reject) => {
-        const worker = new Worker(
-            URL.createObjectURL(
-                new Blob([`onmessage=e=>postMessage((${f})(e.data));`], mine.js)
-            )
-        );
-            worker.onmessage = (e) => resolve(e.data);
-            worker.onerror = (e) => reject(e.data);
-            worker.postMessage(data);
-        });
-    };
-};
+// const WorkerPromise = (f) => {
+//     return (data) => {
+//         return new Promise((resolve, reject) => {
+//         const worker = new Worker(
+//             URL.createObjectURL(
+//                 new Blob([`onmessage=e=>postMessage((${f})(e.data));`], mine.js)
+//             )
+//         );
+//             worker.onmessage = (e) => resolve(e.data);
+//             worker.onerror = (e) => reject(e.data);
+//             worker.postMessage(data);
+//         });
+//     };
+// };
 
 
-const prewk = preloadImages();
-WorkerPromise(prewk);
+// const prewk = preloadImages();
+// WorkerPromise(prewk);
+preloadImages();
 
 
 canvas.width = 1920

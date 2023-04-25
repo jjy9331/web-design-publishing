@@ -1,8 +1,30 @@
 
+// import pf_cr from './default.js';
+// import pf_hb from './default.js';
+// import skr_by from './default.js';
+// import sect from './default.js';
+// import m_hr from './default.js';
+// import stpp from './default.js';
+// import curs from './default.js';
+// import m_fr from './default.js';
+
+
+import {
+    pf_cr, pf_b, pf_hb ,skr_by ,sect ,m_hr ,stpp ,curs ,m_fr, WorkerPromise,
+} from './default.js';
+
+import imagesLoaded from "imagesloaded";
+import LottieInteractivity from "@lottiefiles/lottie-interactivity";
+import "whatwg-fetch";
+// import '../data/logo_intro.json';
+// import '../data/mohenic_intro.json';
+// import '../data/sound_wave.json';
+// import '../data/volvo_intro.json';
+
+
 
     // loading
 
-    // var pf_cr = document.querySelector("#container");
 
     const lg_an = document.querySelector("#logo_ani");
     const wrp = document.querySelector(".wrapper");
@@ -35,7 +57,7 @@
         }, duration);
     }
 
-    lottie_logo = () => {
+    const lottie_logo = () => {
         LottieInteractivity.create({
             player:'#logo_ani',
             renderer:'svg',
@@ -147,47 +169,47 @@
     } 
 
 
-    const mine3 = {js:{type:'text/javascript'}};
+    // const mine3 = {js:{type:'text/javascript'}};
 
-    const WorkerPromise3 = (f) => {
-        let resolve3, reject3;
+    // const WorkerPromise3 = (f) => {
+    //     let resolve3, reject3;
         
-        const worker3 = Object.assign(
-            new Worker(
-                URL.createObjectURL(
-                new Blob([`onmessage=e=>postMessage((${f})(e.data3));`], mine3.js) 
-                )
-            ),
-            { onmessage3: (e) => resolve3(e.data3), onerror3: (e) => reject3(e.data3) } 
-        );
-        return (data3) =>
-            new Promise((res3, rej3) => {
-                resolve3 = res3;
-                reject3 = rej3;
-                worker3.postMessage(data3); 
-            });
-    };
+    //     const worker3 = Object.assign(
+    //         new Worker(
+    //             URL.createObjectURL(
+    //             new Blob([`onmessage=e=>postMessage((${f})(e.data3));`], mine3.js) 
+    //             )
+    //         ),
+    //         { onmessage3: (e) => resolve3(e.data3), onerror3: (e) => reject3(e.data3) } 
+    //     );
+    //     return (data3) =>
+    //         new Promise((res3, rej3) => {
+    //             resolve3 = res3;
+    //             reject3 = rej3;
+    //             worker3.postMessage(data3); 
+    //         });
+    // };
 
     
 
-    const WorkerPromise4 = (f) => {
-        let resolve4, reject4;
+    // const WorkerPromise4 = (f) => {
+    //     let resolve4, reject4;
         
-        const worker4 = Object.assign(
-            new Worker(
-                URL.createObjectURL(
-                    new Blob([`onmessage=e=>postMessage((${f})(e.data4));`], {type: 'application/javascript'})
-                )
-            ),
-            { onmessage4: (e) => resolve4(e.data4), onerror4: (e) => reject4(e.data4) } 
-        );
-        return (data4) =>
-            new Promise((res4, rej4) => {
-                resolve4 = res4;
-                reject4 = rej4;
-                worker4.postMessage(data4); 
-            });
-    };
+    //     const worker4 = Object.assign(
+    //         new Worker(
+    //             URL.createObjectURL(
+    //                 new Blob([`onmessage=e=>postMessage((${f})(e.data4));`], {type: 'application/javascript'})
+    //             )
+    //         ),
+    //         { onmessage4: (e) => resolve4(e.data4), onerror4: (e) => reject4(e.data4) } 
+    //     );
+    //     return (data4) =>
+    //         new Promise((res4, rej4) => {
+    //             resolve4 = res4;
+    //             reject4 = rej4;
+    //             worker4.postMessage(data4); 
+    //         });
+    // };
 
 
     // const pf_vid = ["../vid/main_1.mp4", "../vid/menu_1.mp4", "../vid/sub_1.mp4", "../vid/v_family_safety.mp4", "../vid/v_full_case_1.mp4", "../vid/v_main_1.mp4"];
@@ -208,7 +230,7 @@
     // WorkerPromise3(ld_vid);
 
 
-    const urls = ["../data/logo_intro.json", "../data/mohenic_intro.json", "../data/sound_wave.json", "../data/volvo_intro.json"];
+    const urls = ["../src/data/logo_intro.json", "../src/data/mohenic_intro.json", "../src/data/sound_wave.json", "../src/data/volvo_intro.json"];
     
     const lott_ld = () => {
         Promise.all(
@@ -227,7 +249,8 @@
         .catch(error => console.error(error));
     }
 
-    WorkerPromise3(lott_ld());
+    // lott_ld();
+    WorkerPromise(lott_ld());
 
 
     // WorkerPromise3(imgpg());
@@ -246,7 +269,7 @@
                     cr_fdo();
                     if (current === 100) {
                         let t = 0;
-                        logoAni = () => {
+                        const logoAni = () => {
                             t = t + 1;
                             if (t == 6) {
                                 lg_ed();
